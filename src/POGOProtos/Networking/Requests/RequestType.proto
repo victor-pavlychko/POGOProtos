@@ -105,5 +105,5 @@ enum RequestType {
 	UPDATE_NOTIFICATION_STATUS = 5002;          // Implemented [R & M]
 	OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003;  // Implemented [R & M]
 	DOWNLOAD_GAME_MASTER_TEMPLATES = 5004;      // Implemented [R & M]
-	GET_INVENTORY = 5005;                       // Implemented [R & M]
+	GET_INVENTORY = 5005;                       // UnUsed - Implemented [R & M]
 }
