@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
+import errno
 import os
 import sys
-import errno
 
 
 def abslistdir(path):
-  return " ".join(map((lambda f: os.path.join(os.path.abspath(path), f)), os.listdir(path)))
+    return " ".join(map((lambda f: os.path.join(os.path.abspath(path), f)), os.listdir(path)))
 
 
 def mkdir_p(path):
@@ -28,11 +28,12 @@ def finish_compile(out_path, lang):
 
             with open(init_path, 'w') as init_file:
                 if pogo_protos_path is root:
-                    init_file.write("'Generated'; import os; import sys; sys.path.append(os.path.dirname(os.path.realpath(__file__)))")
+                    init_file.write(
+                        "'Generated'; import os; import sys; sys.path.append(os.path.dirname(os.path.realpath(__file__)))")
 
 
 def query_yes_no(question, default="yes"):
-    """Ask a yes/no question via raw_input() and return their answer.
+    """Ask a yes/no question via input() and return their answer.
 
     "question" is a string that is presented to the user.
     "default" is the presumed answer if the user just hits <Enter>.
@@ -54,7 +55,7 @@ def query_yes_no(question, default="yes"):
 
     while True:
         sys.stdout.write(question + prompt)
-        choice = raw_input().lower()
+        choice = input().lower()
         if default is not None and choice == '':
             return valid[default]
         elif choice in valid:

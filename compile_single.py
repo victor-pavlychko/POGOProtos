@@ -2,13 +2,12 @@
 
 import argparse
 import os
-import shutil
 import re
+import shutil
+from subprocess import call
 
 from helpers import compile_helper
 from helpers import go_helper
-
-from subprocess import call
 
 # Add this to your path
 protoc_path = "protoc"
@@ -80,9 +79,12 @@ def walk_files(main_file, path, package, imports=None):
 
     main_file.write('syntax = "proto3";\n')
 
-    short_package_name = str.split(package, '.')[-1].lower()
+    # short_package_name = str.split(package, '.')[-1].lower()
 
     main_file.write('package %s;\n\n' % package)
+
+    # if lang == "objc":
+    #    main_file.write('option objc_class_prefix = "GPB";\n')
 
     if lang == "go":
         package = go_helper.convert_to_go_package(package)
@@ -124,7 +126,7 @@ def walk_files(main_file, path, package, imports=None):
                     if not is_header:
                         messages += proto_line
 
-                        if proto_line == "}":
+                        if proto_line.startswith("}"):
                             messages += "\n"
 
     for package_import in imports:
@@ -192,7 +194,6 @@ def compile_directories(path):
         item_path = os.path.join(path, proto_file_name)
 
         if os.path.isfile(item_path):
-
             command = """{0} --proto_path="{1}" --{2}_out="{3}" "{4}\"""".format(
                 protoc_path,
                 tmp_path,
