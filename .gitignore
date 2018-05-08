@@ -10,3 +10,4 @@ tmp/
 
 # Backup files
 *~
+/helpers/__pycache__/
