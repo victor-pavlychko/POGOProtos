@@ -15,7 +15,8 @@ install:
   - popd
   - export PATH=/tmp/bin:$PATH
 script:
-  - ./compile.py python
-  - ./compile_single.py -d -o out2
+  - ./compile.py python --generate_desc
+  # Compile Single need revision
+  #- ./compile_single.py -d -o out2
   - clang-format-3.8 -i -style file $(find src -name "*.proto")
   - git diff --exit-code

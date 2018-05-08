@@ -2,11 +2,11 @@ syntax = "proto3";
 package POGOProtos.Map.Weather;
 
 message DisplayWeather {
-	DisplayLevel cloud_level = 1;
-	DisplayLevel rain_level = 2;
-	DisplayLevel wind_level = 3;
-	DisplayLevel snow_level = 4;
-	DisplayLevel fog_level = 5;
+	.POGOProtos.Map.Weather.DisplayWeather.DisplayLevel cloud_level = 1;
+	.POGOProtos.Map.Weather.DisplayWeather.DisplayLevel rain_level = 2;
+	.POGOProtos.Map.Weather.DisplayWeather.DisplayLevel wind_level = 3;
+	.POGOProtos.Map.Weather.DisplayWeather.DisplayLevel snow_level = 4;
+	.POGOProtos.Map.Weather.DisplayWeather.DisplayLevel fog_level = 5;
 	int32 wind_direction = 6;
 
 	enum DisplayLevel {

@@ -186,7 +186,8 @@ def compile_go_package(path):
             protoc_path,
             tmp_path,
             command_out_path,
-            proto_files)
+            proto_files
+        )
     )
 
 
@@ -202,7 +203,8 @@ def compile_directories(path):
                     tmp_path,
                     lang,
                     command_out_path,
-                    item_path)
+                    item_path
+                )
             )
 
         elif os.path.isdir(item_path):

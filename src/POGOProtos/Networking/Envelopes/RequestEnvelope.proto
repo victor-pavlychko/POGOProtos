@@ -22,7 +22,7 @@ message RequestEnvelope {
 
 	message AuthInfo {
 		string provider = 1;
-		JWT token = 2;
+		.POGOProtos.Networking.Envelopes.RequestEnvelope.AuthInfo.JWT token = 2;
 
 		message JWT {
 			string contents = 1;
