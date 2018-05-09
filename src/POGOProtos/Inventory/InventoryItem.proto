@@ -5,7 +5,7 @@ import "POGOProtos/Inventory/InventoryItemData.proto";
 
 message InventoryItem {
 	int64 modified_timestamp_ms = 1;
-	.POGOProtos.Inventory.InventoryItem.DeletedItem deleted_item = 2;
+	DeletedItem deleted_item = 2;
 	.POGOProtos.Inventory.InventoryItemData inventory_item_data = 3;
 
 	message DeletedItem {

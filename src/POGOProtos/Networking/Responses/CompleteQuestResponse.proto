@@ -5,7 +5,7 @@ import "POGOProtos/Data/Quests/ClientQuest.proto";
 import "POGOProtos/Data/Quests/QuestStamp.proto";
 
 message CompleteQuestResponse {
-	.POGOProtos.Networking.Responses.CompleteQuestResponse.Status status = 1;
+	Status status = 1;
 	.POGOProtos.Data.Quests.ClientQuest quest = 2;
 	repeated .POGOProtos.Data.Quests.QuestStamp stamp = 3;
 

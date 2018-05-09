@@ -3,9 +3,9 @@ package POGOProtos.Data.Quests;
 
 message QuestDialog {
 	string text = 1;
-	.POGOProtos.Data.Quests.QuestDialog.CharacterExpression expression = 2;
+	CharacterExpression expression = 2;
 	string image_uri = 3;
-	.POGOProtos.Data.Quests.QuestDialog.Character character = 4;
+	Character character = 4;
 
 	enum CharacterExpression {
 		EXPRESSION_UNSET = 0;

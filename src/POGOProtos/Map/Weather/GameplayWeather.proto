@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Map.Weather;
 
 message GameplayWeather {
-	.POGOProtos.Map.Weather.GameplayWeather.WeatherCondition gameplay_condition = 1;
+	WeatherCondition gameplay_condition = 1;
 
 	enum WeatherCondition {
 		NONE = 0;

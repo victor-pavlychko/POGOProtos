@@ -2,8 +2,8 @@ syntax = "proto3";
 package POGOProtos.Networking.Requests.Messages;
 
 message RegisterPushNotificationMessage {
-	.POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.ApnToken apn_token = 1;
-	.POGOProtos.Networking.Requests.Messages.RegisterPushNotificationMessage.GcmToken gcm_token = 2;
+	ApnToken apn_token = 1;
+	GcmToken gcm_token = 2;
 
 	message ApnToken {
 		string registration_id = 1;
@@ -19,7 +19,7 @@ message RegisterPushNotificationMessage {
 message UpdateNotificationStatusMessage {
 	repeated string notification_ids = 1;
 	repeated int64 create_timestamp_ms = 2;
-	.POGOProtos.Networking.Requests.Messages.UpdateNotificationStatusMessage.NotificationState state = 3;
+	NotificationState state = 3;
 
 	enum NotificationState {
 		UNSET_STATE = 0;

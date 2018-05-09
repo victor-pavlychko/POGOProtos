@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Networking.Platform.Responses;
 
 message BuyItemAndroidResponse {
-	.POGOProtos.Networking.Platform.Responses.BuyItemAndroidResponse.Status result = 1;  // result
+	Status result = 1;  // result
 	string purchase_token = 2;
 
 	// THESE ARE SOMEWHAT SPECULATED, failed may be 2

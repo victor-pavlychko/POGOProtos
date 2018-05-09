@@ -6,7 +6,7 @@ import "POGOProtos/Data/Login/LoginDetail.proto";
 message AddLoginActionResponse {
 	bool success = 1;
 	repeated .POGOProtos.Data.Login.LoginDetail login_detail = 2;
-	.POGOProtos.Networking.Responses.AddLoginActionResponse.Status status = 3;
+	Status status = 3;
 
 	enum Status {
 		UNSET = 0;

@@ -4,7 +4,7 @@ package POGOProtos.Networking.Responses;
 import "POGOProtos/Data/Battle/Battle.proto";
 
 message StartRaidBattleResponse {
-	.POGOProtos.Networking.Responses.StartRaidBattleResponse.Result result = 1;
+	Result result = 1;
 	.POGOProtos.Data.Battle.Battle battle = 2;
 
 	enum Result {

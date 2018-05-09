@@ -5,7 +5,7 @@ import "POGOProtos/Data/Quests/ClientQuest.proto";
 import "POGOProtos/Data/Quests/QuestStamp.proto";
 
 message CompleteQuestLogEntry {
-	.POGOProtos.Data.Logs.CompleteQuestLogEntry.Result result = 1;
+	Result result = 1;
 	.POGOProtos.Data.Quests.ClientQuest quest = 2;
 	repeated .POGOProtos.Data.Quests.QuestStamp stamp = 3;
 

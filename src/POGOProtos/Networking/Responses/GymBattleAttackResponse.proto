@@ -5,7 +5,7 @@ import "POGOProtos/Data/Battle/BattleUpdate.proto";
 import "POGOProtos/Data/Badge/AwardedGymBadge.proto";
 
 message GymBattleAttackResponse {
-	.POGOProtos.Networking.Responses.GymBattleAttackResponse.Result result = 1;
+	Result result = 1;
 	.POGOProtos.Data.Battle.BattleUpdate battle_update = 2;
 	.POGOProtos.Data.Badge.AwardedGymBadge gym_badge = 3;
 

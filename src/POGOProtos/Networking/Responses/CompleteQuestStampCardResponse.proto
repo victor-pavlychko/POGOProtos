@@ -4,7 +4,7 @@ package POGOProtos.Networking.Responses;
 import "POGOProtos/Data/Quests/QuestReward.proto";
 
 message CompleteQuestStampCardResponse {
-	.POGOProtos.Networking.Responses.CompleteQuestStampCardResponse.Status status = 1;
+	Status status = 1;
 	repeated .POGOProtos.Data.Quests.QuestReward reward = 2;
 
 	enum Status {

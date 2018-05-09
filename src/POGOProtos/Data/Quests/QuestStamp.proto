@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Data.Quests;
 
 message QuestStamp {
-	.POGOProtos.Data.Quests.QuestStamp.Context context = 1;
+	Context context = 1;
 	uint64 timestamp_ms = 2;
 
 	enum Context {

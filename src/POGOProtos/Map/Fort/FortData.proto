@@ -17,9 +17,9 @@ message FortData {
 	int64 last_modified_timestamp_ms = 2;
 	double latitude = 3;
 	double longitude = 4;
-	.POGOProtos.Enums.TeamColor owned_by_team = 5;     // (Gym only) Team that owns the gym.
-	.POGOProtos.Enums.PokemonId guard_pokemon_id = 6;  // (Gym only) Highest CP Pokemon ID at the gym.
-	int32 guard_pokemon_cp = 7;                        // (Gym only) Highest CP Pokemon at the gym.
+	.POGOProtos.Enums.TeamColor owned_by_team = 5;                         // (Gym only) Team that owns the gym.
+	.POGOProtos.Enums.PokemonId guard_pokemon_id = 6;                      // (Gym only) Highest CP Pokemon ID at the gym.
+	int32 guard_pokemon_cp = 7;                                            // (Gym only) Highest CP Pokemon at the gym.
 	bool enabled = 8;
 	.POGOProtos.Map.Fort.FortType type = 9;
 	int64 gym_points = 10;                                                 // (Gym only) Prestigate / experience of the gym.

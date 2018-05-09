@@ -6,7 +6,7 @@ import "POGOProtos/Inventory/Item/ItemId.proto";
 import "POGOProtos/Map/Pokemon/WildPokemon.proto";
 
 message QuestEncounterResponse {
-	.POGOProtos.Networking.Responses.QuestEncounterResponse.Result result = 1;
+	Result result = 1;
 	.POGOProtos.Map.Pokemon.WildPokemon pokemon = 2;
 	.POGOProtos.Data.Capture.CaptureProbability capture_probability = 3;
 	.POGOProtos.Inventory.Item.ItemId active_item = 4;
