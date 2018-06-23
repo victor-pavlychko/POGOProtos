@@ -6,6 +6,7 @@ import "POGOProtos/Inventory/AppliedItems.proto";
 import "POGOProtos/Inventory/EggIncubators.proto";
 import "POGOProtos/Inventory/Candy.proto";
 import "POGOProtos/Inventory/InventoryUpgrades.proto";
+import "POGOProtos/Inventory/RaidTickets.proto";
 import "POGOProtos/Data/Avatar/AvatarItem.proto";
 import "POGOProtos/Data/PokemonData.proto";
 import "POGOProtos/Data/PokedexEntry.proto";
@@ -13,6 +14,8 @@ import "POGOProtos/Data/Player/PlayerStats.proto";
 import "POGOProtos/Data/Player/PlayerCurrency.proto";
 import "POGOProtos/Data/Player/PlayerCamera.proto";
 import "POGOProtos/Data/Quests/Quest.proto";
+import "POGOProtos/Data/Quests/Quests.proto";
+import "POGOProtos/Data/Gift/GiftBoxes.proto";
 
 message InventoryItemData {
 	.POGOProtos.Data.PokemonData pokemon_data = 1;
@@ -27,4 +30,7 @@ message InventoryItemData {
 	.POGOProtos.Inventory.Candy candy = 10;
 	.POGOProtos.Data.Quests.Quest quest = 11;
 	.POGOProtos.Data.Avatar.AvatarItem avatar_item = 12;
+	.POGOProtos.Inventory.RaidTickets raid_tickets = 13;
+	.POGOProtos.Data.Quests.Quests quests = 14;
+	.POGOProtos.Data.Gift.GiftBoxes gift_boxes = 15;
 }

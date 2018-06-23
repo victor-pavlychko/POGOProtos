@@ -10,3 +10,5 @@ tmp/
 
 # Backup files
 *~
+/helpers/__pycache__/
+/venv/

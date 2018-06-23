@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 
 import argparse
-import glob
-import re
-import sys
 import os
+import re
 import shutil
 from subprocess import call
 
@@ -224,7 +222,7 @@ def format_protos(
                 if import_path.startswith('POGOProtos/'):
                     if import_path_split[1:-1]:
                         import_path_path = path + '/' + \
-                            '/'.join(import_path_split[1:-1])
+                                           '/'.join(import_path_split[1:-1])
                     else:
                         import_path_path = path
                 if path_lower:
@@ -248,6 +246,7 @@ def format_protos(
                 if package_lower:
                     found_package = found_package.lower()
                 return found_package + type
+
             for line in content:
                 new_content.append(
                     re.sub(
@@ -258,6 +257,7 @@ def format_protos(
                 new_package, new_imports, new_content)
         new_protos[new_proto_path] = new_proto_folder
     return new_protos
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -396,7 +396,7 @@ if args.language == 'go':
                         '/map/',
                         r'/maps/',
                         import_path),
-                        import_is_public))
+                     import_is_public))
             new_content = []
             for line in content:
                 new_content.append(re.sub('\.map\.', r'.maps.', line))
