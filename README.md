@@ -78,17 +78,22 @@ python compile.py ruby:
 
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
 
-| Language              | Source                                                  |
-|-----------------------|---------------------------------------------------------|
-| NodeJS                | https://github.com/pogosandbox/pogobuf                  |
-| NodeJS (pure JS)      | https://github.com/pogosandbox/node-pogo-protos         |
-| .NET (nuget pack)     | https://www.nuget.org/packages/POGOProtos.Core          |
-| .NET (nuget source)   | https://github.com/Furtif/POGOProtos.Core               |
-| .NET (csproj source)  | https://github.com/TheUnnamedOrganisation/POGOProtos    |
-| PHP                   | https://github.com/jaspervdm/pogoprotos-php             |
-| Go                    | https://github.com/pkmngo-odi/pogo-protos               |
-| Haskell               | https://github.com/relrod/pokemon-go-protobuf-types     |
-| Rust                  | https://github.com/rockneurotiko/pokemon-go-protobuf-rs |
+| Language              | Source                                                         |
+|-----------------------|----------------------------------------------------------------|
+| NodeJS                | https://github.com/pogosandbox/pogobuf                         |
+| NodeJS (pure JS)      | https://github.com/pogosandbox/node-pogo-protos                |
+| .NET (nuget pack)     | https://www.nuget.org/packages/POGOProtos.Core                 |
+| .NET (nuget source)   | https://github.com/Furtif/POGOProtos.Core                      |
+| .NET (csproj source)  | https://github.com/TheUnnamedOrganisation/POGOProtos           |
+| PHP                   | https://github.com/jaspervdm/pogoprotos-php                    |
+| Go                    | https://github.com/pkmngo-odi/pogo-protos                      |
+| Haskell               | https://github.com/relrod/pokemon-go-protobuf-types            |
+| Rust                  | https://github.com/rockneurotiko/pokemon-go-protobuf-rs        |
+| Java                  | https://github.com/pokemongo-dev-contrib/pogoprotos-java       |
+
+| Additional resources  | Source                                                         |
+|-----------------------|----------------------------------------------------------------|
+| Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master |
 
 #### Versioning
 
