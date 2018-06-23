@@ -1,14 +1,13 @@
 # Project files
 .idea/
+*.iml
 
 # Protoc files
 out/
 out2/
 tmp/
-/pogo/assist.py
 *.pyc
 
 # Backup files
 *~
 /helpers/__pycache__/
-/venv/
