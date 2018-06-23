@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Enums;
 
 enum Platform {
-	UNSET_PLATFORM = 0;
+	UNSET = 0;
 	IOS = 1;
 	ANDROID = 2;
 	OSX = 3;
