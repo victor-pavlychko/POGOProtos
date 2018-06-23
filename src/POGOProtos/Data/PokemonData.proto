@@ -42,4 +42,13 @@ message PokemonData {
 	int32 display_pokemon_id = 34;
 	int32 display_cp = 35;
 	.POGOProtos.Data.PokemonDisplay pokemon_display = 36;
+	bool is_bad = 37;
+	bool hatched_from_egg = 38;
+	int32 coins_returned = 39;
+	int64 deployed_duration_ms = 40;
+	int64 deployed_returned_timestamp_ms = 41;
+	float cp_multiplier_before_trading = 42;
+	int32 original_owner_hash = 43;
+	string original_owner_nickname = 44;
+	int64 traded_time_ms = 45;
 }

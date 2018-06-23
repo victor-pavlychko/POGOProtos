@@ -1,6 +1,8 @@
 syntax = "proto3";
 package POGOProtos.Data.Player;
 
+import "POGOProtos/Enums/GymBadgeType.proto";
+
 message PlayerStats {
 	int32 level = 1;
 	int64 experience = 2;
@@ -27,4 +29,16 @@ message PlayerStats {
 	int32 small_rattata_caught = 23;
 	double used_km_pool = 24;
 	int64 last_km_refill_ms = 25;
+	int32 num_raid_battle_won = 26;
+	int32 num_raid_battle_total = 27;
+	int32 num_legendary_battle_won = 28;
+	int32 num_legendary_battle_total = 29;
+	int32 num_berries_fed = 30;
+	int64 total_defended_ms = 31;
+	repeated .POGOProtos.Enums.GymBadgeType event_badges = 32;
+	float km_walked_past_active_day = 33;
+	int32 num_challenge_quests_completed = 34;
+	int32 num_trades = 35;
+	int32 num_max_level_friends = 36;
+	int64 trade_accumulated_distance_km = 37;
 }

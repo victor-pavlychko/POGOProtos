@@ -2,13 +2,12 @@
 
 import argparse
 import os
-import shutil
 import re
+import shutil
+from subprocess import call
 
 from helpers import compile_helper
 from helpers import go_helper
-
-from subprocess import call
 
 # Add this to your path
 protoc_path = "protoc"
@@ -80,9 +79,12 @@ def walk_files(main_file, path, package, imports=None):
 
     main_file.write('syntax = "proto3";\n')
 
-    short_package_name = str.split(package, '.')[-1].lower()
+    # short_package_name = str.split(package, '.')[-1].lower()
 
     main_file.write('package %s;\n\n' % package)
+
+    # if lang == "objc":
+    #    main_file.write('option objc_class_prefix = "GPB";\n')
 
     if lang == "go":
         package = go_helper.convert_to_go_package(package)
@@ -124,7 +126,7 @@ def walk_files(main_file, path, package, imports=None):
                     if not is_header:
                         messages += proto_line
 
-                        if proto_line == "}":
+                        if proto_line.startswith("}"):
                             messages += "\n"
 
     for package_import in imports:
@@ -163,6 +165,9 @@ def walk_directory(path):
             walk_directory(dir_name_path)
 
 
+commands = []
+
+
 def compile_go_package(path):
     proto_files = compile_helper.abslistdir(path)
 
@@ -176,14 +181,14 @@ def compile_go_package(path):
     # Combine the output with all other output options
     command_out_path = "%s:%s" % (command_out_path, os.path.abspath(out_path))
 
-    command = """{0} --proto_path="{1}" --go_out={2} {3}""".format(
-        protoc_path,
-        tmp_path,
-        command_out_path,
-        proto_files
+    commands.append(
+        """{0} --proto_path="{1}" --go_out={2} {3}""".format(
+            protoc_path,
+            tmp_path,
+            command_out_path,
+            proto_files
+        )
     )
-
-    call(command, shell=True)
 
 
 def compile_directories(path):
@@ -192,16 +197,15 @@ def compile_directories(path):
         item_path = os.path.join(path, proto_file_name)
 
         if os.path.isfile(item_path):
-
-            command = """{0} --proto_path="{1}" --{2}_out="{3}" "{4}\"""".format(
-                protoc_path,
-                tmp_path,
-                lang,
-                command_out_path,
-                item_path
+            commands.append(
+                """{0} --proto_path="{1}" --{2}_out="{3}" "{4}\"""".format(
+                    protoc_path,
+                    tmp_path,
+                    lang,
+                    command_out_path,
+                    item_path
+                )
             )
-
-            call(command, shell=True)
 
         elif os.path.isdir(item_path):
             compile_directories(item_path)
@@ -215,19 +219,23 @@ if desc_file:
     with open(root_package_file_path, 'a') as root_package_file:
         walk_files(root_package_file, proto_path, "POGOProtos", created_packages)
 
-    command = """{0} --include_imports --proto_path="{1}" --descriptor_set_out="{2}" "{3}\"""".format(
-        protoc_path,
-        tmp_path,
-        os.path.abspath(out_path + "/POGOProtos.desc"),
-        os.path.join(tmp_path, "POGOProtos.proto")
+    commands.append(
+        """{0} --include_imports --proto_path="{1}" --descriptor_set_out="{2}" "{3}\"""".format(
+            protoc_path,
+            tmp_path,
+            os.path.abspath(out_path + "/POGOProtos.desc"),
+            os.path.join(tmp_path, "POGOProtos.proto")
+        )
     )
 
-    call(command, shell=True)
 else:
     if lang == "go":
         compile_go_package(tmp_path)
     else:
         compile_directories(tmp_path)
+
+for command in commands:
+    call(command, shell=(os.name != 'nt'))
 
     compile_helper.finish_compile(out_path, lang)
 
