@@ -7326,7 +7326,7 @@ message WeatherAlertProto {
 
 // ref: Niantic.Platform.Auth.Plugins.Google.GoogleToken
 message GoogleToken {
-	string id_token = -1;
+	string id_token = 1;
 }
 
 
@@ -7336,24 +7336,24 @@ message GoogleToken {
 
 // ref: Niantic.Platform.Ditto.Events.ChannelAuthEventParams
 message ChannelAuthEventParams {
-	uint32 status = -1;
+	uint32 status = 1;
 }
 
 // ref: Niantic.Platform.Ditto.Events.GoogleAuthEventParams
 message GoogleAuthEventParams {
-	string payload = -1;
-	string account_name = -1;
+	string payload = 1;
+	string account_name = 2;
 }
 
 // ref: Niantic.Platform.Ditto.Events.LocationUpdateEventParams
 message LocationUpdateEventParams {
-	double latitude_deg = -1;
-	double longitude_deg = -1;
-	double altitude_m = -1;
-	double accuracy_m = -1;
-	double timestamp_s = -1;
-	uint32 provider_status = -1;
-	uint32 location_type = -1;
+	double latitude_deg = 1;
+	double longitude_deg = 2;
+	double altitude_m = 3;
+	double accuracy_m = 4;
+	double timestamp_s = 5;
+	uint32 provider_status = 6;
+	uint32 location_type = 7;
 }
 
 // ref: Niantic.Platform.Ditto.Events.PasscodeEventParams
@@ -7369,15 +7369,15 @@ message PasscodeEventParams {
 		ALREADY_REDEEMED = 6;
 	}
 
-	string passcode = -1;
-	bytes acquired_items_proto = -1;
+	string passcode = 1;
+	bytes acquired_items_proto = 2;
 }
 
 // ref: Niantic.Platform.Ditto.Events.RpcResponseEventParams
 message RpcResponseEventParams {
-	uint32 rpc_id = -1;
-	uint32 status = -1;
-	repeated bytes payloads = -1 [packed=false];
+	uint32 rpc_id = 1;
+	uint32 status = 2;
+	repeated bytes payloads = 3 [packed=false];
 }
 
 // ref: Niantic.Platform.Ditto.Events.SyncRequestedEventParams
