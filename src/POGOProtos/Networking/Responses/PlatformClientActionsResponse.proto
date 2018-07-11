@@ -1,6 +1,9 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
+import "POGOProtos/Enums/IdentityProvider.proto";
+import "POGOProtos/Networking/Platform/PortalCurationImageResult.proto";
+
 message RegisterPushNotificationResponse {
 	Result result = 1;
 
@@ -82,4 +85,36 @@ message ProxySocialActionResponse {
 message GetAvailableSubmissionsResponse {
 	int32 submissions_left = 1;
 	int32 min_player_level = 2;
+}
+
+message PushNotificationRegistryResponse {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		NO_CHANGE = 2;
+	}
+
+	Result result = 1;
+}
+
+message RemoveLoginActionProto {
+	.POGOProtos.Enums.IdentityProvider identity_provider = 1;
+}
+
+message SubmitNewPoiResponse {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		INTERNAL_ERROR = 3;
+		TOO_MANY_RECENT_SUBMISSIONS = 4;
+		INVALID_INPUT = 5;
+	}
+
+	Status status = 1;
+	repeated string message = 2 [packed=false];
+}
+
+message UploadPoiPhotoByUrlResponse {
+	.POGOProtos.Networking.Platform.PortalCurationImageResult.Result status = 1;
 }

@@ -1,5 +1,6 @@
 syntax = "proto3";
 package POGOProtos.Networking.Requests.Social;
 
-message ListIncomingFriendInvitesMessage {
+message GetFriendCodeMessage {
+    bool force_generate_code = 1;
 }
