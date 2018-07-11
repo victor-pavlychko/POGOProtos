@@ -112,7 +112,7 @@ message SubmitNewPoiResponse {
 	}
 
 	Status status = 1;
-	repeated string message = 2 [packed=false];
+	repeated string message = 2;
 }
 
 message UploadPoiPhotoByUrlResponse {
