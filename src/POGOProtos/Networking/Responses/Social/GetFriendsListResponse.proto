@@ -19,5 +19,5 @@ message GetFriendsListResponse {
 	}
 
 	Result result = 1;
-	repeated FriendProto friend = 2 [packed=false];
+	repeated FriendProto friend = 2;
 }
