@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos.Networking.Platform.Telemetry;
+
+import "POGOProtos/Networking/Platform/Telemetry/TelemetryCommon.proto";
+
+message PlatformEventData {
+	.POGOProtos.Networking.Platform.Telemetry.TelemetryCommon common_telemetry = 1;
+}

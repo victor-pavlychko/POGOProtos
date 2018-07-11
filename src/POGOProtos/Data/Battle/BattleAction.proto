@@ -2,23 +2,36 @@ syntax = "proto3";
 package POGOProtos.Data.Battle;
 
 import "POGOProtos/Data/Battle/BattleResults.proto";
-import "POGOProtos/Data/Battle/BattleActionType.proto";
 import "POGOProtos/Data/Battle/BattleParticipant.proto";
 import "POGOProtos/Data/Friends/LeveledUpFriends.proto";
 
 message BattleAction {
-	.POGOProtos.Data.Battle.BattleActionType type = 1;
+	enum ActionType {
+		UNSET = 0;
+		ATTACK = 1;
+		DODGE = 2;
+		SPECIAL_ATTACK = 3;
+		SWAP_POKEMON = 4;
+		FAINT = 5;
+		PLAYER_JOIN = 6;
+		PLAYER_QUIT = 7;
+		VICTORY = 8;
+		DEFEAT = 9;
+		TIMED_OUT = 10;
+	}
+
+	ActionType type = 1;
 	int64 action_start_ms = 2;
 	int32 duration_ms = 3;
 	int32 energy_delta = 5;
 	int32 attacker_index = 6;
 	int32 target_index = 7;
-	fixed64 active_pokemon_id = 8;
-	.POGOProtos.Data.Battle.BattleParticipant player_joined = 9;
-	.POGOProtos.Data.Battle.BattleResults battle_results = 10;
-	int64 damage_windows_start_timestamp_ms = 11;
-	int64 damage_windows_end_timestamp_ms = 12;
-	.POGOProtos.Data.Battle.BattleParticipant player_left = 13;
-	fixed64 target_pokemon_id = 14;
+	uint64 active_pokemon_id = 8;
+	BattleParticipant joined_player = 9;
+	BattleResults battle_results = 10;
+	int64 damage_window_start_ms = 11;
+	int64 damage_window_end_ms = 12;
+	BattleParticipant quit_player = 13;
+	uint64 target_pokemon_id = 14;
 	.POGOProtos.Data.Friends.LeveledUpFriends leveled_up_friends = 15;
 }

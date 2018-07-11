@@ -3,6 +3,7 @@ package POGOProtos.Networking.Responses.Social;
 
 import "POGOProtos/Data/Friends/FriendDetails.proto";
 
+
 message GetFriendDetailsResponse {
 	enum Result {
 		UNSET = 0;

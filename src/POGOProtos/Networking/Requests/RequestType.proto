@@ -106,7 +106,7 @@ enum RequestType {
 	DELETE_GIFT = 953;                          // Implemented [R & M]
 	SAVE_PLAYER_SNAPSHOT = 954;                 // Implemented [R & M]
 	GET_FRIENDSHIP_MILESTONE_REWARDS = 955;     // Implemented [R & M]
-	CHECK_SEND_GIFT = 956;                      // ???
+	CHECK_SEND_GIFT = 956;                      // Implemented [R & M]
 	OPEN_TRADING = 970;                         // Implemented [R & M]
 	UPDATE_TRADING = 971;                       // Implemented [R & M]
 	CONFIRM_TRADING = 972;                      // Implemented [R & M]
@@ -133,13 +133,13 @@ enum RequestType {
 	DOWNLOAD_GAME_MASTER_TEMPLATES = 5004;      // Implemented [R & M]
 	GET_INVENTORY = 5005;                       // UnUsed - Implemented [R & M]
 	REDEEM_PASSCODE = 5006;                     // Implemented [R & M]
-	PING = 5007;                                // Implemented [R & M] - Maybe move to platformclientactions
+	PING = 5007;                                // Implemented [R & M]
 	ADD_LOGIN_ACTION = 5008;                    // ???
 	REMOVE_LOGIN_ACTION = 5009;                 // Implemented [R & M]
 	LIST_LOGIN_ACTION = 5010;                   // Implemented [R & M]
 	SUBMIT_NEW_POI = 5011;                      // Implemented [R & M]
 	PROXY_SOCIAL_ACTION = 5012;                 // ???
-	CLIENT_TELEMETRY = 5013;                    // ???
+	CLIENT_TELEMETRY = 5013;                    // Implemented [R & M]
 	GET_AVAILABLE_SUBMISSIONS = 5014;           // Implemented [R & M]
 	UPLOAD_POI_PHOTO_BY_URL = 5015;             // Implemented [R & M]
 }

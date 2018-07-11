@@ -12,4 +12,5 @@ message PortalCurationImageResult {
 		IMAGE_NOT_SERVABLE = 6;
 		PORTAL_NOT_FOUND = 7;
 	}
+
 }
