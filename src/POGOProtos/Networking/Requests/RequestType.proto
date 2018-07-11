@@ -133,7 +133,7 @@ enum RequestType {
 	DOWNLOAD_GAME_MASTER_TEMPLATES = 5004;      // Implemented [R & M]
 	GET_INVENTORY = 5005;                       // UnUsed - Implemented [R & M]
 	REDEEM_PASSCODE = 5006;                     // Implemented [R & M]
-	PING = 5007;                                // Implemented [R & M]
+	PING = 5007;                                // Implemented [R & M] - Maybe move to platformclientactions
 	ADD_LOGIN_ACTION = 5008;                    // ???
 	REMOVE_LOGIN_ACTION = 5009;                 // Implemented [R & M]
 	LIST_LOGIN_ACTION = 5010;                   // Implemented [R & M]

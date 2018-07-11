@@ -4,6 +4,6 @@ package POGOProtos.Data.Login;
 import "POGOProtos/Data/Login/LoginDetail.proto";
 
 message ListLoginActionResponse {
-    bool success = 1;
-    repeated .POGOProtos.Data.Login.LoginDetail login_detail = 2;
+	bool success = 1;
+	repeated .POGOProtos.Data.Login.LoginDetail login_detail = 2;
 }

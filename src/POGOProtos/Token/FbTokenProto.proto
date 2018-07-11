@@ -2,5 +2,5 @@ syntax = "proto3";
 package POGOProtos.Token;
 
 message FbTokenProto {
-    string token = 1;
+	string token = 1;
 }
