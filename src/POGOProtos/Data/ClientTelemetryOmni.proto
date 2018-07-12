@@ -6,7 +6,7 @@ import "POGOProtos/Data/FrameRate.proto";
 import "POGOProtos/Networking/Platform/Telemetry/PlatformServerData.proto";
 
 message ClientTelemetryOmni {
-    .POGOProtos.Data.BootTime boot_time = 1;
-    .POGOProtos.Data.FrameRate frame_rate = 2;
-    .POGOProtos.Networking.Platform.Telemetry.PlatformServerData server_data = 1001;
+	.POGOProtos.Data.BootTime boot_time = 1;
+	.POGOProtos.Data.FrameRate frame_rate = 2;
+	.POGOProtos.Networking.Platform.Telemetry.PlatformServerData server_data = 1001;
 }

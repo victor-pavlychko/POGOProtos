@@ -2,6 +2,6 @@ syntax = "proto3";
 package POGOProtos.Token;
 
 message PtcToken {
-    string token = 1;
-    int32 expiration = 2;
+	string token = 1;
+	int32 expiration = 2;
 }

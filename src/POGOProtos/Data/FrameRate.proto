@@ -4,5 +4,5 @@ package POGOProtos.Data;
 import "POGOProtos/Networking/Platform/Telemetry/PlatformMetricData.proto";
 
 message FrameRate {
-    .POGOProtos.Networking.Platform.Telemetry.PlatformMetricData sampled_frame_rate = 1;
+	.POGOProtos.Networking.Platform.Telemetry.PlatformMetricData sampled_frame_rate = 1;
 }

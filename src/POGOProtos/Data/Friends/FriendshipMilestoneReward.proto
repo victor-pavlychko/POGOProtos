@@ -4,6 +4,6 @@ package POGOProtos.Data.Friends;
 import "POGOProtos/Enums/FriendshipLevelMilestone.proto";
 
 message FriendshipMilestoneReward {
-    string friend_id = 1;
-    .POGOProtos.Enums.FriendshipLevelMilestone friendship_milestone = 2;
+	string friend_id = 1;
+	.POGOProtos.Enums.FriendshipLevelMilestone friendship_milestone = 2;
 }

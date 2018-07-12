@@ -4,5 +4,5 @@ package POGOProtos.Assetcache;
 import "POGOProtos/Assetcache/HashedKey.proto";
 
 message JournalRemoveEntry {
-    .POGOProtos.Assetcache.HashedKey hashed_key = 1;
+	.POGOProtos.Assetcache.HashedKey hashed_key = 1;
 }

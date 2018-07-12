@@ -8,7 +8,7 @@ message GetFriendsListResponse {
 		ERROR_UNKNOWN = 2;
 	}
 
-	message FriendProto {
+	message Friend {
 		string player_id = 1;
 		string codename = 2;
 		string team = 3;
@@ -19,5 +19,5 @@ message GetFriendsListResponse {
 	}
 
 	Result result = 1;
-	repeated FriendProto friend = 2;
+	repeated Friend friend = 2;
 }

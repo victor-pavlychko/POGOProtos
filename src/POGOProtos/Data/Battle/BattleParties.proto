@@ -4,5 +4,5 @@ package POGOProtos.Data.Battle;
 import "POGOProtos/Data/Battle/BattleParty.proto";
 
 message BattleParties {
-    repeated .POGOProtos.Data.Battle.BattleParty battle_parties = 1;
+	repeated .POGOProtos.Data.Battle.BattleParty battle_parties = 1;
 }
