@@ -1,0 +1,12 @@
+syntax = "proto3";
+package POGOProtos.Assetcache;
+
+import "POGOProtos/Assetcache/JournalAddEntry.proto";
+import "POGOProtos/Assetcache/JournalReadEntry.proto";
+import "POGOProtos/Assetcache/JournalRemoveEntry.proto";
+
+message JournalEntry {
+	.POGOProtos.Assetcache.JournalAddEntry add_entry = 1;
+	.POGOProtos.Assetcache.JournalReadEntry read_entry = 2;
+	.POGOProtos.Assetcache.JournalRemoveEntry remove_entry = 3;
+}

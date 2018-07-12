@@ -1,0 +1,17 @@
+syntax = "proto3";
+package POGOProtos.Networking.Platform.Ditto;
+
+message PasscodeEventParams {
+	enum Status {
+		UNDEFINED = 0;
+		TIMEOUT = 1;
+		ERROR = 2;
+		SUCCESS = 3;
+		NOT_AVAILABLE = 4;
+		OVER_INVENTORY_LIMIT = 5;
+		ALREADY_REDEEMED = 6;
+	}
+
+	string passcode = 1;
+	bytes acquired_items_proto = 2;
+}

@@ -3,7 +3,7 @@ package POGOProtos.Networking.Platform.Requests;
 
 import "POGOProtos/Networking/Platform/Telemetry/PlatformDataId.proto";
 
-message ClientTelemetryProto {
+message ClientTelemetry {
 	repeated .POGOProtos.Networking.Platform.Telemetry.PlatformDataId data_id = 1;
 	repeated bytes application_data = 2;
 }

@@ -97,7 +97,7 @@ message PushNotificationRegistryResponse {
 	Result result = 1;
 }
 
-message RemoveLoginActionProto {
+message RemoveLoginAction {
 	.POGOProtos.Enums.IdentityProvider identity_provider = 1;
 }
 

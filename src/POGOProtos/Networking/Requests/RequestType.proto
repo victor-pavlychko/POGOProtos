@@ -126,6 +126,8 @@ enum RequestType {
 	REMOVE_FRIEND = 986;                        // Implemented [R & M]
 	SEARCH_PLAYER = 987;                        // Implemented [R & M]
 	SEND_FRIEND_INVITE = 988;                   // Implemented [R & M]
+	GET_FRIENDSHIP_REWARDS = 989;               // Implemented [R & M]
+	GET_GITBOX_DETAILS = 990;                   // Implemented [R & M]
 	REGISTER_PUSH_NOTIFICATION = 5000;          // Implemented [R & M]
 	UNREGISTER_PUSH_NOTIFICATION = 5001;        // ???
 	UPDATE_NOTIFICATION_STATUS = 5002;          // Implemented [R & M]
@@ -138,7 +140,7 @@ enum RequestType {
 	REMOVE_LOGIN_ACTION = 5009;                 // Implemented [R & M]
 	LIST_LOGIN_ACTION = 5010;                   // Implemented [R & M]
 	SUBMIT_NEW_POI = 5011;                      // Implemented [R & M]
-	PROXY_SOCIAL_ACTION = 5012;                 // ???
+	PROXY_SOCIAL_ACTION = 5012;                 // Implemented [R & M]
 	CLIENT_TELEMETRY = 5013;                    // Implemented [R & M]
 	GET_AVAILABLE_SUBMISSIONS = 5014;           // Implemented [R & M]
 	UPLOAD_POI_PHOTO_BY_URL = 5015;             // Implemented [R & M]
