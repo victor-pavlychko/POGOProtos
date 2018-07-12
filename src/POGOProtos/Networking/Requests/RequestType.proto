@@ -72,7 +72,7 @@ enum RequestType {
 	SET_AVATAR = 404;                           // Implemented [R & M]
 	SET_PLAYER_TEAM = 405;                      // Implemented [R & M]
 	MARK_TUTORIAL_COMPLETE = 406;               // Implemented [R & M]
-	UPDATE_PERFORMANCE_METRICS = 407;           // Implemented [R & M]
+	UPDATE_PERFORMANCE_METRICS = 407;           // Can't find this one
 	CHECK_CHALLENGE = 600;                      // Implemented [R & M]
 	VERIFY_CHALLENGE = 601;                     // Implemented [R & M]
 	ECHO = 666;                                 // Implemented [R & M]
