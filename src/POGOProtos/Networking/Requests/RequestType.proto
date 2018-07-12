@@ -64,7 +64,7 @@ enum RequestType {
 	GYM_FEED_POKEMON = 164;                     // Implemented [R & M]
 	START_RAID_BATTLE = 165;                    // Implemented [R & M]
 	ATTACK_RAID = 166;                          // Implemented [R & M]
-	AWARD_POKECOIN = 167;                       // ???
+	AWARD_POKECOIN = 167;                       // Implemented [R & M]
 	USE_ITEM_STARDUST_BOOST = 168;              // Implemented [R & M]
 	GET_ASSET_DIGEST = 300;                     // Implemented [R & M]
 	GET_DOWNLOAD_URLS = 301;                    // Implemented [R & M]
@@ -136,7 +136,7 @@ enum RequestType {
 	GET_INVENTORY = 5005;                       // UnUsed - Implemented [R & M]
 	REDEEM_PASSCODE = 5006;                     // Implemented [R & M]
 	PING = 5007;                                // Implemented [R & M]
-	ADD_LOGIN_ACTION = 5008;                    // ???
+	ADD_LOGIN_ACTION = 5008;                    // Implemented [R & M]
 	REMOVE_LOGIN_ACTION = 5009;                 // Implemented [R & M]
 	LIST_LOGIN_ACTION = 5010;                   // Implemented [R & M]
 	SUBMIT_NEW_POI = 5011;                      // Implemented [R & M]

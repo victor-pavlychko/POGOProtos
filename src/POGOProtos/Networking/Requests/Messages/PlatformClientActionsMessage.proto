@@ -3,6 +3,7 @@ package POGOProtos.Networking.Requests.Messages;
 
 import "POGOProtos/Data/Player/PlayerReputation.proto";
 import "POGOProtos/Data/Login/LoginDetail.proto";
+import "POGOProtos/Enums/IdentityProvider.proto";
 
 message RegisterPushNotificationMessage {
 	ApnToken apn_token = 1;
@@ -67,6 +68,11 @@ message GetAvailableSubmissionsMessage {
 message PushNotificationRegistryMessage {
 	RegisterPushNotificationMessage.ApnToken apn_token = 1;
 	RegisterPushNotificationMessage.GcmToken gcm_token = 2;
+}
+
+message AddLoginActionMessage {
+	.POGOProtos.Enums.IdentityProvider identity_provider = 1;
+	bytes inner_message = 2;
 }
 
 message RemoveLoginActionMessage {
