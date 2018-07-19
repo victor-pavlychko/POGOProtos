@@ -2,7 +2,6 @@ syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
 import "POGOProtos/Enums/IdentityProvider.proto";
-import "POGOProtos/Networking/Platform/PortalCurationImageResult.proto";
 import "POGOProtos/Data/Login/LoginDetail.proto";
 
 message RegisterPushNotificationResponse {
@@ -129,5 +128,22 @@ message SubmitNewPoiResponse {
 }
 
 message UploadPoiPhotoByUrlResponse {
-	.POGOProtos.Networking.Platform.PortalCurationImageResult.Result status = 1;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FEATURE_DISABLED = 2;
+		ALREADY_UPLOADED = 3;
+		IMAGE_NOT_FOUND = 4;
+		IMAGE_TOO_BIG = 5;
+		IMAGE_NOT_SERVABLE = 6;
+		PORTAL_NOT_FOUND = 7;
+	}
+
+	Result status = 1;
+}
+
+message PingResponse {
+	string user_info = 1;
+	string server_info = 2;
+	string random_response_bytes = 3;
 }

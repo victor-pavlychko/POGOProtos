@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Token;
+package POGOProtos.Data.Token;
 
 message SuperAwesomeToken {
 	string token = 1;

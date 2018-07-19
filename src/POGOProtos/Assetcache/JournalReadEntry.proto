@@ -1,8 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Assetcache;
-
-import "POGOProtos/Assetcache/HashedKey.proto";
-
-message JournalReadEntry {
-	.POGOProtos.Assetcache.HashedKey hashed_key = 1;
-}

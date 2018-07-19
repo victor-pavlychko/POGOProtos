@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Token;
+package POGOProtos.Data.Token;
 
 message GoogleToken {
 	string id_token = 1;

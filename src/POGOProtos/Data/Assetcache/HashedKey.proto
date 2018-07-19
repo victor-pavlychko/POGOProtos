@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Assetcache;
+package POGOProtos.Data.Assetcache;
 
 message HashedKey {
 	string hashed_key_raw = 1;

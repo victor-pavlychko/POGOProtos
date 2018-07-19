@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Assetcache;
+package POGOProtos.Data.Assetcache;
 
 message JournalVersion {
 	int32 version = 1;
