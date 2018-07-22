@@ -4467,7 +4467,7 @@ message GymGetInfoOutProto {
 	AwardedGymBadge awarded_gym_badge = 7;
 	string checkin_image_url = 8;
 	EventInfoProto event_info = 9;
-	niantic.rpc.DisplayWeatherProto display_weather = 10;
+	DisplayWeatherProto display_weather = 10;
 }
 
 // ref: Holoholo.Rpc.GymGetInfoProto
@@ -4609,7 +4609,7 @@ message HoloholoClientTelemetryOmniProto {
 	PokemonInventoryTelemetry pokemon_inventory_telemetry = 28;
 	SocialTelemetry social_telemetry = 29;
 	CheckEncounterTrayInfoTelemetry check_encounter_info_telemetry = 30;
-	niantic.platform.telemetry.PlatformServerData server_data = 1001;
+	PlatformServerData server_data = 1001;
 }
 
 // ref: Holoholo.Rpc.HoloInventoryItemProto
@@ -5002,7 +5002,7 @@ message LobbyProto {
 	bool private = 10;
 	int64 creation_ms = 11;
 	int32 battle_plfe_instance = 12;
-	niantic.rpc.GameplayWeatherProto.WeatherCondition weather_condition = 13;
+	GameplayWeatherProto.WeatherCondition weather_condition = 13;
 }
 
 // ref: Holoholo.Rpc.LoginActionTelemetry
@@ -5678,7 +5678,7 @@ message PokemonDisplayProto {
 	Gender gender = 2;
 	bool shiny = 3;
 	Form form = 4;
-	niantic.rpc.GameplayWeatherProto.WeatherCondition weather_boosted_condition = 5;
+	GameplayWeatherProto.WeatherCondition weather_boosted_condition = 5;
 }
 
 // ref: Holoholo.Rpc.PokemonEncounterAttributesProto
@@ -7328,7 +7328,7 @@ message VerifyChallengeProto {
 
 // ref: Holoholo.Rpc.WeatherAffinityProto
 message WeatherAffinityProto {
-	niantic.rpc.GameplayWeatherProto.WeatherCondition weather_condition = 1;
+	GameplayWeatherProto.WeatherCondition weather_condition = 1;
 	repeated HoloPokemonType pokemon_type = 2 [packed=false];
 }
 
