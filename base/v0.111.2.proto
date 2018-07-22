@@ -61,7 +61,7 @@ message AddLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.AddLoginActionProto
 message AddLoginActionProto {
-	com.nianticproject.platform.auth.IdentityProvider identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	bytes inner_message = 2;
 }
 
@@ -405,7 +405,7 @@ message ListLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.LoginDetail
 message LoginDetail {
-	com.nianticproject.platform.auth.IdentityProvider identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	string email = 2;
 }
 
@@ -531,7 +531,7 @@ message RemoveLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.RemoveLoginActionProto
 message RemoveLoginActionProto {
-	com.nianticproject.platform.auth.IdentityProvider identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 }
 
 // ref: Niantic.Platform.Protos.SearchPlayerOutProto
@@ -2512,7 +2512,7 @@ message BattleProto {
 	BattleParticipantProto defender = 4;
 	BattleLogProto battle_log = 5;
 	BattleParticipantProto attacker = 6;
-	niantic.rpc.GameplayWeatherProto.WeatherCondition weather_condition = 7;
+	GameplayWeatherProto.WeatherCondition weather_condition = 7;
 	FriendshipLevelMilestone highest_friendship_milestone = 8;
 }
 
@@ -2559,7 +2559,7 @@ message BootTime {
 		INITIALIZE_CRITTERCISM = 12;
 	}
 
-	niantic.platform.telemetry.PlatformMetricData duration = 1;
+	PlatformMetricData duration = 1;
 	BootPhase boot_phase = 2;
 }
 
@@ -3710,7 +3710,7 @@ message FortSponsor {
 
 // ref: Holoholo.Rpc.FrameRate
 message FrameRate {
-	niantic.platform.telemetry.PlatformMetricData sampled_frame_rate = 1;
+	PlatformMetricData sampled_frame_rate = 1;
 }
 
 // ref: Holoholo.Rpc.FriendshipDataProto
@@ -3960,7 +3960,7 @@ message GetHatchedEggsProto {
 // ref: Holoholo.Rpc.GetHoloholoInventoryOutProto
 message GetHoloholoInventoryOutProto {
 	bool success = 1;
-	niantic.platform.inventory.InventoryDeltaProto inventory_delta = 2;
+	InventoryDeltaProto inventory_delta = 2;
 }
 
 // ref: Holoholo.Rpc.GetHoloholoInventoryProto
@@ -3980,7 +3980,7 @@ message GetInboxOutProto {
 	}
 
 	Result result = 1;
-	niantic.platform.protos.ClientInbox inbox = 2;
+	ClientInbox inbox = 2;
 }
 
 // ref: Holoholo.Rpc.GetInboxProto
@@ -4034,7 +4034,7 @@ message GetMapObjectsOutProto {
 	repeated ClientMapCellProto map_cell = 1 [packed=false];
 	Status status = 2;
 	TimeOfDay time_of_day = 3;
-	repeated niantic.rpc.ClientWeatherProto client_weather = 4 [packed=false];
+	repeated ClientWeatherProto client_weather = 4 [packed=false];
 }
 
 // ref: Holoholo.Rpc.GetMapObjectsProto

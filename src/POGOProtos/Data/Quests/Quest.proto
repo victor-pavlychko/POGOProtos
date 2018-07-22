@@ -6,12 +6,16 @@ import "POGOProtos/Data/Quests/DailyQuest.proto";
 import "POGOProtos/Data/Quests/CatchPokemonQuest.proto";
 import "POGOProtos/Data/Quests/QuestReward.proto";
 import "POGOProtos/Data/Quests/QuestGoal.proto";
+import "POGOProtos/Data/Quests/AddFriendQuest.proto";
+import "POGOProtos/Data/Quests/TradePokemonQuest.proto";
 
 message Quest {
 	.POGOProtos.Enums.QuestType quest_type = 1;
 	.POGOProtos.Data.Quests.DailyQuest daily_quest = 2;
 	MultiPartQuest multi_part = 3;
 	.POGOProtos.Data.Quests.CatchPokemonQuest catch_pokemon = 4;
+	.POGOProtos.Data.Quests.AddFriendQuest add_friend = 5;
+	.POGOProtos.Data.Quests.TradePokemonQuest trade_pokemon = 6;
 	string quest_id = 100;
 	int64 quest_seed = 101;
 	Context quest_context = 102;
