@@ -101,6 +101,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | Android       | iOS           | Extra                     |
 |--------------|---------------|---------------|---------------------------|
+| 2.30.0       | 0.111.2       | 1.81.2        |                           |
 | 2.29.1       | 0.109.2       | 1.79.2        |                           |
 | 2.29.0       | 0.109.1       | 1.79.1        |                           |
 | 2.28.0       | 0.107.1       | 1.77.1        | Updated protobuf to 3.6.0 |
