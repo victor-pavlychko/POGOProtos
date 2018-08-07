@@ -1793,6 +1793,7 @@ enum HoloPokemonMove {
 	V0297_MOVE_SMACK_DOWN_FAST = 297;
 	V0298_MOVE_BLAST_BURN = 298;
 	V0299_MOVE_HYDRO_CANNON = 299;
+	V0300_MOVE_LAST_RESORT = 300;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMovementType
@@ -1972,6 +1973,26 @@ enum PokemonCreateContext {
 	CREATE_CONTEXT_EVOLVE = 2;
 }
 
+// ref: Holoholo.Rpc.PokemonGoPlusIds
+enum PokemonGoPlusIds {
+	UNDEFINED_POKEMON_GO_PLUS_EVENT = 0;
+	CANNOT_CONNECT_TO_PGP = 1;
+	REGISTERING_PGP_FAILED = 2;
+	REGISTERING_RETRY = 3;
+	CONNECTION_SUCCESS = 4;
+	PGP_DISCONNECTED_BY_USER = 5;
+	PGP_DISCONNECTED_BY_TIMEOUT = 6;
+	PGP_DISCONNECTED_BY_ERROR = 7;
+	PGP_LOW_BATTERY = 8;
+	BLUETOOTH_SENT_ERROR = 9;
+	PGP_SEEN_BY_DEVICE = 10;
+	POKEMON_CAUGHT = 11;
+	POKEMON_NOT_CAUGHT = 12;
+	POKEMON_NOT_CAUGHT_DUE_ERROR = 13;
+	POKESTOP_SPUN = 14;
+	POKESTOP_NOT_SPUN_DUE_ERROR = 15;
+}
+
 // ref: Holoholo.Rpc.PokemonInventoryTelemetryIds
 enum PokemonInventoryTelemetryIds {
 	UNDEFINED_POKEMON_INVENTORY_EVENT = 0;
@@ -2021,6 +2042,8 @@ enum QuestType {
 	QUEST_COMPLETE_BATTLE = 21;
 	QUEST_ADD_FRIEND = 22;
 	QUEST_TRADE_POKEMON = 23;
+	QUEST_SEND_GIFT = 24;
+	QUEST_EVOLVE_INTO_POKEMON = 25;
 }
 
 // ref: Holoholo.Rpc.RaidLevel
@@ -3059,6 +3082,12 @@ message DailyBonusProto {
 	int64 next_defender_bonus_collect_timestamp_ms = 2;
 }
 
+// ref: Holoholo.Rpc.DailyCounterProto
+message DailyCounterProto {
+	int64 window = 1;
+	int32 count = 2;
+}
+
 // ref: Holoholo.Rpc.DailyQuestProto
 message DailyQuestProto {
 	int32 current_period_bucket = 1;
@@ -4070,7 +4099,6 @@ message GetPlayerOutProto {
 	bool banned = 3;
 	bool warn = 4;
 	bool was_created = 5;
-	bool has_valid_email = 6;
 }
 
 // ref: Holoholo.Rpc.GetPlayerProto
@@ -4577,6 +4605,7 @@ message HoloholoClientTelemetryOmniProto {
 		pokemon_inventory_telemetry = 28;
 		social_telemetry = 29;
 		check_encounter_info_telemetry = 30;
+		pokemon_go_plus_telemetry = 31;
 	}
 
 	BootTime boot_time = 1;
@@ -4609,6 +4638,7 @@ message HoloholoClientTelemetryOmniProto {
 	PokemonInventoryTelemetry pokemon_inventory_telemetry = 28;
 	SocialTelemetry social_telemetry = 29;
 	CheckEncounterTrayInfoTelemetry check_encounter_info_telemetry = 30;
+	PokemonGoPlusTelemetry pokemon_go_plus_telemetry = 31;
 	niantic.platform.telemetry.PlatformServerData server_data = 1001;
 }
 
@@ -5756,6 +5786,13 @@ message PokemonFortProto {
 	bool challenge_quest_completed = 30;
 }
 
+// ref: Holoholo.Rpc.PokemonGoPlusTelemetry
+message PokemonGoPlusTelemetry {
+	PokemonGoPlusIds pgp_event_ids = 1;
+	int32 count = 2;
+	int32 version = 3;
+}
+
 // ref: Holoholo.Rpc.PokemonInfo
 message PokemonInfo {
 	PokemonProto pokemon = 1;
@@ -5989,6 +6026,7 @@ message QuestConditionProto {
 		WITH_PLAYER_LEVEL = 17;
 		WITH_WIN_BATTLE_STATUS = 18;
 		WITH_NEW_FRIEND = 19;
+		WITH_DAYS_IN_A_ROW = 20;
 	}
 
 	ConditionType type = 1;
@@ -6097,6 +6135,7 @@ message QuestPreconditionProto {
 		quest_template_id = 2;
 		level = 3;
 		medal = 4;
+		quests = 5;
 	}
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Operator
@@ -6113,6 +6152,8 @@ message QuestPreconditionProto {
 		QUEST_PRECONDITION_QUEST = 1;
 		QUEST_PRECONDITION_LEVEL = 2;
 		QUEST_PRECONDITION_MEDAL = 3;
+		QUEST_PRECONDITION_IS_MINOR = 4;
+		QUEST_PRECONDITION_EXCLUSIVE_QUESTS = 5;
 	}
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Level
@@ -6128,10 +6169,16 @@ message QuestPreconditionProto {
 		int32 badge_rank = 3;
 	}
 
+	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Quests
+	message Quests {
+		repeated string quest_template_ids = 1 [packed=false];
+	}
+
 	QuestPreconditionType type = 1;
 	string quest_template_id = 2;
 	Level level = 3;
 	Medal medal = 4;
+	Quests quests = 5;
 }
 
 // ref: Holoholo.Rpc.QuestProto
@@ -6183,6 +6230,7 @@ message QuestProto {
 	int32 stamp_count_override = 114;
 	int64 s2_cell_id = 115;
 	int32 story_quest_template_version = 116;
+	DailyCounterProto daily_counter = 117;
 }
 
 // ref: Holoholo.Rpc.QuestRewardProto
