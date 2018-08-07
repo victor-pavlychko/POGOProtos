@@ -2,6 +2,7 @@ syntax = "proto3";
 package POGOProtos.Data.Quests;
 
 import "POGOProtos/Enums/QuestType.proto";
+import "POGOProtos/Data/Player/DailyCounter.proto";
 import "POGOProtos/Data/Quests/DailyQuest.proto";
 import "POGOProtos/Data/Quests/CatchPokemonQuest.proto";
 import "POGOProtos/Data/Quests/QuestReward.proto";
@@ -33,6 +34,7 @@ message Quest {
 	int32 stamp_count_override = 114;
 	int64 s2_cell_id = 115;
 	int32 story_quest_template_version = 116;
+	.POGOProtos.Data.Player.DailyCounter daily_counter = 117;
 
 	message MultiPartQuest {
 		repeated .POGOProtos.Data.Quests.Quest sub_quests = 1;

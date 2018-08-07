@@ -32,6 +32,7 @@ import "POGOProtos/Data/Telemetry/PokemonInventoryTelemetry.proto";
 import "POGOProtos/Data/Telemetry/SocialTelemetry.proto";
 import "POGOProtos/Data/Telemetry/CheckEncounterTrayInfoTelemetry.proto";
 import "POGOProtos/Networking/Platform/Telemetry/PlatformServerData.proto";
+import "POGOProtos/Data/Telemetry/PokemonGoPlusTelemetry.proto";
 
 message ClientTelemetryOmni {
 	.POGOProtos.Data.BootTime boot_time = 1;
@@ -64,5 +65,6 @@ message ClientTelemetryOmni {
 	.POGOProtos.Data.Telemetry.PokemonInventoryTelemetry pokemon_inventory_telemetry = 28;
 	.POGOProtos.Data.Telemetry.SocialTelemetry social_telemetry = 29;
 	.POGOProtos.Data.Telemetry.CheckEncounterTrayInfoTelemetry check_encounter_info_telemetry = 30;
+	.POGOProtos.Data.Telemetry.PokemonGoPlusTelemetry pokemon_go_plus_telemetry = 31;
 	.POGOProtos.Networking.Platform.Telemetry.PlatformServerData server_data = 1001;
 }
