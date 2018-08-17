@@ -3,12 +3,11 @@ package POGOProtos.Data.Quests;
 
 import "POGOProtos/Enums/EncounterType.proto";
 import "POGOProtos/Data/PokemonData.proto";
-import "POGOProtos/Enums/PokemonId.proto";
 
 message QuestPokemonEncounter {
 	string quest_id = 1;
 	.POGOProtos.Data.PokemonData pokemon = 2;
 	.POGOProtos.Enums.EncounterType encounter_type = 3;
 	bool is_hidden_ditto = 4;
-	.POGOProtos.Enums.PokemonId ditto = 5;
+	.POGOProtos.Data.PokemonData ditto = 5;
 }
