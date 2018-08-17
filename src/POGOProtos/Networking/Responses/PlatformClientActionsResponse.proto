@@ -1,7 +1,6 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
-import "POGOProtos/Enums/IdentityProvider.proto";
 import "POGOProtos/Data/Login/LoginDetail.proto";
 
 message RegisterPushNotificationResponse {
@@ -85,6 +84,7 @@ message ProxySocialActionResponse {
 message GetAvailableSubmissionsResponse {
 	int32 submissions_left = 1;
 	int32 min_player_level = 2;
+	bool has_valid_email = 3;
 }
 
 message PushNotificationRegistryResponse {
@@ -109,8 +109,15 @@ message AddLoginActionResponse {
 	}
 }
 
-message RemoveLoginAction {
-	.POGOProtos.Enums.IdentityProvider identity_provider = 1;
+message RemoveLoginActionResponse {
+	enum Status {
+		UNSET = 0;
+		LOGIN_NOT_REMOVABLE = 1;
+	}
+
+	bool success = 1;
+	repeated .POGOProtos.Data.Login.LoginDetail login_detail = 2;
+	Status status = 3;
 }
 
 message SubmitNewPoiResponse {
@@ -121,6 +128,7 @@ message SubmitNewPoiResponse {
 		INTERNAL_ERROR = 3;
 		TOO_MANY_RECENT_SUBMISSIONS = 4;
 		INVALID_INPUT = 5;
+		MINOR = 6;
 	}
 
 	Status status = 1;
@@ -146,4 +154,17 @@ message PingResponse {
 	string user_info = 1;
 	string server_info = 2;
 	string random_response_bytes = 3;
+}
+
+message ReplaceLoginActionResponse {
+	enum Status {
+		UNSET = 0;
+		AUTH_FAILURE = 1;
+		LOGIN_TAKEN = 2;
+		LOGIN_ALREADY_HAVE = 3;
+		LOGIN_NOT_REPLACEABLE = 4;
+	}
+	bool success = 1;
+	repeated POGOProtos.Data.Login.LoginDetail login_detail = 2;
+	Status status = 3;
 }

@@ -8,4 +8,6 @@ message QuestPokemonEncounter {
 	string quest_id = 1;
 	.POGOProtos.Enums.PokemonId pokemon = 2;
 	.POGOProtos.Enums.EncounterType encounter_type = 3;
+	bool is_hidden_ditto = 4;
+	.POGOProtos.Enums.PokemonId ditto = 5;
 }

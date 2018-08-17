@@ -2,7 +2,6 @@ syntax = "proto3";
 package POGOProtos.Networking.Requests.Messages;
 
 import "POGOProtos/Data/Player/PlayerReputation.proto";
-import "POGOProtos/Data/Login/LoginDetail.proto";
 import "POGOProtos/Enums/IdentityProvider.proto";
 
 message RegisterPushNotificationMessage {
@@ -60,9 +59,6 @@ message ProxySocialActionMessage {
 }
 
 message GetAvailableSubmissionsMessage {
-	string user_id = 1;
-	.POGOProtos.Data.Player.PlayerReputation player_reputation = 2;
-	string game_unique_id = 3;
 }
 
 message PushNotificationRegistryMessage {
@@ -76,22 +72,16 @@ message AddLoginActionMessage {
 }
 
 message RemoveLoginActionMessage {
-	bool success = 1;
-	repeated .POGOProtos.Data.Login.LoginDetail login_detail = 2;
+	.POGOProtos.Enums.IdentityProvider identity_provider = 1;
 }
 
 message SubmitNewPoiMessage {
 	string title = 1;
 	string long_description = 2;
-	string image_gs_file_path = 3;
 	int32 lat_e6 = 4;
 	int32 lng_e6 = 5;
-	string image_serving_url = 6;
-	string user_id = 7;
-	string player_language = 8;
-	string game_unique_id = 9;
-	string app_id = 10;
-	.POGOProtos.Data.Player.PlayerReputation player_reputation = 11;
+	string supporting_statement = 14;
+	bool has_supporting_image = 15;
 }
 
 message UploadPoiPhotoByUrlMessage {
@@ -103,4 +93,9 @@ message PingMessage {
 	int32 response_size_bytes = 1;
 	string random_request_bytes = 2;
 	bool use_cache_for_random_request_bytes = 3;
+}
+
+message ReplaceLoginActionProto {
+	.POGOProtos.Enums.IdentityProvider existing_identity_provider = 1;
+	AddLoginActionMessage new_login = 2;
 }
