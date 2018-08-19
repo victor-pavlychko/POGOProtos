@@ -164,6 +164,7 @@ message ReplaceLoginActionResponse {
 		LOGIN_ALREADY_HAVE = 3;
 		LOGIN_NOT_REPLACEABLE = 4;
 	}
+
 	bool success = 1;
 	repeated POGOProtos.Data.Login.LoginDetail login_detail = 2;
 	Status status = 3;
