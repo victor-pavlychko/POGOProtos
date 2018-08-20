@@ -35,6 +35,7 @@ message Quest {
 	int64 s2_cell_id = 115;
 	int32 story_quest_template_version = 116;
 	.POGOProtos.Data.Player.DailyCounter daily_counter = 117;
+	string reward_pokemon_icon_url = 118;
 
 	message MultiPartQuest {
 		repeated .POGOProtos.Data.Quests.Quest sub_quests = 1;

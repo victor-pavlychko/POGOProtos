@@ -5,8 +5,15 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
 
 If you want to know which messages are implemented right now, click [here](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto).
 
-# Usage
+#### Versioning
 
+We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
+
+| Version      | Android       | iOS           | Extra                     |
+|--------------|---------------|---------------|---------------------------|
+| 2.31.0       | 0.115.2       | 1.85.4        |                           |
+
+# Usage
 
 If you want to figure out the current version in an automated system, use this file.
 
@@ -94,53 +101,6 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 | Additional resources  | Source                                                         |
 |-----------------------|----------------------------------------------------------------|
 | Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master |
-
-#### Versioning
-
-We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
-
-| Version      | Android       | iOS           | Extra                     |
-|--------------|---------------|---------------|---------------------------|
-| 2.30.x       | 0.111.4       | 1.81.4        |                           |
-| 2.29.1       | 0.109.2       | 1.79.2        |                           |
-| 2.29.0       | 0.109.1       | 1.79.1        |                           |
-| 2.28.0       | 0.107.1       | 1.77.1        | Updated protobuf to 3.6.0 |
-| 2.27.0       | 0.105.0       | 1.75.0        |                           |
-| 2.26.0       | 0.101.1       | 1.71.1        |                           |
-| 2.25.0       | 0.99.2        | 1.69.2        |                           |
-| 2.24.0       | 0.97.2        | 1.67.2        |                           |
-| 2.23.1       | 0.95.3        | 1.65.3        | Updated protobuf to 3.5.1 |
-| 2.23.0       | 0.95.3        | 1.65.3        |                           |
-| 2.22.0       | 0.91.1        | 1.59.1        |                           |
-| 2.21.0       | 0.87.5        | 1.57.5        |                           |
-| 2.20.0       | 0.85.1        | 1.55.1        |                           |
-| 2.19.2       | 0.83.2        | 1.53.2        | Updated protobuf to 3.5.0 |
-| 2.19.1       | 0.83.2        | 1.53.2        |                           |
-| 2.18.2       | 0.79.4        | 1.49.4        |                           |
-| 2.18.1       | 0.79.3        | 1.49.3        |                           |
-| 2.18.0       | 0.79.2        | 1.49.2        |                           |
-| 2.17.0       | 0.77.1        | 1.47.1        |                           |
-| 2.16.0       | 0.75.0        | 1.45.0        |                           |
-| 2.15.0       | 0.73.1        | 1.43.1        | Updated protobuf to 3.4.0 |
-| 2.14.0       | 0.71.0        | 1.41.0        |                           |
-| 2.13.0       | 0.69.1        | 1.39.1        |                           |
-| 2.12.0       | 0.69.0        | 1.39.0        |                           |
-| 2.11.0       | 0.67.2        | 1.37.2        |                           |
-| 2.11.0-beta  | 0.67.1        | 1.37.1        |                           |
-| 2.10.x       | 0.63.1        | 1.33.1        |                           |
-| 2.9.2        | 0.61.0        | 1.31.0        | Updated protobuf to 3.3.0 |
-| 2.9.1        | 0.61.0        | 1.31.0        | Updated protobuf to 3.2.0 |
-| 2.9.0        | 0.61.0        | 1.31.0        |                           |
-| 2.8.0        | 0.59.1        | 1.29.1        |                           |
-| 2.7.0        | 0.57.2        | 1.27.2        |                           |
-| 2.6.x        | 0.55.0        | 1.25.0        |                           |
-| 2.5.x        | 0.53.1        | 1.23.1        |                           |
-| 2.4.x        | 0.51.0        | 1.21.0        |                           |
-| 2.3.0        | 0.49.1        | 1.19.1        |                           |
-| 2.2.0        | 0.47.1        | 1.17.0        |                           |
-| 2.1.0        | 0.45.0        | 1.15.0        |                           |
-| 2.1.0-beta   | 0.45.0        | 1.15.0        |                           |
-| 2.0.x        | 0.43.4        | 1.13.4        |                           |
 
 ### CREDITS
 

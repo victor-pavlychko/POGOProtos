@@ -8,3 +8,8 @@ message SocialClientSettings {
 	int32 max_friend_nickname_length = 4;
 	bool enable_add_friend_via_qr_code = 5;
 }
+
+message SocialGiftCountTelemetry {
+	int32 unopened_gift_count = 1;
+	int32 unsent_gift_count = 2;
+}

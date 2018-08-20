@@ -1,8 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Enums;
-
-enum ItemUseTelemetryIds {
-	UNDEFINED_ITEM_EVENT = 0;
-	USE_ITEM_TELEMETRY = 1;
-	RECYCLE_ITEM = 2;
-}
