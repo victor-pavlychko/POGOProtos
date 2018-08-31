@@ -90,8 +90,6 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 | NodeJS                | https://github.com/pogosandbox/pogobuf                         |
 | NodeJS (pure JS)      | https://github.com/pogosandbox/node-pogo-protos                |
 | .NET (nuget pack)     | https://www.nuget.org/packages/POGOProtos.Core                 |
-| .NET (nuget source)   | https://github.com/Furtif/POGOProtos.Core                      |
-| .NET (csproj source)  | https://github.com/TheUnnamedOrganisation/POGOProtos           |
 | PHP                   | https://github.com/jaspervdm/pogoprotos-php                    |
 | Go                    | https://github.com/pkmngo-odi/pogo-protos                      |
 | Haskell               | https://github.com/relrod/pokemon-go-protobuf-types            |
