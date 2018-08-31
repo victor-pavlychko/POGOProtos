@@ -7,8 +7,3 @@ message PokemonUpgradeSettings {
 	repeated int32 candy_cost = 3;
 	repeated int32 stardust_cost = 4;
 }
-
-message UpsightLoggingSettings {
-	bool use_verbose_logging = 1;
-	int32 logging_percentage = 2;
-}

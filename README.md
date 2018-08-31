@@ -11,7 +11,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | Android       | iOS           | Extra                     |
 |--------------|---------------|---------------|---------------------------|
-| 2.31.0       | 0.115.2       | 1.85.4        |                           |
+| 2.32.0       | 0.117.2       | 1.xx.x        |  Protocol Buffers v3.6.1  |
 
 # Usage
 
@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/Furtif/POGOProtos/master/.current-version
 
 ## Preparation
 
-Current recommended protoc version: "Protocol Buffers v3.6.0".
+Current recommended protoc version: "Protocol Buffers v3.6.1".
 
 You can find download links [here](https://github.com/google/protobuf/releases).
 
