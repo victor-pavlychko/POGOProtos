@@ -821,6 +821,11 @@ enum HoloActivityType {
 	ACTIVITY_FRIENDSHIP_LEVEL_UP_4 = 39;
 	ACTIVITY_SEND_GIFT = 40;
 	ACTIVITY_SHARE_EX_RAID_PASS = 41;
+	ACTIVITY_RAID_LEVEL_1_ADDITIONAL_XP = 42;
+	ACTIVITY_RAID_LEVEL_2_ADDITIONAL_XP = 43;
+	ACTIVITY_RAID_LEVEL_3_ADDITIONAL_XP = 44;
+	ACTIVITY_RAID_LEVEL_4_ADDITIONAL_XP = 45;
+	ACTIVITY_RAID_LEVEL_5_ADDITIONAL_XP = 46;
 }
 
 // ref: Holoholo.Rpc.HoloBadgeType
@@ -1995,6 +2000,7 @@ enum Method {
 	DOWNLOAD_REMOTE_CONFIG_VERSION = 7;
 	REGISTER_BACKGROUND_DEVICE = 8;
 	GET_PLAYER_DAY = 9;
+	ACKNOWLEDGE_PUNISHMENT = 10;
 	FORT_SEARCH = 101;
 	ENCOUNTER = 102;
 	CATCH_POKEMON = 103;
@@ -2088,9 +2094,6 @@ enum Method {
 	SET_FRIEND_NICKNAME = 957;
 	DELETE_GIFT_FROM_INVENTORY = 958;
 	SAVE_SOCIAL_PLAYER_SETTINGS = 959;
-	SHARE_EX_RAID_PASS = 960;
-	ACCEPT_SHARED_EX_RAID_PASS = 961;
-	DECLINE_SHARED_EX_RAID_PASS = 962;
 	OPEN_TRADING = 970;
 	UPDATE_TRADING = 971;
 	CONFIRM_TRADING = 972;
@@ -2737,6 +2740,9 @@ message BootTime {
 		REGISTER_PUSH_NOTIFICATION = 10;
 		INITIALIZE_UPSIGHT = 11;
 		INITIALIZE_CRITTERCISM = 12;
+		LOGIN_VERSION_CHECK = 13;
+		LOGIN_GET_PLAYER = 14;
+		LOGIN_AUTHENTICATION = 15;
 	}
 
 	niantic.platform.telemetry.PlatformMetricData duration = 1;
@@ -4449,6 +4455,7 @@ message GlobalSettingsProto {
 	SocialClientSettingsProto social_settings = 23;
 	TradingGlobalSettingsProto trading_global_settings = 24;
 	repeated HoloPokemonId additional_allowed_pokemon_ids = 25 [packed=false];
+	UpsightLoggingSettingsProto upsight_logging_settings = 26;
 }
 
 // ref: Holoholo.Rpc.GpsSettingsProto
@@ -7256,6 +7263,7 @@ message TradingProto {
 		int32 individual_defense = 17;
 		int32 individual_stamina = 18;
 		string nickname = 19;
+		bool favorite = 20;
 	}
 
 	TradingState state = 1;
@@ -7338,6 +7346,7 @@ message UpgradePokemonProto {
 message UpsightLoggingSettingsProto {
 	bool use_verbose_logging = 1;
 	int32 logging_percentage = 2;
+	bool disable_logging = 3;
 }
 
 // ref: Holoholo.Rpc.UseIncenseActionOutProto
