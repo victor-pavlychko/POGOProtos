@@ -18,6 +18,9 @@ message BootTime {
 		REGISTER_PUSH_NOTIFICATION = 10;
 		INITIALIZE_UPSIGHT = 11;
 		INITIALIZE_CRITTERCISM = 12;
+		LOGIN_VERSION_CHECK = 13;
+		LOGIN_GET_PLAYER = 14;
+		LOGIN_AUTHENTICATION = 15;
 	}
 
 	.POGOProtos.Networking.Platform.Telemetry.PlatformMetricData duration = 1;
