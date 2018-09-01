@@ -11,11 +11,6 @@ message GetFriendDetailsResponse {
 		EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
 	}
 
-	message Callee {
-		repeated int32 callee_id = 1;
-		string player_id = 2;
-	}
-
 	message Debug {
 		message Callee {
 			repeated int32 callee_id = 1;
@@ -27,7 +22,7 @@ message GetFriendDetailsResponse {
 		int32 fetched_from_player_mapper = 3;
 		int32 fetched_from_status_cache = 4;
 		int32 failed_to_fetch = 5;
-		repeated GetFriendDetailsResponse.Callee callee_list = 6;
+		repeated Callee callee_list = 6;
 	}
 
 	Result result = 1;
