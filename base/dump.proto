@@ -1,19 +1,4 @@
 syntax = "proto3";
-//----- Begin token -----
-
-// ref: Niantic.Platform.Auth.Token.FbTokenProto
-message FbTokenProto {
-	string token = 1;
-}
-
-// ref: Niantic.Platform.Auth.Token.SuperAwesomeTokenProto
-message SuperAwesomeTokenProto {
-	string token = 1;
-}
-
-
-//----- End token -----
-//------------------------------
 //----- Begin protos -----
 
 // ref: Niantic.Platform.Protos.NotificationState
@@ -171,6 +156,8 @@ message GetAvailableSubmissionsOutProto {
 	int32 submissions_left = 1;
 	int32 min_player_level = 2;
 	bool has_valid_email = 3;
+	bool is_feature_enabled = 4;
+	int32 time_window_for_submissions_limit_ms = 5;
 }
 
 // ref: Niantic.Platform.Protos.GetAvailableSubmissionsProto
@@ -623,10 +610,10 @@ message SubmitNewPoiOutProto {
 		TOO_MANY_RECENT_SUBMISSIONS = 4;
 		INVALID_INPUT = 5;
 		MINOR = 6;
+		NOT_AVAILABLE = 7;
 	}
 
 	Status status = 1;
-	repeated string message = 2 [packed=false];
 }
 
 // ref: Niantic.Platform.Protos.SubmitNewPoiProto
@@ -636,7 +623,6 @@ message SubmitNewPoiProto {
 	int32 lat_e6 = 4;
 	int32 lng_e6 = 5;
 	string supporting_statement = 14;
-	bool has_supporting_image = 15;
 }
 
 // ref: Niantic.Platform.Protos.TemplateVariable
@@ -2094,6 +2080,9 @@ enum Method {
 	SET_FRIEND_NICKNAME = 957;
 	DELETE_GIFT_FROM_INVENTORY = 958;
 	SAVE_SOCIAL_PLAYER_SETTINGS = 959;
+	SHARE_EX_RAID_PASS = 960;
+	CHECK_SHARE_EX_RAID_PASS = 961;
+	DECLINE_SHARED_EX_RAID_PASS = 962;
 	OPEN_TRADING = 970;
 	UPDATE_TRADING = 971;
 	CONFIRM_TRADING = 972;
@@ -2234,6 +2223,21 @@ enum RaidTelemetryIds {
 	LOBBY_CLICK_LOBBY_PUBLIC = 13;
 }
 
+// ref: Holoholo.Rpc.ShareExRaidPassResult
+enum ShareExRaidPassResult {
+	SHARE_EX_RAID_PASS_UNSET = 0;
+	SHARE_EX_RAID_PASS_SUCCESS = 1;
+	ERROR_FRIEND_ALREADY_INVITED_TO_SAME_RAID = 2;
+	ERROR_EX_RAID_PASS_ALREADY_SHARED = 3;
+	ERROR_FRIEND_ALREADY_HAS_SHARED_EX_PASS_IN_INVENTORY = 4;
+	ERROR_TOO_LOW_FRIENDSHIP_LEVEL = 5;
+	ERROR_FRIEND_NOT_FOUND = 6;
+	ERROR_EX_RAID_ALREADY_STARTED = 7;
+	ERROR_EX_RAID_INVALID = 8;
+	ERROR_EX_RAID_PASS_NOT_FOUND = 9;
+	ERROR_UNKNOWN = 10;
+}
+
 // ref: Holoholo.Rpc.ShoppingPageTelemetryIds
 enum ShoppingPageTelemetryIds {
 	UNDEFINED_SHOPPING_PAGE_EVENT = 0;
@@ -2302,6 +2306,8 @@ message ActionLogEntry {
 		open_gift = 12;
 		send_gift = 13;
 		trading = 14;
+		share_ex_raid_pass = 15;
+		decline_ex_raid_pass = 16;
 	}
 
 	int64 timestamp_ms = 1;
@@ -2317,6 +2323,8 @@ message ActionLogEntry {
 	OpenGiftLogEntry open_gift = 12;
 	SendGiftLogEntry send_gift = 13;
 	TradingLogEntry trading = 14;
+	ShareExRaidPassLogEntry share_ex_raid_pass = 15;
+	DeclineExRaidPassLogEntry decline_ex_raid_pass = 16;
 }
 
 // ref: Holoholo.Rpc.AddFortModifierOutProto
@@ -2956,6 +2964,18 @@ message CheckSendGiftProto {
 	string player_id = 1;
 }
 
+// ref: Holoholo.Rpc.CheckShareExRaidPassOutProto
+message CheckShareExRaidPassOutProto {
+	ShareExRaidPassResult result = 1;
+}
+
+// ref: Holoholo.Rpc.CheckShareExRaidPassProto
+message CheckShareExRaidPassProto {
+	string friend_id = 1;
+	string fort_id = 2;
+	int64 raid_seed = 3;
+}
+
 // ref: Holoholo.Rpc.ClaimCodenameRequestProto
 message ClaimCodenameRequestProto {
 	string codename = 1;
@@ -3269,6 +3289,37 @@ message DailyQuestSettings {
 message DamagePropertyProto {
 	bool super_effective_charge_move = 1;
 	bool weather_boosted = 2;
+}
+
+// ref: Holoholo.Rpc.DeclineExRaidPassLogEntry
+message DeclineExRaidPassLogEntry {
+	// ref: Holoholo.Rpc.DeclineExRaidPassLogEntry/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+
+	Result result = 1;
+	string friend_codename = 2;
+}
+
+// ref: Holoholo.Rpc.DeclineExRaidPassOutProto
+message DeclineExRaidPassOutProto {
+	// ref: Holoholo.Rpc.DeclineExRaidPassOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_EX_RAID_PASS_NOT_FOUND = 2;
+		ERROR_UNKNOWN = 3;
+	}
+
+	Result result = 1;
+}
+
+// ref: Holoholo.Rpc.DeclineExRaidPassProto
+message DeclineExRaidPassProto {
+	string fort_id = 1;
+	int64 raid_seed = 2;
 }
 
 // ref: Holoholo.Rpc.DeleteGiftFromInventoryOutProto
@@ -3609,12 +3660,19 @@ message ExclusiveTicketInfoProto {
 	int64 spawn_time_ms = 10;
 	bool is_cancelled = 11;
 	PokemonProto raid_pokemon = 12;
+	SharedExclusiveTicketTrainerInfo inviter = 13;
+	SharedExclusiveTicketTrainerInfo invitee = 14;
 }
 
 // ref: Holoholo.Rpc.ExperienceBoostAttributesProto
 message ExperienceBoostAttributesProto {
 	float xp_multiplier = 1;
 	int32 boost_duration_ms = 2;
+}
+
+// ref: Holoholo.Rpc.ExRaidSettingsProto
+message ExRaidSettingsProto {
+	FriendshipLevelMilestone minimum_ex_raid_share_level = 1;
 }
 
 // ref: Holoholo.Rpc.FavoritePokemonTelemetry
@@ -3990,6 +4048,7 @@ message GameMasterClientTemplateProto {
 	OnboardingSettingsProto onboarding_settings = 30;
 	FriendshipLevelMilestoneSettingsProto friendship_milestone_settings = 31;
 	LuckyPokemonSettingsProto lucky_pokemon_settings = 32;
+	ExRaidSettingsProto ex_raid_settings = 36;
 }
 
 // ref: Holoholo.Rpc.GenericClickTelemetry
@@ -4421,13 +4480,6 @@ message GiftBoxProto {
 	int64 creation_timestamp = 7;
 	int64 sent_timestamp = 8;
 	int64 sent_bucket = 9;
-}
-
-// ref: Holoholo.Rpc.GiftReceivedNotificationProto
-message GiftReceivedNotificationProto {
-	uint64 giftbox_id = 1;
-	string sender_id = 2;
-	string sender_codename = 3;
 }
 
 // ref: Holoholo.Rpc.GlobalSettingsProto
@@ -5976,6 +6028,7 @@ message PokemonFortProto {
 	string banner_url = 27;
 	string partner_id = 28;
 	bool challenge_quest_completed = 30;
+	bool is_ex_raid_eligible = 31;
 }
 
 // ref: Holoholo.Rpc.PokemonGoPlusTelemetry
@@ -6109,6 +6162,8 @@ message PokemonSettingsProto {
 	float buddy_scale = 33;
 	repeated float buddy_portrait_offset = 34 [packed=false];
 	PokemonDisplayProto.Form parent_form = 35;
+	bool is_transferable = 37;
+	bool is_deployable = 38;
 }
 
 // ref: Holoholo.Rpc.PokemonStatsAttributesProto
@@ -6975,6 +7030,38 @@ message SfidaGlobalSettingsProto {
 	float low_battery_threshold = 1;
 }
 
+// ref: Holoholo.Rpc.SharedExclusiveTicketTrainerInfo
+message SharedExclusiveTicketTrainerInfo {
+	string codename = 1;
+	string player_id = 2;
+}
+
+// ref: Holoholo.Rpc.ShareExRaidPassLogEntry
+message ShareExRaidPassLogEntry {
+	// ref: Holoholo.Rpc.ShareExRaidPassLogEntry/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+
+	Result result = 1;
+	string friend_codename = 2;
+}
+
+// ref: Holoholo.Rpc.ShareExRaidPassOutProto
+message ShareExRaidPassOutProto {
+	ShareExRaidPassResult result = 1;
+	FriendshipLevelDataProto updated_friendship_data = 2;
+	PlayerPublicProfileProto friend_profile = 3;
+}
+
+// ref: Holoholo.Rpc.ShareExRaidPassProto
+message ShareExRaidPassProto {
+	string friend_id = 1;
+	string fort_id = 2;
+	int64 raid_seed = 3;
+}
+
 // ref: Holoholo.Rpc.ShoppingPageTelemetry
 message ShoppingPageTelemetry {
 	ShoppingPageTelemetryIds shopping_page_click_id = 1;
@@ -6987,6 +7074,7 @@ message SocialClientSettingsProto {
 	int32 player_level_gate = 3;
 	int32 max_friend_nickname_length = 4;
 	bool enable_add_friend_via_qr_code = 5;
+	bool enable_share_ex_pass = 6;
 }
 
 // ref: Holoholo.Rpc.SocialGiftCountTelemetry
@@ -7625,6 +7713,7 @@ message WeatherDetailClickTelemetry {
 message WebTelemetry {
 	WebTelemetryIds web_click_ids = 1;
 	string url = 2;
+	string fort_id = 3;
 }
 
 // ref: Holoholo.Rpc.WildPokemonProto
@@ -7897,12 +7986,16 @@ message PlatformServerData {
 	string telemetry_id = 2;
 	string session_id = 3;
 	repeated int32 experiment_ids = 4 [packed=false];
+	string event_request_id = 5;
+	int64 server_timestamp_ms = 6;
 }
 
 // ref: Niantic.Platform.Telemetry.TelemetryCommon
 message TelemetryCommon {
 	int64 timestamp = 1;
 	string correlation_vector = 2;
+	string event_id = 3;
+	int64 client_timestamp_ms = 4;
 }
 
 
@@ -8101,6 +8194,7 @@ message ProxyResponseProto {
 		BAD_REQUEST = 7;
 		ACCESS_DENIED = 8;
 		TIMEOUT_ERROR = 9;
+		RATE_LIMITED = 10;
 	}
 
 	Status status = 1;
@@ -8172,6 +8266,21 @@ message WeatherAlertProto {
 
 
 //----- End rpc -----
+//------------------------------
+//----- Begin token -----
+
+// ref: Niantic.Platform.Auth.Token.FbTokenProto
+message FbTokenProto {
+	string token = 1;
+}
+
+// ref: Niantic.Platform.Auth.Token.SuperAwesomeTokenProto
+message SuperAwesomeTokenProto {
+	string token = 1;
+}
+
+
+//----- End token -----
 //------------------------------
 //----- Begin google -----
 
