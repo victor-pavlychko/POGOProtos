@@ -6,4 +6,5 @@ import "POGOProtos/Enums/TelemetryIds.proto";
 message WebTelemetry {
 	.POGOProtos.Enums.WebTelemetryIds web_click_ids = 1;
 	string url = 2;
+	string fort_id = 3;
 }
