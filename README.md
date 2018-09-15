@@ -11,7 +11,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | Android       | iOS           | Extra                     |
 |--------------|---------------|---------------|---------------------------|
-| 2.33.0       | 0.119.1       | 1.xx.x        |  Protocol Buffers v3.6.1  |
+| 2.33.0       | 0.119.2       | 1.xx.x        |  Protocol Buffers v3.6.1  |
 
 # Usage
 
