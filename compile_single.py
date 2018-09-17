@@ -44,13 +44,15 @@ if default_out_path and os.path.exists(out_path):
     shutil.rmtree(out_path)
 
 # Create necessary directory
-os.makedirs(tmp_path)
+if not os.path.exists(tmp_path):
+    os.makedirs(tmp_path)
 
 if not os.path.exists(out_path):
     os.makedirs(out_path)
 
 created_packages = []
 package_mappings = []
+commands = []
 
 # Go specific
 go_package_mappings = []
@@ -163,9 +165,6 @@ def walk_directory(path):
                     created_packages.append(package)
 
             walk_directory(dir_name_path)
-
-
-commands = []
 
 
 def compile_go_package(path):

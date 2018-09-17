@@ -78,6 +78,7 @@ message ProxySocialActionResponse {
 		BAD_REQUEST = 7;
 		ACCESS_DENIED = 8;
 		TIMEOUT_ERROR = 9;
+		RATE_LIMITED = 10;
 	}
 }
 
@@ -85,6 +86,8 @@ message GetAvailableSubmissionsResponse {
 	int32 submissions_left = 1;
 	int32 min_player_level = 2;
 	bool has_valid_email = 3;
+	bool is_feature_enabled = 4;
+	int32 time_window_for_submissions_limit_ms = 5;
 }
 
 message PushNotificationRegistryResponse {
@@ -129,10 +132,10 @@ message SubmitNewPoiResponse {
 		TOO_MANY_RECENT_SUBMISSIONS = 4;
 		INVALID_INPUT = 5;
 		MINOR = 6;
+		NOT_AVAILABLE = 7;
 	}
 
 	Status status = 1;
-	repeated string message = 2;
 }
 
 message UploadPoiPhotoByUrlResponse {

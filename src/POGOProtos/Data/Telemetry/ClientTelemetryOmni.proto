@@ -1,8 +1,8 @@
 syntax = "proto3";
-package POGOProtos.Data;
+package POGOProtos.Data.Telemetry;
 
-import "POGOProtos/Data/BootTime.proto";
-import "POGOProtos/Data/FrameRate.proto";
+import "POGOProtos/Data/Telemetry/BootTime.proto";
+import "POGOProtos/Data/Telemetry/FrameRate.proto";
 import "POGOProtos/Data/Telemetry/GenericClickTelemetry.proto";
 import "POGOProtos/Data/Telemetry/MapEventsTelemetry.proto";
 import "POGOProtos/Data/Telemetry/SpinPokestopTelemetry.proto";
@@ -37,8 +37,8 @@ import "POGOProtos/Data/Telemetry/RpcResponseTelemetry.proto";
 import "POGOProtos/Settings/SocialClientSettings.proto";
 
 message ClientTelemetryOmni {
-	.POGOProtos.Data.BootTime boot_time = 1;
-	.POGOProtos.Data.FrameRate frame_rate = 2;
+	.POGOProtos.Data.Telemetry.BootTime boot_time = 1;
+	.POGOProtos.Data.Telemetry.FrameRate frame_rate = 2;
 	.POGOProtos.Data.Telemetry.GenericClickTelemetry generic_click_telemetry = 3;
 	.POGOProtos.Data.Telemetry.MapEventsTelemetry map_events_telemetry = 4;
 	.POGOProtos.Data.Telemetry.SpinPokestopTelemetry spin_pokestop_telemetry = 5;
