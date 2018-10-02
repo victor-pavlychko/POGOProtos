@@ -95,7 +95,10 @@ def write_proto(path, name, proto):
 
         if args.language == 'objc':
             options = True
-            file.write('option objc_class_prefix = "GPB";\n')
+            # Original prefix
+            #file.write('option objc_class_prefix = "GPB";\n')
+            # Edited prefix by elliotrobot commit: https://github.com/Furtif/POGOProtos/commit/a0fae2886d32f19c5b93352cf29f65037ef90f6d
+            file.write('option objc_class_prefix = "";\n')
 
         if args.language == 'go':
             options = True
