@@ -8,15 +8,16 @@ POGOProtos [![Build Status](https://travis-ci.org/Furtif/POGOProtos.svg?branch=m
 
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
-If you want to know which messages are implemented right now, click [here](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto).
-
+ - If you want to know which messages are implemented ``Global``, click [here](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto).
+ - If you want to know which messages are implemented ``Social``, click [here](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Enums/SocialAction.proto).
+ 
 #### Versioning
 
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
-| Version      | Android       | iOS           | Extra                     |
-|--------------|---------------|---------------|---------------------------|
-| 2.33.0       | 0.119.2       | 1.xx.x        |  Protocol Buffers v3.6.1  |
+| Version      | Android       | Notes           | Extra                     |
+|--------------|---------------|-----------------|---------------------------|
+| 2.33.0       | 0.119.4       | Compatible      |  Protocol Buffers v3.6.1  |
 
 # Usage
 
@@ -90,20 +91,20 @@ python compile.py ruby:
 
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
 
-| Language              | Source                                                         |
-|-----------------------|----------------------------------------------------------------|
-| NodeJS                | https://github.com/pogosandbox/pogobuf                         |
-| NodeJS (pure JS)      | https://github.com/pogosandbox/node-pogo-protos                |
-| .NET (nuget pack)     | https://www.nuget.org/packages/POGOProtos.Core                 |
-| PHP                   | https://github.com/jaspervdm/pogoprotos-php                    |
-| Go                    | https://github.com/pkmngo-odi/pogo-protos                      |
-| Haskell               | https://github.com/relrod/pokemon-go-protobuf-types            |
-| Rust                  | https://github.com/rockneurotiko/pokemon-go-protobuf-rs        |
-| Java                  | https://github.com/pokemongo-dev-contrib/pogoprotos-java       |
+| Language              | Source                                                         | Status |
+|-----------------------|----------------------------------------------------------------|--------|
+| NodeJS                | https://github.com/pogosandbox/pogobuf                         |  OK    |
+| NodeJS (pure JS)      | https://github.com/pogosandbox/node-pogo-protos                |  OK    |
+| .NET (nuget pack)     | https://www.nuget.org/packages/POGOProtos.Core                 |  OK    |
+| PHP                   | https://github.com/jaspervdm/pogoprotos-php                    |/!\OUTED|
+| Go                    | https://github.com/pkmngo-odi/pogo-protos                      |/!\OUTED|
+| Haskell               | https://github.com/relrod/pokemon-go-protobuf-types            |/!\OUTED|
+| Rust                  | https://github.com/rockneurotiko/pokemon-go-protobuf-rs        |/!\OUTED|
+| Java                  | https://github.com/pokemongo-dev-contrib/pogoprotos-java       |  OK    |
 
-| Additional resources  | Source                                                         |
-|-----------------------|----------------------------------------------------------------|
-| Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master |
+| Additional resources  | Source                                                         | Status |
+|-----------------------|----------------------------------------------------------------|--------|
+| Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master |  OK    |
 
 ### CREDITS
 
