@@ -12,6 +12,7 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``Global``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
  - [``Social``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Enums/SocialAction.proto)
  - [``Quests``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Enums/QuestType.proto) 
+ ### Others
  - [``Client Telemetry Omni``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Data/Telemetry/ClientTelemetryOmni.proto)
  - [``Platform``](https://github.com/Furtif/POGOProtos/tree/master/src/POGOProtos/Networking/Platform)
    
