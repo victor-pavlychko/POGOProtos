@@ -16,7 +16,7 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``Client Telemetry Omni``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Data/Telemetry/ClientTelemetryOmni.proto)
  - [``Platform``](https://github.com/Furtif/POGOProtos/tree/master/src/POGOProtos/Networking/Platform)
    
-#### Versioning
+### Versioning
 
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
@@ -24,7 +24,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 |--------------|---------------|-----------------|---------------------------|
 | 2.33.0       | 0.119.4       | Compatible      |  Protocol Buffers v3.6.1  |
 
-# Usage
+### Usage
 
 If you want to figure out the current version in an automated system, use this file.
 
@@ -32,22 +32,22 @@ https://raw.githubusercontent.com/Furtif/POGOProtos/master/.current-version
 
 *Note: This file will contain pre-release versions too.*
 
-## Preparation
+### Preparation
 
 Current recommended protoc version: "Protocol Buffers v3.6.1".
 
 You can find download links [here](https://github.com/google/protobuf/releases).
 
-### Windows
+#### Windows
 Be sure to add `protoc` to your environmental path.
 
-### *nix
+#### *nix
 Ensure that you have the newest version of `protoc` installed.
 
-### OS X
+#### OS X
 Use `homebrew` to install `protobuf ` with `brew install --devel protobuf`.
 
-## Compilation
+### Compilation
 The compilation creates output specifically for the target language, i.e. respecting naming conventions, etc.  
 This is an example of how the generated code will be organized:
 
@@ -87,12 +87,12 @@ python compile.py ruby:
  - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/player_data.rb
 ```
 
-## Extra information
+### Extra information
 
  - Run ```python compile.py --help``` for help.
  - You can find all available languages here [https://github.com/google/protobuf](https://github.com/google/protobuf).
 
-#### Libraries
+### Libraries
 
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
 
