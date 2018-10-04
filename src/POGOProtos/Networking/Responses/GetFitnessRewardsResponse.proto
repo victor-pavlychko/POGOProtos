@@ -10,6 +10,7 @@ message GetFitnessRewardsResponse {
 		REWARDS_ALREADY_COLLECTED = 2;
 		ERROR_UNKNOWN = 3;
 	}
+
 	Result result = 1;
 	.POGOProtos.Inventory.Loot rewards = 2;
 }
