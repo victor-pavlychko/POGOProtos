@@ -1,6 +1,15 @@
 syntax = "proto3";
 package POGOProtos.Enums;
 
+enum AssetTelemetryIds {
+	UNDEFINED_ASSET_EVENT = 0;
+	DOWNLOAD_START = 1;
+	DOWNLOAD_FINISHED = 2;
+	DOWNLOAD_FAILED = 3;
+	ASSET_RETRIEVED_FROM_CACHE = 4;
+	CACHE_THRASH = 5;
+}
+
 enum ClientTelemetryIds {
 	UNDEFINED = 0;
 	BOOT_TIME = 1;
