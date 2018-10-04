@@ -664,6 +664,16 @@ message UploadPoiPhotoByUrlProto {
 //------------------------------
 //----- Begin rpc -----
 
+// ref: Holoholo.Rpc.AssetTelemetryIds
+enum AssetTelemetryIds {
+	UNDEFINED_ASSET_EVENT = 0;
+	DOWNLOAD_START = 1;
+	DOWNLOAD_FINISHED = 2;
+	DOWNLOAD_FAILED = 3;
+	ASSET_RETRIEVED_FROM_CACHE = 4;
+	CACHE_THRASH = 5;
+}
+
 // ref: Holoholo.Rpc.AvatarCustomizationTelemetryIds
 enum AvatarCustomizationTelemetryIds {
 	UNDEFINED_AVATAR_CUSTOMIZATION = 0;
@@ -1829,6 +1839,7 @@ enum HoloPokemonMove {
 	V0298_MOVE_BLAST_BURN = 298;
 	V0299_MOVE_HYDRO_CANNON = 299;
 	V0300_MOVE_LAST_RESORT = 300;
+	V0301_MOVE_METEOR_MASH = 301;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMovementType
@@ -2088,6 +2099,9 @@ enum Method {
 	CONFIRM_TRADING = 972;
 	CANCEL_TRADING = 973;
 	GET_TRADING = 974;
+	GET_FITNESS_REWARDS = 980;
+	SEND_PROBE = 1020;
+	PROBE_DATA = 1021;
 }
 
 // ref: Holoholo.Rpc.NewsPageTelemetryIds
@@ -2290,6 +2304,24 @@ enum WebTelemetryIds {
 	POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK = 1;
 }
 
+// ref: Holoholo.Rpc.AcknowledgePunishmentOutProto
+message AcknowledgePunishmentOutProto {
+	// ref: Holoholo.Rpc.AcknowledgePunishmentOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
+}
+
+// ref: Holoholo.Rpc.AcknowledgePunishmentProto
+message AcknowledgePunishmentProto {
+	bool is_warn = 1;
+	bool is_suspended = 2;
+}
+
 // ref: Holoholo.Rpc.ActionLogEntry
 message ActionLogEntry {
 	// ref: Holoholo.Rpc.ActionLogEntry/ActionOneofCase
@@ -2308,6 +2340,7 @@ message ActionLogEntry {
 		trading = 14;
 		share_ex_raid_pass = 15;
 		decline_ex_raid_pass = 16;
+		fitness_rewards = 17;
 	}
 
 	int64 timestamp_ms = 1;
@@ -2325,6 +2358,7 @@ message ActionLogEntry {
 	TradingLogEntry trading = 14;
 	ShareExRaidPassLogEntry share_ex_raid_pass = 15;
 	DeclineExRaidPassLogEntry decline_ex_raid_pass = 16;
+	FitnessRewardsLogEntry fitness_rewards = 17;
 }
 
 // ref: Holoholo.Rpc.AddFortModifierOutProto
@@ -2376,6 +2410,13 @@ message ARPlusEncounterValuesProto {
 	bool pokemon_frightened = 3;
 }
 
+// ref: Holoholo.Rpc.AssetBundleDownloadTelemetry
+message AssetBundleDownloadTelemetry {
+	AssetTelemetryIds asset_event_id = 1;
+	string bundle_name = 2;
+	uint32 size = 3;
+}
+
 // ref: Holoholo.Rpc.AssetDigestEntryProto
 message AssetDigestEntryProto {
 	string asset_id = 1;
@@ -2412,6 +2453,26 @@ message AssetDigestRequestProto {
 	bool paginate = 6;
 	int32 page_offset = 7;
 	uint64 page_timestamp = 8;
+}
+
+// ref: Holoholo.Rpc.AssetPoiDownloadTelemetry
+message AssetPoiDownloadTelemetry {
+	AssetTelemetryIds asset_event_id = 1;
+	string fort_id = 2;
+	uint32 size = 3;
+}
+
+// ref: Holoholo.Rpc.AssetStreamCacheCulledTelemetry
+message AssetStreamCacheCulledTelemetry {
+	AssetTelemetryIds asset_event_id = 1;
+	uint32 space_released = 2;
+}
+
+// ref: Holoholo.Rpc.AssetStreamDownloadTelemetry
+message AssetStreamDownloadTelemetry {
+	AssetTelemetryIds asset_event_id = 1;
+	string url = 2;
+	uint32 size = 3;
 }
 
 // ref: Holoholo.Rpc.AttackGymOutProto
@@ -2581,6 +2642,18 @@ message AwardItemProto {
 	Item item = 1;
 	int32 item_count = 2;
 	int32 bonus_count = 3;
+}
+
+// ref: Holoholo.Rpc.BackgroundModeGlobalSettingsProto
+message BackgroundModeGlobalSettingsProto {
+	uint32 min_player_level_fitness = 1;
+}
+
+// ref: Holoholo.Rpc.BackgroundModeSettingsProto
+message BackgroundModeSettingsProto {
+	double weekly_fitness_goal_level1_distance_km = 1;
+	double weekly_fitness_goal_level2_distance_km = 2;
+	double weekly_fitness_goal_level3_distance_km = 3;
 }
 
 // ref: Holoholo.Rpc.BackgroundToken
@@ -3022,6 +3095,7 @@ message ClientMapCellProto {
 message ClientPerformanceSettingsProto {
 	bool enable_local_disk_caching = 1;
 	int32 max_number_local_battle_parties = 2;
+	bool multi_pokemon_battle_party_select = 3;
 }
 
 // ref: Holoholo.Rpc.ClientPlayerProto
@@ -3723,6 +3797,19 @@ message FetchAllNewsOutProto {
 message FetchAllNewsProto {
 }
 
+// ref: Holoholo.Rpc.FitnessRewardsLogEntry
+message FitnessRewardsLogEntry {
+	// ref: Holoholo.Rpc.FitnessRewardsLogEntry/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+
+	Result result = 1;
+	LootProto rewards = 2;
+	double distance_walked_km = 3;
+}
+
 // ref: Holoholo.Rpc.FoodAttributesProto
 message FoodAttributesProto {
 	repeated HoloItemEffect item_effect = 1 [packed=false];
@@ -4049,6 +4136,7 @@ message GameMasterClientTemplateProto {
 	FriendshipLevelMilestoneSettingsProto friendship_milestone_settings = 31;
 	LuckyPokemonSettingsProto lucky_pokemon_settings = 32;
 	ExRaidSettingsProto ex_raid_settings = 36;
+	BackgroundModeSettingsProto background_mode_settings = 38;
 }
 
 // ref: Holoholo.Rpc.GenericClickTelemetry
@@ -4081,6 +4169,24 @@ message GetBuddyWalkedOutProto {
 
 // ref: Holoholo.Rpc.GetBuddyWalkedProto
 message GetBuddyWalkedProto {
+}
+
+// ref: Holoholo.Rpc.GetFitnessRewardsOutProto
+message GetFitnessRewardsOutProto {
+	// ref: Holoholo.Rpc.GetFitnessRewardsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		REWARDS_ALREADY_COLLECTED = 2;
+		ERROR_UNKNOWN = 3;
+	}
+
+	Result result = 1;
+	LootProto rewards = 2;
+}
+
+// ref: Holoholo.Rpc.GetFitnessRewardsProto
+message GetFitnessRewardsProto {
 }
 
 // ref: Holoholo.Rpc.GetFriendshipRewardsOutProto
@@ -4508,6 +4614,8 @@ message GlobalSettingsProto {
 	TradingGlobalSettingsProto trading_global_settings = 24;
 	repeated HoloPokemonId additional_allowed_pokemon_ids = 25 [packed=false];
 	UpsightLoggingSettingsProto upsight_logging_settings = 26;
+	BackgroundModeGlobalSettingsProto bgmode_global_settings = 30;
+	ProbeSettingsProto probe_settings = 31;
 }
 
 // ref: Holoholo.Rpc.GpsSettingsProto
@@ -4806,6 +4914,14 @@ message GymStatusAndDefendersProto {
 	repeated GymDefenderProto gym_defender = 2 [packed=false];
 }
 
+// ref: Holoholo.Rpc.HoloFitnessReportProto
+message HoloFitnessReportProto {
+	int32 num_eggs_hatched = 1;
+	int32 num_buddy_candy_earned = 2;
+	double distance_walked_km = 3;
+	int64 week_bucket = 4;
+}
+
 // ref: Holoholo.Rpc.HoloholoClientTelemetryOmniProto
 message HoloholoClientTelemetryOmniProto {
 	// ref: Holoholo.Rpc.HoloholoClientTelemetryOmniProto/TelemetryDataOneofCase
@@ -4844,6 +4960,11 @@ message HoloholoClientTelemetryOmniProto {
 		pokemon_go_plus_telemetry = 31;
 		rpc_timing_telemetry = 32;
 		social_gift_count_telemetry = 33;
+		asset_bundle_telemetry = 34;
+		asset_poi_download_telemetry = 35;
+		asset_stream_download_telemetry = 36;
+		asset_stream_cache_culled_telemetry = 37;
+		rpc_socket_timing_telemetry = 38;
 	}
 
 	BootTime boot_time = 1;
@@ -4879,6 +5000,11 @@ message HoloholoClientTelemetryOmniProto {
 	PokemonGoPlusTelemetry pokemon_go_plus_telemetry = 31;
 	RpcResponseTelemetry rpc_timing_telemetry = 32;
 	SocialGiftCountTelemetry social_gift_count_telemetry = 33;
+	AssetBundleDownloadTelemetry asset_bundle_telemetry = 34;
+	AssetPoiDownloadTelemetry asset_poi_download_telemetry = 35;
+	AssetStreamDownloadTelemetry asset_stream_download_telemetry = 36;
+	AssetStreamCacheCulledTelemetry asset_stream_cache_culled_telemetry = 37;
+	RpcSocketResponseTelemetry rpc_socket_timing_telemetry = 38;
 	niantic.platform.telemetry.PlatformServerData server_data = 1001;
 }
 
@@ -5792,6 +5918,7 @@ message PlayerStatsProto {
 	int32 num_trades = 35;
 	int32 num_max_level_friends = 36;
 	int64 trade_accumulated_distance_km = 37;
+	int64 fitness_report_last_check_bucket = 38;
 }
 
 // ref: Holoholo.Rpc.PokeBallAttributesProto
@@ -5851,6 +5978,7 @@ message PokemonDisplayProto {
 		ONE_YEAR_ANNIVERSARY = 3;
 		HALLOWEEN_2017 = 4;
 		SUMMER_2018 = 5;
+		FALL_2018 = 6;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Form
@@ -6209,6 +6337,19 @@ message PokestopReward {
 message PotionAttributesProto {
 	float sta_percent = 1;
 	int32 sta_amount = 2;
+}
+
+// ref: Holoholo.Rpc.ProbeProto
+message ProbeProto {
+	string id = 1;
+	string payload = 2;
+}
+
+// ref: Holoholo.Rpc.ProbeSettingsProto
+message ProbeSettingsProto {
+	bool enable_sidechannel = 1;
+	bool enable_adhoc = 2;
+	int32 adhoc_frequency_sec = 3;
 }
 
 // ref: Holoholo.Rpc.ProfilePageTelemetry
@@ -6770,6 +6911,22 @@ message RpcResponseTime {
 	float average_response_time = 3;
 }
 
+// ref: Holoholo.Rpc.RpcSocketResponseTelemetry
+message RpcSocketResponseTelemetry {
+	float window_duration = 1;
+	repeated RpcSocketResponseTime response_timings = 2 [packed=false];
+}
+
+// ref: Holoholo.Rpc.RpcSocketResponseTime
+message RpcSocketResponseTime {
+	uint64 request_id = 1;
+	string probe_id = 2;
+	float response_time = 3;
+	bool side_channel = 4;
+	bool ad_hoc = 5;
+	float ad_hoc_delay = 6;
+}
+
 // ref: Holoholo.Rpc.SavePlayerSnapshotOutProto
 message SavePlayerSnapshotOutProto {
 	// ref: Holoholo.Rpc.SavePlayerSnapshotOutProto/Types/Result
@@ -6839,6 +6996,23 @@ message SendGiftOutProto {
 message SendGiftProto {
 	uint64 giftbox_id = 1;
 	string player_id = 2;
+}
+
+// ref: Holoholo.Rpc.SendProbeOutProto
+message SendProbeOutProto {
+	// ref: Holoholo.Rpc.SendProbeOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+
+	Result result = 1;
+	string id = 2;
+	int64 server_timestamp_ms = 3;
+}
+
+// ref: Holoholo.Rpc.SendProbeProto
+message SendProbeProto {
 }
 
 // ref: Holoholo.Rpc.SetAvatarItemAsViewedOutProto
@@ -8297,6 +8471,13 @@ message GoogleToken {
 // ref: Niantic.Platform.Ditto.Events.ChannelAuthEventParams
 message ChannelAuthEventParams {
 	uint32 status = 1;
+}
+
+// ref: Niantic.Platform.Ditto.Events.DownstreamActionEventParams
+message DownstreamActionEventParams {
+	repeated uint32 methods = 1 [packed=false];
+	repeated bytes payloads = 2 [packed=false];
+	repeated uint64 ids = 3 [packed=false];
 }
 
 // ref: Niantic.Platform.Ditto.Events.GoogleAuthEventParams
