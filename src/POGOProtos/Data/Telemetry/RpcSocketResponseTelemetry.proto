@@ -7,4 +7,3 @@ message RpcSocketResponseTelemetry {
 	float window_duration = 1;
 	repeated .POGOProtos.Data.Telemetry.RpcSocketResponseTime response_timings = 2;
 }
-
