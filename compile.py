@@ -474,7 +474,7 @@ if args.language == 'python':
             'w').close()
 
     #Nedded maybe for python files
-    # compile_helper.finish_compile(out_path, args.language)
+    compile_helper.finish_compile(out_path, args.language)
 
 elif args.language == 'ruby':
     for path in protos:
