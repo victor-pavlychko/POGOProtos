@@ -6,6 +6,8 @@ import re
 import shutil
 from subprocess import call
 
+from helpers import compile_helper
+#from helpers import go_helper
 
 def to_lower_case(string):
     string = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', string)
@@ -470,6 +472,10 @@ if args.language == 'python':
                     *path.split('/')),
                 '__init__.py'),
             'w').close()
+
+    #Nedded maybe for python files
+    compile_helper.finish_compile(out_path, args.language)
+
 elif args.language == 'ruby':
     for path in protos:
         with open(os.path.join(out_path, *path.split('/')) + '.rb', 'w') as file:

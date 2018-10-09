@@ -21,6 +21,8 @@ import "POGOProtos/Settings/QuestGlobalSettings.proto";
 import "POGOProtos/Settings/SocialClientSettings.proto";
 import "POGOProtos/Settings/TradingGlobalSettings.proto";
 import "POGOProtos/Settings/UpsightLoggingSettings.proto";
+import "POGOProtos/Settings/Master/BackgroundModeGlobalSettings.proto";
+import "POGOProtos/Settings/ProbeSettings.proto";
 import "POGOProtos/Enums/PokemonId.proto";
 
 message GlobalSettings {
@@ -48,4 +50,6 @@ message GlobalSettings {
 	.POGOProtos.Settings.TradingGlobalSettings trading_global_settings = 24;
 	repeated .POGOProtos.Enums.PokemonId additional_allowed_pokemon_ids = 25;
 	.POGOProtos.Settings.UpsightLoggingSettings upsight_logging_settings = 26;
+	.POGOProtos.Settings.Master.BackgroundModeGlobalSettings bgmode_global_settings = 30;
+	.POGOProtos.Settings.ProbeSettings probe_settings = 31;
 }
