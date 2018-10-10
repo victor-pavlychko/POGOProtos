@@ -877,6 +877,7 @@ enum HoloBadgeType {
 	BADGE_MAX_LEVEL_FRIENDS = 48;
 	BADGE_TRADING = 49;
 	BADGE_TRADING_DISTANCE = 50;
+	BADGE_POKEDEX_ENTRIES_GEN4 = 51;
 	BADGE_EVENT_MIN = 2000;
 	BADGE_CHICAGO_FEST_JULY_2017 = 2001;
 	BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017 = 2002;
@@ -1205,6 +1206,51 @@ enum HoloPokemonFamilyId {
 	V0384_FAMILY_RAYQUAZA = 384;
 	V0385_FAMILY_JIRACHI = 385;
 	V0386_FAMILY_DEOXYS = 386;
+	V0387_FAMILY_TURTWIG = 387;
+	V0390_FAMILY_CHIMCHAR = 390;
+	V0393_FAMILY_PIPLUP = 393;
+	V0396_FAMILY_STARLY = 396;
+	V0399_FAMILY_BIDOOF = 399;
+	V0401_FAMILY_KRICKETOT = 401;
+	V0403_FAMILY_SHINX = 403;
+	V0408_FAMILY_CRANIDOS = 408;
+	V0410_FAMILY_SHIELDON = 410;
+	V0412_FAMILY_BURMY = 412;
+	V0415_FAMILY_COMBEE = 415;
+	V0417_FAMILY_PACHIRISU = 417;
+	V0418_FAMILY_BUIZEL = 418;
+	V0420_FAMILY_CHERUBI = 420;
+	V0422_FAMILY_SHELLOS = 422;
+	V0425_FAMILY_DRIFLOON = 425;
+	V0427_FAMILY_BUNEARY = 427;
+	V0431_FAMILY_GLAMEOW = 431;
+	V0434_FAMILY_STUNKY = 434;
+	V0436_FAMILY_BRONZOR = 436;
+	V0441_FAMILY_CHATOT = 441;
+	V0442_FAMILY_SPIRITOMB = 442;
+	V0443_FAMILY_GIBLE = 443;
+	V0448_FAMILY_LUCARIO = 448;
+	V0449_FAMILY_HIPPOPOTAS = 449;
+	V0451_FAMILY_SKORUPI = 451;
+	V0453_FAMILY_CROAGUNK = 453;
+	V0455_FAMILY_CARNIVINE = 455;
+	V0456_FAMILY_FINNEON = 456;
+	V0459_FAMILY_SNOVER = 459;
+	V0479_FAMILY_ROTOM = 479;
+	V0480_FAMILY_UXIE = 480;
+	V0481_FAMILY_MESPRIT = 481;
+	V0482_FAMILY_AZELF = 482;
+	V0483_FAMILY_DIALGA = 483;
+	V0484_FAMILY_PALKIA = 484;
+	V0485_FAMILY_HEATRAN = 485;
+	V0486_FAMILY_REGIGIGAS = 486;
+	V0487_FAMILY_GIRATINA = 487;
+	V0488_FAMILY_CRESSELIA = 488;
+	V0489_FAMILY_PHIONE = 489;
+	V0490_FAMILY_MANAPHY = 490;
+	V0491_FAMILY_DARKRAI = 491;
+	V0492_FAMILY_SHAYMIN = 492;
+	V0493_FAMILY_ARCEUS = 493;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonId
@@ -1596,6 +1642,113 @@ enum HoloPokemonId {
 	V0384_POKEMON_RAYQUAZA = 384;
 	V0385_POKEMON_JIRACHI = 385;
 	V0386_POKEMON_DEOXYS = 386;
+	V0387_POKEMON_TURTWIG = 387;
+	V0388_POKEMON_GROTLE = 388;
+	V0389_POKEMON_TORTERRA = 389;
+	V0390_POKEMON_CHIMCHAR = 390;
+	V0391_POKEMON_MONFERNO = 391;
+	V0392_POKEMON_INFERNAPE = 392;
+	V0393_POKEMON_PIPLUP = 393;
+	V0394_POKEMON_PRINPLUP = 394;
+	V0395_POKEMON_EMPOLEON = 395;
+	V0396_POKEMON_STARLY = 396;
+	V0397_POKEMON_STARAVIA = 397;
+	V0398_POKEMON_STARAPTOR = 398;
+	V0399_POKEMON_BIDOOF = 399;
+	V0400_POKEMON_BIBAREL = 400;
+	V0401_POKEMON_KRICKETOT = 401;
+	V0402_POKEMON_KRICKETUNE = 402;
+	V0403_POKEMON_SHINX = 403;
+	V0404_POKEMON_LUXIO = 404;
+	V0405_POKEMON_LUXRAY = 405;
+	V0406_POKEMON_BUDEW = 406;
+	V0407_POKEMON_ROSERADE = 407;
+	V0408_POKEMON_CRANIDOS = 408;
+	V0409_POKEMON_RAMPARDOS = 409;
+	V0410_POKEMON_SHIELDON = 410;
+	V0411_POKEMON_BASTIODON = 411;
+	V0412_POKEMON_BURMY = 412;
+	V0413_POKEMON_WORMADAM = 413;
+	V0414_POKEMON_MOTHIM = 414;
+	V0415_POKEMON_COMBEE = 415;
+	V0416_POKEMON_VESPIQUEN = 416;
+	V0417_POKEMON_PACHIRISU = 417;
+	V0418_POKEMON_BUIZEL = 418;
+	V0419_POKEMON_FLOATZEL = 419;
+	V0420_POKEMON_CHERUBI = 420;
+	V0421_POKEMON_CHERRIM = 421;
+	V0422_POKEMON_SHELLOS = 422;
+	V0423_POKEMON_GASTRODON = 423;
+	V0424_POKEMON_AMBIPOM = 424;
+	V0425_POKEMON_DRIFLOON = 425;
+	V0426_POKEMON_DRIFBLIM = 426;
+	V0427_POKEMON_BUNEARY = 427;
+	V0428_POKEMON_LOPUNNY = 428;
+	V0429_POKEMON_MISMAGIUS = 429;
+	V0430_POKEMON_HONCHKROW = 430;
+	V0431_POKEMON_GLAMEOW = 431;
+	V0432_POKEMON_PURUGLY = 432;
+	V0433_POKEMON_CHINGLING = 433;
+	V0434_POKEMON_STUNKY = 434;
+	V0435_POKEMON_SKUNTANK = 435;
+	V0436_POKEMON_BRONZOR = 436;
+	V0437_POKEMON_BRONZONG = 437;
+	V0438_POKEMON_BONSLY = 438;
+	V0439_POKEMON_MIME_JR = 439;
+	V0440_POKEMON_HAPPINY = 440;
+	V0441_POKEMON_CHATOT = 441;
+	V0442_POKEMON_SPIRITOMB = 442;
+	V0443_POKEMON_GIBLE = 443;
+	V0444_POKEMON_GABITE = 444;
+	V0445_POKEMON_GARCHOMP = 445;
+	V0446_POKEMON_MUNCHLAX = 446;
+	V0447_POKEMON_RIOLU = 447;
+	V0448_POKEMON_LUCARIO = 448;
+	V0449_POKEMON_HIPPOPOTAS = 449;
+	V0450_POKEMON_HIPPOWDON = 450;
+	V0451_POKEMON_SKORUPI = 451;
+	V0452_POKEMON_DRAPION = 452;
+	V0453_POKEMON_CROAGUNK = 453;
+	V0454_POKEMON_TOXICROAK = 454;
+	V0455_POKEMON_CARNIVINE = 455;
+	V0456_POKEMON_FINNEON = 456;
+	V0457_POKEMON_LUMINEON = 457;
+	V0458_POKEMON_MANTYKE = 458;
+	V0459_POKEMON_SNOVER = 459;
+	V0460_POKEMON_ABOMASNOW = 460;
+	V0461_POKEMON_WEAVILE = 461;
+	V0462_POKEMON_MAGNEZONE = 462;
+	V0463_POKEMON_LICKILICKY = 463;
+	V0464_POKEMON_RHYPERIOR = 464;
+	V0465_POKEMON_TANGROWTH = 465;
+	V0466_POKEMON_ELECTIVIRE = 466;
+	V0467_POKEMON_MAGMORTAR = 467;
+	V0468_POKEMON_TOGEKISS = 468;
+	V0469_POKEMON_YANMEGA = 469;
+	V0470_POKEMON_LEAFEON = 470;
+	V0471_POKEMON_GLACEON = 471;
+	V0472_POKEMON_GLISCOR = 472;
+	V0473_POKEMON_MAMOSWINE = 473;
+	V0474_POKEMON_PORYGON_Z = 474;
+	V0475_POKEMON_GALLADE = 475;
+	V0476_POKEMON_PROBOPASS = 476;
+	V0477_POKEMON_DUSKNOIR = 477;
+	V0478_POKEMON_FROSLASS = 478;
+	V0479_POKEMON_ROTOM = 479;
+	V0480_POKEMON_UXIE = 480;
+	V0481_POKEMON_MESPRIT = 481;
+	V0482_POKEMON_AZELF = 482;
+	V0483_POKEMON_DIALGA = 483;
+	V0484_POKEMON_PALKIA = 484;
+	V0485_POKEMON_HEATRAN = 485;
+	V0486_POKEMON_REGIGIGAS = 486;
+	V0487_POKEMON_GIRATINA = 487;
+	V0488_POKEMON_CRESSELIA = 488;
+	V0489_POKEMON_PHIONE = 489;
+	V0490_POKEMON_MANAPHY = 490;
+	V0491_POKEMON_DARKRAI = 491;
+	V0492_POKEMON_SHAYMIN = 492;
+	V0493_POKEMON_ARCEUS = 493;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMove
@@ -1840,6 +1993,23 @@ enum HoloPokemonMove {
 	V0299_MOVE_HYDRO_CANNON = 299;
 	V0300_MOVE_LAST_RESORT = 300;
 	V0301_MOVE_METEOR_MASH = 301;
+	V0302_MOVE_SKULL_BASH = 302;
+	V0303_MOVE_ACID_SPRAY = 303;
+	V0304_MOVE_EARTH_POWER = 304;
+	V0305_MOVE_CRABHAMMER = 305;
+	V0306_MOVE_LUNGE = 306;
+	V0307_MOVE_CRUSH_CLAW = 307;
+	V0308_MOVE_OCTAZOOKA = 308;
+	V0309_MOVE_MIRROR_SHOT = 309;
+	V0310_MOVE_SUPER_POWER = 310;
+	V0311_MOVE_FELL_STINGER = 311;
+	V0312_MOVE_LEAF_TORNADO = 312;
+	V0313_MOVE_LEECH_LIFE = 313;
+	V0314_MOVE_DRAIN_PUNCH = 314;
+	V0315_MOVE_SHADOW_BONE = 315;
+	V0316_MOVE_MUDDY_WATER = 316;
+	V0317_MOVE_BLAZE_KICK = 317;
+	V0318_MOVE_RAZOR_SHELL = 318;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMovementType
@@ -2102,6 +2272,7 @@ enum Method {
 	GET_FITNESS_REWARDS = 980;
 	SEND_PROBE = 1020;
 	PROBE_DATA = 1021;
+	COMBAT_DATA = 1022;
 }
 
 // ref: Holoholo.Rpc.NewsPageTelemetryIds
@@ -3324,6 +3495,9 @@ message ContactSettingsProto {
 message CurrencyQuantityProto {
 	string currency_type = 1;
 	int32 quantity = 2;
+	int32 fiat_purchased_quantity = 3;
+	string fiat_currency_type = 4;
+	int64 fiat_currency_cost_e6 = 5;
 }
 
 // ref: Holoholo.Rpc.CurrentNewsProto
@@ -4445,6 +4619,10 @@ message GetPlayerOutProto {
 	bool banned = 3;
 	bool warn = 4;
 	bool was_created = 5;
+	bool warn_message_acknowledged = 6;
+	bool was_suspended = 7;
+	bool suspended_message_acknowledged = 8;
+	int64 warn_expire_ms = 9;
 }
 
 // ref: Holoholo.Rpc.GetPlayerProto
@@ -5123,6 +5301,12 @@ message IapSettingsProto {
 
 // ref: Holoholo.Rpc.IncenseAttributesProto
 message IncenseAttributesProto {
+	// ref: Holoholo.Rpc.IncenseAttributesProto/Types/IncensedPokemonProto
+	message IncensedPokemonProto {
+		HoloPokemonId pokemon_id = 1;
+		float weight = 2;
+	}
+
 	int32 incense_lifetime_seconds = 1;
 	repeated HoloPokemonType pokemon_type = 2;
 	float pokemon_incense_type_probability = 3;
@@ -5130,6 +5314,8 @@ message IncenseAttributesProto {
 	int32 moving_time_between_encounter_sec = 5;
 	int32 distance_required_for_shorter_interval_meters = 6;
 	int32 pokemon_attracted_length_sec = 7;
+	repeated IncensedPokemonProto spawn_table = 8;
+	float spawn_table_probability = 9;
 }
 
 // ref: Holoholo.Rpc.IncenseEncounterOutProto
@@ -6064,6 +6250,43 @@ message PokemonDisplayProto {
 		EXEGGUTOR_ALOLA = 78;
 		MAROWAK_NORMAL = 79;
 		MAROWAK_ALOLA = 80;
+		ROTOM_NORMAL = 81;
+		ROTOM_FROST = 82;
+		ROTOM_FAN = 83;
+		ROTOM_MOW = 84;
+		ROTOM_WASH = 85;
+		ROTOM_HEAT = 86;
+		WORMADAM_PLANT = 87;
+		WORMADAM_SANDY = 88;
+		WORMADAM_TRASH = 89;
+		GIRATINA_ALTERED = 90;
+		GIRATINA_ORIGIN = 91;
+		SHAYMIN_SKY = 92;
+		SHAYMIN_LAND = 93;
+		CHERRIM_OVERCAST = 94;
+		CHERRIM_SUNNY = 95;
+		SHELLOS_WEST_SEA = 96;
+		SHELLOS_EAST_SEA = 97;
+		GASTRODON_WEST_SEA = 98;
+		GASTRODON_EAST_SEA = 99;
+		ARCEUS_NORMAL = 100;
+		ARCEUS_FIGHTING = 101;
+		ARCEUS_FLYING = 102;
+		ARCEUS_POISON = 103;
+		ARCEUS_GROUND = 104;
+		ARCEUS_ROCK = 105;
+		ARCEUS_BUG = 106;
+		ARCEUS_GHOST = 107;
+		ARCEUS_STEEL = 108;
+		ARCEUS_FIRE = 109;
+		ARCEUS_WATER = 110;
+		ARCEUS_GRASS = 111;
+		ARCEUS_ELECTRIC = 112;
+		ARCEUS_PSYCHIC = 113;
+		ARCEUS_ICE = 114;
+		ARCEUS_DRAGON = 115;
+		ARCEUS_DARK = 116;
+		ARCEUS_FAIRY = 117;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
@@ -8456,6 +8679,50 @@ message SuperAwesomeTokenProto {
 
 //----- End token -----
 //------------------------------
+//----- Begin telemetry -----
+
+// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryBatchProto
+message ClientTelemetryBatchProto {
+	// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryBatchProto/Types/TelemetryScopeId
+	enum TelemetryScopeId {
+		UNSET = 0;
+		DITTO = 1;
+		GAME = 2;
+	}
+
+	TelemetryScopeId telemetry_scope_id = 1;
+	repeated ClientTelemetryRecordProto events = 2;
+	string api_version = 3;
+	string message_version = 4;
+}
+
+// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryClientSettingsProto
+message ClientTelemetryClientSettingsProto {
+	bool is_upload_enabled = 1;
+	int64 max_upload_size_in_bytes = 2;
+	int64 update_interval_in_sec = 3;
+	int64 settings_update_interval_in_sec = 4;
+	int64 max_envelope_queue_size = 5;
+	double sampling_probability = 6;
+	bool use_player_based_sampling = 7;
+	double player_hash = 8;
+}
+
+// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryRecordProto
+message ClientTelemetryRecordProto {
+	string record_id = 1;
+	bytes encoded_message = 2;
+	int64 client_timestamp_ms = 3;
+	int64 metric_id = 4;
+}
+
+// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetrySettingsRequestProto
+message ClientTelemetrySettingsRequestProto {
+}
+
+
+//----- End telemetry -----
+//------------------------------
 //----- Begin google -----
 
 // ref: Niantic.Platform.Auth.Plugins.Google.GoogleToken
@@ -8471,13 +8738,6 @@ message GoogleToken {
 // ref: Niantic.Platform.Ditto.Events.ChannelAuthEventParams
 message ChannelAuthEventParams {
 	uint32 status = 1;
-}
-
-// ref: Niantic.Platform.Ditto.Events.DownstreamActionEventParams
-message DownstreamActionEventParams {
-	repeated uint32 methods = 1;
-	repeated bytes payloads = 2;
-	repeated uint64 ids = 3;
 }
 
 // ref: Niantic.Platform.Ditto.Events.GoogleAuthEventParams
