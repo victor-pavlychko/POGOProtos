@@ -1,7 +1,7 @@
 syntax = "proto3";
 package POGOProtos.Enums;
 
-enum HoloPokemonNature {
+enum PokemonNature {
 	NATURE_UNKNOWN = 0;
 	NATURE_STOIC = 1;
 	NATURE_ASSASSIN = 2;
