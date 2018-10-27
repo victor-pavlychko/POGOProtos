@@ -157,7 +157,7 @@ message GetAvailableSubmissionsOutProto {
 	int32 min_player_level = 2;
 	bool has_valid_email = 3;
 	bool is_feature_enabled = 4;
-	int32 time_window_for_submissions_limit_ms = 5;
+	int64 time_window_for_submissions_limit_ms = 5;
 }
 
 // ref: Niantic.Platform.Protos.GetAvailableSubmissionsProto
@@ -429,6 +429,7 @@ message PingRequestProto {
 	int32 response_size_bytes = 1;
 	string random_request_bytes = 2;
 	bool use_cache_for_random_request_bytes = 3;
+	string return_value = 4;
 }
 
 // ref: Niantic.Platform.Protos.PingResponseProto
@@ -436,6 +437,7 @@ message PingResponseProto {
 	string user_info = 1;
 	string server_info = 2;
 	string random_response_bytes = 3;
+	string return_value = 4;
 }
 
 // ref: Niantic.Platform.Protos.PlayerReputationProto
@@ -723,6 +725,14 @@ enum CameraTarget {
 	CAM_TARGET_SHOULDER_ATTACKER_DEFENDER = 12;
 	CAM_TARGET_SHOULDER_ATTACKER_DEFENDER_MIRROR = 13;
 	CAM_TARGET_ATTACKER_DEFENDER_WORLD = 14;
+}
+
+// ref: Holoholo.Rpc.DeviceServiceTelemetryIds
+enum DeviceServiceTelemetryIds {
+	UNDEFINED_DEVICE_SERVICE = 0;
+	FITNESS = 1;
+	SMART_WATCH = 2;
+	SFIDA = 3;
 }
 
 // ref: Holoholo.Rpc.EggIncubatorType
@@ -2284,6 +2294,25 @@ enum NewsPageTelemetryIds {
 	NEWS_UPDATED_APP = 4;
 }
 
+// ref: Holoholo.Rpc.PermissionContextTelemetryIds
+enum PermissionContextTelemetryIds {
+	UNDEFINED_PERMISSION_CONTEXT = 0;
+	EGG_HATCH = 1;
+	BUDDY_CANDY_FOUND = 2;
+	PLAYER_PROFILE_CLICKED = 3;
+	SMART_WATCH_INSTALLED = 4;
+	SFIDA_SESSION_STARTED = 5;
+	SETTINGS_TOGGLE = 6;
+}
+
+// ref: Holoholo.Rpc.PermissionFlowStepTelemetryIds
+enum PermissionFlowStepTelemetryIds {
+	UNDEFINED_PERMISSION_FLOW_STEP = 0;
+	INITIAL_PROMPT = 1;
+	FITNESS_PERMISSION = 2;
+	LOCATION_PERMISSION = 3;
+}
+
 // ref: Holoholo.Rpc.Platform
 enum Platform {
 	PLATFORM_UNSET = 0;
@@ -3627,6 +3656,13 @@ message DeployPokemonTelemetry {
 	int32 defender_count = 5;
 }
 
+// ref: Holoholo.Rpc.DeviceServiceToggleTelemetry
+message DeviceServiceToggleTelemetry {
+	DeviceServiceTelemetryIds device_service_telemetry_id = 1;
+	bool was_enabled = 2;
+	bool was_subsequent = 3;
+}
+
 // ref: Holoholo.Rpc.DiskEncounterOutProto
 message DiskEncounterOutProto {
 	// ref: Holoholo.Rpc.DiskEncounterOutProto/Types/Result
@@ -4794,6 +4830,7 @@ message GlobalSettingsProto {
 	UpsightLoggingSettingsProto upsight_logging_settings = 26;
 	BackgroundModeGlobalSettingsProto bgmode_global_settings = 30;
 	ProbeSettingsProto probe_settings = 31;
+	PokecoinPurchaseDisplaySettingsProto purchased_settings = 32;
 }
 
 // ref: Holoholo.Rpc.GpsSettingsProto
@@ -5143,6 +5180,8 @@ message HoloholoClientTelemetryOmniProto {
 		asset_stream_download_telemetry = 36;
 		asset_stream_cache_culled_telemetry = 37;
 		rpc_socket_timing_telemetry = 38;
+		permissions_flow = 39;
+		device_service_toggle = 40;
 	}
 
 	BootTime boot_time = 1;
@@ -5183,6 +5222,8 @@ message HoloholoClientTelemetryOmniProto {
 	AssetStreamDownloadTelemetry asset_stream_download_telemetry = 36;
 	AssetStreamCacheCulledTelemetry asset_stream_cache_culled_telemetry = 37;
 	RpcSocketResponseTelemetry rpc_socket_timing_telemetry = 38;
+	PermissionsFlowTelemetry permissions_flow = 39;
+	DeviceServiceToggleTelemetry device_service_toggle = 40;
 	niantic.platform.telemetry.PlatformServerData server_data = 1001;
 }
 
@@ -5945,6 +5986,14 @@ message PasscodeSettingsProto {
 	bool show_passcode_in_store = 1;
 }
 
+// ref: Holoholo.Rpc.PermissionsFlowTelemetry
+message PermissionsFlowTelemetry {
+	PermissionContextTelemetryIds permission_context_telemetry_ids = 1;
+	DeviceServiceTelemetryIds device_service_telemetry_ids = 2;
+	PermissionFlowStepTelemetryIds permission_flow_step_telemetry_ids = 3;
+	bool success = 4;
+}
+
 // ref: Holoholo.Rpc.PlayerAvatarProto
 message PlayerAvatarProto {
 	int32 skin = 2;
@@ -6119,6 +6168,12 @@ message PokeBallAttributesProto {
 message PokeCandyProto {
 	uint64 pokemon_id = 1;
 	int32 candy_count = 2;
+}
+
+// ref: Holoholo.Rpc.PokecoinPurchaseDisplaySettingsProto
+message PokecoinPurchaseDisplaySettingsProto {
+	bool feature_enabled = 1;
+	repeated string enabled_countries = 2;
 }
 
 // ref: Holoholo.Rpc.PokedexEntryProto
@@ -8231,6 +8286,310 @@ message BattlePartyProto {
 
 //----- End battle -----
 //------------------------------
+//----- Begin proto -----
+
+// ref: FitnessMetricsProto
+message FitnessMetricsProto {
+	double distance_walked_meters = 1;
+	int32 step_count = 2;
+	double calories_burned_kcals = 3;
+	int64 exercise_duration_mi = 4;
+	double wheelchair_distance_meters = 5;
+	double wheelchair_push_count = 6;
+}
+
+// ref: FitnessRecordProto
+message FitnessRecordProto {
+	repeated FitnessSample raw_samples = 2;
+	int64 last_aggregation_timestamp_ms = 3;
+	FitnessStatsProto fitness_stats = 4;
+}
+
+// ref: FitnessReportProto
+message FitnessReportProto {
+	// ref: FitnessReportProto/WindowOneofCase
+	enum WindowOneofCase {
+		none = 0;
+		day_offset_from_now = 1;
+		week_offset_from_now = 2;
+	}
+
+	int32 day_offset_from_now = 1;
+	int32 week_offset_from_now = 2;
+	FitnessMetricsProto metrics = 10;
+	bytes game_data = 11;
+}
+
+// ref: FitnessSample
+message FitnessSample {
+	// ref: FitnessSample/Types/FitnessSampleType
+	enum FitnessSampleType {
+		SAMPLE_UNSET = 0;
+		STEPS = 1;
+		WALKING_DISTANCE_METERS = 2;
+		WHEELCHAIR_DISTANCE_METERS = 3;
+		CALORIES_KCALS = 4;
+		WHEELCHAIR_PUSH_COUNT = 5;
+		EXERCISE_TIME_MI = 6;
+	}
+
+	// ref: FitnessSample/Types/FitnessSourceType
+	enum FitnessSourceType {
+		SOURCE_UNSET = 0;
+		HEALTHKIT = 1;
+		GOOGLE_FIT = 2;
+	}
+
+	FitnessSampleType sample_type = 1;
+	int64 sample_start_timestamp_ms = 2;
+	int64 sample_end_timestamp_ms = 3;
+	double value = 4;
+	FitnessSourceType source_type = 5;
+}
+
+// ref: FitnessStatsProto
+message FitnessStatsProto {
+	int64 last_accumulated_timestamp_ms = 1;
+	FitnessMetricsProto accumulated = 2;
+	FitnessMetricsProto pending = 3;
+}
+
+// ref: FitnessUpdateOutProto
+message FitnessUpdateOutProto {
+	// ref: FitnessUpdateOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Status status = 1;
+}
+
+// ref: FitnessUpdateProto
+message FitnessUpdateProto {
+	repeated FitnessSample fitness_samples = 1;
+}
+
+// ref: GetBackgroundModeSettingsOutProto
+message GetBackgroundModeSettingsOutProto {
+	// ref: GetBackgroundModeSettingsOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Status status = 1;
+	niantic.platform.bgmode.BackgroundModeClientSettingsProto settings = 2;
+}
+
+// ref: GetBackgroundModeSettingsProto
+message GetBackgroundModeSettingsProto {
+}
+
+// ref: GetFitnessReportOutProto
+message GetFitnessReportOutProto {
+	// ref: GetFitnessReportOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_NOT_FOUND = 2;
+		ERROR_RECORDS_NOT_FOUND = 3;
+		ERROR_INVALID_WINDOW = 4;
+		ERROR_UNKNOWN = 5;
+	}
+
+	Status status = 1;
+	repeated FitnessReportProto daily_reports = 2;
+	repeated FitnessReportProto weekly_reports = 3;
+}
+
+// ref: GetFitnessReportProto
+message GetFitnessReportProto {
+	int32 num_of_days = 1;
+	int32 num_of_weeks = 2;
+}
+
+// ref: RedeemPasscodeRequestProto
+message RedeemPasscodeRequestProto {
+	string passcode = 1;
+}
+
+// ref: RedeemPasscodeResponseProto
+message RedeemPasscodeResponseProto {
+	// ref: RedeemPasscodeResponseProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		NOT_AVAILABLE = 2;
+		OVER_INVENTORY_LIMIT = 3;
+		ALREADY_REDEEMED = 4;
+		OVER_PLAYER_REDEMPTION_LIMIT = 5;
+	}
+
+	// ref: RedeemPasscodeResponseProto/Types/AcquiredItem
+	message AcquiredItem {
+		string item = 1;
+		int64 count = 2;
+	}
+
+	Result result = 1;
+	repeated AcquiredItem acquired_item = 2;
+	bytes acquired_items_proto = 3;
+	string passcode = 4;
+}
+
+// ref: SfidaAuthToken
+message SfidaAuthToken {
+	bytes response_token = 1;
+	string sfida_id = 2;
+}
+
+// ref: SfidaCaptureRequest
+message SfidaCaptureRequest {
+	string spawnpoint_id = 1;
+	int64 encounter_id = 2;
+	double player_lat = 3;
+	double player_lng = 4;
+	holoholo.rpc.EncounterType encounter_type = 5;
+	double gym_lat = 6;
+	double gym_lng = 7;
+}
+
+// ref: SfidaCaptureResponse
+message SfidaCaptureResponse {
+	// ref: SfidaCaptureResponse/Types/Result
+	enum Result {
+		UNSET = 0;
+		POKEMON_CAPTURED = 1;
+		POKEMON_FLED = 2;
+		NOT_FOUND = 3;
+		NO_MORE_POKEBALLS = 4;
+		POKEMON_INVENTORY_FULL = 5;
+		NOT_IN_RANGE = 6;
+		ENCOUNTER_ALREADY_FINISHED = 7;
+	}
+
+	Result result = 1;
+	int32 xp_gain = 2;
+}
+
+// ref: SfidaCertificationRequest
+message SfidaCertificationRequest {
+	// ref: SfidaCertificationRequest/Types/SfidaCertificationStage
+	enum SfidaCertificationStage {
+		UNSET = 0;
+		STAGE1 = 1;
+		STAGE2 = 2;
+		STAGE3 = 3;
+	}
+
+	SfidaCertificationStage stage = 1;
+	bytes payload = 2;
+}
+
+// ref: SfidaCertificationResponse
+message SfidaCertificationResponse {
+	bytes payload = 1;
+}
+
+// ref: SfidaDowserRequest
+message SfidaDowserRequest {
+	int64 encounter_id = 1;
+}
+
+// ref: SfidaDowserResponse
+message SfidaDowserResponse {
+	// ref: SfidaDowserResponse/Types/Result
+	enum Result {
+		UNSET = 0;
+		FOUND = 1;
+		NEARBY = 2;
+		OUT_OF_RANGE = 3;
+		ALREADY_CAUGHT = 4;
+		NOT_AVAILABLE = 5;
+	}
+
+	Result result = 1;
+	int32 proximity = 2;
+	string spawnpoint_id = 3;
+}
+
+// ref: SfidaMetrics
+message SfidaMetrics {
+	double distance_walked_km = 1;
+	int32 step_count = 2;
+	double calories_burned = 3;
+	int64 exercise_time_ms = 4;
+}
+
+// ref: SfidaMetricsUpdate
+message SfidaMetricsUpdate {
+	// ref: SfidaMetricsUpdate/Types/UpdateType
+	enum UpdateType {
+		UNSET = 0;
+		INITIALIZATION = 1;
+		ACCUMULATION = 2;
+	}
+
+	UpdateType update_type = 1;
+	int64 timestamp_ms = 2;
+	SfidaMetrics metrics = 3;
+}
+
+// ref: SfidaNearbyPokemon
+message SfidaNearbyPokemon {
+	int32 pokedex_number = 1;
+	bool uncaught = 2;
+	holoholo.rpc.PokemonDisplayProto pokemon_display = 3;
+}
+
+// ref: SfidaUpdateRequest
+message SfidaUpdateRequest {
+	double player_lat = 1;
+	double player_lng = 2;
+	SfidaMetricsUpdate metrics_update = 3;
+}
+
+// ref: SfidaUpdateResponse
+message SfidaUpdateResponse {
+	// ref: SfidaUpdateResponse/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+
+	Status status = 1;
+	bool nearby_pokemon = 2;
+	bool uncaught_pokemon = 3;
+	bool legendary_pokemon = 4;
+	string spawnpoint_id = 5;
+	int64 encounter_id = 6;
+	bool nearby_pokestop = 7;
+	string pokestop_id = 8;
+	holoholo.rpc.EncounterType encounter_type = 9;
+	int32 pokedex_number = 10;
+	repeated SfidaNearbyPokemon nearby = 11;
+}
+
+
+//----- End proto -----
+//------------------------------
+//----- Begin bgmode -----
+
+// ref: Niantic.Platform.Bgmode.BackgroundModeClientSettingsProto
+message BackgroundModeClientSettingsProto {
+	int64 maximum_sample_age_ms = 1;
+	bool accept_manual_fitness_samples = 2;
+	double minimum_location_accuracy_meters = 3;
+	int32 background_wake_up_interval_minutes = 4;
+	int32 max_upload_size_in_bytes = 5;
+}
+
+
+//----- End bgmode -----
+//------------------------------
 //----- Begin telemetry -----
 
 // ref: Niantic.Platform.Telemetry.TelemetryDomainId
@@ -8247,9 +8606,8 @@ message ClientTelemetryOutProto {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
-		ERROR_INVALID_REQUEST = 3;
-		ERROR_INVALID_PROTO = 4;
-		ERROR_UNSET_TELEMETRY_ID = 5;
+		PARTIAL_FAILURE = 3;
+		INVALID_REQUEST = 4;
 	}
 
 	Status status = 1;
@@ -8535,39 +8893,6 @@ message InventoryProto {
 
 //----- End inventory -----
 //------------------------------
-//----- Begin proto -----
-
-// ref: RedeemPasscodeRequestProto
-message RedeemPasscodeRequestProto {
-	string passcode = 1;
-}
-
-// ref: RedeemPasscodeResponseProto
-message RedeemPasscodeResponseProto {
-	// ref: RedeemPasscodeResponseProto/Types/Result
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		NOT_AVAILABLE = 2;
-		OVER_INVENTORY_LIMIT = 3;
-		ALREADY_REDEEMED = 4;
-	}
-
-	// ref: RedeemPasscodeResponseProto/Types/AcquiredItem
-	message AcquiredItem {
-		string item = 1;
-		int64 count = 2;
-	}
-
-	Result result = 1;
-	repeated AcquiredItem acquired_item = 2;
-	bytes acquired_items_proto = 3;
-	string passcode = 4;
-}
-
-
-//----- End proto -----
-//------------------------------
 //----- Begin platform -----
 
 // ref: Com.Nianticproject.Platform.ProxyRequestProto
@@ -8738,6 +9063,13 @@ message GoogleToken {
 // ref: Niantic.Platform.Ditto.Events.ChannelAuthEventParams
 message ChannelAuthEventParams {
 	uint32 status = 1;
+}
+
+// ref: Niantic.Platform.Ditto.Events.DownstreamActionEventParams
+message DownstreamActionEventParams {
+	repeated uint32 methods = 1;
+	repeated bytes payloads = 2;
+	repeated uint64 ids = 3;
 }
 
 // ref: Niantic.Platform.Ditto.Events.GoogleAuthEventParams
