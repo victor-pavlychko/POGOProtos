@@ -1,6 +1,30 @@
 syntax = "proto3";
 package POGOProtos.Enums;
 
+enum DeviceServiceTelemetryIds {
+	UNDEFINED_DEVICE_SERVICE = 0;
+	FITNESS = 1;
+	SMART_WATCH = 2;
+	SFIDA_DEVICE_SERVICE = 3;
+}
+
+enum PermissionContextTelemetryIds {
+	UNDEFINED_PERMISSION_CONTEXT = 0;
+	EGG_HATCH = 1;
+	BUDDY_CANDY_FOUND = 2;
+	PLAYER_PROFILE_CLICKED = 3;
+	SMART_WATCH_INSTALLED = 4;
+	SFIDA_SESSION_STARTED = 5;
+	SETTINGS_TOGGLE = 6;
+}
+
+enum PermissionFlowStepTelemetryIds {
+	UNDEFINED_PERMISSION_FLOW_STEP = 0;
+	INITIAL_PROMPT = 1;
+	FITNESS_PERMISSION = 2;
+	LOCATION_PERMISSION = 3;
+}
+
 enum AssetTelemetryIds {
 	UNDEFINED_ASSET_EVENT = 0;
 	DOWNLOAD_START = 1;
@@ -50,6 +74,8 @@ enum ClientTelemetryIds {
 	ASSET_STREAM_DOWNLOAD = 36;
 	ASSET_STREAM_CACHE_CULLED = 37;
 	RPC_SOCKET_TIMING = 38;
+	PERMISSIONS_FLOW = 39;
+	DEVICE_SERVICE_TOGGLE = 40;
 }
 
 enum AvatarCustomizationTelemetryIds {
