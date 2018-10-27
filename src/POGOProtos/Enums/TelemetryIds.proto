@@ -5,7 +5,7 @@ enum DeviceServiceTelemetryIds {
 	UNDEFINED_DEVICE_SERVICE = 0;
 	FITNESS = 1;
 	SMART_WATCH = 2;
-	SFIDA = 3;
+	SFIDA_DEVICE_SERVICE = 3;
 }
 
 enum PermissionContextTelemetryIds {
