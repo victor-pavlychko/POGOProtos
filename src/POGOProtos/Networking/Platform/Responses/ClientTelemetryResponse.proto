@@ -6,9 +6,8 @@ message ClientTelemetryResponse {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
-		ERROR_INVALID_REQUEST = 3;
-		ERROR_INVALID_PROTO = 4;
-		ERROR_UNSET_TELEMETRY_ID = 5;
+		PARTIAL_FAILURE = 3;
+		INVALID_REQUEST = 4;
 	}
 
 	Status status = 1;

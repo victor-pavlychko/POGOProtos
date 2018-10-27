@@ -39,6 +39,8 @@ import "POGOProtos/Data/Telemetry/AssetPoiDownloadTelemetry.proto";
 import "POGOProtos/Data/Telemetry/AssetStreamDownloadTelemetry.proto";
 import "POGOProtos/Data/Telemetry/AssetStreamCacheCulledTelemetry.proto";
 import "POGOProtos/Data/Telemetry/RpcSocketResponseTelemetry.proto";
+import "POGOProtos/Data/Telemetry/PermissionsFlowTelemetry.proto";
+import "POGOProtos/Data/Telemetry/DeviceServiceToggleTelemetry.proto";
 import "POGOProtos/Settings/SocialClientSettings.proto";
 
 message ClientTelemetryOmni {
@@ -80,5 +82,7 @@ message ClientTelemetryOmni {
 	.POGOProtos.Data.Telemetry.AssetStreamDownloadTelemetry asset_stream_download_telemetry = 36;
 	.POGOProtos.Data.Telemetry.AssetStreamCacheCulledTelemetry asset_stream_cache_culled_telemetry = 37;
 	.POGOProtos.Data.Telemetry.RpcSocketResponseTelemetry rpc_socket_timing_telemetry = 38;
+	.POGOProtos.Data.Telemetry.PermissionsFlowTelemetry permissions_flow = 39;
+	.POGOProtos.Data.Telemetry.DeviceServiceToggleTelemetry device_service_toggle = 40;
 	.POGOProtos.Networking.Platform.Telemetry.PlatformServerData server_data = 1001;
 }
