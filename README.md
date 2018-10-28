@@ -14,7 +14,7 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``Quests``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Enums/QuestType.proto) 
  ### Others
  - [``Client Telemetry Omni``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Data/Telemetry/ClientTelemetryOmni.proto)
- - [``Platform``](https://github.com/Furtif/POGOProtos/tree/master/src/POGOProtos/Networking/Platform)
+ - [``Platform``](https://github.com/Furtif/POGOProtos/tree/master/src/POGOProtos/Enums/PlatformClientAction.proto)
    
 ### Versioning
 
@@ -22,7 +22,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | API           | Notes           | Extra                     |
 |--------------|---------------|-----------------|---------------------------|
-| 2.35.0       | 0.125.1       | Compatible      |  Protocol Buffers v3.6.1  |
+| 2.35.1       | 0.125.1       | Compatible      |  Protocol Buffers v3.6.1  |
 
 ### Usage
 
