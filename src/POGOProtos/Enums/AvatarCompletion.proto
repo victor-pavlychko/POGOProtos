@@ -2,6 +2,6 @@ syntax = "proto3";
 package POGOProtos.Enums;
 
 enum AvatarCompletion {
-	SUCCESS_AvatarCompletion = 0;
+	SUCCESS_AVATAR_COMPLETION = 0;
 	QUIT = 1;
 }

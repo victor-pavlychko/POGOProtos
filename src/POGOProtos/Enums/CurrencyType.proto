@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Enums;
 
 enum CurrencyType {
-	UNKNOWN_CurrencyType = 0;
+	UNKNOWN_CURRENCY_TYPE = 0;
 	POKECOIN = 1;
 	STARDUST = 2;
 }

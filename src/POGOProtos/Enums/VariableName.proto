@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Enums;
 
 enum VariableName {
-	UNSET_VariableName = 0;
+	UNSET_VARIABLE_NAME = 0;
 	CODE_NAME = 1;
 	TEAM = 2;
 	LEVEL = 3;

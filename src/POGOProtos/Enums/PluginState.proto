@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Enums;
 
 enum PluginState {
-	UNKNOWN_PluginState = 0;
+	UNKNOWN_PLUGIN_STATE = 0;
 	INITIALIZED = 1;
 	STARTING = 2;
 	STARTED = 3;

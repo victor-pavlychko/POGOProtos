@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Enums;
 
 enum NotificationCategory {
-	UNSET_NotificationCategory = 0;
+	UNSET_NOTIFICATION_CATEGORY = 0;
 	GYM_REMOVAL = 1;
 	POKEMON_HUNGRY = 2;
 	EXCLUSIVE_RAID_INVITE = 3;

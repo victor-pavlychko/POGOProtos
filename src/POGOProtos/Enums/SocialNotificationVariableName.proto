@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos.Enums;
 
 enum SocialNotificationVariableName {
-	unset__social_notification_variable_name = 0;
+	UNSET_SOCIAL_NOTIFICATION_VARIABLE_NAME = 0;
 	SOCIAL_CODENAME = 1;
 	SOCIAL_TEAM = 2;
 	SOCIAL_PLAYER_SUMMARY = 3;
