@@ -235,6 +235,7 @@ else:
 for command in commands:
     call(command, shell=True)
 
-compile_helper.finish_compile(out_path, lang)
+if lang == 'python':
+    compile_helper.finish_compile(out_path, lang)
 
 print("Done!")
