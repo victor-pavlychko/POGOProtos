@@ -7,7 +7,7 @@ import shutil
 from subprocess import call
 
 from helpers import compile_helper
-#from helpers import go_helper
+
 
 def to_lower_case(string):
     string = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', string)
@@ -98,7 +98,7 @@ def write_proto(path, name, proto):
         if args.language == 'objc':
             options = True
             # Original prefix
-            #file.write('option objc_class_prefix = "GPB";\n')
+            # file.write('option objc_class_prefix = "GPB";\n')
             # Edited prefix by elliotrobot commit: https://github.com/Furtif/POGOProtos/commit/a0fae2886d32f19c5b93352cf29f65037ef90f6d
             file.write('option objc_class_prefix = "";\n')
 
@@ -461,19 +461,9 @@ for proto_files in proto_folders:
                 '"' + proto_file + '"'))
 
 for command in commands:
-    call(command, shell=(os.name != 'nt'))
+    call(command, shell=True)
 
 if args.language == 'python':
-    for path in protos:
-        open(
-            os.path.join(
-                os.path.join(
-                    out_path,
-                    *path.split('/')),
-                '__init__.py'),
-            'w').close()
-
-    #Nedded maybe for python files
     compile_helper.finish_compile(out_path, args.language)
 
 elif args.language == 'ruby':

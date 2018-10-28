@@ -226,7 +226,6 @@ if desc_file:
             os.path.join(tmp_path, "POGOProtos.proto")
         )
     )
-
 else:
     if lang == "go":
         compile_go_package(tmp_path)
@@ -234,8 +233,8 @@ else:
         compile_directories(tmp_path)
 
 for command in commands:
-    call(command, shell=(os.name != 'nt'))
+    call(command, shell=True)
 
-    compile_helper.finish_compile(out_path, lang)
+compile_helper.finish_compile(out_path, lang)
 
 print("Done!")
