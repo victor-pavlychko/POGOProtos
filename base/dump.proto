@@ -805,7 +805,7 @@ enum EncounterType {
 
 // ref: Holoholo.Rpc.FortType
 enum FortType {
-	GYM = 0;
+	GYM_a51f = 0;
 	CHECKPOINT = 1;
 }
 
@@ -987,12 +987,12 @@ enum HoloholoClientTelemetryIds {
 	PROFILE_PAGE = 6;
 	SHOPPING_PAGE = 7;
 	ENCOUNTER_POKEMON = 8;
-	CATCH_POKEMON = 9;
+	CATCH_POKEMON_a3e3 = 9;
 	DEPLOY_POKEMON = 10;
 	FEED_POKEMON = 11;
-	EVOLVE_POKEMON = 12;
-	RELEASE_POKEMON = 13;
-	NICKNAME_POKEMON = 14;
+	EVOLVE_POKEMON_a3e3 = 12;
+	RELEASE_POKEMON_a3e3 = 13;
+	NICKNAME_POKEMON_a3e3 = 14;
 	NEWS_PAGE = 15;
 	ITEM = 16;
 	BATTLE_PARTY = 17;
@@ -2226,7 +2226,7 @@ enum Item {
 // ref: Holoholo.Rpc.ItemUseTelemetryIds
 enum ItemUseTelemetryIds {
 	UNDEFINED_ITEM_EVENT = 0;
-	USE_ITEM = 1;
+	USE_ITEM_a2f7 = 1;
 	RECYCLE_ITEM = 2;
 }
 
@@ -2268,7 +2268,7 @@ enum MapEventsTelemetryIds {
 	PROFILE = 4;
 	SETTINGS = 5;
 	SHOP_FROM_MAP = 6;
-	GYM = 7;
+	GYM_a809 = 7;
 	POKESTOP = 8;
 	RESEARCH = 9;
 	COMPASS = 10;
@@ -2288,18 +2288,18 @@ enum Method {
 	ACKNOWLEDGE_PUNISHMENT = 10;
 	FORT_SEARCH = 101;
 	ENCOUNTER = 102;
-	CATCH_POKEMON = 103;
+	CATCH_POKEMON_a25d = 103;
 	FORT_DETAILS = 104;
 	GET_MAP_OBJECTS = 106;
 	FORT_DEPLOY_POKEMON = 110;
 	FORT_RECALL_POKEMON = 111;
-	RELEASE_POKEMON = 112;
+	RELEASE_POKEMON_a25d = 112;
 	USE_ITEM_POTION = 113;
 	USE_ITEM_CAPTURE = 114;
 	USE_ITEM_FLEE = 115;
 	USE_ITEM_REVIVE = 116;
 	GET_PLAYER_PROFILE = 121;
-	EVOLVE_POKEMON = 125;
+	EVOLVE_POKEMON_a25d = 125;
 	GET_HATCHED_EGGS = 126;
 	ENCOUNTER_TUTORIAL_COMPLETE = 127;
 	LEVEL_UP_REWARDS = 128;
@@ -2315,7 +2315,7 @@ enum Method {
 	DISK_ENCOUNTER = 145;
 	UPGRADE_POKEMON = 147;
 	SET_FAVORITE_POKEMON = 148;
-	NICKNAME_POKEMON = 149;
+	NICKNAME_POKEMON_a25d = 149;
 	EQUIP_BADGE = 150;
 	SET_CONTACT_SETTINGS = 151;
 	SET_BUDDY_POKEMON = 152;
@@ -2614,7 +2614,7 @@ enum TutorialCompletion {
 	POKEMON_CAPTURE = 3;
 	NAME_SELECTION = 4;
 	POKEMON_BERRY = 5;
-	USE_ITEM = 6;
+	USE_ITEM_aa4c = 6;
 	FIRST_TIME_EXPERIENCE_COMPLETE = 7;
 	POKESTOP_TUTORIAL = 8;
 	GYM_TUTORIAL = 9;
@@ -7845,7 +7845,7 @@ message TradingLogEntry {
 message TradingProto {
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
 	enum ExclusionReason {
-		UNSET = 0;
+		UNSET_a152 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -7863,7 +7863,7 @@ message TradingProto {
 
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingState
 	enum TradingState {
-		UNSET = 0;
+		UNSET_add9 = 0;
 		PRIMORDIAL = 1;
 		WAIT = 2;
 		ACTIVE = 3;
@@ -7875,7 +7875,7 @@ message TradingProto {
 	message ExcludedPokemon {
 		// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
 		enum ExclusionReason {
-			UNSET = 0;
+			UNSET_a152 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -7899,7 +7899,7 @@ message TradingProto {
 	message TradingPlayerProto {
 		// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
 		enum ExclusionReason {
-			UNSET = 0;
+			UNSET_a152 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -7919,7 +7919,7 @@ message TradingProto {
 		message ExcludedPokemon {
 			// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
 			enum ExclusionReason {
-				UNSET = 0;
+				UNSET_a152 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -8438,33 +8438,6 @@ message WithWinRaidStatusProto {
 //------------------------------
 //----- Begin battle -----
 
-// ref: Niantic.Holoholo.Battle.AttackOutcome
-enum AttackOutcome {
-	unset = 0;
-	not_very_effective = 1;
-	normal = 2;
-	super_effective = 3;
-	missed = 4;
-}
-
-// ref: Niantic.Holoholo.Battle.BattleStatus
-enum BattleStatus {
-	unset = 0;
-	active = 1;
-	victory = 2;
-	defeat = 3;
-	timed_out = 4;
-	quit = 5;
-	error = 6;
-}
-
-// ref: Niantic.Holoholo.Battle.QueuedActionResult
-enum QueuedActionResult {
-	success = 0;
-	failure = 1;
-	replaced = 2;
-}
-
 // ref: Niantic.Holoholo.Battle.BattlePartiesProto
 message BattlePartiesProto {
 	repeated BattlePartyProto battle_parties = 1;
@@ -8481,16 +8454,6 @@ message BattlePartyProto {
 //----- End battle -----
 //------------------------------
 //----- Begin proto -----
-
-// ref: HoloGesture
-enum HoloGesture {
-	none = 0;
-	gesture_right = 1;
-	gesture_left = 2;
-	gesture_up = 3;
-	gesture_down = 4;
-	_MAX = 5;
-}
 
 // ref: PokemonAnim
 enum PokemonAnim {
@@ -9482,7 +9445,7 @@ enum NotificationCategory {
 
 // ref: PokemonGoPlus.CentralState
 enum CentralState {
-	UNKNOWN = 0;
+	UNKNOWN_ab09 = 0;
 	RESETTING = 1;
 	UNSUPPORTED = 2;
 	UNAUTHORIZED = 3;
@@ -9500,7 +9463,7 @@ enum NotificationType {
 
 // ref: PokemonGoPlus.PluginState
 enum PluginState {
-	UNKNOWN = 0;
+	UNKNOWN_a654 = 0;
 	INITIALIZED = 1;
 	STARTING = 2;
 	STARTED = 3;
@@ -9528,14 +9491,14 @@ enum SfidaConnectState {
 
 // ref: Niantic.Holoholo.Storefront.CurrencyType
 enum CurrencyType {
-	UNKNOWN = 0;
+	UNKNOWN_a4b6 = 0;
 	POKECOIN = 1;
 	STARDUST = 2;
 }
 
 // ref: Niantic.Holoholo.Storefront.PresentationType
 enum PresentationType {
-	UNKNOWN = 0;
+	UNKNOWN_a94e = 0;
 	CATEGORY = 1;
 	SORT = 2;
 	SALE = 3;
