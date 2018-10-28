@@ -7,6 +7,57 @@ enum NotificationState {
 	VIEWED = 1;
 }
 
+// ref: Niantic.Platform.Protos.PlatformClientAction
+enum PlatformClientAction {
+	UNKNOWN_PLATFORM_CLIENT_ACTION = 0;
+	REGISTER_PUSH_NOTIFICATION = 5000;
+	UNREGISTER_PUSH_NOTIFICATION = 5001;
+	UPDATE_NOTIFICATION_STATUS = 5002;
+	OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003;
+	DOWNLOAD_GAME_MASTER_TEMPLATES = 5004;
+	GET_INVENTORY = 5005;
+	REDEEM_PASSCODE = 5006;
+	PING = 5007;
+	ADD_LOGIN_ACTION = 5008;
+	REMOVE_LOGIN_ACTION = 5009;
+	LIST_LOGIN_ACTION = 5010;
+	ADD_NEW_POI = 5011;
+	PROXY_SOCIAL_ACTION = 5012;
+	CLIENT_TELEMETRY = 5013;
+	GET_AVAILABLE_SUBMISSIONS = 5014;
+	GET_SIGNED_URL_FOR_PHOTO_UPLOAD = 5015;
+	REPLACE_LOGIN_ACTION = 5016;
+	PROXY_SOCIAL_SIDE_CHANNEL_ACTION = 5017;
+	COLLECT_CLIENT_TELEMETRY = 5018;
+	PURCHASE_SKU = 5019;
+	GET_AVAILABLE_SKUS_AND_BALANCES = 5020;
+	REDEEM_GOOGLE_RECEIPT = 5021;
+	REDEEM_APPLE_RECEIPT = 5022;
+	REDEEM_DESKTOP_RECEIPT = 5023;
+	UPDATE_FITNESS_METRICS = 5024;
+	GET_FITNESS_REPORT = 5025;
+	GET_CLIENT_TELEMETRY_SETTINGS = 5026;
+	PING_ASYNC = 5027;
+	REGISTER_BACKGROUND_SERVICE = 5028;
+	GET_CLIENT_BGMODE_SETTINGS = 5029;
+	PING_DOWNSTREAM = 5030;
+}
+
+// ref: Niantic.Platform.Protos.SocialNotificationCategory
+enum SocialNotificationCategory {
+	unset__social_notification_category = 0;
+	FRIEND_INVITE_RECEIVED = 1;
+	FRIEND_INVITE_ACCEPTED = 2;
+}
+
+// ref: Niantic.Platform.Protos.SocialNotificationVariableName
+enum SocialNotificationVariableName {
+	unset__social_notification_variable_name = 0;
+	SOCIAL_CODENAME = 1;
+	SOCIAL_TEAM = 2;
+	SOCIAL_PLAYER_SUMMARY = 3;
+}
+
 // ref: Niantic.Platform.Protos.AcceptFriendInviteOutProto
 message AcceptFriendInviteOutProto {
 	// ref: Niantic.Platform.Protos.AcceptFriendInviteOutProto/Types/Result
@@ -754,7 +805,7 @@ enum EncounterType {
 
 // ref: Holoholo.Rpc.FortType
 enum FortType {
-	GYM_a51f = 0;
+	GYM = 0;
 	CHECKPOINT = 1;
 }
 
@@ -923,6 +974,51 @@ enum HoloBadgeType {
 	BADGE_YOKOSUKA_2_SEP_2018_MIKASA = 2032;
 	BADGE_YOKOSUKA_2_SEP_2018_VERNY = 2033;
 	BADGE_YOKOSUKA_2_SEP_2018_KURIHAMA = 2034;
+}
+
+// ref: Holoholo.Rpc.HoloholoClientTelemetryIds
+enum HoloholoClientTelemetryIds {
+	UNDEFINED = 0;
+	BOOT_TIME = 1;
+	FRAME_RATE = 2;
+	GENERIC_CLICK = 3;
+	MAP_EVENT = 4;
+	SPIN_POKESTOP = 5;
+	PROFILE_PAGE = 6;
+	SHOPPING_PAGE = 7;
+	ENCOUNTER_POKEMON = 8;
+	CATCH_POKEMON = 9;
+	DEPLOY_POKEMON = 10;
+	FEED_POKEMON = 11;
+	EVOLVE_POKEMON = 12;
+	RELEASE_POKEMON = 13;
+	NICKNAME_POKEMON = 14;
+	NEWS_PAGE = 15;
+	ITEM = 16;
+	BATTLE_PARTY = 17;
+	PASSCODE_REDEEM = 18;
+	LINK_LOGIN = 19;
+	RAID = 20;
+	PUSH_NOTIFICATION = 21;
+	AVATAR_CUSTOMIZATION = 22;
+	READ_POINT_OF_INTEREST_DESCRIPTION = 23;
+	WEB = 24;
+	CHANGE_AR = 25;
+	WEATHER_DETAIL_CLICK = 26;
+	USER_ISSUE_WEATHER_REPORT = 27;
+	POKEMON_INVENTORY = 28;
+	SOCIAL = 29;
+	CHECK_ENCOUNTER_TRAY_INFO = 30;
+	POKEMON_GO_PLUS = 31;
+	RPC_TIMING = 32;
+	SOCIAL_GIFT_COUNT = 33;
+	ASSET_BUNDLE_DOWNLOAD = 34;
+	ASSET_POI_DOWNLOAD = 35;
+	ASSET_STREAM_DOWNLOAD = 36;
+	ASSET_STREAM_CACHE_CULLED = 37;
+	RPC_SOCKET_TIMING = 38;
+	PERMISSIONS_FLOW = 39;
+	DEVICE_SERVICE_TOGGLE = 40;
 }
 
 // ref: Holoholo.Rpc.HoloIapItemCategory
@@ -2033,6 +2129,18 @@ enum HoloPokemonMovementType {
 	POKEMON_ENC_MOVEMENT_HOVERING = 6;
 }
 
+// ref: Holoholo.Rpc.HoloPokemonNature
+enum HoloPokemonNature {
+	NATURE_UNKNOWN = 0;
+	V0001_POKEMON_NATURE_STOIC = 1;
+	V0002_POKEMON_NATURE_ASSASSIN = 2;
+	V0003_POKEMON_NATURE_GUARDIAN = 3;
+	V0004_POKEMON_NATURE_RAIDER = 4;
+	V0005_POKEMON_NATURE_PROTECTOR = 5;
+	V0006_POKEMON_NATURE_SENTRY = 6;
+	V0007_POKEMON_NATURE_CHAMPION = 7;
+}
+
 // ref: Holoholo.Rpc.HoloPokemonType
 enum HoloPokemonType {
 	POKEMON_TYPE_NONE = 0;
@@ -2118,7 +2226,7 @@ enum Item {
 // ref: Holoholo.Rpc.ItemUseTelemetryIds
 enum ItemUseTelemetryIds {
 	UNDEFINED_ITEM_EVENT = 0;
-	USE_ITEM_a2f7 = 1;
+	USE_ITEM = 1;
 	RECYCLE_ITEM = 2;
 }
 
@@ -2160,7 +2268,7 @@ enum MapEventsTelemetryIds {
 	PROFILE = 4;
 	SETTINGS = 5;
 	SHOP_FROM_MAP = 6;
-	GYM_a809 = 7;
+	GYM = 7;
 	POKESTOP = 8;
 	RESEARCH = 9;
 	COMPASS = 10;
@@ -2292,6 +2400,24 @@ enum NewsPageTelemetryIds {
 	NEWS_DISMISSED = 2;
 	NEWS_LINK_CLICKED = 3;
 	NEWS_UPDATED_APP = 4;
+}
+
+// ref: Holoholo.Rpc.NotificationCategory
+enum NotificationCategory {
+	unset__notification_category = 0;
+	GYM_REMOVAL = 1;
+	POKEMON_HUNGRY = 2;
+	POKEMON_WON = 3;
+	EXCLUSIVE_RAID_INVITE = 4;
+	EXCLUSIVE_RAID_CANCELLATION = 5;
+	GIFTBOX_INCOMING = 6;
+	GIFTBOX_DELIVERED = 7;
+	FRIENDSHIP_MILESTONE_REWARD = 8;
+	GYM_BATTLE_FRIENDSHIP_INCREMENT = 9;
+	SHARED_EXCLUSIVE_RAID_INVITE = 10;
+	BGMODE_EGG_HATCH = 11;
+	BGMODE_BUDDY_CANDY = 12;
+	BGMODE_WEEKLY_FITNESS_REPORT = 13;
 }
 
 // ref: Holoholo.Rpc.PermissionContextTelemetryIds
@@ -2488,7 +2614,7 @@ enum TutorialCompletion {
 	POKEMON_CAPTURE = 3;
 	NAME_SELECTION = 4;
 	POKEMON_BERRY = 5;
-	USE_ITEM_aa4c = 6;
+	USE_ITEM = 6;
 	FIRST_TIME_EXPERIENCE_COMPLETE = 7;
 	POKESTOP_TUTORIAL = 8;
 	GYM_TUTORIAL = 9;
@@ -2496,6 +2622,47 @@ enum TutorialCompletion {
 	PRIVACY_POLICY_CONFIRMATION = 11;
 	TRADING_TUTORIAL = 12;
 	POI_SUBMISSION_TUTORIAL = 13;
+}
+
+// ref: Holoholo.Rpc.VariableName
+enum VariableName {
+	unset__variable_name = 0;
+	CODE_NAME = 1;
+	TEAM = 2;
+	LEVEL = 3;
+	EXPERIENCE = 4;
+	POKECOIN_BALANCE = 5;
+	STARDUST_BALANCE = 6;
+	EMAIL = 7;
+	LOGIN_METHOD = 8;
+	GYM_ID = 1000;
+	GYM_NAME = 1001;
+	POKEMON_DISPLAY = 1002;
+	POKEDEX_ENTRY_NUMBER = 1003;
+	POKEMON_ID = 1004;
+	POKEMON_NICKNAME = 1005;
+	GYM_BADGE_EARNED_POINTS = 1006;
+	GYM_BADGE_PROGRESS = 1007;
+	GYM_BADGE_RANK = 1008;
+	GYM_BADGE_IMAGE_URL = 1009;
+	GYM_BADGE_LEVEL_UP = 1010;
+	POKECOIN_AWARDED = 1011;
+	POKECOIN_AWARDED_TODAY = 1012;
+	MAX_DAILY_POKECOIN = 1013;
+	BATTLES_WON = 1014;
+	BATTLES_LOST = 1015;
+	DEPLOYED_MILLIS = 1016;
+	RAID_SEED = 1017;
+	EXCLUSIVE_RAID_CANCELLATION_INFO = 1018;
+	GIFTBOX_DETAILS = 1019;
+	FRIEND_AVATAR = 1020;
+	FRIEND_TEAM = 1021;
+	FRIEND_CODENAME = 1022;
+	GIFT_LOOT_ITEMS = 1023;
+	GIFT_EGG = 1024;
+	FRIENDSHIP_MILESTONE_REWARD_DETAILS = 1025;
+	FRIENDSHIP_LEVEL_DISPLAY = 1026;
+	BGMODE_BUDDY_POKEMON_NICKNAME = 1027;
 }
 
 // ref: Holoholo.Rpc.WebTelemetryIds
@@ -7678,7 +7845,7 @@ message TradingLogEntry {
 message TradingProto {
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
 	enum ExclusionReason {
-		UNSET_a152 = 0;
+		UNSET = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -7696,7 +7863,7 @@ message TradingProto {
 
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingState
 	enum TradingState {
-		UNSET_add9 = 0;
+		UNSET = 0;
 		PRIMORDIAL = 1;
 		WAIT = 2;
 		ACTIVE = 3;
@@ -7708,7 +7875,7 @@ message TradingProto {
 	message ExcludedPokemon {
 		// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
 		enum ExclusionReason {
-			UNSET_a152 = 0;
+			UNSET = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -7732,7 +7899,7 @@ message TradingProto {
 	message TradingPlayerProto {
 		// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
 		enum ExclusionReason {
-			UNSET_a152 = 0;
+			UNSET = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -7752,7 +7919,7 @@ message TradingProto {
 		message ExcludedPokemon {
 			// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
 			enum ExclusionReason {
-				UNSET_a152 = 0;
+				UNSET = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -8287,6 +8454,31 @@ message BattlePartyProto {
 //----- End battle -----
 //------------------------------
 //----- Begin proto -----
+
+// ref: PokemonAnim
+enum PokemonAnim {
+	NONE = 0;
+	IDLE_01 = 1;
+	IDLE_02 = 2;
+	LAND = 3;
+	ATTACK_01 = 4;
+	ATTACK_02 = 5;
+	DAMAGED = 6;
+	STUNNED = 7;
+	LOOP = 8;
+	_MAX = 9;
+}
+
+// ref: UpdateType
+enum UpdateType {
+	ADD = 0;
+	MODIFY = 1;
+	REMOVE = 2;
+	PREDICTED_MODIFY = 3;
+	PREDICTED_REMOVE = 4;
+	ROLLED_BACK_MODIFY = 5;
+	ROLLED_BACK_REMOVE = 6;
+}
 
 // ref: FitnessMetricsProto
 message FitnessMetricsProto {
@@ -9103,6 +9295,111 @@ message SyncRequestedEventParams {
 
 //----- End events -----
 //------------------------------
+//----- Begin assetbundles -----
+
+// ref: Niantic.Holoholo.AssetBundles.AssetBundleStatus
+enum AssetBundleStatus {
+	UNLOADED = 0;
+	LOADING = 1;
+	LOADED = 2;
+	FAILED = 3;
+}
+
+
+//----- End assetbundles -----
+//------------------------------
+//----- Begin avatar -----
+
+// ref: Niantic.Holoholo.Avatar.AvatarCompletion
+enum AvatarCompletion {
+	SUCCESS = 0;
+	QUIT = 1;
+}
+
+
+//----- End avatar -----
+//------------------------------
+//----- Begin ar -----
+
+// ref: Niantic.Holoholo.AR.ArContext
+enum ArContext {
+	ENCOUNTER = 0;
+}
+
+// ref: Niantic.Holoholo.AR.ArPlusMode
+enum ArPlusMode {
+	ARPLUS = 0;
+	AR = 1;
+	NORMAL = 2;
+}
+
+
+//----- End ar -----
+//------------------------------
+//----- Begin gym -----
+
+// ref: Niantic.Holoholo.Gym.BattleResultsExit
+enum BattleResultsExit {
+	LEAVE_GYM = 0;
+	LEAVE_BATTLE = 1;
+	CONTINUE_BATTLE = 2;
+}
+
+
+//----- End gym -----
+//------------------------------
+//----- Begin poisubmission -----
+
+// ref: Niantic.Holoholo.PoiSubmission.PoiSubmissionTutorialPage
+enum PoiSubmissionTutorialPage {
+	WHAT_IS_POKESTOP = 0;
+	SUBMIT_FOR_REVIEW = 1;
+	HOW_TO_CHOOSE_A_LOCATION = 2;
+	DESCRIBE_A_LOCATION = 3;
+}
+
+
+//----- End poisubmission -----
+//------------------------------
+//----- Begin items -----
+
+// ref: Niantic.Holoholo.Items.IncubationResult
+enum IncubationResult {
+	SUCCESS = 0;
+	FAILURE = 1;
+}
+
+
+//----- End items -----
+//------------------------------
+//----- Begin protos -----
+
+// ref: Niantic.Social.Protos.SocialAction
+enum SocialAction {
+	UNKNOWN_SOCIAL_ACTION = 0;
+	SEARCH_PLAYER = 10000;
+	SEND_FRIEND_INVITE = 10002;
+	CANCEL_FRIEND_INVITE = 10003;
+	ACCEPT_FRIEND_INVITE = 10004;
+	DECLINE_FRIEND_INVITE = 10005;
+	LIST_FRIENDS = 10006;
+	LIST_OUTGOING_FRIEND_INVITES = 10007;
+	LIST_INCOMING_FRIEND_INVITES = 10008;
+	REMOVE_FRIEND = 10009;
+	LIST_FRIEND_STATUS = 10010;
+	INVITE_FACEBOOK_FRIEND = 10011;
+	IS_MY_FRIEND = 10012;
+	CREATE_INVITE_CODE = 10013;
+	REGISTER_PUSH_NOTIFICATION = 10101;
+	UNREGISTER_PUSH_NOTIFICATION = 10102;
+	UPDATE_NOTIFICATION = 10103;
+	OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 10104;
+	GET_INBOX = 10105;
+}
+
+
+//----- End protos -----
+//------------------------------
 //----- Begin auth -----
 
 // ref: Com.Nianticproject.Platform.Auth.IdentityProvider
@@ -9119,4 +9416,94 @@ enum IdentityProvider {
 
 
 //----- End auth -----
+//------------------------------
+//----- Begin clientinboxservice -----
+
+// ref: Niantic.Holoholo.Services.ClientInboxService.NotificationCategory
+enum NotificationCategory {
+	NONE = 0;
+	GYM_REMOVAL = 1;
+	POKEMON_HUNGRY = 2;
+	EXCLUSIVE_RAID_INVITE = 3;
+	EXCLUSIVE_RAID_CANCELLATION = 4;
+	SHARED_EXCLUSIVE_RAID_INVITE = 5;
+	GIFTBOX_INCOMING = 6;
+	GIFTBOX_DELIVERED = 7;
+	FRIENDSHIP_MILESTONE_REWARD = 8;
+	GYM_BATTLE_FRIENDSHIP_INCREMENT = 9;
+	BGMODE_EGG_HATCH = 10;
+	BGMODE_BUDDY_CANDY = 11;
+	BGMODE_WEEKLY_FITNESS_REPORT = 12;
+	FRIEND_INVITE_RECEIVED = 13;
+	FRIEND_INVITE_ACCEPTED = 14;
+}
+
+
+//----- End clientinboxservice -----
+//------------------------------
+//----- Begin pokemongoplus -----
+
+// ref: PokemonGoPlus.CentralState
+enum CentralState {
+	UNKNOWN = 0;
+	RESETTING = 1;
+	UNSUPPORTED = 2;
+	UNAUTHORIZED = 3;
+	POWERED_OFF = 4;
+	POWERED_ON = 5;
+}
+
+// ref: PokemonGoPlus.NotificationType
+enum NotificationType {
+	NO_NOTIFICATIONS = 0;
+	POKEMON_NOTIFICATIONS = 1;
+	POKESTOP_NOTIFICATIONS = 2;
+	ALL_NOTIFICATIONS = 3;
+}
+
+// ref: PokemonGoPlus.PluginState
+enum PluginState {
+	UNKNOWN = 0;
+	INITIALIZED = 1;
+	STARTING = 2;
+	STARTED = 3;
+	RESUMED = 4;
+	PAUSED = 5;
+	STOPPED = 6;
+}
+
+// ref: PokemonGoPlus.SfidaConnectState
+enum SfidaConnectState {
+	DISCONNECTED = 0;
+	DISCONNECTING = 1;
+	CONNECTED = 2;
+	DISCOVERED = 3;
+	CERTIFIED = 4;
+	SOFTWARE_UPDATE = 5;
+	FAILED = 6;
+	CONNECTING = 7;
+}
+
+
+//----- End pokemongoplus -----
+//------------------------------
+//----- Begin storefront -----
+
+// ref: Niantic.Holoholo.Storefront.CurrencyType
+enum CurrencyType {
+	UNKNOWN = 0;
+	POKECOIN = 1;
+	STARDUST = 2;
+}
+
+// ref: Niantic.Holoholo.Storefront.PresentationType
+enum PresentationType {
+	UNKNOWN = 0;
+	CATEGORY = 1;
+	SORT = 2;
+	SALE = 3;
+}
+
+
+//----- End storefront -----
 //------------------------------

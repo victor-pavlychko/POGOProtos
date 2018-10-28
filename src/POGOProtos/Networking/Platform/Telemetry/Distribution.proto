@@ -2,14 +2,13 @@ syntax = "proto3";
 package POGOProtos.Networking.Platform.Telemetry;
 
 message Distribution {
-	enum BucketType {
-		none = 0;
-		linear_buckets = 1;
-		exponential_buckets = 2;
-		explicit_buckets = 3;
-	}
-
 	message BucketOptions {
+		oneof BucketType {
+			Distribution.LinearBuckets linear_buckets = 1;
+			Distribution.ExponentialBuckets exponential_buckets = 2;
+			Distribution.ExplicitBuckets explicit_buckets = 3;
+		}
+
 		message ExplicitBuckets {
 			repeated int64 bounds = 1;
 		}
@@ -25,10 +24,6 @@ message Distribution {
 			int64 width = 2;
 			int64 offset = 3;
 		}
-
-		Distribution.LinearBuckets linear_buckets = 1;
-		Distribution.ExponentialBuckets exponential_buckets = 2;
-		Distribution.ExplicitBuckets explicit_buckets = 3;
 	}
 
 	message ExplicitBuckets {
