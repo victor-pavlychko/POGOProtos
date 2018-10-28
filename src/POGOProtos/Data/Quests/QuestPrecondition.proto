@@ -36,8 +36,11 @@ message QuestPrecondition {
 	}
 
 	QuestPreconditionType type = 1;
-	string quest_template_id = 2;
-	Level level = 3;
-	Medal medal = 4;
-	Quests quests = 5;
+
+	oneof Condition {
+		string quest_template_id = 2;
+		Level level = 3;
+		Medal medal = 4;
+		Quests quests = 5;
+	}
 }
