@@ -2,8 +2,6 @@ syntax = "proto3";
 package POGOProtos.Data.Quests;
 
 import "POGOProtos/Enums/QuestType.proto";
-import "POGOProtos/Data/Player/DailyCounter.proto";
-import "POGOProtos/Data/Quests/DailyQuest.proto";
 import "POGOProtos/Data/Quests/CatchPokemonQuest.proto";
 import "POGOProtos/Data/Quests/QuestReward.proto";
 import "POGOProtos/Data/Quests/QuestGoal.proto";
@@ -14,7 +12,7 @@ message Quest {
 	.POGOProtos.Enums.QuestType quest_type = 1;
 
 	oneof Quest {
-		.POGOProtos.Data.Quests.DailyQuest daily_quest = 2;
+		DailyQuest daily_quest = 2;
 		MultiPartQuest multi_part = 3;
 		.POGOProtos.Data.Quests.CatchPokemonQuest catch_pokemon = 4;
 		.POGOProtos.Data.Quests.AddFriendQuest add_friend = 5;
@@ -38,11 +36,21 @@ message Quest {
 	int32 stamp_count_override = 114;
 	int64 s2_cell_id = 115;
 	int32 story_quest_template_version = 116;
-	.POGOProtos.Data.Player.DailyCounter daily_counter = 117;
+	DailyCounter daily_counter = 117;
 	string reward_pokemon_icon_url = 118;
 
 	message MultiPartQuest {
 		repeated .POGOProtos.Data.Quests.Quest sub_quests = 1;
+	}
+
+	message DailyQuest {
+		int32 current_period_bucket = 1;
+		int32 current_streak_count = 2;
+	}
+
+	message DailyCounter {
+		int64 window = 1;
+		int32 count = 2;
 	}
 
 	enum Context {
