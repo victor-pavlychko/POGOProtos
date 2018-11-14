@@ -41,6 +41,7 @@ enum PlatformClientAction {
 	REGISTER_BACKGROUND_SERVICE = 5028;
 	GET_CLIENT_BGMODE_SETTINGS = 5029;
 	PING_DOWNSTREAM = 5030;
+	SET_IN_GAME_CURRENCY_EXCHANGE_RATE = 5032;
 }
 
 // ref: Niantic.Platform.Protos.SocialNotificationCategory
@@ -1019,6 +1020,7 @@ enum HoloholoClientTelemetryIds {
 	RPC_SOCKET_TIMING = 38;
 	PERMISSIONS_FLOW = 39;
 	DEVICE_SERVICE_TOGGLE = 40;
+	BOOT_TELEMETRY = 41;
 }
 
 // ref: Holoholo.Rpc.HoloIapItemCategory
@@ -1357,6 +1359,7 @@ enum HoloPokemonFamilyId {
 	V0491_FAMILY_DARKRAI = 491;
 	V0492_FAMILY_SHAYMIN = 492;
 	V0493_FAMILY_ARCEUS = 493;
+	V0808_FAMILY_MELTAN = 808;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonId
@@ -1855,6 +1858,8 @@ enum HoloPokemonId {
 	V0491_POKEMON_DARKRAI = 491;
 	V0492_POKEMON_SHAYMIN = 492;
 	V0493_POKEMON_ARCEUS = 493;
+	V0808_POKEMON_MELTAN = 808;
+	V0809_POKEMON_MELMETAL = 809;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMove
@@ -2190,6 +2195,7 @@ enum Item {
 	ITEM_INCENSE_SPICY = 402;
 	ITEM_INCENSE_COOL = 403;
 	ITEM_INCENSE_FLORAL = 404;
+	ITEM_INCENSE_BELUGA_BOX = 405;
 	ITEM_TROY_DISK = 501;
 	ITEM_X_ATTACK = 602;
 	ITEM_X_DEFENSE = 603;
@@ -2363,6 +2369,8 @@ enum Method {
 	FETCH_ALL_NEWS = 816;
 	MARK_READ_NEWS_ARTICLE = 817;
 	GET_PLAYER_DISPLAY_INFO = 818;
+	BELUGA_TRANSACTION_START = 819;
+	BELUGA_TRANSACTION_COMPLETE = 820;
 	GET_NEW_QUESTS = 900;
 	GET_QUEST_DETAILS = 901;
 	COMPLETE_QUEST = 902;
@@ -2418,6 +2426,7 @@ enum NotificationCategory {
 	BGMODE_EGG_HATCH = 11;
 	BGMODE_BUDDY_CANDY = 12;
 	BGMODE_WEEKLY_FITNESS_REPORT = 13;
+	BGMODE_OFF_SESSION_DISTANCE = 15;
 }
 
 // ref: Holoholo.Rpc.PermissionContextTelemetryIds
@@ -2622,6 +2631,13 @@ enum TutorialCompletion {
 	PRIVACY_POLICY_CONFIRMATION = 11;
 	TRADING_TUTORIAL = 12;
 	POI_SUBMISSION_TUTORIAL = 13;
+	V1_START_TUTORIAL = 14;
+	V2_START_TUTORIAL = 15;
+	V2_CUSTOMIZED_AVATAR = 16;
+	V2_CAUGHT_STARTER = 17;
+	V2_FINISHED_TUTORIAL_CATCHES = 18;
+	V2_NAME_SELECTION = 19;
+	V2_EGG_GIVEN = 20;
 }
 
 // ref: Holoholo.Rpc.VariableName
@@ -2663,6 +2679,7 @@ enum VariableName {
 	FRIENDSHIP_MILESTONE_REWARD_DETAILS = 1025;
 	FRIENDSHIP_LEVEL_DISPLAY = 1026;
 	BGMODE_BUDDY_POKEMON_NICKNAME = 1027;
+	BGMODE_OFF_SESSION_DISTANCE_KM = 1030;
 }
 
 // ref: Holoholo.Rpc.WebTelemetryIds
@@ -2702,6 +2719,7 @@ message ActionLogEntry {
 		complete_quest = 8;
 		complete_quest_stamp_card = 9;
 		complete_quest_pokemon_encounter = 10;
+		beluga_transfer = 11;
 		open_gift = 12;
 		send_gift = 13;
 		trading = 14;
@@ -2720,6 +2738,7 @@ message ActionLogEntry {
 	CompleteQuestLogEntry complete_quest = 8;
 	CompleteQuestStampCardLogEntry complete_quest_stamp_card = 9;
 	CompleteQuestPokemonEncounterLogEntry complete_quest_pokemon_encounter = 10;
+	BelugaDailyTransferLogEntry beluga_transfer = 11;
 	OpenGiftLogEntry open_gift = 12;
 	SendGiftLogEntry send_gift = 13;
 	TradingLogEntry trading = 14;
@@ -3171,6 +3190,205 @@ message BattleUpdateProto {
 	FriendshipLevelMilestone highest_friendship_milestone = 5;
 }
 
+// ref: Holoholo.Rpc.BelugaBleCompleteTransferRequestProto
+message BelugaBleCompleteTransferRequestProto {
+	int64 transaction_id = 1;
+	int32 beluga_requested_item_id = 2;
+	string nonce = 3;
+}
+
+// ref: Holoholo.Rpc.BelugaBleFinalizeTransfer
+message BelugaBleFinalizeTransfer {
+	BelugaBleTransferCompleteProto beluga_transfer_complete = 1;
+	bytes server_signature = 2;
+}
+
+// ref: Holoholo.Rpc.BelugaBleTransferCompleteProto
+message BelugaBleTransferCompleteProto {
+	string nonce = 1;
+	string beluga_id = 2;
+}
+
+// ref: Holoholo.Rpc.BelugaBleTransferPrepProto
+message BelugaBleTransferPrepProto {
+	repeated BelugaPokemonProto pokemon_list = 1;
+	bool eligble_for_item = 2;
+	int64 transaction_id = 3;
+	string beluga_id = 4;
+	string nonce = 5;
+}
+
+// ref: Holoholo.Rpc.BelugaBleTransferProto
+message BelugaBleTransferProto {
+	BelugaBleTransferPrepProto server_response = 1;
+	bytes server_signature = 2;
+	repeated string localized_origins = 3;
+	string language = 4;
+}
+
+// ref: Holoholo.Rpc.BelugaDailyTransferLogEntry
+message BelugaDailyTransferLogEntry {
+	// ref: Holoholo.Rpc.BelugaDailyTransferLogEntry/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+
+	Result result = 1;
+	bool includes_weekly_bonus = 2;
+	LootProto items_awarded = 3;
+}
+
+// ref: Holoholo.Rpc.BelugaGlobalSettingsProto
+message BelugaGlobalSettingsProto {
+	bool enable_beluga_transfer = 1;
+	int32 max_num_pokemon_per_transfer = 2;
+}
+
+// ref: Holoholo.Rpc.BelugaIncenseBoxProto
+message BelugaIncenseBoxProto {
+	bool is_usable = 1;
+	int64 cool_down_finished_timestamp_ms = 2;
+}
+
+// ref: Holoholo.Rpc.BelugaPokemonProto
+message BelugaPokemonProto {
+	// ref: Holoholo.Rpc.BelugaPokemonProto/Types/PokemonCostume
+	enum PokemonCostume {
+		UNSET = 0;
+		HOLIDAY_2016 = 1;
+		ANNIVERSARY = 2;
+		ONE_YEAR_ANNIVERSARY = 3;
+		HALLOWEEN_2017 = 4;
+	}
+
+	// ref: Holoholo.Rpc.BelugaPokemonProto/Types/PokemonForm
+	enum PokemonForm {
+		FORM_UNSET = 0;
+		ALOLA = 1;
+	}
+
+	// ref: Holoholo.Rpc.BelugaPokemonProto/Types/PokemonGender
+	enum PokemonGender {
+		GENDER_UNSET = 0;
+		MALE = 1;
+		FEMALE = 2;
+		GENDERLESS = 3;
+	}
+
+	// ref: Holoholo.Rpc.BelugaPokemonProto/Types/Team
+	enum Team {
+		NONE = 0;
+		TEAM_BLUE = 1;
+		TEAM_RED = 2;
+		TEAM_YELLOW = 3;
+	}
+
+	// ref: Holoholo.Rpc.BelugaPokemonProto/Types/TrainerGender
+	enum TrainerGender {
+		TRAINER_MALE = 0;
+		TRAINER_FEMALE = 1;
+	}
+
+	string trainer_name = 1;
+	TrainerGender trainer_gender = 2;
+	Team trainer_team = 3;
+	int32 trainer_level = 4;
+	int32 pokedex_id = 5;
+	int32 cp = 6;
+	float pokemon_level = 7;
+	int32 max_hp = 8;
+	double origin_lat = 9;
+	double origin_lng = 10;
+	float height = 11;
+	float weight = 12;
+	int32 individual_attack = 13;
+	int32 individual_defense = 14;
+	int32 individual_stamina = 15;
+	int32 creation_day = 16;
+	int32 creation_month = 17;
+	int32 creation_year = 18;
+	string nickname = 19;
+	PokemonGender gender = 20;
+	PokemonCostume costume = 21;
+	PokemonForm form = 22;
+	bool shiny = 23;
+	int32 move1 = 24;
+	int32 move2 = 25;
+}
+
+// ref: Holoholo.Rpc.BelugaPokemonWhitelist
+message BelugaPokemonWhitelist {
+	int32 max_allowed_pokemon_pokedex_number = 1;
+	repeated HoloPokemonId additional_pokemon_allowed = 2;
+	repeated PokemonDisplayProto.Form forms_allowed = 3;
+	repeated PokemonDisplayProto.Costume costumes_allowed = 4;
+}
+
+// ref: Holoholo.Rpc.BelugaTransactionCompleteOutProto
+message BelugaTransactionCompleteOutProto {
+	// ref: Holoholo.Rpc.BelugaTransactionCompleteOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILED = 2;
+		ERROR_INVALID_POKEMON_ID = 3;
+		ERROR_POKEMON_DEPLOYED = 4;
+		ERROR_POKEMON_NOT_ALLOWED = 5;
+		ERROR_POKEMON_IS_BUDDY = 6;
+		ERROR_INVALID_TRANSACTION_ID = 7;
+		ERROR_MISSING_TRANSACTION_ID = 8;
+	}
+
+	Status status = 1;
+	int32 candy_awarded = 2;
+	LootProto loot_awarded = 3;
+	BelugaBleFinalizeTransfer beluga_finalize_response = 4;
+	int32 buckets_until_weekly_award = 5;
+}
+
+// ref: Holoholo.Rpc.BelugaTransactionCompleteProto
+message BelugaTransactionCompleteProto {
+	BelugaBleCompleteTransferRequestProto beluga_transfer = 1;
+	bytes app_signature = 2;
+	bytes firmware_signature = 3;
+}
+
+// ref: Holoholo.Rpc.BelugaTransactionStartOutProto
+message BelugaTransactionStartOutProto {
+	// ref: Holoholo.Rpc.BelugaTransactionStartOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILED = 2;
+		ERROR_INVALID_POKEMON_ID = 3;
+		ERROR_POKEMON_DEPLOYED = 4;
+		ERROR_POKEMON_IS_EGG = 5;
+		ERROR_POKEMON_IS_BUDDY = 6;
+		ERROR_POKEMON_NOT_ALLOWED = 7;
+		ERROR_INVALID_NONCE = 8;
+		ERROR_TOO_MANY_POKEMON = 9;
+		ERROR_NO_POKEMON_SPECIFIED = 10;
+	}
+
+	Status status = 1;
+	BelugaBleTransferPrepProto beluga_transfer_prep = 2;
+	bytes server_signature = 3;
+}
+
+// ref: Holoholo.Rpc.BelugaTransactionStartProto
+message BelugaTransactionStartProto {
+	repeated int64 pokemon_id = 1;
+	string nonce = 2;
+	string beluga_id = 3;
+}
+
+// ref: Holoholo.Rpc.BootTelemetry
+message BootTelemetry {
+	float nearest_poi_distance = 1;
+	int32 poi_within_one_km_count = 2;
+}
+
 // ref: Holoholo.Rpc.BootTime
 message BootTime {
 	// ref: Holoholo.Rpc.BootTime/Types/BootPhase
@@ -3191,6 +3409,7 @@ message BootTime {
 		LOGIN_VERSION_CHECK = 13;
 		LOGIN_GET_PLAYER = 14;
 		LOGIN_AUTHENTICATION = 15;
+		MODAL_TIME = 16;
 	}
 
 	niantic.platform.telemetry.PlatformMetricData duration = 1;
@@ -4509,6 +4728,7 @@ message GameMasterClientTemplateProto {
 	WeatherBonusProto weather_bonus_settings = 26;
 	PokemonScaleSettingProto pokemon_scale_settings = 27;
 	IapItemCategoryDisplayProto iap_category_display = 28;
+	BelugaPokemonWhitelist beluga_pokemon_whitelist = 29;
 	OnboardingSettingsProto onboarding_settings = 30;
 	FriendshipLevelMilestoneSettingsProto friendship_milestone_settings = 31;
 	LuckyPokemonSettingsProto lucky_pokemon_settings = 32;
@@ -4989,6 +5209,7 @@ message GlobalSettingsProto {
 	ClientPerformanceSettingsProto client_perf_settings = 17;
 	NewsGlobalSettingsProto news_global_settings = 18;
 	QuestGlobalSettingsProto quest_global_settings = 19;
+	BelugaGlobalSettingsProto beluga_global_settings = 20;
 	TelemetryGlobalSettingsProto telemetry_global_settings = 21;
 	LoginSettingsProto login_settings = 22;
 	SocialClientSettingsProto social_settings = 23;
@@ -5349,6 +5570,7 @@ message HoloholoClientTelemetryOmniProto {
 		rpc_socket_timing_telemetry = 38;
 		permissions_flow = 39;
 		device_service_toggle = 40;
+		boot_telemetry = 41;
 	}
 
 	BootTime boot_time = 1;
@@ -5391,6 +5613,7 @@ message HoloholoClientTelemetryOmniProto {
 	RpcSocketResponseTelemetry rpc_socket_timing_telemetry = 38;
 	PermissionsFlowTelemetry permissions_flow = 39;
 	DeviceServiceToggleTelemetry device_service_toggle = 40;
+	BootTelemetry boot_telemetry = 41;
 	niantic.platform.telemetry.PlatformServerData server_data = 1001;
 }
 
@@ -5414,6 +5637,7 @@ message HoloInventoryItemProto {
 		raid_tickets = 13;
 		quests = 14;
 		gift_boxes = 15;
+		beluga_incense = 16;
 	}
 
 	PokemonProto pokemon = 1;
@@ -5431,6 +5655,7 @@ message HoloInventoryItemProto {
 	RaidTicketsProto raid_tickets = 13;
 	QuestsProto quests = 14;
 	GiftBoxesProto gift_boxes = 15;
+	BelugaIncenseBoxProto beluga_incense = 16;
 }
 
 // ref: Holoholo.Rpc.HoloInventoryKeyProto
@@ -5453,6 +5678,7 @@ message HoloInventoryKeyProto {
 		raid_tickets = 13;
 		quests = 14;
 		gift_boxes = 15;
+		beluga_incense_box = 16;
 	}
 
 	uint64 pokemon_id = 1;
@@ -5470,6 +5696,7 @@ message HoloInventoryKeyProto {
 	bool raid_tickets = 13;
 	bool quests = 14;
 	bool gift_boxes = 15;
+	bool beluga_incense_box = 16;
 }
 
 // ref: Holoholo.Rpc.IapItemCategoryDisplayProto
@@ -6387,6 +6614,7 @@ message PokemonDisplayProto {
 		HALLOWEEN_2017 = 4;
 		SUMMER_2018 = 5;
 		FALL_2018 = 6;
+		NOVEMBER_2018 = 7;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Form
@@ -6737,6 +6965,7 @@ message PokemonSettingsProto {
 	PokemonDisplayProto.Form parent_form = 35;
 	bool is_transferable = 37;
 	bool is_deployable = 38;
+	bool is_tradable = 40;
 }
 
 // ref: Holoholo.Rpc.PokemonStatsAttributesProto
@@ -7694,6 +7923,9 @@ message SocialClientSettingsProto {
 	int32 max_friend_nickname_length = 4;
 	bool enable_add_friend_via_qr_code = 5;
 	bool enable_share_ex_pass = 6;
+	bool enable_facebook_friends = 7;
+	int32 facebook_friend_limit_per_request = 8;
+	bool disable_facebook_friends_opening_prompt = 9;
 }
 
 // ref: Holoholo.Rpc.SocialGiftCountTelemetry
@@ -7971,6 +8203,7 @@ message TradingProto {
 		int32 individual_stamina = 18;
 		string nickname = 19;
 		bool favorite = 20;
+		int64 creation_time_ms = 22;
 	}
 
 	TradingState state = 1;
@@ -8630,6 +8863,33 @@ message RedeemPasscodeResponseProto {
 	repeated AcquiredItem acquired_item = 2;
 	bytes acquired_items_proto = 3;
 	string passcode = 4;
+}
+
+// ref: SetInGameCurrencyExchangeRateOutProto
+message SetInGameCurrencyExchangeRateOutProto {
+	// ref: SetInGameCurrencyExchangeRateOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+
+	Status status = 1;
+}
+
+// ref: SetInGameCurrencyExchangeRateProto
+message SetInGameCurrencyExchangeRateProto {
+	string in_game_currency = 1;
+	string fiat_currency = 2;
+	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
+}
+
+// ref: SetInGameCurrencyExchangeRateTrackingProto
+message SetInGameCurrencyExchangeRateTrackingProto {
+	string in_game_currency = 1;
+	string fiat_currency = 2;
+	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
+	string status = 4;
 }
 
 // ref: SfidaAuthToken
@@ -9308,6 +9568,28 @@ enum AssetBundleStatus {
 
 //----- End assetbundles -----
 //------------------------------
+//----- Begin beluga -----
+
+// ref: Niantic.Holoholo.Beluga.TransferStage
+enum TransferStage {
+	none = 0;
+	initiating_handshake_to_beluga = 1;
+	forwarding_handshake_response_to_server = 2;
+	sending_pokemon_to_beluga = 3;
+	forwarding_beluga_response_to_server = 4;
+	forwarding_server_finalize_to_beluga = 5;
+}
+
+// ref: Niantic.Holoholo.Beluga.WonderBoxDisplay
+enum WonderBoxDisplay {
+	inactive = 0;
+	active = 1;
+	open = 2;
+}
+
+
+//----- End beluga -----
+//------------------------------
 //----- Begin avatar -----
 
 // ref: Niantic.Holoholo.Avatar.AvatarCompletion
@@ -9451,6 +9733,12 @@ enum CentralState {
 	UNAUTHORIZED = 3;
 	POWERED_OFF = 4;
 	POWERED_ON = 5;
+}
+
+// ref: PokemonGoPlus.DeviceKind
+enum DeviceKind {
+	POKEMON_GO_PLUS = 0;
+	POKE_BALL_PLUS = 1;
 }
 
 // ref: PokemonGoPlus.NotificationType
