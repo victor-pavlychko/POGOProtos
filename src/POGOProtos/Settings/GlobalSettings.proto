@@ -24,6 +24,7 @@ import "POGOProtos/Settings/UpsightLoggingSettings.proto";
 import "POGOProtos/Settings/BackgroundModeGlobalSettings.proto";
 import "POGOProtos/Settings/ProbeSettings.proto";
 import "POGOProtos/Settings/PokecoinPurchaseDisplaySettings.proto";
+import "POGOProtos/Settings/BelugaGlobalSettings.proto";
 import "POGOProtos/Enums/PokemonId.proto";
 
 message GlobalSettings {
@@ -45,6 +46,7 @@ message GlobalSettings {
 	.POGOProtos.Settings.ClientPerformanceSettings client_perf_settings = 17;
 	.POGOProtos.Settings.NewsGlobalSettings news_global_settings = 18;
 	.POGOProtos.Settings.QuestGlobalSettings quest_global_settings = 19;
+	.POGOProtos.Settings.BelugaGlobalSettings beluga_global_settings = 20;
 	.POGOProtos.Settings.TelemetryGlobalSettings telemetry_global_settings = 21;
 	.POGOProtos.Settings.LoginSettings login_settings = 22;
 	.POGOProtos.Settings.SocialClientSettings social_settings = 23;

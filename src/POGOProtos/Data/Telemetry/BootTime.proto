@@ -21,6 +21,7 @@ message BootTime {
 		LOGIN_VERSION_CHECK = 13;
 		LOGIN_GET_PLAYER = 14;
 		LOGIN_AUTHENTICATION = 15;
+		MODAL_TIME = 16;
 	}
 
 	.POGOProtos.Networking.Platform.Telemetry.PlatformMetricData duration = 1;

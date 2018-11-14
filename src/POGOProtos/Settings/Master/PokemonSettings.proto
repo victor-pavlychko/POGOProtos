@@ -50,4 +50,5 @@ message PokemonSettings {
 	.POGOProtos.Enums.Form parent_form = 35;
 	bool is_transferable = 37;
 	bool is_deployable = 38;
+	bool is_tradable = 40;
 }
