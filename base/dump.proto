@@ -9568,28 +9568,6 @@ enum AssetBundleStatus {
 
 //----- End assetbundles -----
 //------------------------------
-//----- Begin beluga -----
-
-// ref: Niantic.Holoholo.Beluga.TransferStage
-enum TransferStage {
-	none = 0;
-	initiating_handshake_to_beluga = 1;
-	forwarding_handshake_response_to_server = 2;
-	sending_pokemon_to_beluga = 3;
-	forwarding_beluga_response_to_server = 4;
-	forwarding_server_finalize_to_beluga = 5;
-}
-
-// ref: Niantic.Holoholo.Beluga.WonderBoxDisplay
-enum WonderBoxDisplay {
-	inactive = 0;
-	active = 1;
-	open = 2;
-}
-
-
-//----- End beluga -----
-//------------------------------
 //----- Begin avatar -----
 
 // ref: Niantic.Holoholo.Avatar.AvatarCompletion
