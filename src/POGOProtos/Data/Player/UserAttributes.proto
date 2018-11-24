@@ -3,12 +3,9 @@ package POGOProtos.Data.Player;
 
 message UserAttributes {
 	int32 level = 1;
-	int64 xp = 2;
-	int32 avatar = 3;
-	int64 item_count = 4;
-	int64 pokemon_count = 5;
-	int64 pokecoin_count = 6;
-	int32 team = 7;
-	int32 catch_streak = 8;
-	int32 spin_streak = 9;
+	int64 xp_percentage = 2;
+	int64 pokecoin_count = 3;
+	int32 team = 4;
+	int32 catch_streak = 5;
+	int32 spin_streak = 6;
 }
