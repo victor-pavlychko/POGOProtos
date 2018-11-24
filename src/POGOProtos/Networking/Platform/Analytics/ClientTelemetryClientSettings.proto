@@ -10,4 +10,6 @@ message ClientTelemetryClientSettings {
 	double sampling_probability = 6;
 	bool use_player_based_sampling = 7;
 	double player_hash = 8;
+	string player_external_omni_id = 9;
+	bool disable_omni_sending = 10;
 }
