@@ -9801,19 +9801,6 @@ enum IncubationResult {
 
 //----- End items -----
 //------------------------------
-//----- Begin holoholo -----
-
-// ref: Niantic.Holoholo.GoogleMapType
-enum GoogleMapType {
-	roadmap = 0;
-	satellite = 1;
-	hybrid = 2;
-	terrain = 3;
-}
-
-
-//----- End holoholo -----
-//------------------------------
 //----- Begin protos -----
 
 // ref: Niantic.Social.Protos.SocialAction
