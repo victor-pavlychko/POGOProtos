@@ -1,6 +1,7 @@
 syntax = "proto3";
 package POGOProtos.Settings;
 
+import "POGOProtos/Enums/PokemonId.proto";
 import "POGOProtos/Settings/EventSettings.proto";
 import "POGOProtos/Settings/FestivalSettings.proto";
 import "POGOProtos/Settings/FortSettings.proto";
@@ -21,12 +22,15 @@ import "POGOProtos/Settings/QuestGlobalSettings.proto";
 import "POGOProtos/Settings/SocialClientSettings.proto";
 import "POGOProtos/Settings/TradingGlobalSettings.proto";
 import "POGOProtos/Settings/UpsightLoggingSettings.proto";
+import "POGOProtos/Settings/BelugaGlobalSettings.proto";
+import "POGOProtos/Settings/PokecoinPurchaseDisplaySettings.proto";
+import "POGOProtos/Settings/HelpshiftSettings.proto";
+import "POGOProtos/Settings/CombatGlobalSettings.proto";
+import "POGOProtos/Settings/ThirdMoveGlobalSettings.proto";
+import "POGOProtos/Settings/CombatChallengeGlobalSettings.proto";
+import "POGOProtos/Settings/PoiGlobalSettings.proto";
 import "POGOProtos/Settings/BackgroundModeGlobalSettings.proto";
 import "POGOProtos/Settings/ProbeSettings.proto";
-import "POGOProtos/Settings/PokecoinPurchaseDisplaySettings.proto";
-import "POGOProtos/Settings/BelugaGlobalSettings.proto";
-import "POGOProtos/Settings/HelpshiftSettings.proto";
-import "POGOProtos/Enums/PokemonId.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
@@ -54,8 +58,12 @@ message GlobalSettings {
 	.POGOProtos.Settings.TradingGlobalSettings trading_global_settings = 24;
 	repeated .POGOProtos.Enums.PokemonId additional_allowed_pokemon_ids = 25;
 	.POGOProtos.Settings.UpsightLoggingSettings upsight_logging_settings = 26;
+	.POGOProtos.Settings.CombatGlobalSettings combat_global_settings = 27;
+	.POGOProtos.Settings.ThirdMoveGlobalSettings third_move_settings = 28;
+	.POGOProtos.Settings.CombatChallengeGlobalSettings combat_challenge_global_settings = 29;
 	.POGOProtos.Settings.BackgroundModeGlobalSettings bgmode_global_settings = 30;
 	.POGOProtos.Settings.ProbeSettings probe_settings = 31;
 	.POGOProtos.Settings.PokecoinPurchaseDisplaySettings purchased_settings = 32;
 	.POGOProtos.Settings.HelpshiftSettings helpshift_settings = 33;
+	.POGOProtos.Settings.PoiGlobalSettings poi_settings = 35;
 }

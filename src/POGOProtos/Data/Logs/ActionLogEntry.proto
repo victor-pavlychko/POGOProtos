@@ -16,6 +16,7 @@ import "POGOProtos/Data/Logs/ShareExRaidPassLogEntry.proto";
 import "POGOProtos/Data/Logs/DeclineExRaidPassLogEntry.proto";
 import "POGOProtos/Data/Logs/FitnessRewardsLogEntry.proto";
 import "POGOProtos/Data/Logs/BelugaDailyTransferLogEntry.proto";
+import "POGOProtos/Data/Logs/CombatLogEntry.proto";
 
 message ActionLogEntry {
 	int64 timestamp_ms = 1;
@@ -37,5 +38,6 @@ message ActionLogEntry {
 		.POGOProtos.Data.Logs.ShareExRaidPassLogEntry share_ex_raid_pass = 15;
 		.POGOProtos.Data.Logs.DeclineExRaidPassLogEntry decline_ex_raid_pass = 16;
 		.POGOProtos.Data.Logs.FitnessRewardsLogEntry fitness_rewards = 17;
+		.POGOProtos.Data.Logs.CombatLogEntry combat = 18;
 	}
 }
