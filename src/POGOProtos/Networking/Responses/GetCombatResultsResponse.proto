@@ -6,7 +6,7 @@ import "POGOProtos/Inventory/Loot.proto";
 import "POGOProtos/Data/Friends/LeveledUpFriends.proto";
 import "POGOProtos/Enums/CombatPlayerFinishState.proto";
 
-message  GetCombatResultsResponse {
+message GetCombatResultsResponse {
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
