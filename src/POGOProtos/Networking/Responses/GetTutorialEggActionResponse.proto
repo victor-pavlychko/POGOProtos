@@ -3,8 +3,8 @@ package POGOProtos.Networking.Responses;
 
 message GetTutorialEggActionResponse {
 	enum Result {
-		UNSET_EGG_ACTION = 0;
-		SUCCESS_EGG_ACTION = 1;
+		UNSET = 0;
+		SUCCESS = 1;
 		ERROR_PLAYER_ALREADY_HAS_TUTORIAL_EGG = 2;
 		ERROR_FAILED_TO_ADD_EGG = 3;
 		ERROR_NOT_V2_FLOW = 4;
