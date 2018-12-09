@@ -33,6 +33,7 @@ message AvatarCustomization {
 		BELT = 10;
 		GLASSES = 11;
 		NECKLACE = 12;
+		SKIN = 13;
 	}
 
 	bool enabled = 1;

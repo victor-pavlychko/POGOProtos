@@ -6,8 +6,8 @@ import "POGOProtos/Enums/TelemetryIds.proto";
 message LoginActionTelemetry {
 	.POGOProtos.Enums.LoginActionTelemetryIds login_action_id = 1;
 	bool first_time = 2;
-	string success = 3;
-	string error = 4;
-	string intent_existing = 5;
+	bool success = 3;
+	bool intent_existing = 4;
+	string error = 5;
 	string auth_status = 6;
 }
