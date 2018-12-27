@@ -37,16 +37,14 @@ import "POGOProtos/Settings/Master/CombatNpcTrainer.proto";
 import "POGOProtos/Settings/Master/CombatNpcPersonality.proto";
 import "POGOProtos/Settings/Master/OnboardingV2Settings.proto";
 import "POGOProtos/Settings/Master/CombatLeagueSettings.proto";
-import "POGOProtos/Settings/Master/BelugaPokemonWhitelist.proto";
 import "POGOProtos/Settings/Master/CombatLeague.proto";
+import "POGOProtos/Settings/Master/BelugaPokemonWhitelist.proto";
 
 message DownloadItemTemplatesResponse {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		PAGE = 2;
-		RETRY = 3;
-	}
+	Result result = 1;
+	repeated ItemTemplate item_templates = 2;
+	uint64 timestamp_ms = 3;
+	int32 page_offset = 4;
 
 	message ItemTemplate {
 		string template_id = 1;
@@ -90,8 +88,10 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Settings.Master.OnboardingV2Settings onboarding_v2_settings = 42;
 	}
 
-	Result result = 1;
-	repeated ItemTemplate item_templates = 2;
-	uint64 timestamp_ms = 3;
-	int32 page_offset = 4;
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		PAGE = 2;
+		RETRY = 3;
+	}
 }
