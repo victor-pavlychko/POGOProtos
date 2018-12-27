@@ -1,12 +1,9 @@
 syntax = "proto3";
-package POGOProtos.Networking.Responses;
+package POGOProtos.Networking.Responses.Social;
 
 import "POGOProtos/Data/Combat/CombatChallenge.proto";
 
 message CreateCombatChallengeResponse {
-	Result result = 1;
-	.POGOProtos.Data.Combat.CombatChallenge challenge = 2;
-
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -14,4 +11,7 @@ message CreateCombatChallengeResponse {
 		ERROR_PLAYER_BELOW_MINIMUM_LEVEL = 3;
 		ERROR_ACCESS_DENIED = 4;
 	}
+
+	Result result = 1;
+	.POGOProtos.Data.Combat.CombatChallenge challenge = 2;
 }
