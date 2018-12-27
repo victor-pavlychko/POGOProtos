@@ -63,7 +63,7 @@ message AddNewPoiResponse {
 	}
 }
 
-message ProxySocialActionResponse {
+message ProxySocialSideChannelActionResponse {
 	Status status = 1;
 	string assigned_host = 2;
 	bytes payload = 3;
