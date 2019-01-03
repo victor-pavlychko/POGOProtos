@@ -3,6 +3,6 @@ package POGOProtos.Networking.Requests.Messages;
 
 import "POGOProtos/Data/Fitness/FitnessSample.proto";
 
-message FitnessUpdateMessage {
+message UpdateFitnessMetricsMessage {
 	repeated .POGOProtos.Data.Fitness.FitnessSample fitness_samples = 1;
 }
