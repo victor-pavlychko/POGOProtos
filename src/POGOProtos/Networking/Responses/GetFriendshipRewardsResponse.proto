@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Networking.Responses.Social;
+package POGOProtos.Networking.Responses;
 
 message GetFriendshipRewardsResponse {
 	enum Result {
