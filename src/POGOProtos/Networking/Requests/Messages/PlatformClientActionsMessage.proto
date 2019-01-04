@@ -34,7 +34,7 @@ message OptOutPushNotificationCategoryMessage {
 	repeated string categories = 1;
 }
 
-message RedeemPasscodeRequest {
+message RedeemPasscodeMessage {
 	string passcode = 1;
 }
 
