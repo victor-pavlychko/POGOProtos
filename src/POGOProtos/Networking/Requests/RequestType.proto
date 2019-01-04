@@ -10,7 +10,7 @@ enum RequestType {
 	DOWNLOAD_REMOTE_CONFIG_VERSION = 7;         // Implemented
 	REGISTER_BACKGROUND_DEVICE = 8;             // Implemented
 	GET_PLAYER_DAY = 9;                         // Implemented
-	ACKNOWLEDGE_PUNISHMENT = 10;                // ???
+	ACKNOWLEDGE_PUNISHMENT = 10;                // Implemented
 	FORT_SEARCH = 101;                          // Implemented
 	ENCOUNTER = 102;                            // Implemented
 	CATCH_POKEMON = 103;                        // Implemented
@@ -77,11 +77,11 @@ enum RequestType {
 	ECHO = 666;                                 // Implemented
 	SFIDA_REGISTRATION = 800;                   // Implemented
 	SFIDA_ACTION_LOG = 801;                     // Implemented
-	SFIDA_CERTIFICATION = 802;                  // ???
-	SFIDA_UPDATE = 803;                         // ???
-	SFIDA_ACTION = 804;                         // ???
-	SFIDA_DOWSER = 805;                         // ???
-	SFIDA_CAPTURE = 806;                        // ???
+	SFIDA_CERTIFICATION = 802;                  // Implemented
+	SFIDA_UPDATE = 803;                         // Implemented
+	SFIDA_ACTION = 804;                         // Implemented
+	SFIDA_DOWSER = 805;                         // Implemented
+	SFIDA_CAPTURE = 806;                        // Implemented
 	LIST_AVATAR_CUSTOMIZATIONS = 807;           // Implemented
 	SET_AVATAR_ITEM_AS_VIEWED = 808;            // Implemented
 	GET_INBOX = 809;                            // Implemented
