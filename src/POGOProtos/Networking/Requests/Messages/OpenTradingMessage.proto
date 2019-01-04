@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Networking.Requests;
+
+message OpenTradingMessage {
+	string player_id = 1;
+}
