@@ -18,7 +18,7 @@ message BelugaPokemon {
 		FORM_UNSET = 0;
 		ALOLA = 1;
 	}
-	
+
 	enum TrainerGender {
 		TRAINER_MALE = 0;
 		TRAINER_FEMALE = 1;
