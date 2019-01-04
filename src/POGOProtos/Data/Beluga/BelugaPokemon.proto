@@ -1,19 +1,12 @@
 syntax = "proto3";
 package POGOProtos.Data.Beluga;
 
+import "POGOProtos/Enums/Costume.proto";
 import "POGOProtos/Enums/Gender.proto";
 import "POGOProtos/Enums/PokemonMove.proto";
 import "POGOProtos/Enums/TeamColor.proto";
 
 message BelugaPokemon {
-	enum PokemonCostume {
-		UNSET = 0;
-		HOLIDAY_2016 = 1;
-		ANNIVERSARY = 2;
-		ONE_YEAR_ANNIVERSARY = 3;
-		HALLOWEEN_2017 = 4;
-	}
-
 	enum PokemonForm {
 		FORM_UNSET = 0;
 		ALOLA = 1;
@@ -44,7 +37,7 @@ message BelugaPokemon {
 	int32 creation_year = 18;
 	string nickname = 19;
 	.POGOProtos.Enums.Gender gender = 20;
-	PokemonCostume costume = 21;
+	.POGOProtos.Enums.Costume costume = 21;
 	PokemonForm form = 22;
 	bool shiny = 23;
 	.POGOProtos.Enums.PokemonMove move1 = 24;
