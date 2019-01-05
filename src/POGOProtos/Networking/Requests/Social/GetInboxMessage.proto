@@ -6,4 +6,3 @@ message GetInboxMessage {
 	bool is_reverse = 2;
 	int64 not_before_ms = 3;
 }
-
