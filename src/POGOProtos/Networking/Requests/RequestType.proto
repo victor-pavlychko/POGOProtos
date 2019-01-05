@@ -134,7 +134,7 @@ enum RequestType {
 	UPDATE_COMBAT = 1001;                       // Implemented
 	QUIT_COMBAT = 1002;                         // Implemented
 	GET_COMBAT_RESULTS = 1003;                  // Implemented
-	UNLOCK_SPECIAL_MOVE = 1004;                 // ???
+	UNLOCK_SPECIAL_MOVE = 1004;                 // Implemented
 	GET_NPC_COMBAT_REWARDS = 1005;              // Implemented
 	COMBAT_FRIEND_REQUEST = 1006;               // Implemented
 	OPEN_NPC_COMBAT_SESSION = 1007;             // Implemented

@@ -2,6 +2,9 @@ syntax = "proto3";
 package POGOProtos.Networking.Requests.Messages;
 
 message UpdatePlayerLocationMessage {
+	string geofence_identifier = 1;
+	PingReason reason = 2;
+
 	enum PingReason {
 		UNSET = 0;
 		ENTRANCE_EVENT = 1;
@@ -11,7 +14,4 @@ message UpdatePlayerLocationMessage {
 		FITNESS_WAKEUP = 5;
 		OTHER_WAKEUP = 6;
 	}
-
-	string geofence_identifier = 1;
-	PingReason reason = 2;
 }
