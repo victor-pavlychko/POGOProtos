@@ -23,4 +23,4 @@ enum SocialAction {
 	UPDATE_NOTIFICATION = 10103;                               // Implemented
 	OPT_OUT_PUSH_NOTIFICATION_CATEGORY_SOCIAL_ACTION = 10104;  // ???
 	GET_INBOX = 10105;                                         // Implemented
- }
+}
