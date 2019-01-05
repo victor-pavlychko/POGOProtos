@@ -4,6 +4,9 @@ package POGOProtos.Data.Telemetry;
 import "POGOProtos/Networking/Platform/Telemetry/PlatformMetricData.proto";
 
 message BootTime {
+	.POGOProtos.Networking.Platform.Telemetry.PlatformMetricData duration = 1;
+	BootPhase boot_phase = 2;
+
 	enum BootPhase {
 		UNDEFINED = 0;
 		TIME_TO_MAP = 1;
@@ -23,7 +26,4 @@ message BootTime {
 		LOGIN_AUTHENTICATION = 15;
 		MODAL_TIME = 16;
 	}
-
-	.POGOProtos.Networking.Platform.Telemetry.PlatformMetricData duration = 1;
-	BootPhase boot_phase = 2;
 }

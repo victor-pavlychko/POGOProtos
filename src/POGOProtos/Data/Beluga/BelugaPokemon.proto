@@ -7,16 +7,6 @@ import "POGOProtos/Enums/PokemonMove.proto";
 import "POGOProtos/Enums/TeamColor.proto";
 
 message BelugaPokemon {
-	enum PokemonForm {
-		FORM_UNSET = 0;
-		ALOLA = 1;
-	}
-
-	enum TrainerGender {
-		TRAINER_MALE = 0;
-		TRAINER_FEMALE = 1;
-	}
-
 	string trainer_name = 1;
 	TrainerGender trainer_gender = 2;
 	.POGOProtos.Enums.TeamColor trainer_team = 3;
@@ -42,4 +32,14 @@ message BelugaPokemon {
 	bool shiny = 23;
 	.POGOProtos.Enums.PokemonMove move1 = 24;
 	.POGOProtos.Enums.PokemonMove move2 = 25;
+
+	enum PokemonForm {
+		FORM_UNSET = 0;
+		ALOLA = 1;
+	}
+
+	enum TrainerGender {
+		TRAINER_MALE = 0;
+		TRAINER_FEMALE = 1;
+	}
 }

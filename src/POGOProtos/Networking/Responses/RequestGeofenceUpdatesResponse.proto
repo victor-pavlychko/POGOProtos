@@ -3,6 +3,6 @@ package POGOProtos.Networking.Responses;
 
 import "POGOProtos/Data/GeofenceMetadata.proto";
 
-message RequestGeofenceUpdateResponse {
+message RequestGeofenceUpdatesResponse {
 	repeated .POGOProtos.Data.GeofenceMetadata geofence = 1;
 }

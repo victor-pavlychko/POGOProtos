@@ -5,13 +5,6 @@ import "POGOProtos/Networking/Platform/Telemetry/Distribution.proto";
 import "POGOProtos/Networking/Platform/Telemetry/TelemetryCommon.proto";
 
 message PlatformMetricData {
-	enum Kind {
-		UNSPECIFIED = 0;
-		GAUGE = 1;
-		DELTA = 2;
-		CUMULATIVE = 3;
-	}
-
 	.POGOProtos.Networking.Platform.Telemetry.TelemetryCommon common_telemetry = 1;
 
 	oneof DatapointValue {
@@ -22,4 +15,11 @@ message PlatformMetricData {
 	}
 
 	Kind metric_kind = 6;
+
+	enum Kind {
+		UNSPECIFIED = 0;
+		GAUGE = 1;
+		DELTA = 2;
+		CUMULATIVE = 3;
+	}
 }

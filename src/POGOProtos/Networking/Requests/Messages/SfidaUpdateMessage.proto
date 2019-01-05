@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Networking.Requests.Sfida;
+package POGOProtos.Networking.Requests;
 
 import "POGOProtos/Data/Sfida/SfidaMetricsUpdate.proto";
 

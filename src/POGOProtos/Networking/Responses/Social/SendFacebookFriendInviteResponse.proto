@@ -2,6 +2,8 @@ syntax = "proto3";
 package POGOProtos.Networking.Responses.Social;
 
 message SendFacebookFriendInviteResponse {
+	Result result = 1;
+
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -19,6 +21,4 @@ message SendFacebookFriendInviteResponse {
 		ERROR_FRIEND_NOT_CACHED = 13;
 		ERROR_INVALID_SENDER_FACEBOOK_ID = 14;
 	}
-
-	Result result = 1;
 }

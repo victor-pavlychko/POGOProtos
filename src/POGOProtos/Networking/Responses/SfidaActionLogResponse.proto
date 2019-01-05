@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Networking.Responses.Sfida;
+package POGOProtos.Networking.Responses;
 
 import "POGOProtos/Data/Logs/ActionLogEntry.proto";
 

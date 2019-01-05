@@ -2,6 +2,8 @@ syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
 message SetFriendNicknameResponse {
+	Result result = 1;
+
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -12,6 +14,4 @@ message SetFriendNicknameResponse {
 		ERROR_FILTERED_NICKNAME = 6;
 		ERROR_EXCEEDED_CHANGE_LIMIT = 7;
 	}
-
-	Result result = 1;
 }
