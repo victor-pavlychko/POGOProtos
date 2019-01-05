@@ -1,7 +1,7 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
-message DeclineExRaidPassResponse {
+message DeclineSharedExRaidPassResponse {
 	Result result = 1;
 
 	enum Result {

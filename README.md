@@ -14,7 +14,6 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``Quests``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Enums/QuestType.proto) 
  ### Others
  - [``Client Telemetry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Enums/TelemetryIds.proto#L37)
- - [``Platform``](https://github.com/Furtif/POGOProtos/tree/master/src/POGOProtos/Enums/PlatformClientAction.proto)
    
 ### Versioning
 
