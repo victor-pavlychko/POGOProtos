@@ -1,8 +1,8 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
-import "POGOProtos/Data/GeofenceMetadata.proto";
+import "POGOProtos/Data/Geofence/GeofenceMetadata.proto";
 
 message RequestGeofenceUpdatesResponse {
-	repeated .POGOProtos.Data.GeofenceMetadata geofence = 1;
+	repeated .POGOProtos.Data.Geofence.GeofenceMetadata geofence = 1;
 }
