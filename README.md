@@ -11,7 +11,7 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
 ### Implemented messages types
  - [``Global``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
  - [``Social``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Enums/SocialAction.proto)
- - [``Platform``](https://github.com/Furtif/POGOProtos/blob/new_protos/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
+ - [``Platform``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
    
 ### Versioning
 
