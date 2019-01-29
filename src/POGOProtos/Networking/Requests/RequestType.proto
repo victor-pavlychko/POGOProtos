@@ -65,7 +65,7 @@ enum RequestType {
 	ATTACK_RAID = 166;                          // Implemented
 	AWARD_POKECOIN = 167;                       // ???
 	USE_ITEM_STARDUST_BOOST = 168;              // Implemented
-	REASSIGN_PLAYER = 169;						 // Implemented
+	REASSIGN_PLAYER = 169;                      // Implemented
 	GET_ASSET_DIGEST = 300;                     // Implemented
 	GET_DOWNLOAD_URLS = 301;                    // Implemented
 	CLAIM_CODENAME = 403;                       // Implemented
