@@ -63,6 +63,20 @@ python compile.py csharp:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.g.cs
  ```
  ```
+ python compile.py objc:
+  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.pbobjc.m
+ ```
+ ```
+ python compile.py python:
+  - POGOProtos/Data/*.proto -> pogoprotos/data/__init__.py
+  - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/player_data_pb2.py
+ ```
+ ```
+ python compile.py ruby:
+  - POGOProtos/Data/*.proto -> pogoprotos/data.rb
+  - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/player_data.rb
+ ```
+ ```
 python compile.py go:
  - POGOProtos/Data/*.proto -> github.com/aeonlucid/pogoprotos/data
  - POGOProtos/Data/PlayerData.proto -> github.com/aeonlucid/pogoprotos/data/player_data.pb.go
@@ -74,20 +88,6 @@ python compile.py java:
  ```
 python compile.py js:
  - POGOProtos/**/*.proto -> pogoprotos.js
-```
-```
-python compile.py objc:
- - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.pbobjc.m
-```
-```
-python compile.py python:
- - POGOProtos/Data/*.proto -> pogoprotos/data/__init__.py
- - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/player_data_pb2.py
-```
-```
-python compile.py ruby:
- - POGOProtos/Data/*.proto -> pogoprotos/data.rb
- - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/player_data.rb
 ```
 
 ### Extra information
@@ -118,5 +118,6 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 ### CREDITS
 
  - [AeonLucid](https://github.com/AeonLucid)
- - [pogosandbox (niicojs)](https://github.com/pogosandbox)
+ - [pogosandbox (niicojs)](https://github.com/pogosandbox) 
  - [ZeChrales](https://github.com/ZeChrales)
+ - [PokemoGo-Dev-Contrib](https://github.com/pokemongo-dev-contrib)

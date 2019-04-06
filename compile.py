@@ -268,16 +268,16 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     'language',
     choices=[
+        'objc',
         'php',
         'cpp',
         'csharp',
-        'go',
+        'python',
+        'ruby',
         'java',
         'javanano',
         'js',
-        'objc',
-        'python',
-        'ruby'],
+        'go'],
     help='language to pass to protoc')
 parser.add_argument(
     '-p', '--protoc_path',
@@ -324,7 +324,7 @@ if not os.path.exists(out_path):
     os.makedirs(out_path)
 
 namespace = 'POGOProtos'
-path = 'POGOProtos'
+path = 'POGOProtos'  # type: str
 merge = False
 path_lower = False
 file_lower = False
