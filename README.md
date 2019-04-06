@@ -118,5 +118,6 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 ### CREDITS
 
  - [AeonLucid](https://github.com/AeonLucid)
- - [pogosandbox (niicojs)](https://github.com/pogosandbox)
+ - [pogosandbox (niicojs)](https://github.com/pogosandbox) 
  - [ZeChrales](https://github.com/ZeChrales)
+ - [PokemoGo-Dev-Contrib](https://github.com/pokemongo-dev-contrib)
