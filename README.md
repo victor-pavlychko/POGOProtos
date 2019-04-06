@@ -19,7 +19,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | API           | Notes           | Extra                     |
 |--------------|---------------|-----------------|---------------------------|
-| 2.42.0       | 0.139.1       | Compatible      |  Protocol Buffers v3.7.1  |
+| 2.42.0       | 0.139.2       | Compatible      |  Protocol Buffers v3.7.1  |
 
 ### Usage
 
@@ -48,6 +48,10 @@ Use `homebrew` to install `protobuf ` with `brew install --devel protobuf`.
 The compilation creates output specifically for the target language, i.e. respecting naming conventions, etc.  
 This is an example of how the generated code will be organized:
 
+```
+python compile.py php:
+ - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.php
+```
 ```
 python compile.py cpp:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.pb.cpp
