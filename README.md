@@ -25,7 +25,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 If you want to figure out the current version in an automated system, use this file.
 
-https://raw.githubusercontent.com/Furtif/POGOProtos/master/.current-version
+[.current-version](https://raw.githubusercontent.com/Furtif/POGOProtos/master/.current-version)
 
 *Note: This file will contain pre-release versions too.*
 
@@ -45,6 +45,8 @@ Ensure that you have the newest version of `protoc` installed.
 Use `homebrew` to install `protobuf ` with `brew install --devel protobuf`.
 
 ### Compilation
+*NOTE: [compile_single.py](https://github.com/Furtif/POGOProtos/blob/master/compile_single.py) is outed!*
+
 The compilation creates output specifically for the target language, i.e. respecting naming conventions, etc.  
 This is an example of how the generated code will be organized:
 
