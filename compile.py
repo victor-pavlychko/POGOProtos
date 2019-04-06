@@ -277,7 +277,9 @@ parser.add_argument(
         'java',
         'javanano',
         'js',
-        'go'],
+        'go',
+        'rust',
+        'swift'],
     help='language to pass to protoc')
 parser.add_argument(
     '-p', '--protoc_path',
@@ -372,6 +374,13 @@ elif args.language == 'ruby':
     path_lower = True
     file_lower = True
     package_lower = False
+elif args.language == 'rust':
+    namespace = 'pogoprotos'
+    path = 'pogoprotos'
+    merge = False
+    path_lower = True
+    file_lower = True
+    package_lower = True
 
 protos = read_protos(src_path)
 

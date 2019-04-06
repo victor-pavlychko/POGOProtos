@@ -91,6 +91,14 @@ python compile.py java:
  ```
 python compile.py js:
  - POGOProtos/**/*.proto -> pogoprotos.js
+``` 
+```
+python compile.py rust:
+ - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.rs
+```
+```
+python compile.py swift:
+ - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.pb.swift
 ```
 
 ### Extra information
@@ -108,10 +116,6 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 | NodeJS (pure JS)      | https://github.com/pogosandbox/pogo-protos                     |  OK    |
 | .NET (nuget pack)     | https://www.nuget.org/packages/POGOProtos.Core                 |  OK    |
 | Swift                 | https://github.com/123FLO321/POGOProtos-Swift                  |  OK    |
-| PHP                   | https://github.com/jaspervdm/pogoprotos-php                    |![alt text][1.1]OUTED|
-| Go                    | https://github.com/pkmngo-odi/pogo-protos                      |![alt text][1.1]OUTED|
-| Haskell               | https://github.com/relrod/pokemon-go-protobuf-types            |![alt text][1.1]OUTED|
-| Rust                  | https://github.com/rockneurotiko/pokemon-go-protobuf-rs        |![alt text][1.1]OUTED|
 | Java                  | https://github.com/pokemongo-dev-contrib/pogoprotos-java       |  OK    |
 
 | Additional resources  | Source                                                         | Status |
