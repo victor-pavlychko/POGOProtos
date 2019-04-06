@@ -76,6 +76,9 @@ python compile.py csharp:
   - POGOProtos/Data/*.proto -> pogoprotos/data.rb
   - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/player_data.rb
  ```
+ 
+![alt text][1.1] //TODO: help repo// ![alt text][1.1] 
+  
  ```
 python compile.py go:
  - POGOProtos/Data/*.proto -> github.com/aeonlucid/pogoprotos/data
