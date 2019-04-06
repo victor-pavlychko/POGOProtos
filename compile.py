@@ -337,19 +337,12 @@ if args.language == 'js':
     path_lower = True
     file_lower = True
     package_lower = True
-elif args.language == 'csharp' or args.language == 'cpp' or args.language == 'objc':
+elif args.language == 'csharp' or args.language == 'cpp' or args.language == 'objc' or args.language == 'php':
     namespace = 'POGOProtos'
     path = 'POGOProtos'
     merge = False
     path_lower = False
     file_lower = False
-    package_lower = False
-elif args.language == 'php':
-    namespace = 'POGOProtos'
-    path = 'pogoprotos'
-    merge = False
-    path_lower = True
-    file_lower = True
     package_lower = False
 elif args.language == 'go':
     namespace = 'com.github.aeonlucid.pogoprotos'
