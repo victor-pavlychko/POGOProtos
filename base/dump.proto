@@ -5464,7 +5464,7 @@ message CombatNpcTrainerProto {
 	string trainer_title = 9;
 	string trainer_quote = 10;
 	string icon_url = 11;
-	string backdrop_url = 12;
+	string backdrop_image_bundle = 12;
 }
 
 // ref: Holoholo.Rpc.CombatOffensiveInputChallengeSettings
@@ -7872,12 +7872,6 @@ message IapSettingsProto {
 
 // ref: Holoholo.Rpc.IncenseAttributesProto
 message IncenseAttributesProto {
-	// ref: Holoholo.Rpc.IncenseAttributesProto/Types/IncensedPokemonProto
-	message IncensedPokemonProto {
-		HoloPokemonId pokemon_id = 1;
-		float weight = 2;
-	}
-
 	int32 incense_lifetime_seconds = 1;
 	repeated HoloPokemonType pokemon_type = 2;
 	float pokemon_incense_type_probability = 3;
@@ -7885,7 +7879,7 @@ message IncenseAttributesProto {
 	int32 moving_time_between_encounter_sec = 5;
 	int32 distance_required_for_shorter_interval_meters = 6;
 	int32 pokemon_attracted_length_sec = 7;
-	repeated IncensedPokemonProto spawn_table = 8;
+	repeated SpawnTablePokemonProto spawn_table = 8;
 	float spawn_table_probability = 9;
 }
 
@@ -9048,6 +9042,9 @@ message PokemonDisplayProto {
 		SPINDA_17 = 130;
 		SPINDA_18 = 131;
 		SPINDA_19 = 132;
+		MEWTWO_A = 133;
+		MEWTWO_A_INTRO = 134;
+		MEWTWO_NORMAL = 135;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
@@ -10339,6 +10336,13 @@ message SocialPlayerSettingsProto {
 message SocialTelemetry {
 	SocialTelemetryIds social_click_id = 1;
 	int32 pages_scrolled_in_friends_list = 2;
+}
+
+// ref: Holoholo.Rpc.SpawnTablePokemonProto
+message SpawnTablePokemonProto {
+	HoloPokemonId pokemon_id = 1;
+	float weight = 2;
+	PokemonDisplayProto.Form form = 3;
 }
 
 // ref: Holoholo.Rpc.SpinPokestopTelemetry
