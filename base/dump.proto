@@ -11429,41 +11429,6 @@ message WeatherAlertProto {
 
 //----- End rpc -----
 //------------------------------
-//----- Begin sdk -----
-
-// ref: com.adjust.sdk.AdjustEnvironment
-enum AdjustEnvironment {
-	sandbox = 0;
-	production = 1;
-}
-
-// ref: com.adjust.sdk.AdjustLogLevel
-enum AdjustLogLevel {
-	ADJUSTLOGLEVEL_AUTO_INVALID = 0;
-	verbose = 1;
-	debug = 2;
-	info = 3;
-	warn = 4;
-	error = 5;
-	assert = 6;
-	suppress = 7;
-}
-
-// ref: com.adjust.sdk.JSONBinaryTag
-enum JSONBinaryTag {
-	JSONBINARYTAG_AUTO_INVALID = 0;
-	array = 1;
-	class = 2;
-	value = 3;
-	int_value = 4;
-	double_value = 5;
-	bool_value = 6;
-	float_value = 7;
-}
-
-
-//----- End sdk -----
-//------------------------------
 //----- Begin stage -----
 
 // ref: Niantic.Holoholo.Combat.Stage.CameraType
@@ -11694,27 +11659,4 @@ message SuperAwesomeTokenProto {
 
 
 //----- End token -----
-//------------------------------
-//----- Begin ua -----
-
-// ref: Niantic.Platform.Marketing.Ua.UAEnvironment
-enum UAEnvironment {
-	sandbox = 0;
-	production = 1;
-}
-
-// ref: Niantic.Platform.Marketing.Ua.UALogLevel
-enum UALogLevel {
-	UALOGLEVEL_AUTO_INVALID = 0;
-	verbose = 1;
-	debug = 2;
-	info = 3;
-	warn = 4;
-	error = 5;
-	assert = 6;
-	suppress = 7;
-}
-
-
-//----- End ua -----
 //------------------------------
