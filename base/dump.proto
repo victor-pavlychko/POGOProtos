@@ -2175,7 +2175,7 @@ enum HoloBadgeType {
 	BADGE_SENTOSA_20_APR_2019 = 2050;
 	BADGE_SENTOSA_21_APR_2019 = 2051;
 	BADGE_SENTOSA_22_APR_2019 = 2052;
-	BADGE_TICKETED_EVENT_MIN = 5000;
+	BADGE_DYNAMIC_EVENT_MIN = 5000;
 	BADGE_GOFEST_2019_AMERICAS_DAY_00_NORTH_GENERAL = 5001;
 	BADGE_GOFEST_2019_AMERICAS_DAY_00_NORTH_EARLYACCESS = 5002;
 	BADGE_GOFEST_2019_AMERICAS_DAY_00_SOUTH_GENERAL = 5003;
@@ -3347,6 +3347,8 @@ enum HoloPokemonMove {
 	V0317_MOVE_BLAZE_KICK = 317;
 	V0318_MOVE_RAZOR_SHELL = 318;
 	V0319_MOVE_POWER_UP_PUNCH = 319;
+	V0320_MOVE_CHARM_FAST = 320;
+	V0321_MOVE_GIGA_IMPACT = 321;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMovementType
@@ -3923,6 +3925,14 @@ enum SocialTelemetryIds {
 	CLOSE_OPEN_GIFT_CONFIRMATION = 5;
 	FRIEND_LIST_SORT_CHANGED = 6;
 	FRIEND_LIST_CLOSED = 7;
+}
+
+// ref: Holoholo.Rpc.Store
+enum Store {
+	STORE_UNSET = 0;
+	STORE_APPLE = 1;
+	STORE_GOOGLE = 2;
+	STORE_SAMSUNG = 3;
 }
 
 // ref: Holoholo.Rpc.Team
@@ -5584,6 +5594,7 @@ message CombatProto {
 		CombatActionProto minigame_action = 8;
 		int64 quick_swap_available_ms = 9;
 		int32 minigame_defense_chances_left = 10;
+		string combat_npc_personality_id = 11;
 	}
 
 	// ref: Holoholo.Rpc.CombatProto/Types/CombatPokemonProto
@@ -6745,6 +6756,7 @@ message GameMasterClientTemplateProto {
 	SmeargleMovesSettingsProto smeargle_moves_settings = 44;
 	PokecoinPurchaseDisplayGmtProto pokecoin_purchase_display_gmt = 45;
 	AdventureSyncV2GmtProto adventure_sync_v2_gmt = 46;
+	LoadingScreenProto loading_screen_settings = 47;
 }
 
 // ref: Holoholo.Rpc.GenerateCombatChallengeIdOutProto
@@ -7280,6 +7292,7 @@ message GetRemoteConfigVersionsProto {
 	string device_model = 3;
 	string locale = 4;
 	uint32 app_version = 5;
+	Store store = 6;
 }
 
 // ref: Holoholo.Rpc.GetServerTimeOutProto
@@ -8229,6 +8242,13 @@ message ListGymBadgesOutProto {
 
 // ref: Holoholo.Rpc.ListGymBadgesProto
 message ListGymBadgesProto {
+}
+
+// ref: Holoholo.Rpc.LoadingScreenProto
+message LoadingScreenProto {
+	string url = 1;
+	int64 display_after_timestamp_ms = 2;
+	map<string, string> color_settings = 3;
 }
 
 // ref: Holoholo.Rpc.LobbyPokemonProto
@@ -11184,6 +11204,15 @@ message UserAttributesProto {
 	int32 field_research_stamp_progress = 37;
 	int32 level_up = 38;
 	bool sent_friend_request = 39;
+}
+
+// ref: Holoholo.Rpc.UserEventsProto
+message UserEventsProto {
+	int32 catch_streak = 1;
+	int32 spin_streak = 2;
+	int32 field_research_stamp_progress = 3;
+	int32 level_up = 4;
+	bool sent_friend_request = 5;
 }
 
 // ref: Holoholo.Rpc.UserIssueWeatherReport
