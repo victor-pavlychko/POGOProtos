@@ -114,7 +114,7 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 |-----------------------|----------------------------------------------------------------|--------|
 | NodeJS                | https://github.com/pogosandbox/pogobuf                         |  OK    |
 | NodeJS (pure JS)      | https://github.com/pogosandbox/pogo-protos                     |  OK    |
-| .NET (nuget pack)     | https://www.nuget.org/packages/POGOProtos.Core                 |  OK    |
+| .NET (nuget pack)     | https://github.com/Furtif/POGOProtos.Core                      |  OK    |
 | Swift                 | https://github.com/123FLO321/POGOProtos-Swift                  |  OK    |
 | Python                | https://github.com/PotatoMapper/POGOProtosPython               |  OK    |
 | Java                  | https://github.com/pokemongo-dev-contrib/pogoprotos-java       |  OK    |
