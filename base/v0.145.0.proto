@@ -619,7 +619,7 @@ message GetBackgroundModeSettingsOutProto {
 	}
 
 	Status status = 1;
-	niantic.platform.bgmode.BackgroundModeClientSettingsProto settings = 2;
+	BackgroundModeClientSettingsProto settings = 2;
 }
 
 // ref: GetBackgroundModeSettingsProto
@@ -739,7 +739,7 @@ message SfidaCaptureRequest {
 	int64 encounter_id = 2;
 	double player_lat = 3;
 	double player_lng = 4;
-	holoholo.rpc.EncounterType encounter_type = 5;
+	EncounterType encounter_type = 5;
 	double gym_lat = 6;
 	double gym_lng = 7;
 }
@@ -829,7 +829,7 @@ message SfidaMetricsUpdate {
 message SfidaNearbyPokemon {
 	int32 pokedex_number = 1;
 	bool uncaught = 2;
-	holoholo.rpc.PokemonDisplayProto pokemon_display = 3;
+	PokemonDisplayProto pokemon_display = 3;
 }
 
 // ref: SfidaUpdateRequest
@@ -855,7 +855,7 @@ message SfidaUpdateResponse {
 	int64 encounter_id = 6;
 	bool nearby_pokestop = 7;
 	string pokestop_id = 8;
-	holoholo.rpc.EncounterType encounter_type = 9;
+	EncounterType encounter_type = 9;
 	int32 pokedex_number = 10;
 	repeated SfidaNearbyPokemon nearby = 11;
 }
@@ -974,7 +974,7 @@ message AddLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.AddLoginActionProto
 message AddLoginActionProto {
-	com.nianticproject.platform.auth.IdentityProvider identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	bytes inner_message = 2;
 }
 
@@ -1415,7 +1415,7 @@ message ListLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.LoginDetail
 message LoginDetail {
-	com.nianticproject.platform.auth.IdentityProvider identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	string email = 2;
 }
 
@@ -1582,7 +1582,7 @@ message RemoveLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.RemoveLoginActionProto
 message RemoveLoginActionProto {
-	com.nianticproject.platform.auth.IdentityProvider identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 }
 
 // ref: Niantic.Platform.Protos.ReplaceLoginActionOutProto
@@ -1603,7 +1603,7 @@ message ReplaceLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.ReplaceLoginActionProto
 message ReplaceLoginActionProto {
-	com.nianticproject.platform.auth.IdentityProvider existing_identity_provider = 1;
+	IdentityProvider existing_identity_provider = 1;
 	AddLoginActionProto new_login = 2;
 }
 
