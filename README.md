@@ -17,9 +17,9 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
 
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
-| Version      | API           | Notes           | Extra                     |
-|--------------|---------------|-----------------|---------------------------|
-| 2.43.0       | 0.143.0       | Compatible      |  Protocol Buffers v3.7.1  |
+| Version      | API           | Notes           | Extra                          |
+|--------------|---------------|-----------------|--------------------------------|
+| 2.44.0       | 0.145.0       | Compatible      |  Protocol Buffers v3.8.0-rc.1  |
 
 ### Usage
 
@@ -31,7 +31,7 @@ If you want to figure out the current version in an automated system, use this f
 
 ### Preparation
 
-Current recommended protoc version: "Protocol Buffers v3.7.1".
+Current recommended protoc version: "Protocol Buffers v3.8.0-rc.1".
 
 You can find download links [here](https://github.com/google/protobuf/releases).
 
