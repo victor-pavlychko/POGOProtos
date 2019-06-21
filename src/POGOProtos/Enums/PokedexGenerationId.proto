@@ -1,0 +1,10 @@
+syntax = "proto3";
+package WUProtos.Enums;
+
+enum PokedexGenerationId {
+	GEN1 = 0;
+	GEN2 = 1;
+	GEN3 = 2;
+	GEN4 = 3;
+	MELTAN = 1001;
+}
