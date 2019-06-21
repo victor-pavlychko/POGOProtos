@@ -173,17 +173,16 @@ message ChannelAuthEventParams {
 	uint32 status = 1;
 }
 
+// ref: Niantic.Platform.Ditto.Events.ClientSettingsEventParams
+message ClientSettingsEventParams {
+	bytes payloads = 1;
+}
+
 // ref: Niantic.Platform.Ditto.Events.DownstreamActionEventParams
 message DownstreamActionEventParams {
 	repeated uint32 methods = 1;
 	repeated bytes payloads = 2;
 	repeated uint64 ids = 3;
-}
-
-// ref: Niantic.Platform.Ditto.Events.GoogleAuthEventParams
-message GoogleAuthEventParams {
-	string payload = 1;
-	string account_name = 2;
 }
 
 // ref: Niantic.Platform.Ditto.Events.LocationUpdateEventParams
@@ -247,16 +246,6 @@ message DownloadGmTemplatesResponseProto {
 
 //----- End gamemaster -----
 //------------------------------
-//----- Begin google -----
-
-// ref: Niantic.Platform.Auth.Plugins.Google.GoogleToken
-message GoogleToken {
-	string id_token = 1;
-}
-
-
-//----- End google -----
-//------------------------------
 //----- Begin gym -----
 
 // ref: Niantic.Holoholo.Gym.BattleResultsExit
@@ -276,6 +265,15 @@ enum PlayerOnboardingPath {
 	UNSET = 0;
 	V1 = 1;
 	V2 = 2;
+}
+
+// ref: Niantic.Holoholo.PokedexGenerationId
+enum PokedexGenerationId {
+	GEN1 = 0;
+	GEN2 = 1;
+	GEN3 = 2;
+	GEN4 = 3;
+	MELTAN = 1001;
 }
 
 
@@ -669,6 +667,17 @@ message LocationPingProto {
 
 	string geofence_identifier = 1;
 	PingReason reason = 2;
+}
+
+// ref: PlatformClientApiSettingsProto
+message PlatformClientApiSettingsProto {
+	// ref: PlatformClientApiSettingsProto/Types/SettingsType
+	enum SettingsType {
+		UNDEFINED = 0;
+		MAP = 1;
+	}
+
+	bytes payload = 1;
 }
 
 // ref: RedeemPasscodeRequestProto
@@ -2196,6 +2205,16 @@ enum HoloBadgeType {
 	BADGE_GOFEST_2019_AMERICAS_DAY_04_NORTH_EARLYACCESS = 5018;
 	BADGE_GOFEST_2019_AMERICAS_DAY_04_SOUTH_GENERAL = 5019;
 	BADGE_GOFEST_2019_AMERICAS_DAY_04_SOUTH_EARLYACCESS = 5020;
+	BADGE_GOFEST_2019_EMEA_DAY_00_GENERAL = 5021;
+	BADGE_GOFEST_2019_EMEA_DAY_00_EARLYACCESS = 5022;
+	BADGE_GOFEST_2019_EMEA_DAY_01_GENERAL = 5023;
+	BADGE_GOFEST_2019_EMEA_DAY_01_EARLYACCESS = 5024;
+	BADGE_GOFEST_2019_EMEA_DAY_02_GENERAL = 5025;
+	BADGE_GOFEST_2019_EMEA_DAY_02_EARLYACCESS = 5026;
+	BADGE_GOFEST_2019_EMEA_DAY_03_GENERAL = 5027;
+	BADGE_GOFEST_2019_EMEA_DAY_03_EARLYACCESS = 5028;
+	BADGE_GOFEST_2019_EMEA_DAY_04_GENERAL = 5029;
+	BADGE_GOFEST_2019_EMEA_DAY_04_EARLYACCESS = 5030;
 }
 
 // ref: Holoholo.Rpc.HoloholoClientTelemetryIds
@@ -4390,6 +4409,8 @@ message AvatarCustomizationProto {
 	int32 unlock_badge_level = 12;
 	string icon_name = 13;
 	int32 unlock_player_level = 14;
+	string set_name = 15;
+	bool set_prime_item = 16;
 }
 
 // ref: Holoholo.Rpc.AvatarCustomizationTelemetry
@@ -5340,6 +5361,7 @@ message CombatChallengeProto {
 		PlayerAvatarProto player_avatar = 2;
 		int64 combat_player_s2_cell_id = 3;
 		repeated uint64 attacking_pokemon_id = 4;
+		PlayerPublicProfileProto public_profile = 5;
 	}
 
 	string challenge_id = 1;
@@ -7258,6 +7280,7 @@ message GetRaidDetailsOutProto {
 	int32 num_players_in_lobby = 10;
 	int64 server_ms = 11;
 	int32 server_instance = 12;
+	bool display_high_user_warning = 13;
 }
 
 // ref: Holoholo.Rpc.GetRaidDetailsProto
@@ -7445,6 +7468,7 @@ message GlobalSettingsProto {
 	AvatarGlobalSettingsProto avatar_settings = 37;
 	EvolutionV2SettingsProto evolution_v2_settings = 38;
 	KoalaSettingsProto koala_settings = 40;
+	KangarooSettingsProto kangaroo_settings = 41;
 }
 
 // ref: Holoholo.Rpc.GpsSettingsProto
@@ -8111,6 +8135,11 @@ message JoinLobbyProto {
 	double player_lng_degrees = 6;
 	double gym_lat_degrees = 7;
 	double gym_lng_degrees = 8;
+}
+
+// ref: Holoholo.Rpc.KangarooSettingsProto
+message KangarooSettingsProto {
+	bool enable_kangaroo_v2 = 1;
 }
 
 // ref: Holoholo.Rpc.KoalaSettingsProto
@@ -8990,6 +9019,7 @@ message PokedexEntryProto {
 	repeated PokemonDisplayProto.Gender encountered_genders = 12;
 	bool encountered_shiny = 13;
 	int32 times_lucky_received = 14;
+	int32 times_purified = 15;
 }
 
 // ref: Holoholo.Rpc.PokemonCameraAttributesProto
@@ -9027,6 +9057,7 @@ message PokemonDisplayProto {
 		NOVEMBER_2018 = 7;
 		WINTER_2018 = 8;
 		FEB_2019 = 9;
+		MAY_2019 = 10;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Form
@@ -9167,6 +9198,23 @@ message PokemonDisplayProto {
 		MEWTWO_A = 133;
 		MEWTWO_A_INTRO = 134;
 		MEWTWO_NORMAL = 135;
+		BULBASAUR_NORMAL = 163;
+		CHARMANDER_NORMAL = 172;
+		CHARIZARD_NORMAL = 178;
+		SQUIRTLE_NORMAL = 181;
+		BLASTOISE_NORMAL = 187;
+		PIKACHU_NORMAL = 598;
+		PIKACHU_NOEVOLVE = 599;
+		WURMPLE_NORMAL = 600;
+		WURMPLE_NOEVOLVE = 601;
+		WOBBUFFET_NORMAL = 602;
+		WOBBUFFET_NOEVOLVE = 603;
+		BULBASAUR_NOEVOLVE = 604;
+		CHARMANDER_NOEVOLVE = 605;
+		CHARIZARD_NOEVOLVE = 606;
+		SQUIRTLE_NOEVOLVE = 607;
+		BLASTOISE_NOEVOLVE = 608;
+		RATICATE_NOEVOLVE = 609;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
@@ -11206,15 +11254,6 @@ message UserAttributesProto {
 	bool sent_friend_request = 39;
 }
 
-// ref: Holoholo.Rpc.UserEventsProto
-message UserEventsProto {
-	int32 catch_streak = 1;
-	int32 spin_streak = 2;
-	int32 field_research_stamp_progress = 3;
-	int32 level_up = 4;
-	bool sent_friend_request = 5;
-}
-
 // ref: Holoholo.Rpc.UserIssueWeatherReport
 message UserIssueWeatherReport {
 	string gameplayer_weather = 1;
@@ -11679,6 +11718,11 @@ message ClientTelemetrySettingsRequestProto {
 // ref: Niantic.Platform.Auth.Token.FbTokenProto
 message FbTokenProto {
 	string token = 1;
+}
+
+// ref: Niantic.Platform.Auth.Token.GoogleToken
+message GoogleToken {
+	string id_token = 1;
 }
 
 // ref: Niantic.Platform.Auth.Token.SuperAwesomeTokenProto
