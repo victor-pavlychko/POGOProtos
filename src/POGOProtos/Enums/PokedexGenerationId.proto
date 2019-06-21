@@ -6,5 +6,5 @@ enum PokedexGenerationId {
 	GEN2 = 1;
 	GEN3 = 2;
 	GEN4 = 3;
-	MELTAN = 1001;
+	POKEDEX_GEN_ID_MELTAN = 1001;
 }
