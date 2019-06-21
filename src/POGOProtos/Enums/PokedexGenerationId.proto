@@ -1,5 +1,5 @@
 syntax = "proto3";
-package WUProtos.Enums;
+package POGOProtos.Enums;
 
 enum PokedexGenerationId {
 	GEN1 = 0;
