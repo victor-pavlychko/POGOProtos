@@ -11,6 +11,7 @@ import "POGOProtos/Map/Fort/FortType.proto";
 import "POGOProtos/Map/Fort/FortSponsor.proto";
 import "POGOProtos/Map/Fort/FortRenderingType.proto";
 import "POGOProtos/Map/Pokemon/MapPokemon.proto";
+import "POGOProtos/Data/PokestopIncidentDisplay.proto";
 
 message FortData {
 	string id = 1;
@@ -43,4 +44,5 @@ message FortData {
 	string partner_id = 28;
 	bool challenge_quest_completed = 30;
 	bool is_ex_raid_eligible = 31;
+	.POGOProtos.Data.PokestopIncidentDisplay pokestop_display = 32;
 }
