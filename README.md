@@ -9,9 +9,9 @@ POGOProtos [![Build Status](https://travis-ci.org/Furtif/POGOProtos.svg?branch=m
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
 ### Implemented messages types
- - [``Global``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
- - [``Social``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
- - [``Platform``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
+ - [``Global``](https://github.com/Furtif/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
+ - [``Social``](https://github.com/Furtif/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
+ - [``Platform``](https://github.com/Furtif/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
    
 ### Versioning
 
@@ -25,7 +25,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 If you want to figure out the current version in an automated system, use this file.
 
-[.current-version](https://raw.githubusercontent.com/Furtif/POGOProtos/master/.current-version)
+[.current-version](https://raw.githubusercontent.com/Furtif/POGOProtos-Private/master/.current-version)
 
 *Note: This file will contain pre-release versions too.*
 
@@ -45,7 +45,7 @@ Ensure that you have the newest version of `protoc` installed.
 Use `homebrew` to install `protobuf ` with `brew install --devel protobuf`.
 
 ### Compilation
-*NOTE: [compile_single.py](https://github.com/Furtif/POGOProtos/blob/master/compile_single.py) is outed!*
+*NOTE: [compile_single.py](https://github.com/Furtif/POGOProtos-Private/blob/master/compile_single.py) is outed!*
 
 The compilation creates output specifically for the target language, i.e. respecting naming conventions, etc.  
 This is an example of how the generated code will be organized:
