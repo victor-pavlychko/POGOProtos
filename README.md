@@ -9,9 +9,9 @@ POGOProtos [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](htt
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
 ### Implemented messages types
- - [``Global``](https://gitlab.com/Furtif/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
- - [``Social``](https://gitlab.com/Furtif/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
- - [``Platform``](https://gitlab.com/Furtif/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
+ - [``Global``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
+ - [``Social``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
+ - [``Platform``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
    
 ### Versioning
 
@@ -25,7 +25,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 If you want to figure out the current version in an automated system, use this file.
 
-[.current-version](https://gitlab.com/Furtif/POGOProtos-Private/raw/master/.current-version)
+[.current-version](https://gitlab.com/AllProtos/POGOProtos-Private/raw/master/.current-version)
 
 *Note: This file will contain pre-release versions too.*
 
@@ -45,7 +45,7 @@ Ensure that you have the newest version of `protoc` installed.
 Use `homebrew` to install `protobuf ` with `brew install --devel protobuf`.
 
 ### Compilation
-*NOTE: [compile_single.py](https://gitlab.com/Furtif/POGOProtos-Private/blob/master/compile_single.py) is outed!*
+*NOTE: [compile_single.py](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/compile_single.py) is outed!*
 
 The compilation creates output specifically for the target language, i.e. respecting naming conventions, etc.  
 This is an example of how the generated code will be organized:
