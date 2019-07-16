@@ -12,4 +12,5 @@ message InvasionNpcDisplaySettings {
 	string backdrop_image_bundle = 6;
 	string model_name = 7;
 	string tutorial_on_loss_string = 8;
+	bool is_male = 9;
 }

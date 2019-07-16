@@ -9,6 +9,7 @@ enum InvasionTelemetryIds {
 	INVASION_ENCOUNTER_STARTED = 4;
 	INVASION_ENCOUNTER_FINISHED = 5;
 	INVASION_POKEMON_PURIFIED = 6;
+	INVASION_AFTER_POI_EXITED = 7;
 }
 
 enum DeviceServiceTelemetryIds {

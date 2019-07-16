@@ -265,4 +265,5 @@ enum PokemonMove {
 	FRUSTRATION = 322;
 	RETURN = 323;
 	SYNCHRONOISE = 324;
+	LOCK_ON_FAST = 325;
 }

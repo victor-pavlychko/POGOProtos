@@ -13,4 +13,5 @@ message InvasionTelemetry {
 	int32 encounter_pokemon = 6;
 	bool encounter_success = 7;
 	string invasion_id = 8;
+	bool player_tapped_npc = 9;
 }
