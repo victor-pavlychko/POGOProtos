@@ -379,7 +379,7 @@ message ProxyResponseProto {
 
 //----- End platform -----
 //------------------------------
-//----- Begin poisubmission -----
+Niantic.Holoholo.PoiDecoration.POIDecorationMode//----- Begin poisubmission -----
 
 // ref: Niantic.Holoholo.PoiSubmission.PoiSubmissionTutorialPage
 enum PoiSubmissionTutorialPage {
