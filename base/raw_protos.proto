@@ -1,16 +1,16 @@
 syntax = "proto3";
 //----- Begin ar -----
 
-// ref: Niantic.Holoholo.AR.ArContext
-enum ArContext {
-	ENCOUNTER = 0;
+// ref: Niantic.Holoholo.AR.ArMode
+enum ArMode {
+	NONE = 0;
+	ARSTANDARD = 1;
+	ARPLUS = 2;
 }
 
-// ref: Niantic.Holoholo.AR.ArPlusMode
-enum ArPlusMode {
-	ARPLUS = 0;
-	AR = 1;
-	NORMAL = 2;
+// ref: Niantic.Holoholo.AR.ArToggleContext
+enum ArToggleContext {
+	ENCOUNTER = 0;
 }
 
 
@@ -166,6 +166,20 @@ enum NotificationCategory {
 
 //----- End clientinboxservice -----
 //------------------------------
+//----- Begin combat -----
+
+// ref: Niantic.Holoholo.Combat.CombatEntry
+enum CombatEntry {
+	NPC_COMBAT = 0;
+	RECEIVE_CHALLENGE = 1;
+	SEND_CHALLENGE = 2;
+	LEAGUE_SELECTION = 3;
+	INVASION_NPC_COMBAT = 4;
+}
+
+
+//----- End combat -----
+//------------------------------
 //----- Begin events -----
 
 // ref: Niantic.Platform.Ditto.Events.ChannelAuthEventParams
@@ -279,6 +293,35 @@ enum PokedexGenerationId {
 
 //----- End holoholo -----
 //------------------------------
+//----- Begin incident -----
+
+// ref: Niantic.Holoholo.Incident.IncidentDynamicStringTypes
+enum IncidentDynamicStringTypes {
+	GREETING = 0;
+	CHALLENGE = 1;
+	DEFEAT = 2;
+	VICTORY = 3;
+	PRE_BATTLE = 4;
+	POST_BATTLE = 5;
+	ITEMS_STOLEN = 6;
+	TUTORIAL = 7;
+	GRUNT_QUOTE = 8;
+	CANDELA_INSPIRE = 9;
+	BLANCHE_INSPIRE = 10;
+	SPARK_INSPIRE = 11;
+}
+
+// ref: Niantic.Holoholo.Incident.IncidentLeaderStringTypes
+enum IncidentLeaderStringTypes {
+	ONBOARDING_INTRODUCTION = 0;
+	ONBOARDING_ENCOUNTER = 1;
+	ONBOARDING_SHADOW = 2;
+	INSPIRE = 3;
+}
+
+
+//----- End incident -----
+//------------------------------
 //----- Begin internal -----
 
 // ref: Niantic.Platform.Auth.Plugins.Internal.InternalAuthProto
@@ -379,7 +422,34 @@ message ProxyResponseProto {
 
 //----- End platform -----
 //------------------------------
-Niantic.Holoholo.PoiDecoration.POIDecorationMode//----- Begin poisubmission -----
+//----- Begin poidecoration -----
+
+// ref: Niantic.Holoholo.PoiDecoration.POIDecorationFollowFlags
+enum POIDecorationFollowFlags {
+	POIDECORATIONFOLLOWFLAGS_AUTO_INVALID = 0;
+	FOLLOW_X = 1;
+	FOLLOW_Y = 2;
+	FOLLOW_Z = 4;
+}
+
+// ref: Niantic.Holoholo.PoiDecoration.POIDecorationProperties
+enum POIDecorationProperties {
+	COLOR = 0;
+	POSITION = 1;
+	SIZE = 2;
+	TEXT = 3;
+	ACTIVE = 4;
+	SET_RAID_DATA = 5;
+	NEARBY_CARROT_VISIBLE = 6;
+	SET_LOWEST_MOTIVATION = 7;
+	SET_NPC_CLICKED_ACTION = 8;
+	BEGIN_EXIT = 9;
+}
+
+
+//----- End poidecoration -----
+//------------------------------
+//----- Begin poisubmission -----
 
 // ref: Niantic.Holoholo.PoiSubmission.PoiSubmissionTutorialPage
 enum PoiSubmissionTutorialPage {
@@ -929,6 +999,28 @@ enum PlatformClientAction {
 	GET_GMAP_SETTINGS = 5036;
 }
 
+// ref: Niantic.Platform.Protos.PlayerSubmissionTypeProto
+enum PlayerSubmissionTypeProto {
+	TYPE_UNSPECIFIED = 0;
+	POI_SUBMISSION = 1;
+	ROUTE_SUBMISSION = 2;
+	POI_IMAGE_SUBMISSION = 3;
+	POI_TEXT_METADATA_UPDATE = 4;
+	POI_LOCATION_UPDATE = 5;
+	POI_TAKEDOWN_REQUEST = 6;
+}
+
+// ref: Niantic.Platform.Protos.PoiInvalidReason
+enum PoiInvalidReason {
+	INVALID_REASON_UNSPECIFIED = 0;
+	NO_PEDESTRIAN_ACCESS = 1;
+	OBSTRUCTS_EMERGENCY_SERVICES = 2;
+	PRIVATE_RESIDENTIAL_PROPERTY = 3;
+	SCHOOL = 4;
+	PERMANENTLY_REMOVED = 5;
+	DUPLICATE = 6;
+}
+
 // ref: Niantic.Platform.Protos.SocialNotificationCategory
 enum SocialNotificationCategory {
 	unset__social_notification_category = 0;
@@ -1422,6 +1514,12 @@ message ListLoginActionOutProto {
 	repeated LoginDetail login_detail = 2;
 }
 
+// ref: Niantic.Platform.Protos.LocationE6Proto
+message LocationE6Proto {
+	int32 latitude_e6 = 1;
+	int32 longitude_e6 = 2;
+}
+
 // ref: Niantic.Platform.Protos.LoginDetail
 message LoginDetail {
 	com.nianticproject.platform.auth.IdentityProvider identity_provider = 1;
@@ -1748,6 +1846,363 @@ message UploadPoiPhotoByUrlProto {
 //------------------------------
 //----- Begin protos -----
 
+// ref: Niantic.Titan.Protos.PoiImageType
+enum PoiImageType {
+	UNSET = 0;
+	MAIN = 1;
+	SURROUNDING = 2;
+}
+
+// ref: Niantic.Titan.Protos.RouteVisitOrder
+enum RouteVisitOrder {
+	ROUTE_VISIT_ORDER_UNSPECIFIED = 0;
+	IN_ORDER = 1;
+	UNORDERED = 2;
+}
+
+// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto
+message GenerateGmapSignedUrlOutProto {
+	// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_NOT_VALID = 2;
+		ERROR_RATE_LIMITED = 3;
+		ERROR_MISSING_INPUT = 4;
+		ERROR_UNKNOWN = 5;
+	}
+
+	Result result = 1;
+	string signed_url = 2;
+}
+
+// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlProto
+message GenerateGmapSignedUrlProto {
+	double latitude = 1;
+	double longitude = 2;
+	int32 width = 3;
+	int32 height = 4;
+	int32 zoom = 5;
+	string language_code = 6;
+	string country_code = 7;
+	string map_style = 8;
+	string map_type = 9;
+	string icon_params = 10;
+}
+
+// ref: Niantic.Titan.Protos.GetAvailableSubmissionsOutProto
+message GetAvailableSubmissionsOutProto {
+	int32 submissions_left = 1;
+	int32 min_player_level = 2;
+	bool has_valid_email = 3;
+	bool is_feature_enabled = 4;
+	int64 time_window_for_submissions_limit_ms = 5;
+}
+
+// ref: Niantic.Titan.Protos.GetAvailableSubmissionsProto
+message GetAvailableSubmissionsProto {
+	niantic.platform.protos.PlayerSubmissionTypeProto submission_type = 1;
+}
+
+// ref: Niantic.Titan.Protos.GetGmapSettingsOutProto
+message GetGmapSettingsOutProto {
+	// ref: Niantic.Titan.Protos.GetGmapSettingsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_MISSING_CONFIG = 3;
+		ERROR_NO_UNIQUE_ID = 4;
+	}
+
+	Result result = 1;
+	string gmap_template_url = 2;
+	int32 max_poi_distance_in_meters = 3;
+}
+
+// ref: Niantic.Titan.Protos.GetGmapSettingsProto
+message GetGmapSettingsProto {
+}
+
+// ref: Niantic.Titan.Protos.GetUploadUrlOutProto
+message GetUploadUrlOutProto {
+	// ref: Niantic.Titan.Protos.GetUploadUrlOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		FAILURES = 1;
+		SUCCESS = 2;
+		MISSING_IMAGE_CONTEXTS = 3;
+		DUPLICATE_IMAGE_CONTEXTS = 4;
+	}
+
+	Status status = 1;
+	string signed_url = 2;
+	string supporting_image_signed_url = 3;
+	map<string, string> context_signed_urls = 4;
+}
+
+// ref: Niantic.Titan.Protos.GetUploadUrlProto
+message GetUploadUrlProto {
+	string user_id = 1;
+	string game_unique_id = 2;
+	niantic.platform.protos.PlayerSubmissionTypeProto submission_type = 3;
+	string submission_id = 4;
+	repeated string image_contexts = 5;
+}
+
+// ref: Niantic.Titan.Protos.PoiPlayerMetadataTelemetry
+message PoiPlayerMetadataTelemetry {
+	string device_model = 1;
+	string device_os = 2;
+	double player_location_lat = 3;
+	double player_location_lng = 4;
+}
+
+// ref: Niantic.Titan.Protos.PoiSubmissionPhotoUploadErrorTelemetry
+message PoiSubmissionPhotoUploadErrorTelemetry {
+	// ref: Niantic.Titan.Protos.PoiSubmissionPhotoUploadErrorTelemetry/Types/PoiSubmissionPhotoUploadErrorIds
+	enum PoiSubmissionPhotoUploadErrorIds {
+		UNSET = 0;
+		POI_PHOTO_UPLOAD_ERROR = 1;
+		POI_PHOTO_UPLOAD_TIMEOUT = 2;
+	}
+
+	PoiSubmissionPhotoUploadErrorIds error_id = 1;
+	PoiImageType image_type = 2;
+	string error_message = 3;
+}
+
+// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry
+message PoiSubmissionTelemetry {
+	// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry/Types/PoiCameraStepIds
+	enum PoiCameraStepIds {
+		UNSET = 0;
+		ENTER = 1;
+		RETAKE = 2;
+		CONFIRM = 3;
+		EXIT = 4;
+	}
+
+	// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry/Types/PoiSubmissionGuiEventId
+	enum PoiSubmissionGuiEventId {
+		UNKNOWN = 0;
+		POI_NOMINATION_ENTER = 1;
+		POI_TUTORIAL_COMPLETE = 2;
+		POI_MAP_CHANGEDVIEW_MAP = 3;
+		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
+		POI_MAP_CENTER_LOCATION = 5;
+		POI_LOCATION_SET = 6;
+		POI_PHOTO_CAMERA_ENTER = 7;
+		POI_PHOTO_CAMERA_EXIT = 8;
+		POI_TITLE_ENTERED = 9;
+		POI_DESCRIPTION_ENTER = 10;
+		POI_DETAILS_CONFIRM = 11;
+		POI_SUPPORTINGINFO_ENTER = 12;
+		POI_SUBMIT_BUTTON_HIT = 13;
+		POI_EXIT_BUTTON_HIT = 14;
+	}
+
+	PoiSubmissionGuiEventId gui_event_id = 1;
+	PoiImageType image_type = 2;
+	PoiCameraStepIds camera_step_id = 3;
+}
+
+// ref: Niantic.Titan.Protos.PortalCurationImageResult
+message PortalCurationImageResult {
+	// ref: Niantic.Titan.Protos.PortalCurationImageResult/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FEATURE_DISABLED = 2;
+		ALREADY_UPLOADED = 3;
+		IMAGE_NOT_FOUND = 4;
+		IMAGE_TOO_BIG = 5;
+		IMAGE_NOT_SERVABLE = 6;
+		PORTAL_NOT_FOUND = 7;
+	}
+
+}
+
+// ref: Niantic.Titan.Protos.RoutePoiProto
+message RoutePoiProto {
+	string poi_id = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitNewPoiOutProto
+message SubmitNewPoiOutProto {
+	// ref: Niantic.Titan.Protos.SubmitNewPoiOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		INTERNAL_ERROR = 3;
+		TOO_MANY_RECENT_SUBMISSIONS = 4;
+		INVALID_INPUT = 5;
+		MINOR = 6;
+		NOT_AVAILABLE = 7;
+	}
+
+	Status status = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitNewPoiProto
+message SubmitNewPoiProto {
+	string title = 1;
+	string long_description = 2;
+	int32 lat_e6 = 4;
+	int32 lng_e6 = 5;
+	string supporting_statement = 14;
+}
+
+// ref: Niantic.Titan.Protos.SubmitNewRouteOutProto
+message SubmitNewRouteOutProto {
+	// ref: Niantic.Titan.Protos.SubmitNewRouteOutProto/Types/Status
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+		MISSING_IMAGE = 7;
+		INVALID_POI = 8;
+		INVALID_ROUTE_LENGTH = 9;
+	}
+
+	Status status = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitNewRouteProto
+message SubmitNewRouteProto {
+	string route_submission_id = 1;
+	string title = 2;
+	string description = 3;
+	repeated RoutePoiProto pois = 4;
+	RouteVisitOrder visit_order = 5;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiImageOutProto
+message SubmitPoiImageOutProto {
+	// ref: Niantic.Titan.Protos.SubmitPoiImageOutProto/Types/Status
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		MISSING_IMAGE = 6;
+		INVALID_INPUT = 7;
+	}
+
+	Status status = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiImageProto
+message SubmitPoiImageProto {
+	string poi_id = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiLocationUpdateOutProto
+message SubmitPoiLocationUpdateOutProto {
+	// ref: Niantic.Titan.Protos.SubmitPoiLocationUpdateOutProto/Types/Status
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+	}
+
+	Status status = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiLocationUpdateProto
+message SubmitPoiLocationUpdateProto {
+	string poi_id = 1;
+	niantic.platform.protos.LocationE6Proto location = 2;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiTakedownRequestOutProto
+message SubmitPoiTakedownRequestOutProto {
+	// ref: Niantic.Titan.Protos.SubmitPoiTakedownRequestOutProto/Types/Status
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+	}
+
+	Status status = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiTakedownRequestProto
+message SubmitPoiTakedownRequestProto {
+	string poi_id = 1;
+	niantic.platform.protos.PoiInvalidReason invalid_reason = 2;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiTextMetadataUpdateOutProto
+message SubmitPoiTextMetadataUpdateOutProto {
+	// ref: Niantic.Titan.Protos.SubmitPoiTextMetadataUpdateOutProto/Types/Status
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+	}
+
+	Status status = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiTextMetadataUpdateProto
+message SubmitPoiTextMetadataUpdateProto {
+	string poi_id = 1;
+	string title = 2;
+	string description = 3;
+}
+
+// ref: Niantic.Titan.Protos.TitanGameClientTelemetryOmniProto
+message TitanGameClientTelemetryOmniProto {
+	// ref: Niantic.Titan.Protos.TitanGameClientTelemetryOmniProto/TelemetryDataOneofCase
+	enum TelemetryDataOneofCase {
+		none = 0;
+		poi_submission_telemetry = 1;
+		poi_submission_photo_upload_error_telemetry = 2;
+		player_metadata_telemetry = 3;
+	}
+
+	PoiSubmissionTelemetry poi_submission_telemetry = 1;
+	PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
+	PoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
+	niantic.platform.telemetry.PlatformServerData server_data = 1001;
+}
+
+// ref: Niantic.Titan.Protos.UploadPoiPhotoByUrlOutProto
+message UploadPoiPhotoByUrlOutProto {
+	PortalCurationImageResult.Result status = 1;
+}
+
+// ref: Niantic.Titan.Protos.UploadPoiPhotoByUrlProto
+message UploadPoiPhotoByUrlProto {
+	string request_id = 1;
+	string image_url = 2;
+}
+
+
+//----- End protos -----
+//------------------------------
+//----- Begin protos -----
+
 // ref: Niantic.Platform.Iap.Protos.AvailableSkuProto
 message AvailableSkuProto {
 	string id = 1;
@@ -1875,6 +2330,18 @@ enum SocialAction {
 
 
 //----- End protos -----
+//------------------------------
+//----- Begin quest -----
+
+// ref: Niantic.Holoholo.Quest.PhoneBoothPresentationMode
+enum PhoneBoothPresentationMode {
+	NONE = 0;
+	PORTRAIT = 1;
+	DIALOG = 2;
+}
+
+
+//----- End quest -----
 //------------------------------
 //----- Begin rpc -----
 
@@ -2219,6 +2686,14 @@ enum HoloBadgeType {
 	BADGE_GOFEST_2019_EMEA_DAY_03_EARLYACCESS = 5028;
 	BADGE_GOFEST_2019_EMEA_DAY_04_GENERAL = 5029;
 	BADGE_GOFEST_2019_EMEA_DAY_04_EARLYACCESS = 5030;
+	BADGE_GOFEST_2019_APAC_DAY_00_GENERAL = 5031;
+	BADGE_GOFEST_2019_APAC_DAY_01_GENERAL = 5032;
+	BADGE_GOFEST_2019_APAC_DAY_02_GENERAL = 5033;
+	BADGE_GOFEST_2019_APAC_DAY_03_GENERAL = 5034;
+	BADGE_GOFEST_2019_APAC_DAY_04_GENERAL = 5035;
+	BADGE_GOFEST_2019_APAC_DAY_05_GENERAL = 5036;
+	BADGE_GOFEST_2019_APAC_DAY_06_GENERAL = 5037;
+	BADGE_GOFEST_2019_APAC_DAY_07_GENERAL = 5038;
 }
 
 // ref: Holoholo.Rpc.HoloholoClientTelemetryIds
@@ -2301,7 +2776,6 @@ enum HoloItemCategory {
 	ITEM_CATEGORY_STARDUST_BOOST = 16;
 	ITEM_CATEGORY_FRIEND_GIFT_BOX = 17;
 	ITEM_CATEGORY_TEAM_CHANGE = 18;
-	ITEM_CATEGORY_ROUTE_MAKER = 19;
 }
 
 // ref: Holoholo.Rpc.HoloItemEffect
@@ -2347,7 +2821,6 @@ enum HoloItemType {
 	ITEM_TYPE_STARDUST_BOOST = 17;
 	ITEM_TYPE_FRIEND_GIFT_BOX = 18;
 	ITEM_TYPE_TEAM_CHANGE = 19;
-	ITEM_TYPE_ROUTE_MAKER = 20;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonClass
@@ -3377,6 +3850,7 @@ enum HoloPokemonMove {
 	V0322_MOVE_FRUSTRATION = 322;
 	V0323_MOVE_RETURN = 323;
 	V0324_MOVE_SYNCHRONOISE = 324;
+	V0325_MOVE_LOCK_ON_FAST = 325;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMovementType
@@ -3434,6 +3908,7 @@ enum InvasionTelemetryIds {
 	INVASION_ENCOUNTER_STARTED = 4;
 	INVASION_ENCOUNTER_FINISHED = 5;
 	INVASION_POKEMON_PURIFIED = 6;
+	INVASION_AFTER_POI_EXITED = 7;
 }
 
 // ref: Holoholo.Rpc.InventoryUpgradeType
@@ -4023,6 +4498,7 @@ enum TutorialCompletion {
 	INVASION_INTRODUCTION_DIALOG = 29;
 	INVASION_ENCOUNTER_DIALOG = 30;
 	INVASION_SHADOW_POKEMON_DIALOG = 31;
+	ROUTES_CREATION = 32;
 }
 
 // ref: Holoholo.Rpc.VariableName
@@ -4143,6 +4619,8 @@ message ActionLogEntry {
 		decline_ex_raid_pass = 16;
 		fitness_rewards = 17;
 		combat = 18;
+		purify_pokemon = 19;
+		invasion_victory = 20;
 	}
 
 	int64 timestamp_ms = 1;
@@ -4163,6 +4641,8 @@ message ActionLogEntry {
 	DeclineExRaidPassLogEntry decline_ex_raid_pass = 16;
 	FitnessRewardsLogEntry fitness_rewards = 17;
 	CombatLogEntry combat = 18;
+	PurifyPokemonLogEntry purify_pokemon = 19;
+	InvasionVictoryLogEntry invasion_victory = 20;
 }
 
 // ref: Holoholo.Rpc.AddFortModifierOutProto
@@ -4516,6 +4996,7 @@ message AwardItemProto {
 // ref: Holoholo.Rpc.BackgroundModeGlobalSettingsProto
 message BackgroundModeGlobalSettingsProto {
 	uint32 min_player_level_fitness = 1;
+	int64 service_prompt_timestamp_ms = 2;
 }
 
 // ref: Holoholo.Rpc.BackgroundModeSettingsProto
@@ -5762,6 +6243,10 @@ message CombatSettingsProto {
 	float quick_swap_cooldown_duration_seconds = 15;
 	CombatOffensiveInputChallengeSettings offensive_input_challenge_settings = 16;
 	CombatDefensiveInputChallengeSettings defensive_input_challenge_settings = 17;
+	float charge_score_base = 18;
+	float charge_score_nice = 19;
+	float charge_score_great = 20;
+	float charge_score_excellent = 21;
 }
 
 // ref: Holoholo.Rpc.CombatStatStageSettingsProto
@@ -5770,6 +6255,14 @@ message CombatStatStageSettingsProto {
 	int32 maximum_stat_stage = 2;
 	repeated float attack_buff_multiplier = 3;
 	repeated float defense_buff_multiplier = 4;
+}
+
+// ref: Holoholo.Rpc.CombatTypeProto
+message CombatTypeProto {
+	HoloPokemonType type = 1;
+	float nice_level_threshold = 2;
+	float great_level_threshold = 3;
+	float excellent_level_threshold = 4;
 }
 
 // ref: Holoholo.Rpc.CompleteInvasionDialogueOutProto
@@ -6948,6 +7441,7 @@ message GameMasterClientTemplateProto {
 	AdventureSyncV2GmtProto adventure_sync_v2_gmt = 46;
 	LoadingScreenProto loading_screen_settings = 47;
 	InvasionNpcDisplaySettingsProto invasion_npc_display_settings = 48;
+	CombatTypeProto combat_type = 51;
 }
 
 // ref: Holoholo.Rpc.GenerateCombatChallengeIdOutProto
@@ -7279,6 +7773,7 @@ message GetMapObjectsOutProto {
 		UNSET = 0;
 		SUCCESS = 1;
 		LOCATION_UNSET = 2;
+		ERROR = 3;
 	}
 
 	// ref: Holoholo.Rpc.GetMapObjectsOutProto/Types/TimeOfDay
@@ -7485,6 +7980,7 @@ message GetRemoteConfigVersionsProto {
 	string locale = 4;
 	uint32 app_version = 5;
 	Store store = 6;
+	string carrier = 7;
 }
 
 // ref: Holoholo.Rpc.GetServerTimeOutProto
@@ -8261,6 +8757,7 @@ message InvasionNpcDisplaySettingsProto {
 	string backdrop_image_bundle = 6;
 	string model_name = 7;
 	string tutorial_on_loss_string = 8;
+	bool is_male = 9;
 }
 
 // ref: Holoholo.Rpc.InvasionStatus
@@ -8293,6 +8790,13 @@ message InvasionTelemetry {
 	int32 encounter_pokemon = 6;
 	bool encounter_success = 7;
 	string invasion_id = 8;
+	bool player_tapped_npc = 9;
+}
+
+// ref: Holoholo.Rpc.InvasionVictoryLogEntry
+message InvasionVictoryLogEntry {
+	LootProto rewards = 1;
+	EnumWrapper.InvasionCharacter invasion_npc = 2;
 }
 
 // ref: Holoholo.Rpc.InventorySettingsProto
@@ -8426,6 +8930,15 @@ message LeaveLobbyProto {
 	int64 raid_seed = 1;
 	string gym_id = 2;
 	repeated int32 lobby_id = 3;
+}
+
+// ref: Holoholo.Rpc.LeavePointOfInterestTelemetry
+message LeavePointOfInterestTelemetry {
+	string result = 1;
+	string fort_id = 2;
+	int32 fort_type = 3;
+	int64 client_timestamp = 4;
+	string partner_id = 5;
 }
 
 // ref: Holoholo.Rpc.LeveledUpFriendsProto
@@ -8708,7 +9221,6 @@ message MoveSettingsProto {
 	int32 damage_window_start_ms = 13;
 	int32 damage_window_end_ms = 14;
 	int32 energy_delta = 15;
-	bool cannot_be_rerolled_with_tm = 16;
 }
 
 // ref: Holoholo.Rpc.MultiPartQuestProto
@@ -9540,6 +10052,117 @@ message PokemonDisplayProto {
 		SWAMPERT_NORMAL = 211;
 		SWAMPERT_SHADOW = 212;
 		SWAMPERT_PURIFIED = 213;
+		DROWZEE_NORMAL = 214;
+		DROWZEE_SHADOW = 215;
+		DROWZEE_PURIFIED = 216;
+		HYPNO_NORMAL = 217;
+		HYPNO_SHADOW = 218;
+		HYPNO_PURIFIED = 219;
+		GRIMER_SHADOW = 220;
+		GRIMER_PURIFIED = 221;
+		MUK_SHADOW = 222;
+		MUK_PURIFIED = 223;
+		CUBONE_NORMAL = 224;
+		CUBONE_SHADOW = 225;
+		CUBONE_PURIFIED = 226;
+		MAROWAK_SHADOW = 227;
+		MAROWAK_PURIFIED = 228;
+		HOUNDOUR_NORMAL = 229;
+		HOUNDOUR_SHADOW = 230;
+		HOUNDOUR_PURIFIED = 231;
+		HOUNDOOM_NORMAL = 232;
+		HOUNDOOM_SHADOW = 233;
+		HOUNDOOM_PURIFIED = 234;
+		POLIWAG_NORMAL = 235;
+		POLIWAG_SHADOW = 236;
+		POLIWAG_PURIFIED = 237;
+		POLIWHIRL_NORMAL = 238;
+		POLIWHIRL_SHADOW = 239;
+		POLIWHIRL_PURIFIED = 240;
+		POLIWRATH_NORMAL = 241;
+		POLIWRATH_SHADOW = 242;
+		POLIWRATH_PURIFIED = 243;
+		POLITOED_NORMAL = 244;
+		POLITOED_SHADOW = 245;
+		POLITOED_PURIFIED = 246;
+		SCYTHER_NORMAL = 247;
+		SCYTHER_SHADOW = 248;
+		SCYTHER_PURIFIED = 249;
+		SCIZOR_NORMAL = 250;
+		SCIZOR_SHADOW = 251;
+		SCIZOR_PURIFIED = 252;
+		MAGIKARP_NORMAL = 253;
+		MAGIKARP_SHADOW = 254;
+		MAGIKARP_PURIFIED = 255;
+		GYARADOS_NORMAL = 256;
+		GYARADOS_SHADOW = 257;
+		GYARADOS_PURIFIED = 258;
+		VENONAT_NORMAL = 259;
+		VENONAT_SHADOW = 260;
+		VENONAT_PURIFIED = 261;
+		VENOMOTH_NORMAL = 262;
+		VENOMOTH_SHADOW = 263;
+		VENOMOTH_PURIFIED = 264;
+		ODDISH_NORMAL = 265;
+		ODDISH_SHADOW = 266;
+		ODDISH_PURIFIED = 267;
+		GLOOM_NORMAL = 268;
+		GLOOM_SHADOW = 269;
+		GLOOM_PURIFIED = 270;
+		VILEPLUME_NORMAL = 271;
+		VILEPLUME_SHADOW = 272;
+		VILEPLUME_PURIFIED = 273;
+		BELLOSSOM_NORMAL = 274;
+		BELLOSSOM_SHADOW = 275;
+		BELLOSSOM_PURIFIED = 276;
+		HITMONCHAN_NORMAL = 277;
+		HITMONCHAN_SHADOW = 278;
+		HITMONCHAN_PURIFIED = 279;
+		GROWLITHE_NORMAL = 280;
+		GROWLITHE_SHADOW = 281;
+		GROWLITHE_PURIFIED = 282;
+		ARCANINE_NORMAL = 283;
+		ARCANINE_SHADOW = 284;
+		ARCANINE_PURIFIED = 285;
+		PSYDUCK_NORMAL = 286;
+		PSYDUCK_SHADOW = 287;
+		PSYDUCK_PURIFIED = 288;
+		GOLDUCK_NORMAL = 289;
+		GOLDUCK_SHADOW = 290;
+		GOLDUCK_PURIFIED = 291;
+		RALTS_NORMAL = 292;
+		RALTS_SHADOW = 293;
+		RALTS_PURIFIED = 294;
+		KIRLIA_NORMAL = 295;
+		KIRLIA_SHADOW = 296;
+		KIRLIA_PURIFIED = 297;
+		GARDEVOIR_NORMAL = 298;
+		GARDEVOIR_SHADOW = 299;
+		GARDEVOIR_PURIFIED = 300;
+		GALLADE_NORMAL = 301;
+		GALLADE_SHADOW = 302;
+		GALLADE_PURIFIED = 303;
+		ABRA_NORMAL = 304;
+		ABRA_SHADOW = 305;
+		ABRA_PURIFIED = 306;
+		KADABRA_NORMAL = 307;
+		KADABRA_SHADOW = 308;
+		KADABRA_PURIFIED = 309;
+		ALAKAZAM_NORMAL = 310;
+		ALAKAZAM_SHADOW = 311;
+		ALAKAZAM_PURIFIED = 312;
+		LARVITAR_NORMAL = 313;
+		LARVITAR_SHADOW = 314;
+		LARVITAR_PURIFIED = 315;
+		PUPITAR_NORMAL = 316;
+		PUPITAR_SHADOW = 317;
+		PUPITAR_PURIFIED = 318;
+		TYRANITAR_NORMAL = 319;
+		TYRANITAR_SHADOW = 320;
+		TYRANITAR_PURIFIED = 321;
+		LAPRAS_NORMAL = 322;
+		LAPRAS_SHADOW = 323;
+		LAPRAS_PURIFIED = 324;
 		PIKACHU_NORMAL = 598;
 		PIKACHU_NOEVOLVE = 599;
 		WURMPLE_NORMAL = 600;
@@ -9552,6 +10175,235 @@ message PokemonDisplayProto {
 		SQUIRTLE_NOEVOLVE = 607;
 		BLASTOISE_NOEVOLVE = 608;
 		RATICATE_NOEVOLVE = 609;
+		CACNEA_NORMAL = 610;
+		CACNEA_SHADOW = 611;
+		CACNEA_PURIFIED = 612;
+		CACTURNE_NORMAL = 613;
+		CACTURNE_SHADOW = 614;
+		CACTURNE_PURIFIED = 615;
+		WEEDLE_NORMAL = 616;
+		WEEDLE_SHADOW = 617;
+		WEEDLE_PURIFIED = 618;
+		KAKUNA_NORMAL = 619;
+		KAKUNA_SHADOW = 620;
+		KAKUNA_PURIFIED = 621;
+		BEEDRILL_NORMAL = 622;
+		BEEDRILL_SHADOW = 623;
+		BEEDRILL_PURIFIED = 624;
+		SEEDOT_NORMAL = 625;
+		SEEDOT_SHADOW = 626;
+		SEEDOT_PURIFIED = 627;
+		NUZLEAF_NORMAL = 628;
+		NUZLEAF_SHADOW = 629;
+		NUZLEAF_PURIFIED = 630;
+		SHIFTRY_NORMAL = 631;
+		SHIFTRY_SHADOW = 632;
+		SHIFTRY_PURIFIED = 633;
+		MAGMAR_NORMAL = 634;
+		MAGMAR_SHADOW = 635;
+		MAGMAR_PURIFIED = 636;
+		MAGMORTAR_NORMAL = 637;
+		MAGMORTAR_SHADOW = 638;
+		MAGMORTAR_PURIFIED = 639;
+		ELECTABUZZ_NORMAL = 640;
+		ELECTABUZZ_SHADOW = 641;
+		ELECTABUZZ_PURIFIED = 642;
+		ELECTIVIRE_NORMAL = 643;
+		ELECTIVIRE_SHADOW = 644;
+		ELECTIVIRE_PURIFIED = 645;
+		MAREEP_NORMAL = 646;
+		MAREEP_SHADOW = 647;
+		MAREEP_PURIFIED = 648;
+		FLAAFFY_NORMAL = 649;
+		FLAAFFY_SHADOW = 650;
+		FLAAFFY_PURIFIED = 651;
+		AMPHAROS_NORMAL = 652;
+		AMPHAROS_SHADOW = 653;
+		AMPHAROS_PURIFIED = 654;
+		MAGNEMITE_NORMAL = 655;
+		MAGNEMITE_SHADOW = 656;
+		MAGNEMITE_PURIFIED = 657;
+		MAGNETON_NORMAL = 658;
+		MAGNETON_SHADOW = 659;
+		MAGNETON_PURIFIED = 660;
+		MAGNEZONE_NORMAL = 661;
+		MAGNEZONE_SHADOW = 662;
+		MAGNEZONE_PURIFIED = 663;
+		BELLSPROUT_NORMAL = 664;
+		BELLSPROUT_SHADOW = 665;
+		BELLSPROUT_PURIFIED = 666;
+		WEEPINBELL_NORMAL = 667;
+		WEEPINBELL_SHADOW = 668;
+		WEEPINBELL_PURIFIED = 669;
+		VICTREEBEL_NORMAL = 670;
+		VICTREEBEL_SHADOW = 671;
+		VICTREEBEL_PURIFIED = 672;
+		SANDSHREW_SHADOW = 673;
+		SANDSHREW_PURIFIED = 674;
+		SANDSLASH_SHADOW = 675;
+		SANDSLASH_PURIFIED = 676;
+		PORYGON_NORMAL = 677;
+		PORYGON_SHADOW = 678;
+		PORYGON_PURIFIED = 679;
+		PORYGON2_NORMAL = 680;
+		PORYGON2_SHADOW = 681;
+		PORYGON2_PURIFIED = 682;
+		PORYGON_Z_NORMAL = 683;
+		PORYGON_Z_SHADOW = 684;
+		PORYGON_Z_PURIFIED = 685;
+		WOBBUFFET_SHADOW = 686;
+		WOBBUFFET_PURIFIED = 687;
+		TURTWIG_NORMAL = 688;
+		TURTWIG_SHADOW = 689;
+		TURTWIG_PURIFIED = 690;
+		GROTLE_NORMAL = 691;
+		GROTLE_SHADOW = 692;
+		GROTLE_PURIFIED = 693;
+		TORTERRA_NORMAL = 694;
+		TORTERRA_SHADOW = 695;
+		TORTERRA_PURIFIED = 696;
+		EKANS_NORMAL = 697;
+		EKANS_SHADOW = 698;
+		EKANS_PURIFIED = 699;
+		ARBOK_NORMAL = 700;
+		ARBOK_SHADOW = 701;
+		ARBOK_PURIFIED = 702;
+		KOFFING_NORMAL = 703;
+		KOFFING_SHADOW = 704;
+		KOFFING_PURIFIED = 705;
+		WEEZING_NORMAL = 706;
+		WEEZING_SHADOW = 707;
+		WEEZING_PURIFIED = 708;
+		MEOWTH_SHADOW = 709;
+		MEOWTH_PURIFIED = 710;
+		PERSIAN_SHADOW = 711;
+		PERSIAN_PURIFIED = 712;
+		HITMONLEE_NORMAL = 713;
+		HITMONLEE_SHADOW = 714;
+		HITMONLEE_PURIFIED = 715;
+		ARTICUNO_NORMAL = 716;
+		ARTICUNO_SHADOW = 717;
+		ARTICUNO_PURIFIED = 718;
+		MISDREAVUS_NORMAL = 719;
+		MISDREAVUS_SHADOW = 720;
+		MISDREAVUS_PURIFIED = 721;
+		MISMAGIUS_NORMAL = 722;
+		MISMAGIUS_SHADOW = 723;
+		MISMAGIUS_PURIFIED = 724;
+		VULPIX_SHADOW = 725;
+		VULPIX_PURIFIED = 726;
+		NINETALES_SHADOW = 727;
+		NINETALES_PURIFIED = 728;
+		EXEGGCUTE_NORMAL = 729;
+		EXEGGCUTE_SHADOW = 730;
+		EXEGGCUTE_PURIFIED = 731;
+		EXEGGUTOR_SHADOW = 732;
+		EXEGGUTOR_PURIFIED = 733;
+		CARVANHA_NORMAL = 734;
+		CARVANHA_SHADOW = 735;
+		CARVANHA_PURIFIED = 736;
+		SHARPEDO_NORMAL = 737;
+		SHARPEDO_SHADOW = 738;
+		SHARPEDO_PURIFIED = 739;
+		OMANYTE_NORMAL = 740;
+		OMANYTE_SHADOW = 741;
+		OMANYTE_PURIFIED = 742;
+		OMASTAR_NORMAL = 743;
+		OMASTAR_SHADOW = 744;
+		OMASTAR_PURIFIED = 745;
+		TRAPINCH_NORMAL = 746;
+		TRAPINCH_SHADOW = 747;
+		TRAPINCH_PURIFIED = 748;
+		VIBRAVA_NORMAL = 749;
+		VIBRAVA_SHADOW = 750;
+		VIBRAVA_PURIFIED = 751;
+		FLYGON_NORMAL = 752;
+		FLYGON_SHADOW = 753;
+		FLYGON_PURIFIED = 754;
+		BAGON_NORMAL = 755;
+		BAGON_SHADOW = 756;
+		BAGON_PURIFIED = 757;
+		SHELGON_NORMAL = 758;
+		SHELGON_SHADOW = 759;
+		SHELGON_PURIFIED = 760;
+		SALAMENCE_NORMAL = 761;
+		SALAMENCE_SHADOW = 762;
+		SALAMENCE_PURIFIED = 763;
+		BELDUM_NORMAL = 764;
+		BELDUM_SHADOW = 765;
+		BELDUM_PURIFIED = 766;
+		METANG_NORMAL = 767;
+		METANG_SHADOW = 768;
+		METANG_PURIFIED = 769;
+		METAGROSS_NORMAL = 770;
+		METAGROSS_SHADOW = 771;
+		METAGROSS_PURIFIED = 772;
+		ZAPDOS_NORMAL = 773;
+		ZAPDOS_SHADOW = 774;
+		ZAPDOS_PURIFIED = 775;
+		NIDORAN_NORMAL = 776;
+		NIDORAN_SHADOW = 777;
+		NIDORAN_PURIFIED = 778;
+		NIDORINA_NORMAL = 779;
+		NIDORINA_SHADOW = 780;
+		NIDORINA_PURIFIED = 781;
+		NIDOQUEEN_NORMAL = 782;
+		NIDOQUEEN_SHADOW = 783;
+		NIDOQUEEN_PURIFIED = 784;
+		NIDORINO_NORMAL = 785;
+		NIDORINO_SHADOW = 786;
+		NIDORINO_PURIFIED = 787;
+		NIDOKING_NORMAL = 788;
+		NIDOKING_SHADOW = 789;
+		NIDOKING_PURIFIED = 790;
+		STUNKY_NORMAL = 791;
+		STUNKY_SHADOW = 792;
+		STUNKY_PURIFIED = 793;
+		SKUNTANK_NORMAL = 794;
+		SKUNTANK_SHADOW = 795;
+		SKUNTANK_PURIFIED = 796;
+		SNEASEL_NORMAL = 797;
+		SNEASEL_SHADOW = 798;
+		SNEASEL_PURIFIED = 799;
+		WEAVILE_NORMAL = 800;
+		WEAVILE_SHADOW = 801;
+		WEAVILE_PURIFIED = 802;
+		GLIGAR_NORMAL = 803;
+		GLIGAR_SHADOW = 804;
+		GLIGAR_PURIFIED = 805;
+		GLISCOR_NORMAL = 806;
+		GLISCOR_SHADOW = 807;
+		GLISCOR_PURIFIED = 808;
+		MACHOP_NORMAL = 809;
+		MACHOP_SHADOW = 810;
+		MACHOP_PURIFIED = 811;
+		MACHOKE_NORMAL = 812;
+		MACHOKE_SHADOW = 813;
+		MACHOKE_PURIFIED = 814;
+		MACHAMP_NORMAL = 815;
+		MACHAMP_SHADOW = 816;
+		MACHAMP_PURIFIED = 817;
+		CHIMCHAR_NORMAL = 818;
+		CHIMCHAR_SHADOW = 819;
+		CHIMCHAR_PURIFIED = 820;
+		MONFERNO_NORMAL = 821;
+		MONFERNO_SHADOW = 822;
+		MONFERNO_PURIFIED = 823;
+		INFERNAPE_NORMAL = 824;
+		INFERNAPE_SHADOW = 825;
+		INFERNAPE_PURIFIED = 826;
+		SHUCKLE_NORMAL = 827;
+		SHUCKLE_SHADOW = 828;
+		SHUCKLE_PURIFIED = 829;
+		ABSOL_NORMAL = 830;
+		ABSOL_SHADOW = 831;
+		ABSOL_PURIFIED = 832;
+		MAWILE_NORMAL = 833;
+		MAWILE_SHADOW = 834;
+		MAWILE_PURIFIED = 835;
+		MOLTRES_NORMAL = 836;
+		MOLTRES_SHADOW = 837;
+		MOLTRES_PURIFIED = 838;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
@@ -9724,6 +10576,7 @@ message PokemonProto {
 	int32 move3 = 47;
 	PokemonCombatStatsProto pvp_combat_stats = 48;
 	PokemonCombatStatsProto npc_combat_stats = 49;
+	bool move2_is_purified_exclusive = 50;
 }
 
 // ref: Holoholo.Rpc.PokemonScaleSettingProto
@@ -9902,6 +10755,13 @@ message ProfilePageTelemetry {
 message PtcToken {
 	string token = 1;
 	int32 expiration = 2;
+}
+
+// ref: Holoholo.Rpc.PurifyPokemonLogEntry
+message PurifyPokemonLogEntry {
+	HoloPokemonId pokemon_id = 1;
+	PokemonDisplayProto pokemon_display = 2;
+	uint64 purified_pokemon_uuid = 3;
 }
 
 // ref: Holoholo.Rpc.PurifyPokemonOutProto
@@ -10131,6 +10991,7 @@ message QuestPreconditionProto {
 		QUEST_PRECONDITION_MEDAL = 3;
 		QUEST_PRECONDITION_IS_MINOR = 4;
 		QUEST_PRECONDITION_EXCLUSIVE_QUESTS = 5;
+		QUEST_PRECONDITION_NEVER = 6;
 	}
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Level
@@ -11711,6 +12572,16 @@ message VerifyChallengeProto {
 	string token = 1;
 }
 
+// ref: Holoholo.Rpc.ViewPointOfInterestImageTelemetry
+message ViewPointOfInterestImageTelemetry {
+	string result = 1;
+	string fort_id = 2;
+	int32 fort_type = 3;
+	bool in_range = 4;
+	bool was_gym_interior = 5;
+	string partner_id = 6;
+}
+
 // ref: Holoholo.Rpc.WeatherAffinityProto
 message WeatherAffinityProto {
 	niantic.rpc.GameplayWeatherProto.WeatherCondition weather_condition = 1;
@@ -12123,6 +12994,7 @@ message ClientTelemetryBatchProto {
 		UNSET = 0;
 		DITTO = 1;
 		GAME = 2;
+		TITAN = 3;
 	}
 
 	TelemetryScopeId telemetry_scope_id = 1;
