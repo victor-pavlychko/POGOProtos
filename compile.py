@@ -339,7 +339,7 @@ if args.language == 'js':
     path_lower = True
     file_lower = True
     package_lower = True
-elif args.language == 'csharp' or args.language == 'cpp' or args.language == 'objc' or args.language == 'php':
+elif args.language == 'csharp' or args.language == 'cpp' or args.language == 'objc' or args.language == 'php' or args.language == 'swift':
     namespace = 'POGOProtos'
     path = 'POGOProtos'
     merge = False
