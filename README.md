@@ -19,7 +19,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | API           | Notes           | Extra                          |
 |--------------|---------------|-----------------|--------------------------------|
-| 2.46.0       | 0.149.0       | Compatible      |  Protocol Buffers v3.9.0       |
+| 2.46.0       | 0.149.1       | Compatible      |  Protocol Buffers v3.9.0       |
 
 ### Usage
 
