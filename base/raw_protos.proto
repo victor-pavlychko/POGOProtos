@@ -166,20 +166,6 @@ enum NotificationCategory {
 
 //----- End clientinboxservice -----
 //------------------------------
-//----- Begin combat -----
-
-// ref: Niantic.Holoholo.Combat.CombatEntry
-enum CombatEntry {
-	NPC_COMBAT = 0;
-	RECEIVE_CHALLENGE = 1;
-	SEND_CHALLENGE = 2;
-	LEAGUE_SELECTION = 3;
-	INVASION_NPC_COMBAT = 4;
-}
-
-
-//----- End combat -----
-//------------------------------
 //----- Begin events -----
 
 // ref: Niantic.Platform.Ditto.Events.ChannelAuthEventParams
@@ -1954,8 +1940,6 @@ message GetUploadUrlProto {
 message PoiPlayerMetadataTelemetry {
 	string device_model = 1;
 	string device_os = 2;
-	double player_location_lat = 3;
-	double player_location_lng = 4;
 }
 
 // ref: Niantic.Titan.Protos.PoiSubmissionPhotoUploadErrorTelemetry
@@ -2068,6 +2052,7 @@ message SubmitNewRouteOutProto {
 		MISSING_IMAGE = 7;
 		INVALID_POI = 8;
 		INVALID_ROUTE_LENGTH = 9;
+		DUPLICATE_POIS = 10;
 	}
 
 	Status status = 1;
@@ -2741,6 +2726,8 @@ enum HoloholoClientTelemetryIds {
 	DEVICE_SERVICE_TOGGLE = 40;
 	BOOT_TELEMETRY = 41;
 	AR_PHOTO_SESSION_TELEMETRY = 42;
+	LEAVE_POINT_OF_INTEREST = 43;
+	VIEW_POINT_OF_INTEREST_IMAGE = 44;
 }
 
 // ref: Holoholo.Rpc.HoloIapItemCategory
@@ -4427,6 +4414,7 @@ enum ShareExRaidPassResult {
 	ERROR_EX_RAID_INVALID = 8;
 	ERROR_EX_RAID_PASS_NOT_FOUND = 9;
 	ERROR_UNKNOWN = 10;
+	ERROR_FRIEND_NOT_ELIGIBLE = 11;
 }
 
 // ref: Holoholo.Rpc.ShoppingPageTelemetryIds
@@ -6076,6 +6064,20 @@ message CombatLogEntry {
 	string opponent = 4;
 	string combat_league_template_id = 5;
 	string npc_template_id = 6;
+}
+
+// ref: Holoholo.Rpc.CombatMinigameTelemetry
+message CombatMinigameTelemetry {
+	// ref: Holoholo.Rpc.CombatMinigameTelemetry/Types/MinigameCombatType
+	enum MinigameCombatType {
+		UNSET = 0;
+		PVP = 1;
+		PVE = 2;
+	}
+
+	MinigameCombatType combat_type = 1;
+	HoloPokemonType move_type = 2;
+	float score = 3;
 }
 
 // ref: Holoholo.Rpc.CombatMoveSettingsProto
@@ -8500,6 +8502,10 @@ message HoloholoClientTelemetryOmniProto {
 		onboarding_telemetry = 43;
 		login_action_telemetry = 44;
 		ar_photo_session_telemetry = 45;
+		invasion_telemetry = 46;
+		combat_minigame_telemetry = 47;
+		leave_point_of_interest_telemetry = 48;
+		view_point_of_interest_image_telemetry = 49;
 	}
 
 	BootTime boot_time = 1;
@@ -8547,6 +8553,10 @@ message HoloholoClientTelemetryOmniProto {
 	OnboardingTelemetry onboarding_telemetry = 43;
 	LoginActionTelemetry login_action_telemetry = 44;
 	ArPhotoSessionProto ar_photo_session_telemetry = 45;
+	InvasionTelemetry invasion_telemetry = 46;
+	CombatMinigameTelemetry combat_minigame_telemetry = 47;
+	LeavePointOfInterestTelemetry leave_point_of_interest_telemetry = 48;
+	ViewPointOfInterestImageTelemetry view_point_of_interest_image_telemetry = 49;
 	niantic.platform.telemetry.PlatformServerData server_data = 1001;
 }
 
@@ -9989,7 +9999,6 @@ message PokemonDisplayProto {
 		SPINDA_18 = 131;
 		SPINDA_19 = 132;
 		MEWTWO_A = 133;
-		MEWTWO_A_INTRO = 134;
 		MEWTWO_NORMAL = 135;
 		RATTATA_SHADOW = 153;
 		RATTATA_PURIFIED = 154;
@@ -10164,17 +10173,8 @@ message PokemonDisplayProto {
 		LAPRAS_SHADOW = 323;
 		LAPRAS_PURIFIED = 324;
 		PIKACHU_NORMAL = 598;
-		PIKACHU_NOEVOLVE = 599;
 		WURMPLE_NORMAL = 600;
-		WURMPLE_NOEVOLVE = 601;
 		WOBBUFFET_NORMAL = 602;
-		WOBBUFFET_NOEVOLVE = 603;
-		BULBASAUR_NOEVOLVE = 604;
-		CHARMANDER_NOEVOLVE = 605;
-		CHARIZARD_NOEVOLVE = 606;
-		SQUIRTLE_NOEVOLVE = 607;
-		BLASTOISE_NOEVOLVE = 608;
-		RATICATE_NOEVOLVE = 609;
 		CACNEA_NORMAL = 610;
 		CACNEA_SHADOW = 611;
 		CACNEA_PURIFIED = 612;
@@ -10404,6 +10404,65 @@ message PokemonDisplayProto {
 		MOLTRES_NORMAL = 836;
 		MOLTRES_SHADOW = 837;
 		MOLTRES_PURIFIED = 838;
+		KANGASKHAN_NORMAL = 839;
+		KANGASKHAN_SHADOW = 840;
+		KANGASKHAN_PURIFIED = 841;
+		DIGLETT_SHADOW = 842;
+		DIGLETT_PURIFIED = 843;
+		DUGTRIO_SHADOW = 844;
+		DUGTRIO_PURIFIED = 845;
+		RHYHORN_NORMAL = 846;
+		RHYHORN_SHADOW = 847;
+		RHYHORN_PURIFIED = 848;
+		RHYDON_NORMAL = 849;
+		RHYDON_SHADOW = 850;
+		RHYDON_PURIFIED = 851;
+		RHYPERIOR_NORMAL = 852;
+		RHYPERIOR_SHADOW = 853;
+		RHYPERIOR_PURIFIED = 854;
+		MURKROW_NORMAL = 855;
+		MURKROW_SHADOW = 856;
+		MURKROW_PURIFIED = 857;
+		HONCHKROW_NORMAL = 858;
+		HONCHKROW_SHADOW = 859;
+		HONCHKROW_PURIFIED = 860;
+		GIBLE_NORMAL = 861;
+		GIBLE_SHADOW = 862;
+		GIBLE_PURIFIED = 863;
+		GABITE_NORMAL = 864;
+		GABITE_SHADOW = 865;
+		GABITE_PURIFIED = 866;
+		GARCHOMP_NORMAL = 867;
+		GARCHOMP_SHADOW = 868;
+		GARCHOMP_PURIFIED = 869;
+		KRABBY_NORMAL = 870;
+		KRABBY_SHADOW = 871;
+		KRABBY_PURIFIED = 872;
+		KINGLER_NORMAL = 873;
+		KINGLER_SHADOW = 874;
+		KINGLER_PURIFIED = 875;
+		SHELLDER_NORMAL = 876;
+		SHELLDER_SHADOW = 877;
+		SHELLDER_PURIFIED = 878;
+		CLOYSTER_NORMAL = 879;
+		CLOYSTER_SHADOW = 880;
+		CLOYSTER_PURIFIED = 881;
+		GEODUDE_SHADOW = 882;
+		GEODUDE_PURIFIED = 883;
+		GRAVELER_SHADOW = 884;
+		GRAVELER_PURIFIED = 885;
+		GOLEM_SHADOW = 886;
+		GOLEM_PURIFIED = 887;
+		HIPPOPOTAS_NORMAL = 888;
+		HIPPOPOTAS_SHADOW = 889;
+		HIPPOPOTAS_PURIFIED = 890;
+		HIPPOWDON_NORMAL = 891;
+		HIPPOWDON_SHADOW = 892;
+		HIPPOWDON_PURIFIED = 893;
+		PIKACHU_FALL = 894;
+		SQUIRTLE_FALL = 895;
+		CHARMANDER_FALL = 896;
+		BULBASAUR_FALL = 897;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
@@ -10992,6 +11051,7 @@ message QuestPreconditionProto {
 		QUEST_PRECONDITION_IS_MINOR = 4;
 		QUEST_PRECONDITION_EXCLUSIVE_QUESTS = 5;
 		QUEST_PRECONDITION_NEVER = 6;
+		QUEST_PRECONDITION_RECEIVED_ANY_LISTED_QUEST = 7;
 	}
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Level
@@ -11245,6 +11305,7 @@ message ReadPointOfInterestDescriptionTelemetry {
 	string result = 1;
 	string fort_id = 2;
 	int32 fort_type = 3;
+	string partner_id = 4;
 }
 
 // ref: Holoholo.Rpc.ReassignPlayerOutProto
@@ -12228,10 +12289,18 @@ message UpdateInvasionBattleOutProto {
 
 // ref: Holoholo.Rpc.UpdateInvasionBattleProto
 message UpdateInvasionBattleProto {
+	// ref: Holoholo.Rpc.UpdateInvasionBattleProto/Types/UpdateType
+	enum UpdateType {
+		POKEMON_HEALTH = 0;
+		WIN_BATTLE = 1;
+		LOSE_BATTLE = 2;
+	}
+
 	IncidentLookupProto incident_lookup = 1;
 	int32 step = 2;
 	repeated PokemonStaminaUpdateProto health_update = 3;
 	bool complete_battle = 4;
+	UpdateType update_type = 5;
 }
 
 // ref: Holoholo.Rpc.UpdateTradingOutProto
@@ -12610,6 +12679,7 @@ message WebTelemetry {
 	WebTelemetryIds web_click_ids = 1;
 	string url = 2;
 	string fort_id = 3;
+	string partner_id = 4;
 }
 
 // ref: Holoholo.Rpc.WildPokemonProto
