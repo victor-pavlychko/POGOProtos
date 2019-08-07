@@ -7,4 +7,5 @@ message WebTelemetry {
 	.POGOProtos.Enums.WebTelemetryIds web_click_ids = 1;
 	string url = 2;
 	string fort_id = 3;
+	string partner_id = 4;
 }

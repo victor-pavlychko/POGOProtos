@@ -15,8 +15,6 @@ message TitanGameClientTelemetryOmni {
 	message PoiPlayerMetadataTelemetry {
 		string device_model = 1;
 		string device_os = 2;
-		double player_location_lat = 3;
-		double player_location_lng = 4;
 	}
 
 	message PoiSubmissionPhotoUploadErrorTelemetry {

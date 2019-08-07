@@ -93,6 +93,8 @@ enum ClientTelemetryIds {
 	DEVICE_SERVICE_TOGGLE = 40;
 	BOOT_TELEMETRY = 41;
 	AR_PHOTO_SESSION_TELEMETRY = 42;
+	LEAVE_POINT_OF_INTEREST = 43;
+	VIEW_POINT_OF_INTEREST_IMAGE = 44;
 }
 
 enum AvatarCustomizationTelemetryIds {

@@ -15,5 +15,6 @@ message SubmitNewRouteResponse {
 		MISSING_IMAGE = 7;
 		INVALID_POI = 8;
 		INVALID_ROUTE_LENGTH = 9;
+		DUPLICATE_POIS = 10;
 	}
 }
