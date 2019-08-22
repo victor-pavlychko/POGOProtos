@@ -42,6 +42,7 @@ message FortData {
 	bool in_event = 26;
 	string banner_url = 27;
 	string partner_id = 28;
+	bool has_beacon = 29;
 	bool challenge_quest_completed = 30;
 	bool is_ex_raid_eligible = 31;
 	PokestopIncidentDisplay pokestop_display = 32;

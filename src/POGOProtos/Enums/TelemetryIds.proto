@@ -95,6 +95,7 @@ enum ClientTelemetryIds {
 	AR_PHOTO_SESSION_TELEMETRY = 42;
 	LEAVE_POINT_OF_INTEREST = 43;
 	VIEW_POINT_OF_INTEREST_IMAGE = 44;
+	COMBAT_HUB_ENTRANCE_TELEMETRY = 45;
 }
 
 enum AvatarCustomizationTelemetryIds {
@@ -241,4 +242,9 @@ enum SocialTelemetryIds {
 enum WebTelemetryIds {
 	UNDEFINED_WEB_EVENT = 0;
 	POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK = 1;
+}
+
+enum CombatHubEntranceTelemetryIds {
+	UNDEFINED_EVENT = 0;
+	CLICKED_COMBAT_HUB_BUTTON = 1;
 }

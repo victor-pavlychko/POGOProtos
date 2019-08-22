@@ -1,0 +1,37 @@
+syntax = "proto3";
+package POGOProtos.Data;
+
+message RouteMaker {
+	repeated RouteCreation route = 1;
+
+	message RouteCreation {
+		int64 id = 1;
+		int64 version = 2;
+		int64 created_time = 3;
+		int64 last_update_time = 4;
+		RouteDraft route = 5;
+		Status status = 6;
+
+		enum Status {
+			UNSET = 0;
+			IN_PROGRESS = 1;
+			SUBMITTED = 2;
+			REJECTED = 3;
+		}
+
+		message RouteDraft {
+			string name = 1;
+			string description = 2;
+			repeated WaypointDraft waypoint = 3;
+			bool reversible = 4;
+			bool show_creator_name = 5;
+
+			message WaypointDraft {
+				double latitude = 1;
+				double longitude = 2;
+				string fort_id = 3;
+				bool visited = 4;
+			}
+		}
+	}
+}

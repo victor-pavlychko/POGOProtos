@@ -1,0 +1,16 @@
+syntax = "proto3";
+package POGOProtos.Settings.Master;
+
+import "POGOProtos/Settings/Master/BuddyActivityCategorySettings.proto";
+
+message BuddyActivitySettings {
+	BuddyActivity activity = 1;
+	.POGOProtos.Settings.Master.BuddyActivityCategorySettings.BuddyActivityCategory activity_category = 2;
+	int32 max_times_per_day = 3;
+	int32 num_points_per_action = 4;
+
+	enum BuddyActivity {
+		ACTIVITY_UNSET = 0;
+		SNACK = 1;
+	}
+}
