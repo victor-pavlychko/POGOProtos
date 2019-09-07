@@ -3,7 +3,7 @@ package POGOProtos.Networking.Platform.Responses;
 
 message RedeemGoogleReceiptResponse {
 	Status result = 1;
-	string purchase_id = 2;
+	string transaction_token = 2;
 
 	enum Status {
 		UNSET = 0;

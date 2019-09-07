@@ -18,6 +18,4 @@ message PlayerPublicProfile {
 	repeated .POGOProtos.Data.Player.PlayerBadge badges = 9;
 	int64 experience = 10;
 	bool has_shared_ex_pass = 11;
-	int32 combat_rank = 12;
-	float combat_rating = 13;
 }
