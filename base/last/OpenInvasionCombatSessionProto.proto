@@ -4,5 +4,5 @@ package POGOProtos;
 message OpenInvasionCombatSessionProto {
 	IncidentLookupProto incident_lookup = 1;
 	int32 step = 2;
-	repeated uint64 attacking_pokemon_id = 3;
+	repeated fixed64 attacking_pokemon_id = 3;
 }

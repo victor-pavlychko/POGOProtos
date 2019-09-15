@@ -7,11 +7,11 @@ message PokemonScaleSettingProto {
 	float max_height = 3;
 
 	enum PokemonScaleMode {
-		natural_scale = 0;
-		gui_scale = 1;
-		battle_pokemon_scale = 2;
-		raid_boss_scale = 3;
-		gym_topper_scale = 4;
-		map_pokemon_scale = 5;
+		NaturalScale = 0;
+		GuiScale = 1;
+		BattlePokemonScale = 2;
+		RaidBossScale = 3;
+		GymTopperScale = 4;
+		MapPokemonScale = 5;
 	}
 }

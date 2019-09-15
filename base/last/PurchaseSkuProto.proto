@@ -2,5 +2,4 @@ syntax = "proto3";
 package POGOProtos;
 
 message PurchaseSkuProto {
-	string sku_id = 1;
 }

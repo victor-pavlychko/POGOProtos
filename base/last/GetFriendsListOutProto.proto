@@ -5,12 +5,6 @@ message GetFriendsListOutProto {
 	Result result = 1;
 	repeated FriendProto friend = 2;
 
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-	}
-
 	message FriendProto {
 		string player_id = 1;
 		string codename = 2;
@@ -21,5 +15,11 @@ message GetFriendsListOutProto {
 		int64 created_ms = 7;
 		string fb_user_id = 8;
 		bool is_facebook_friendship = 9;
+	}
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
 	}
 }

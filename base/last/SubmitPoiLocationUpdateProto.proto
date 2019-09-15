@@ -3,5 +3,5 @@ package POGOProtos;
 
 message SubmitPoiLocationUpdateProto {
 	string poi_id = 1;
-	niantic.platform.protos.LocationE6Proto location = 2;
+	LocationE6Proto location = 2;
 }

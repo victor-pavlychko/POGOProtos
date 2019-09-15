@@ -5,7 +5,7 @@ message GetMapObjectsOutProto {
 	repeated ClientMapCellProto map_cell = 1;
 	Status status = 2;
 	TimeOfDay time_of_day = 3;
-	repeated niantic.rpc.ClientWeatherProto client_weather = 4;
+	repeated ClientWeatherProto client_weather = 4;
 
 	enum Status {
 		UNSET = 0;

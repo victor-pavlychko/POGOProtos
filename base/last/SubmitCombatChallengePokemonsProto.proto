@@ -3,5 +3,5 @@ package POGOProtos;
 
 message SubmitCombatChallengePokemonsProto {
 	string challenge_id = 1;
-	repeated uint64 attacking_pokemon_id = 2;
+	repeated fixed64 attacking_pokemon_id = 2;
 }

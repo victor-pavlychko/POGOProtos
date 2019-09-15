@@ -1,29 +1,8 @@
 syntax = "proto3";
 package POGOProtos;
 
-message CodenameResultProto {
-	string codename = 1;
-syntax = "proto3";
-package POGOProtos;
-
 message CollectDailyBonusOutProto {
 	Result result = 1;
-
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		CODENAME_NOT_AVAILABLE = 2;
-		CODENAME_NOT_VALID = 3;
-		CURRENT_OWNER = 4;
-		CODENAME_CHANGE_NOT_ALLOWED = 5;
-	}
-
-	string user_message = 2;
-	bool is_assignable = 3;
-	Status status = 4;
-	ClientPlayerProto updated_player = 5;
-	repeated string suggested_codenames = 6;
-}
 
 	enum Result {
 		UNSET = 0;

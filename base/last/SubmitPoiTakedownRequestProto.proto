@@ -3,5 +3,5 @@ package POGOProtos;
 
 message SubmitPoiTakedownRequestProto {
 	string poi_id = 1;
-	niantic.platform.protos.PoiInvalidReason invalid_reason = 2;
+	PoiInvalidReason invalid_reason = 2;
 }

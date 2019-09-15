@@ -1,16 +1,8 @@
 syntax = "proto3";
 package POGOProtos;
 
-message AddLoginActionProto {
-	com.nianticproject.platform.auth.IdentityProvider identity_provider = 1;
-syntax = "proto3";
-package POGOProtos;
-
 message ApnToken {
 	string registration_id = 1;
 	string bundle_identifier = 2;
 	int32 payload_byte_size = 3;
-
-	bytes inner_message = 2;
-}
 }

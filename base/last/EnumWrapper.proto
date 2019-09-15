@@ -3,10 +3,10 @@ package POGOProtos;
 
 message EnumWrapper {
 
-	enum CharacterCategory {
-		UNSET = 0;
-		TEAM_LEADER = 1;
-		GRUNT = 2;
+	enum PokestopStyle {
+		POKESTOP_NORMAL = 0;
+		POKESTOP_ROCKET_INVASION = 1;
+		POKESTOP_ROCKET_VICTORY = 2;
 	}
 
 	enum InvasionCharacter {
@@ -61,9 +61,9 @@ message EnumWrapper {
 		PLACEHOLDER_4 = 4;
 	}
 
-	enum PokestopStyle {
-		POKESTOP_NORMAL = 0;
-		POKESTOP_ROCKET_INVASION = 1;
-		POKESTOP_ROCKET_VICTORY = 2;
+	enum CharacterCategory {
+		UNSET = 0;
+		TEAM_LEADER = 1;
+		GRUNT = 2;
 	}
 }

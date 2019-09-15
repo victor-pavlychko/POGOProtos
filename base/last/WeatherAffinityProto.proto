@@ -2,6 +2,6 @@ syntax = "proto3";
 package POGOProtos;
 
 message WeatherAffinityProto {
-	niantic.rpc.GameplayWeatherProto.WeatherCondition weather_condition = 1;
+	GameplayWeatherProto.WeatherCondition weather_condition = 1;
 	repeated HoloPokemonType pokemon_type = 2;
 }

@@ -8,13 +8,6 @@ message EventMapObjectProto {
 	string path = 4;
 	string object = 5;
 
-	enum TypeOneofCase {
-		none = 0;
-		habitat = 3;
-		path = 4;
-		object = 5;
-	}
-
 	message LatLng {
 		double lat_degree = 1;
 		double lng_degree = 2;

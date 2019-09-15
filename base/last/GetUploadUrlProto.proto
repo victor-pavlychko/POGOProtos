@@ -4,7 +4,7 @@ package POGOProtos;
 message GetUploadUrlProto {
 	string user_id = 1;
 	string game_unique_id = 2;
-	niantic.platform.protos.PlayerSubmissionTypeProto submission_type = 3;
+	PlayerSubmissionTypeProto submission_type = 3;
 	string submission_id = 4;
 	repeated string image_contexts = 5;
 }

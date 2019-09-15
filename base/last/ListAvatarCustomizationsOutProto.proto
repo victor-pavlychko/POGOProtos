@@ -5,6 +5,11 @@ message ListAvatarCustomizationsOutProto {
 	Result result = 1;
 	repeated AvatarCustomization avatar_customizations = 2;
 
+	message AvatarCustomization {
+		string avatar_template_id = 1;
+		repeated ListAvatarCustomizationsOutProto.Label labels = 2;
+	}
+
 	enum Label {
 		UNSET_LABEL = 0;
 		DEFAULT = 1;
@@ -22,10 +27,5 @@ message ListAvatarCustomizationsOutProto {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
-	}
-
-	message AvatarCustomization {
-		string avatar_template_id = 1;
-		repeated ListAvatarCustomizationsOutProto.Label labels = 2;
 	}
 }

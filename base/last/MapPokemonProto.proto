@@ -3,7 +3,7 @@ package POGOProtos;
 
 message MapPokemonProto {
 	string spawnpoint_id = 1;
-	uint64 encounter_id = 2;
+	fixed64 encounter_id = 2;
 	int32 pokedex_type_id = 3;
 	int64 expiration_time_ms = 4;
 	double latitude = 5;

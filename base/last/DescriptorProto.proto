@@ -1,0 +1,13 @@
+syntax = "proto3";
+package POGOProtos.Rpc;
+syntax = "proto3";
+package POGOProtos;
+
+message DescriptorProto {
+
+	message ExtensionRange {
+	}
+
+	message ReservedRange {
+	}
+}

@@ -3,7 +3,7 @@ package POGOProtos;
 
 message AssetDigestOutProto {
 	repeated AssetDigestEntryProto digest = 1;
-	uint64 timestamp = 2;
+	fixed64 timestamp = 2;
 	Result result = 3;
 	int32 page_offset = 4;
 

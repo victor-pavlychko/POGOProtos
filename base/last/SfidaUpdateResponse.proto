@@ -10,7 +10,7 @@ message SfidaUpdateResponse {
 	int64 encounter_id = 6;
 	bool nearby_pokestop = 7;
 	string pokestop_id = 8;
-	holoholo.rpc.EncounterType encounter_type = 9;
+	EncounterType encounter_type = 9;
 	int32 pokedex_number = 10;
 	repeated SfidaNearbyPokemon nearby = 11;
 

@@ -9,10 +9,4 @@ message PokestopIncidentDisplayProto {
 	bool incident_completed = 5;
 	CharacterDisplayProto character_display = 10;
 	InvasionFinishedDisplayProto invasion_finished = 11;
-
-	enum MapDisplayOneofCase {
-		none = 0;
-		character_display = 10;
-		invasion_finished = 11;
-	}
 }

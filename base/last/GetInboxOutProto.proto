@@ -3,7 +3,7 @@ package POGOProtos;
 
 message GetInboxOutProto {
 	Result result = 1;
-	niantic.platform.protos.ClientInbox inbox = 2;
+	ClientInbox inbox = 2;
 
 	enum Result {
 		UNSET = 0;

@@ -8,6 +8,6 @@ message BattleProto {
 	BattleParticipantProto defender = 4;
 	BattleLogProto battle_log = 5;
 	BattleParticipantProto attacker = 6;
-	niantic.rpc.GameplayWeatherProto.WeatherCondition weather_condition = 7;
+	GameplayWeatherProto.WeatherCondition weather_condition = 7;
 	FriendshipLevelMilestone highest_friendship_milestone = 8;
 }

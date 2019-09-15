@@ -3,7 +3,7 @@ package POGOProtos;
 
 message GetBackgroundModeSettingsOutProto {
 	Status status = 1;
-	niantic.platform.bgmode.BackgroundModeClientSettingsProto settings = 2;
+	BackgroundModeClientSettingsProto settings = 2;
 
 	enum Status {
 		UNSET = 0;

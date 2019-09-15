@@ -2,7 +2,7 @@ syntax = "proto3";
 package POGOProtos;
 
 message BootTime {
-	niantic.platform.telemetry.PlatformMetricData duration = 1;
+	PlatformMetricData duration = 1;
 	BootPhase boot_phase = 2;
 
 	enum BootPhase {

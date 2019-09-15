@@ -13,5 +13,5 @@ message LobbyProto {
 	bool private = 10;
 	int64 creation_ms = 11;
 	int32 battle_plfe_instance = 12;
-	niantic.rpc.GameplayWeatherProto.WeatherCondition weather_condition = 13;
+	GameplayWeatherProto.WeatherCondition weather_condition = 13;
 }

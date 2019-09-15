@@ -2,16 +2,23 @@ syntax = "proto3";
 package POGOProtos;
 
 message GetFriendDetailsOutProto {
+	Result result = 1;
+	repeated FriendDetailsProto friend = 2;
+	DebugProto friend_details_debug_info = 3;
+	}
+
+	message DebugProto {
 		int32 fetched_from_db = 1;
 		int32 fetched_from_fanout = 2;
 		int32 fetched_from_player_mapper = 3;
 		int32 fetched_from_status_cache = 4;
 		int32 failed_to_fetch = 5;
-		repeated Callee callee_list = 6;
-	}
-	Result result = 1;
-	repeated FriendDetailsProto friend = 2;
-	DebugProto friend_details_debug_info = 3;
+		repeated GetFriendDetailsOutProto.DebugProto.Callee callee_list = 6;
+
+		message Callee {
+			repeated int32 callee_id = 1;
+			string player_id = 2;
+		}
 
 	enum Result {
 		UNSET = 0;
@@ -19,16 +26,4 @@ message GetFriendDetailsOutProto {
 		ERROR_UNKNOWN = 2;
 		EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
 	}
-
-	message Callee {
-		repeated int32 callee_id = 1;
-		string player_id = 2;
-	}
-
-	message DebugProto {
-
-		message Callee {
-			repeated int32 callee_id = 1;
-			string player_id = 2;
-		}
 }

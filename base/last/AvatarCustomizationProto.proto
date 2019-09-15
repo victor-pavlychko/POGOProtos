@@ -19,20 +19,6 @@ message AvatarCustomizationProto {
 	string set_name = 15;
 	bool set_prime_item = 16;
 
-	enum AvatarCustomizationPromoType {
-		UNSET_PROMO_TYPE = 0;
-		SALE = 1;
-		FEATURED = 2;
-	}
-
-	enum AvatarCustomizationUnlockType {
-		UNSET_UNLOCK_TYPE = 0;
-		DEFAULT = 1;
-		MEDAL_REWARD = 2;
-		IAP_CLOTHING = 3;
-		LEVEL_REWARD = 4;
-	}
-
 	enum Slot {
 		UNSET_SLOT = 0;
 		HAIR = 1;
@@ -49,5 +35,19 @@ message AvatarCustomizationProto {
 		NECKLACE = 12;
 		SKIN = 13;
 		POSE = 14;
+	}
+
+	enum AvatarCustomizationUnlockType {
+		UNSET_UNLOCK_TYPE = 0;
+		DEFAULT = 1;
+		MEDAL_REWARD = 2;
+		IAP_CLOTHING = 3;
+		LEVEL_REWARD = 4;
+	}
+
+	enum AvatarCustomizationPromoType {
+		UNSET_PROMO_TYPE = 0;
+		SALE = 1;
+		FEATURED = 2;
 	}
 }

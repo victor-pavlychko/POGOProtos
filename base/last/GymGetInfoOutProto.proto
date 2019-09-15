@@ -11,7 +11,7 @@ message GymGetInfoOutProto {
 	AwardedGymBadge awarded_gym_badge = 7;
 	string checkin_image_url = 8;
 	EventInfoProto event_info = 9;
-	niantic.rpc.DisplayWeatherProto display_weather = 10;
+	DisplayWeatherProto display_weather = 10;
 	repeated string promo_image = 11;
 	repeated string promo_description = 12;
 	string call_to_action_link = 13;
