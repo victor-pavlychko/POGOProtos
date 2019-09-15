@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message CancelTradingProto {
+	string player_id = 1;
+}

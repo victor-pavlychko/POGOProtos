@@ -1,0 +1,9 @@
+syntax = "proto3";
+syntax = "proto3";
+package POGOProtos;
+
+enum ArMode {
+	NONE = 0;
+	ARSTANDARD = 1;
+	ARPLUS = 2;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message PlayerCombatStatsProto {
+	map<int32, Holoholo.Rpc.PlayerCombatBadgeStatsProto> badges = 1;
+}

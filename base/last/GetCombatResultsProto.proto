@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GetCombatResultsProto {
+	string combat_id = 1;
+}

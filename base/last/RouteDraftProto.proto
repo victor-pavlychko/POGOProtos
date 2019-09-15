@@ -1,0 +1,10 @@
+syntax = "proto3";
+package POGOProtos;
+
+message RouteDraftProto {
+	string name = 1;
+	string description = 2;
+	repeated WaypointDraftProto waypoint = 3;
+	bool reversible = 4;
+	bool show_creator_name = 5;
+}

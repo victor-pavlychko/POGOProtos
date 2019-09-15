@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message RemoveQuestProto {
+	string quest_id = 1;
+}

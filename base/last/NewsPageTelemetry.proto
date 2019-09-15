@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message NewsPageTelemetry {
+	NewsPageTelemetryIds news_page_click_id = 1;
+}

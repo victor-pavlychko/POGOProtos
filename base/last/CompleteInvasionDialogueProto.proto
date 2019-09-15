@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos;
+
+message CompleteInvasionDialogueProto {
+	IncidentLookupProto incident_lookup = 1;
+	int32 step = 2;
+}

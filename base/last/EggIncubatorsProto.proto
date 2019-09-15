@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message EggIncubatorsProto {
+	repeated EggIncubatorProto egg_incubator = 1;
+}

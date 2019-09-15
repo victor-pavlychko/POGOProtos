@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos;
+
+message FavoritePokemonTelemetry {
+	PokemonTelemetry pokemon = 1;
+	bool favored = 2;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GenericClickTelemetry {
+	GenericClickTelemetryIds generic_click_id = 1;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message CreateCombatChallengeProto {
+	string challenge_id = 1;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message JournalVersionProto {
+	int32 version = 1;
+}

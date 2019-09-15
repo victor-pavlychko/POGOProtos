@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GcmToken {
+	string registration_id = 1;
+}

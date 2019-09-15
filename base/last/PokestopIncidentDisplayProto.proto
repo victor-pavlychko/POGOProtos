@@ -1,0 +1,18 @@
+syntax = "proto3";
+package POGOProtos;
+
+message PokestopIncidentDisplayProto {
+	string incident_id = 1;
+	int64 incident_start_ms = 2;
+	int64 incident_expiration_ms = 3;
+	bool hide_incident = 4;
+	bool incident_completed = 5;
+	CharacterDisplayProto character_display = 10;
+	InvasionFinishedDisplayProto invasion_finished = 11;
+
+	enum MapDisplayOneofCase {
+		none = 0;
+		character_display = 10;
+		invasion_finished = 11;
+	}
+}

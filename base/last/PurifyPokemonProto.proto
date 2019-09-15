@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message PurifyPokemonProto {
+	uint64 pokemon_id = 1;
+}

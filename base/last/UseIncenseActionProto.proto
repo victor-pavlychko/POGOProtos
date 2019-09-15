@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message UseIncenseActionProto {
+	Item incense_type = 1;
+}

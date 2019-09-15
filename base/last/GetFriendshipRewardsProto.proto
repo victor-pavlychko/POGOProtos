@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GetFriendshipRewardsProto {
+	string friend_id = 1;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message ShoppingPageTelemetry {
+	ShoppingPageTelemetryIds shopping_page_click_id = 1;
+}

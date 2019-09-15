@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message NewsSettingProto {
+	repeated NewsProto news_protos = 1;
+}

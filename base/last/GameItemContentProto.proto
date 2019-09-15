@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GameItemContentProto {
+	string type = 1;
+	int32 quantity = 2;
+}

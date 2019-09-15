@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message CancelMatchmakingProto {
+	string queue_id = 1;
+}

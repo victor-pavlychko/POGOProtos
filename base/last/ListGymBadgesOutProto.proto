@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message ListGymBadgesOutProto {
+	repeated AwardedGymBadge gym_badge = 1;
+}

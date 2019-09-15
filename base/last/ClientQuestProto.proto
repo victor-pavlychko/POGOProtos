@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos;
+
+message ClientQuestProto {
+	QuestProto quest = 1;
+	QuestDisplayProto quest_display = 2;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message ClientSettingsEventParams {
+	bytes payloads = 1;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message SubmitPoiImageProto {
+	string poi_id = 1;
+}

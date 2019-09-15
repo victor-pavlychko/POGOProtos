@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message FrameRate {
+	niantic.platform.telemetry.PlatformMetricData sampled_frame_rate = 1;
+}

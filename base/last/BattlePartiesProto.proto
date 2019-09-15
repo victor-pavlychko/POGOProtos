@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message BattlePartiesProto {
+	repeated BattlePartyProto battle_parties = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos;
+
+message UseItemMoveRerollProto {
+	Item item = 1;
+	uint64 pokemon_id = 2;
+	bool reroll_unlocked_move = 3;
+}

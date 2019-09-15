@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message CombatHubEntranceTelemetry {
+	CombatHubEntranceTelemetryIds combat_hub_telemetry_id = 1;
+}

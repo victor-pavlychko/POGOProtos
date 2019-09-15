@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos;
+
+message CombatLogProto {
+	CombatSeasonResult lifetime_results = 1;
+	CombatSeasonResult current_season_results = 2;
+	repeated CombatPlayerFinishState current_vs_seeker_set_results = 3;
+}

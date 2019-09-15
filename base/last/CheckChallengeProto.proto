@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message CheckChallengeProto {
+	bool debug_request = 1;
+}

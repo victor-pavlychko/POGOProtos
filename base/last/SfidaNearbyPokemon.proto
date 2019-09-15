@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos;
+
+message SfidaNearbyPokemon {
+	int32 pokedex_number = 1;
+	bool uncaught = 2;
+	holoholo.rpc.PokemonDisplayProto pokemon_display = 3;
+}

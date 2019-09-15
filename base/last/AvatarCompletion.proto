@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos;
+
+enum AvatarCompletion {
+	SUCCESS = 0;
+	QUIT = 1;
+}

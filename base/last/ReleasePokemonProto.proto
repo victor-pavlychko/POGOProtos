@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos;
+
+message ReleasePokemonProto {
+	uint64 pokemon_id = 1;
+	repeated uint64 pokemon_ids = 2;
+}

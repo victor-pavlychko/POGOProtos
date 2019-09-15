@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GetFriendCodeProto {
+	bool force_generate_code = 1;
+}

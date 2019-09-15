@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos;
+
+message UseItemEncounterProto {
+	Item item = 1;
+	uint64 encounter_id = 2;
+	string spawn_point_guid = 3;
+}

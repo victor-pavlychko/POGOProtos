@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message ChannelAuthEventParams {
+	uint32 status = 1;
+}

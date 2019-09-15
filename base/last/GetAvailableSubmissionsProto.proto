@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GetAvailableSubmissionsProto {
+	niantic.platform.protos.PlayerSubmissionTypeProto submission_type = 1;
+}

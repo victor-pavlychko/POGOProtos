@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message EquipBadgeProto {
+	HoloBadgeType badge = 1;
+}

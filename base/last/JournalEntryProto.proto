@@ -1,0 +1,15 @@
+syntax = "proto3";
+package POGOProtos;
+
+message JournalEntryProto {
+	JournalAddEntryProto add_entry = 1;
+	JournalReadEntryProto read_entry = 2;
+	JournalRemoveEntryProto remove_entry = 3;
+
+	enum SubentryOneofCase {
+		none = 0;
+		add_entry = 1;
+		read_entry = 2;
+		remove_entry = 3;
+	}
+}

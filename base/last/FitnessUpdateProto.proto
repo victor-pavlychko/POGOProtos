@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message FitnessUpdateProto {
+	repeated FitnessSample fitness_samples = 1;
+}

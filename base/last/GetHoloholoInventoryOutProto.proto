@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GetHoloholoInventoryOutProto {
+	bool success = 1;
+	niantic.platform.inventory.InventoryDeltaProto inventory_delta = 2;
+}

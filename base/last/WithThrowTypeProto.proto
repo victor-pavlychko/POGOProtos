@@ -1,0 +1,13 @@
+syntax = "proto3";
+package POGOProtos;
+
+message WithThrowTypeProto {
+	HoloActivityType throw_type = 1;
+	bool hit = 2;
+
+	enum ThrowOneofCase {
+		none = 0;
+		throw_type = 1;
+		hit = 2;
+	}
+}

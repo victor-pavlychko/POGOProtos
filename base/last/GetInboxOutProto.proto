@@ -1,0 +1,14 @@
+syntax = "proto3";
+package POGOProtos;
+
+message GetInboxOutProto {
+	Result result = 1;
+	niantic.platform.protos.ClientInbox inbox = 2;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		TIMED_OUT = 3;
+	}
+}

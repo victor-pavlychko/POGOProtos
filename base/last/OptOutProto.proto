@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message OptOutProto {
+	repeated string categories = 1;
+}

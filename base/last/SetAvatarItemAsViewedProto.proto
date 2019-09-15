@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message SetAvatarItemAsViewedProto {
+	repeated string avatar_template_id = 1;
+}

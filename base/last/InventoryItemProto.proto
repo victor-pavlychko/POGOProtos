@@ -1,0 +1,14 @@
+syntax = "proto3";
+package POGOProtos;
+
+message InventoryItemProto {
+	int64 modified_timestamp = 1;
+	bytes deleted_item_key = 2;
+	bytes item = 3;
+
+	enum InventoryItemOneofCase {
+		none = 0;
+		deleted_item_key = 2;
+		item = 3;
+	}
+}

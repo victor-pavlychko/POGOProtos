@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message CompleteInvasionDialogueOutProto {
+	InvasionStatus.Status status = 1;
+}

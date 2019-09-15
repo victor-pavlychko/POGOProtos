@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos;
+
+message EncounterTutorialCompleteProto {
+	int32 pokedex_id = 1;
+}

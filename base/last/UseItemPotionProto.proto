@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos;
+
+message UseItemPotionProto {
+	Item item = 1;
+	uint64 pokemon_id = 2;
+}
