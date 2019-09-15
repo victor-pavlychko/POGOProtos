@@ -60,7 +60,7 @@ import "POGOProtos/Settings/Master/BuddyEncounterCameoSettings.proto";
 message DownloadItemTemplatesResponse {
 	Result result = 1;
 	repeated ItemTemplate item_templates = 2;
-	uint64 timestamp_ms = 3;
+	fixed64 timestamp = 3;
 	int32 page_offset = 4;
 
 	message ItemTemplate {

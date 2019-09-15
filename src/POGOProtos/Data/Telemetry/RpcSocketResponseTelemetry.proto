@@ -6,7 +6,7 @@ message RpcSocketResponseTelemetry {
 	repeated RpcSocketResponseTime response_timings = 2;
 
 	message RpcSocketResponseTime {
-		uint64 request_id = 1;
+		fixed64 request_id = 1;
 		string probe_id = 2;
 		float response_time = 3;
 		bool side_channel = 4;
