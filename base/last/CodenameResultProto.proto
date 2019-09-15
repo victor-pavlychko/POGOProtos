@@ -3,10 +3,9 @@ package POGOProtos;
 
 message CodenameResultProto {
 	string codename = 1;
-
 	string user_message = 2;
 	bool is_assignable = 3;
-	CodenameResultProto.Status status = 4;
+	Status status = 4;
 	ClientPlayerProto updated_player = 5;
 	repeated string suggested_codenames = 6;
 
