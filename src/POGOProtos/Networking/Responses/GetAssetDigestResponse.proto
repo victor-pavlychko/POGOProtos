@@ -3,7 +3,7 @@ package POGOProtos.Networking.Responses;
 
 message GetAssetDigestResponse {
 	repeated AssetDigestEntry digest = 1;
-	uint64 timestamp_ms = 2;
+	fixed64 timestamp = 2;
 	Result result = 3;
 	int32 page_offset = 4;
 
