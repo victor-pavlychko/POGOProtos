@@ -85,7 +85,7 @@ enum PokemonId {
         SLOWBRO = 80;
         MAGNEMITE = 81;
         MAGNETON = 82;
-        FARFETCH'D = 83;
+        FARFETCHD = 83;
         DODUO = 84;
         DODRIO = 85;
         SEEL = 86;
@@ -124,7 +124,7 @@ enum PokemonId {
         SEAKING = 119;
         STARYU = 120;
         STARMIE = 121;
-        MR. MIME = 122;
+        MR_MIME = 122;
         SCYTHER = 123;
         JYNX = 124;
         ELECTABUZZ = 125;
@@ -441,7 +441,7 @@ enum PokemonId {
         BRONZOR = 436;
         BRONZONG = 437;
         BONSLY = 438;
-        MIME JR. = 439;
+        MIME_JR = 439;
         HAPPINY = 440;
         CHATOT = 441;
         SPIRITOMB = 442;
@@ -476,7 +476,7 @@ enum PokemonId {
         GLACEON = 471;
         GLISCOR = 472;
         MAMOSWINE = 473;
-        PORYGON-Z = 474;
+        PORYGON_Z = 474;
         GALLADE = 475;
         PROBOPASS = 476;
         DUSKNOIR = 477;
@@ -774,7 +774,7 @@ enum PokemonId {
         SANDYGAST = 769;
         PALOSSAND = 770;
         PYUKUMUKU = 771;
-        TYPE: NULL = 772;
+        TYPE_NULL = 772;
         SILVALLY = 773;
         MINIOR = 774;
         KOMALA = 775;
@@ -784,13 +784,13 @@ enum PokemonId {
         BRUXISH = 779;
         DRAMPA = 780;
         DHELMISE = 781;
-        JANGMO-O = 782;
-        HAKAMO-O = 783;
-        KOMMO-O = 784;
-        TAPU KOKO = 785;
-        TAPU LELE = 786;
-        TAPU BULU = 787;
-        TAPU FINI = 788;
+        JANGMO_O = 782;
+        HAKAMO_O = 783;
+        KOMMO_O = 784;
+        TAPU_KOKO = 785;
+        TAPU_LELE = 786;
+        TAPU_BULU = 787;
+        TAPU_FINI = 788;
         COSMOG = 789;
         COSMOEM = 790;
         SOLGALEO = 791;
