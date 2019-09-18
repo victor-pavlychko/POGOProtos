@@ -46,6 +46,7 @@ import "POGOProtos/Settings/Master/AdventureSyncV2Gmt.proto";
 import "POGOProtos/Settings/Master/LoadingScreen.proto";
 import "POGOProtos/Settings/Master/InvasionNpcDisplaySettings.proto";
 import "POGOProtos/Settings/Master/CombatType.proto";
+import "POGOProtos/Settings/Master/LimitedPurchaseSkuSettings.proto";
 
 message DownloadItemTemplatesResponse {
 	Result result = 1;
@@ -100,6 +101,7 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Settings.Master.LoadingScreen loading_screen_settings = 47;
 		.POGOProtos.Settings.Master.InvasionNpcDisplaySettings invasion_npc_display_settings = 48;
 		.POGOProtos.Settings.Master.CombatType combat_type = 51;
+		.POGOProtos.Settings.Master.LimitedPurchaseSkuSettings limited_purchase_sku_settings = 60;
 	}
 
 	enum Result {

@@ -23,6 +23,12 @@ message CombatSettings {
 	float charge_score_nice = 19;
 	float charge_score_great = 20;
 	float charge_score_excellent = 21;
+	int32 swap_animation_duration_turns = 22;
+	int32 super_effective_flyout_duration_turns = 23;
+	int32 not_very_effective_flyout_duration_turns = 24;
+	int32 blocked_flyout_duration_turns = 25;
+	int32 normal_effective_flyout_duration_turns = 26;
+	int32 faint_animation_duration_turns = 27;
 
 	message CombatOffensiveInputChallengeSettings {
 		float score_per_tap = 1;

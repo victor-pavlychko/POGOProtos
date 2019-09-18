@@ -36,5 +36,15 @@ message InventoryItemData {
 		.POGOProtos.Data.Quests.Quests quests = 14;
 		.POGOProtos.Data.Gift.GiftBoxes gift_boxes = 15;
 		.POGOProtos.Data.Beluga.BelugaIncenseBox beluga_incense = 16;
+		LimitedPurchaseSkuRecord limited_purchase_sku_record = 19;
+	}
+
+	message LimitedPurchaseSkuRecord {
+		map<string, Purchase> purchases = 1;
+
+		message Purchase{
+			int32 version = 1;
+			int32 num_purchases = 2;
+		}
 	}
 }
