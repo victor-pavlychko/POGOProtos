@@ -891,18 +891,10 @@ message SfidaMetricsUpdate {
 	SfidaMetrics metrics = 3;
 }
 
-// ref: SfidaNearbyPokemon
-message SfidaNearbyPokemon {
-	int32 pokedex_number = 1;
-	bool uncaught = 2;
-	holoholo.rpc.PokemonDisplayProto pokemon_display = 3;
-}
-
 // ref: SfidaUpdateRequest
 message SfidaUpdateRequest {
 	double player_lat = 1;
 	double player_lng = 2;
-	SfidaMetricsUpdate metrics_update = 3;
 }
 
 // ref: SfidaUpdateResponse
@@ -923,7 +915,6 @@ message SfidaUpdateResponse {
 	string pokestop_id = 8;
 	holoholo.rpc.EncounterType encounter_type = 9;
 	int32 pokedex_number = 10;
-	repeated SfidaNearbyPokemon nearby = 11;
 }
 
 
@@ -2681,6 +2672,14 @@ enum HoloBadgeType {
 	BADGE_GOFEST_2019_APAC_DAY_05_GENERAL = 5036;
 	BADGE_GOFEST_2019_APAC_DAY_06_GENERAL = 5037;
 	BADGE_GOFEST_2019_APAC_DAY_07_GENERAL = 5038;
+	BADGE_SAFARIZONE_2019_MONTREAL_DAY_00_GENERAL = 5039;
+	BADGE_SAFARIZONE_2019_MONTREAL_DAY_00_EARLYACCESS = 5040;
+	BADGE_SAFARIZONE_2019_MONTREAL_DAY_01_GENERAL = 5041;
+	BADGE_SAFARIZONE_2019_MONTREAL_DAY_01_EARLYACCESS = 5042;
+	BADGE_SAFARIZONE_2019_MONTREAL_DAY_02_GENERAL = 5043;
+	BADGE_SAFARIZONE_2019_MONTREAL_DAY_02_EARLYACCESS = 5044;
+	BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_GENERAL = 5045;
+	BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_EARLYACCESS = 5046;
 }
 
 // ref: Holoholo.Rpc.HoloholoClientTelemetryIds
@@ -4078,6 +4077,8 @@ enum HoloPokemonMove {
 	V0323_MOVE_RETURN = 323;
 	V0324_MOVE_SYNCHRONOISE = 324;
 	V0325_MOVE_LOCK_ON_FAST = 325;
+	V0326_MOVE_THUNDER_FANG_FAST = 326;
+	V0327_MOVE_ICE_FANG_FAST = 327;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMovementType
@@ -6017,6 +6018,7 @@ message ClientPlayerProto {
 	string player_support_id = 22;
 	TeamChangeInfoProto team_change_info = 23;
 	repeated HoloPokemonId consumed_eevee_easter_eggs = 24;
+	int64 time_zone_offset_ms = 26;
 }
 
 // ref: Holoholo.Rpc.ClientPokestopNpcDialogueStepProto
@@ -6464,6 +6466,7 @@ message CombatProto {
 	int64 minigame_submit_score_end_ms = 11;
 	int64 change_pokemon_end_ms = 12;
 	int64 quick_swap_cooldown_duration_ms = 13;
+	int64 state_change_delay_until_turn = 14;
 }
 
 // ref: Holoholo.Rpc.CombatSettingsProto
@@ -6489,6 +6492,12 @@ message CombatSettingsProto {
 	float charge_score_nice = 19;
 	float charge_score_great = 20;
 	float charge_score_excellent = 21;
+	int32 swap_animation_duration_turns = 22;
+	int32 super_effective_flyout_duration_turns = 23;
+	int32 not_very_effective_flyout_duration_turns = 24;
+	int32 blocked_flyout_duration_turns = 25;
+	int32 normal_effective_flyout_duration_turns = 26;
+	int32 faint_animation_duration_turns = 27;
 }
 
 // ref: Holoholo.Rpc.CombatStatStageSettingsProto
@@ -7685,6 +7694,7 @@ message GameMasterClientTemplateProto {
 	LoadingScreenProto loading_screen_settings = 47;
 	InvasionNpcDisplaySettingsProto invasion_npc_display_settings = 48;
 	CombatTypeProto combat_type = 51;
+	LimitedPurchaseSkuSettingsProto limited_purchase_sku_settings = 60;
 }
 
 // ref: Holoholo.Rpc.GenerateCombatChallengeIdOutProto
@@ -8605,6 +8615,7 @@ message GymGetInfoOutProto {
 	repeated string promo_image = 11;
 	repeated string promo_description = 12;
 	string call_to_action_link = 13;
+	int64 server_ms = 14;
 }
 
 // ref: Holoholo.Rpc.GymGetInfoProto
@@ -8822,6 +8833,7 @@ message HoloInventoryItemProto {
 		quests = 14;
 		gift_boxes = 15;
 		beluga_incense = 16;
+		limited_purchase_sku_record = 19;
 	}
 
 	PokemonProto pokemon = 1;
@@ -8840,6 +8852,7 @@ message HoloInventoryItemProto {
 	QuestsProto quests = 14;
 	GiftBoxesProto gift_boxes = 15;
 	BelugaIncenseBoxProto beluga_incense = 16;
+	LimitedPurchaseSkuRecordProto limited_purchase_sku_record = 19;
 }
 
 // ref: Holoholo.Rpc.HoloInventoryKeyProto
@@ -8863,6 +8876,7 @@ message HoloInventoryKeyProto {
 		quests = 14;
 		gift_boxes = 15;
 		beluga_incense_box = 16;
+		limited_purchase_sku_record = 19;
 	}
 
 	uint64 pokemon_id = 1;
@@ -8881,6 +8895,7 @@ message HoloInventoryKeyProto {
 	bool quests = 14;
 	bool gift_boxes = 15;
 	bool beluga_incense_box = 16;
+	bool limited_purchase_sku_record = 19;
 }
 
 // ref: Holoholo.Rpc.IapItemCategoryDisplayProto
@@ -8965,6 +8980,13 @@ message IncidentLookupProto {
 	string fort_id = 2;
 	double fort_lat = 3;
 	double fort_lng = 4;
+}
+
+// ref: Holoholo.Rpc.IncidentTicketAttributesProto
+message IncidentTicketAttributesProto {
+	bool ignore_full_inventory = 1;
+	int32 upgrade_requirement_count = 2;
+	Item upgraded_item = 3;
 }
 
 // ref: Holoholo.Rpc.InvasionEncounterOutProto
@@ -9110,6 +9132,7 @@ message ItemSettingsProto {
 	EggIncubatorAttributesProto egg_incubator = 14;
 	FortModifierAttributesProto fort_modifier = 15;
 	StardustBoostAttributesProto stardust_boost = 16;
+	IncidentTicketAttributesProto incident_ticket = 17;
 }
 
 // ref: Holoholo.Rpc.ItemTelemetry
@@ -9222,6 +9245,23 @@ message LevelUpRewardsOutProto {
 // ref: Holoholo.Rpc.LevelUpRewardsProto
 message LevelUpRewardsProto {
 	int32 level = 1;
+}
+
+// ref: Holoholo.Rpc.LimitedPurchaseSkuRecordProto
+message LimitedPurchaseSkuRecordProto {
+	// ref: Holoholo.Rpc.LimitedPurchaseSkuRecordProto/Types/PurchaseProto
+	message PurchaseProto {
+		int32 version = 1;
+		int32 num_purchases = 2;
+	}
+
+	map<string, Holoholo.Rpc.LimitedPurchaseSkuRecordProto/Types/PurchaseProto> purchases = 1;
+}
+
+// ref: Holoholo.Rpc.LimitedPurchaseSkuSettingsProto
+message LimitedPurchaseSkuSettingsProto {
+	int32 purchase_limit = 1;
+	int32 version = 2;
 }
 
 // ref: Holoholo.Rpc.LinkLoginTelemetry
@@ -10737,6 +10777,7 @@ message PokemonDisplayProto {
 		PINSIR_NORMAL = 898;
 		PINSIR_SHADOW = 899;
 		PINSIR_PURIFIED = 900;
+		PIKACHU_VS_2019 = 901;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
