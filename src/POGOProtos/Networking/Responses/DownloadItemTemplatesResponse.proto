@@ -50,7 +50,7 @@ import "POGOProtos/Settings/Master/CombatType.proto";
 message DownloadItemTemplatesResponse {
 	Result result = 1;
 	repeated ItemTemplate item_templates = 2;
-	fixed64 timestamp = 3;
+	uint64 timestamp_ms = 3;
 	int32 page_offset = 4;
 
 	message ItemTemplate {
