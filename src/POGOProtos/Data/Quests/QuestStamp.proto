@@ -3,7 +3,7 @@ package POGOProtos.Data.Quests;
 
 message QuestStamp {
 	Context context = 1;
-	fixed64 timestamp_ms = 2;
+	uint64 timestamp_ms = 2;
 
 	enum Context {
 		UNSET = 0;
