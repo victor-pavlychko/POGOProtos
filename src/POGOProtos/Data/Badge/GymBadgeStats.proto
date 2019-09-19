@@ -4,7 +4,7 @@ package POGOProtos.Data.Badge;
 import "POGOProtos/Data/Gym/GymBattle.proto";
 
 message GymBadgeStats {
-	fixed64 total_time_defended_ms = 1;
+	uint64 total_time_defended_ms = 1;
 	uint32 num_battles_won = 2;
 	uint32 num_battles_lost = 5;
 	uint32 num_berries_fed = 3;
