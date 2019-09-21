@@ -1,6 +1,0 @@
-syntax = "proto3";
-package POGOProtos;
-
-message RouteMakerProto {
-	repeated RouteCreationProto route = 1;
-}

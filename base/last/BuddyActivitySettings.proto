@@ -1,9 +1,0 @@
-syntax = "proto3";
-package POGOProtos;
-
-message BuddyActivitySettings {
-	BuddyActivity activity = 1;
-	BuddyActivityCategory activity_category = 2;
-	int32 max_times_per_day = 3;
-	int32 num_points_per_action = 4;
-}

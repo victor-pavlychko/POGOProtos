@@ -1,6 +1,0 @@
-syntax = "proto3";
-package POGOProtos;
-
-message BuddyGlobalSettingsProto {
-	bool enable_buddy_v2 = 1;
-}

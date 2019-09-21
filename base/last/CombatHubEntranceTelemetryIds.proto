@@ -1,7 +1,0 @@
-syntax = "proto3";
-package POGOProtos;
-
-enum CombatHubEntranceTelemetryIds {
-	UNDEFINED_EVENT = 0;
-	CLICKED_COMBAT_HUB_BUTTON = 1;
-}
