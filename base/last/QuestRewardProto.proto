@@ -11,6 +11,17 @@ message QuestRewardProto {
 	string quest_template_id = 7;
 	PokemonEncounterRewardProto pokemon_encounter = 8;
 
+	oneof Reward {
+		none = 0;
+		exp = 2;
+		item = 3;
+		stardust = 4;
+		candy = 5;
+		avatar_template_id = 6;
+		quest_template_id = 7;
+		pokemon_encounter = 8;
+	}
+
 	enum Type {
 		UNSET = 0;
 		EXPERIENCE = 1;

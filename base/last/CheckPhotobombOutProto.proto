@@ -5,7 +5,7 @@ message CheckPhotobombOutProto {
 	Status status = 1;
 	HoloPokemonId photobomb_pokemon_id = 2;
 	PokemonDisplayProto photobomb_pokemon_display = 3;
-	fixed64 encounter_id = 4;
+	uint64 encounter_id = 4;
 	string uri = 5;
 
 	enum Status {

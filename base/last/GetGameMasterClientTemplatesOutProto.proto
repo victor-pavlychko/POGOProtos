@@ -4,7 +4,7 @@ package POGOProtos;
 message GetGameMasterClientTemplatesOutProto {
 	Result result = 1;
 	repeated GameMasterClientTemplateProto items = 2;
-	fixed64 timestamp = 3;
+	uint64 timestamp = 3;
 	int32 page_offset = 4;
 
 	enum Result {

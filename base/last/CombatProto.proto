@@ -15,9 +15,36 @@ message CombatProto {
 	int64 minigame_submit_score_end_ms = 11;
 	int64 change_pokemon_end_ms = 12;
 	int64 quick_swap_cooldown_duration_ms = 13;
+	int64 state_change_delay_until_turn = 14;
+
+	enum CombatState {
+		UNSET = 0;
+		WAITING_FOR_PLAYERS = 1;
+		READY = 2;
+		ACTIVE = 3;
+		SPECIAL_ATTACK = 4;
+		WAITING_FOR_CHANGE_POKEMON = 5;
+		FINISHED = 6;
+		PLAYER_QUIT = 7;
+		TIMEOUT = 8;
+	}
+
+	message CombatPlayerProto {
+		PlayerPublicProfileProto public_profile = 1;
+		CombatProto.CombatPokemonProto active_pokemon = 2;
+		repeated CombatProto.CombatPokemonProto reserve_pokemon = 3;
+		repeated CombatProto.CombatPokemonProto fainted_pokemon = 4;
+		CombatActionProto current_action = 5;
+		bool lockstep_ack = 6;
+		int32 last_updated_turn = 7;
+		CombatActionProto minigame_action = 8;
+		int64 quick_swap_available_ms = 9;
+		int32 minigame_defense_chances_left = 10;
+		string combat_npc_personality_id = 11;
+	}
 
 	message CombatPokemonProto {
-		fixed64 pokemon_id = 1;
+		uint64 pokemon_id = 1;
 		int32 pokedex_id = 2;
 		int32 cp = 3;
 		float cp_multiplier = 4;
@@ -37,31 +64,5 @@ message CombatProto {
 		int32 battles_lost = 18;
 		string nickname = 19;
 		Item pokeball = 20;
-	}
-
-	message CombatPlayerProto {
-		PlayerPublicProfileProto public_profile = 1;
-		CombatProto.CombatPokemonProto active_pokemon = 2;
-		repeated CombatProto.CombatPokemonProto reserve_pokemon = 3;
-		repeated CombatProto.CombatPokemonProto fainted_pokemon = 4;
-		CombatActionProto current_action = 5;
-		bool lockstep_ack = 6;
-		int32 last_updated_turn = 7;
-		CombatActionProto minigame_action = 8;
-		int64 quick_swap_available_ms = 9;
-		int32 minigame_defense_chances_left = 10;
-		string combat_npc_personality_id = 11;
-	}
-
-	enum CombatState {
-		UNSET = 0;
-		WAITING_FOR_PLAYERS = 1;
-		READY = 2;
-		ACTIVE = 3;
-		SPECIAL_ATTACK = 4;
-		WAITING_FOR_CHANGE_POKEMON = 5;
-		FINISHED = 6;
-		PLAYER_QUIT = 7;
-		TIMEOUT = 8;
 	}
 }

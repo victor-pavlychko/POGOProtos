@@ -18,4 +18,5 @@ message ItemSettingsProto {
 	EggIncubatorAttributesProto egg_incubator = 14;
 	FortModifierAttributesProto fort_modifier = 15;
 	StardustBoostAttributesProto stardust_boost = 16;
+	IncidentTicketAttributesProto incident_ticket = 17;
 }

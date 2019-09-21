@@ -2,4 +2,6 @@ syntax = "proto3";
 package POGOProtos;
 
 message SkuPresentationProto {
+	string key = 1;
+	string value = 2;
 }

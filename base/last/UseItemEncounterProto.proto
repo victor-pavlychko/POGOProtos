@@ -3,6 +3,6 @@ package POGOProtos;
 
 message UseItemEncounterProto {
 	Item item = 1;
-	fixed64 encounter_id = 2;
+	uint64 encounter_id = 2;
 	string spawn_point_guid = 3;
 }

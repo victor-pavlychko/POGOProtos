@@ -4,4 +4,10 @@ package POGOProtos;
 message WithThrowTypeProto {
 	HoloActivityType throw_type = 1;
 	bool hit = 2;
+
+	oneof Throw {
+		none = 0;
+		throw_type = 1;
+		hit = 2;
+	}
 }

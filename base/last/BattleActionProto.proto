@@ -8,13 +8,13 @@ message BattleActionProto {
 	int32 energy_delta = 5;
 	int32 attacker_index = 6;
 	int32 target_index = 7;
-	fixed64 active_pokemon_id = 8;
+	uint64 active_pokemon_id = 8;
 	BattleParticipantProto joined_player = 9;
 	BattleResultsProto battle_results = 10;
 	int64 damage_window_start_ms = 11;
 	int64 damage_window_end_ms = 12;
 	BattleParticipantProto quit_player = 13;
-	fixed64 target_pokemon_id = 14;
+	uint64 target_pokemon_id = 14;
 	LeveledUpFriendsProto leveled_up_friends = 15;
 
 	enum ActionType {

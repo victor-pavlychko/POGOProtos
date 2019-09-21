@@ -12,7 +12,6 @@ message SfidaUpdateResponse {
 	string pokestop_id = 8;
 	EncounterType encounter_type = 9;
 	int32 pokedex_number = 10;
-	repeated SfidaNearbyPokemon nearby = 11;
 
 	enum Status {
 		UNSET = 0;

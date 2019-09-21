@@ -5,7 +5,7 @@ message DownloadGmTemplatesResponseProto {
 	Result result = 1;
 	repeated ClientGameMasterTemplateProto template = 2;
 	repeated string deleted_template = 3;
-	fixed64 batch_id = 4;
+	uint64 batch_id = 4;
 	int32 page_offset = 5;
 
 	enum Result {

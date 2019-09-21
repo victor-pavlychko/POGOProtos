@@ -47,15 +47,6 @@ message GameMasterClientTemplateProto {
 	AdventureSyncV2GmtProto adventure_sync_v2_gmt = 46;
 	LoadingScreenProto loading_screen_settings = 47;
 	InvasionNpcDisplaySettingsProto invasion_npc_display_settings = 48;
-	CombatCompetitiveSeasonSettingsProto combat_competitive_season_settings = 49;
-	CombatRankingSettingsProto combat_ranking_proto_settings = 50;
 	CombatTypeProto combat_type = 51;
-	BuddyLevelSettings buddy_level_settings = 52;
-	BuddyActivityCategorySettings buddy_activity_category_settings = 53;
-	BuddyActivitySettings buddy_activity_settings = 54;
-	BuddyDecaySettings buddy_decay_settings = 55;
-	BuddySwapSettings buddy_swap_settings = 56;
-	RoutesCreationSettingsProto route_creation_settings = 57;
-	VsSeekerClientSettingsProto vs_seeker_client_settings = 58;
-	BuddyEncounterCameoSettings buddy_encounter_cameo_settings = 59;
+	LimitedPurchaseSkuSettingsProto limited_purchase_sku_settings = 60;
 }

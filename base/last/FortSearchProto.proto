@@ -7,5 +7,4 @@ message FortSearchProto {
 	double player_lng_degrees = 3;
 	double fort_lat_degrees = 4;
 	double fort_lng_degrees = 5;
-	repeated BeaconScanProto beacon_scan = 6;
 }

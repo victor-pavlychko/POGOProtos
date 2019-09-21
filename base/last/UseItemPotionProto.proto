@@ -3,5 +3,5 @@ package POGOProtos;
 
 message UseItemPotionProto {
 	Item item = 1;
-	fixed64 pokemon_id = 2;
+	uint64 pokemon_id = 2;
 }

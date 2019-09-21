@@ -7,8 +7,8 @@ message CombatActionProto {
 	int32 duration_turns = 5;
 	int32 attacker_index = 6;
 	int32 target_index = 7;
-	fixed64 active_pokemon_id = 8;
-	fixed64 target_pokemon_id = 14;
+	uint64 active_pokemon_id = 8;
+	uint64 target_pokemon_id = 14;
 	float minigame_score = 15;
 	int32 move = 16;
 

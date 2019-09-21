@@ -15,6 +15,7 @@ message GymGetInfoOutProto {
 	repeated string promo_image = 11;
 	repeated string promo_description = 12;
 	string call_to_action_link = 13;
+	int64 server_ms = 14;
 
 	enum Result {
 		UNSET = 0;

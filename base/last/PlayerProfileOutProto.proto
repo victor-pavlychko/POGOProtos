@@ -7,13 +7,13 @@ message PlayerProfileOutProto {
 	repeated PlayerBadgeProto badges = 3;
 	GymBadges gym_badges = 4;
 
-	message GymBadges {
-		repeated AwardedGymBadge gym_badge = 1;
-		int32 total = 2;
-	}
-
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
+	}
+
+	message GymBadges {
+		repeated AwardedGymBadge gym_badge = 1;
+		int32 total = 2;
 	}
 }

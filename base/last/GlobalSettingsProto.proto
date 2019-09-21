@@ -42,6 +42,4 @@ message GlobalSettingsProto {
 	IncidentGlobalSettingsProto incident_settings = 39;
 	KoalaSettingsProto koala_settings = 40;
 	KangarooSettingsProto kangaroo_settings = 41;
-	RouteGlobalSettingsProto route_settings = 42;
-	BuddyGlobalSettingsProto buddy_settings = 43;
 }

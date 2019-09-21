@@ -5,4 +5,11 @@ message ClientIncidentStepProto {
 	ClientInvasionBattleStepProto invasion_battle = 1;
 	ClientInvasionEncounterStepProto invasion_encounter = 2;
 	ClientPokestopNpcDialogueStepProto pokestop_dialogue = 3;
+
+	oneof ClientIncidentStep {
+		none = 0;
+		invasion_battle = 1;
+		invasion_encounter = 2;
+		pokestop_dialogue = 3;
+	}
 }

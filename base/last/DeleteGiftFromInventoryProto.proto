@@ -2,5 +2,5 @@ syntax = "proto3";
 package POGOProtos;
 
 message DeleteGiftFromInventoryProto {
-	repeated fixed64 giftbox_id = 1;
+	repeated uint64 giftbox_id = 1;
 }

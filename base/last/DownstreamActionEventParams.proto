@@ -2,4 +2,7 @@ syntax = "proto3";
 package POGOProtos;
 
 message DownstreamActionEventParams {
+	repeated uint32 methods = 1;
+	repeated bytes payloads = 2;
+	repeated uint64 ids = 3;
 }

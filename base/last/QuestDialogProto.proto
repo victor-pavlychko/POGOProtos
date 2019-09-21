@@ -7,6 +7,11 @@ message QuestDialogProto {
 	string image_uri = 3;
 	Character character = 4;
 
+	enum Character {
+		CHARACTER_UNSET = 0;
+		PROFESSOR_WILLOW = 1;
+	}
+
 	enum CharacterExpression {
 		EXPRESSION_UNSET = 0;
 		HAPPY = 1;
@@ -15,10 +20,5 @@ message QuestDialogProto {
 		PUSHY = 4;
 		IMPATIENT = 5;
 		ADMIRATION = 6;
-	}
-
-	enum Character {
-		CHARACTER_UNSET = 0;
-		PROFESSOR_WILLOW = 1;
 	}
 }

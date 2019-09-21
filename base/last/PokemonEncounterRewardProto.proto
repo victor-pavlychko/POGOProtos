@@ -7,4 +7,10 @@ message PokemonEncounterRewardProto {
 	PokemonDisplayProto pokemon_display = 3;
 	bool is_hidden_ditto = 4;
 	PokemonDisplayProto ditto_display = 5;
+
+	oneof Type {
+		none = 0;
+		pokemon_id = 1;
+		use_quest_pokemon_encounter_distribuition = 2;
+	}
 }

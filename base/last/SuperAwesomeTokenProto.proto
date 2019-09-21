@@ -2,4 +2,5 @@ syntax = "proto3";
 package POGOProtos;
 
 message SuperAwesomeTokenProto {
+	string token = 1;
 }

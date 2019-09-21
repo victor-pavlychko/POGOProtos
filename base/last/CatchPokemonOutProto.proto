@@ -4,12 +4,19 @@ package POGOProtos;
 message CatchPokemonOutProto {
 	Status status = 1;
 	double miss_percent = 2;
-	fixed64 captured_pokemon_id = 3;
+	uint64 captured_pokemon_id = 3;
 	CaptureScoreProto scores = 4;
 	CaptureReason capture_reason = 5;
 	int32 display_pokedex_id = 6;
 	int32 throws_remaining = 7;
 	PokemonDisplayProto pokemon_display = 8;
+
+	enum CaptureReason {
+		UNSET = 0;
+		DEFAULT = 1;
+		ELEMENTAL_BADGE = 2;
+		CRITICAL_CATCH = 3;
+	}
 
 	enum Status {
 		CATCH_ERROR = 0;
@@ -17,12 +24,5 @@ message CatchPokemonOutProto {
 		CATCH_ESCAPE = 2;
 		CATCH_FLEE = 3;
 		CATCH_MISSED = 4;
-	}
-
-	enum CaptureReason {
-		UNSET = 0;
-		DEFAULT = 1;
-		ELEMENTAL_BADGE = 2;
-		CRITICAL_CATCH = 3;
 	}
 }

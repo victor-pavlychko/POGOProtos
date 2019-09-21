@@ -2,6 +2,6 @@ syntax = "proto3";
 package POGOProtos;
 
 message TypeEffectiveSettingsProto {
-	HoloPokemonType attack_type = 2;
 	repeated float attack_scalar = 1;
+	HoloPokemonType attack_type = 2;
 }

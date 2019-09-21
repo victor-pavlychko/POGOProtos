@@ -7,11 +7,6 @@ message RedeemPasscodeResponseProto {
 	bytes acquired_items_proto = 3;
 	string passcode = 4;
 
-	message AcquiredItem {
-		string item = 1;
-		int64 count = 2;
-	}
-
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -19,5 +14,10 @@ message RedeemPasscodeResponseProto {
 		OVER_INVENTORY_LIMIT = 3;
 		ALREADY_REDEEMED = 4;
 		OVER_PLAYER_REDEMPTION_LIMIT = 5;
+	}
+
+	message AcquiredItem {
+		string item = 1;
+		int64 count = 2;
 	}
 }

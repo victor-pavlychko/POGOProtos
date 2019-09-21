@@ -27,6 +27,33 @@ message QuestConditionProto {
 	WithInvasionCharacterProto with_invasion_character = 23;
 	WithPokemonAlignmentProto with_pokemon_alignment = 24;
 
+	oneof Condition {
+		none = 0;
+		with_pokemon_type = 2;
+		with_pokemon_category = 3;
+		with_weather_boost = 4;
+		with_daily_capture_bonus = 5;
+		with_daily_spin_bonus = 6;
+		with_win_raid_status = 7;
+		with_raid_level = 8;
+		with_throw_type = 9;
+		with_win_gym_battle_status = 10;
+		with_super_effective_charge_move = 11;
+		with_item = 12;
+		with_unique_pokestop = 13;
+		with_quest_context = 14;
+		with_badge_type = 15;
+		with_player_level = 16;
+		with_win_battle_status = 17;
+		with_unique_pokemon = 18;
+		with_npc_combat = 19;
+		with_pvp_combat = 20;
+		with_location = 21;
+		with_distance = 22;
+		with_invasion_character = 23;
+		with_pokemon_alignment = 24;
+	}
+
 	enum ConditionType {
 		UNSET = 0;
 		WITH_POKEMON_TYPE = 1;

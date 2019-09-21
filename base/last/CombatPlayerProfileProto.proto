@@ -5,7 +5,7 @@ message CombatPlayerProfileProto {
 	string player_id = 1;
 	PlayerPublicProfileProto public_profile = 2;
 	repeated string combat_league_template_id = 3;
-	fixed64 buddy_pokemon_id = 4;
+	uint64 buddy_pokemon_id = 4;
 	Location location = 5;
 	CombatPlayerPreferencesProto combat_player_preferences = 6;
 

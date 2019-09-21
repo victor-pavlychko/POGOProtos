@@ -4,9 +4,6 @@ package POGOProtos;
 message SetBuddyPokemonOutProto {
 	Result result = 1;
 	BuddyPokemonProto updated_buddy = 2;
-	int32 current_points_earned = 3;
-	BuddyStats today_stats = 4;
-	BuddyStats total_stats = 5;
 
 	enum Result {
 		UNEST = 0;
@@ -15,6 +12,5 @@ message SetBuddyPokemonOutProto {
 		ERROR_POKEMON_NOT_OWNED = 3;
 		ERROR_POKEMON_IS_EGG = 4;
 		ERROR_INVALID_POKEMON = 5;
-		ERROR_BUDDY_SWAP_LIMIT_EXCEEDED = 6;
 	}
 }

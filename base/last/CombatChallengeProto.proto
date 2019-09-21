@@ -9,16 +9,8 @@ message CombatChallengeProto {
 	ChallengePlayer opponent = 6;
 	CombatChallengeState state = 7;
 	int64 created_timestamp_ms = 8;
-	int64 expiration_timestamp_ms = 19;
 	string combat_id = 10;
-
-	message ChallengePlayer {
-		string player_id = 1;
-		PlayerAvatarProto player_avatar = 2;
-		int64 combat_player_s2_cell_id = 3;
-		repeated fixed64 attacking_pokemon_id = 4;
-		PlayerPublicProfileProto public_profile = 5;
-	}
+	int64 expiration_timestamp_ms = 19;
 
 	enum CombatChallengeState {
 		UNSET = 0;
@@ -29,5 +21,13 @@ message CombatChallengeProto {
 		DECLINED = 5;
 		READY = 6;
 		TIMEOUT = 7;
+	}
+
+	message ChallengePlayer {
+		string player_id = 1;
+		PlayerAvatarProto player_avatar = 2;
+		int64 combat_player_s2_cell_id = 3;
+		repeated uint64 attacking_pokemon_id = 4;
+		PlayerPublicProfileProto public_profile = 5;
 	}
 }

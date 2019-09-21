@@ -4,5 +4,5 @@ package POGOProtos;
 message PurifyPokemonLogEntry {
 	HoloPokemonId pokemon_id = 1;
 	PokemonDisplayProto pokemon_display = 2;
-	fixed64 purified_pokemon_uuid = 3;
+	uint64 purified_pokemon_uuid = 3;
 }
