@@ -21,7 +21,6 @@ message Distribution {
 	}
 
 	message BucketOptions {
-
 		oneof BucketType {
 			none = 0;
 			linear_buckets = 1;

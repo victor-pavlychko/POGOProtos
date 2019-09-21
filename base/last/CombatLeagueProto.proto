@@ -48,7 +48,6 @@ message CombatLeagueProto {
 	}
 
 	message PokemonConditionProto {
-
 		oneof Condition {
 			none = 0;
 			with_pokemon_cp_limit = 2;
@@ -57,7 +56,6 @@ message CombatLeagueProto {
 		}
 
 	message UnlockConditionProto {
-
 		oneof Condition {
 			none = 0;
 			with_player_level = 3;

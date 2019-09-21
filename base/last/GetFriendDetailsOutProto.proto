@@ -26,7 +26,6 @@ message GetFriendDetailsOutProto {
 	}
 
 	message DebugProto {
-
 		message Callee {
 			repeated int32 callee_id = 1;
 			string player_id = 2;

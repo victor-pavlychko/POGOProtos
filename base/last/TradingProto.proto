@@ -54,7 +54,6 @@ message TradingProto {
 	}
 
 	message ExcludedPokemon {
-
 		enum ExclusionReason {
 			UNSET = 0;
 			MYTHICAL_POKEMON = 1;
@@ -73,7 +72,6 @@ message TradingProto {
 		}
 
 	message TradingPlayerProto {
-
 		enum ExclusionReason {
 			UNSET = 0;
 			MYTHICAL_POKEMON = 1;
@@ -92,7 +90,6 @@ message TradingProto {
 		}
 
 		message ExcludedPokemon {
-
 			enum ExclusionReason {
 				UNSET = 0;
 				MYTHICAL_POKEMON = 1;
