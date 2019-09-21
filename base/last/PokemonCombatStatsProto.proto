@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message PokemonCombatStatsProto {
 	int32 num_won = 1;

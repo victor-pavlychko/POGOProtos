@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message ClientTelemetryClientSettingsProto {
 	bool is_upload_enabled = 1;

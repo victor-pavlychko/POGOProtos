@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message ParticipationProto {
 	int32 individual_damage_pokeballs = 1;

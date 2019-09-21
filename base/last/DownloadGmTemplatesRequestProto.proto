@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message DownloadGmTemplatesRequestProto {
 	int64 basis_batch_id = 1;

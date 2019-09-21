@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message TypeEffectiveSettingsProto {
 	repeated float attack_scalar = 1;

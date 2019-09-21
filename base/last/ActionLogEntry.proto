@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message ActionLogEntry {
 	int64 timestamp_ms = 1;

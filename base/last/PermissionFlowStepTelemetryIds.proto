@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum PermissionFlowStepTelemetryIds {
 	UNDEFINED_PERMISSION_FLOW_STEP = 0;

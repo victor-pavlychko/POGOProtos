@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum EncounterType {
 	SPAWN_POINT = 0;

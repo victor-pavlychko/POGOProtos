@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message UnlockPokemonMoveProto {
 	uint64 pokemon_id = 1;

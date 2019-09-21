@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message EventSettingsProto {
 	repeated string condolence_ribbon_country = 1;

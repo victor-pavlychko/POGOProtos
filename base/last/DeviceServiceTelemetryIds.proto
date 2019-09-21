@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum DeviceServiceTelemetryIds {
 	UNDEFINED_DEVICE_SERVICE = 0;

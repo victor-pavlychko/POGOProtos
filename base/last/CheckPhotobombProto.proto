@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message CheckPhotobombProto {
 	uint64 photo_pokemon_id = 1;

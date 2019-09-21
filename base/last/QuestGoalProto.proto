@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message QuestGoalProto {
 	repeated QuestConditionProto condition = 1;

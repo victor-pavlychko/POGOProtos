@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message SmeargleMovesSettingsProto {
 	repeated HoloPokemonMove quick_moves = 1;

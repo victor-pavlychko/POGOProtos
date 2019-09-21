@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message BackgroundModeSettingsProto {
 	double weekly_fitness_goal_level1_distance_km = 1;

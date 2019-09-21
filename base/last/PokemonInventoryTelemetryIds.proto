@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum PokemonInventoryTelemetryIds {
 	UNDEFINED_POKEMON_INVENTORY_EVENT = 0;

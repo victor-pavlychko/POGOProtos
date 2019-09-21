@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum HoloItemEffect {
 	ITEM_EFFECT_NONE = 0;

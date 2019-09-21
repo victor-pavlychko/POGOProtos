@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message PlayerRaidInfoProto {
 	int32 total_completed_raids = 3;

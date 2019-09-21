@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message WithPokemonTypeProto {
 	repeated HoloPokemonType pokemon_type = 1;

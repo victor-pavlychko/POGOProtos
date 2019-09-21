@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message GymStateProto {
 	PokemonFortProto fort_map_data = 1;

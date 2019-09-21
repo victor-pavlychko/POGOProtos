@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message FitnessMetricsReportHistory {
 	repeated MetricsHistory weekly_history = 1;

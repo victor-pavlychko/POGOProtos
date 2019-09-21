@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum RouteVisitOrder {
 	ROUTE_VISIT_ORDER_UNSPECIFIED = 0;

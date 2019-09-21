@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message UpdateFacebookStatusProto {
 	string fb_access_token = 1;

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message ThirdMoveGlobalSettingsProto {
 	bool unlock_enabled = 1;

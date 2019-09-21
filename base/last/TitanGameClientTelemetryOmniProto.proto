@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message TitanGameClientTelemetryOmniProto {
 	PoiSubmissionTelemetry poi_submission_telemetry = 1;

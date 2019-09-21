@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message CombatNpcPersonalityProto {
 	string personality_name = 1;

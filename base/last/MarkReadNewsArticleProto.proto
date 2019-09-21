@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message MarkReadNewsArticleProto {
 	repeated string news_ids = 1;

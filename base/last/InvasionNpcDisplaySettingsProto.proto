@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message InvasionNpcDisplaySettingsProto {
 	string trainer_name = 1;

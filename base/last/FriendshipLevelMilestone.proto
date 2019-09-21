@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum FriendshipLevelMilestone {
 	FRIENDSHIP_LEVEL_UNSET = 0;

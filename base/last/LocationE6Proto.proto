@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message LocationE6Proto {
 	int32 latitude_e6 = 1;

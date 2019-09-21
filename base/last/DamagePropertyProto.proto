@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message DamagePropertyProto {
 	bool super_effective_charge_move = 1;

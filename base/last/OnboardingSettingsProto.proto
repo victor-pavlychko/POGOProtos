@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message OnboardingSettingsProto {
 	bool skip_avatar_customization = 1;

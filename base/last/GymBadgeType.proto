@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum GymBadgeType {
 	GYM_BADGE_UNSET = 0;

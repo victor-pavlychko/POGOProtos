@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum ShoppingPageTelemetryIds {
 	UNDEFINED_SHOPPING_PAGE_EVENT = 0;

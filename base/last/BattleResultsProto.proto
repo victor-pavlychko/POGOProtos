@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message BattleResultsProto {
 	GymStateProto gym_state = 1;

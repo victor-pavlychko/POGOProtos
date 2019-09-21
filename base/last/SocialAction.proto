@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum SocialAction {
 	UNKNOWN_SOCIAL_ACTION = 0;

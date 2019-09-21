@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message GetAvailableSkusAndBalancesOutProto {
 	repeated AvailableSkuProto available_sku = 1;

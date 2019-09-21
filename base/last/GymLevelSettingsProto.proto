@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message GymLevelSettingsProto {
 	repeated int32 required_exp = 1;

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message CombatChallengeGlobalSettingsProto {
 	FriendshipLevelMilestone distance_check_override_friendship_level = 1;

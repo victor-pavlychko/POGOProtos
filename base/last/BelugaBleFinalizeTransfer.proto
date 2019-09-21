@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message BelugaBleFinalizeTransfer {
 	BelugaBleTransferCompleteProto beluga_transfer_complete = 1;

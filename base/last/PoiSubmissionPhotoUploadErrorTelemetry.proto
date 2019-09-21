@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message PoiSubmissionPhotoUploadErrorTelemetry {
 	PoiSubmissionPhotoUploadErrorIds error_id = 1;

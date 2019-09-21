@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message PoiSubmissionTelemetry {
 	PoiSubmissionGuiEventId gui_event_id = 1;

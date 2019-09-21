@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message FeedPokemonTelemetry {
 	int32 status = 1;

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message GetNpcCombatRewardsProto {
 	string combat_npc_trainer_template_id = 1;

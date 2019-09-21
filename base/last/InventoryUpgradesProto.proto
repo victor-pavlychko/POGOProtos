@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message InventoryUpgradesProto {
 	repeated InventoryUpgradeProto inventory_upgrade = 1;

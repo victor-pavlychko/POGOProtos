@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum PushNotificationTelemetryIds {
 	UNDEFINED_PUSH_NOTIFICATION_EVENT = 0;

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message TranslationSettingsProto {
 	repeated string translation_bundle_ids = 1;

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message FriendshipLevelMilestoneSettingsProto {
 	int32 min_points_to_reach = 1;

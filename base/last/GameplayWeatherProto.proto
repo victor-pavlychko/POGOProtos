@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message GameplayWeatherProto {
 	WeatherCondition gameplay_condition = 1;

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message WithBadgeTypeProto {
 	repeated HoloBadgeType badge_type = 1;

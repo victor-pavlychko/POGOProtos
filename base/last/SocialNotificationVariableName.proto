@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum SocialNotificationVariableName {
 	unset__social_notification_variable_name = 0;

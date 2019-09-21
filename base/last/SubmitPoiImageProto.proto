@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message SubmitPoiImageProto {
 	string poi_id = 1;

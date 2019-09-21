@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message PlayerAvatarProto {
 	int32 skin = 2;

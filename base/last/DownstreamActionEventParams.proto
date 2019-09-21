@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message DownstreamActionEventParams {
 	repeated uint32 methods = 1;

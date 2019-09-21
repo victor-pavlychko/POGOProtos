@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message IncenseAttributesProto {
 	int32 incense_lifetime_seconds = 1;

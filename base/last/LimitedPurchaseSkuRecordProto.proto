@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message LimitedPurchaseSkuRecordProto {
 	map<string, Holoholo.Rpc.LimitedPurchaseSkuRecordProto/Types/PurchaseProto> purchases = 1;

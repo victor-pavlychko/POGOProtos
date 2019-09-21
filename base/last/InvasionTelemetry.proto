@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message InvasionTelemetry {
 	InvasionTelemetryIds invasion_telemetry_id = 1;

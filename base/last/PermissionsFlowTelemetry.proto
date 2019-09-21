@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message PermissionsFlowTelemetry {
 	PermissionContextTelemetryIds permission_context_telemetry_ids = 1;

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message PokemonFamilyProto {
 	HoloPokemonFamilyId family_id = 1;

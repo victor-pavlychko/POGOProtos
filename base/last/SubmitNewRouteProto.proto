@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message SubmitNewRouteProto {
 	string route_submission_id = 1;

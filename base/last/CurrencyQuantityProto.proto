@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message CurrencyQuantityProto {
 	string currency_type = 1;

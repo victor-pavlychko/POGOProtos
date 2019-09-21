@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message ProxyRequestProto {
 	uint32 action = 1;

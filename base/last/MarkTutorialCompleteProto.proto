@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message MarkTutorialCompleteProto {
 	repeated TutorialCompletion tutorial_complete = 1;

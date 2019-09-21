@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum InvitationType {
 	INVITATION_TYPE_UNSET = 0;

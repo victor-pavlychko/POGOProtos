@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message JournalEntryProto {
 	JournalAddEntryProto add_entry = 1;

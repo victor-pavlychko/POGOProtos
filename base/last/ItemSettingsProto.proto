@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 message ItemSettingsProto {
 	Item unique_id = 1;

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos;
+package DumpProtos;
 
 enum PokemonGoPlusIds {
 	UNDEFINED_POKEMON_GO_PLUS_EVENT = 0;
