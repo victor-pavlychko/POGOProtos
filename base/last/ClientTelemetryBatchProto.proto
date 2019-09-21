@@ -5,6 +5,7 @@ message ClientTelemetryBatchProto {
 	TelemetryScopeId telemetry_scope_id = 1;
 	repeated ClientTelemetryRecordProto events = 2;
 	string api_version = 3;
+	string message_version = 4;
 
 	enum TelemetryScopeId {
 		UNSET = 0;

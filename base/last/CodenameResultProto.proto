@@ -3,6 +3,7 @@ package DumpProtos;
 
 message CodenameResultProto {
 	string codename = 1;
+	string user_message = 2;
 	bool is_assignable = 3;
 	Status status = 4;
 	ClientPlayerProto updated_player = 5;
