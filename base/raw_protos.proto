@@ -1,4 +1,6 @@
 syntax = "proto3";
+package DumpProto;
+
 //----- Begin ar -----
 
 // ref: Niantic.Holoholo.AR.ArMode
@@ -13,7 +15,6 @@ enum ArToggleContext {
 	ENCOUNTER = 0;
 }
 
-
 //----- End ar -----
 //------------------------------
 //----- Begin assetbundles -----
@@ -25,7 +26,6 @@ enum AssetBundleStatus {
 	LOADED = 2;
 	FAILED = 3;
 }
-
 
 //----- End assetbundles -----
 //------------------------------
@@ -72,7 +72,6 @@ message JournalVersionProto {
 	int32 version = 1;
 }
 
-
 //----- End assetcache -----
 //------------------------------
 //----- Begin auth -----
@@ -89,7 +88,6 @@ enum IdentityProvider {
 	SUPER_AWESOME = 7;
 }
 
-
 //----- End auth -----
 //------------------------------
 //----- Begin avatar -----
@@ -99,7 +97,6 @@ enum AvatarCompletion {
 	SUCCESS = 0;
 	QUIT = 1;
 }
-
 
 //----- End avatar -----
 //------------------------------
@@ -118,7 +115,6 @@ message BattlePartyProto {
 	string combat_league_id = 4;
 }
 
-
 //----- End battle -----
 //------------------------------
 //----- Begin bgmode -----
@@ -132,7 +128,6 @@ message BackgroundModeClientSettingsProto {
 	int32 max_upload_size_in_bytes = 5;
 	double min_enclosing_geofence_radius_m = 6;
 }
-
 
 //----- End bgmode -----
 //------------------------------
@@ -162,7 +157,6 @@ enum NotificationCategory {
 	FRIEND_INVITE_RECEIVED = 19;
 	FRIEND_INVITE_ACCEPTED = 20;
 }
-
 
 //----- End clientinboxservice -----
 //------------------------------
@@ -207,7 +201,6 @@ message RpcResponseEventParams {
 message SyncRequestedEventParams {
 }
 
-
 //----- End events -----
 //------------------------------
 //----- Begin gamemaster -----
@@ -243,7 +236,6 @@ message DownloadGmTemplatesResponseProto {
 	int32 page_offset = 5;
 }
 
-
 //----- End gamemaster -----
 //------------------------------
 //----- Begin gym -----
@@ -254,7 +246,6 @@ enum BattleResultsExit {
 	LEAVE_BATTLE = 1;
 	CONTINUE_BATTLE = 2;
 }
-
 
 //----- End gym -----
 //------------------------------
@@ -276,7 +267,6 @@ enum PokedexGenerationId {
 	GEN5 = 4;
 	MELTAN = 1001;
 }
-
 
 //----- End holoholo -----
 //------------------------------
@@ -306,7 +296,6 @@ enum IncidentLeaderStringTypes {
 	INSPIRE = 3;
 }
 
-
 //----- End incident -----
 //------------------------------
 //----- Begin internal -----
@@ -318,7 +307,6 @@ message InternalAuthProto {
 	string app_id = 3;
 	string key = 4;
 }
-
 
 //----- End internal -----
 //------------------------------
@@ -361,7 +349,6 @@ message InventoryProto {
 	repeated InventoryItemProto inventory_item = 1;
 }
 
-
 //----- End inventory -----
 //------------------------------
 //----- Begin items -----
@@ -371,7 +358,6 @@ enum IncubationResult {
 	SUCCESS = 0;
 	FAILURE = 1;
 }
-
 
 //----- End items -----
 //------------------------------
@@ -406,7 +392,6 @@ message ProxyResponseProto {
 	bytes payload = 3;
 }
 
-
 //----- End platform -----
 //------------------------------
 //----- Begin poidecoration -----
@@ -433,7 +418,6 @@ enum POIDecorationProperties {
 	BEGIN_EXIT = 9;
 }
 
-
 //----- End poidecoration -----
 //------------------------------
 //----- Begin poisubmission -----
@@ -445,7 +429,6 @@ enum PoiSubmissionTutorialPage {
 	HOW_TO_CHOOSE_A_LOCATION = 2;
 	DESCRIBE_A_LOCATION = 3;
 }
-
 
 //----- End poisubmission -----
 //------------------------------
@@ -497,7 +480,6 @@ enum SfidaConnectState {
 	FAILED = 6;
 	CONNECTING = 7;
 }
-
 
 //----- End pokemongoplus -----
 //------------------------------
@@ -916,7 +898,6 @@ message SfidaUpdateResponse {
 	EncounterType encounter_type = 9;
 	int32 pokedex_number = 10;
 }
-
 
 //----- End proto -----
 //------------------------------
@@ -1819,7 +1800,6 @@ message UploadPoiPhotoByUrlProto {
 	string image_url = 2;
 }
 
-
 //----- End protos -----
 //------------------------------
 //----- Begin protos -----
@@ -2175,7 +2155,6 @@ message UploadPoiPhotoByUrlProto {
 	string image_url = 2;
 }
 
-
 //----- End protos -----
 //------------------------------
 //----- Begin protos -----
@@ -2275,7 +2254,6 @@ message SkuPresentationProto {
 	string value = 2;
 }
 
-
 //----- End protos -----
 //------------------------------
 //----- Begin protos -----
@@ -2305,7 +2283,6 @@ enum SocialAction {
 	GET_INBOX = 10105;
 }
 
-
 //----- End protos -----
 //------------------------------
 //----- Begin quest -----
@@ -2316,7 +2293,6 @@ enum PhoneBoothPresentationMode {
 	PORTRAIT = 1;
 	DIALOG = 2;
 }
-
 
 //----- End quest -----
 //------------------------------
@@ -13137,7 +13113,6 @@ message WithWinGymBattleStatusProto {
 message WithWinRaidStatusProto {
 }
 
-
 //----- End rpc -----
 //------------------------------
 //----- Begin rpc -----
@@ -13199,7 +13174,6 @@ message WeatherAlertProto {
 	bool warn_weather = 2;
 }
 
-
 //----- End rpc -----
 //------------------------------
 //----- Begin stage -----
@@ -13220,7 +13194,6 @@ enum CameraZoomInLevel {
 	EXCELLENT = 3;
 }
 
-
 //----- End stage -----
 //------------------------------
 //----- Begin storefront -----
@@ -13239,7 +13212,6 @@ enum PresentationType {
 	SORT = 2;
 	SALE = 3;
 }
-
 
 //----- End storefront -----
 //------------------------------
@@ -13367,7 +13339,6 @@ message TelemetryCommon {
 	int64 client_timestamp_ms = 4;
 }
 
-
 //----- End telemetry -----
 //------------------------------
 //----- Begin telemetry -----
@@ -13416,7 +13387,6 @@ message ClientTelemetryRecordProto {
 message ClientTelemetrySettingsRequestProto {
 }
 
-
 //----- End telemetry -----
 //------------------------------
 //----- Begin token -----
@@ -13435,7 +13405,6 @@ message GoogleToken {
 message SuperAwesomeTokenProto {
 	string token = 1;
 }
-
 
 //----- End token -----
 //------------------------------

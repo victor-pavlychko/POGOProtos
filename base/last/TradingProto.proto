@@ -2,12 +2,6 @@ syntax = "proto3";
 package DumpProtos;
 
 message TradingProto {
-		uint64 pokemon_id = 1;
-		ExclusionReason exclusion_reason = 2;
-	}
-			uint64 pokemon_id = 1;
-			ExclusionReason exclusion_reason = 2;
-		}
 		string player_id = 1;
 		PlayerPublicProfileProto public_profile = 2;
 		repeated ExcludedPokemon excluded_pokemon = 3;
@@ -71,6 +65,10 @@ message TradingProto {
 			FAVORITE = 13;
 		}
 
+		uint64 pokemon_id = 1;
+		TradingProto.ExclusionReason exclusion_reason = 2;
+	}
+
 	message TradingPlayerProto {
 		enum ExclusionReason {
 			UNSET = 0;
@@ -106,6 +104,10 @@ message TradingProto {
 				PLAYER_REACHED_DAILY_LIMIT = 12;
 				FAVORITE = 13;
 			}
+
+			uint64 pokemon_id = 1;
+			TradingProto.ExclusionReason exclusion_reason = 2;
+		}
 
 	message TradingPokemonProto {
 		uint64 pokemon_id = 1;
