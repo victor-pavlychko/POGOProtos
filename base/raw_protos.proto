@@ -9231,7 +9231,7 @@ message LimitedPurchaseSkuRecordProto {
 		int32 num_purchases = 2;
 	}
 
-	map<string, Holoholo.Rpc.LimitedPurchaseSkuRecordProto/Types/PurchaseProto> purchases = 1;
+	map<string, PurchaseProto> purchases = 1;
 }
 
 // ref: Holoholo.Rpc.LimitedPurchaseSkuSettingsProto
@@ -9892,7 +9892,7 @@ message PlayerCombatBadgeStatsProto {
 
 // ref: Holoholo.Rpc.PlayerCombatStatsProto
 message PlayerCombatStatsProto {
-	map<int32, Holoholo.Rpc.PlayerCombatBadgeStatsProto> badges = 1;
+	map<int32, PlayerCombatBadgeStatsProto> badges = 1;
 }
 
 // ref: Holoholo.Rpc.PlayerCurrencyProto

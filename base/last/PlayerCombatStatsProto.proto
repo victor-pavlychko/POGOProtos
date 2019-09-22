@@ -2,5 +2,5 @@ syntax = "proto3";
 package DumpProtos;
 
 message PlayerCombatStatsProto {
-	map<int32, Holoholo.Rpc.PlayerCombatBadgeStatsProto> badges = 1;
+	map<int32, PlayerCombatBadgeStatsProto> badges = 1;
 }

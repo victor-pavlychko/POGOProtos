@@ -2,7 +2,7 @@ syntax = "proto3";
 package DumpProtos;
 
 message LimitedPurchaseSkuRecordProto {
-	map<string, Holoholo.Rpc.LimitedPurchaseSkuRecordProto/Types/PurchaseProto> purchases = 1;
+	map<string, PurchaseProto> purchases = 1;
 
 	message PurchaseProto {
 		int32 version = 1;
