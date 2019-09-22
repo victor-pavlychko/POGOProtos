@@ -3,12 +3,14 @@ package POGOProtos.Networking.Envelopes;
 
 import "POGOProtos/Networking/Envelopes/AuthTicket.proto";
 import "POGOProtos/Networking/Platform/PlatformRequestType.proto";
+import "POGOProtos/Networking/Social/SocialRequest.proto";
 
 message ResponseEnvelope {
 	StatusCode status_code = 1;
 	uint64 request_id = 2;
 	string api_url = 3;
 
+	repeated SocialResponse social_returns = 5;
 	repeated PlatformResponse platform_returns = 6;
 	.POGOProtos.Networking.Envelopes.AuthTicket auth_ticket = 7;
 
@@ -17,6 +19,11 @@ message ResponseEnvelope {
 
 	message PlatformResponse {
 		.POGOProtos.Networking.Platform.PlatformRequestType type = 1;
+		bytes response = 2;
+	}
+
+	message SocialResponse {
+		.POGOProtos.Networking.Social.SocialRequest type = 1;
 		bytes response = 2;
 	}
 
