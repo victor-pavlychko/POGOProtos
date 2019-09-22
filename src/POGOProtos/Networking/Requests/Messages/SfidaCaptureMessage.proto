@@ -5,7 +5,7 @@ import "POGOProtos/Enums/EncounterType.proto";
 
 message SfidaCaptureMessage {
 	string spawnpoint_id = 1;
-	fixed64 encounter_id = 2;
+	int64 encounter_id = 2;
 	double player_lat = 3;
 	double player_lng = 4;
 	.POGOProtos.Enums.EncounterType encounter_type = 5;

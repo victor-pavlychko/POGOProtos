@@ -9,7 +9,7 @@ message SfidaUpdateResponse {
 	bool uncaught_pokemon = 3;
 	bool legendary_pokemon = 4;
 	string spawnpoint_id = 5;
-	fixed64 encounter_id = 6;
+	int64 encounter_id = 6;
 	bool nearby_pokestop = 7;
 	string pokestop_id = 8;
 	.POGOProtos.Enums.EncounterType encounter_type = 9;
