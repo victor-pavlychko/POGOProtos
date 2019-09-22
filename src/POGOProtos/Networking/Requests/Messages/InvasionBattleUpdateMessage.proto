@@ -11,7 +11,7 @@ message InvasionBattleUpdateMessage {
 	UpdateType update_type = 5;
 
 	message PokemonStaminaUpdate {
-		uint64 pokemon_id = 1;
+		fixed64 pokemon_id = 1;
 		int32 updated_stamina = 2;
 	}
 

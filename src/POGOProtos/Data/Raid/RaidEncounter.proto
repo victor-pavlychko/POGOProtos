@@ -7,7 +7,7 @@ import "POGOProtos/Enums/RaidLevel.proto";
 
 message RaidEncounter {
 	.POGOProtos.Data.PokemonData pokemon = 1;
-	int64 encounter_id = 2;
+	fixed64 encounter_id = 2;
 	string spawnpoint_id = 3;
 	.POGOProtos.Data.Capture.CaptureProbability capture_probabilities = 4;
 	int32 throws_remaining = 5;
