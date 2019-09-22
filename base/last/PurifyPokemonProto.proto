@@ -2,5 +2,5 @@ syntax = "proto3";
 package DumpProtos;
 
 message PurifyPokemonProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 }

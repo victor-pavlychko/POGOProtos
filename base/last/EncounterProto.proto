@@ -2,7 +2,7 @@ syntax = "proto3";
 package DumpProtos;
 
 message EncounterProto {
-	uint64 encounter_id = 1;
+	fixed64 encounter_id = 1;
 	string spawnpoint_id = 2;
 	double player_lat_degrees = 3;
 	double player_lng_degrees = 4;
