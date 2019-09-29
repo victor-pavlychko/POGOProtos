@@ -107,8 +107,8 @@ message Signature {
 	repeated uint64 request_hash = 24;  // hashes of each request message in a hashArray signed based on the auth_token or auth_info - xxhash64
 	int64 unknown25 = 25;
 	int32 unknown27 = 27;
-}
 
-// Just a junk message to denote that we don't currently know what message something is.
-message UnknownMessage {
+	// Just a junk message to denote that we don't currently know what message something is.
+	message UnknownMessage {
+	}
 }

@@ -2,7 +2,7 @@ syntax = "proto3";
 package DumpProtos;
 
 message EvolvePokemonProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 	Item evolution_item_requirement = 2;
 	HoloPokemonId target_pokemon_id = 3;
 	PokemonDisplayProto.Form target_pokemon_form = 4;

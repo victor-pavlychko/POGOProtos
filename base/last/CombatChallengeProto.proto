@@ -27,7 +27,7 @@ message CombatChallengeProto {
 		string player_id = 1;
 		PlayerAvatarProto player_avatar = 2;
 		int64 combat_player_s2_cell_id = 3;
-		repeated uint64 attacking_pokemon_id = 4;
+		repeated fixed64 attacking_pokemon_id = 4;
 		PlayerPublicProfileProto public_profile = 5;
 	}
 }

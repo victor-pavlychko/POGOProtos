@@ -3,5 +3,5 @@ package DumpProtos;
 
 message AcceptCombatChallengeProto {
 	string challenge_id = 1;
-	repeated uint64 attacking_pokemon_id = 6;
+	repeated fixed64 attacking_pokemon_id = 6;
 }

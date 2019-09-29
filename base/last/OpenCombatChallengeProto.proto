@@ -6,5 +6,5 @@ message OpenCombatChallengeProto {
 	string challenge_id = 2;
 	string combat_league_template_id = 3;
 	string opponent_player_id = 4;
-	repeated uint64 attacking_pokemon_id = 5;
+	repeated fixed64 attacking_pokemon_id = 5;
 }

@@ -7,10 +7,10 @@ message TitanGameClientTelemetryOmniProto {
 	PoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
 	PlatformServerData server_data = 1001;
 
-	oneof TelemetryData {
-		none = 0;
-		poi_submission_telemetry = 1;
-		poi_submission_photo_upload_error_telemetry = 2;
-		player_metadata_telemetry = 3;
-	}
+	//oneof TelemetryData {
+		//none = 0;
+		//poi_submission_telemetry = 1;
+		//poi_submission_photo_upload_error_telemetry = 2;
+		//player_metadata_telemetry = 3;
+	//}
 }

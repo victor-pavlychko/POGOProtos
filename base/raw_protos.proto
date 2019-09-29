@@ -1,5 +1,5 @@
 syntax = "proto3";
-package DumpProto;
+package DumpProtos;
 
 //----- Begin ar -----
 
@@ -45,12 +45,12 @@ message JournalAddEntryProto {
 // ref: Niantic.Ingress.Core.AssetCache.JournalEntryProto
 message JournalEntryProto {
 	// ref: Niantic.Ingress.Core.AssetCache.JournalEntryProto/SubentryOneofCase
-	enum SubentryOneofCase {
-		none = 0;
-		add_entry = 1;
-		read_entry = 2;
-		remove_entry = 3;
-	}
+	//oneof Subentry {
+		//none = 0;
+		//add_entry = 1;
+		//read_entry = 2;
+		//remove_entry = 3;
+	//}
 
 	JournalAddEntryProto add_entry = 1;
 	JournalReadEntryProto read_entry = 2;
@@ -111,7 +111,7 @@ message BattlePartiesProto {
 message BattlePartyProto {
 	string name = 1;
 	int32 team_number = 2;
-	repeated uint64 ids = 3;
+	repeated fixed64 ids = 3;
 	string combat_league_id = 4;
 }
 
@@ -333,11 +333,11 @@ message InventoryDeltaProto {
 // ref: Niantic.Platform.Inventory.InventoryItemProto
 message InventoryItemProto {
 	// ref: Niantic.Platform.Inventory.InventoryItemProto/InventoryItemOneofCase
-	enum InventoryItemOneofCase {
-		none = 0;
-		deleted_item_key = 2;
-		item = 3;
-	}
+	//oneof InventoryItem {
+		//none = 0;
+		//deleted_item_key = 2;
+		//item = 3;
+	//}
 
 	int64 modified_timestamp = 1;
 	bytes deleted_item_key = 2;
@@ -556,11 +556,11 @@ message FitnessRecordProto {
 // ref: FitnessReportProto
 message FitnessReportProto {
 	// ref: FitnessReportProto/WindowOneofCase
-	enum WindowOneofCase {
-		none = 0;
-		day_offset_from_now = 1;
-		week_offset_from_now = 2;
-	}
+	//oneof Window {
+		//none = 0;
+		//day_offset_from_now = 1;
+		//week_offset_from_now = 2;
+	//}
 
 	int32 day_offset_from_now = 1;
 	int32 week_offset_from_now = 2;
@@ -1081,7 +1081,7 @@ message ClientInbox {
 		string category = 3;
 		int64 create_timestamp_ms = 4;
 		repeated TemplateVariable variables = 5;
-		repeated ClientInbox.Label labels = 6;
+		repeated Label labels = 6;
 		int64 expire_time_ms = 7;
 	}
 
@@ -1258,7 +1258,7 @@ message GetFriendDetailsOutProto {
 		int32 fetched_from_player_mapper = 3;
 		int32 fetched_from_status_cache = 4;
 		int32 failed_to_fetch = 5;
-		repeated GetFriendDetailsOutProto.Callee callee_list = 6;
+		repeated Callee callee_list = 6;
 	}
 
 	Result result = 1;
@@ -2131,12 +2131,12 @@ message SubmitPoiTextMetadataUpdateProto {
 // ref: Niantic.Titan.Protos.TitanGameClientTelemetryOmniProto
 message TitanGameClientTelemetryOmniProto {
 	// ref: Niantic.Titan.Protos.TitanGameClientTelemetryOmniProto/TelemetryDataOneofCase
-	enum TelemetryDataOneofCase {
-		none = 0;
-		poi_submission_telemetry = 1;
-		poi_submission_photo_upload_error_telemetry = 2;
-		player_metadata_telemetry = 3;
-	}
+	//oneof TelemetryData {
+		//none = 0;
+		//poi_submission_telemetry = 1;
+		//poi_submission_photo_upload_error_telemetry = 2;
+		//player_metadata_telemetry = 3;
+	//}
 
 	PoiSubmissionTelemetry poi_submission_telemetry = 1;
 	PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
@@ -4782,7 +4782,7 @@ message AcceptCombatChallengeOutProto {
 // ref: Holoholo.Rpc.AcceptCombatChallengeProto
 message AcceptCombatChallengeProto {
 	string challenge_id = 1;
-	repeated uint64 attacking_pokemon_id = 6;
+	repeated fixed64 attacking_pokemon_id = 6;
 }
 
 // ref: Holoholo.Rpc.AcknowledgePunishmentOutProto
@@ -4806,27 +4806,27 @@ message AcknowledgePunishmentProto {
 // ref: Holoholo.Rpc.ActionLogEntry
 message ActionLogEntry {
 	// ref: Holoholo.Rpc.ActionLogEntry/ActionOneofCase
-	enum ActionOneofCase {
-		none = 0;
-		catch_pokemon = 3;
-		fort_search = 4;
-		buddy_pokemon = 5;
-		raid_rewards = 6;
-		passcode_rewards = 7;
-		complete_quest = 8;
-		complete_quest_stamp_card = 9;
-		complete_quest_pokemon_encounter = 10;
-		beluga_transfer = 11;
-		open_gift = 12;
-		send_gift = 13;
-		trading = 14;
-		share_ex_raid_pass = 15;
-		decline_ex_raid_pass = 16;
-		fitness_rewards = 17;
-		combat = 18;
-		purify_pokemon = 19;
-		invasion_victory = 20;
-	}
+	//oneof Action {
+		//none = 0;
+		//catch_pokemon = 3;
+		//fort_search = 4;
+		//buddy_pokemon = 5;
+		//raid_rewards = 6;
+		//passcode_rewards = 7;
+		//complete_quest = 8;
+		//complete_quest_stamp_card = 9;
+		//complete_quest_pokemon_encounter = 10;
+		//beluga_transfer = 11;
+		//open_gift = 12;
+		//send_gift = 13;
+		//trading = 14;
+		//share_ex_raid_pass = 15;
+		//decline_ex_raid_pass = 16;
+		//fitness_rewards = 17;
+		//combat = 18;
+		//purify_pokemon = 19;
+		//invasion_victory = 20;
+	//}
 
 	int64 timestamp_ms = 1;
 	bool sfida = 2;
@@ -4967,7 +4967,7 @@ message AssetDigestEntryProto {
 	string asset_id = 1;
 	string bundle_name = 2;
 	int64 version = 3;
-	uint32 checksum = 4;
+	fixed32 checksum = 4;
 	int32 size = 5;
 	bytes key = 6;
 }
@@ -5259,13 +5259,13 @@ message BattleActionProto {
 	int32 energy_delta = 5;
 	int32 attacker_index = 6;
 	int32 target_index = 7;
-	uint64 active_pokemon_id = 8;
+	fixed64 active_pokemon_id = 8;
 	BattleParticipantProto joined_player = 9;
 	BattleResultsProto battle_results = 10;
 	int64 damage_window_start_ms = 11;
 	int64 damage_window_end_ms = 12;
 	BattleParticipantProto quit_player = 13;
-	uint64 target_pokemon_id = 14;
+	fixed64 target_pokemon_id = 14;
 	LeveledUpFriendsProto leveled_up_friends = 15;
 }
 
@@ -5600,12 +5600,12 @@ message BuddyPokemonLogEntry {
 	HoloPokemonId pokemon_type = 2;
 	int32 amount = 3;
 	PokemonDisplayProto pokemon_display = 4;
-	uint64 pokemon_id = 5;
+	fixed64 pokemon_id = 5;
 }
 
 // ref: Holoholo.Rpc.BuddyPokemonProto
 message BuddyPokemonProto {
-	uint64 buddy_pokemon_id = 1;
+	fixed64 buddy_pokemon_id = 1;
 	double start_km_walked = 2;
 	double last_km_awarded = 3;
 }
@@ -5702,7 +5702,7 @@ message CatchPokemonLogEntry {
 	Result result = 1;
 	int32 pokedex_number = 2;
 	int32 combat_points = 3;
-	uint64 pokemon_id = 4;
+	fixed64 pokemon_id = 4;
 	PokemonDisplayProto pokemon_display = 5;
 }
 
@@ -5727,7 +5727,7 @@ message CatchPokemonOutProto {
 
 	Status status = 1;
 	double miss_percent = 2;
-	uint64 captured_pokemon_id = 3;
+	fixed64 captured_pokemon_id = 3;
 	CaptureScoreProto scores = 4;
 	CaptureReason capture_reason = 5;
 	int32 display_pokedex_id = 6;
@@ -5737,7 +5737,7 @@ message CatchPokemonOutProto {
 
 // ref: Holoholo.Rpc.CatchPokemonProto
 message CatchPokemonProto {
-	uint64 encounter_id = 1;
+	fixed64 encounter_id = 1;
 	int32 pokeball = 2;
 	double normalized_reticle_size = 3;
 	string spawn_point_guid = 4;
@@ -5838,13 +5838,13 @@ message CheckPhotobombOutProto {
 	Status status = 1;
 	HoloPokemonId photobomb_pokemon_id = 2;
 	PokemonDisplayProto photobomb_pokemon_display = 3;
-	uint64 encounter_id = 4;
+	fixed64 encounter_id = 4;
 	string uri = 5;
 }
 
 // ref: Holoholo.Rpc.CheckPhotobombProto
 message CheckPhotobombProto {
-	uint64 photo_pokemon_id = 1;
+	fixed64 photo_pokemon_id = 1;
 }
 
 // ref: Holoholo.Rpc.CheckSendGiftOutProto
@@ -5928,12 +5928,12 @@ message ClientIncidentProto {
 // ref: Holoholo.Rpc.ClientIncidentStepProto
 message ClientIncidentStepProto {
 	// ref: Holoholo.Rpc.ClientIncidentStepProto/ClientIncidentStepOneofCase
-	enum ClientIncidentStepOneofCase {
-		none = 0;
-		invasion_battle = 1;
-		invasion_encounter = 2;
-		pokestop_dialogue = 3;
-	}
+	//oneof ClientIncidentStep {
+		//none = 0;
+		//invasion_battle = 1;
+		//invasion_encounter = 2;
+		//pokestop_dialogue = 3;
+	//}
 
 	ClientInvasionBattleStepProto invasion_battle = 1;
 	ClientInvasionEncounterStepProto invasion_encounter = 2;
@@ -6098,8 +6098,8 @@ message CombatActionProto {
 	int32 duration_turns = 5;
 	int32 attacker_index = 6;
 	int32 target_index = 7;
-	uint64 active_pokemon_id = 8;
-	uint64 target_pokemon_id = 14;
+	fixed64 active_pokemon_id = 8;
+	fixed64 target_pokemon_id = 14;
 	float minigame_score = 15;
 	int32 move = 16;
 }
@@ -6131,7 +6131,7 @@ message CombatChallengeProto {
 		string player_id = 1;
 		PlayerAvatarProto player_avatar = 2;
 		int64 combat_player_s2_cell_id = 3;
-		repeated uint64 attacking_pokemon_id = 4;
+		repeated fixed64 attacking_pokemon_id = 4;
 		PlayerPublicProfileProto public_profile = 5;
 	}
 
@@ -6192,21 +6192,21 @@ message CombatGlobalSettingsProto {
 // ref: Holoholo.Rpc.CombatLeagueProto
 message CombatLeagueProto {
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/UnlockConditionProto/ConditionOneofCase
-	enum ConditionOneofCase {
-		none = 0;
-		with_player_level = 3;
-		with_pokemon_cp_limit = 4;
-		with_pokemon_type = 5;
-		with_pokemon_category = 6;
-	}
+	//oneof Condition {
+		//none = 0;
+		//with_player_level = 3;
+		//with_pokemon_cp_limit = 4;
+		//with_pokemon_type = 5;
+		//with_pokemon_category = 6;
+	//}
 
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonConditionProto/ConditionOneofCase
-	enum ConditionOneofCase {
-		none = 0;
-		with_pokemon_cp_limit = 2;
-		with_pokemon_type = 3;
-		with_pokemon_category = 4;
-	}
+	//oneof Condition {
+		//none = 0;
+		//with_pokemon_cp_limit = 2;
+		//with_pokemon_type = 3;
+		//with_pokemon_category = 4;
+	//}
 
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/ConditionType
 	enum ConditionType {
@@ -6220,14 +6220,14 @@ message CombatLeagueProto {
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonConditionProto
 	message PokemonConditionProto {
 		// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonConditionProto/ConditionOneofCase
-		enum ConditionOneofCase {
-			none = 0;
-			with_pokemon_cp_limit = 2;
-			with_pokemon_type = 3;
-			with_pokemon_category = 4;
-		}
+		//oneof Condition {
+			//none = 0;
+			//with_pokemon_cp_limit = 2;
+			//with_pokemon_type = 3;
+			//with_pokemon_category = 4;
+		//}
 
-		CombatLeagueProto.ConditionType type = 1;
+		ConditionType type = 1;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 2;
 		WithPokemonTypeProto with_pokemon_type = 3;
 		WithPokemonCategoryProto with_pokemon_category = 4;
@@ -6236,15 +6236,15 @@ message CombatLeagueProto {
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/UnlockConditionProto
 	message UnlockConditionProto {
 		// ref: Holoholo.Rpc.CombatLeagueProto/Types/UnlockConditionProto/ConditionOneofCase
-		enum ConditionOneofCase {
-			none = 0;
-			with_player_level = 3;
-			with_pokemon_cp_limit = 4;
-			with_pokemon_type = 5;
-			with_pokemon_category = 6;
-		}
+		//oneof Condition {
+			//none = 0;
+			//with_player_level = 3;
+			//with_pokemon_cp_limit = 4;
+			//with_pokemon_type = 5;
+			//with_pokemon_category = 6;
+		//}
 
-		CombatLeagueProto.ConditionType type = 1;
+		ConditionType type = 1;
 		int32 min_pokemon_count = 2;
 		WithPlayerLevelProto with_player_level = 3;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 4;
@@ -6370,7 +6370,7 @@ message CombatPlayerProfileProto {
 	string player_id = 1;
 	PlayerPublicProfileProto public_profile = 2;
 	repeated string combat_league_template_id = 3;
-	uint64 buddy_pokemon_id = 4;
+	fixed64 buddy_pokemon_id = 4;
 	Location location = 5;
 	CombatPlayerPreferencesProto combat_player_preferences = 6;
 }
@@ -6393,9 +6393,9 @@ message CombatProto {
 	// ref: Holoholo.Rpc.CombatProto/Types/CombatPlayerProto
 	message CombatPlayerProto {
 		PlayerPublicProfileProto public_profile = 1;
-		CombatProto.CombatPokemonProto active_pokemon = 2;
-		repeated CombatProto.CombatPokemonProto reserve_pokemon = 3;
-		repeated CombatProto.CombatPokemonProto fainted_pokemon = 4;
+		CombatPokemonProto active_pokemon = 2;
+		repeated CombatPokemonProto reserve_pokemon = 3;
+		repeated CombatPokemonProto fainted_pokemon = 4;
 		CombatActionProto current_action = 5;
 		bool lockstep_ack = 6;
 		int32 last_updated_turn = 7;
@@ -6407,7 +6407,7 @@ message CombatProto {
 
 	// ref: Holoholo.Rpc.CombatProto/Types/CombatPokemonProto
 	message CombatPokemonProto {
-		uint64 pokemon_id = 1;
+		fixed64 pokemon_id = 1;
 		int32 pokedex_id = 2;
 		int32 cp = 3;
 		float cp_multiplier = 4;
@@ -6551,7 +6551,7 @@ message CompleteQuestPokemonEncounterLogEntry {
 	Result result = 1;
 	int32 pokedex_number = 2;
 	int32 combat_points = 3;
-	uint64 pokemon_id = 4;
+	fixed64 pokemon_id = 4;
 	PokemonDisplayProto pokemon_display = 5;
 	EncounterType encounter_type = 6;
 }
@@ -6606,7 +6606,7 @@ message CompleteSnapshotSessionOutProto {
 
 // ref: Holoholo.Rpc.CompleteSnapshotSessionProto
 message CompleteSnapshotSessionProto {
-	uint64 photo_pokemon_id = 1;
+	fixed64 photo_pokemon_id = 1;
 	int32 num_photos_taken = 2;
 }
 
@@ -6626,7 +6626,7 @@ message ConfirmPhotobombOutProto {
 
 // ref: Holoholo.Rpc.ConfirmPhotobombProto
 message ConfirmPhotobombProto {
-	uint64 encounter_id = 1;
+	fixed64 encounter_id = 1;
 }
 
 // ref: Holoholo.Rpc.ConfirmTradingOutProto
@@ -6801,7 +6801,7 @@ message DeleteGiftFromInventoryOutProto {
 
 // ref: Holoholo.Rpc.DeleteGiftFromInventoryProto
 message DeleteGiftFromInventoryProto {
-	repeated uint64 giftbox_id = 1;
+	repeated fixed64 giftbox_id = 1;
 }
 
 // ref: Holoholo.Rpc.DeleteGiftOutProto
@@ -6823,7 +6823,7 @@ message DeleteGiftOutProto {
 // ref: Holoholo.Rpc.DeleteGiftProto
 message DeleteGiftProto {
 	string player_id = 1;
-	uint64 giftbox_id = 2;
+	fixed64 giftbox_id = 2;
 }
 
 // ref: Holoholo.Rpc.DeploymentTotalsProto
@@ -6884,7 +6884,7 @@ message DownloadUrlEntryProto {
 	string asset_id = 1;
 	string url = 2;
 	int32 size = 3;
-	uint32 checksum = 4;
+	fixed32 checksum = 4;
 }
 
 // ref: Holoholo.Rpc.DownloadUrlOutProto
@@ -6977,7 +6977,7 @@ message EncounterPhotobombOutProto {
 
 // ref: Holoholo.Rpc.EncounterPhotobombProto
 message EncounterPhotobombProto {
-	uint64 encounter_id = 1;
+	fixed64 encounter_id = 1;
 	string encounter_location = 2;
 }
 
@@ -6991,7 +6991,7 @@ message EncounterPokemonTelemetry {
 
 // ref: Holoholo.Rpc.EncounterProto
 message EncounterProto {
-	uint64 encounter_id = 1;
+	fixed64 encounter_id = 1;
 	string spawnpoint_id = 2;
 	double player_lat_degrees = 3;
 	double player_lng_degrees = 4;
@@ -7207,7 +7207,7 @@ message EvolvePokemonOutProto {
 
 // ref: Holoholo.Rpc.EvolvePokemonProto
 message EvolvePokemonProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 	Item evolution_item_requirement = 2;
 	HoloPokemonId target_pokemon_id = 3;
 	PokemonDisplayProto.Form target_pokemon_form = 4;
@@ -7380,7 +7380,7 @@ message FortDeployOutProto {
 // ref: Holoholo.Rpc.FortDeployProto
 message FortDeployProto {
 	string fort_id = 1;
-	uint64 pokemon_id = 2;
+	fixed64 pokemon_id = 2;
 	double player_lat_degrees = 3;
 	double player_lng_degrees = 4;
 }
@@ -7438,7 +7438,7 @@ message FortRecallOutProto {
 // ref: Holoholo.Rpc.FortRecallProto
 message FortRecallProto {
 	string fort_id = 1;
-	uint64 pokemon_id = 2;
+	fixed64 pokemon_id = 2;
 	double player_lat_degrees = 3;
 	double player_lng_degrees = 4;
 }
@@ -7875,7 +7875,7 @@ message GetGiftBoxDetailsOutProto {
 
 // ref: Holoholo.Rpc.GetGiftBoxDetailsProto
 message GetGiftBoxDetailsProto {
-	repeated uint64 giftbox_id = 1;
+	repeated fixed64 giftbox_id = 1;
 	string player_id = 2;
 }
 
@@ -7925,7 +7925,7 @@ message GetGymDetailsProto {
 // ref: Holoholo.Rpc.GetHatchedEggsOutProto
 message GetHatchedEggsOutProto {
 	bool success = 1;
-	repeated uint64 pokemon_id = 2;
+	repeated fixed64 pokemon_id = 2;
 	repeated int32 exp_awarded = 3;
 	repeated int32 candy_awarded = 4;
 	repeated int32 stardust_awarded = 5;
@@ -7984,7 +7984,7 @@ message GetIncensePokemonOutProto {
 	double lat = 3;
 	double lng = 4;
 	string encounter_location = 5;
-	uint64 encounter_id = 6;
+	fixed64 encounter_id = 6;
 	int64 disappear_time_ms = 7;
 	PokemonDisplayProto pokemon_display = 8;
 }
@@ -8063,7 +8063,7 @@ message GetNpcCombatRewardsOutProto {
 message GetNpcCombatRewardsProto {
 	string combat_npc_trainer_template_id = 1;
 	CombatPlayerFinishState finish_state = 2;
-	repeated uint64 attacking_pokemon_id = 3;
+	repeated fixed64 attacking_pokemon_id = 3;
 	string combat_id = 4;
 }
 
@@ -8083,7 +8083,7 @@ message GetPhotobombOutProto {
 	double lat = 3;
 	double lng = 4;
 	string encounter_location = 5;
-	uint64 encounter_id = 6;
+	fixed64 encounter_id = 6;
 	int64 disappear_time_ms = 7;
 	PokemonDisplayProto pokemon_display = 8;
 }
@@ -8288,7 +8288,7 @@ message GetWebTokenProto {
 
 // ref: Holoholo.Rpc.GiftBoxDetailsProto
 message GiftBoxDetailsProto {
-	uint64 giftbox_id = 1;
+	fixed64 giftbox_id = 1;
 	string sender_id = 2;
 	string sender_codename = 3;
 	string receiver_id = 4;
@@ -8300,7 +8300,7 @@ message GiftBoxDetailsProto {
 	string fort_image_url = 10;
 	int64 creation_timestamp = 11;
 	int64 sent_timestamp = 12;
-	uint64 delivery_pokemon_id = 13;
+	fixed64 delivery_pokemon_id = 13;
 	bool is_sponsored = 14;
 }
 
@@ -8311,7 +8311,7 @@ message GiftBoxesProto {
 
 // ref: Holoholo.Rpc.GiftBoxProto
 message GiftBoxProto {
-	uint64 giftbox_id = 1;
+	fixed64 giftbox_id = 1;
 	string sender_id = 2;
 	string receiver_id = 3;
 	string fort_id = 4;
@@ -8492,7 +8492,7 @@ message GymDeployOutProto {
 // ref: Holoholo.Rpc.GymDeployProto
 message GymDeployProto {
 	string fort_id = 1;
-	uint64 pokemon_id = 2;
+	fixed64 pokemon_id = 2;
 	double player_lat_degrees = 3;
 	double player_lng_degrees = 4;
 }
@@ -8525,7 +8525,7 @@ message GymEventProto {
 	int64 timestamp_ms = 2;
 	Event event = 3;
 	int32 pokedex_id = 4;
-	uint64 pokemon_id = 5;
+	fixed64 pokemon_id = 5;
 }
 
 // ref: Holoholo.Rpc.GymFeedPokemonOutProto
@@ -8563,7 +8563,7 @@ message GymFeedPokemonProto {
 	Item item = 1;
 	int32 starting_quantity = 2;
 	string gym_id = 3;
-	uint64 pokemon_id = 4;
+	fixed64 pokemon_id = 4;
 	double player_lat_degrees = 5;
 	double player_lng_degrees = 6;
 }
@@ -8647,8 +8647,8 @@ message GymStartSessionOutProto {
 // ref: Holoholo.Rpc.GymStartSessionProto
 message GymStartSessionProto {
 	string gym_id = 1;
-	repeated uint64 attacking_pokemon_id = 2;
-	uint64 defending_pokemon_id = 3;
+	repeated fixed64 attacking_pokemon_id = 2;
+	fixed64 defending_pokemon_id = 3;
 	double player_lat_degrees = 4;
 	double player_lng_degrees = 5;
 }
@@ -8683,58 +8683,58 @@ message HoloFitnessReportProto {
 // ref: Holoholo.Rpc.HoloholoClientTelemetryOmniProto
 message HoloholoClientTelemetryOmniProto {
 	// ref: Holoholo.Rpc.HoloholoClientTelemetryOmniProto/TelemetryDataOneofCase
-	enum TelemetryDataOneofCase {
-		none = 0;
-		boot_time = 1;
-		frame_rate = 2;
-		generic_click_telemetry = 3;
-		map_events_telemetry = 4;
-		spin_pokestop_telemetry = 5;
-		profile_page_telemetry = 6;
-		shopping_page_telemetry = 7;
-		encounter_pokemon_telemetry = 8;
-		catch_pokemon_telemetry = 9;
-		deploy_pokemon_telemetry = 10;
-		feed_pokemon_telemetry = 11;
-		evolve_pokemon_telemetry = 12;
-		release_pokemon_telemetry = 13;
-		nickname_pokemon_telemetry = 14;
-		news_page_telemetry = 15;
-		item_telemetry = 16;
-		battle_party_telemetry = 17;
-		passcode_redeem_telemetry = 18;
-		link_login_telemetry = 19;
-		raid_telemetry = 20;
-		push_notification_telemetry = 21;
-		avatar_customization_telemetry = 22;
-		read_point_of_interest_description_telemetry = 23;
-		web_telemetry = 24;
-		change_ar_telemetry = 25;
-		weather_detail_click_telemetry = 26;
-		user_issue_weather_report = 27;
-		pokemon_inventory_telemetry = 28;
-		social_telemetry = 29;
-		check_encounter_info_telemetry = 30;
-		pokemon_go_plus_telemetry = 31;
-		rpc_timing_telemetry = 32;
-		social_gift_count_telemetry = 33;
-		asset_bundle_telemetry = 34;
-		asset_poi_download_telemetry = 35;
-		asset_stream_download_telemetry = 36;
-		asset_stream_cache_culled_telemetry = 37;
-		rpc_socket_timing_telemetry = 38;
-		permissions_flow = 39;
-		device_service_toggle = 40;
-		boot_telemetry = 41;
-		user_attributes = 42;
-		onboarding_telemetry = 43;
-		login_action_telemetry = 44;
-		ar_photo_session_telemetry = 45;
-		invasion_telemetry = 46;
-		combat_minigame_telemetry = 47;
-		leave_point_of_interest_telemetry = 48;
-		view_point_of_interest_image_telemetry = 49;
-	}
+	//oneof TelemetryData {
+		//none = 0;
+		//boot_time = 1;
+		//frame_rate = 2;
+		//generic_click_telemetry = 3;
+		//map_events_telemetry = 4;
+		//spin_pokestop_telemetry = 5;
+		//profile_page_telemetry = 6;
+		//shopping_page_telemetry = 7;
+		//encounter_pokemon_telemetry = 8;
+		//catch_pokemon_telemetry = 9;
+		//deploy_pokemon_telemetry = 10;
+		//feed_pokemon_telemetry = 11;
+		//evolve_pokemon_telemetry = 12;
+		//release_pokemon_telemetry = 13;
+		//nickname_pokemon_telemetry = 14;
+		//news_page_telemetry = 15;
+		//item_telemetry = 16;
+		//battle_party_telemetry = 17;
+		//passcode_redeem_telemetry = 18;
+		//link_login_telemetry = 19;
+		//raid_telemetry = 20;
+		//push_notification_telemetry = 21;
+		//avatar_customization_telemetry = 22;
+		//read_point_of_interest_description_telemetry = 23;
+		//web_telemetry = 24;
+		//change_ar_telemetry = 25;
+		//weather_detail_click_telemetry = 26;
+		//user_issue_weather_report = 27;
+		//pokemon_inventory_telemetry = 28;
+		//social_telemetry = 29;
+		//check_encounter_info_telemetry = 30;
+		//pokemon_go_plus_telemetry = 31;
+		//rpc_timing_telemetry = 32;
+		//social_gift_count_telemetry = 33;
+		//asset_bundle_telemetry = 34;
+		//asset_poi_download_telemetry = 35;
+		//asset_stream_download_telemetry = 36;
+		//asset_stream_cache_culled_telemetry = 37;
+		//rpc_socket_timing_telemetry = 38;
+		//permissions_flow = 39;
+		//device_service_toggle = 40;
+		//boot_telemetry = 41;
+		//user_attributes = 42;
+		//onboarding_telemetry = 43;
+		//login_action_telemetry = 44;
+		//ar_photo_session_telemetry = 45;
+		//invasion_telemetry = 46;
+		//combat_minigame_telemetry = 47;
+		//leave_point_of_interest_telemetry = 48;
+		//view_point_of_interest_image_telemetry = 49;
+	//}
 
 	BootTime boot_time = 1;
 	FrameRate frame_rate = 2;
@@ -8791,26 +8791,26 @@ message HoloholoClientTelemetryOmniProto {
 // ref: Holoholo.Rpc.HoloInventoryItemProto
 message HoloInventoryItemProto {
 	// ref: Holoholo.Rpc.HoloInventoryItemProto/TypeOneofCase
-	enum TypeOneofCase {
-		none = 0;
-		pokemon = 1;
-		item = 2;
-		pokedex_entry = 3;
-		player_stats = 4;
-		player_currency = 5;
-		player_camera = 6;
-		inventory_upgrades = 7;
-		applied_items = 8;
-		egg_incubators = 9;
-		pokemon_family = 10;
-		quest = 11;
-		avatar_item = 12;
-		raid_tickets = 13;
-		quests = 14;
-		gift_boxes = 15;
-		beluga_incense = 16;
-		limited_purchase_sku_record = 19;
-	}
+	//oneof Type {
+		//none = 0;
+		//pokemon = 1;
+		//item = 2;
+		//pokedex_entry = 3;
+		//player_stats = 4;
+		//player_currency = 5;
+		//player_camera = 6;
+		//inventory_upgrades = 7;
+		//applied_items = 8;
+		//egg_incubators = 9;
+		//pokemon_family = 10;
+		//quest = 11;
+		//avatar_item = 12;
+		//raid_tickets = 13;
+		//quests = 14;
+		//gift_boxes = 15;
+		//beluga_incense = 16;
+		//limited_purchase_sku_record = 19;
+	//}
 
 	PokemonProto pokemon = 1;
 	ItemProto item = 2;
@@ -8834,28 +8834,28 @@ message HoloInventoryItemProto {
 // ref: Holoholo.Rpc.HoloInventoryKeyProto
 message HoloInventoryKeyProto {
 	// ref: Holoholo.Rpc.HoloInventoryKeyProto/TypeOneofCase
-	enum TypeOneofCase {
-		none = 0;
-		pokemon_id = 1;
-		item = 2;
-		pokedex_entry_id = 3;
-		player_stats = 4;
-		player_currency = 5;
-		player_camera = 6;
-		inventory_upgrades = 7;
-		applied_items = 8;
-		egg_incubators = 9;
-		pokemon_family_id = 10;
-		quest_type = 11;
-		avatar_template_id = 12;
-		raid_tickets = 13;
-		quests = 14;
-		gift_boxes = 15;
-		beluga_incense_box = 16;
-		limited_purchase_sku_record = 19;
-	}
+	//oneof Type {
+		//none = 0;
+		//pokemon_id = 1;
+		//item = 2;
+		//pokedex_entry_id = 3;
+		//player_stats = 4;
+		//player_currency = 5;
+		//player_camera = 6;
+		//inventory_upgrades = 7;
+		//applied_items = 8;
+		//egg_incubators = 9;
+		//pokemon_family_id = 10;
+		//quest_type = 11;
+		//avatar_template_id = 12;
+		//raid_tickets = 13;
+		//quests = 14;
+		//gift_boxes = 15;
+		//beluga_incense_box = 16;
+		//limited_purchase_sku_record = 19;
+	//}
 
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 	Item item = 2;
 	int32 pokedex_entry_id = 3;
 	bool player_stats = 4;
@@ -8980,7 +8980,7 @@ message InvasionEncounterOutProto {
 	CaptureProbabilityProto capture_probability = 3;
 	Item active_item = 4;
 	int32 throws_remaining = 5;
-	uint64 encounter_id = 6;
+	fixed64 encounter_id = 6;
 	string spawn_point_guid = 7;
 	PremierBallsDisplayProto balls_display = 8;
 }
@@ -9275,7 +9275,7 @@ message ListAvatarCustomizationsOutProto {
 	// ref: Holoholo.Rpc.ListAvatarCustomizationsOutProto/Types/AvatarCustomization
 	message AvatarCustomization {
 		string avatar_template_id = 1;
-		repeated ListAvatarCustomizationsOutProto.Label labels = 2;
+		repeated Label labels = 2;
 	}
 
 	Result result = 1;
@@ -9360,15 +9360,15 @@ message LoginSettingsProto {
 // ref: Holoholo.Rpc.LootItemProto
 message LootItemProto {
 	// ref: Holoholo.Rpc.LootItemProto/TypeOneofCase
-	enum TypeOneofCase {
-		none = 0;
-		item = 1;
-		stardust = 2;
-		pokecoin = 3;
-		pokemon_candy = 4;
-		experience = 6;
-		pokemon_egg = 7;
-	}
+	//oneof Type {
+		//none = 0;
+		//item = 1;
+		//stardust = 2;
+		//pokecoin = 3;
+		//pokemon_candy = 4;
+		//experience = 6;
+		//pokemon_egg = 7;
+	//}
 
 	Item item = 1;
 	bool stardust = 2;
@@ -9401,7 +9401,7 @@ message MapEventsTelemetry {
 // ref: Holoholo.Rpc.MapPokemonProto
 message MapPokemonProto {
 	string spawnpoint_id = 1;
-	uint64 encounter_id = 2;
+	fixed64 encounter_id = 2;
 	int32 pokedex_type_id = 3;
 	int64 expiration_time_ms = 4;
 	double latitude = 5;
@@ -9499,7 +9499,7 @@ message MultiPartQuestProto {
 message NearbyPokemonProto {
 	int32 pokedex_number = 1;
 	float distance_meters = 2;
-	uint64 encounter_id = 3;
+	fixed64 encounter_id = 3;
 	string fort_id = 4;
 	string fort_image_url = 5;
 	PokemonDisplayProto pokemon_display = 6;
@@ -9563,7 +9563,7 @@ message NicknamePokemonOutProto {
 
 // ref: Holoholo.Rpc.NicknamePokemonProto
 message NicknamePokemonProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 	string nickname = 2;
 }
 
@@ -9638,7 +9638,7 @@ message OpenCombatChallengeProto {
 	string challenge_id = 2;
 	string combat_league_template_id = 3;
 	string opponent_player_id = 4;
-	repeated uint64 attacking_pokemon_id = 5;
+	repeated fixed64 attacking_pokemon_id = 5;
 }
 
 // ref: Holoholo.Rpc.OpenCombatSessionOutProto
@@ -9666,7 +9666,7 @@ message OpenCombatSessionOutProto {
 // ref: Holoholo.Rpc.OpenCombatSessionProto
 message OpenCombatSessionProto {
 	string combat_id = 1;
-	repeated uint64 attacking_pokemon_id = 2;
+	repeated fixed64 attacking_pokemon_id = 2;
 	string combat_league_template_id = 3;
 }
 
@@ -9709,7 +9709,7 @@ message OpenGiftOutProto {
 // ref: Holoholo.Rpc.OpenGiftProto
 message OpenGiftProto {
 	string player_id = 1;
-	uint64 giftbox_id = 2;
+	fixed64 giftbox_id = 2;
 }
 
 // ref: Holoholo.Rpc.OpenInvasionCombatSessionOutProto
@@ -9722,7 +9722,7 @@ message OpenInvasionCombatSessionOutProto {
 message OpenInvasionCombatSessionProto {
 	IncidentLookupProto incident_lookup = 1;
 	int32 step = 2;
-	repeated uint64 attacking_pokemon_id = 3;
+	repeated fixed64 attacking_pokemon_id = 3;
 }
 
 // ref: Holoholo.Rpc.OpenNpcCombatSessionOutProto
@@ -9742,7 +9742,7 @@ message OpenNpcCombatSessionOutProto {
 
 // ref: Holoholo.Rpc.OpenNpcCombatSessionProto
 message OpenNpcCombatSessionProto {
-	repeated uint64 attacking_pokemon_id = 1;
+	repeated fixed64 attacking_pokemon_id = 1;
 	string combat_npc_template_id = 2;
 }
 
@@ -10039,7 +10039,7 @@ message PokeBallAttributesProto {
 
 // ref: Holoholo.Rpc.PokeCandyProto
 message PokeCandyProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 	int32 candy_count = 2;
 }
 
@@ -10797,11 +10797,11 @@ message PokemonEncounterAttributesProto {
 // ref: Holoholo.Rpc.PokemonEncounterRewardProto
 message PokemonEncounterRewardProto {
 	// ref: Holoholo.Rpc.PokemonEncounterRewardProto/TypeOneofCase
-	enum TypeOneofCase {
-		none = 0;
-		pokemon_id = 1;
-		use_quest_pokemon_encounter_distribuition = 2;
-	}
+	//oneof Type {
+		//none = 0;
+		//pokemon_id = 1;
+		//use_quest_pokemon_encounter_distribuition = 2;
+	//}
 
 	HoloPokemonId pokemon_id = 1;
 	bool use_quest_pokemon_encounter_distribuition = 2;
@@ -10878,7 +10878,7 @@ message PokemonInventoryTelemetry {
 
 // ref: Holoholo.Rpc.PokemonProto
 message PokemonProto {
-	uint64 id = 1;
+	fixed64 id = 1;
 	int32 pokemon_id = 2;
 	int32 cp = 3;
 	int32 stamina = 4;
@@ -11006,7 +11006,7 @@ message PokemonSettingsProto {
 
 // ref: Holoholo.Rpc.PokemonStaminaUpdateProto
 message PokemonStaminaUpdateProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 	int32 updated_stamina = 2;
 }
 
@@ -11056,11 +11056,11 @@ message PokemonUpgradeSettingsProto {
 // ref: Holoholo.Rpc.PokestopIncidentDisplayProto
 message PokestopIncidentDisplayProto {
 	// ref: Holoholo.Rpc.PokestopIncidentDisplayProto/MapDisplayOneofCase
-	enum MapDisplayOneofCase {
-		none = 0;
-		character_display = 10;
-		invasion_finished = 11;
-	}
+	//oneof MapDisplay {
+		//none = 0;
+		//character_display = 10;
+		//invasion_finished = 11;
+	//}
 
 	string incident_id = 1;
 	int64 incident_start_ms = 2;
@@ -11111,7 +11111,7 @@ message PtcToken {
 message PurifyPokemonLogEntry {
 	HoloPokemonId pokemon_id = 1;
 	PokemonDisplayProto pokemon_display = 2;
-	uint64 purified_pokemon_uuid = 3;
+	fixed64 purified_pokemon_uuid = 3;
 }
 
 // ref: Holoholo.Rpc.PurifyPokemonOutProto
@@ -11132,7 +11132,7 @@ message PurifyPokemonOutProto {
 
 // ref: Holoholo.Rpc.PurifyPokemonProto
 message PurifyPokemonProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 }
 
 // ref: Holoholo.Rpc.PushNotificationTelemetry
@@ -11144,32 +11144,32 @@ message PushNotificationTelemetry {
 // ref: Holoholo.Rpc.QuestConditionProto
 message QuestConditionProto {
 	// ref: Holoholo.Rpc.QuestConditionProto/ConditionOneofCase
-	enum ConditionOneofCase {
-		none = 0;
-		with_pokemon_type = 2;
-		with_pokemon_category = 3;
-		with_weather_boost = 4;
-		with_daily_capture_bonus = 5;
-		with_daily_spin_bonus = 6;
-		with_win_raid_status = 7;
-		with_raid_level = 8;
-		with_throw_type = 9;
-		with_win_gym_battle_status = 10;
-		with_super_effective_charge_move = 11;
-		with_item = 12;
-		with_unique_pokestop = 13;
-		with_quest_context = 14;
-		with_badge_type = 15;
-		with_player_level = 16;
-		with_win_battle_status = 17;
-		with_unique_pokemon = 18;
-		with_npc_combat = 19;
-		with_pvp_combat = 20;
-		with_location = 21;
-		with_distance = 22;
-		with_invasion_character = 23;
-		with_pokemon_alignment = 24;
-	}
+	//oneof Condition {
+		//none = 0;
+		//with_pokemon_type = 2;
+		//with_pokemon_category = 3;
+		//with_weather_boost = 4;
+		//with_daily_capture_bonus = 5;
+		//with_daily_spin_bonus = 6;
+		//with_win_raid_status = 7;
+		//with_raid_level = 8;
+		//with_throw_type = 9;
+		//with_win_gym_battle_status = 10;
+		//with_super_effective_charge_move = 11;
+		//with_item = 12;
+		//with_unique_pokestop = 13;
+		//with_quest_context = 14;
+		//with_badge_type = 15;
+		//with_player_level = 16;
+		//with_win_battle_status = 17;
+		//with_unique_pokemon = 18;
+		//with_npc_combat = 19;
+		//with_pvp_combat = 20;
+		//with_location = 21;
+		//with_distance = 22;
+		//with_invasion_character = 23;
+		//with_pokemon_alignment = 24;
+	//}
 
 	// ref: Holoholo.Rpc.QuestConditionProto/Types/ConditionType
 	enum ConditionType {
@@ -11289,7 +11289,7 @@ message QuestEncounterOutProto {
 
 // ref: Holoholo.Rpc.QuestEncounterProto
 message QuestEncounterProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 	string quest_id = 2;
 }
 
@@ -11317,13 +11317,13 @@ message QuestPokemonEncounterProto {
 // ref: Holoholo.Rpc.QuestPreconditionProto
 message QuestPreconditionProto {
 	// ref: Holoholo.Rpc.QuestPreconditionProto/ConditionOneofCase
-	enum ConditionOneofCase {
-		none = 0;
-		quest_template_id = 2;
-		level = 3;
-		medal = 4;
-		quests = 5;
-	}
+	//oneof Condition {
+		//none = 0;
+		//quest_template_id = 2;
+		//level = 3;
+		//medal = 4;
+		//quests = 5;
+	//}
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Operator
 	enum Operator {
@@ -11347,14 +11347,14 @@ message QuestPreconditionProto {
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Level
 	message Level {
-		QuestPreconditionProto.Operator operator = 1;
+		Operator operator = 1;
 		int32 level = 2;
 	}
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Medal
 	message Medal {
 		HoloBadgeType type = 1;
-		QuestPreconditionProto.Operator operator = 2;
+		Operator operator = 2;
 		int32 badge_rank = 3;
 	}
 
@@ -11380,14 +11380,14 @@ message QuestProto {
 	}
 
 	// ref: Holoholo.Rpc.QuestProto/QuestOneofCase
-	enum QuestOneofCase {
-		none = 0;
-		daily_quest = 2;
-		multi_part = 3;
-		catch_pokemon = 4;
-		add_friend = 5;
-		trade_pokemon = 6;
-	}
+	//oneof Quest {
+		//none = 0;
+		//daily_quest = 2;
+		//multi_part = 3;
+		//catch_pokemon = 4;
+		//add_friend = 5;
+		//trade_pokemon = 6;
+	//}
 
 	// ref: Holoholo.Rpc.QuestProto/Types/Status
 	enum Status {
@@ -11426,16 +11426,16 @@ message QuestProto {
 // ref: Holoholo.Rpc.QuestRewardProto
 message QuestRewardProto {
 	// ref: Holoholo.Rpc.QuestRewardProto/RewardOneofCase
-	enum RewardOneofCase {
-		none = 0;
-		exp = 2;
-		item = 3;
-		stardust = 4;
-		candy = 5;
-		avatar_template_id = 6;
-		quest_template_id = 7;
-		pokemon_encounter = 8;
-	}
+	//oneof Reward {
+		//none = 0;
+		//exp = 2;
+		//item = 3;
+		//stardust = 4;
+		//candy = 5;
+		//avatar_template_id = 6;
+		//quest_template_id = 7;
+		//pokemon_encounter = 8;
+	//}
 
 	// ref: Holoholo.Rpc.QuestRewardProto/Types/Type
 	enum Type {
@@ -11707,8 +11707,8 @@ message ReleasePokemonOutProto {
 
 // ref: Holoholo.Rpc.ReleasePokemonProto
 message ReleasePokemonProto {
-	uint64 pokemon_id = 1;
-	repeated uint64 pokemon_ids = 2;
+	fixed64 pokemon_id = 1;
+	repeated fixed64 pokemon_ids = 2;
 }
 
 // ref: Holoholo.Rpc.ReleasePokemonTelemetry
@@ -11852,7 +11852,7 @@ message SendGiftOutProto {
 
 // ref: Holoholo.Rpc.SendGiftProto
 message SendGiftProto {
-	uint64 giftbox_id = 1;
+	fixed64 giftbox_id = 1;
 	string player_id = 2;
 }
 
@@ -11930,7 +11930,7 @@ message SetBuddyPokemonOutProto {
 
 // ref: Holoholo.Rpc.SetBuddyPokemonProto
 message SetBuddyPokemonProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 }
 
 // ref: Holoholo.Rpc.SetContactSettingsOutProto
@@ -12013,7 +12013,7 @@ message SetLobbyPokemonProto {
 	int64 raid_seed = 1;
 	string gym_id = 2;
 	repeated int32 lobby_id = 3;
-	repeated uint64 pokemon_id = 4;
+	repeated fixed64 pokemon_id = 4;
 }
 
 // ref: Holoholo.Rpc.SetLobbyVisibilityOutProto
@@ -12199,8 +12199,8 @@ message StartGymBattleOutProto {
 // ref: Holoholo.Rpc.StartGymBattleProto
 message StartGymBattleProto {
 	string gym_id = 1;
-	repeated uint64 attacking_pokemon_id = 2;
-	uint64 defending_pokemon_id = 3;
+	repeated fixed64 attacking_pokemon_id = 2;
+	fixed64 defending_pokemon_id = 3;
 	double player_lat_degrees = 4;
 	double player_lng_degrees = 5;
 }
@@ -12255,7 +12255,7 @@ message StartRaidBattleProto {
 	string gym_id = 1;
 	int64 raid_seed = 2;
 	repeated int32 lobby_id = 4;
-	repeated uint64 attacking_pokemon_id = 5;
+	repeated fixed64 attacking_pokemon_id = 5;
 	double player_lat_degrees = 6;
 	double player_lng_degrees = 7;
 	double gym_lat_degrees = 8;
@@ -12303,7 +12303,7 @@ message SubmitCombatChallengePokemonsOutProto {
 // ref: Holoholo.Rpc.SubmitCombatChallengePokemonsProto
 message SubmitCombatChallengePokemonsProto {
 	string challenge_id = 1;
-	repeated uint64 attacking_pokemon_id = 2;
+	repeated fixed64 attacking_pokemon_id = 2;
 }
 
 // ref: Holoholo.Rpc.TeamChangeInfoProto
@@ -12406,8 +12406,8 @@ message TradingProto {
 			FAVORITE = 13;
 		}
 
-		uint64 pokemon_id = 1;
-		TradingProto.ExclusionReason exclusion_reason = 2;
+		fixed64 pokemon_id = 1;
+		ExclusionReason exclusion_reason = 2;
 	}
 
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto
@@ -12450,14 +12450,14 @@ message TradingProto {
 				FAVORITE = 13;
 			}
 
-			uint64 pokemon_id = 1;
-			TradingProto.ExclusionReason exclusion_reason = 2;
+			fixed64 pokemon_id = 1;
+			ExclusionReason exclusion_reason = 2;
 		}
 
 		string player_id = 1;
 		PlayerPublicProfileProto public_profile = 2;
-		repeated TradingProto.ExcludedPokemon excluded_pokemon = 3;
-		TradingProto.TradingPokemonProto trading_pokemon = 4;
+		repeated ExcludedPokemon excluded_pokemon = 3;
+		TradingPokemonProto trading_pokemon = 4;
 		LootProto bonus = 5;
 		LootProto price = 6;
 		bool can_afford_trading = 7;
@@ -12466,7 +12466,7 @@ message TradingProto {
 
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingPokemonProto
 	message TradingPokemonProto {
-		uint64 pokemon_id = 1;
+		fixed64 pokemon_id = 1;
 		int32 pokedex_entry_number = 2;
 		int32 original_cp = 3;
 		int32 adjusted_cp_min = 4;
@@ -12537,7 +12537,7 @@ message UnlockPokemonMoveOutProto {
 
 // ref: Holoholo.Rpc.UnlockPokemonMoveProto
 message UnlockPokemonMoveProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 }
 
 // ref: Holoholo.Rpc.UpdateCombatOutProto
@@ -12618,7 +12618,7 @@ message UpdateTradingOutProto {
 // ref: Holoholo.Rpc.UpdateTradingProto
 message UpdateTradingProto {
 	string player_id = 1;
-	uint64 pokemon_id = 2;
+	fixed64 pokemon_id = 2;
 }
 
 // ref: Holoholo.Rpc.UpgradePokemonOutProto
@@ -12640,7 +12640,7 @@ message UpgradePokemonOutProto {
 
 // ref: Holoholo.Rpc.UpgradePokemonProto
 message UpgradePokemonProto {
-	uint64 pokemon_id = 1;
+	fixed64 pokemon_id = 1;
 	bool preview = 2;
 }
 
@@ -12685,7 +12685,7 @@ message UseItemCaptureOutProto {
 // ref: Holoholo.Rpc.UseItemCaptureProto
 message UseItemCaptureProto {
 	Item item = 1;
-	uint64 encounter_id = 2;
+	fixed64 encounter_id = 2;
 	string spawn_point_guid = 3;
 }
 
@@ -12732,7 +12732,7 @@ message UseItemEncounterOutProto {
 // ref: Holoholo.Rpc.UseItemEncounterProto
 message UseItemEncounterProto {
 	Item item = 1;
-	uint64 encounter_id = 2;
+	fixed64 encounter_id = 2;
 	string spawn_point_guid = 3;
 }
 
@@ -12758,7 +12758,7 @@ message UseItemMoveRerollOutProto {
 // ref: Holoholo.Rpc.UseItemMoveRerollProto
 message UseItemMoveRerollProto {
 	Item item = 1;
-	uint64 pokemon_id = 2;
+	fixed64 pokemon_id = 2;
 	bool reroll_unlocked_move = 3;
 }
 
@@ -12780,7 +12780,7 @@ message UseItemPotionOutProto {
 // ref: Holoholo.Rpc.UseItemPotionProto
 message UseItemPotionProto {
 	Item item = 1;
-	uint64 pokemon_id = 2;
+	fixed64 pokemon_id = 2;
 }
 
 // ref: Holoholo.Rpc.UseItemRareCandyOutProto
@@ -12826,7 +12826,7 @@ message UseItemReviveOutProto {
 // ref: Holoholo.Rpc.UseItemReviveProto
 message UseItemReviveProto {
 	Item item = 1;
-	uint64 pokemon_id = 2;
+	fixed64 pokemon_id = 2;
 }
 
 // ref: Holoholo.Rpc.UseItemStardustBoostOutProto
@@ -12975,7 +12975,7 @@ message WebTelemetry {
 
 // ref: Holoholo.Rpc.WildPokemonProto
 message WildPokemonProto {
-	uint64 encounter_id = 1;
+	fixed64 encounter_id = 1;
 	int64 last_modified_ms = 2;
 	double latitude = 3;
 	double longitude = 4;
@@ -13079,11 +13079,11 @@ message WithSuperEffectiveChargeMoveProto {
 // ref: Holoholo.Rpc.WithThrowTypeProto
 message WithThrowTypeProto {
 	// ref: Holoholo.Rpc.WithThrowTypeProto/ThrowOneofCase
-	enum ThrowOneofCase {
-		none = 0;
-		throw_type = 1;
-		hit = 2;
-	}
+	//oneof Throw {
+		//none = 0;
+		//throw_type = 1;
+		//hit = 2;
+	//}
 
 	HoloActivityType throw_type = 1;
 	bool hit = 2;
@@ -13220,22 +13220,22 @@ enum PresentationType {
 // ref: Niantic.Platform.Telemetry.Distribution
 message Distribution {
 	// ref: Niantic.Platform.Telemetry.Distribution/Types/BucketOptions/BucketTypeOneofCase
-	enum BucketTypeOneofCase {
-		none = 0;
-		linear_buckets = 1;
-		exponential_buckets = 2;
-		explicit_buckets = 3;
-	}
+	//oneof BucketType {
+		//none = 0;
+		//linear_buckets = 1;
+		//exponential_buckets = 2;
+		//explicit_buckets = 3;
+	//}
 
 	// ref: Niantic.Platform.Telemetry.Distribution/Types/BucketOptions
 	message BucketOptions {
 		// ref: Niantic.Platform.Telemetry.Distribution/Types/BucketOptions/BucketTypeOneofCase
-		enum BucketTypeOneofCase {
-			none = 0;
-			linear_buckets = 1;
-			exponential_buckets = 2;
-			explicit_buckets = 3;
-		}
+		//oneof BucketType {
+			//none = 0;
+			//linear_buckets = 1;
+			//exponential_buckets = 2;
+			//explicit_buckets = 3;
+		//}
 
 		// ref: Niantic.Platform.Telemetry.Distribution/Types/BucketOptions/Types/ExplicitBuckets
 		message ExplicitBuckets {
@@ -13256,9 +13256,9 @@ message Distribution {
 			int64 offset = 3;
 		}
 
-		Distribution.LinearBuckets linear_buckets = 1;
-		Distribution.ExponentialBuckets exponential_buckets = 2;
-		Distribution.ExplicitBuckets explicit_buckets = 3;
+		LinearBuckets linear_buckets = 1;
+		ExponentialBuckets exponential_buckets = 2;
+		ExplicitBuckets explicit_buckets = 3;
 	}
 
 	// ref: Niantic.Platform.Telemetry.Distribution/Types/BucketOptions/Types/ExplicitBuckets
@@ -13297,13 +13297,13 @@ message Distribution {
 // ref: Niantic.Platform.Telemetry.PlatformMetricData
 message PlatformMetricData {
 	// ref: Niantic.Platform.Telemetry.PlatformMetricData/DatapointValueOneofCase
-	enum DatapointValueOneofCase {
-		none = 0;
-		long_value = 2;
-		double_value = 3;
-		boolean_value = 4;
-		distribution = 5;
-	}
+	//oneof DatapointValue {
+		//none = 0;
+		//long_value = 2;
+		//double_value = 3;
+		//boolean_value = 4;
+		//distribution = 5;
+	//}
 
 	// ref: Niantic.Platform.Telemetry.PlatformMetricData/Types/Kind
 	enum Kind {

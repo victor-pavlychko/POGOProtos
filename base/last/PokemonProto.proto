@@ -2,7 +2,7 @@ syntax = "proto3";
 package DumpProtos;
 
 message PokemonProto {
-	uint64 id = 1;
+	fixed64 id = 1;
 	int32 pokemon_id = 2;
 	int32 cp = 3;
 	int32 stamina = 4;

@@ -3,5 +3,5 @@ package DumpProtos;
 
 message UseItemPotionProto {
 	Item item = 1;
-	uint64 pokemon_id = 2;
+	fixed64 pokemon_id = 2;
 }

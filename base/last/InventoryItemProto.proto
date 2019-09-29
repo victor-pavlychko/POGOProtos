@@ -6,9 +6,9 @@ message InventoryItemProto {
 	bytes deleted_item_key = 2;
 	bytes item = 3;
 
-	oneof InventoryItem {
-		none = 0;
-		deleted_item_key = 2;
-		item = 3;
-	}
+	//oneof InventoryItem {
+		//none = 0;
+		//deleted_item_key = 2;
+		//item = 3;
+	//}
 }

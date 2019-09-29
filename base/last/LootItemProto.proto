@@ -10,13 +10,13 @@ message LootItemProto {
 	bool experience = 6;
 	PokemonProto pokemon_egg = 7;
 
-	oneof Type {
-		none = 0;
-		item = 1;
-		stardust = 2;
-		pokecoin = 3;
-		pokemon_candy = 4;
-		experience = 6;
-		pokemon_egg = 7;
-	}
+	//oneof Type {
+		//none = 0;
+		//item = 1;
+		//stardust = 2;
+		//pokecoin = 3;
+		//pokemon_candy = 4;
+		//experience = 6;
+		//pokemon_egg = 7;
+	//}
 }

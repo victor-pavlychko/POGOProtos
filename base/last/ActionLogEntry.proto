@@ -23,25 +23,25 @@ message ActionLogEntry {
 	PurifyPokemonLogEntry purify_pokemon = 19;
 	InvasionVictoryLogEntry invasion_victory = 20;
 
-	oneof Action {
-		none = 0;
-		catch_pokemon = 3;
-		fort_search = 4;
-		buddy_pokemon = 5;
-		raid_rewards = 6;
-		passcode_rewards = 7;
-		complete_quest = 8;
-		complete_quest_stamp_card = 9;
-		complete_quest_pokemon_encounter = 10;
-		beluga_transfer = 11;
-		open_gift = 12;
-		send_gift = 13;
-		trading = 14;
-		share_ex_raid_pass = 15;
-		decline_ex_raid_pass = 16;
-		fitness_rewards = 17;
-		combat = 18;
-		purify_pokemon = 19;
-		invasion_victory = 20;
-	}
+	//oneof Action {
+		//none = 0;
+		//catch_pokemon = 3;
+		//fort_search = 4;
+		//buddy_pokemon = 5;
+		//raid_rewards = 6;
+		//passcode_rewards = 7;
+		//complete_quest = 8;
+		//complete_quest_stamp_card = 9;
+		//complete_quest_pokemon_encounter = 10;
+		//beluga_transfer = 11;
+		//open_gift = 12;
+		//send_gift = 13;
+		//trading = 14;
+		//share_ex_raid_pass = 15;
+		//decline_ex_raid_pass = 16;
+		//fitness_rewards = 17;
+		//combat = 18;
+		//purify_pokemon = 19;
+		//invasion_victory = 20;
+	//}
 }
