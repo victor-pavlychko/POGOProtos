@@ -12,20 +12,20 @@ message CombatLeagueProto {
 	HoloBadgeType badge_type = 8;
 	int32 minigame_defense_chance_limit = 9;
 
-	oneof Condition {
-		none = 0;
-		with_player_level = 3;
-		with_pokemon_cp_limit = 4;
-		with_pokemon_type = 5;
-		with_pokemon_category = 6;
-	}
+	//oneof Condition {
+		//none = 0;
+		//with_player_level = 3;
+		//with_pokemon_cp_limit = 4;
+		//with_pokemon_type = 5;
+		//with_pokemon_category = 6;
+	//}
 
-	oneof Condition {
-		none = 0;
-		with_pokemon_cp_limit = 2;
-		with_pokemon_type = 3;
-		with_pokemon_category = 4;
-	}
+	//oneof Condition {
+		//none = 0;
+		//with_pokemon_cp_limit = 2;
+		//with_pokemon_type = 3;
+		//with_pokemon_category = 4;
+	//}
 
 	enum ConditionType {
 		UNSET = 0;
@@ -36,12 +36,12 @@ message CombatLeagueProto {
 	}
 
 	message PokemonConditionProto {
-		oneof Condition {
-			none = 0;
-			with_pokemon_cp_limit = 2;
-			with_pokemon_type = 3;
-			with_pokemon_category = 4;
-		}
+		//oneof Condition {
+			//none = 0;
+			//with_pokemon_cp_limit = 2;
+			//with_pokemon_type = 3;
+			//with_pokemon_category = 4;
+		//}
 
 		CombatLeagueProto.ConditionType type = 1;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 2;
@@ -50,13 +50,13 @@ message CombatLeagueProto {
 	}
 
 	message UnlockConditionProto {
-		oneof Condition {
-			none = 0;
-			with_player_level = 3;
-			with_pokemon_cp_limit = 4;
-			with_pokemon_type = 5;
-			with_pokemon_category = 6;
-		}
+		//oneof Condition {
+			//none = 0;
+			//with_player_level = 3;
+			//with_pokemon_cp_limit = 4;
+			//with_pokemon_type = 5;
+			//with_pokemon_category = 6;
+		//}
 
 		CombatLeagueProto.ConditionType type = 1;
 		int32 min_pokemon_count = 2;

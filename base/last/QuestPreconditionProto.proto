@@ -8,13 +8,13 @@ message QuestPreconditionProto {
 	Medal medal = 4;
 	Quests quests = 5;
 
-	oneof Condition {
-		none = 0;
-		quest_template_id = 2;
-		level = 3;
-		medal = 4;
-		quests = 5;
-	}
+	//oneof Condition {
+		//none = 0;
+		//quest_template_id = 2;
+		//level = 3;
+		//medal = 4;
+		//quests = 5;
+	//}
 
 	enum Operator {
 		UNSET = 0;

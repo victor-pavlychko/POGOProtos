@@ -9,20 +9,20 @@ message Distribution {
 	BucketOptions bucket_options = 5;
 	repeated int64 bucket_counts = 6;
 
-	oneof BucketType {
-		none = 0;
-		linear_buckets = 1;
-		exponential_buckets = 2;
-		explicit_buckets = 3;
-	}
+	//oneof BucketType {
+		//none = 0;
+		//linear_buckets = 1;
+		//exponential_buckets = 2;
+		//explicit_buckets = 3;
+	//}
 
 	message BucketOptions {
-		oneof BucketType {
-			none = 0;
-			linear_buckets = 1;
-			exponential_buckets = 2;
-			explicit_buckets = 3;
-		}
+		//oneof BucketType {
+			//none = 0;
+			//linear_buckets = 1;
+			//exponential_buckets = 2;
+			//explicit_buckets = 3;
+		//}
 
 		message ExplicitBuckets {
 			repeated int64 bounds = 1;

@@ -10,9 +10,9 @@ message PokestopIncidentDisplayProto {
 	CharacterDisplayProto character_display = 10;
 	InvasionFinishedDisplayProto invasion_finished = 11;
 
-	oneof MapDisplay {
-		none = 0;
-		character_display = 10;
-		invasion_finished = 11;
-	}
+	//oneof MapDisplay {
+		//none = 0;
+		//character_display = 10;
+		//invasion_finished = 11;
+	//}
 }

@@ -2,15 +2,6 @@ syntax = "proto3";
 package DumpProtos;
 
 message TradingProto {
-		string player_id = 1;
-		PlayerPublicProfileProto public_profile = 2;
-		repeated ExcludedPokemon excluded_pokemon = 3;
-		TradingPokemonProto trading_pokemon = 4;
-		LootProto bonus = 5;
-		LootProto price = 6;
-		bool can_afford_trading = 7;
-		bool has_confirmed = 8;
-	}
 	TradingState state = 1;
 	uint64 expiration_ms = 2;
 	TradingPlayerProto player = 3;
@@ -108,6 +99,16 @@ message TradingProto {
 			fixed64 pokemon_id = 1;
 			TradingProto.ExclusionReason exclusion_reason = 2;
 		}
+
+		string player_id = 1;
+		PlayerPublicProfileProto public_profile = 2;
+		repeated TradingProto.ExcludedPokemon excluded_pokemon = 3;
+		TradingProto.TradingPokemonProto trading_pokemon = 4;
+		LootProto bonus = 5;
+		LootProto price = 6;
+		bool can_afford_trading = 7;
+		bool has_confirmed = 8;
+	}
 
 	message TradingPokemonProto {
 		fixed64 pokemon_id = 1;
