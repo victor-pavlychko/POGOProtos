@@ -43,7 +43,7 @@ message CombatLeagueProto {
 			//with_pokemon_category = 4;
 		//}
 
-		CombatLeagueProto.ConditionType type = 1;
+		ConditionType type = 1;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 2;
 		WithPokemonTypeProto with_pokemon_type = 3;
 		WithPokemonCategoryProto with_pokemon_category = 4;
@@ -58,7 +58,7 @@ message CombatLeagueProto {
 			//with_pokemon_category = 6;
 		//}
 
-		CombatLeagueProto.ConditionType type = 1;
+		ConditionType type = 1;
 		int32 min_pokemon_count = 2;
 		WithPlayerLevelProto with_player_level = 3;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 4;

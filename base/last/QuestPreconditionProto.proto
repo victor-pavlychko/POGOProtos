@@ -35,13 +35,13 @@ message QuestPreconditionProto {
 	}
 
 	message Level {
-		QuestPreconditionProto.Operator operator = 1;
+		Operator operator = 1;
 		int32 level = 2;
 	}
 
 	message Medal {
 		HoloBadgeType type = 1;
-		QuestPreconditionProto.Operator operator = 2;
+		Operator operator = 2;
 		int32 badge_rank = 3;
 	}
 

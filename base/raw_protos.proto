@@ -1081,7 +1081,7 @@ message ClientInbox {
 		string category = 3;
 		int64 create_timestamp_ms = 4;
 		repeated TemplateVariable variables = 5;
-		repeated ClientInbox.Label labels = 6;
+		repeated Label labels = 6;
 		int64 expire_time_ms = 7;
 	}
 
@@ -1258,7 +1258,7 @@ message GetFriendDetailsOutProto {
 		int32 fetched_from_player_mapper = 3;
 		int32 fetched_from_status_cache = 4;
 		int32 failed_to_fetch = 5;
-		repeated GetFriendDetailsOutProto.Callee callee_list = 6;
+		repeated Callee callee_list = 6;
 	}
 
 	Result result = 1;
@@ -6227,7 +6227,7 @@ message CombatLeagueProto {
 			//with_pokemon_category = 4;
 		//}
 
-		CombatLeagueProto.ConditionType type = 1;
+		ConditionType type = 1;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 2;
 		WithPokemonTypeProto with_pokemon_type = 3;
 		WithPokemonCategoryProto with_pokemon_category = 4;
@@ -6244,7 +6244,7 @@ message CombatLeagueProto {
 			//with_pokemon_category = 6;
 		//}
 
-		CombatLeagueProto.ConditionType type = 1;
+		ConditionType type = 1;
 		int32 min_pokemon_count = 2;
 		WithPlayerLevelProto with_player_level = 3;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 4;
@@ -6393,9 +6393,9 @@ message CombatProto {
 	// ref: Holoholo.Rpc.CombatProto/Types/CombatPlayerProto
 	message CombatPlayerProto {
 		PlayerPublicProfileProto public_profile = 1;
-		CombatProto.CombatPokemonProto active_pokemon = 2;
-		repeated CombatProto.CombatPokemonProto reserve_pokemon = 3;
-		repeated CombatProto.CombatPokemonProto fainted_pokemon = 4;
+		CombatPokemonProto active_pokemon = 2;
+		repeated CombatPokemonProto reserve_pokemon = 3;
+		repeated CombatPokemonProto fainted_pokemon = 4;
 		CombatActionProto current_action = 5;
 		bool lockstep_ack = 6;
 		int32 last_updated_turn = 7;
@@ -9275,7 +9275,7 @@ message ListAvatarCustomizationsOutProto {
 	// ref: Holoholo.Rpc.ListAvatarCustomizationsOutProto/Types/AvatarCustomization
 	message AvatarCustomization {
 		string avatar_template_id = 1;
-		repeated ListAvatarCustomizationsOutProto.Label labels = 2;
+		repeated Label labels = 2;
 	}
 
 	Result result = 1;
@@ -11347,14 +11347,14 @@ message QuestPreconditionProto {
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Level
 	message Level {
-		QuestPreconditionProto.Operator operator = 1;
+		Operator operator = 1;
 		int32 level = 2;
 	}
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Medal
 	message Medal {
 		HoloBadgeType type = 1;
-		QuestPreconditionProto.Operator operator = 2;
+		Operator operator = 2;
 		int32 badge_rank = 3;
 	}
 
@@ -12407,7 +12407,7 @@ message TradingProto {
 		}
 
 		fixed64 pokemon_id = 1;
-		TradingProto.ExclusionReason exclusion_reason = 2;
+		ExclusionReason exclusion_reason = 2;
 	}
 
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto
@@ -12451,13 +12451,13 @@ message TradingProto {
 			}
 
 			fixed64 pokemon_id = 1;
-			TradingProto.ExclusionReason exclusion_reason = 2;
+			ExclusionReason exclusion_reason = 2;
 		}
 
 		string player_id = 1;
 		PlayerPublicProfileProto public_profile = 2;
-		repeated TradingProto.ExcludedPokemon excluded_pokemon = 3;
-		TradingProto.TradingPokemonProto trading_pokemon = 4;
+		repeated ExcludedPokemon excluded_pokemon = 3;
+		TradingPokemonProto trading_pokemon = 4;
 		LootProto bonus = 5;
 		LootProto price = 6;
 		bool can_afford_trading = 7;
@@ -13256,9 +13256,9 @@ message Distribution {
 			int64 offset = 3;
 		}
 
-		Distribution.LinearBuckets linear_buckets = 1;
-		Distribution.ExponentialBuckets exponential_buckets = 2;
-		Distribution.ExplicitBuckets explicit_buckets = 3;
+		LinearBuckets linear_buckets = 1;
+		ExponentialBuckets exponential_buckets = 2;
+		ExplicitBuckets explicit_buckets = 3;
 	}
 
 	// ref: Niantic.Platform.Telemetry.Distribution/Types/BucketOptions/Types/ExplicitBuckets

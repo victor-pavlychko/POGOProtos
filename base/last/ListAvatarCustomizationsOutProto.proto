@@ -26,6 +26,6 @@ message ListAvatarCustomizationsOutProto {
 
 	message AvatarCustomization {
 		string avatar_template_id = 1;
-		repeated ListAvatarCustomizationsOutProto.Label labels = 2;
+		repeated Label labels = 2;
 	}
 }
