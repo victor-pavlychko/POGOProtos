@@ -269,5 +269,5 @@ enum PokemonMove {
 	THUNDER_FANG = 326;
 	ICE_FANG = 327;
 	HORN_DRILL = 328;
-	FISSURE = 329
+	FISSURE = 329;
 }
