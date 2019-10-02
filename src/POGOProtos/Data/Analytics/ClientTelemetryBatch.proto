@@ -14,5 +14,6 @@ message ClientTelemetryBatch {
 		DITTO = 1;
 		GAME = 2;
 		TITAN = 3;
+		COMMON = 4;
 	}
 }

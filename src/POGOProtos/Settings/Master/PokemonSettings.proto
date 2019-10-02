@@ -60,6 +60,7 @@ message PokemonSettings {
 	repeated float combat_player_pokemon_position_offset = 44;
 	repeated .POGOProtos.Settings.Master.Pokemon.AnimationOverride photobomb_animation_overrides = 45;
 	ShadowAttributes shadow = 46;
+	int32 buddy_group_number = 47;
 
 	message PokemonThirdMoveAttributes {
 		int32 stardust_to_unlock = 1;

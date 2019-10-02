@@ -29,6 +29,8 @@ message CombatSettings {
 	int32 blocked_flyout_duration_turns = 25;
 	int32 normal_effective_flyout_duration_turns = 26;
 	int32 faint_animation_duration_turns = 27;
+	int32 npc_swap_delay_turns = 28;
+	int32 npc_charged_attack_delay_turns = 29;
 
 	message CombatOffensiveInputChallengeSettings {
 		float score_per_tap = 1;

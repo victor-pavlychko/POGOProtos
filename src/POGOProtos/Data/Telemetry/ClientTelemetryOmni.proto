@@ -51,6 +51,9 @@ import "POGOProtos/Data/Telemetry/LeavePointOfInterestTelemetry.proto";
 import "POGOProtos/Data/Telemetry/ViewPointOfInterestImageTelemetry.proto";
 import "POGOProtos/Settings/SocialClientSettings.proto";
 import "POGOProtos/Settings/Master/Item/UserAttributes.proto";
+import "POGOProtos/Data/Telemetry/LeaveInteractionRangeTelemetry.proto";
+import "POGOProtos/Data/Telemetry/ShoppingPageClickTelemetry.proto";
+import "POGOProtos/Data/Telemetry/ShoppingPageScrollTelemetry.proto";
 
 message ClientTelemetryOmni {
 	oneof TelemetryData {
@@ -103,6 +106,9 @@ message ClientTelemetryOmni {
 		.POGOProtos.Data.Telemetry.CombatMinigameTelemetry combat_minigame_telemetry = 47;
 		.POGOProtos.Data.Telemetry.LeavePointOfInterestTelemetry leave_point_of_interest_telemetry = 48;
 		.POGOProtos.Data.Telemetry.ViewPointOfInterestImageTelemetry view_point_of_interest_image_telemetry = 49;
+		.POGOProtos.Data.Telemetry.LeaveInteractionRangeTelemetry leave_interaction_range_telemetry = 51;
+		.POGOProtos.Data.Telemetry.ShoppingPageClickTelemetry shopping_page_click_telemetry = 52;
+		.POGOProtos.Data.Telemetry.ShoppingPageScrollTelemetry shopping_page_scroll_telemetry = 53;
 		.POGOProtos.Data.Telemetry.PlatformServerData server_data = 1001;
 	}
 }

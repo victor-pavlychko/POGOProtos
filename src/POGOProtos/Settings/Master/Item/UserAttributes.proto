@@ -41,4 +41,18 @@ message UserAttributes {
 	int32 field_research_stamp_progress = 37;
 	int32 level_up = 38;
 	bool sent_friend_request = 39;
+	string is_egg_incubating_v2 = 40;
+	string has_eggs_v2 = 41;
+	string using_star_piece_v2 = 42;
+	string using_lucky_egg_v2 = 43;
+	string using_incense_ordinary_v2 = 44;
+	string using_incense_spicy_v2 = 45;
+	string using_incense_cool_v2 = 46;
+	string using_incense_floral_v2 = 47;
+	string using_lure_ordinary_v2 = 48;
+	string using_lure_mossy_v2 = 49;
+	string using_lure_glacial_v2 = 50;
+	string using_lure_magnetic_v2 = 51;
+	string adventure_sync_opt_in_v2 = 52;
+	string geo_fence_opt_in_v2 = 53;
 }
