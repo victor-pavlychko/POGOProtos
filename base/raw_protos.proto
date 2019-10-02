@@ -251,6 +251,14 @@ enum BattleResultsExit {
 //------------------------------
 //----- Begin holoholo -----
 
+// ref: Niantic.Holoholo.CalendarAddResult
+enum CalendarAddResult {
+	UNKNOWN = 0;
+	PERMISSION_DENIED = -2;
+	NOT_ADDED = -1;
+	ADDED = 1;
+}
+
 // ref: Niantic.Holoholo.PlayerOnboardingPath
 enum PlayerOnboardingPath {
 	UNSET = 0;
@@ -499,7 +507,6 @@ enum PokemonAnim {
 	SLEEP_01 = 9;
 	SLEEP_02 = 10;
 	SLEEP_WAIT = 11;
-	_MAX = 12;
 }
 
 // ref: UpdateType
@@ -2656,6 +2663,7 @@ enum HoloBadgeType {
 	BADGE_SAFARIZONE_2019_MONTREAL_DAY_02_EARLYACCESS = 5044;
 	BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_GENERAL = 5045;
 	BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_EARLYACCESS = 5046;
+	BADGE_GLOBAL_TICKETED_EVENT = 5100;
 }
 
 // ref: Holoholo.Rpc.HoloholoClientTelemetryIds
@@ -2717,6 +2725,7 @@ enum HoloIapItemCategory {
 	IAP_CATEGORY_AVATAR = 5;
 	IAP_CATEGORY_AVATAR_STORE_LINK = 6;
 	IAP_CATEGORY_TEAM_CHANGE = 7;
+	IAP_CATEGORY_GLOBAL_EVENT_TICKET = 10;
 }
 
 // ref: Holoholo.Rpc.HoloItemCategory
@@ -2740,6 +2749,7 @@ enum HoloItemCategory {
 	ITEM_CATEGORY_STARDUST_BOOST = 16;
 	ITEM_CATEGORY_FRIEND_GIFT_BOX = 17;
 	ITEM_CATEGORY_TEAM_CHANGE = 18;
+	ITEM_CATEGORY_GLOBAL_EVENT_TICKET = 22;
 }
 
 // ref: Holoholo.Rpc.HoloItemEffect
@@ -2785,6 +2795,7 @@ enum HoloItemType {
 	ITEM_TYPE_STARDUST_BOOST = 17;
 	ITEM_TYPE_FRIEND_GIFT_BOX = 18;
 	ITEM_TYPE_TEAM_CHANGE = 19;
+	ITEM_TYPE_GLOBAL_EVENT_TICKET = 23;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonClass
@@ -4055,6 +4066,9 @@ enum HoloPokemonMove {
 	V0325_MOVE_LOCK_ON_FAST = 325;
 	V0326_MOVE_THUNDER_FANG_FAST = 326;
 	V0327_MOVE_ICE_FANG_FAST = 327;
+	V0328_MOVE_HORN_DRILL = 328;
+	V0329_MOVE_FISSURE = 329;
+	V0330_MOVE_SACRED_SWORD = 330;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMovementType
@@ -4179,6 +4193,7 @@ enum Item {
 	ITEM_STAR_PIECE = 1404;
 	ITEM_FRIEND_GIFT_BOX = 1405;
 	ITEM_TEAM_CHANGE = 1406;
+	ITEM_GLOBAL_EVENT_TICKET = 1600;
 }
 
 // ref: Holoholo.Rpc.ItemUseTelemetryIds
@@ -4635,12 +4650,54 @@ enum ShareExRaidPassResult {
 	ERROR_FRIEND_NOT_ELIGIBLE = 11;
 }
 
+// ref: Holoholo.Rpc.ShoppingPageScrollIds
+enum ShoppingPageScrollIds {
+	UNDEFINED_SHOPPING_PAGE_SCROLL_TYPE = 0;
+	LAST_SCROLL = 1;
+	MAX_SCROLL = 2;
+}
+
 // ref: Holoholo.Rpc.ShoppingPageTelemetryIds
 enum ShoppingPageTelemetryIds {
 	UNDEFINED_SHOPPING_PAGE_EVENT = 0;
 	CLICK_CUSTOMIZE_AVATAR = 1;
 	QUICK_SHOP_MORE = 2;
 	QUICK_SHOP_EXCHANGE = 3;
+	CLICK_SHOP = 4;
+	QUIT_SHOP = 5;
+	CLICK_SKU = 6;
+	QUIT_SKU = 7;
+	CLICK_SKU_EXCHANGE = 8;
+	CLICK_SHOP_AVATAR = 9;
+	QUIT_SHOP_AVATAR = 10;
+	CLICK_AVATAR_TYPE = 11;
+	QUIT_AVATAR_TYPE = 12;
+	CLICK_AVATAR_ITEM = 13;
+	QUIT_AVATAR_ITEM = 14;
+	CONFIRM_AVATAR_ITEM = 15;
+	CLICK_AVATAR_ITEM_COLOR = 16;
+	QUIT_AVATAR_ITEM_COLOR = 17;
+	CONFIRM_AVATAR_ITEM_COLOR = 18;
+}
+
+// ref: Holoholo.Rpc.ShoppingPageTelemetrySource
+enum ShoppingPageTelemetrySource {
+	UNDEFINED_SHOPPING_PAGE_SOURCE = 0;
+	SOURCE_MAIN_MENU = 1;
+	SOURCE_POKEMON_BAG_FULL = 2;
+	SOURCE_INCUBATOR_SELECTOR = 3;
+	SOURCE_POKESTOP_DISK_INTERACTION = 4;
+	SOURCE_OPEN_GIFT_BAG_FULL = 5;
+	SOURCE_QUICK_SHOP_BAG_FULL_ENCOUNTER = 6;
+	SOURCE_QUICK_SHOP_BAG_FULL_RAID = 7;
+	SOURCE_QUICK_SHOP_MORE = 8;
+	SOURCE_AVATAR_ITEM = 9;
+	SOURCE_POKEMON_ENCOUNTER = 10;
+	SOURCE_PLAYER_PROFILE_PAGE = 11;
+	SOURCE_STORE_FRONT = 12;
+	SOURCE_AVATAR_CUSTOMIZATION_AWARD = 13;
+	SOURCE_FIRST_TIME_USER_FLOW = 14;
+	SOURCE_BADGE_DETAIL_AVATAR_REWARD = 15;
 }
 
 // ref: Holoholo.Rpc.SocialTelemetryIds
@@ -6187,6 +6244,7 @@ message CombatGlobalSettingsProto {
 	bool enable_spin_minigame = 12;
 	bool enable_quick_swap_v2 = 13;
 	bool enable_particle_minigame = 18;
+	bool enable_flyout_animations = 20;
 }
 
 // ref: Holoholo.Rpc.CombatLeagueProto
@@ -6474,6 +6532,8 @@ message CombatSettingsProto {
 	int32 blocked_flyout_duration_turns = 25;
 	int32 normal_effective_flyout_duration_turns = 26;
 	int32 faint_animation_duration_turns = 27;
+	int32 npc_swap_delay_turns = 28;
+	int32 npc_charged_attack_delay_turns = 29;
 }
 
 // ref: Holoholo.Rpc.CombatStatStageSettingsProto
@@ -8322,6 +8382,17 @@ message GiftBoxProto {
 	int64 sent_bucket = 9;
 }
 
+// ref: Holoholo.Rpc.GlobalEventTicketAttributesProto
+message GlobalEventTicketAttributesProto {
+	HoloBadgeType event_badge = 1;
+	int64 grant_badge_before_event_start_ms = 2;
+	string event_start_time = 3;
+	string event_end_time = 4;
+	string item_bag_description_key = 6;
+	int64 client_event_start_time_utc_ms = 100;
+	int64 client_event_end_time_utc_ms = 101;
+}
+
 // ref: Holoholo.Rpc.GlobalSettingsProto
 message GlobalSettingsProto {
 	FortSettingsProto fort_settings = 2;
@@ -8364,6 +8435,7 @@ message GlobalSettingsProto {
 	IncidentGlobalSettingsProto incident_settings = 39;
 	KoalaSettingsProto koala_settings = 40;
 	KangarooSettingsProto kangaroo_settings = 41;
+	InputSettingsProto input_settings = 44;
 }
 
 // ref: Holoholo.Rpc.GpsSettingsProto
@@ -8734,6 +8806,9 @@ message HoloholoClientTelemetryOmniProto {
 		//combat_minigame_telemetry = 47;
 		//leave_point_of_interest_telemetry = 48;
 		//view_point_of_interest_image_telemetry = 49;
+		//leave_interaction_range_telemetry = 51;
+		//shopping_page_click_telemetry = 52;
+		//shopping_page_scroll_telemetry = 53;
 	//}
 
 	BootTime boot_time = 1;
@@ -8785,6 +8860,9 @@ message HoloholoClientTelemetryOmniProto {
 	CombatMinigameTelemetry combat_minigame_telemetry = 47;
 	LeavePointOfInterestTelemetry leave_point_of_interest_telemetry = 48;
 	ViewPointOfInterestImageTelemetry view_point_of_interest_image_telemetry = 49;
+	LeaveInteractionRangeTelemetry leave_interaction_range_telemetry = 51;
+	ShoppingPageClickTelemetry shopping_page_click_telemetry = 52;
+	ShoppingPageScrollTelemetry shopping_page_scroll_telemetry = 53;
 	PlatformServerData server_data = 1001;
 }
 
@@ -8896,6 +8974,10 @@ message IapItemDisplayProto {
 	string sprite_id = 8;
 	string title = 9;
 	string description = 10;
+	string sku_enable_time = 11;
+	string sku_disable_time = 12;
+	int64 sku_enable_time_utc_ms = 13;
+	int64 sku_disable_time_utc_ms = 14;
 }
 
 // ref: Holoholo.Rpc.IapSettingsProto
@@ -8965,6 +9047,13 @@ message IncidentTicketAttributesProto {
 	Item upgraded_item = 3;
 }
 
+// ref: Holoholo.Rpc.InputSettingsProto
+message InputSettingsProto {
+	bool enable_frame_independent_spin = 1;
+	int32 milliseconds_processed_spin_force = 2;
+	float spin_speed_multiplier = 3;
+}
+
 // ref: Holoholo.Rpc.InvasionEncounterOutProto
 message InvasionEncounterOutProto {
 	// ref: Holoholo.Rpc.InvasionEncounterOutProto/Types/PremierBallsDisplayProto
@@ -9022,6 +9111,7 @@ message InvasionStatus {
 		ERROR_WRONG_STEP = 6;
 		ERROR_PLAYER_BELOW_MIN_LEVEL = 7;
 		ERROR_INCIDENT_EXPIRED = 8;
+		ERROR_MISSING_INCIDENT_TICKET = 9;
 		ERROR_ENCOUNTER_POKEMON_INVENTORY_FULL = 10;
 		ERROR_INVALID_HEALTH_UPDATES = 20;
 		ERROR_ATTACKING_POKEMON_INVALID = 30;
@@ -9109,6 +9199,7 @@ message ItemSettingsProto {
 	FortModifierAttributesProto fort_modifier = 15;
 	StardustBoostAttributesProto stardust_boost = 16;
 	IncidentTicketAttributesProto incident_ticket = 17;
+	GlobalEventTicketAttributesProto global_event_ticket = 18;
 }
 
 // ref: Holoholo.Rpc.ItemTelemetry
@@ -9161,6 +9252,16 @@ message KoalaSettingsProto {
 	bool use_koala = 3;
 }
 
+// ref: Holoholo.Rpc.LeaveInteractionRangeTelemetry
+message LeaveInteractionRangeTelemetry {
+	string result = 1;
+	string fort_id = 2;
+	int32 fort_type = 3;
+	int64 client_timestamp = 4;
+	string partner_id = 5;
+	int64 time_spent = 6;
+}
+
 // ref: Holoholo.Rpc.LeaveLobbyOutProto
 message LeaveLobbyOutProto {
 	// ref: Holoholo.Rpc.LeaveLobbyOutProto/Types/Result
@@ -9189,6 +9290,7 @@ message LeavePointOfInterestTelemetry {
 	int32 fort_type = 3;
 	int64 client_timestamp = 4;
 	string partner_id = 5;
+	int64 time_spent = 6;
 }
 
 // ref: Holoholo.Rpc.LeveledUpFriendsProto
@@ -9833,6 +9935,7 @@ message PasscodeRewardsLogEntry {
 // ref: Holoholo.Rpc.PasscodeSettingsProto
 message PasscodeSettingsProto {
 	bool show_passcode_in_store = 1;
+	bool use_passcode_v2 = 2;
 }
 
 // ref: Holoholo.Rpc.PermissionsFlowTelemetry
@@ -10754,6 +10857,48 @@ message PokemonDisplayProto {
 		PINSIR_SHADOW = 899;
 		PINSIR_PURIFIED = 900;
 		PIKACHU_VS_2019 = 901;
+		ONIX_NORMAL = 902;
+		ONIX_SHADOW = 903;
+		ONIX_PURIFIED = 904;
+		STEELIX_NORMAL = 905;
+		STEELIX_SHADOW = 906;
+		STEELIX_PURIFIED = 907;
+		SHUPPET_NORMAL = 908;
+		SHUPPET_SHADOW = 909;
+		SHUPPET_PURIFIED = 910;
+		BANETTE_NORMAL = 911;
+		BANETTE_SHADOW = 912;
+		BANETTE_PURIFIED = 913;
+		DUSKULL_NORMAL = 914;
+		DUSKULL_SHADOW = 915;
+		DUSKULL_PURIFIED = 916;
+		DUSCLOPS_NORMAL = 917;
+		DUSCLOPS_SHADOW = 918;
+		DUSCLOPS_PURIFIED = 919;
+		DUSKNOIR_NORMAL = 920;
+		DUSKNOIR_SHADOW = 921;
+		DUSKNOIR_PURIFIED = 922;
+		SABLEYE_NORMAL = 923;
+		SABLEYE_SHADOW = 924;
+		SABLEYE_PURIFIED = 925;
+		SNORUNT_NORMAL = 926;
+		SNORUNT_SHADOW = 927;
+		SNORUNT_PURIFIED = 928;
+		GLALIE_NORMAL = 929;
+		GLALIE_SHADOW = 930;
+		GLALIE_PURIFIED = 931;
+		SNOVER_NORMAL = 932;
+		SNOVER_SHADOW = 933;
+		SNOVER_PURIFIED = 934;
+		ABOMASNOW_NORMAL = 935;
+		ABOMASNOW_SHADOW = 936;
+		ABOMASNOW_PURIFIED = 937;
+		DELIBIRD_NORMAL = 938;
+		DELIBIRD_SHADOW = 939;
+		DELIBIRD_PURIFIED = 940;
+		STANTLER_NORMAL = 941;
+		STANTLER_SHADOW = 942;
+		STANTLER_PURIFIED = 943;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
@@ -11002,6 +11147,7 @@ message PokemonSettingsProto {
 	repeated float combat_player_pokemon_position_offset = 44;
 	repeated AnimationOverrideProto photobomb_animation_overrides = 45;
 	ShadowAttributesProto shadow = 46;
+	int32 buddy_group_number = 47;
 }
 
 // ref: Holoholo.Rpc.PokemonStaminaUpdateProto
@@ -12102,6 +12248,21 @@ message ShareExRaidPassProto {
 	int64 raid_seed = 3;
 }
 
+// ref: Holoholo.Rpc.ShoppingPageClickTelemetry
+message ShoppingPageClickTelemetry {
+	ShoppingPageTelemetryIds shopping_page_click_id = 1;
+	ShoppingPageTelemetrySource shopping_page_click_source = 2;
+	string item_sku = 3;
+	bool has_item = 4;
+}
+
+// ref: Holoholo.Rpc.ShoppingPageScrollTelemetry
+message ShoppingPageScrollTelemetry {
+	ShoppingPageScrollIds scroll_type = 1;
+	int32 scroll_row = 2;
+	int32 total_rows = 3;
+}
+
 // ref: Holoholo.Rpc.ShoppingPageTelemetry
 message ShoppingPageTelemetry {
 	ShoppingPageTelemetryIds shopping_page_click_id = 1;
@@ -12912,6 +13073,20 @@ message UserAttributesProto {
 	int32 field_research_stamp_progress = 37;
 	int32 level_up = 38;
 	bool sent_friend_request = 39;
+	string is_egg_incubating_v2 = 40;
+	string has_eggs_v2 = 41;
+	string using_star_piece_v2 = 42;
+	string using_lucky_egg_v2 = 43;
+	string using_incense_ordinary_v2 = 44;
+	string using_incense_spicy_v2 = 45;
+	string using_incense_cool_v2 = 46;
+	string using_incense_floral_v2 = 47;
+	string using_lure_ordinary_v2 = 48;
+	string using_lure_mossy_v2 = 49;
+	string using_lure_glacial_v2 = 50;
+	string using_lure_magnetic_v2 = 51;
+	string adventure_sync_opt_in_v2 = 52;
+	string geo_fence_opt_in_v2 = 53;
 }
 
 // ref: Holoholo.Rpc.UserIssueWeatherReport
@@ -13343,6 +13518,23 @@ message TelemetryCommon {
 //------------------------------
 //----- Begin telemetry -----
 
+// ref: Niantic.Platform.Analytics.Telemetry.ApprovedCommonTelemetryProto
+message ApprovedCommonTelemetryProto {
+	// ref: Niantic.Platform.Analytics.Telemetry.ApprovedCommonTelemetryProto/TelemetryDataOneofCase
+	//oneof TelemetryData {
+		//none = 0;
+		//boot_time = 1;
+		//shop_click = 2;
+		//shop_view = 3;
+	//}
+
+	CommonTelemetryBootTime boot_time = 1;
+	CommonTelemetryShopClick shop_click = 2;
+	CommonTelemetryShopView shop_view = 3;
+	ServerRecordMetadata server_data = 4;
+	ClientTelemetryCommonFilterProto common_filters = 5;
+}
+
 // ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryBatchProto
 message ClientTelemetryBatchProto {
 	// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryBatchProto/Types/TelemetryScopeId
@@ -13351,6 +13543,7 @@ message ClientTelemetryBatchProto {
 		DITTO = 1;
 		GAME = 2;
 		TITAN = 3;
+		COMMON = 4;
 	}
 
 	TelemetryScopeId telemetry_scope_id = 1;
@@ -13375,16 +13568,83 @@ message ClientTelemetryClientSettingsProto {
 	string player_external_ua_id = 12;
 }
 
+// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryCommonFilterProto
+message ClientTelemetryCommonFilterProto {
+	string application_identifier = 1;
+	string operating_system_name = 2;
+	string device_model = 3;
+	string locale_country_code = 4;
+	string locale_language_code = 5;
+	double sampling_probability = 6;
+}
+
 // ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryRecordProto
 message ClientTelemetryRecordProto {
 	string record_id = 1;
 	bytes encoded_message = 2;
 	int64 client_timestamp_ms = 3;
 	int64 metric_id = 4;
+	ClientTelemetryCommonFilterProto common_filters = 5;
 }
 
 // ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetrySettingsRequestProto
 message ClientTelemetrySettingsRequestProto {
+}
+
+// ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryBootTime
+message CommonTelemetryBootTime {
+	string boot_phase = 1;
+	int64 duration_ms = 2;
+}
+
+// ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryShopClick
+message CommonTelemetryShopClick {
+	// ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryShopClick/Types/AccessType
+	enum AccessType {
+		UNSPECIFIED = 0;
+		PASSIVE = 1;
+		ACTIVE = 2;
+	}
+
+	string shopping_page_click_id = 1;
+	string sku_id = 2;
+	string item_id = 3;
+	string consolidated_item_id = 4;
+	string currency = 5;
+	int64 fiat_price = 6;
+	bool is_item_free_fiat = 7;
+	bool is_item_free_ingame = 8;
+	int64 time_elapsed_since_enter_page = 9;
+	string root_store_page_session_id = 10;
+	int64 pair_id = 11;
+	string store_page_name = 12;
+	string root_store_page_name = 13;
+	AccessType access_type = 14;
+	string fiat_formatted_price = 15;
+}
+
+// ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryShopView
+message CommonTelemetryShopView {
+	string shopping_page_view_type_id = 1;
+	int64 view_start_timestamp_ms = 2;
+	int64 view_end_timestamp_ms = 3;
+	string root_store_page_session_id = 4;
+}
+
+// ref: Niantic.Platform.Analytics.Telemetry.InGamePurchaseDetails
+message InGamePurchaseDetails {
+	string ingame_type = 1;
+	int64 ingame_price = 2;
+	int64 remaining_ingame_balance = 3;
+}
+
+// ref: Niantic.Platform.Analytics.Telemetry.ServerRecordMetadata
+message ServerRecordMetadata {
+	string user_id = 1;
+	string telemetry_name = 2;
+	string session_id = 3;
+	string request_id = 4;
+	int64 server_timestamp_ms = 5;
 }
 
 //----- End telemetry -----
