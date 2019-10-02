@@ -19,4 +19,5 @@ message ItemSettingsProto {
 	FortModifierAttributesProto fort_modifier = 15;
 	StardustBoostAttributesProto stardust_boost = 16;
 	IncidentTicketAttributesProto incident_ticket = 17;
+	GlobalEventTicketAttributesProto global_event_ticket = 18;
 }

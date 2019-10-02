@@ -14,5 +14,4 @@ enum PokemonAnim {
 	SLEEP_01 = 9;
 	SLEEP_02 = 10;
 	SLEEP_WAIT = 11;
-	_MAX = 12;
 }

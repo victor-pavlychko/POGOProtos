@@ -47,6 +47,7 @@ message PokemonSettingsProto {
 	repeated float combat_player_pokemon_position_offset = 44;
 	repeated AnimationOverrideProto photobomb_animation_overrides = 45;
 	ShadowAttributesProto shadow = 46;
+	int32 buddy_group_number = 47;
 
 	enum BuddySize {
 		BUDDY_MEDIUM = 0;

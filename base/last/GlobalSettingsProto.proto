@@ -42,4 +42,5 @@ message GlobalSettingsProto {
 	IncidentGlobalSettingsProto incident_settings = 39;
 	KoalaSettingsProto koala_settings = 40;
 	KangarooSettingsProto kangaroo_settings = 41;
+	InputSettingsProto input_settings = 44;
 }

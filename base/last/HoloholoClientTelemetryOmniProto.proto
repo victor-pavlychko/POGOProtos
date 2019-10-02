@@ -51,6 +51,9 @@ message HoloholoClientTelemetryOmniProto {
 	CombatMinigameTelemetry combat_minigame_telemetry = 47;
 	LeavePointOfInterestTelemetry leave_point_of_interest_telemetry = 48;
 	ViewPointOfInterestImageTelemetry view_point_of_interest_image_telemetry = 49;
+	LeaveInteractionRangeTelemetry leave_interaction_range_telemetry = 51;
+	ShoppingPageClickTelemetry shopping_page_click_telemetry = 52;
+	ShoppingPageScrollTelemetry shopping_page_scroll_telemetry = 53;
 	PlatformServerData server_data = 1001;
 
 	//oneof TelemetryData {
@@ -104,5 +107,8 @@ message HoloholoClientTelemetryOmniProto {
 		//combat_minigame_telemetry = 47;
 		//leave_point_of_interest_telemetry = 48;
 		//view_point_of_interest_image_telemetry = 49;
+		//leave_interaction_range_telemetry = 51;
+		//shopping_page_click_telemetry = 52;
+		//shopping_page_scroll_telemetry = 53;
 	//}
 }
