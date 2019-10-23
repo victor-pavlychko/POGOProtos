@@ -37,4 +37,5 @@ message PlayerData {
 	.POGOProtos.Data.Player.TeamChangeInfo team_change_info = 23;
 	repeated .POGOProtos.Enums.PokemonId consumed_eevee_easter_eggs = 24;
 	int64 time_zone_offset_ms = 26;
+	string helpshift_user_id = 28;
 }

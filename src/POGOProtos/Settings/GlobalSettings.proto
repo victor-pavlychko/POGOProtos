@@ -39,6 +39,7 @@ import "POGOProtos/Settings/KoalaSettings.proto";
 import "POGOProtos/Settings/KangarooSettings.proto";
 import "POGOProtos/Settings/IncidentGlobalSettings.proto";
 import "POGOProtos/Settings/InputSettings.proto";
+import "POGOProtos/Settings/GmtSettings.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
@@ -82,4 +83,5 @@ message GlobalSettings {
 	.POGOProtos.Settings.KoalaSettings koala_settings = 40;
 	.POGOProtos.Settings.KangarooSettings kangaroo_settings = 41;
 	.POGOProtos.Settings.InputSettings input_settings = 44;
+	.POGOProtos.Settings.GmtSettings gmt_settings = 45;
 }

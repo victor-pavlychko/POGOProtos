@@ -14,4 +14,8 @@ message InvasionTelemetry {
 	bool encounter_success = 7;
 	string invasion_id = 8;
 	bool player_tapped_npc = 9;
+	string radar = 10;
+	bool curfew = 11;
+	float duration = 12;
+	float distance = 13;
 }

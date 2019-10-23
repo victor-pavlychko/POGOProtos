@@ -67,8 +67,10 @@ enum RequestType {
 	AWARD_POKECOIN = 167;                       // ???
 	USE_ITEM_STARDUST_BOOST = 168;              // Implemented
 	REASSIGN_PLAYER = 169;                      // Implemented
+	REDEEM_POI_PASSCODE = 170;                  // Implemented
 	GET_ASSET_DIGEST = 300;                     // Implemented
 	GET_DOWNLOAD_URLS = 301;                    // Implemented
+	GET_ASSET_VERSION = 302;                    // Implemented
 	CLAIM_CODENAME = 403;                       // Implemented
 	SET_AVATAR = 404;                           // Implemented
 	SET_PLAYER_TEAM = 405;                      // Implemented
