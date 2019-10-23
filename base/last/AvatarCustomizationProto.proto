@@ -31,6 +31,7 @@ message AvatarCustomizationProto {
 		MEDAL_REWARD = 2;
 		IAP_CLOTHING = 3;
 		LEVEL_REWARD = 4;
+		COMBAT_RANK_REWARD = 5;
 	}
 
 	enum Slot {

@@ -49,4 +49,5 @@ message GameMasterClientTemplateProto {
 	InvasionNpcDisplaySettingsProto invasion_npc_display_settings = 48;
 	CombatTypeProto combat_type = 51;
 	LimitedPurchaseSkuSettingsProto limited_purchase_sku_settings = 60;
+	InvasionAvailabilitySettingsProto pokestop_invasion_availability_settings = 62;
 }

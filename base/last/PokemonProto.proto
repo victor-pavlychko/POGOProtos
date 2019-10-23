@@ -51,4 +51,5 @@ message PokemonProto {
 	PokemonCombatStatsProto pvp_combat_stats = 48;
 	PokemonCombatStatsProto npc_combat_stats = 49;
 	bool move2_is_purified_exclusive = 50;
+	string limited_pokemon_identifier = 51;
 }

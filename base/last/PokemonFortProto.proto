@@ -33,4 +33,5 @@ message PokemonFortProto {
 	bool challenge_quest_completed = 30;
 	bool is_ex_raid_eligible = 31;
 	PokestopIncidentDisplayProto pokestop_display = 32;
+	repeated PokestopIncidentDisplayProto pokestop_displays = 33;
 }

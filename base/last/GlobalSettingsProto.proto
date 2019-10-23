@@ -43,4 +43,5 @@ message GlobalSettingsProto {
 	KoalaSettingsProto koala_settings = 40;
 	KangarooSettingsProto kangaroo_settings = 41;
 	InputSettingsProto input_settings = 44;
+	GmtSettingsProto gmt_settings = 45;
 }
