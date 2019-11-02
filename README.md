@@ -19,7 +19,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.49.1       | 0.159.0       | Compatible      |  Protocol Buffers v3.10.0       |
+| 2.49.1       | 0.159.0       | Compatible      |  Protocol Buffers v3.10.1       |
 
 ### Usage
 
@@ -31,7 +31,7 @@ If you want to figure out the current version in an automated system, use this f
 
 ### Preparation
 
-Current recommended protoc version: "Protocol Buffers v3.10.0".
+Current recommended protoc version: "Protocol Buffers v3.10.1".
 
 You can find download links [here](https://github.com/google/protobuf/releases).
 
