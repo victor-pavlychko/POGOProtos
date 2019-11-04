@@ -25,7 +25,7 @@ enum PlatformRequestType {
 	PURCHASE_SKU = 5019;                         // Implemented
 	GET_AVAILABLE_SKUS_AND_BALANCES = 5020;      // Implemented
 	REDEEM_GOOGLE_RECEIPT = 5021;                // Implemented
-	REDEEM_APPLE_RECEIPT = 5022;                 // ???
+	REDEEM_APPLE_RECEIPT = 5022;                 // Implemented
 	REDEEM_DESKTOP_RECEIPT = 5023;               // ???
 	UPDATE_FITNESS_METRICS = 5024;               // Implemented
 	GET_FITNESS_REPORT = 5025;                   // Implemented
