@@ -4,7 +4,7 @@ package POGOProtos.Networking.Envelopes;
 import "POGOProtos/Networking/Requests/Request.proto";
 import "POGOProtos/Networking/Envelopes/AuthTicket.proto";
 import "POGOProtos/Networking/Platform/PlatformRequestType.proto";
-import "POGOProtos/Networking/Social/SocialRequest.proto";
+//import "POGOProtos/Networking/Social/SocialRequest.proto";
 
 message RequestEnvelope {
 	int32 status_code = 1;
