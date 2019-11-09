@@ -11,7 +11,8 @@ message RequestEnvelope {
 
 	uint64 request_id = 3;
 	repeated .POGOProtos.Networking.Requests.Request requests = 4;
-	repeated SocialRequest social_requests = 5;
+	//Untested maybe needs a good index order
+	//repeated SocialRequest social_requests = 5;
 	repeated PlatformRequest platform_requests = 6;
 	double latitude = 7;
 	double longitude = 8;
@@ -40,8 +41,8 @@ message RequestEnvelope {
 		bytes request_message = 2;
 	}
 
-	message SocialRequest {
-		.POGOProtos.Networking.Social.SocialRequest type = 1;
-		bytes request_message = 2;
-	}
+	//message SocialRequest {
+	//	.POGOProtos.Networking.Social.SocialRequest type = 1;
+	//	bytes request_message = 2;
+	//}
 }

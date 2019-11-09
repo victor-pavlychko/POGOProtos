@@ -9,8 +9,8 @@ message ResponseEnvelope {
 	StatusCode status_code = 1;
 	uint64 request_id = 2;
 	string api_url = 3;
-
-	repeated SocialResponse social_returns = 5;
+	//Untested maybe needs a good index order
+	//repeated SocialResponse social_returns = 5;
 	repeated PlatformResponse platform_returns = 6;
 	.POGOProtos.Networking.Envelopes.AuthTicket auth_ticket = 7;
 
@@ -22,10 +22,10 @@ message ResponseEnvelope {
 		bytes response = 2;
 	}
 
-	message SocialResponse {
-		.POGOProtos.Networking.Social.SocialRequest type = 1;
-		bytes response = 2;
-	}
+	//message SocialResponse {
+	//	.POGOProtos.Networking.Social.SocialRequest type = 1;
+	//	bytes response = 2;
+	//}
 
 	enum StatusCode {
 		UNKNOWN = 0;
