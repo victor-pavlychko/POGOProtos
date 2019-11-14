@@ -1,0 +1,6 @@
+syntax = "proto3";
+package DumpProtos;
+
+message BattleHubBadgeSettings {
+	repeated HoloBadgeType combat_hub_displayed_badges = 1;
+}

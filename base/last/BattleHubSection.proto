@@ -1,0 +1,10 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum BattleHubSection {
+	SECTION_UNSET = 0;
+	SECTION_VS_SEEKER = 1;
+	SECTION_CURR_SEASON = 2;
+	SECTION_LAST_SEASON = 3;
+	SECTION_NEARBY = 4;
+}

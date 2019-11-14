@@ -47,7 +47,14 @@ message GameMasterClientTemplateProto {
 	AdventureSyncV2GmtProto adventure_sync_v2_gmt = 46;
 	LoadingScreenProto loading_screen_settings = 47;
 	InvasionNpcDisplaySettingsProto invasion_npc_display_settings = 48;
+	CombatCompetitiveSeasonSettingsProto combat_competitive_season_settings = 49;
+	CombatRankingSettingsProto combat_ranking_proto_settings = 50;
 	CombatTypeProto combat_type = 51;
+	VsSeekerClientSettingsProto vs_seeker_client_settings = 58;
 	LimitedPurchaseSkuSettingsProto limited_purchase_sku_settings = 60;
 	InvasionAvailabilitySettingsProto pokestop_invasion_availability_settings = 62;
+	VsSeekerLootProto vs_seeker_loot_proto = 64;
+	VsSeekerPokemonRewardsProto vs_seeker_pokemon_rewards = 65;
+	BattleHubOrderSettings battle_hub_order_settings = 66;
+	BattleHubBadgeSettings battle_hub_badge_settings = 67;
 }

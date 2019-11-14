@@ -1,0 +1,6 @@
+syntax = "proto3";
+package DumpProtos;
+
+message RouteGuidepostProto {
+	LocationE6Proto location = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package DumpProtos;
+
+message BattleHubOrderSettings {
+	repeated SectionSettings section = 1;
+
+	message SectionSettings {
+		BattleHubSection main_section = 1;
+		repeated BattleHubSubsection subsection = 2;
+	}
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+package DumpProtos;
+
+message CompleteVsSeekerAndRestartChargingOutProto {
+	Result result = 1;
+	VsSeekerAttributesProto vs_seeker = 2;
+	LootProto loot_proto = 3;
+	CombatSeasonResult current_season_result = 4;
+	int32 previous_rank = 5;
+	float previous_rating = 6;
+	CombatBaseStatsProto stats_at_rank_start = 7;
+	string avatar_template_id_awarded = 8;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_VS_SEEKER_NOT_FOUND = 2;
+		ERROR_VS_SEEKER_ALREADY_STARTED_CHARGING = 3;
+		ERROR_VS_SEEKER_ALREADY_FULLY_CHARGED = 4;
+		ERROR_VS_SEEKER_PLAYER_IN_WRONG_SEASON = 5;
+		ERROR_PLAYER_INVENTORY_FULL = 6;
+		ERROR_PLAYER_HAS_UNCLAIMED_REWARDS = 7;
+	}
+}

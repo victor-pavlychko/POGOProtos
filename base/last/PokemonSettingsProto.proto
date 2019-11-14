@@ -48,6 +48,7 @@ message PokemonSettingsProto {
 	repeated AnimationOverrideProto photobomb_animation_overrides = 45;
 	ShadowAttributesProto shadow = 46;
 	int32 buddy_group_number = 47;
+	int32 additional_cp_boost_level = 48;
 
 	enum BuddySize {
 		BUDDY_MEDIUM = 0;

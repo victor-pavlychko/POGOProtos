@@ -1,0 +1,49 @@
+syntax = "proto3";
+package DumpProtos;
+
+message VsSeekerPokemonRewardsProto {
+	repeated PokemonUnlockProto available_pokemon = 1;
+	VsSeekerRewardTrack reward_track = 2;
+
+	//oneof OverrideType {
+		//none = 0;
+		//range = 1;
+		//zero = 2;
+	//}
+
+	//oneof RewardType {
+		//none = 0;
+		//pokemon = 1;
+		//limited_pokemon_reward = 2;
+		//guaranteed_limited_pokemon_reward = 3;
+	//}
+
+	message OverrideIvRangeProto {
+		//oneof OverrideType {
+			//none = 0;
+			//range = 1;
+			//zero = 2;
+		//}
+
+		RangeProto range = 1;
+		bool zero = 2;
+	}
+
+	message PokemonUnlockProto {
+		//oneof RewardType {
+			//none = 0;
+			//pokemon = 1;
+			//limited_pokemon_reward = 2;
+			//guaranteed_limited_pokemon_reward = 3;
+		//}
+
+		PokemonEncounterRewardProto pokemon = 1;
+		LimitedEditionPokemonEncounterRewardProto limited_pokemon_reward = 2;
+		LimitedEditionPokemonEncounterRewardProto guaranteed_limited_pokemon_reward = 3;
+		int32 unlocked_at_rank = 4;
+		float weight = 5;
+		OverrideIvRangeProto attack_iv_override = 6;
+		OverrideIvRangeProto defense_iv_override = 7;
+		OverrideIvRangeProto stamina_iv_override = 8;
+	}
+}

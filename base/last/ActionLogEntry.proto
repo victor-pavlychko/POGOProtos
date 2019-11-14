@@ -22,6 +22,9 @@ message ActionLogEntry {
 	CombatLogEntry combat = 18;
 	PurifyPokemonLogEntry purify_pokemon = 19;
 	InvasionVictoryLogEntry invasion_victory = 20;
+	VsSeekerSetLogEntry vs_seeker_set = 21;
+	VsSeekerCompleteSeasonLogEntry vs_seeker_complete_season = 22;
+	VsSeekerWinRewardsLogEntry vs_seeker_win_rewards = 23;
 
 	//oneof Action {
 		//none = 0;
@@ -43,5 +46,8 @@ message ActionLogEntry {
 		//combat = 18;
 		//purify_pokemon = 19;
 		//invasion_victory = 20;
+		//vs_seeker_set = 21;
+		//vs_seeker_complete_season = 22;
+		//vs_seeker_win_rewards = 23;
 	//}
 }

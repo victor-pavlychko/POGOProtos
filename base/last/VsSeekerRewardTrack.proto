@@ -1,0 +1,7 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum VsSeekerRewardTrack {
+	FREE = 0;
+	PREMIUM = 1;
+}

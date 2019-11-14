@@ -1,0 +1,17 @@
+syntax = "proto3";
+package DumpProtos;
+
+message GetVsSeekerStatusOutProto {
+	Result result = 1;
+	VsSeekerAttributesProto vs_seeker = 2;
+	bool season_ended = 3;
+	CombatLogProto combat_log = 4;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS_FULLY_CHARGED = 1;
+		SUCCESS_NOT_FULLY_CHARGED_YET = 2;
+		ERROR_VS_SEEKER_NOT_FOUND = 3;
+		ERROR_VS_SEEKER_NEVER_STARTED_CHARGING = 4;
+	}
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package DumpProtos;
+
+message RouteCheckpointProto {
+	RoutePoiProto poi = 1;
+	RouteGuidepostProto guidepost = 2;
+
+	//oneof Type {
+		//none = 0;
+		//poi = 1;
+		//guidepost = 2;
+	//}
+}

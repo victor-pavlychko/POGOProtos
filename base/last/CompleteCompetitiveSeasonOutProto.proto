@@ -1,0 +1,18 @@
+syntax = "proto3";
+package DumpProtos;
+
+message CompleteCompetitiveSeasonOutProto {
+	Result result = 1;
+	LootProto loot_proto = 2;
+	int32 new_rank = 3;
+	float new_rating = 4;
+	CombatSeasonResult last_season_result = 5;
+	bool was_player_active = 6;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_HAS_NO_VS_SEEKER = 2;
+		ERROR_REWARDS_ALREADY_COLLECTED = 3;
+	}
+}

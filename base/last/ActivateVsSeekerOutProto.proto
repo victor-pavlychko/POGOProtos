@@ -1,0 +1,15 @@
+syntax = "proto3";
+package DumpProtos;
+
+message ActivateVsSeekerOutProto {
+	Result result = 1;
+	VsSeekerAttributesProto vs_seeker = 2;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS_ACTIVATED = 1;
+		ERROR_NO_PREMIUM_BATTLE_PASS = 2;
+		ERROR_VS_SEEKER_NOT_CHARGED = 3;
+		ERROR_VS_SEEKER_ALREADY_ACTIVATED = 4;
+	}
+}
