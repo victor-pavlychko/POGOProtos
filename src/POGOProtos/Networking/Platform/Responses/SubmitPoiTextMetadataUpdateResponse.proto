@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Networking.Titan.Responses;
+package POGOProtos.Networking.Platform.Responses;
 
 message SubmitPoiTextMetadataUpdateResponse {
 	Status status = 1;

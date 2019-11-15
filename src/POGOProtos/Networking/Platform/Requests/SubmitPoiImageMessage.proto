@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POGOProtos.Networking.Titan.Messages;
+package POGOProtos.Networking.Platform.Requests;
 
 message SubmitPoiImageMessage {
 	string poi_id = 1;

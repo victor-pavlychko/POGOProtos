@@ -1,7 +1,7 @@
 syntax = "proto3";
-package POGOProtos.Networking.Titan.Responses;
+package POGOProtos.Networking.Platform.Responses;
 
-message SubmitPoiImageResponse {
+message SubmitPoiTakedownRequestResponse {
 	Status status = 1;
 
 	enum Status {
@@ -11,7 +11,6 @@ message SubmitPoiImageResponse {
 		TOO_MANY_RECENT_SUBMISSIONS = 3;
 		MINOR = 4;
 		NOT_AVAILABLE = 5;
-		MISSING_IMAGE = 6;
-		INVALID_INPUT = 7;
+		INVALID_INPUT = 6;
 	}
 }

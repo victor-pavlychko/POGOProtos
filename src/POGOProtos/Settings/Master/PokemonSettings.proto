@@ -61,6 +61,7 @@ message PokemonSettings {
 	repeated .POGOProtos.Settings.Master.Pokemon.AnimationOverride photobomb_animation_overrides = 45;
 	ShadowAttributes shadow = 46;
 	int32 buddy_group_number = 47;
+	int32 additional_cp_boost_level = 48;
 
 	message PokemonThirdMoveAttributes {
 		int32 stardust_to_unlock = 1;

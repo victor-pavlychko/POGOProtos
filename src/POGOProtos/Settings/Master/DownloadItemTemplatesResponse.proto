@@ -48,6 +48,13 @@ import "POGOProtos/Settings/Master/InvasionNpcDisplaySettings.proto";
 import "POGOProtos/Settings/Master/CombatType.proto";
 import "POGOProtos/Settings/Master/LimitedPurchaseSkuSettings.proto";
 import "POGOProtos/Settings/Master/InvasionAvailabilitySettings.proto";
+import "POGOProtos/Settings/Master/CombatCompetitiveSeasonSettings.proto";
+import "POGOProtos/Settings/Master/CombatRankingSettings.proto";
+import "POGOProtos/Settings/Master/VsSeekerClientSettings.proto";
+import "POGOProtos/Settings/Master/BattleHubOrderSettings.proto";
+import "POGOProtos/Settings/Master/BattleHubBadgeSettings.proto";
+import "POGOProtos/Data/VsSeeker/VsSeekerLoot.proto";
+import "POGOProtos/Data/VsSeeker/VsSeekerPokemonRewards.proto";
 
 message DownloadItemTemplatesResponse {
 	Result result = 1;
@@ -101,9 +108,16 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Settings.Master.AdventureSyncV2Gmt adventure_sync_v2_gmt = 46;
 		.POGOProtos.Settings.Master.LoadingScreen loading_screen_settings = 47;
 		.POGOProtos.Settings.Master.InvasionNpcDisplaySettings invasion_npc_display_settings = 48;
+		.POGOProtos.Settings.Master.CombatCompetitiveSeasonSettings combat_competitive_season_settings = 49;
+		.POGOProtos.Settings.Master.CombatRankingSettings combat_ranking_proto_settings = 50;
 		.POGOProtos.Settings.Master.CombatType combat_type = 51;
+		.POGOProtos.Settings.Master.VsSeekerClientSettings vs_seeker_client_settings = 58;
 		.POGOProtos.Settings.Master.LimitedPurchaseSkuSettings limited_purchase_sku_settings = 60;
 		.POGOProtos.Settings.Master.InvasionAvailabilitySettings pokestop_invasion_availability_settings = 62;
+		.POGOProtos.Data.VsSeeker.VsSeekerLoot vs_seeker_loot_proto = 64;
+		.POGOProtos.Data.VsSeeker.VsSeekerPokemonRewards vs_seeker_pokemon_rewards = 65;
+		.POGOProtos.Settings.Master.BattleHubOrderSettings battle_hub_order_settings = 66;
+		.POGOProtos.Settings.Master.BattleHubBadgeSettings battle_hub_badge_settings = 67;
 	}
 
 	enum Result {

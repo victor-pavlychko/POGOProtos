@@ -105,6 +105,7 @@ message GetAvailableSubmissionsResponse {
 	bool has_valid_email = 3;
 	bool is_feature_enabled = 4;
 	int64 time_window_for_submissions_limit_ms = 5;
+	int32 max_poi_distance_in_meters = 6;
 }
 
 message PushNotificationRegistryResponse {
@@ -194,4 +195,72 @@ message ReplaceLoginActionResponse {
 message ListLoginActionResponse {
 	bool success = 1;
 	repeated .POGOProtos.Data.Login.LoginDetail login_detail = 2;
+}
+
+message GetWebTokenActionResponse {
+	Status status = 1;
+	string access_token = 2;
+
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+}
+
+message SubmitPoiImageResponse {
+	Status status = 1;
+
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		MISSING_IMAGE = 6;
+		INVALID_INPUT = 7;
+	}
+}
+
+message SubmitPoiLocationUpdateResponse {
+	Status status = 1;
+
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+	}
+}
+
+message SubmitPoiTakedownRequestResponse {
+	Status status = 1;
+
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+	}
+}
+
+message SubmitPoiTextMetadataUpdateResponse {
+	Status status = 1;
+
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+	}
 }

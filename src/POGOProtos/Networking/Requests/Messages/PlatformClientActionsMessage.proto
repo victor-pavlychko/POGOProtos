@@ -4,6 +4,7 @@ package POGOProtos.Networking.Requests.Messages;
 import "POGOProtos/Data/Player/PlayerReputation.proto";
 import "POGOProtos/Enums/IdentityProvider.proto";
 import "POGOProtos/Enums/NotificationState.proto";
+import "POGOProtos/Data/Route/RouteCheckpoint.proto";
 
 message RegisterPushNotificationMessage {
 	ApnToken apn_token = 1;
@@ -103,4 +104,38 @@ message ReplaceLoginActionMessage {
 }
 
 message ListLoginActionMessage {
+}
+
+message GetWebTokenActionMessage {
+	string client_id = 1;
+}
+
+message SubmitPoiImageMessage {
+	string poi_id = 1;
+}
+
+message SubmitPoiLocationUpdateMessage {
+	string poi_id = 1;
+	.POGOProtos.Data.Route.RouteCheckpoint.LocationE6 location = 2;
+}
+
+message SubmitPoiTakedownRequestMessage {
+	string poi_id = 1;
+	PoiInvalidReason invalid_reason = 2;
+
+	enum PoiInvalidReason {
+		INVALID_REASON_UNSPECIFIED = 0;
+		NO_PEDESTRIAN_ACCESS = 1;
+		OBSTRUCTS_EMERGENCY_SERVICES = 2;
+		PRIVATE_RESIDENTIAL_PROPERTY = 3;
+		SCHOOL = 4;
+		PERMANENTLY_REMOVED = 5;
+		DUPLICATE = 6;
+	}
+}
+
+message SubmitPoiTextMetadataUpdateMessage {
+	string poi_id = 1;
+	string title = 2;
+	string description = 3;
 }

@@ -10,4 +10,6 @@ message PokemonUpgradeSettings {
 	float shadow_candy_multiplier = 6;
 	float purified_stardust_multiplier = 7;
 	float purified_candy_multiplier = 8;
+	int32 max_normal_upgrade_level = 9;
+	int32 default_cp_boost_additional_level = 10;
 }
