@@ -1,8 +1,8 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
-import "POGOProtos/Data/InvasionStatus.proto";
+import "POGOProtos/Map/Fort/InvasionStatus.proto";
 
 message InvasionCompleteDialogueResponse {
-	.POGOProtos.Data.InvasionStatus.Status status = 1;
+	.POGOProtos.Map.Fort.InvasionStatus.Status status = 1;
 }

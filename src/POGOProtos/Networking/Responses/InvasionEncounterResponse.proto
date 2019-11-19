@@ -1,13 +1,13 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
-import "POGOProtos/Data/InvasionStatus.proto";
+import "POGOProtos/Map/Fort/InvasionStatus.proto";
 import "POGOProtos/Data/PokemonData.proto";
 import "POGOProtos/Data/Capture/CaptureProbability.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
 
 message InvasionEncounterResponse {
-	.POGOProtos.Data.InvasionStatus.Status status = 1;
+	.POGOProtos.Map.Fort.InvasionStatus.Status status = 1;
 	.POGOProtos.Data.PokemonData encounter_pokemon = 2;
 	.POGOProtos.Data.Capture.CaptureProbability capture_probability = 3;
 	.POGOProtos.Inventory.Item.ItemId active_item = 4;
