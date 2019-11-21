@@ -84,4 +84,5 @@ message GlobalSettings {
 	.POGOProtos.Settings.KangarooSettings kangaroo_settings = 41;
 	.POGOProtos.Settings.InputSettings input_settings = 44;
 	.POGOProtos.Settings.GmtSettings gmt_settings = 45;
+	bool use_local_time_action = 47;
 }
