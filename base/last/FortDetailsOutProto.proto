@@ -20,4 +20,5 @@ message FortDetailsOutProto {
 	EventInfoProto event_info = 16;
 	repeated string promo_description = 17;
 	string call_to_action_link = 18;
+	SponsoredDetailsProto sponsored_details = 19;
 }

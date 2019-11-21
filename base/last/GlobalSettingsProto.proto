@@ -44,4 +44,5 @@ message GlobalSettingsProto {
 	KangarooSettingsProto kangaroo_settings = 41;
 	InputSettingsProto input_settings = 44;
 	GmtSettingsProto gmt_settings = 45;
+	bool use_local_time_action = 47;
 }
