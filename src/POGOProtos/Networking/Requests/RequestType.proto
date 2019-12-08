@@ -12,7 +12,6 @@ enum RequestType {
 	GET_PLAYER_DAY = 9;                                  // Implemented
 	ACKNOWLEDGE_PUNISHMENT = 10;                         // Implemented
 	GET_SERVER_TIME = 11;                                // Implemented
-	GET_LOCAL_TIME = 12;                                 // Implemented
 	FORT_SEARCH = 101;                                   // Implemented
 	ENCOUNTER = 102;                                     // Implemented
 	CATCH_POKEMON = 103;                                 // Implemented
@@ -172,6 +171,8 @@ enum RequestType {
 	CLAIM_VS_SEEKER_REWARDS = 1306;                      // Implemented
 	VS_SEEKER_REWARD_ENCOUNTER = 1307;                   // Implemented
 	ACTIVATE_VS_SEEKER = 1308;                           // Implemented
+	CREATE_BUDDY_MUTLIPLAYER_SESSION = 1456;             // Implemented
+	LEAVE_BUDDY_MULTIPLAYER_SESSION = 1458;              // Implemented
 	REGISTER_PUSH_NOTIFICATION = 5000;                   // Implemented
 	UNREGISTER_PUSH_NOTIFICATION = 5001;                 // ???
 	UPDATE_NOTIFICATION_STATUS = 5002;                   // Implemented

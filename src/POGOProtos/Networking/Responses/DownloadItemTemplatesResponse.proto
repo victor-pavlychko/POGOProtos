@@ -53,6 +53,7 @@ import "POGOProtos/Settings/Master/CombatRankingSettings.proto";
 import "POGOProtos/Settings/Master/VsSeekerClientSettings.proto";
 import "POGOProtos/Settings/Master/BattleHubOrderSettings.proto";
 import "POGOProtos/Settings/Master/BattleHubBadgeSettings.proto";
+import "POGOProtos/Settings/Master/PlatypusRolloutSettings.proto";
 import "POGOProtos/Data/VsSeeker/VsSeekerLoot.proto";
 import "POGOProtos/Data/VsSeeker/VsSeekerPokemonRewards.proto";
 
@@ -118,6 +119,7 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Data.VsSeeker.VsSeekerPokemonRewards vs_seeker_pokemon_rewards = 65;
 		.POGOProtos.Settings.Master.BattleHubOrderSettings battle_hub_order_settings = 66;
 		.POGOProtos.Settings.Master.BattleHubBadgeSettings battle_hub_badge_settings = 67;
+		.POGOProtos.Settings.Master.PlatypusRolloutSettings platypus_rollout_settings = 70;
 	}
 
 	enum Result {

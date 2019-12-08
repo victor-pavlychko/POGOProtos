@@ -57,6 +57,9 @@ import "POGOProtos/Data/Telemetry/ShoppingPageScrollTelemetry.proto";
 import "POGOProtos/Data/Telemetry/CombatHubEntranceTelemetry.proto";
 import "POGOProtos/Data/Telemetry/DeviceSpecificationsTelemetry.proto";
 import "POGOProtos/Data/Telemetry/ScreenResolutionTelemetry.proto";
+import "POGOProtos/Data/Buddy/BuddyMultiplayerConnectionFailed.proto";
+import "POGOProtos/Data/Buddy/BuddyMultiplayerConnectionSucceeded.proto";
+import "POGOProtos/Data/Buddy/BuddyMultiplayerTimeToGetSession.proto";
 
 message ClientTelemetryOmni {
 	oneof TelemetryData {
@@ -115,6 +118,9 @@ message ClientTelemetryOmni {
 		.POGOProtos.Data.Telemetry.ShoppingPageScrollTelemetry shopping_page_scroll_telemetry = 53;
 		.POGOProtos.Data.Telemetry.DeviceSpecificationsTelemetry device_specifications_telemetry = 54;
 		.POGOProtos.Data.Telemetry.ScreenResolutionTelemetry screen_resolution_telemetry = 55;
+		.POGOProtos.Data.Buddy.BuddyMultiplayerConnectionFailed buddy_multiplayer_connection_failed_telemetry = 57;
+		.POGOProtos.Data.Buddy.BuddyMultiplayerConnectionSucceeded buddy_multiplayer_connection_succeeded_telemetry = 58;
+		.POGOProtos.Data.Buddy.BuddyMultiplayerTimeToGetSession buddy_multiplayer_time_to_get_session_telemetry = 59;
 		.POGOProtos.Data.Telemetry.PlatformServerData server_data = 1001;
 	}
 }

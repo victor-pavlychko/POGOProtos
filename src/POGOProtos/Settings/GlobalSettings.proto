@@ -40,6 +40,8 @@ import "POGOProtos/Settings/KangarooSettings.proto";
 import "POGOProtos/Settings/IncidentGlobalSettings.proto";
 import "POGOProtos/Settings/InputSettings.proto";
 import "POGOProtos/Settings/GmtSettings.proto";
+import "POGOProtos/Settings/BuddyGlobalSettings.proto";
+import "POGOProtos/Settings/ArdkConfigSettings.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
@@ -82,7 +84,8 @@ message GlobalSettings {
 	.POGOProtos.Settings.IncidentGlobalSettings incident_settings = 39;
 	.POGOProtos.Settings.KoalaSettings koala_settings = 40;
 	.POGOProtos.Settings.KangarooSettings kangaroo_settings = 41;
+	.POGOProtos.Settings.BuddyGlobalSettings buddy_settings = 43;
 	.POGOProtos.Settings.InputSettings input_settings = 44;
 	.POGOProtos.Settings.GmtSettings gmt_settings = 45;
-	bool use_local_time_action = 47;
+	.POGOProtos.Settings.ArdkConfigSettings ardk_config_settings = 48;
 }
