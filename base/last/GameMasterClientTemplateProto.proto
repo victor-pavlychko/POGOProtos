@@ -57,4 +57,5 @@ message GameMasterClientTemplateProto {
 	VsSeekerPokemonRewardsProto vs_seeker_pokemon_rewards = 65;
 	BattleHubOrderSettings battle_hub_order_settings = 66;
 	BattleHubBadgeSettings battle_hub_badge_settings = 67;
+	PlatypusRolloutSettingsProto platypus_rollout_settings = 70;
 }

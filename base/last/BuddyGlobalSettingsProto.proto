@@ -1,0 +1,16 @@
+syntax = "proto3";
+package DumpProtos;
+
+message BuddyGlobalSettingsProto {
+	int32 buddy_v2_min_player_level = 1;
+	int32 buddy_multiplayer_min_player_level = 2;
+	bool enable_monodepth = 3;
+	repeated string monodepth_devices = 4;
+	int32 lobby_status_message_duration_ms = 5;
+	int32 mapping_instruction_duration_ms = 6;
+	int32 group_photo_leader_tracking_interval_ms = 7;
+	int32 group_photo_countdown_ms = 8;
+	int32 lobby_timeout_ms = 9;
+	bool enable_wallaby_telemetry = 10;
+	bool plfe_auth_tokens_enabled = 13;
+}

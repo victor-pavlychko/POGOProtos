@@ -1,0 +1,7 @@
+syntax = "proto3";
+package DumpProtos;
+
+message ArdkConfigSettingsProto {
+	string orb_vocab_url = 1;
+	string monodpeth_model_url = 2;
+}

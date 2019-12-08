@@ -42,7 +42,8 @@ message GlobalSettingsProto {
 	IncidentGlobalSettingsProto incident_settings = 39;
 	KoalaSettingsProto koala_settings = 40;
 	KangarooSettingsProto kangaroo_settings = 41;
+	BuddyGlobalSettingsProto buddy_settings = 43;
 	InputSettingsProto input_settings = 44;
 	GmtSettingsProto gmt_settings = 45;
-	bool use_local_time_action = 47;
+	ArdkConfigSettingsProto ardk_config_settings = 48;
 }
