@@ -6,6 +6,7 @@ import "POGOProtos/Enums/BadgeType.proto";
 import "POGOProtos/Enums/PokemonId.proto";
 import "POGOProtos/Enums/PokemonType.proto";
 import "POGOProtos/Enums/RaidLevel.proto";
+import "POGOProtos/Enums/BuddyLevel.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
 import "POGOProtos/Data/PokemonDisplay.proto";
 import "POGOProtos/Data/EnumWrapper.proto";
@@ -37,6 +38,8 @@ message QuestCondition {
 		WithDistance with_distance = 22;
 		WithInvasionCharacter with_invasion_character = 23;
 		WithPokemonAlignment with_pokemon_alignment = 24;
+		WithBuddy with_buddy = 25;
+		WithDailyBuddyAffection with_daily_buddy_affection = 26;
 	}
 
 	enum ConditionType {
@@ -68,6 +71,18 @@ message QuestCondition {
 		WITH_DISTANCE = 25;
 		WITH_POKEMON_ALIGNMENT = 26;
 		WITH_INVASION_CHARACTER = 27;
+		WITH_BUDDY = 28;
+		WITH_BUDDY_INTERESTING_POI = 29;
+		WITH_DAILY_BUDDY_AFFECTION = 30;
+	}
+
+	message WithDailyBuddyAffection {
+		int32 min_buddy_affection_earned_today = 1;
+	}
+
+	message WithBuddy {
+		.POGOProtos.Enums.BuddyLevel min_buddy_level = 1;
+		bool must_be_on_map = 2;
 	}
 
 	message WithPokemonAlignment {

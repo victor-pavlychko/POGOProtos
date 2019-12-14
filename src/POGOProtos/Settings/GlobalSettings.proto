@@ -87,5 +87,6 @@ message GlobalSettings {
 	.POGOProtos.Settings.BuddyGlobalSettings buddy_settings = 43;
 	.POGOProtos.Settings.InputSettings input_settings = 44;
 	.POGOProtos.Settings.GmtSettings gmt_settings = 45;
+	bool use_local_time_action = 47;
 	.POGOProtos.Settings.ArdkConfigSettings ardk_config_settings = 48;
 }

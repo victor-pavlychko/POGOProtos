@@ -17,8 +17,10 @@ message Quest {
 		.POGOProtos.Data.Quests.CatchPokemonQuest catch_pokemon = 4;
 		.POGOProtos.Data.Quests.AddFriendQuest add_friend = 5;
 		.POGOProtos.Data.Quests.TradePokemonQuest trade_pokemon = 6;
+		DailyBuddyAffectionQuest daily_buddy_affection = 7;
 	}
 
+	DaysWithARowQuest days_in_arow = 99;
 	string quest_id = 100;
 	int64 quest_seed = 101;
 	Context quest_context = 102;
@@ -38,6 +40,14 @@ message Quest {
 	int32 story_quest_template_version = 116;
 	DailyCounter daily_counter = 117;
 	string reward_pokemon_icon_url = 118;
+
+	message DaysWithARowQuest {
+		int32 last_window = 1;
+	}
+
+	message DailyBuddyAffectionQuest {
+		DailyCounter daily_affection_counter = 1;
+	}
 
 	message MultiPartQuest {
 		repeated .POGOProtos.Data.Quests.Quest sub_quests = 1;

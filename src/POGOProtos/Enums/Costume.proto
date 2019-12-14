@@ -13,4 +13,5 @@ enum Costume {
 	WINTER_2018 = 8;
 	FEB_2019 = 9;
 	MAY_2019_NOEVOLVE = 10;
+	JAN_2020_NOEVOLVE = 11;
 }

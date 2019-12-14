@@ -14,6 +14,7 @@ import "POGOProtos/Enums/TeamColor.proto";
 import "POGOProtos/Data/Combat/CombatPlayerPreferences.proto";
 import "POGOProtos/Enums/PokemonId.proto";
 import "POGOProtos/Data/Combat/CombatLog.proto";
+import "POGOProtos/Data/Buddy/BuddyObservedData.proto";
 
 message PlayerData {
 	int64 creation_timestamp_ms = 1;
@@ -39,5 +40,6 @@ message PlayerData {
 	repeated .POGOProtos.Enums.PokemonId consumed_eevee_easter_eggs = 24;
 	.POGOProtos.Data.Combat.CombatLog combat_log = 25;
 	int64 time_zone_offset_ms = 26;
+	.POGOProtos.Data.Buddy.BuddyObservedData buddy_observed_data = 27;
 	string helpshift_user_id = 28;
 }
