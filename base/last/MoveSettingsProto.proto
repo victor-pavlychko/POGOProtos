@@ -17,4 +17,5 @@ message MoveSettingsProto {
 	int32 damage_window_start_ms = 13;
 	int32 damage_window_end_ms = 14;
 	int32 energy_delta = 15;
+	bool is_locked = 16;
 }

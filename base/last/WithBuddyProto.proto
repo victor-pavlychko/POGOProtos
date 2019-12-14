@@ -1,0 +1,7 @@
+syntax = "proto3";
+package DumpProtos;
+
+message WithBuddyProto {
+	BuddyLevel min_buddy_level = 1;
+	bool must_be_on_map = 2;
+}

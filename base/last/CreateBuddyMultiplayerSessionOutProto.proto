@@ -15,5 +15,7 @@ message CreateBuddyMultiplayerSessionOutProto {
 		CREATE_BAD_BUDDY = 3;
 		CREATE_BUDDY_V2_NOT_ENABLED = 4;
 		CREATE_PLAYER_LEVEL_TOO_LOW = 5;
+		CREATE_UNKNOWN_ERROR = 6;
+		CREATE_U13_NO_PERMISSION = 7;
 	}
 }

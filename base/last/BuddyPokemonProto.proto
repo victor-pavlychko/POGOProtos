@@ -5,4 +5,6 @@ message BuddyPokemonProto {
 	fixed64 buddy_pokemon_id = 1;
 	double start_km_walked = 2;
 	double last_km_awarded = 3;
+	DailyCounterProto daily_buddy_swaps = 4;
+	int64 last_km_awarded_ms = 5;
 }

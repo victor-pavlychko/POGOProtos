@@ -1,0 +1,14 @@
+syntax = "proto3";
+package DumpProtos;
+
+message BuddyPettingOutProto {
+	Result result = 1;
+	BuddyObservedData observed_data = 2;
+	BuddyStatsShownHearts.BuddyShownHeartType shown_hearts = 3;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_BUDDY_NOT_VALID = 2;
+	}
+}

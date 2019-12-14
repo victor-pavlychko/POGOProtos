@@ -1,0 +1,13 @@
+syntax = "proto3";
+package DumpProtos;
+
+message GetBuddyHistoryOutProto {
+	Result result = 1;
+	repeated BuddyHistoryData buddy_history = 2;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR = 2;
+	}
+}

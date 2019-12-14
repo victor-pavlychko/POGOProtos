@@ -25,5 +25,6 @@ message ClientPlayerProto {
 	repeated HoloPokemonId consumed_eevee_easter_eggs = 24;
 	CombatLogProto combat_log = 25;
 	int64 time_zone_offset_ms = 26;
+	BuddyObservedData buddy_observed_data = 27;
 	string helpshift_user_id = 28;
 }

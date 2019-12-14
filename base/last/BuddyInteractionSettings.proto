@@ -1,0 +1,7 @@
+syntax = "proto3";
+package DumpProtos;
+
+message BuddyInteractionSettings {
+	repeated Item feed_item_whitelist = 1;
+	repeated Item care_item_whitelist = 2;
+}

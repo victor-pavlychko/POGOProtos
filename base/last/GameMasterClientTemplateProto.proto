@@ -50,12 +50,22 @@ message GameMasterClientTemplateProto {
 	CombatCompetitiveSeasonSettingsProto combat_competitive_season_settings = 49;
 	CombatRankingSettingsProto combat_ranking_proto_settings = 50;
 	CombatTypeProto combat_type = 51;
+	BuddyLevelSettings buddy_level_settings = 52;
+	BuddyActivityCategorySettings buddy_activity_category_settings = 53;
+	BuddyActivitySettings buddy_activity_settings = 54;
+	BuddySwapSettings buddy_swap_settings = 56;
 	VsSeekerClientSettingsProto vs_seeker_client_settings = 58;
+	BuddyEncounterCameoSettings buddy_encounter_cameo_settings = 59;
 	LimitedPurchaseSkuSettingsProto limited_purchase_sku_settings = 60;
+	BuddyEmotionLevelSettings buddy_emotion_level_settings = 61;
 	InvasionAvailabilitySettingsProto pokestop_invasion_availability_settings = 62;
+	BuddyInteractionSettings buddy_interaction_settings = 63;
 	VsSeekerLootProto vs_seeker_loot_proto = 64;
 	VsSeekerPokemonRewardsProto vs_seeker_pokemon_rewards = 65;
 	BattleHubOrderSettings battle_hub_order_settings = 66;
 	BattleHubBadgeSettings battle_hub_badge_settings = 67;
+	MapBuddySettingsProto map_buddy_settings = 68;
+	BuddyWalkSettings buddy_walk_settings = 69;
 	PlatypusRolloutSettingsProto platypus_rollout_settings = 70;
+	BuddyHungerSettings buddy_hunger_settings = 72;
 }

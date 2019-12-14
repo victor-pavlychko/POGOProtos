@@ -26,6 +26,8 @@ message QuestConditionProto {
 	WithDistanceProto with_distance = 22;
 	WithInvasionCharacterProto with_invasion_character = 23;
 	WithPokemonAlignmentProto with_pokemon_alignment = 24;
+	WithBuddyProto with_buddy = 25;
+	WithDailyBuddyAffectionProto with_daily_buddy_affection = 26;
 
 	//oneof Condition {
 		//none = 0;
@@ -52,6 +54,8 @@ message QuestConditionProto {
 		//with_distance = 22;
 		//with_invasion_character = 23;
 		//with_pokemon_alignment = 24;
+		//with_buddy = 25;
+		//with_daily_buddy_affection = 26;
 	//}
 
 	enum ConditionType {
@@ -83,5 +87,8 @@ message QuestConditionProto {
 		WITH_DISTANCE = 25;
 		WITH_POKEMON_ALIGNMENT = 26;
 		WITH_INVASION_CHARACTER = 27;
+		WITH_BUDDY = 28;
+		WITH_BUDDY_INTERESTING_POI = 29;
+		WITH_DAILY_BUDDY_AFFECTION = 30;
 	}
 }

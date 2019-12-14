@@ -1,0 +1,6 @@
+syntax = "proto3";
+package DumpProtos;
+
+message DaysWithARowQuestProto {
+	int32 last_window = 1;
+}
