@@ -158,10 +158,20 @@ enum NotificationCategory {
 	APP_BADGE_ONLY = 16;
 	COMBAT_CHALLENGE_OPENED = 17;
 	LUCKY_FRIEND = 18;
-	FRIEND_INVITE_RECEIVED = 19;
-	FRIEND_INVITE_ACCEPTED = 20;
-	COMBAT_VS_SEEKER_CHARGED = 21;
-	COMBAT_COMPETITIVE_SEASON_END = 22;
+	BUDDY_HUNGRY = 19;
+	BUDDY_FOUND_GIFT = 20;
+	BUDDY_AFFECTION_LEVEL_MILESTONE = 21;
+	BUDDY_AFFECTION_WALKING = 22;
+	BUDDY_AFFECTION_CARE = 23;
+	BUDDY_AFFECTION_BATTLE = 24;
+	BUDDY_AFFECTION_PHOTO = 25;
+	BUDDY_AFFECTION_POI = 26;
+	BUDDY_ATTRACTIVE_POI = 27;
+	FRIEND_INVITE_RECEIVED = 28;
+	FRIEND_INVITE_ACCEPTED = 29;
+	COMBAT_VS_SEEKER_CHARGED = 30;
+	COMBAT_COMPETITIVE_SEASON_END = 31;
+	BUDDY_AFFECTION_ATTRACTIVE_POI = 32;
 }
 
 //----- End clientinboxservice -----
@@ -432,11 +442,12 @@ enum POIDecorationProperties {
 	SIZE = 2;
 	TEXT = 3;
 	ACTIVE = 4;
-	SET_RAID_DATA = 5;
-	NEARBY_CARROT_VISIBLE = 6;
-	SET_LOWEST_MOTIVATION = 7;
-	SET_NPC_CLICKED_ACTION = 8;
-	BEGIN_EXIT = 9;
+	ICON = 5;
+	SET_RAID_DATA = 6;
+	NEARBY_CARROT_VISIBLE = 7;
+	SET_LOWEST_MOTIVATION = 8;
+	SET_NPC_CLICKED_ACTION = 9;
+	BEGIN_EXIT = 10;
 }
 
 //----- End poidecoration -----
@@ -2401,6 +2412,68 @@ enum BattlePartyTelemetryIds {
 	BATTLE_POKEMON_CHANGED = 5;
 }
 
+// ref: Holoholo.Rpc.BuddyActivity
+enum BuddyActivity {
+	BUDDY_ACTIVITY_UNSET = 0;
+	BUDDY_ACTIVITY_FEED = 1;
+	BUDDY_ACTIVITY_PET = 2;
+	BUDDY_ACTIVITY_SNAPSHOT = 3;
+	BUDDY_ACTIVITY_WALK = 4;
+	BUDDY_ACTIVITY_NEW_POIS = 5;
+	BUDDY_ACTIVITY_GYM_BATTLE = 6;
+	BUDDY_ACTIVITY_RAID_BATTLE = 7;
+	BUDDY_ACTIVITY_NPC_BATTLE = 8;
+	BUDDY_ACTIVITY_PVP_BATTLE = 9;
+	BUDDY_ACTIVITY_OPEN_SOUVENIRS = 10;
+	BUDDY_ACTIVITY_OPEN_CONSUMABLES = 11;
+	BUDDY_ACTIVITY_INVASION_GRUNT = 12;
+	BUDDY_ACTIVITY_INVASION_LEADER = 13;
+	BUDDY_ACTIVITY_INVASION_GIOVANNI = 14;
+	BUDDY_ACTIVITY_ATTRACTIVE_POI = 15;
+}
+
+// ref: Holoholo.Rpc.BuddyActivityCategory
+enum BuddyActivityCategory {
+	BUDDY_CATEGORY_UNSET = 0;
+	BUDDY_CATEGORY_FEED = 1;
+	BUDDY_CATEGORY_CARE = 2;
+	BUDDY_CATEGORY_SNAPSHOT = 3;
+	BUDDY_CATEGORY_WALK = 4;
+	BUDDY_CATEGORY_BATTLE = 5;
+	BUDDY_CATEGORY_EXPLORE = 6;
+	BUDDY_CATEGORY_BONUS = 7;
+}
+
+// ref: Holoholo.Rpc.BuddyAnimation
+enum BuddyAnimation {
+	BUDDY_ANIMATION_UNSET = 0;
+	BUDDY_ANIMATION_HAPPY = 1;
+	BUDDY_ANIMATION_HATE = 2;
+}
+
+// ref: Holoholo.Rpc.BuddyEmotionLevel
+enum BuddyEmotionLevel {
+	BUDDY_EMOTION_LEVEL_UNSET = 0;
+	BUDDY_EMOTION_LEVEL_0 = 1;
+	BUDDY_EMOTION_LEVEL_1 = 2;
+	BUDDY_EMOTION_LEVEL_2 = 3;
+	BUDDY_EMOTION_LEVEL_3 = 4;
+	BUDDY_EMOTION_LEVEL_4 = 5;
+	BUDDY_EMOTION_LEVEL_5 = 6;
+	BUDDY_EMOTION_LEVEL_6 = 7;
+}
+
+// ref: Holoholo.Rpc.BuddyLevel
+enum BuddyLevel {
+	BUDDY_LEVEL_UNSET = 0;
+	BUDDY_LEVEL_0 = 1;
+	BUDDY_LEVEL_1 = 2;
+	BUDDY_LEVEL_2 = 3;
+	BUDDY_LEVEL_3 = 4;
+	BUDDY_LEVEL_4 = 5;
+	BUDDY_LEVEL_5 = 6;
+}
+
 // ref: Holoholo.Rpc.CameraInterpolation
 enum CameraInterpolation {
 	CAM_INTERP_CUT = 0;
@@ -2828,6 +2901,7 @@ enum HoloItemCategory {
 	ITEM_CATEGORY_VS_SEEKER = 20;
 	ITEM_CATEGORY_INCIDENT_TICKET = 21;
 	ITEM_CATEGORY_GLOBAL_EVENT_TICKET = 22;
+	ITEM_CATEGORY_BUDDY_EXCLUSIVE_FOOD = 23;
 }
 
 // ref: Holoholo.Rpc.HoloItemEffect
@@ -4266,6 +4340,7 @@ enum Item {
 	ITEM_GOLDEN_RAZZ_BERRY = 706;
 	ITEM_GOLDEN_NANAB_BERRY = 707;
 	ITEM_GOLDEN_PINAP_BERRY = 708;
+	ITEM_POFFIN = 709;
 	ITEM_SPECIAL_CAMERA = 801;
 	ITEM_INCUBATOR_BASIC_UNLIMITED = 901;
 	ITEM_INCUBATOR_BASIC = 902;
@@ -4288,7 +4363,6 @@ enum Item {
 	ITEM_STAR_PIECE = 1404;
 	ITEM_FRIEND_GIFT_BOX = 1405;
 	ITEM_TEAM_CHANGE = 1406;
-	ITEM_VS_SEEKER_BATTLE_NOW = 1408;
 	ITEM_LEADER_MAP_FRAGMENT = 1501;
 	ITEM_LEADER_MAP = 1502;
 	ITEM_GIOVANNI_MAP = 1503;
@@ -4361,6 +4435,7 @@ enum Method {
 	GET_PLAYER_DAY = 9;
 	ACKNOWLEDGE_PUNISHMENT = 10;
 	GET_SERVER_TIME = 11;
+	GET_LOCAL_TIME = 12;
 	FORT_SEARCH = 101;
 	ENCOUNTER = 102;
 	CATCH_POKEMON = 103;
@@ -4515,7 +4590,14 @@ enum Method {
 	CLAIM_VS_SEEKER_REWARDS = 1306;
 	VS_SEEKER_REWARD_ENCOUNTER = 1307;
 	ACTIVATE_VS_SEEKER = 1308;
+	GET_BUDDY_MAP = 1350;
+	GET_BUDDY_STATS = 1351;
+	FEED_BUDDY = 1352;
+	OPEN_BUDDY_GIFT = 1353;
+	PET_BUDDY = 1354;
+	GET_BUDDY_HISTORY = 1355;
 	CREATE_BUDDY_MUTLIPLAYER_SESSION = 1456;
+	JOIN_BUDDY_MULTIPLAYER_SESSION = 1457;
 	LEAVE_BUDDY_MULTIPLAYER_SESSION = 1458;
 }
 
@@ -4552,6 +4634,18 @@ enum NotificationCategory {
 	APP_BADGE_ONLY = 19;
 	COMBAT_VS_SEEKER_CHARGED = 20;
 	COMBAT_COMPETITIVE_SEASON_END = 21;
+	BUDDY_HUNGRY = 22;
+	BUDDY_FOUND_GIFT = 24;
+	BUDDY_AFFECTION_LEVEL_MILESTONE = 25;
+	BUDDY_AFFECTION_WALKING = 26;
+	BUDDY_AFFECTION_CARE = 27;
+	BUDDY_AFFECTION_BATTLE = 28;
+	BUDDY_AFFECTION_PHOTO = 29;
+	BUDDY_AFFECTION_POI = 30;
+	BGMODE_BUDDY_FOUND_GIFT = 31;
+	BUDDY_ATTRACTIVE_POI = 32;
+	BGMODE_BUDDY_ATTRACTIVE_POI = 33;
+	BUDDY_AFFECTION_ATTRACTIVE_POI = 36;
 }
 
 // ref: Holoholo.Rpc.OnboardingArStatus
@@ -4635,6 +4729,12 @@ enum Platform {
 enum PlayerAvatarType {
 	PLAYER_AVATAR_MALE = 0;
 	PLAYER_AVATAR_FEMALE = 1;
+}
+
+// ref: Holoholo.Rpc.PokemonBadge
+enum PokemonBadge {
+	POKEMON_BADGE_UNSET = 0;
+	POKEMON_BADGE_BEST_BUDDY = 1;
 }
 
 // ref: Holoholo.Rpc.PokemonCreateContext
@@ -4721,6 +4821,12 @@ enum QuestType {
 	QUEST_PURIFY_POKEMON = 30;
 	QUEST_FIND_TEAM_ROCKET = 31;
 	QUEST_FIRST_GRUNT_OF_THE_DAY = 32;
+	QUEST_BUDDY_FEED = 33;
+	QUEST_BUDDY_EARN_AFFECTION_POINTS = 34;
+	QUEST_BUDDY_PET = 35;
+	QUEST_BUDDY_LEVEL = 36;
+	QUEST_BUDDY_WALK = 37;
+	QUEST_BUDDY_YATTA = 38;
 }
 
 // ref: Holoholo.Rpc.RaidLevel
@@ -4815,6 +4921,8 @@ enum ShoppingPageTelemetrySource {
 	SOURCE_AVATAR_CUSTOMIZATION_AWARD = 13;
 	SOURCE_FIRST_TIME_USER_FLOW = 14;
 	SOURCE_BADGE_DETAIL_AVATAR_REWARD = 15;
+	SOURCE_QUICK_SHOP_BUDDY_INTERACTION_POFFIN = 100;
+	SOURCE_QUICK_SHOP_BUDDY_QUICK_FEED_POFFIN = 101;
 }
 
 // ref: Holoholo.Rpc.SocialTelemetryIds
@@ -4827,6 +4935,26 @@ enum SocialTelemetryIds {
 	CLOSE_OPEN_GIFT_CONFIRMATION = 5;
 	FRIEND_LIST_SORT_CHANGED = 6;
 	FRIEND_LIST_CLOSED = 7;
+}
+
+// ref: Holoholo.Rpc.SouvenirTypeId
+enum SouvenirTypeId {
+	SOUVENIR_UNSET = 0;
+	SOUVENIR_LONE_EARRING = 1;
+	SOUVENIR_SMALL_BOUQUET = 2;
+	SOUVENIR_SKIPPING_STONE = 3;
+	SOUVENIR_BEACH_GLASS = 4;
+	SOUVENIR_TROPICAL_SHELL = 5;
+	SOUVENIR_MUSHROOM = 6;
+	SOUVENIR_CHALKY_STONE = 7;
+	SOUVENIR_PINECONE = 8;
+	SOUVENIR_TROPICAL_FLOWER = 9;
+	SOUVENIR_FLOWER_FRUITS = 10;
+	SOUVENIR_CACTUS_FLOWER = 11;
+	SOUVENIR_STRETCHY_SPRING = 12;
+	SOUVENIR_MARBLE = 13;
+	SOUVENIR_TORN_TICKET = 14;
+	SOUVENIR_PRETTY_LEAF = 15;
 }
 
 // ref: Holoholo.Rpc.Store
@@ -4881,6 +5009,10 @@ enum TutorialCompletion {
 	INVASION_MAP_FRAGMENT_DIALOG = 33;
 	INVASION_MAP_RECEIVED_DIALOG = 34;
 	INVASION_MAP_2_RECEIVED_DIALOG = 35;
+	BUDDY_WELCOME_PROMPT = 36;
+	BUDDY_AR_PLUS_TUTORIAL = 37;
+	BUDDY_FEED_TUTORIAL = 38;
+	BUDDY_ON_MAP_PROMPT = 39;
 }
 
 // ref: Holoholo.Rpc.VariableName
@@ -4930,6 +5062,7 @@ enum VariableName {
 	BUDDY_SHOWN_HEART_TYPE = 1033;
 	POI_ID = 1034;
 	POI_EXPIRATION = 1035;
+	BUDDY_LEVEL = 1036;
 }
 
 // ref: Holoholo.Rpc.VsSeekerRewardTrack
@@ -5128,6 +5261,27 @@ message AppliedItemProto {
 // ref: Holoholo.Rpc.AppliedItemsProto
 message AppliedItemsProto {
 	repeated AppliedItemProto item = 4;
+}
+
+// ref: Holoholo.Rpc.ARBuddyMultiplayerSessionTelemetry
+message ARBuddyMultiplayerSessionTelemetry {
+	bool camera_permission_granted = 1;
+	int64 host_time_to_publish_first_map = 2;
+	int32 host_number_of_maps_published = 3;
+	bool host_mapping_successful = 4;
+	bool lobby_connection_successful = 5;
+	int64 time_from_start_of_session_to_sync = 6;
+	bool sync_successful = 7;
+	int64 session_length = 8;
+	int32 crash_count = 9;
+	int64 duration_spent_in_lobby = 10;
+	int64 time_from_invite_to_lobby = 11;
+	int64 time_from_lobby_to_session = 12;
+	int64 length_of_ar_session = 13;
+	int32 players_connected = 14;
+	int32 players_dropped = 15;
+	int32 num_photos_taken = 16;
+	bool is_host = 17;
 }
 
 // ref: Holoholo.Rpc.ArdkConfigSettingsProto
@@ -5856,6 +6010,130 @@ message BootTime {
 	BootPhase boot_phase = 2;
 }
 
+// ref: Holoholo.Rpc.BuddyActivityCategorySettings
+message BuddyActivityCategorySettings {
+	BuddyActivityCategory activity_category = 1;
+	int32 max_points_per_day = 2;
+}
+
+// ref: Holoholo.Rpc.BuddyActivitySettings
+message BuddyActivitySettings {
+	BuddyActivity activity = 1;
+	BuddyActivityCategory activity_category = 2;
+	int32 max_times_per_day = 3;
+	int32 num_points_per_action = 4;
+	int32 num_emotion_points_per_action = 5;
+	int64 emotion_cooldown_duration_ms = 6;
+}
+
+// ref: Holoholo.Rpc.BuddyDataProto
+message BuddyDataProto {
+	// ref: Holoholo.Rpc.BuddyDataProto/Types/BuddyStoredStats
+	message BuddyStoredStats {
+		int64 window = 1;
+		map<int32, single> buddy_stats = 2;
+	}
+
+	fixed64 buddy_pokemon_id = 1;
+	int32 current_points_earned = 2;
+	int32 highest_points_earned = 3;
+	int64 last_reached_full_ms = 4;
+	int64 last_groomed_ms = 5;
+	int64 map_expiration_ms = 7;
+	float km_candy_pending = 12;
+	BuddyGiftProto buddy_gift_picked_up = 15;
+	int32 current_emotion_points = 18;
+	map<int32, DailyCounterProto> daily_activity_counters = 19;
+	map<int32, DailyCounterProto> daily_category_counters = 20;
+	BuddyStoredStats stats_today = 21;
+	BuddyStoredStats stats_total = 22;
+	map<int32, SouvenirProto> souvenirs_collected = 23;
+	int32 current_hunger_points = 24;
+	int64 interaction_expiration_ms = 25;
+	int64 poffin_feeding_expiration_ms = 26;
+	float last_affection_or_emotion_awarded_km = 27;
+	int64 last_set_timestamp_ms = 28;
+	int64 last_unset_timestamp_ms = 29;
+	bool ditched = 30;
+	PokemonDisplayProto pokemon_display = 31;
+	bool hatched_from_egg = 32;
+	string nickname = 33;
+	int64 captured_s2_cell_id = 34;
+	HoloPokemonId pokedex_entry_number = 35;
+	int64 creation_timestamp_ms = 36;
+	Item pokeball = 37;
+	int32 num_days_spent_with_buddy = 38;
+	string original_owner_nickname = 39;
+	int64 traded_time_ms = 40;
+	string attractive_poi_id = 41;
+	int64 attractive_poi_time_generated = 42;
+	int64 attractive_poi_cooldown_ms = 43;
+	bool attractive_poi_visited = 44;
+	int64 berry_cooldown_ms = 45;
+	map<int32, int64> activity_emotion_last_increment_ms = 46;
+	int64 window = 47;
+	int64 last_fed_ms = 48;
+	int32 last_window_buddy_on_map = 49;
+	int32 last_window_fed_poffin = 50;
+	int64 yatta_expiration_ms = 51;
+	float hunger_points = 52;
+}
+
+// ref: Holoholo.Rpc.BuddyEmotionLevelSettings
+message BuddyEmotionLevelSettings {
+	BuddyEmotionLevel emotion_level = 1;
+	int32 min_emotion_points_required = 2;
+	BuddyAnimation emotion_animation = 3;
+	int64 decay_prevention_duration_ms = 4;
+}
+
+// ref: Holoholo.Rpc.BuddyEncounterCameoSettings
+message BuddyEncounterCameoSettings {
+	float buddy_wild_encounter_cameo_chance_percent = 1;
+	float buddy_quest_encounter_cameo_chance_percent = 2;
+	float buddy_raid_encounter_cameo_chance_percent = 3;
+	float buddy_invasion_encounter_cameo_chance_percent = 4;
+}
+
+// ref: Holoholo.Rpc.BuddyEncounterHelpTelemetry
+message BuddyEncounterHelpTelemetry {
+	int32 pokemon_id = 1;
+	int32 cp = 2;
+	string encounter_type = 3;
+	bool ar_classic_enabled = 4;
+	bool ar_plus_enabled = 5;
+	EncounterType encounter = 6;
+}
+
+// ref: Holoholo.Rpc.BuddyFeedingOutProto
+message BuddyFeedingOutProto {
+	// ref: Holoholo.Rpc.BuddyFeedingOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_BUDDY_NOT_VALID = 2;
+		FAILED_INSUFFICIENT_RESOURCES = 3;
+		FAILED_INVALID_ITEM_REQUIREMENT = 4;
+		FAILED_BUDDY_STILL_FULL_FROM_POFFIN = 5;
+	}
+
+	Result result = 1;
+	BuddyObservedData observed_data = 3;
+	BuddyStatsShownHearts.BuddyShownHeartType shown_hearts = 4;
+}
+
+// ref: Holoholo.Rpc.BuddyFeedingProto
+message BuddyFeedingProto {
+	Item item = 1;
+	int32 count = 2;
+}
+
+// ref: Holoholo.Rpc.BuddyGiftProto
+message BuddyGiftProto {
+	SouvenirProto souvenir = 1;
+	LootProto loot_proto = 2;
+}
+
 // ref: Holoholo.Rpc.BuddyGlobalSettingsProto
 message BuddyGlobalSettingsProto {
 	int32 buddy_v2_min_player_level = 1;
@@ -5868,7 +6146,94 @@ message BuddyGlobalSettingsProto {
 	int32 group_photo_countdown_ms = 8;
 	int32 lobby_timeout_ms = 9;
 	bool enable_wallaby_telemetry = 10;
+	int32 mapping_hint_timeout_ms = 11;
+	int32 group_photo_simultaneous_shots = 12;
 	bool plfe_auth_tokens_enabled = 13;
+	int32 group_photo_shot_interval_ms = 14;
+	string arbe_endpoint_url = 15;
+}
+
+// ref: Holoholo.Rpc.BuddyHistoryData
+message BuddyHistoryData {
+	fixed64 pokemon_id = 1;
+	HoloPokemonId pokedex_id = 2;
+	PokemonDisplayProto pokemon_display = 3;
+	bool hatched_from_egg = 4;
+	string nickname = 5;
+	int64 captured_s2_cell_id = 6;
+	int64 creation_timestamp_ms = 7;
+	Item pokeball = 8;
+	BuddyStats total_stats = 9;
+	int32 current_points_earned = 10;
+	int64 last_set_timestamp_ms = 11;
+	int64 last_unset_timestamp_ms = 12;
+	int32 num_days_spent_with_buddy = 13;
+	bool ditched = 14;
+	string original_owner_nickname = 15;
+	int64 traded_time_ms = 16;
+	map<int32, SouvenirProto> souvenirs_collected = 17;
+	float km_candy_progress = 18;
+}
+
+// ref: Holoholo.Rpc.BuddyHungerSettings
+message BuddyHungerSettings {
+	int32 num_hunger_points_required_for_full = 1;
+	int32 decay_points_per_bucket = 2;
+	int64 milliseconds_per_bucket = 3;
+	int64 cooldown_duration_ms = 4;
+	int64 decay_duration_after_full_ms = 5;
+}
+
+// ref: Holoholo.Rpc.BuddyInteractionSettings
+message BuddyInteractionSettings {
+	repeated Item feed_item_whitelist = 1;
+	repeated Item care_item_whitelist = 2;
+}
+
+// ref: Holoholo.Rpc.BuddyLevelSettings
+message BuddyLevelSettings {
+	// ref: Holoholo.Rpc.BuddyLevelSettings/Types/BuddyTrait
+	enum BuddyTrait {
+		UNSET = 0;
+		MAP_DEPLOY = 1;
+		ENCOUNTER_CAMEO = 2;
+		EMOTION_INDICATOR = 3;
+		PICK_UP_CONSUMABLES = 4;
+		PICK_UP_SOUVENIRS = 5;
+		FIND_ATTRACTIVE_POIS = 6;
+		BEST_BUDDY_ASSET = 7;
+		CP_BOOST = 8;
+	}
+
+	BuddyLevel level = 1;
+	int32 min_non_cumulative_points_required = 2;
+	repeated BuddyTrait unlocked_traits = 3;
+}
+
+// ref: Holoholo.Rpc.BuddyMapEmotionCheckTelemetry
+message BuddyMapEmotionCheckTelemetry {
+	int32 pokemon_id = 1;
+	int32 current_emotion_points = 2;
+	int32 current_affection_points = 3;
+}
+
+// ref: Holoholo.Rpc.BuddyMapOutProto
+message BuddyMapOutProto {
+	// ref: Holoholo.Rpc.BuddyMapOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_BUDDY_NOT_VALID = 2;
+	}
+
+	Result result = 1;
+	int64 expiration_ms = 2;
+	int64 applied_ms = 3;
+	BuddyObservedData observed_data = 4;
+}
+
+// ref: Holoholo.Rpc.BuddyMapProto
+message BuddyMapProto {
 }
 
 // ref: Holoholo.Rpc.BuddyMultiplayerConnectionFailedProto
@@ -5887,6 +6252,58 @@ message BuddyMultiplayerConnectionSucceededProto {
 message BuddyMultiplayerTimeToGetSessionProto {
 	int32 test_number = 1;
 	int64 time_to_get_session = 2;
+}
+
+// ref: Holoholo.Rpc.BuddyObservedData
+message BuddyObservedData {
+	// ref: Holoholo.Rpc.BuddyObservedData/Types/BuddyValidationResult
+	enum BuddyValidationResult {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILED_BUDDY_NOT_SET = 2;
+		FAILED_BUDDY_NOT_FOUND = 3;
+		FAILED_BAD_BUDDY = 4;
+		FAILED_BUDDY_V2_NOT_ENABLED = 5;
+		FAILED_PLAYER_LEVEL_TOO_LOW = 6;
+	}
+
+	// ref: Holoholo.Rpc.BuddyObservedData/Types/BuddyFeedStats
+	message BuddyFeedStats {
+		int64 map_expiration_ms = 1;
+		float pre_map_fullness_percentage = 2;
+		int64 fullness_expiration_ms = 3;
+		int64 poffin_expiration_ms = 4;
+	}
+
+	int32 current_points_earned = 1;
+	BuddyStats total_stats = 3;
+	BuddyGiftProto buddy_gift_picked_up = 6;
+	int32 current_emotion_points = 7;
+	BuddyValidationResult buddy_validation_result = 8;
+	map<int32, SouvenirProto> souvenirs_collected = 9;
+	BuddyStatsShownHearts today_stats_shown_hearts = 10;
+	BuddyFeedStats buddy_feed_stats = 11;
+	string attractive_poi_id = 12;
+	int64 attractive_poi_expiration_time_ms = 13;
+	int32 num_days_spent_with_buddy = 14;
+}
+
+// ref: Holoholo.Rpc.BuddyPettingOutProto
+message BuddyPettingOutProto {
+	// ref: Holoholo.Rpc.BuddyPettingOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_BUDDY_NOT_VALID = 2;
+	}
+
+	Result result = 1;
+	BuddyObservedData observed_data = 2;
+	BuddyStatsShownHearts.BuddyShownHeartType shown_hearts = 3;
+}
+
+// ref: Holoholo.Rpc.BuddyPettingProto
+message BuddyPettingProto {
 }
 
 // ref: Holoholo.Rpc.BuddyPokemonLogEntry
@@ -5909,6 +6326,63 @@ message BuddyPokemonProto {
 	fixed64 buddy_pokemon_id = 1;
 	double start_km_walked = 2;
 	double last_km_awarded = 3;
+	DailyCounterProto daily_buddy_swaps = 4;
+	int64 last_km_awarded_ms = 5;
+}
+
+// ref: Holoholo.Rpc.BuddyStats
+message BuddyStats {
+	float km_walked = 1;
+	int32 berries_fed = 2;
+	int32 communication = 3;
+	int32 battles = 4;
+	int32 photos = 5;
+	int32 new_visits = 6;
+}
+
+// ref: Holoholo.Rpc.BuddyStatsOutProto
+message BuddyStatsOutProto {
+	// ref: Holoholo.Rpc.BuddyStatsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_BUDDY_NOT_VALID = 2;
+	}
+
+	Result result = 1;
+	BuddyObservedData observed_data = 2;
+}
+
+// ref: Holoholo.Rpc.BuddyStatsProto
+message BuddyStatsProto {
+}
+
+// ref: Holoholo.Rpc.BuddyStatsShownHearts
+message BuddyStatsShownHearts {
+	// ref: Holoholo.Rpc.BuddyStatsShownHearts/Types/BuddyShownHeartType
+	enum BuddyShownHeartType {
+		BUDDY_HEART_UNSET = 0;
+		BUDDY_HEART_SINGLE = 1;
+		BUDDY_HEART_DOUBLE = 2;
+	}
+
+	// ref: Holoholo.Rpc.BuddyStatsShownHearts/Types/BuddyShownHeartsList
+	message BuddyShownHeartsList {
+		repeated BuddyShownHeartType buddy_shown_heart_types = 1;
+	}
+
+	float buddy_affection_km_in_progress = 1;
+	map<int32, BuddyShownHeartsList> buddy_shown_hearts_per_category = 2;
+}
+
+// ref: Holoholo.Rpc.BuddySwapSettings
+message BuddySwapSettings {
+	int32 max_swaps_per_day = 1;
+}
+
+// ref: Holoholo.Rpc.BuddyWalkSettings
+message BuddyWalkSettings {
+	float km_required_per_affection_point = 1;
 }
 
 // ref: Holoholo.Rpc.CameraSettingsProto
@@ -6338,6 +6812,7 @@ message ClientPlayerProto {
 	repeated HoloPokemonId consumed_eevee_easter_eggs = 24;
 	CombatLogProto combat_log = 25;
 	int64 time_zone_offset_ms = 26;
+	BuddyObservedData buddy_observed_data = 27;
 	string helpshift_user_id = 28;
 }
 
@@ -7136,6 +7611,8 @@ message CreateBuddyMultiplayerSessionOutProto {
 		CREATE_BAD_BUDDY = 3;
 		CREATE_BUDDY_V2_NOT_ENABLED = 4;
 		CREATE_PLAYER_LEVEL_TOO_LOW = 5;
+		CREATE_UNKNOWN_ERROR = 6;
+		CREATE_U13_NO_PERMISSION = 7;
 	}
 
 	string plfe_session_id = 1;
@@ -7191,6 +7668,11 @@ message DailyBonusProto {
 	int64 next_defender_bonus_collect_timestamp_ms = 2;
 }
 
+// ref: Holoholo.Rpc.DailyBuddyAffectionQuestProto
+message DailyBuddyAffectionQuestProto {
+	DailyCounterProto daily_affection_counter = 1;
+}
+
 // ref: Holoholo.Rpc.DailyCounterProto
 message DailyCounterProto {
 	int64 window = 1;
@@ -7216,6 +7698,11 @@ message DailyQuestSettings {
 message DamagePropertyProto {
 	bool super_effective_charge_move = 1;
 	bool weather_boosted = 2;
+}
+
+// ref: Holoholo.Rpc.DaysWithARowQuestProto
+message DaysWithARowQuestProto {
+	int32 last_window = 1;
 }
 
 // ref: Holoholo.Rpc.DeclineCombatChallengeOutProto
@@ -7836,6 +8323,10 @@ message FoodAttributesProto {
 	float growth_percent = 3;
 	float berry_multiplier = 4;
 	float remote_berry_multiplier = 5;
+	int32 num_buddy_affection_points = 6;
+	int64 map_duration_ms = 7;
+	int64 active_duration_ms = 8;
+	int32 num_buddy_hunger_points = 9;
 }
 
 // ref: Holoholo.Rpc.FoodValue
@@ -8181,14 +8672,24 @@ message GameMasterClientTemplateProto {
 	CombatCompetitiveSeasonSettingsProto combat_competitive_season_settings = 49;
 	CombatRankingSettingsProto combat_ranking_proto_settings = 50;
 	CombatTypeProto combat_type = 51;
+	BuddyLevelSettings buddy_level_settings = 52;
+	BuddyActivityCategorySettings buddy_activity_category_settings = 53;
+	BuddyActivitySettings buddy_activity_settings = 54;
+	BuddySwapSettings buddy_swap_settings = 56;
 	VsSeekerClientSettingsProto vs_seeker_client_settings = 58;
+	BuddyEncounterCameoSettings buddy_encounter_cameo_settings = 59;
 	LimitedPurchaseSkuSettingsProto limited_purchase_sku_settings = 60;
+	BuddyEmotionLevelSettings buddy_emotion_level_settings = 61;
 	InvasionAvailabilitySettingsProto pokestop_invasion_availability_settings = 62;
+	BuddyInteractionSettings buddy_interaction_settings = 63;
 	VsSeekerLootProto vs_seeker_loot_proto = 64;
 	VsSeekerPokemonRewardsProto vs_seeker_pokemon_rewards = 65;
 	BattleHubOrderSettings battle_hub_order_settings = 66;
 	BattleHubBadgeSettings battle_hub_badge_settings = 67;
+	MapBuddySettingsProto map_buddy_settings = 68;
+	BuddyWalkSettings buddy_walk_settings = 69;
 	PlatypusRolloutSettingsProto platypus_rollout_settings = 70;
+	BuddyHungerSettings buddy_hunger_settings = 72;
 }
 
 // ref: Holoholo.Rpc.GenerateCombatChallengeIdOutProto
@@ -8228,6 +8729,23 @@ message GetActionLogResponse {
 
 	Result result = 1;
 	repeated ActionLogEntry log = 2;
+}
+
+// ref: Holoholo.Rpc.GetBuddyHistoryOutProto
+message GetBuddyHistoryOutProto {
+	// ref: Holoholo.Rpc.GetBuddyHistoryOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR = 2;
+	}
+
+	Result result = 1;
+	repeated BuddyHistoryData buddy_history = 2;
+}
+
+// ref: Holoholo.Rpc.GetBuddyHistoryProto
+message GetBuddyHistoryProto {
 }
 
 // ref: Holoholo.Rpc.GetBuddyWalkedOutProto
@@ -8511,6 +9029,38 @@ message GetIncensePokemonOutProto {
 message GetIncensePokemonProto {
 	double player_lat_degrees = 1;
 	double player_lng_degrees = 2;
+}
+
+// ref: Holoholo.Rpc.GetLocalTimeOutProto
+message GetLocalTimeOutProto {
+	// ref: Holoholo.Rpc.GetLocalTimeOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	// ref: Holoholo.Rpc.GetLocalTimeOutProto/Types/LocalTimeProto
+	message LocalTimeProto {
+		int64 timestamp_ms = 1;
+		int32 year = 2;
+		int32 month = 3;
+		int32 day_of_month = 4;
+		int32 day_of_week = 5;
+		int32 hours = 6;
+		int32 minutes = 7;
+		int32 seconds = 8;
+		int32 milliseconds = 9;
+		string timezone_id = 10;
+	}
+
+	Status status = 1;
+	repeated LocalTimeProto local_times = 2;
+}
+
+// ref: Holoholo.Rpc.GetLocalTimeProto
+message GetLocalTimeProto {
+	repeated int64 timestamp_ms = 1;
 }
 
 // ref: Holoholo.Rpc.GetMapObjectsOutProto
@@ -8940,6 +9490,7 @@ message GlobalSettingsProto {
 	BuddyGlobalSettingsProto buddy_settings = 43;
 	InputSettingsProto input_settings = 44;
 	GmtSettingsProto gmt_settings = 45;
+	bool use_local_time_action = 47;
 	ArdkConfigSettingsProto ardk_config_settings = 48;
 }
 
@@ -9760,6 +10311,34 @@ message ItemTelemetry {
 	string item_id_string = 5;
 }
 
+// ref: Holoholo.Rpc.JoinBuddyMultiplayerSessionOutProto
+message JoinBuddyMultiplayerSessionOutProto {
+	// ref: Holoholo.Rpc.JoinBuddyMultiplayerSessionOutProto/Types/Result
+	enum Result {
+		JOIN_SUCCESS = 0;
+		JOIN_LOBBY_FULL = 1;
+		JOIN_HOST_TOO_FAR = 2;
+		JOIN_LOBBY_NOT_FOUND = 3;
+		JOIN_BUDDY_NOT_SET = 4;
+		JOIN_BUDDY_NOT_FOUND = 5;
+		JOIN_BAD_BUDDY = 6;
+		JOIN_BUDDY_V2_NOT_ENABLED = 7;
+		JOIN_PLAYER_LEVEL_TOO_LOW = 8;
+		JOIN_UNKNOWN_ERROR = 9;
+		JOIN_U13_NO_PERMISSION = 10;
+	}
+
+	Result result = 1;
+	bytes arbe_join_token = 2;
+	int64 generation_timestamp = 3;
+	int32 max_players = 4;
+}
+
+// ref: Holoholo.Rpc.JoinBuddyMultiplayerSessionProto
+message JoinBuddyMultiplayerSessionProto {
+	string plfe_session_id = 1;
+}
+
 // ref: Holoholo.Rpc.JoinLobbyOutProto
 message JoinLobbyOutProto {
 	// ref: Holoholo.Rpc.JoinLobbyOutProto/Types/Result
@@ -9811,6 +10390,7 @@ message LeaveBuddyMultiplayerSessionOutProto {
 		LEAVE_SUCCESS = 0;
 		LEAVE_NOT_IN_LOBBY = 1;
 		LEAVE_LOBBY_NOT_FOUND = 2;
+		LEAVE_UNKNOWN_ERROR = 3;
 	}
 
 	Result result = 1;
@@ -10075,6 +10655,21 @@ message LuckyPokemonSettingsProto {
 	float power_up_stardust_discount_percent = 1;
 }
 
+// ref: Holoholo.Rpc.MapBuddySettingsProto
+message MapBuddySettingsProto {
+	int32 for_buddy_group_number = 1;
+	float target_offset_min = 2;
+	float target_offset_max = 3;
+	float leash_distance = 4;
+	float max_seconds_to_idle = 5;
+	float max_rotation_speed = 6;
+	float walk_threshold = 7;
+	float run_threshold = 8;
+	bool should_glide = 9;
+	float glide_smooth_time = 10;
+	float glide_max_speed = 11;
+}
+
 // ref: Holoholo.Rpc.MapEventsTelemetry
 message MapEventsTelemetry {
 	MapEventsTelemetryIds map_event_click_id = 1;
@@ -10174,6 +10769,7 @@ message MoveSettingsProto {
 	int32 damage_window_start_ms = 13;
 	int32 damage_window_end_ms = 14;
 	int32 energy_delta = 15;
+	bool is_locked = 16;
 }
 
 // ref: Holoholo.Rpc.MultiPartQuestProto
@@ -10293,6 +10889,28 @@ message OnboardingV2SettingsProto {
 	repeated HoloPokemonId pokedex_id = 2;
 	HoloPokemonId onboarding_egg_pokemon = 3;
 	int32 egg_km_until_hatch = 4;
+}
+
+// ref: Holoholo.Rpc.OpenBuddyGiftOutProto
+message OpenBuddyGiftOutProto {
+	// ref: Holoholo.Rpc.OpenBuddyGiftOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		ERROR_BUDDY_NOT_VALID = 1;
+		SUCCESS_ADDED_LOOT_TO_INVENTORY = 2;
+		SUCCESS_ADDED_SOUVENIR_TO_COLLECTIONS = 3;
+		ERROR_BUDDY_HAS_NOT_PICKED_UP_ANY_SOUVENIRS = 4;
+		ERROR_INVENTORY_IS_FULL = 5;
+	}
+
+	Result result = 1;
+	BuddyGiftProto buddy_gift = 2;
+	BuddyObservedData observed_data = 4;
+	BuddyStatsShownHearts.BuddyShownHeartType shown_hearts = 5;
+}
+
+// ref: Holoholo.Rpc.OpenBuddyGiftProto
+message OpenBuddyGiftProto {
 }
 
 // ref: Holoholo.Rpc.OpenCombatChallengeOutProto
@@ -10818,6 +11436,7 @@ message PokemonDisplayProto {
 		WINTER_2018 = 8;
 		FEB_2019 = 9;
 		MAY_2019_NOEVOLVE = 10;
+		JAN_2020_NOEVOLVE = 11;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Form
@@ -11505,6 +12124,1383 @@ message PokemonDisplayProto {
 		VENUSAUR_COPY_2019 = 950;
 		CHARIZARD_COPY_2019 = 951;
 		BLASTOISE_COPY_2019 = 952;
+		CATERPIE_NORMAL = 953;
+		CATERPIE_SHADOW = 954;
+		CATERPIE_PURIFIED = 955;
+		METAPOD_NORMAL = 956;
+		METAPOD_SHADOW = 957;
+		METAPOD_PURIFIED = 958;
+		BUTTERFREE_NORMAL = 959;
+		BUTTERFREE_SHADOW = 960;
+		BUTTERFREE_PURIFIED = 961;
+		PIDGEY_NORMAL = 962;
+		PIDGEY_SHADOW = 963;
+		PIDGEY_PURIFIED = 964;
+		PIDGEOTTO_NORMAL = 965;
+		PIDGEOTTO_SHADOW = 966;
+		PIDGEOTTO_PURIFIED = 967;
+		PIDGEOT_NORMAL = 968;
+		PIDGEOT_SHADOW = 969;
+		PIDGEOT_PURIFIED = 970;
+		SPEAROW_NORMAL = 971;
+		SPEAROW_SHADOW = 972;
+		SPEAROW_PURIFIED = 973;
+		FEAROW_NORMAL = 974;
+		FEAROW_SHADOW = 975;
+		FEAROW_PURIFIED = 976;
+		PIKACHU_SHADOW = 977;
+		PIKACHU_PURIFIED = 978;
+		RAICHU_SHADOW = 979;
+		RAICHU_PURIFIED = 980;
+		CLEFAIRY_NORMAL = 981;
+		CLEFAIRY_SHADOW = 982;
+		CLEFAIRY_PURIFIED = 983;
+		CLEFABLE_NORMAL = 984;
+		CLEFABLE_SHADOW = 985;
+		CLEFABLE_PURIFIED = 986;
+		JIGGLYPUFF_NORMAL = 987;
+		JIGGLYPUFF_SHADOW = 988;
+		JIGGLYPUFF_PURIFIED = 989;
+		WIGGLYTUFF_NORMAL = 990;
+		WIGGLYTUFF_SHADOW = 991;
+		WIGGLYTUFF_PURIFIED = 992;
+		PARAS_NORMAL = 993;
+		PARAS_SHADOW = 994;
+		PARAS_PURIFIED = 995;
+		PARASECT_NORMAL = 996;
+		PARASECT_SHADOW = 997;
+		PARASECT_PURIFIED = 998;
+		MANKEY_NORMAL = 999;
+		MANKEY_SHADOW = 1000;
+		MANKEY_PURIFIED = 1001;
+		PRIMEAPE_NORMAL = 1002;
+		PRIMEAPE_SHADOW = 1003;
+		PRIMEAPE_PURIFIED = 1004;
+		TENTACOOL_NORMAL = 1005;
+		TENTACOOL_SHADOW = 1006;
+		TENTACOOL_PURIFIED = 1007;
+		TENTACRUEL_NORMAL = 1008;
+		TENTACRUEL_SHADOW = 1009;
+		TENTACRUEL_PURIFIED = 1010;
+		PONYTA_NORMAL = 1011;
+		PONYTA_SHADOW = 1012;
+		PONYTA_PURIFIED = 1013;
+		RAPIDASH_NORMAL = 1014;
+		RAPIDASH_SHADOW = 1015;
+		RAPIDASH_PURIFIED = 1016;
+		SLOWPOKE_NORMAL = 1017;
+		SLOWPOKE_SHADOW = 1018;
+		SLOWPOKE_PURIFIED = 1019;
+		SLOWBRO_NORMAL = 1020;
+		SLOWBRO_SHADOW = 1021;
+		SLOWBRO_PURIFIED = 1022;
+		FARFETCHD_NORMAL = 1023;
+		FARFETCHD_SHADOW = 1024;
+		FARFETCHD_PURIFIED = 1025;
+		DODUO_NORMAL = 1026;
+		DODUO_SHADOW = 1027;
+		DODUO_PURIFIED = 1028;
+		DODRIO_NORMAL = 1029;
+		DODRIO_SHADOW = 1030;
+		DODRIO_PURIFIED = 1031;
+		SEEL_NORMAL = 1032;
+		SEEL_SHADOW = 1033;
+		SEEL_PURIFIED = 1034;
+		DEWGONG_NORMAL = 1035;
+		DEWGONG_SHADOW = 1036;
+		DEWGONG_PURIFIED = 1037;
+		GASTLY_NORMAL = 1038;
+		GASTLY_SHADOW = 1039;
+		GASTLY_PURIFIED = 1040;
+		HAUNTER_NORMAL = 1041;
+		HAUNTER_SHADOW = 1042;
+		HAUNTER_PURIFIED = 1043;
+		GENGAR_NORMAL = 1044;
+		GENGAR_SHADOW = 1045;
+		GENGAR_PURIFIED = 1046;
+		VOLTORB_NORMAL = 1047;
+		VOLTORB_SHADOW = 1048;
+		VOLTORB_PURIFIED = 1049;
+		ELECTRODE_NORMAL = 1050;
+		ELECTRODE_SHADOW = 1051;
+		ELECTRODE_PURIFIED = 1052;
+		LICKITUNG_NORMAL = 1053;
+		LICKITUNG_SHADOW = 1054;
+		LICKITUNG_PURIFIED = 1055;
+		CHANSEY_NORMAL = 1056;
+		CHANSEY_SHADOW = 1057;
+		CHANSEY_PURIFIED = 1058;
+		TANGELA_NORMAL = 1059;
+		TANGELA_SHADOW = 1060;
+		TANGELA_PURIFIED = 1061;
+		HORSEA_NORMAL = 1062;
+		HORSEA_SHADOW = 1063;
+		HORSEA_PURIFIED = 1064;
+		SEADRA_NORMAL = 1065;
+		SEADRA_SHADOW = 1066;
+		SEADRA_PURIFIED = 1067;
+		GOLDEEN_NORMAL = 1068;
+		GOLDEEN_SHADOW = 1069;
+		GOLDEEN_PURIFIED = 1070;
+		SEAKING_NORMAL = 1071;
+		SEAKING_SHADOW = 1072;
+		SEAKING_PURIFIED = 1073;
+		STARYU_NORMAL = 1074;
+		STARYU_SHADOW = 1075;
+		STARYU_PURIFIED = 1076;
+		STARMIE_NORMAL = 1077;
+		STARMIE_SHADOW = 1078;
+		STARMIE_PURIFIED = 1079;
+		MR_MIME_NORMAL = 1080;
+		MR_MIME_SHADOW = 1081;
+		MR_MIME_PURIFIED = 1082;
+		JYNX_NORMAL = 1083;
+		JYNX_SHADOW = 1084;
+		JYNX_PURIFIED = 1085;
+		TAUROS_NORMAL = 1086;
+		TAUROS_SHADOW = 1087;
+		TAUROS_PURIFIED = 1088;
+		DITTO_NORMAL = 1089;
+		DITTO_SHADOW = 1090;
+		DITTO_PURIFIED = 1091;
+		EEVEE_NORMAL = 1092;
+		EEVEE_SHADOW = 1093;
+		EEVEE_PURIFIED = 1094;
+		VAPOREON_NORMAL = 1095;
+		VAPOREON_SHADOW = 1096;
+		VAPOREON_PURIFIED = 1097;
+		JOLTEON_NORMAL = 1098;
+		JOLTEON_SHADOW = 1099;
+		JOLTEON_PURIFIED = 1100;
+		FLAREON_NORMAL = 1101;
+		FLAREON_SHADOW = 1102;
+		FLAREON_PURIFIED = 1103;
+		KABUTO_NORMAL = 1104;
+		KABUTO_SHADOW = 1105;
+		KABUTO_PURIFIED = 1106;
+		KABUTOPS_NORMAL = 1107;
+		KABUTOPS_SHADOW = 1108;
+		KABUTOPS_PURIFIED = 1109;
+		AERODACTYL_NORMAL = 1110;
+		AERODACTYL_SHADOW = 1111;
+		AERODACTYL_PURIFIED = 1112;
+		MEWTWO_SHADOW = 1113;
+		MEWTWO_PURIFIED = 1114;
+		MEW_NORMAL = 1115;
+		MEW_SHADOW = 1116;
+		MEW_PURIFIED = 1117;
+		CHIKORITA_NORMAL = 1118;
+		CHIKORITA_SHADOW = 1119;
+		CHIKORITA_PURIFIED = 1120;
+		BAYLEEF_NORMAL = 1121;
+		BAYLEEF_SHADOW = 1122;
+		BAYLEEF_PURIFIED = 1123;
+		MEGANIUM_NORMAL = 1124;
+		MEGANIUM_SHADOW = 1125;
+		MEGANIUM_PURIFIED = 1126;
+		CYNDAQUIL_NORMAL = 1127;
+		CYNDAQUIL_SHADOW = 1128;
+		CYNDAQUIL_PURIFIED = 1129;
+		QUILAVA_NORMAL = 1130;
+		QUILAVA_SHADOW = 1131;
+		QUILAVA_PURIFIED = 1132;
+		TYPHLOSION_NORMAL = 1133;
+		TYPHLOSION_SHADOW = 1134;
+		TYPHLOSION_PURIFIED = 1135;
+		TOTODILE_NORMAL = 1136;
+		TOTODILE_SHADOW = 1137;
+		TOTODILE_PURIFIED = 1138;
+		CROCONAW_NORMAL = 1139;
+		CROCONAW_SHADOW = 1140;
+		CROCONAW_PURIFIED = 1141;
+		FERALIGATR_NORMAL = 1142;
+		FERALIGATR_SHADOW = 1143;
+		FERALIGATR_PURIFIED = 1144;
+		SENTRET_NORMAL = 1145;
+		SENTRET_SHADOW = 1146;
+		SENTRET_PURIFIED = 1147;
+		FURRET_NORMAL = 1148;
+		FURRET_SHADOW = 1149;
+		FURRET_PURIFIED = 1150;
+		HOOTHOOT_NORMAL = 1151;
+		HOOTHOOT_SHADOW = 1152;
+		HOOTHOOT_PURIFIED = 1153;
+		NOCTOWL_NORMAL = 1154;
+		NOCTOWL_SHADOW = 1155;
+		NOCTOWL_PURIFIED = 1156;
+		LEDYBA_NORMAL = 1157;
+		LEDYBA_SHADOW = 1158;
+		LEDYBA_PURIFIED = 1159;
+		LEDIAN_NORMAL = 1160;
+		LEDIAN_SHADOW = 1161;
+		LEDIAN_PURIFIED = 1162;
+		SPINARAK_NORMAL = 1163;
+		SPINARAK_SHADOW = 1164;
+		SPINARAK_PURIFIED = 1165;
+		ARIADOS_NORMAL = 1166;
+		ARIADOS_SHADOW = 1167;
+		ARIADOS_PURIFIED = 1168;
+		CHINCHOU_NORMAL = 1169;
+		CHINCHOU_SHADOW = 1170;
+		CHINCHOU_PURIFIED = 1171;
+		LANTURN_NORMAL = 1172;
+		LANTURN_SHADOW = 1173;
+		LANTURN_PURIFIED = 1174;
+		PICHU_NORMAL = 1175;
+		PICHU_SHADOW = 1176;
+		PICHU_PURIFIED = 1177;
+		CLEFFA_NORMAL = 1178;
+		CLEFFA_SHADOW = 1179;
+		CLEFFA_PURIFIED = 1180;
+		IGGLYBUFF_NORMAL = 1181;
+		IGGLYBUFF_SHADOW = 1182;
+		IGGLYBUFF_PURIFIED = 1183;
+		TOGEPI_NORMAL = 1184;
+		TOGEPI_SHADOW = 1185;
+		TOGEPI_PURIFIED = 1186;
+		TOGETIC_NORMAL = 1187;
+		TOGETIC_SHADOW = 1188;
+		TOGETIC_PURIFIED = 1189;
+		NATU_NORMAL = 1190;
+		NATU_SHADOW = 1191;
+		NATU_PURIFIED = 1192;
+		XATU_NORMAL = 1193;
+		XATU_SHADOW = 1194;
+		XATU_PURIFIED = 1195;
+		MARILL_NORMAL = 1196;
+		MARILL_SHADOW = 1197;
+		MARILL_PURIFIED = 1198;
+		AZUMARILL_NORMAL = 1199;
+		AZUMARILL_SHADOW = 1200;
+		AZUMARILL_PURIFIED = 1201;
+		SUDOWOODO_NORMAL = 1202;
+		SUDOWOODO_SHADOW = 1203;
+		SUDOWOODO_PURIFIED = 1204;
+		HOPPIP_NORMAL = 1205;
+		HOPPIP_SHADOW = 1206;
+		HOPPIP_PURIFIED = 1207;
+		SKIPLOOM_NORMAL = 1208;
+		SKIPLOOM_SHADOW = 1209;
+		SKIPLOOM_PURIFIED = 1210;
+		JUMPLUFF_NORMAL = 1211;
+		JUMPLUFF_SHADOW = 1212;
+		JUMPLUFF_PURIFIED = 1213;
+		AIPOM_NORMAL = 1214;
+		AIPOM_SHADOW = 1215;
+		AIPOM_PURIFIED = 1216;
+		SUNKERN_NORMAL = 1217;
+		SUNKERN_SHADOW = 1218;
+		SUNKERN_PURIFIED = 1219;
+		SUNFLORA_NORMAL = 1220;
+		SUNFLORA_SHADOW = 1221;
+		SUNFLORA_PURIFIED = 1222;
+		YANMA_NORMAL = 1223;
+		YANMA_SHADOW = 1224;
+		YANMA_PURIFIED = 1225;
+		WOOPER_NORMAL = 1226;
+		WOOPER_SHADOW = 1227;
+		WOOPER_PURIFIED = 1228;
+		QUAGSIRE_NORMAL = 1229;
+		QUAGSIRE_SHADOW = 1230;
+		QUAGSIRE_PURIFIED = 1231;
+		ESPEON_NORMAL = 1232;
+		ESPEON_SHADOW = 1233;
+		ESPEON_PURIFIED = 1234;
+		UMBREON_NORMAL = 1235;
+		UMBREON_SHADOW = 1236;
+		UMBREON_PURIFIED = 1237;
+		SLOWKING_NORMAL = 1238;
+		SLOWKING_SHADOW = 1239;
+		SLOWKING_PURIFIED = 1240;
+		GIRAFARIG_NORMAL = 1241;
+		GIRAFARIG_SHADOW = 1242;
+		GIRAFARIG_PURIFIED = 1243;
+		PINECO_NORMAL = 1244;
+		PINECO_SHADOW = 1245;
+		PINECO_PURIFIED = 1246;
+		FORRETRESS_NORMAL = 1247;
+		FORRETRESS_SHADOW = 1248;
+		FORRETRESS_PURIFIED = 1249;
+		DUNSPARCE_NORMAL = 1250;
+		DUNSPARCE_SHADOW = 1251;
+		DUNSPARCE_PURIFIED = 1252;
+		SNUBBULL_NORMAL = 1253;
+		SNUBBULL_SHADOW = 1254;
+		SNUBBULL_PURIFIED = 1255;
+		GRANBULL_NORMAL = 1256;
+		GRANBULL_SHADOW = 1257;
+		GRANBULL_PURIFIED = 1258;
+		QWILFISH_NORMAL = 1259;
+		QWILFISH_SHADOW = 1260;
+		QWILFISH_PURIFIED = 1261;
+		HERACROSS_NORMAL = 1262;
+		HERACROSS_SHADOW = 1263;
+		HERACROSS_PURIFIED = 1264;
+		TEDDIURSA_NORMAL = 1265;
+		TEDDIURSA_SHADOW = 1266;
+		TEDDIURSA_PURIFIED = 1267;
+		URSARING_NORMAL = 1268;
+		URSARING_SHADOW = 1269;
+		URSARING_PURIFIED = 1270;
+		SLUGMA_NORMAL = 1271;
+		SLUGMA_SHADOW = 1272;
+		SLUGMA_PURIFIED = 1273;
+		MAGCARGO_NORMAL = 1274;
+		MAGCARGO_SHADOW = 1275;
+		MAGCARGO_PURIFIED = 1276;
+		SWINUB_NORMAL = 1277;
+		SWINUB_SHADOW = 1278;
+		SWINUB_PURIFIED = 1279;
+		PILOSWINE_NORMAL = 1280;
+		PILOSWINE_SHADOW = 1281;
+		PILOSWINE_PURIFIED = 1282;
+		CORSOLA_NORMAL = 1283;
+		CORSOLA_SHADOW = 1284;
+		CORSOLA_PURIFIED = 1285;
+		REMORAID_NORMAL = 1286;
+		REMORAID_SHADOW = 1287;
+		REMORAID_PURIFIED = 1288;
+		OCTILLERY_NORMAL = 1289;
+		OCTILLERY_SHADOW = 1290;
+		OCTILLERY_PURIFIED = 1291;
+		MANTINE_NORMAL = 1292;
+		MANTINE_SHADOW = 1293;
+		MANTINE_PURIFIED = 1294;
+		SKARMORY_NORMAL = 1295;
+		SKARMORY_SHADOW = 1296;
+		SKARMORY_PURIFIED = 1297;
+		KINGDRA_NORMAL = 1298;
+		KINGDRA_SHADOW = 1299;
+		KINGDRA_PURIFIED = 1300;
+		PHANPY_NORMAL = 1301;
+		PHANPY_SHADOW = 1302;
+		PHANPY_PURIFIED = 1303;
+		DONPHAN_NORMAL = 1304;
+		DONPHAN_SHADOW = 1305;
+		DONPHAN_PURIFIED = 1306;
+		SMEARGLE_NORMAL = 1307;
+		SMEARGLE_SHADOW = 1308;
+		SMEARGLE_PURIFIED = 1309;
+		TYROGUE_NORMAL = 1310;
+		TYROGUE_SHADOW = 1311;
+		TYROGUE_PURIFIED = 1312;
+		HITMONTOP_NORMAL = 1313;
+		HITMONTOP_SHADOW = 1314;
+		HITMONTOP_PURIFIED = 1315;
+		SMOOCHUM_NORMAL = 1316;
+		SMOOCHUM_SHADOW = 1317;
+		SMOOCHUM_PURIFIED = 1318;
+		ELEKID_NORMAL = 1319;
+		ELEKID_SHADOW = 1320;
+		ELEKID_PURIFIED = 1321;
+		MAGBY_NORMAL = 1322;
+		MAGBY_SHADOW = 1323;
+		MAGBY_PURIFIED = 1324;
+		MILTANK_NORMAL = 1325;
+		MILTANK_SHADOW = 1326;
+		MILTANK_PURIFIED = 1327;
+		BLISSEY_NORMAL = 1328;
+		BLISSEY_SHADOW = 1329;
+		BLISSEY_PURIFIED = 1330;
+		RAIKOU_NORMAL = 1331;
+		RAIKOU_SHADOW = 1332;
+		RAIKOU_PURIFIED = 1333;
+		ENTEI_NORMAL = 1334;
+		ENTEI_SHADOW = 1335;
+		ENTEI_PURIFIED = 1336;
+		SUICUNE_NORMAL = 1337;
+		SUICUNE_SHADOW = 1338;
+		SUICUNE_PURIFIED = 1339;
+		LUGIA_NORMAL = 1340;
+		LUGIA_SHADOW = 1341;
+		LUGIA_PURIFIED = 1342;
+		HO_OH_NORMAL = 1343;
+		HO_OH_SHADOW = 1344;
+		HO_OH_PURIFIED = 1345;
+		CELEBI_NORMAL = 1346;
+		CELEBI_SHADOW = 1347;
+		CELEBI_PURIFIED = 1348;
+		TREECKO_NORMAL = 1349;
+		TREECKO_SHADOW = 1350;
+		TREECKO_PURIFIED = 1351;
+		GROVYLE_NORMAL = 1352;
+		GROVYLE_SHADOW = 1353;
+		GROVYLE_PURIFIED = 1354;
+		SCEPTILE_NORMAL = 1355;
+		SCEPTILE_SHADOW = 1356;
+		SCEPTILE_PURIFIED = 1357;
+		TORCHIC_NORMAL = 1358;
+		TORCHIC_SHADOW = 1359;
+		TORCHIC_PURIFIED = 1360;
+		COMBUSKEN_NORMAL = 1361;
+		COMBUSKEN_SHADOW = 1362;
+		COMBUSKEN_PURIFIED = 1363;
+		BLAZIKEN_NORMAL = 1364;
+		BLAZIKEN_SHADOW = 1365;
+		BLAZIKEN_PURIFIED = 1366;
+		POOCHYENA_NORMAL = 1367;
+		POOCHYENA_SHADOW = 1368;
+		POOCHYENA_PURIFIED = 1369;
+		MIGHTYENA_NORMAL = 1370;
+		MIGHTYENA_SHADOW = 1371;
+		MIGHTYENA_PURIFIED = 1372;
+		ZIGZAGOON_SHADOW = 1373;
+		ZIGZAGOON_PURIFIED = 1374;
+		LINOONE_SHADOW = 1375;
+		LINOONE_PURIFIED = 1376;
+		WURMPLE_SHADOW = 1377;
+		WURMPLE_PURIFIED = 1378;
+		SILCOON_NORMAL = 1379;
+		SILCOON_SHADOW = 1380;
+		SILCOON_PURIFIED = 1381;
+		BEAUTIFLY_NORMAL = 1382;
+		BEAUTIFLY_SHADOW = 1383;
+		BEAUTIFLY_PURIFIED = 1384;
+		CASCOON_NORMAL = 1385;
+		CASCOON_SHADOW = 1386;
+		CASCOON_PURIFIED = 1387;
+		DUSTOX_NORMAL = 1388;
+		DUSTOX_SHADOW = 1389;
+		DUSTOX_PURIFIED = 1390;
+		LOTAD_NORMAL = 1391;
+		LOTAD_SHADOW = 1392;
+		LOTAD_PURIFIED = 1393;
+		LOMBRE_NORMAL = 1394;
+		LOMBRE_SHADOW = 1395;
+		LOMBRE_PURIFIED = 1396;
+		LUDICOLO_NORMAL = 1397;
+		LUDICOLO_SHADOW = 1398;
+		LUDICOLO_PURIFIED = 1399;
+		TAILLOW_NORMAL = 1400;
+		TAILLOW_SHADOW = 1401;
+		TAILLOW_PURIFIED = 1402;
+		SWELLOW_NORMAL = 1403;
+		SWELLOW_SHADOW = 1404;
+		SWELLOW_PURIFIED = 1405;
+		WINGULL_NORMAL = 1406;
+		WINGULL_SHADOW = 1407;
+		WINGULL_PURIFIED = 1408;
+		PELIPPER_NORMAL = 1409;
+		PELIPPER_SHADOW = 1410;
+		PELIPPER_PURIFIED = 1411;
+		SURSKIT_NORMAL = 1412;
+		SURSKIT_SHADOW = 1413;
+		SURSKIT_PURIFIED = 1414;
+		MASQUERAIN_NORMAL = 1415;
+		MASQUERAIN_SHADOW = 1416;
+		MASQUERAIN_PURIFIED = 1417;
+		SHROOMISH_NORMAL = 1418;
+		SHROOMISH_SHADOW = 1419;
+		SHROOMISH_PURIFIED = 1420;
+		BRELOOM_NORMAL = 1421;
+		BRELOOM_SHADOW = 1422;
+		BRELOOM_PURIFIED = 1423;
+		SLAKOTH_NORMAL = 1424;
+		SLAKOTH_SHADOW = 1425;
+		SLAKOTH_PURIFIED = 1426;
+		VIGOROTH_NORMAL = 1427;
+		VIGOROTH_SHADOW = 1428;
+		VIGOROTH_PURIFIED = 1429;
+		SLAKING_NORMAL = 1430;
+		SLAKING_SHADOW = 1431;
+		SLAKING_PURIFIED = 1432;
+		NINCADA_NORMAL = 1433;
+		NINCADA_SHADOW = 1434;
+		NINCADA_PURIFIED = 1435;
+		NINJASK_NORMAL = 1436;
+		NINJASK_SHADOW = 1437;
+		NINJASK_PURIFIED = 1438;
+		SHEDINJA_NORMAL = 1439;
+		SHEDINJA_SHADOW = 1440;
+		SHEDINJA_PURIFIED = 1441;
+		WHISMUR_NORMAL = 1442;
+		WHISMUR_SHADOW = 1443;
+		WHISMUR_PURIFIED = 1444;
+		LOUDRED_NORMAL = 1445;
+		LOUDRED_SHADOW = 1446;
+		LOUDRED_PURIFIED = 1447;
+		EXPLOUD_NORMAL = 1448;
+		EXPLOUD_SHADOW = 1449;
+		EXPLOUD_PURIFIED = 1450;
+		MAKUHITA_NORMAL = 1451;
+		MAKUHITA_SHADOW = 1452;
+		MAKUHITA_PURIFIED = 1453;
+		HARIYAMA_NORMAL = 1454;
+		HARIYAMA_SHADOW = 1455;
+		HARIYAMA_PURIFIED = 1456;
+		AZURILL_NORMAL = 1457;
+		AZURILL_SHADOW = 1458;
+		AZURILL_PURIFIED = 1459;
+		NOSEPASS_NORMAL = 1460;
+		NOSEPASS_SHADOW = 1461;
+		NOSEPASS_PURIFIED = 1462;
+		SKITTY_NORMAL = 1463;
+		SKITTY_SHADOW = 1464;
+		SKITTY_PURIFIED = 1465;
+		DELCATTY_NORMAL = 1466;
+		DELCATTY_SHADOW = 1467;
+		DELCATTY_PURIFIED = 1468;
+		ARON_NORMAL = 1469;
+		ARON_SHADOW = 1470;
+		ARON_PURIFIED = 1471;
+		LAIRON_NORMAL = 1472;
+		LAIRON_SHADOW = 1473;
+		LAIRON_PURIFIED = 1474;
+		AGGRON_NORMAL = 1475;
+		AGGRON_SHADOW = 1476;
+		AGGRON_PURIFIED = 1477;
+		MEDITITE_NORMAL = 1478;
+		MEDITITE_SHADOW = 1479;
+		MEDITITE_PURIFIED = 1480;
+		MEDICHAM_NORMAL = 1481;
+		MEDICHAM_SHADOW = 1482;
+		MEDICHAM_PURIFIED = 1483;
+		ELECTRIKE_NORMAL = 1484;
+		ELECTRIKE_SHADOW = 1485;
+		ELECTRIKE_PURIFIED = 1486;
+		MANECTRIC_NORMAL = 1487;
+		MANECTRIC_SHADOW = 1488;
+		MANECTRIC_PURIFIED = 1489;
+		PLUSLE_NORMAL = 1490;
+		PLUSLE_SHADOW = 1491;
+		PLUSLE_PURIFIED = 1492;
+		MINUN_NORMAL = 1493;
+		MINUN_SHADOW = 1494;
+		MINUN_PURIFIED = 1495;
+		VOLBEAT_NORMAL = 1496;
+		VOLBEAT_SHADOW = 1497;
+		VOLBEAT_PURIFIED = 1498;
+		ILLUMISE_NORMAL = 1499;
+		ILLUMISE_SHADOW = 1500;
+		ILLUMISE_PURIFIED = 1501;
+		ROSELIA_NORMAL = 1502;
+		ROSELIA_SHADOW = 1503;
+		ROSELIA_PURIFIED = 1504;
+		GULPIN_NORMAL = 1505;
+		GULPIN_SHADOW = 1506;
+		GULPIN_PURIFIED = 1507;
+		SWALOT_NORMAL = 1508;
+		SWALOT_SHADOW = 1509;
+		SWALOT_PURIFIED = 1510;
+		WAILMER_NORMAL = 1511;
+		WAILMER_SHADOW = 1512;
+		WAILMER_PURIFIED = 1513;
+		WAILORD_NORMAL = 1514;
+		WAILORD_SHADOW = 1515;
+		WAILORD_PURIFIED = 1516;
+		NUMEL_NORMAL = 1517;
+		NUMEL_SHADOW = 1518;
+		NUMEL_PURIFIED = 1519;
+		CAMERUPT_NORMAL = 1520;
+		CAMERUPT_SHADOW = 1521;
+		CAMERUPT_PURIFIED = 1522;
+		TORKOAL_NORMAL = 1523;
+		TORKOAL_SHADOW = 1524;
+		TORKOAL_PURIFIED = 1525;
+		SPOINK_NORMAL = 1526;
+		SPOINK_SHADOW = 1527;
+		SPOINK_PURIFIED = 1528;
+		GRUMPIG_NORMAL = 1529;
+		GRUMPIG_SHADOW = 1530;
+		GRUMPIG_PURIFIED = 1531;
+		SWABLU_NORMAL = 1532;
+		SWABLU_SHADOW = 1533;
+		SWABLU_PURIFIED = 1534;
+		ALTARIA_NORMAL = 1535;
+		ALTARIA_SHADOW = 1536;
+		ALTARIA_PURIFIED = 1537;
+		ZANGOOSE_NORMAL = 1538;
+		ZANGOOSE_SHADOW = 1539;
+		ZANGOOSE_PURIFIED = 1540;
+		SEVIPER_NORMAL = 1541;
+		SEVIPER_SHADOW = 1542;
+		SEVIPER_PURIFIED = 1543;
+		LUNATONE_NORMAL = 1544;
+		LUNATONE_SHADOW = 1545;
+		LUNATONE_PURIFIED = 1546;
+		SOLROCK_NORMAL = 1547;
+		SOLROCK_SHADOW = 1548;
+		SOLROCK_PURIFIED = 1549;
+		BARBOACH_NORMAL = 1550;
+		BARBOACH_SHADOW = 1551;
+		BARBOACH_PURIFIED = 1552;
+		WHISCASH_NORMAL = 1553;
+		WHISCASH_SHADOW = 1554;
+		WHISCASH_PURIFIED = 1555;
+		CORPHISH_NORMAL = 1556;
+		CORPHISH_SHADOW = 1557;
+		CORPHISH_PURIFIED = 1558;
+		CRAWDAUNT_NORMAL = 1559;
+		CRAWDAUNT_SHADOW = 1560;
+		CRAWDAUNT_PURIFIED = 1561;
+		BALTOY_NORMAL = 1562;
+		BALTOY_SHADOW = 1563;
+		BALTOY_PURIFIED = 1564;
+		CLAYDOL_NORMAL = 1565;
+		CLAYDOL_SHADOW = 1566;
+		CLAYDOL_PURIFIED = 1567;
+		LILEEP_NORMAL = 1568;
+		LILEEP_SHADOW = 1569;
+		LILEEP_PURIFIED = 1570;
+		CRADILY_NORMAL = 1571;
+		CRADILY_SHADOW = 1572;
+		CRADILY_PURIFIED = 1573;
+		ANORITH_NORMAL = 1574;
+		ANORITH_SHADOW = 1575;
+		ANORITH_PURIFIED = 1576;
+		ARMALDO_NORMAL = 1577;
+		ARMALDO_SHADOW = 1578;
+		ARMALDO_PURIFIED = 1579;
+		FEEBAS_NORMAL = 1580;
+		FEEBAS_SHADOW = 1581;
+		FEEBAS_PURIFIED = 1582;
+		MILOTIC_NORMAL = 1583;
+		MILOTIC_SHADOW = 1584;
+		MILOTIC_PURIFIED = 1585;
+		KECLEON_NORMAL = 1586;
+		KECLEON_SHADOW = 1587;
+		KECLEON_PURIFIED = 1588;
+		TROPIUS_NORMAL = 1589;
+		TROPIUS_SHADOW = 1590;
+		TROPIUS_PURIFIED = 1591;
+		CHIMECHO_NORMAL = 1592;
+		CHIMECHO_SHADOW = 1593;
+		CHIMECHO_PURIFIED = 1594;
+		WYNAUT_NORMAL = 1595;
+		WYNAUT_SHADOW = 1596;
+		WYNAUT_PURIFIED = 1597;
+		SPHEAL_NORMAL = 1598;
+		SPHEAL_SHADOW = 1599;
+		SPHEAL_PURIFIED = 1600;
+		SEALEO_NORMAL = 1601;
+		SEALEO_SHADOW = 1602;
+		SEALEO_PURIFIED = 1603;
+		WALREIN_NORMAL = 1604;
+		WALREIN_SHADOW = 1605;
+		WALREIN_PURIFIED = 1606;
+		CLAMPERL_NORMAL = 1607;
+		CLAMPERL_SHADOW = 1608;
+		CLAMPERL_PURIFIED = 1609;
+		HUNTAIL_NORMAL = 1610;
+		HUNTAIL_SHADOW = 1611;
+		HUNTAIL_PURIFIED = 1612;
+		GOREBYSS_NORMAL = 1613;
+		GOREBYSS_SHADOW = 1614;
+		GOREBYSS_PURIFIED = 1615;
+		RELICANTH_NORMAL = 1616;
+		RELICANTH_SHADOW = 1617;
+		RELICANTH_PURIFIED = 1618;
+		LUVDISC_NORMAL = 1619;
+		LUVDISC_SHADOW = 1620;
+		LUVDISC_PURIFIED = 1621;
+		REGIROCK_NORMAL = 1622;
+		REGIROCK_SHADOW = 1623;
+		REGIROCK_PURIFIED = 1624;
+		REGICE_NORMAL = 1625;
+		REGICE_SHADOW = 1626;
+		REGICE_PURIFIED = 1627;
+		REGISTEEL_NORMAL = 1628;
+		REGISTEEL_SHADOW = 1629;
+		REGISTEEL_PURIFIED = 1630;
+		LATIAS_NORMAL = 1631;
+		LATIAS_SHADOW = 1632;
+		LATIAS_PURIFIED = 1633;
+		LATIOS_NORMAL = 1634;
+		LATIOS_SHADOW = 1635;
+		LATIOS_PURIFIED = 1636;
+		KYOGRE_NORMAL = 1637;
+		KYOGRE_SHADOW = 1638;
+		KYOGRE_PURIFIED = 1639;
+		GROUDON_NORMAL = 1640;
+		GROUDON_SHADOW = 1641;
+		GROUDON_PURIFIED = 1642;
+		RAYQUAZA_NORMAL = 1643;
+		RAYQUAZA_SHADOW = 1644;
+		RAYQUAZA_PURIFIED = 1645;
+		JIRACHI_NORMAL = 1646;
+		JIRACHI_SHADOW = 1647;
+		JIRACHI_PURIFIED = 1648;
+		PIPLUP_NORMAL = 1649;
+		PIPLUP_SHADOW = 1650;
+		PIPLUP_PURIFIED = 1651;
+		PRINPLUP_NORMAL = 1652;
+		PRINPLUP_SHADOW = 1653;
+		PRINPLUP_PURIFIED = 1654;
+		EMPOLEON_NORMAL = 1655;
+		EMPOLEON_SHADOW = 1656;
+		EMPOLEON_PURIFIED = 1657;
+		STARLY_NORMAL = 1658;
+		STARLY_SHADOW = 1659;
+		STARLY_PURIFIED = 1660;
+		STARAVIA_NORMAL = 1661;
+		STARAVIA_SHADOW = 1662;
+		STARAVIA_PURIFIED = 1663;
+		STARAPTOR_NORMAL = 1664;
+		STARAPTOR_SHADOW = 1665;
+		STARAPTOR_PURIFIED = 1666;
+		BIDOOF_NORMAL = 1667;
+		BIDOOF_SHADOW = 1668;
+		BIDOOF_PURIFIED = 1669;
+		BIBAREL_NORMAL = 1670;
+		BIBAREL_SHADOW = 1671;
+		BIBAREL_PURIFIED = 1672;
+		KRICKETOT_NORMAL = 1673;
+		KRICKETOT_SHADOW = 1674;
+		KRICKETOT_PURIFIED = 1675;
+		KRICKETUNE_NORMAL = 1676;
+		KRICKETUNE_SHADOW = 1677;
+		KRICKETUNE_PURIFIED = 1678;
+		SHINX_NORMAL = 1679;
+		SHINX_SHADOW = 1680;
+		SHINX_PURIFIED = 1681;
+		LUXIO_NORMAL = 1682;
+		LUXIO_SHADOW = 1683;
+		LUXIO_PURIFIED = 1684;
+		LUXRAY_NORMAL = 1685;
+		LUXRAY_SHADOW = 1686;
+		LUXRAY_PURIFIED = 1687;
+		BUDEW_NORMAL = 1688;
+		BUDEW_SHADOW = 1689;
+		BUDEW_PURIFIED = 1690;
+		ROSERADE_NORMAL = 1691;
+		ROSERADE_SHADOW = 1692;
+		ROSERADE_PURIFIED = 1693;
+		CRANIDOS_NORMAL = 1694;
+		CRANIDOS_SHADOW = 1695;
+		CRANIDOS_PURIFIED = 1696;
+		RAMPARDOS_NORMAL = 1697;
+		RAMPARDOS_SHADOW = 1698;
+		RAMPARDOS_PURIFIED = 1699;
+		SHIELDON_NORMAL = 1700;
+		SHIELDON_SHADOW = 1701;
+		SHIELDON_PURIFIED = 1702;
+		BASTIODON_NORMAL = 1703;
+		BASTIODON_SHADOW = 1704;
+		BASTIODON_PURIFIED = 1705;
+		BURMY_NORMAL = 1706;
+		BURMY_SHADOW = 1707;
+		BURMY_PURIFIED = 1708;
+		WORMADAM_NORMAL = 1709;
+		WORMADAM_SHADOW = 1710;
+		WORMADAM_PURIFIED = 1711;
+		MOTHIM_NORMAL = 1712;
+		MOTHIM_SHADOW = 1713;
+		MOTHIM_PURIFIED = 1714;
+		COMBEE_NORMAL = 1715;
+		COMBEE_SHADOW = 1716;
+		COMBEE_PURIFIED = 1717;
+		VESPIQUEN_NORMAL = 1718;
+		VESPIQUEN_SHADOW = 1719;
+		VESPIQUEN_PURIFIED = 1720;
+		PACHIRISU_NORMAL = 1721;
+		PACHIRISU_SHADOW = 1722;
+		PACHIRISU_PURIFIED = 1723;
+		BUIZEL_NORMAL = 1724;
+		BUIZEL_SHADOW = 1725;
+		BUIZEL_PURIFIED = 1726;
+		FLOATZEL_NORMAL = 1727;
+		FLOATZEL_SHADOW = 1728;
+		FLOATZEL_PURIFIED = 1729;
+		CHERUBI_NORMAL = 1730;
+		CHERUBI_SHADOW = 1731;
+		CHERUBI_PURIFIED = 1732;
+		CHERRIM_NORMAL = 1733;
+		CHERRIM_SHADOW = 1734;
+		CHERRIM_PURIFIED = 1735;
+		SHELLOS_NORMAL = 1736;
+		SHELLOS_SHADOW = 1737;
+		SHELLOS_PURIFIED = 1738;
+		GASTRODON_NORMAL = 1739;
+		GASTRODON_SHADOW = 1740;
+		GASTRODON_PURIFIED = 1741;
+		AMBIPOM_NORMAL = 1742;
+		AMBIPOM_SHADOW = 1743;
+		AMBIPOM_PURIFIED = 1744;
+		DRIFLOON_NORMAL = 1745;
+		DRIFLOON_SHADOW = 1746;
+		DRIFLOON_PURIFIED = 1747;
+		DRIFBLIM_NORMAL = 1748;
+		DRIFBLIM_SHADOW = 1749;
+		DRIFBLIM_PURIFIED = 1750;
+		BUNEARY_NORMAL = 1751;
+		BUNEARY_SHADOW = 1752;
+		BUNEARY_PURIFIED = 1753;
+		LOPUNNY_NORMAL = 1754;
+		LOPUNNY_SHADOW = 1755;
+		LOPUNNY_PURIFIED = 1756;
+		GLAMEOW_NORMAL = 1757;
+		GLAMEOW_SHADOW = 1758;
+		GLAMEOW_PURIFIED = 1759;
+		PURUGLY_NORMAL = 1760;
+		PURUGLY_SHADOW = 1761;
+		PURUGLY_PURIFIED = 1762;
+		CHINGLING_NORMAL = 1763;
+		CHINGLING_SHADOW = 1764;
+		CHINGLING_PURIFIED = 1765;
+		BRONZOR_NORMAL = 1766;
+		BRONZOR_SHADOW = 1767;
+		BRONZOR_PURIFIED = 1768;
+		BRONZONG_NORMAL = 1769;
+		BRONZONG_SHADOW = 1770;
+		BRONZONG_PURIFIED = 1771;
+		BONSLY_NORMAL = 1772;
+		BONSLY_SHADOW = 1773;
+		BONSLY_PURIFIED = 1774;
+		MIME_JR_NORMAL = 1775;
+		MIME_JR_SHADOW = 1776;
+		MIME_JR_PURIFIED = 1777;
+		HAPPINY_NORMAL = 1778;
+		HAPPINY_SHADOW = 1779;
+		HAPPINY_PURIFIED = 1780;
+		CHATOT_NORMAL = 1781;
+		CHATOT_SHADOW = 1782;
+		CHATOT_PURIFIED = 1783;
+		SPIRITOMB_NORMAL = 1784;
+		SPIRITOMB_SHADOW = 1785;
+		SPIRITOMB_PURIFIED = 1786;
+		MUNCHLAX_NORMAL = 1787;
+		MUNCHLAX_SHADOW = 1788;
+		MUNCHLAX_PURIFIED = 1789;
+		RIOLU_NORMAL = 1790;
+		RIOLU_SHADOW = 1791;
+		RIOLU_PURIFIED = 1792;
+		LUCARIO_NORMAL = 1793;
+		LUCARIO_SHADOW = 1794;
+		LUCARIO_PURIFIED = 1795;
+		SKORUPI_NORMAL = 1796;
+		SKORUPI_SHADOW = 1797;
+		SKORUPI_PURIFIED = 1798;
+		DRAPION_NORMAL = 1799;
+		DRAPION_SHADOW = 1800;
+		DRAPION_PURIFIED = 1801;
+		CROAGUNK_NORMAL = 1802;
+		CROAGUNK_SHADOW = 1803;
+		CROAGUNK_PURIFIED = 1804;
+		TOXICROAK_NORMAL = 1805;
+		TOXICROAK_SHADOW = 1806;
+		TOXICROAK_PURIFIED = 1807;
+		CARNIVINE_NORMAL = 1808;
+		CARNIVINE_SHADOW = 1809;
+		CARNIVINE_PURIFIED = 1810;
+		FINNEON_NORMAL = 1811;
+		FINNEON_SHADOW = 1812;
+		FINNEON_PURIFIED = 1813;
+		LUMINEON_NORMAL = 1814;
+		LUMINEON_SHADOW = 1815;
+		LUMINEON_PURIFIED = 1816;
+		MANTYKE_NORMAL = 1817;
+		MANTYKE_SHADOW = 1818;
+		MANTYKE_PURIFIED = 1819;
+		LICKILICKY_NORMAL = 1820;
+		LICKILICKY_SHADOW = 1821;
+		LICKILICKY_PURIFIED = 1822;
+		TANGROWTH_NORMAL = 1823;
+		TANGROWTH_SHADOW = 1824;
+		TANGROWTH_PURIFIED = 1825;
+		TOGEKISS_NORMAL = 1826;
+		TOGEKISS_SHADOW = 1827;
+		TOGEKISS_PURIFIED = 1828;
+		YANMEGA_NORMAL = 1829;
+		YANMEGA_SHADOW = 1830;
+		YANMEGA_PURIFIED = 1831;
+		LEAFEON_NORMAL = 1832;
+		LEAFEON_SHADOW = 1833;
+		LEAFEON_PURIFIED = 1834;
+		GLACEON_NORMAL = 1835;
+		GLACEON_SHADOW = 1836;
+		GLACEON_PURIFIED = 1837;
+		MAMOSWINE_NORMAL = 1838;
+		MAMOSWINE_SHADOW = 1839;
+		MAMOSWINE_PURIFIED = 1840;
+		PROBOPASS_NORMAL = 1841;
+		PROBOPASS_SHADOW = 1842;
+		PROBOPASS_PURIFIED = 1843;
+		FROSLASS_NORMAL = 1844;
+		FROSLASS_SHADOW = 1845;
+		FROSLASS_PURIFIED = 1846;
+		UXIE_NORMAL = 1847;
+		UXIE_SHADOW = 1848;
+		UXIE_PURIFIED = 1849;
+		MESPRIT_NORMAL = 1850;
+		MESPRIT_SHADOW = 1851;
+		MESPRIT_PURIFIED = 1852;
+		AZELF_NORMAL = 1853;
+		AZELF_SHADOW = 1854;
+		AZELF_PURIFIED = 1855;
+		DIALGA_NORMAL = 1856;
+		DIALGA_SHADOW = 1857;
+		DIALGA_PURIFIED = 1858;
+		PALKIA_NORMAL = 1859;
+		PALKIA_SHADOW = 1860;
+		PALKIA_PURIFIED = 1861;
+		HEATRAN_NORMAL = 1862;
+		HEATRAN_SHADOW = 1863;
+		HEATRAN_PURIFIED = 1864;
+		REGIGIGAS_NORMAL = 1865;
+		REGIGIGAS_SHADOW = 1866;
+		REGIGIGAS_PURIFIED = 1867;
+		GIRATINA_NORMAL = 1868;
+		GIRATINA_SHADOW = 1869;
+		GIRATINA_PURIFIED = 1870;
+		CRESSELIA_NORMAL = 1871;
+		CRESSELIA_SHADOW = 1872;
+		CRESSELIA_PURIFIED = 1873;
+		PHIONE_NORMAL = 1874;
+		PHIONE_SHADOW = 1875;
+		PHIONE_PURIFIED = 1876;
+		MANAPHY_NORMAL = 1877;
+		MANAPHY_SHADOW = 1878;
+		MANAPHY_PURIFIED = 1879;
+		DARKRAI_NORMAL = 1880;
+		DARKRAI_SHADOW = 1881;
+		DARKRAI_PURIFIED = 1882;
+		SHAYMIN_NORMAL = 1883;
+		SHAYMIN_SHADOW = 1884;
+		SHAYMIN_PURIFIED = 1885;
+		VICTINI_NORMAL = 1886;
+		VICTINI_SHADOW = 1887;
+		VICTINI_PURIFIED = 1888;
+		SNIVY_NORMAL = 1889;
+		SNIVY_SHADOW = 1890;
+		SNIVY_PURIFIED = 1891;
+		SERVINE_NORMAL = 1892;
+		SERVINE_SHADOW = 1893;
+		SERVINE_PURIFIED = 1894;
+		SERPERIOR_NORMAL = 1895;
+		SERPERIOR_SHADOW = 1896;
+		SERPERIOR_PURIFIED = 1897;
+		TEPIG_NORMAL = 1898;
+		TEPIG_SHADOW = 1899;
+		TEPIG_PURIFIED = 1900;
+		PIGNITE_NORMAL = 1901;
+		PIGNITE_SHADOW = 1902;
+		PIGNITE_PURIFIED = 1903;
+		EMBOAR_NORMAL = 1904;
+		EMBOAR_SHADOW = 1905;
+		EMBOAR_PURIFIED = 1906;
+		OSHAWOTT_NORMAL = 1907;
+		OSHAWOTT_SHADOW = 1908;
+		OSHAWOTT_PURIFIED = 1909;
+		DEWOTT_NORMAL = 1910;
+		DEWOTT_SHADOW = 1911;
+		DEWOTT_PURIFIED = 1912;
+		SAMUROTT_NORMAL = 1913;
+		SAMUROTT_SHADOW = 1914;
+		SAMUROTT_PURIFIED = 1915;
+		PATRAT_NORMAL = 1916;
+		PATRAT_SHADOW = 1917;
+		PATRAT_PURIFIED = 1918;
+		WATCHOG_NORMAL = 1919;
+		WATCHOG_SHADOW = 1920;
+		WATCHOG_PURIFIED = 1921;
+		LILLIPUP_NORMAL = 1922;
+		LILLIPUP_SHADOW = 1923;
+		LILLIPUP_PURIFIED = 1924;
+		HERDIER_NORMAL = 1925;
+		HERDIER_SHADOW = 1926;
+		HERDIER_PURIFIED = 1927;
+		STOUTLAND_NORMAL = 1928;
+		STOUTLAND_SHADOW = 1929;
+		STOUTLAND_PURIFIED = 1930;
+		PURRLOIN_NORMAL = 1931;
+		PURRLOIN_SHADOW = 1932;
+		PURRLOIN_PURIFIED = 1933;
+		LIEPARD_NORMAL = 1934;
+		LIEPARD_SHADOW = 1935;
+		LIEPARD_PURIFIED = 1936;
+		PANSAGE_NORMAL = 1937;
+		PANSAGE_SHADOW = 1938;
+		PANSAGE_PURIFIED = 1939;
+		SIMISAGE_NORMAL = 1940;
+		SIMISAGE_SHADOW = 1941;
+		SIMISAGE_PURIFIED = 1942;
+		PANSEAR_NORMAL = 1943;
+		PANSEAR_SHADOW = 1944;
+		PANSEAR_PURIFIED = 1945;
+		SIMISEAR_NORMAL = 1946;
+		SIMISEAR_SHADOW = 1947;
+		SIMISEAR_PURIFIED = 1948;
+		PANPOUR_NORMAL = 1949;
+		PANPOUR_SHADOW = 1950;
+		PANPOUR_PURIFIED = 1951;
+		SIMIPOUR_NORMAL = 1952;
+		SIMIPOUR_SHADOW = 1953;
+		SIMIPOUR_PURIFIED = 1954;
+		MUNNA_NORMAL = 1955;
+		MUNNA_SHADOW = 1956;
+		MUNNA_PURIFIED = 1957;
+		MUSHARNA_NORMAL = 1958;
+		MUSHARNA_SHADOW = 1959;
+		MUSHARNA_PURIFIED = 1960;
+		PIDOVE_NORMAL = 1961;
+		PIDOVE_SHADOW = 1962;
+		PIDOVE_PURIFIED = 1963;
+		TRANQUILL_NORMAL = 1964;
+		TRANQUILL_SHADOW = 1965;
+		TRANQUILL_PURIFIED = 1966;
+		UNFEZANT_NORMAL = 1967;
+		UNFEZANT_SHADOW = 1968;
+		UNFEZANT_PURIFIED = 1969;
+		BLITZLE_NORMAL = 1970;
+		BLITZLE_SHADOW = 1971;
+		BLITZLE_PURIFIED = 1972;
+		ZEBSTRIKA_NORMAL = 1973;
+		ZEBSTRIKA_SHADOW = 1974;
+		ZEBSTRIKA_PURIFIED = 1975;
+		ROGGENROLA_NORMAL = 1976;
+		ROGGENROLA_SHADOW = 1977;
+		ROGGENROLA_PURIFIED = 1978;
+		BOLDORE_NORMAL = 1979;
+		BOLDORE_SHADOW = 1980;
+		BOLDORE_PURIFIED = 1981;
+		GIGALITH_NORMAL = 1982;
+		GIGALITH_SHADOW = 1983;
+		GIGALITH_PURIFIED = 1984;
+		WOOBAT_NORMAL = 1985;
+		WOOBAT_SHADOW = 1986;
+		WOOBAT_PURIFIED = 1987;
+		SWOOBAT_NORMAL = 1988;
+		SWOOBAT_SHADOW = 1989;
+		SWOOBAT_PURIFIED = 1990;
+		DRILBUR_NORMAL = 1991;
+		DRILBUR_SHADOW = 1992;
+		DRILBUR_PURIFIED = 1993;
+		EXCADRILL_NORMAL = 1994;
+		EXCADRILL_SHADOW = 1995;
+		EXCADRILL_PURIFIED = 1996;
+		AUDINO_NORMAL = 1997;
+		AUDINO_SHADOW = 1998;
+		AUDINO_PURIFIED = 1999;
+		TIMBURR_NORMAL = 2000;
+		TIMBURR_SHADOW = 2001;
+		TIMBURR_PURIFIED = 2002;
+		GURDURR_NORMAL = 2003;
+		GURDURR_SHADOW = 2004;
+		GURDURR_PURIFIED = 2005;
+		CONKELDURR_NORMAL = 2006;
+		CONKELDURR_SHADOW = 2007;
+		CONKELDURR_PURIFIED = 2008;
+		TYMPOLE_NORMAL = 2009;
+		TYMPOLE_SHADOW = 2010;
+		TYMPOLE_PURIFIED = 2011;
+		PALPITOAD_NORMAL = 2012;
+		PALPITOAD_SHADOW = 2013;
+		PALPITOAD_PURIFIED = 2014;
+		SEISMITOAD_NORMAL = 2015;
+		SEISMITOAD_SHADOW = 2016;
+		SEISMITOAD_PURIFIED = 2017;
+		THROH_NORMAL = 2018;
+		THROH_SHADOW = 2019;
+		THROH_PURIFIED = 2020;
+		SAWK_NORMAL = 2021;
+		SAWK_SHADOW = 2022;
+		SAWK_PURIFIED = 2023;
+		SEWADDLE_NORMAL = 2024;
+		SEWADDLE_SHADOW = 2025;
+		SEWADDLE_PURIFIED = 2026;
+		SWADLOON_NORMAL = 2027;
+		SWADLOON_SHADOW = 2028;
+		SWADLOON_PURIFIED = 2029;
+		LEAVANNY_NORMAL = 2030;
+		LEAVANNY_SHADOW = 2031;
+		LEAVANNY_PURIFIED = 2032;
+		VENIPEDE_NORMAL = 2033;
+		VENIPEDE_SHADOW = 2034;
+		VENIPEDE_PURIFIED = 2035;
+		WHIRLIPEDE_NORMAL = 2036;
+		WHIRLIPEDE_SHADOW = 2037;
+		WHIRLIPEDE_PURIFIED = 2038;
+		SCOLIPEDE_NORMAL = 2039;
+		SCOLIPEDE_SHADOW = 2040;
+		SCOLIPEDE_PURIFIED = 2041;
+		COTTONEE_NORMAL = 2042;
+		COTTONEE_SHADOW = 2043;
+		COTTONEE_PURIFIED = 2044;
+		WHIMSICOTT_NORMAL = 2045;
+		WHIMSICOTT_SHADOW = 2046;
+		WHIMSICOTT_PURIFIED = 2047;
+		PETILIL_NORMAL = 2048;
+		PETILIL_SHADOW = 2049;
+		PETILIL_PURIFIED = 2050;
+		LILLIGANT_NORMAL = 2051;
+		LILLIGANT_SHADOW = 2052;
+		LILLIGANT_PURIFIED = 2053;
+		SANDILE_NORMAL = 2054;
+		SANDILE_SHADOW = 2055;
+		SANDILE_PURIFIED = 2056;
+		KROKOROK_NORMAL = 2057;
+		KROKOROK_SHADOW = 2058;
+		KROKOROK_PURIFIED = 2059;
+		KROOKODILE_NORMAL = 2060;
+		KROOKODILE_SHADOW = 2061;
+		KROOKODILE_PURIFIED = 2062;
+		DARUMAKA_NORMAL = 2063;
+		DARUMAKA_SHADOW = 2064;
+		DARUMAKA_PURIFIED = 2065;
+		MARACTUS_NORMAL = 2066;
+		MARACTUS_SHADOW = 2067;
+		MARACTUS_PURIFIED = 2068;
+		DWEBBLE_NORMAL = 2069;
+		DWEBBLE_SHADOW = 2070;
+		DWEBBLE_PURIFIED = 2071;
+		CRUSTLE_NORMAL = 2072;
+		CRUSTLE_SHADOW = 2073;
+		CRUSTLE_PURIFIED = 2074;
+		SCRAGGY_NORMAL = 2075;
+		SCRAGGY_SHADOW = 2076;
+		SCRAGGY_PURIFIED = 2077;
+		SCRAFTY_NORMAL = 2078;
+		SCRAFTY_SHADOW = 2079;
+		SCRAFTY_PURIFIED = 2080;
+		SIGILYPH_NORMAL = 2081;
+		SIGILYPH_SHADOW = 2082;
+		SIGILYPH_PURIFIED = 2083;
+		YAMASK_NORMAL = 2084;
+		YAMASK_SHADOW = 2085;
+		YAMASK_PURIFIED = 2086;
+		COFAGRIGUS_NORMAL = 2087;
+		COFAGRIGUS_SHADOW = 2088;
+		COFAGRIGUS_PURIFIED = 2089;
+		TIRTOUGA_NORMAL = 2090;
+		TIRTOUGA_SHADOW = 2091;
+		TIRTOUGA_PURIFIED = 2092;
+		CARRACOSTA_NORMAL = 2093;
+		CARRACOSTA_SHADOW = 2094;
+		CARRACOSTA_PURIFIED = 2095;
+		ARCHEN_NORMAL = 2096;
+		ARCHEN_SHADOW = 2097;
+		ARCHEN_PURIFIED = 2098;
+		ARCHEOPS_NORMAL = 2099;
+		ARCHEOPS_SHADOW = 2100;
+		ARCHEOPS_PURIFIED = 2101;
+		TRUBBISH_NORMAL = 2102;
+		TRUBBISH_SHADOW = 2103;
+		TRUBBISH_PURIFIED = 2104;
+		GARBODOR_NORMAL = 2105;
+		GARBODOR_SHADOW = 2106;
+		GARBODOR_PURIFIED = 2107;
+		ZORUA_NORMAL = 2108;
+		ZORUA_SHADOW = 2109;
+		ZORUA_PURIFIED = 2110;
+		ZOROARK_NORMAL = 2111;
+		ZOROARK_SHADOW = 2112;
+		ZOROARK_PURIFIED = 2113;
+		MINCCINO_NORMAL = 2114;
+		MINCCINO_SHADOW = 2115;
+		MINCCINO_PURIFIED = 2116;
+		CINCCINO_NORMAL = 2117;
+		CINCCINO_SHADOW = 2118;
+		CINCCINO_PURIFIED = 2119;
+		GOTHITA_NORMAL = 2120;
+		GOTHITA_SHADOW = 2121;
+		GOTHITA_PURIFIED = 2122;
+		GOTHORITA_NORMAL = 2123;
+		GOTHORITA_SHADOW = 2124;
+		GOTHORITA_PURIFIED = 2125;
+		GOTHITELLE_NORMAL = 2126;
+		GOTHITELLE_SHADOW = 2127;
+		GOTHITELLE_PURIFIED = 2128;
+		SOLOSIS_NORMAL = 2129;
+		SOLOSIS_SHADOW = 2130;
+		SOLOSIS_PURIFIED = 2131;
+		DUOSION_NORMAL = 2132;
+		DUOSION_SHADOW = 2133;
+		DUOSION_PURIFIED = 2134;
+		REUNICLUS_NORMAL = 2135;
+		REUNICLUS_SHADOW = 2136;
+		REUNICLUS_PURIFIED = 2137;
+		DUCKLETT_NORMAL = 2138;
+		DUCKLETT_SHADOW = 2139;
+		DUCKLETT_PURIFIED = 2140;
+		SWANNA_NORMAL = 2141;
+		SWANNA_SHADOW = 2142;
+		SWANNA_PURIFIED = 2143;
+		VANILLITE_NORMAL = 2144;
+		VANILLITE_SHADOW = 2145;
+		VANILLITE_PURIFIED = 2146;
+		VANILLISH_NORMAL = 2147;
+		VANILLISH_SHADOW = 2148;
+		VANILLISH_PURIFIED = 2149;
+		VANILLUXE_NORMAL = 2150;
+		VANILLUXE_SHADOW = 2151;
+		VANILLUXE_PURIFIED = 2152;
+		EMOLGA_NORMAL = 2153;
+		EMOLGA_SHADOW = 2154;
+		EMOLGA_PURIFIED = 2155;
+		KARRABLAST_NORMAL = 2156;
+		KARRABLAST_SHADOW = 2157;
+		KARRABLAST_PURIFIED = 2158;
+		ESCAVALIER_NORMAL = 2159;
+		ESCAVALIER_SHADOW = 2160;
+		ESCAVALIER_PURIFIED = 2161;
+		FOONGUS_NORMAL = 2162;
+		FOONGUS_SHADOW = 2163;
+		FOONGUS_PURIFIED = 2164;
+		AMOONGUSS_NORMAL = 2165;
+		AMOONGUSS_SHADOW = 2166;
+		AMOONGUSS_PURIFIED = 2167;
+		FRILLISH_NORMAL = 2168;
+		FRILLISH_SHADOW = 2169;
+		FRILLISH_PURIFIED = 2170;
+		JELLICENT_NORMAL = 2171;
+		JELLICENT_SHADOW = 2172;
+		JELLICENT_PURIFIED = 2173;
+		ALOMOMOLA_NORMAL = 2174;
+		ALOMOMOLA_SHADOW = 2175;
+		ALOMOMOLA_PURIFIED = 2176;
+		JOLTIK_NORMAL = 2177;
+		JOLTIK_SHADOW = 2178;
+		JOLTIK_PURIFIED = 2179;
+		GALVANTULA_NORMAL = 2180;
+		GALVANTULA_SHADOW = 2181;
+		GALVANTULA_PURIFIED = 2182;
+		FERROSEED_NORMAL = 2183;
+		FERROSEED_SHADOW = 2184;
+		FERROSEED_PURIFIED = 2185;
+		FERROTHORN_NORMAL = 2186;
+		FERROTHORN_SHADOW = 2187;
+		FERROTHORN_PURIFIED = 2188;
+		KLINK_NORMAL = 2189;
+		KLINK_SHADOW = 2190;
+		KLINK_PURIFIED = 2191;
+		KLANG_NORMAL = 2192;
+		KLANG_SHADOW = 2193;
+		KLANG_PURIFIED = 2194;
+		KLINKLANG_NORMAL = 2195;
+		KLINKLANG_SHADOW = 2196;
+		KLINKLANG_PURIFIED = 2197;
+		TYNAMO_NORMAL = 2198;
+		TYNAMO_SHADOW = 2199;
+		TYNAMO_PURIFIED = 2200;
+		EELEKTRIK_NORMAL = 2201;
+		EELEKTRIK_SHADOW = 2202;
+		EELEKTRIK_PURIFIED = 2203;
+		EELEKTROSS_NORMAL = 2204;
+		EELEKTROSS_SHADOW = 2205;
+		EELEKTROSS_PURIFIED = 2206;
+		ELGYEM_NORMAL = 2207;
+		ELGYEM_SHADOW = 2208;
+		ELGYEM_PURIFIED = 2209;
+		BEHEEYEM_NORMAL = 2210;
+		BEHEEYEM_SHADOW = 2211;
+		BEHEEYEM_PURIFIED = 2212;
+		LITWICK_NORMAL = 2213;
+		LITWICK_SHADOW = 2214;
+		LITWICK_PURIFIED = 2215;
+		LAMPENT_NORMAL = 2216;
+		LAMPENT_SHADOW = 2217;
+		LAMPENT_PURIFIED = 2218;
+		CHANDELURE_NORMAL = 2219;
+		CHANDELURE_SHADOW = 2220;
+		CHANDELURE_PURIFIED = 2221;
+		AXEW_NORMAL = 2222;
+		AXEW_SHADOW = 2223;
+		AXEW_PURIFIED = 2224;
+		FRAXURE_NORMAL = 2225;
+		FRAXURE_SHADOW = 2226;
+		FRAXURE_PURIFIED = 2227;
+		HAXORUS_NORMAL = 2228;
+		HAXORUS_SHADOW = 2229;
+		HAXORUS_PURIFIED = 2230;
+		CUBCHOO_NORMAL = 2231;
+		CUBCHOO_SHADOW = 2232;
+		CUBCHOO_PURIFIED = 2233;
+		BEARTIC_NORMAL = 2234;
+		BEARTIC_SHADOW = 2235;
+		BEARTIC_PURIFIED = 2236;
+		CRYOGONAL_NORMAL = 2237;
+		CRYOGONAL_SHADOW = 2238;
+		CRYOGONAL_PURIFIED = 2239;
+		SHELMET_NORMAL = 2240;
+		SHELMET_SHADOW = 2241;
+		SHELMET_PURIFIED = 2242;
+		ACCELGOR_NORMAL = 2243;
+		ACCELGOR_SHADOW = 2244;
+		ACCELGOR_PURIFIED = 2245;
+		STUNFISK_NORMAL = 2246;
+		STUNFISK_SHADOW = 2247;
+		STUNFISK_PURIFIED = 2248;
+		MIENFOO_NORMAL = 2249;
+		MIENFOO_SHADOW = 2250;
+		MIENFOO_PURIFIED = 2251;
+		MIENSHAO_NORMAL = 2252;
+		MIENSHAO_SHADOW = 2253;
+		MIENSHAO_PURIFIED = 2254;
+		DRUDDIGON_NORMAL = 2255;
+		DRUDDIGON_SHADOW = 2256;
+		DRUDDIGON_PURIFIED = 2257;
+		GOLETT_NORMAL = 2258;
+		GOLETT_SHADOW = 2259;
+		GOLETT_PURIFIED = 2260;
+		GOLURK_NORMAL = 2261;
+		GOLURK_SHADOW = 2262;
+		GOLURK_PURIFIED = 2263;
+		PAWNIARD_NORMAL = 2264;
+		PAWNIARD_SHADOW = 2265;
+		PAWNIARD_PURIFIED = 2266;
+		BISHARP_NORMAL = 2267;
+		BISHARP_SHADOW = 2268;
+		BISHARP_PURIFIED = 2269;
+		BOUFFALANT_NORMAL = 2270;
+		BOUFFALANT_SHADOW = 2271;
+		BOUFFALANT_PURIFIED = 2272;
+		RUFFLET_NORMAL = 2273;
+		RUFFLET_SHADOW = 2274;
+		RUFFLET_PURIFIED = 2275;
+		BRAVIARY_NORMAL = 2276;
+		BRAVIARY_SHADOW = 2277;
+		BRAVIARY_PURIFIED = 2278;
+		VULLABY_NORMAL = 2279;
+		VULLABY_SHADOW = 2280;
+		VULLABY_PURIFIED = 2281;
+		MANDIBUZZ_NORMAL = 2282;
+		MANDIBUZZ_SHADOW = 2283;
+		MANDIBUZZ_PURIFIED = 2284;
+		HEATMOR_NORMAL = 2285;
+		HEATMOR_SHADOW = 2286;
+		HEATMOR_PURIFIED = 2287;
+		DURANT_NORMAL = 2288;
+		DURANT_SHADOW = 2289;
+		DURANT_PURIFIED = 2290;
+		DEINO_NORMAL = 2291;
+		DEINO_SHADOW = 2292;
+		DEINO_PURIFIED = 2293;
+		ZWEILOUS_NORMAL = 2294;
+		ZWEILOUS_SHADOW = 2295;
+		ZWEILOUS_PURIFIED = 2296;
+		HYDREIGON_NORMAL = 2297;
+		HYDREIGON_SHADOW = 2298;
+		HYDREIGON_PURIFIED = 2299;
+		LARVESTA_NORMAL = 2300;
+		LARVESTA_SHADOW = 2301;
+		LARVESTA_PURIFIED = 2302;
+		VOLCARONA_NORMAL = 2303;
+		VOLCARONA_SHADOW = 2304;
+		VOLCARONA_PURIFIED = 2305;
+		COBALION_NORMAL = 2306;
+		COBALION_SHADOW = 2307;
+		COBALION_PURIFIED = 2308;
+		TERRAKION_NORMAL = 2309;
+		TERRAKION_SHADOW = 2310;
+		TERRAKION_PURIFIED = 2311;
+		VIRIZION_NORMAL = 2312;
+		VIRIZION_SHADOW = 2313;
+		VIRIZION_PURIFIED = 2314;
+		RESHIRAM_NORMAL = 2315;
+		RESHIRAM_SHADOW = 2316;
+		RESHIRAM_PURIFIED = 2317;
+		ZEKROM_NORMAL = 2318;
+		ZEKROM_SHADOW = 2319;
+		ZEKROM_PURIFIED = 2320;
+		MELTAN_NORMAL = 2321;
+		MELTAN_SHADOW = 2322;
+		MELTAN_PURIFIED = 2323;
+		MELMETAL_NORMAL = 2324;
+		MELMETAL_SHADOW = 2325;
+		MELMETAL_PURIFIED = 2326;
+		WURMPLE_SPRING_2020 = 2327;
+		WOBBUFFET_SPRING_2020 = 2328;
+		RATICATE_SPRING_2020 = 2329;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
@@ -11521,6 +13517,7 @@ message PokemonDisplayProto {
 	Form form = 4;
 	GameplayWeatherProto.WeatherCondition weather_boosted_condition = 5;
 	Alignment alignment = 6;
+	PokemonBadge pokemon_badge = 7;
 }
 
 // ref: Holoholo.Rpc.PokemonEncounterAttributesProto
@@ -11606,6 +13603,7 @@ message PokemonFortProto {
 // ref: Holoholo.Rpc.PokemonGlobalSettingsProto
 message PokemonGlobalSettingsProto {
 	bool enable_camo_shader = 1;
+	bool display_pokemon_badge_on_model = 2;
 }
 
 // ref: Holoholo.Rpc.PokemonGoPlusTelemetry
@@ -11931,6 +13929,8 @@ message QuestConditionProto {
 		//with_distance = 22;
 		//with_invasion_character = 23;
 		//with_pokemon_alignment = 24;
+		//with_buddy = 25;
+		//with_daily_buddy_affection = 26;
 	//}
 
 	// ref: Holoholo.Rpc.QuestConditionProto/Types/ConditionType
@@ -11963,6 +13963,9 @@ message QuestConditionProto {
 		WITH_DISTANCE = 25;
 		WITH_POKEMON_ALIGNMENT = 26;
 		WITH_INVASION_CHARACTER = 27;
+		WITH_BUDDY = 28;
+		WITH_BUDDY_INTERESTING_POI = 29;
+		WITH_DAILY_BUDDY_AFFECTION = 30;
 	}
 
 	ConditionType type = 1;
@@ -11989,6 +13992,8 @@ message QuestConditionProto {
 	WithDistanceProto with_distance = 22;
 	WithInvasionCharacterProto with_invasion_character = 23;
 	WithPokemonAlignmentProto with_pokemon_alignment = 24;
+	WithBuddyProto with_buddy = 25;
+	WithDailyBuddyAffectionProto with_daily_buddy_affection = 26;
 }
 
 // ref: Holoholo.Rpc.QuestDialogProto
@@ -12178,6 +14183,7 @@ message QuestProto {
 		//catch_pokemon = 4;
 		//add_friend = 5;
 		//trade_pokemon = 6;
+		//daily_buddy_affection = 7;
 	//}
 
 	// ref: Holoholo.Rpc.QuestProto/Types/Status
@@ -12193,6 +14199,8 @@ message QuestProto {
 	CatchPokemonQuestProto catch_pokemon = 4;
 	AddFriendQuestProto add_friend = 5;
 	TradePokemonQuestProto trade_pokemon = 6;
+	DailyBuddyAffectionQuestProto daily_buddy_affection = 7;
+	DaysWithARowQuestProto days_in_arow = 99;
 	string quest_id = 100;
 	int64 quest_seed = 101;
 	Context quest_context = 102;
@@ -12725,10 +14733,13 @@ message SetBuddyPokemonOutProto {
 		ERROR_POKEMON_NOT_OWNED = 3;
 		ERROR_POKEMON_IS_EGG = 4;
 		ERROR_INVALID_POKEMON = 5;
+		ERROR_BUDDY_SWAP_LIMIT_EXCEEDED = 6;
 	}
 
 	Result result = 1;
 	BuddyPokemonProto updated_buddy = 2;
+	BuddyObservedData observed_data = 3;
+	double km_remaining = 4;
 }
 
 // ref: Holoholo.Rpc.SetBuddyPokemonProto
@@ -12959,6 +14970,19 @@ message SocialPlayerSettingsProto {
 message SocialTelemetry {
 	SocialTelemetryIds social_click_id = 1;
 	int32 pages_scrolled_in_friends_list = 2;
+}
+
+// ref: Holoholo.Rpc.SouvenirProto
+message SouvenirProto {
+	// ref: Holoholo.Rpc.SouvenirProto/Types/SouvenirDetails
+	message SouvenirDetails {
+		int64 time_picked_up = 1;
+		double latitude = 3;
+		double longitude = 4;
+	}
+
+	SouvenirTypeId souvenir_type_id = 1;
+	repeated SouvenirDetails souvenirs_details = 2;
 }
 
 // ref: Holoholo.Rpc.SpawnTablePokemonProto
@@ -14016,6 +16040,7 @@ message WallabySettingsProto {
 message WeatherAffinityProto {
 	GameplayWeatherProto.WeatherCondition weather_condition = 1;
 	repeated HoloPokemonType pokemon_type = 2;
+	repeated HoloPokemonType weakness_pokemon_type = 3;
 }
 
 // ref: Holoholo.Rpc.WeatherBonusProto
@@ -14026,6 +16051,8 @@ message WeatherBonusProto {
 	double attack_bonus_multiplier = 4;
 	int32 raid_encounter_cp_base_level_bonus = 5;
 	int32 raid_encounter_guaranteed_individual_values = 6;
+	int32 buddy_emotion_favorite_weather_increment = 7;
+	int32 buddy_emotion_dislike_weather_decrement = 8;
 }
 
 // ref: Holoholo.Rpc.WeatherDetailClickTelemetry
@@ -14061,8 +16088,19 @@ message WithBadgeTypeProto {
 	int32 amount = 3;
 }
 
+// ref: Holoholo.Rpc.WithBuddyProto
+message WithBuddyProto {
+	BuddyLevel min_buddy_level = 1;
+	bool must_be_on_map = 2;
+}
+
 // ref: Holoholo.Rpc.WithCurveBallProto
 message WithCurveBallProto {
+}
+
+// ref: Holoholo.Rpc.WithDailyBuddyAffectionProto
+message WithDailyBuddyAffectionProto {
+	int32 min_buddy_affection_earned_today = 1;
 }
 
 // ref: Holoholo.Rpc.WithDailyCaptureBonusProto
