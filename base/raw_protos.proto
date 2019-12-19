@@ -6031,7 +6031,7 @@ message BuddyDataProto {
 	// ref: Holoholo.Rpc.BuddyDataProto/Types/BuddyStoredStats
 	message BuddyStoredStats {
 		int64 window = 1;
-		map<int32, single> buddy_stats = 2;
+		map<int32, float> buddy_stats = 2;
 	}
 
 	fixed64 buddy_pokemon_id = 1;
