@@ -33,8 +33,24 @@ def initialize_file(package, message, path):
 
 
 message = underscore_to_camelcase(args.message)
-request_path = os.path.join("POGOProtos\Networking\Requests\Messages", "%sMessage.proto" % message)
-response_path = os.path.join("POGOProtos\Networking\Responses", "%sResponse.proto" % message)
+
+# Global
+request_path = os.path.join("POGOProtos/Networking/Requests/Messages", "%sMessage.proto" % message)
+response_path = os.path.join("POGOProtos/Networking/Responses", "%sResponse.proto" % message)
 
 initialize_file("POGOProtos.Networking.Requests.Messages", "%sMessage" % message, request_path)
 initialize_file("POGOProtos.Networking.Responses", "%sResponse" % message, response_path)
+
+# Social
+social_request_path = 'Social_' +  os.path.join("POGOProtos/Networking/Social/Messages", "%sMessage.proto" % message)
+social_response_path = 'Social_' + os.path.join("POGOProtos/Networking/Social/Responses", "%sResponse.proto" % message)
+
+initialize_file("POGOProtos.Networking.Social.Messages", "%sMessage" % message, social_request_path)
+initialize_file("POGOProtos.Networking.Social.Responses", "%sResponse" % message, social_response_path)
+
+# Platform
+platform_request_path = 'Platform_' + os.path.join("POGOProtos/Networking/Platform/Requests", "%sMessage.proto" % message)
+platform_response_path = 'Platform_' + os.path.join("POGOProtos/Networking/Platform/Responses", "%sResponse.proto" % message)
+
+initialize_file("POGOProtos.Networking.Platform.Requests", "%sMessage" % message, platform_request_path)
+initialize_file("POGOProtos.Networking.Platform.Responses", "%sResponse" % message, platform_response_path)
