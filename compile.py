@@ -77,29 +77,12 @@ def write_proto(path, name, proto):
 
         options = False
 
-        if args.language == 'java' or args.language == 'javanano':
-            options = True
-            package_split = package.split('.')
-            java_package = '.'.join(package_split[:-1])
-            file.write('option java_package = "')
-            file.write(java_package)
-            file.write('";\n')
-            java_outer_classname = name
-            file.write('option java_outer_classname = "')
-            file.write(java_outer_classname)
-            file.write('";\n')
-            if args.java_generate_equals_and_hash:
-                file.write('option java_generate_equals_and_hash = true;\n')
-
         if args.language == 'cpp' and args.cc_enable_arenas:
             options = True
             file.write('option cc_enable_arenas = true;\n')
 
         if args.language == 'objc':
             options = True
-            # Original prefix
-            # file.write('option objc_class_prefix = "GPB";\n')
-            # Edited prefix by elliotrobot commit: https://github.com/Furtif/POGOProtos/commit/a0fae2886d32f19c5b93352cf29f65037ef90f6d
             file.write('option objc_class_prefix = "";\n')
 
         if args.language == 'go':
@@ -290,10 +273,6 @@ parser.add_argument(
     default='out',
     help='output path for protoc')
 parser.add_argument(
-    '--java_generate_equals_and_hash',
-    action='store_true',
-    help='generate Java\'s .equals() and .hashCode()')
-parser.add_argument(
     '--cc_enable_arenas',
     action='store_true',
     help='enable C++ arena allocation')
@@ -326,39 +305,18 @@ if not os.path.exists(out_path):
     os.makedirs(out_path)
 
 namespace = 'POGOProtos'
-path = 'POGOProtos'  # type: str
+path = 'POGOProtos'
 merge = False
 path_lower = False
 file_lower = False
 package_lower = False
 
-if args.language == 'js':
-    namespace = 'com.github.aeonlucid.pogoprotos'
-    path = 'com/github/aeonlucid/pogoprotos'
-    merge = False
-    path_lower = True
-    file_lower = True
-    package_lower = True
-elif args.language == 'csharp' or args.language == 'cpp' or args.language == 'objc' or args.language == 'php' or args.language == 'swift':
-    namespace = 'POGOProtos'
-    path = 'POGOProtos'
-    merge = False
-    path_lower = False
-    file_lower = False
-    package_lower = False
-elif args.language == 'go':
+if args.language == 'go':
     namespace = 'com.github.aeonlucid.pogoprotos'
     path = 'github.com/aeonlucid/pogoprotos'
     merge = False
     path_lower = True
     file_lower = True
-    package_lower = True
-elif args.language == 'java' or args.language == 'javanano':
-    namespace = 'com.github.aeonlucid.pogoprotos'
-    path = 'com/github/aeonlucid/pogoprotos'
-    merge = True
-    path_lower = True
-    file_lower = False
     package_lower = True
 elif args.language == 'python':
     namespace = 'pogoprotos'
@@ -448,7 +406,7 @@ options = ''
 all_at_once = True
 
 if args.language == 'js':
-    options = 'library=pogoprotos,binary,error_on_name_conflict'
+    options = 'import_style=commonjs,binary'
 elif args.language == 'csharp':
     arguments = '--csharp_opt=file_extension=.g.cs --csharp_opt=base_namespace'
 elif args.language == 'go':
