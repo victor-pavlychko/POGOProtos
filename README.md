@@ -43,7 +43,7 @@ The compilation creates output specifically for the target language, i.e. respec
 This is an example of how the generated code will be organized:
 ```
 python compile.py js:
- - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData_pb.js
+ - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/playerdata_pb.js
 ```
 ```
 python compile.py java:
@@ -85,6 +85,11 @@ python compile.py go:
  - POGOProtos/Data/*.proto -> github.com/aeonlucid/pogoprotos/data
  - POGOProtos/Data/PlayerData.proto -> github.com/aeonlucid/pogoprotos/data/player_data.pb.go
 ```
+```
+python compile.py dart:
+ - POGOProtos/Data/PlayerData.proto -> *.*
+```
+
 ![alt text][1.1] Not tested ![alt text][1.1] 
 ```
 python compile.py rust:

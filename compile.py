@@ -131,51 +131,6 @@ def write_protos(path, protos):
     return proto_files
 
 
-def merge_protos(protos):
-    new_protos = dict()
-    for proto_path in protos:
-        proto_folder = list(protos[proto_path].values())
-
-        package, _, _ = proto_folder[0]
-        new_package = package
-        new_imports_path = []
-        new_imports_is_public = []
-        new_content = []
-        for proto in proto_folder:
-            package, imports, content = proto
-            if package != new_package:
-                raise Exception(
-                    'All .proto files in "' +
-                    proto_path +
-                    '" must be in the same package.')
-            for import_path, import_is_public in imports:
-                if import_path.startswith('POGOProtos'):
-                    import_path = '/'.join(import_path.split('/')[:-1])
-                if import_path in new_imports_path:
-                    if import_is_public:
-                        new_imports_is_public[
-                            new_imports_path.index(import_path)] = True
-                elif import_path != proto_path:
-                    new_imports_path.append(import_path)
-                    new_imports_is_public.append(import_is_public)
-            new_content.extend(content)
-        new_imports = []
-        for i in range(len(new_imports_path)):
-            import_path = new_imports_path[i]
-            import_is_public = new_imports_is_public[i]
-            new_imports.append((import_path, import_is_public))
-
-        proto_path_split = proto_path.split('/')
-        new_proto_path = '/'.join(proto_path_split[:-1])
-        new_proto_file_name = proto_path_split[-1]
-        if new_proto_path not in new_protos:
-            new_protos[new_proto_path] = dict()
-        new_protos[new_proto_path][new_proto_file_name] = (
-            new_package, new_imports, new_content)
-
-    return new_protos
-
-
 def format_protos(
         protos,
         path,
@@ -262,7 +217,8 @@ parser.add_argument(
         'js',
         'go',
         'rust',
-        'swift'],
+        'swift',
+        'dart'],
     help='language to pass to protoc')
 parser.add_argument(
     '-p', '--protoc_path',
@@ -306,7 +262,6 @@ if not os.path.exists(out_path):
 
 namespace = 'POGOProtos'
 path = 'POGOProtos'
-merge = False
 path_lower = False
 file_lower = False
 package_lower = False
@@ -314,36 +269,35 @@ package_lower = False
 if args.language == 'go':
     namespace = 'com.github.aeonlucid.pogoprotos'
     path = 'github.com/aeonlucid/pogoprotos'
-    merge = False
     path_lower = True
     file_lower = True
     package_lower = True
 elif args.language == 'python':
     namespace = 'pogoprotos'
     path = 'pogoprotos'
-    merge = False
+    path_lower = True
+    file_lower = True
+    package_lower = True
+elif args.language == 'js':
+    namespace = 'pogoprotos'
+    path = 'pogoprotos'
     path_lower = True
     file_lower = True
     package_lower = True
 elif args.language == 'ruby':
     namespace = 'POGOProtos'
     path = 'pogoprotos'
-    merge = False
     path_lower = True
     file_lower = True
     package_lower = False
 elif args.language == 'rust':
     namespace = 'pogoprotos'
     path = 'pogoprotos'
-    merge = False
     path_lower = True
     file_lower = True
     package_lower = True
 
 protos = read_protos(src_path)
-
-if merge:
-    protos = merge_protos(protos)
 
 protos = format_protos(
     protos,
@@ -409,6 +363,8 @@ if args.language == 'js':
     options = 'import_style=commonjs,binary'
 elif args.language == 'csharp':
     arguments = '--csharp_opt=file_extension=.g.cs --csharp_opt=base_namespace'
+elif args.language == 'dart':
+    arguments = '--plugin "pub run protoc_plugin"'
 elif args.language == 'go':
     options = 'plugins=grpc'
     all_at_once = False
