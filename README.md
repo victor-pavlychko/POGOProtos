@@ -90,8 +90,6 @@ python compile.py go:
 python compile.py dart:
  - POGOProtos/Data/PlayerData.proto -> *.*
 ```
-
-![alt text][1.1] Not tested ![alt text][1.1] 
 ```
 python compile.py rust:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.rs
