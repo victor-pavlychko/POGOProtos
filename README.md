@@ -18,7 +18,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.49.6       | 0.163.0       | Compatible      |  Protocol Buffers v3.11.2       |
+| 2.49.6       | 0.163.2       | Compatible      |  Protocol Buffers v3.11.2       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
@@ -51,6 +51,7 @@ python compile.py java:
 ```
 ```
 python compile.py php:
+ - POGOProtos/Data/PlayerData.proto -> GPBMetadata/POGOProtos/Data/PlayerData.php
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.php
 ```
 ```
