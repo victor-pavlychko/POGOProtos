@@ -270,4 +270,5 @@ enum PokemonMove {
 	ICE_FANG_FAST = 327;
 	HORN_DRILL = 328;
 	FISSURE = 329;
+	AURA_SPHERE = 332;
 }
