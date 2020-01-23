@@ -1,0 +1,8 @@
+syntax = "proto3";
+package DumpProtos;
+
+message SubmitSponsorPoiReportProto {
+	string poi_id = 1;
+	SponsorPoiInvalidReason invalid_reason = 2;
+	string additional_details = 3;
+}

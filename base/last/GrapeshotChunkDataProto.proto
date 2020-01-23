@@ -1,0 +1,9 @@
+syntax = "proto3";
+package DumpProtos;
+
+message GrapeshotChunkDataProto {
+	string chunk_file_path = 1;
+	uint32 chunk_number = 2;
+	GrapeshotAuthenticationDataProto upload_authentication = 3;
+	GrapeshotAuthenticationDataProto delete_authentication = 4;
+}

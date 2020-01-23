@@ -1,0 +1,9 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum GamePingAction {
+	UNKNOWN_GAME_PING_ACTION = 0;
+	PING = 220000;
+	PING_ASYNC = 220001;
+	PING_DOWNSTREAM = 220002;
+}

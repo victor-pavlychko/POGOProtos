@@ -1,0 +1,7 @@
+syntax = "proto3";
+package DumpProtos;
+
+message GrapeshotComposeDataProto {
+	string target_file_path = 1;
+	GrapeshotAuthenticationDataProto authentication = 2;
+}

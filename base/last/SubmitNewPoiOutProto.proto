@@ -3,6 +3,7 @@ package DumpProtos;
 
 message SubmitNewPoiOutProto {
 	Status status = 1;
+	string submission_id = 2;
 
 	enum Status {
 		UNSET = 0;

@@ -1,0 +1,65 @@
+syntax = "proto3";
+package DumpProtos;
+
+message WeatherSettingsProto {
+	GameplayWeatherSettingsProto gameplay_settings = 1;
+	DisplayWeatherSettingsProto display_settings = 2;
+	WeatherAlertSettingsProto alert_settings = 3;
+	StaleWeatherSettingsProto stale_settings = 4;
+
+	message ConditionMapSettings {
+		GameplayWeatherProto.WeatherCondition gameplay_condition = 1;
+		repeated string provider_enums = 2;
+	}
+
+	message DisplayLevelSettings {
+		repeated string condition_enums = 1;
+		DisplayWeatherProto.DisplayLevel cloud_level = 2;
+		DisplayWeatherProto.DisplayLevel rain_level = 3;
+		DisplayWeatherProto.DisplayLevel snow_level = 4;
+		DisplayWeatherProto.DisplayLevel fog_level = 5;
+		DisplayWeatherProto.DisplayLevel special_effect_level = 6;
+	}
+
+	message DisplayWeatherSettingsProto {
+		message DisplayLevelSettings {
+			repeated string condition_enums = 1;
+			DisplayWeatherProto.DisplayLevel cloud_level = 2;
+			DisplayWeatherProto.DisplayLevel rain_level = 3;
+			DisplayWeatherProto.DisplayLevel snow_level = 4;
+			DisplayWeatherProto.DisplayLevel fog_level = 5;
+			DisplayWeatherProto.DisplayLevel special_effect_level = 6;
+		}
+
+		message WindLevelSettings {
+			int32 wind_level1_speed = 1;
+			int32 wind_level2_speed = 2;
+			int32 wind_level3_speed = 3;
+		}
+
+		repeated DisplayLevelSettings display_level_settings = 1;
+		WindLevelSettings wind_level_settings = 2;
+	}
+
+	message GameplayWeatherSettingsProto {
+		message ConditionMapSettings {
+			GameplayWeatherProto.WeatherCondition gameplay_condition = 1;
+			repeated string provider_enums = 2;
+		}
+
+		repeated ConditionMapSettings condition_map = 1;
+		int32 min_speed_for_windy = 2;
+		repeated string conditions_for_windy = 3;
+	}
+
+	message StaleWeatherSettingsProto {
+		int32 max_stale_weather_threshold_in_hrs = 1;
+		int32 default_weather_condition_code = 2;
+	}
+
+	message WindLevelSettings {
+		int32 wind_level1_speed = 1;
+		int32 wind_level2_speed = 2;
+		int32 wind_level3_speed = 3;
+	}
+}

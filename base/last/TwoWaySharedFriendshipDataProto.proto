@@ -1,0 +1,9 @@
+syntax = "proto3";
+package DumpProtos;
+
+message TwoWaySharedFriendshipDataProto {
+	FriendshipLevelDataProto friendship_level_data = 1;
+	bool is_lucky = 2;
+	int32 lucky_count = 3;
+	int32 score = 4;
+}

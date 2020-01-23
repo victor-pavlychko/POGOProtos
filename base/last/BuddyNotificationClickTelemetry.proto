@@ -1,0 +1,6 @@
+syntax = "proto3";
+package DumpProtos;
+
+message BuddyNotificationClickTelemetry {
+	int32 notification_category = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum GameTelemetryAction {
+	UNKNOWN_GAME_TELEMETRY_ACTION = 0;
+	COLLECT_CLIENT_TELEMETRY = 610000;
+	GET_CLIENT_TELEMETRY_SETTINGS = 610001;
+}

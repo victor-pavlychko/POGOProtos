@@ -3,4 +3,5 @@ package DumpProtos;
 
 message SubmitPoiImageProto {
 	string poi_id = 1;
+	bool async_file_upload = 2;
 }

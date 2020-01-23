@@ -3,6 +3,11 @@ package DumpProtos;
 
 message BattleHubOrderSettings {
 	repeated SectionSettings section = 1;
+	repeated SectionGroup section_group = 2;
+
+	message SectionGroup {
+		repeated BattleHubSection section = 1;
+	}
 
 	message SectionSettings {
 		BattleHubSection main_section = 1;

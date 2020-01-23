@@ -1,0 +1,7 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum GamePasscodeAction {
+	UNKNOWN_GAME_PASSCODE_ACTION = 0;
+	REDEEM_PASSCODE = 330000;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum GameAnticheatAction {
+	UNKNOWN_GAME_ANTICHEAT_ACTION = 0;
+	GET_OUTSTANDING_WARNINGS = 200000;
+	ACKNOWLEDGE_WARNINGS = 200001;
+}

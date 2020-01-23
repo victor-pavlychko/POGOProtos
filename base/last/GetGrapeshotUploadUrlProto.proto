@@ -1,0 +1,8 @@
+syntax = "proto3";
+package DumpProtos;
+
+message GetGrapeshotUploadUrlProto {
+	PlayerSubmissionTypeProto submission_type = 1;
+	string submission_id = 2;
+	repeated string file_upload_context = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum GameWebTokenAction {
+	UNKNOWN_GAME_WEB_TOKEN_ACTION = 0;
+	GET_WEB_TOKEN_ACTION = 370000;
+}
