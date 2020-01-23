@@ -1502,7 +1502,7 @@ message AddLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.AddLoginActionProto
 message AddLoginActionProto {
-	int32 identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	bytes inner_message = 2;
 	string auth_provider_id = 3;
 }
@@ -1968,7 +1968,7 @@ message LocationE6Proto {
 
 // ref: Niantic.Platform.Protos.LoginDetail
 message LoginDetail {
-	int32 identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	string email = 2;
 	string auth_provider_id = 3;
 }
@@ -2136,7 +2136,7 @@ message RemoveLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.RemoveLoginActionProto
 message RemoveLoginActionProto {
-	int32 identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	string auth_provider_id = 3;
 }
 
@@ -2158,7 +2158,7 @@ message ReplaceLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.ReplaceLoginActionProto
 message ReplaceLoginActionProto {
-	int32 existing_identity_provider = 1;
+	IdentityProvider existing_identity_provider = 1;
 	AddLoginActionProto new_login = 2;
 	string auth_provider_id = 3;
 }
@@ -2417,7 +2417,7 @@ message GetGrapeshotUploadUrlOutProto {
 	}
 
 	Status status = 1;
-	map<string, Niantic.Titan.Protos.GrapeshotUploadingDataProto> file_context_to_grapeshot_data = 4;
+	map<string, GrapeshotUploadingDataProto> file_context_to_grapeshot_data = 4;
 }
 
 // ref: Niantic.Titan.Protos.GetGrapeshotUploadUrlProto
@@ -2723,7 +2723,7 @@ message TitanGameClientTelemetryOmniProto {
 	PoiSubmissionTelemetry poi_submission_telemetry = 1;
 	PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
 	PoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
-	niantic.platform.analytics.telemetry.PlatformServerData server_data = 1001;
+	PlatformServerData server_data = 1001;
 }
 
 // ref: Niantic.Titan.Protos.UploadPoiPhotoByUrlOutProto
@@ -6542,7 +6542,7 @@ message BootTime {
 		INITIALIZE_ADJUST = 17;
 	}
 
-	niantic.platform.analytics.telemetry.PlatformMetricData duration = 1;
+	PlatformMetricData duration = 1;
 	BootPhase boot_phase = 2;
 }
 
@@ -9104,7 +9104,7 @@ message FortSponsor {
 
 // ref: Holoholo.Rpc.FrameRate
 message FrameRate {
-	niantic.platform.analytics.telemetry.PlatformMetricData sampled_frame_rate = 1;
+	PlatformMetricData sampled_frame_rate = 1;
 }
 
 // ref: Holoholo.Rpc.FriendshipDataProto
@@ -10479,7 +10479,7 @@ message HoloholoClientTelemetryOmniProto {
 	BuddyMultiplayerConnectionFailedProto buddy_multiplayer_connection_failed_telemetry = 57;
 	BuddyMultiplayerConnectionSucceededProto buddy_multiplayer_connection_succeeded_telemetry = 58;
 	BuddyMultiplayerTimeToGetSessionProto buddy_multiplayer_time_to_get_session_telemetry = 59;
-	niantic.platform.analytics.telemetry.PlatformServerData server_data = 1001;
+	PlatformServerData server_data = 1001;
 }
 
 // ref: Holoholo.Rpc.HoloInventoryItemProto
