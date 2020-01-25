@@ -12,13 +12,33 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``Global``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
  - [``Social``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
  - [``Platform``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
+
+### Game implemented messages types
+ - [``GameAccountRegistry``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameAccountRegistry/GameAccountRegistryActions.proto)
+ - [``GameAnticheat``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameAnticheat/GameAnticheatAction.proto)
+ - [``GameFitness``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameFitness/GameFitnessAction.proto)
+ - [``GameGmTemplates``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameGmTemplates/GameGmTemplatesAction.proto)
+ - [``GameIap``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameIap/GameIapAction.proto)
+ - [``GameLocationAwareness``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameLocationAwareness/GameLocationAwarenessAction.proto)
+ - [``GameNotification``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameNotification/GameNotificationAction.proto)
+ - [``GamePasscode``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePasscode/GamePasscodeAction.proto)
+ - [``GamePing``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePing/GamePingAction.proto)
+ - [``GamePlayer``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePlayer/GamePlayerAction.proto)
+ - [``GamePoi``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePoi/GamePoiAction.proto)
+ - [``GamePushNotification``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePushNotification/GamePushNotificationAction.proto)
+ - [``GameSocial``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameSocial/GameSocialAction.proto)
+ - [``GameTelemetry``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameTelemetry/GameTelemetryAction.proto)
+ - [``GameWebToken``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameWebToken/GameWebTokenAction.proto)
    
+### Titan (???)
+ - [``Titan``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Titan)
+
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.49.6       | 0.163.2       | Compatible      |  Protocol Buffers v3.11.2       |
+| 2.49.7       | 0.165.0       | Compatible      |  Protocol Buffers v3.11.2       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
