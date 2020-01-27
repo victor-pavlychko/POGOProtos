@@ -13,7 +13,7 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``Social``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
  - [``Platform``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
 
-### Game implemented messages types
+### Game actions implemented messages types
  - [``GameAccountRegistry``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameAccountRegistry/GameAccountRegistryActions.proto)
  - [``GameAnticheat``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameAnticheat/GameAnticheatAction.proto)
  - [``GameFitness``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameFitness/GameFitnessAction.proto)
@@ -30,7 +30,7 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``GameTelemetry``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameTelemetry/GameTelemetryAction.proto)
  - [``GameWebToken``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameWebToken/GameWebTokenAction.proto)
    
-### Titan (???)
+### Titan (![alt text][1.1] ??? ![alt text][1.1])
  - [``Titan``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Titan)
 
 ### Versioning
@@ -61,55 +61,67 @@ Use `homebrew` to install `protobuf ` with `brew install --devel protobuf`.
 ### Compilation
 The compilation creates output specifically for the target language, i.e. respecting naming conventions, etc.  
 This is an example of how the generated code will be organized:
+
 ```
 python compile.py js:
  - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/playerdata_pb.js
 ```
+
 ```
 python compile.py java:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.java
 ```
+
 ```
 python compile.py php:
  - POGOProtos/Data/PlayerData.proto -> GPBMetadata/POGOProtos/Data/PlayerData.php
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.php
 ```
+
 ```
 python compile.py cpp:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.pb.cpp
 ```
+
 ```
 python compile.py csharp:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.g.cs
 ```
+
 ```
 python compile.py objc:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.pbobjc.m
 ```
+
 ```
 python compile.py python:
  - POGOProtos/Data/*.proto -> pogoprotos/data/__init__.py
  - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/player_data_pb2.py
 ```
+
 ```
 python compile.py ruby:
  - POGOProtos/Data/*.proto -> pogoprotos/data.rb
  - POGOProtos/Data/PlayerData.proto -> pogoprotos/data/player_data.rb
 ``` 
-![alt text][1.1] Needs plugins ![alt text][1.1] 
+
+#### ![alt text][1.1] Needs plugins ![alt text][1.1]
 ```
 python compile.py swift:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.pb.swift
 ```
+
 ```
 python compile.py go:
  - POGOProtos/Data/*.proto -> github.com/aeonlucid/pogoprotos/data
  - POGOProtos/Data/PlayerData.proto -> github.com/aeonlucid/pogoprotos/data/player_data.pb.go
 ```
+
 ```
 python compile.py dart:
  - POGOProtos/Data/PlayerData.proto -> *.*
 ```
+
 ```
 python compile.py rust:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.rs
@@ -118,18 +130,19 @@ python compile.py rust:
 ### Extra information
  - Run ```python compile.py --help``` for help.
  - You can find all available languages here [https://github.com/google/protobuf](https://github.com/google/protobuf).
-
+ - ![alt text][1.1] ```python compile_single.py``` need fixes, no works. ![alt text][1.1]
+ 
 ### Libraries
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
 
-| Language              | Source                                                         | Status                                                                                                                       |
-|-----------------------|----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Swift                 | https://github.com/123FLO321/POGOProtos-Swift                  |  OK                                                                                                                          |                                                                                                                         |
-| Java                  | https://github.com/pokemongo-dev-contrib/pogoprotos-java       |  OK                                                                                                                          |
+| Language              | Source                                                                               | Status                                                                                                                       |
+|-----------------------|--------------------------------------------------------------------------------------|--------|
+| Swift                 | https://github.com/123FLO321/POGOProtos-Swift                                        |  OK                                                                                                                          |                                                                                                                         |
+| Java                  | https://github.com/pokemongo-dev-contrib/pokemongo-game-master/tree/master/lib       |  OK                                                                                                                          |
 
-| Additional resources  | Source                                                         | Status |
-|-----------------------|----------------------------------------------------------------|--------|
-| Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master |  OK    |
+| Additional resources  | Source                                                                               | Status |
+|-----------------------|--------------------------------------------------------------------------------------|--------|
+| Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master                       |  OK    |
 
 ### CREDITS
  - [AeonLucid](https://github.com/AeonLucid)

@@ -79,37 +79,31 @@ def walk_files(main_file, path, package, imports=None):
         print("Please place the file in 'src/POGOProtos/' in a sub-directory.")
         exit()
 
-    main_file.write('syntax = "proto3";\n')
-
-    # short_package_name = str.split(package, '.')[-1].lower()
-
-    main_file.write('package %s;\n\n' % package)
-
-    # if lang == "objc":
-    #    main_file.write('option objc_class_prefix = "GPB";\n')
+    head = 'syntax = "proto3";\n'
+    head += 'package %s;\n' % package
 
     if lang == "go":
         package = go_helper.convert_to_go_package(package)
-        main_file.write('option go_package = "%s";\n' % go_package)
+        head += 'option go_package = "%s";\n' % package
+    elif java_multiple_files and lang == "java":
+        head += 'option java_multiple_files = true;\n'
 
-    if java_multiple_files:
-        main_file.write('option java_multiple_files = true;\n')
+    main_file.writelines(head)
 
-    messages = ""
+    messages = ''
 
     for file_name in os.listdir(path):
         file_name_path = os.path.join(path, file_name)
         if file_name_path.endswith(".proto") and os.path.isfile(file_name_path):
             with open(file_name_path, 'r') as proto_file:
                 is_header = True
-                for proto_line in proto_file.readlines():
+                for proto_line in proto_file.readlines():			
                     if proto_line.startswith("message") or proto_line.startswith("enum"):
                         is_header = False
 
                     if is_header:
                         if proto_line.startswith("import"):
-                            import_from_package_re = re.search('import (public )?"(.*?)(\/)?([a-zA-Z0-9]+\.proto)";',
-                                                               proto_line)
+                            import_from_package_re = re.search('import (public )?"(.*?)(\/)?([a-zA-Z0-9]+\.proto)";', proto_line)
 
                             if import_from_package_re is None:
                                 print("Can't compile..")
@@ -125,20 +119,25 @@ def walk_files(main_file, path, package, imports=None):
                             if import_from_package not in imports:
                                 imports.append(import_from_package)
 
-                    if not is_header:
+                    else:
                         messages += proto_line
 
                         if proto_line.startswith("}"):
                             messages += "\n"
 
-    for package_import in imports:
-        if package_import != package:
-            main_file.write('import public "%s.proto";\n' % package_import)
-
     if len(imports) is not 0:
+        check = None
+        for package_import in imports:
+            if package_import != package:
+                if check is None:
+                    check = True
+                    main_file.write('\n')
+
+                main_file.write('import public "%s.proto";\n' % package_import)
+
         main_file.write('\n')
 
-    main_file.writelines(messages)
+    main_file.writelines(messages[:-1])
 
 
 def walk_directory(path):
@@ -205,7 +204,6 @@ def compile_directories(path):
                     item_path
                 )
             )
-
         elif os.path.isdir(item_path):
             compile_directories(item_path)
 
