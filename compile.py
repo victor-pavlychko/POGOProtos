@@ -81,6 +81,10 @@ def write_proto(path, name, proto):
             options = True
             file.write('option cc_enable_arenas = true;\n')
 
+        if args.language == 'java' or args.language == 'javanano' and args.java_multiple_files:
+            options = True
+            file.write('option java_multiple_files = true;\n')
+
         if args.language == 'objc':
             options = True
             file.write('option objc_class_prefix = "";\n')
@@ -248,6 +252,10 @@ parser.add_argument(
     '--keep_proto_files',
     action='store_true',
     help='do not remove .proto files after compiling')
+parser.add_argument(
+    '--java_multiple_files',
+    action='store_true',
+    help='Write each message to a separate .java file.')
 args = parser.parse_args()
 
 protoc_path = args.protoc_path
