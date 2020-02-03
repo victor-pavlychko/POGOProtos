@@ -68,7 +68,7 @@ python compile.py js:
 ```
 
 ```
-python compile.py java:
+python compile.py java [javanano] [--java_multiple_files]:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.java
 ```
 
