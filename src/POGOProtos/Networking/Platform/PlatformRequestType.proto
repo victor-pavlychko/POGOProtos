@@ -27,7 +27,7 @@ enum PlatformRequestType {
 	REDEEM_GOOGLE_RECEIPT = 5021;                // Implemented
 	REDEEM_APPLE_RECEIPT = 5022;                 // Implemented
 	REDEEM_DESKTOP_RECEIPT = 5023;               // ???
-	UPDATE_FITNESS_METRICS = 5024;               // Implemented
+	UPDATE_FITNESS_METRICS = 5024;               // ???
 	GET_FITNESS_REPORT = 5025;                   // Implemented
 	GET_CLIENT_TELEMETRY_SETTINGS = 5026;        // Implemented
 	PING_ASYNC = 5027;                           // ???
