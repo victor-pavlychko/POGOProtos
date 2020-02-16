@@ -31,4 +31,7 @@ message CombatSettingsProto {
 	int32 faint_animation_duration_turns = 27;
 	int32 npc_swap_delay_turns = 28;
 	int32 npc_charged_attack_delay_turns = 29;
+	float shadow_pokemon_attack_bonus_multiplier = 30;
+	float shadow_pokemon_defense_bonus_multiplier = 31;
+	float purified_pokemon_attack_multiplier_vs_shadow = 32;
 }

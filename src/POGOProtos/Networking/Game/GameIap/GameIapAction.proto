@@ -9,5 +9,5 @@ enum GameIapAction {
 	REDEEM_GOOGLE_RECEIPT = 310100;               // Implemented
 	REDEEM_APPLE_RECEIPT = 310101;                // Implemented
 	REDEEM_DESKTOP_RECEIPT = 310102;              // ???
-	REDEEM_SAMSUNG_RECEIPT = 310103;              // ???
+	REDEEM_SAMSUNG_RECEIPT = 310103;              // Implemented
 }

@@ -4,8 +4,8 @@ package POGOProtos.Networking.Platform.Responses;
 import "POGOProtos/Settings/AdventureSyncSettings.proto";
 
 message GetAdventureSyncSettingsResponse {
-	Status status = 1;
-	.POGOProtos.Settings.AdventureSyncSettings adventure_sync_settings = 2;
+	//Status status = 1;
+	.POGOProtos.Settings.AdventureSyncSettings adventure_sync_settings = 1;
 
 	enum Status {
 		UNSET = 0;

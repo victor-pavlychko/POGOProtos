@@ -2,7 +2,6 @@ syntax = "proto3";
 package DumpProtos;
 
 message UpdateAdventureSyncFitnessResponseProto {
-	Status status = 1;
 
 	enum Status {
 		UNSET = 0;

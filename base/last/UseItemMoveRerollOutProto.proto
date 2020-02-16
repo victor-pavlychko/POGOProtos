@@ -15,5 +15,6 @@ message UseItemMoveRerollOutProto {
 		ITEM_NOT_IN_INVENTORY = 6;
 		INVALID_POKEMON = 7;
 		MOVE_LOCKED = 8;
+		MOVE_CANNOT_BE_REROLLED = 9;
 	}
 }

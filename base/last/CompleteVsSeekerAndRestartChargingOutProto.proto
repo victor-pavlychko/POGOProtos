@@ -9,7 +9,7 @@ message CompleteVsSeekerAndRestartChargingOutProto {
 	int32 previous_rank = 5;
 	float previous_rating = 6;
 	CombatBaseStatsProto stats_at_rank_start = 7;
-	repeated string avatar_template_id_awarded = 8;
+	repeated string avatar_template_id_rewarded = 8;
 
 	enum Result {
 		UNSET = 0;

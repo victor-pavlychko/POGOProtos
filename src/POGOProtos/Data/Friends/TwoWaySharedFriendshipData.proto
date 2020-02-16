@@ -1,11 +1,12 @@
 syntax = "proto3";
 package POGOProtos.Data.Friends;
 
-import "POGOProtos/Data/Friends/FriendshipLevelData.proto";
-
 message TwoWaySharedFriendshipData {
-	.POGOProtos.Data.Friends.FriendshipLevelData friendship_level_data = 1;
-	bool is_lucky = 2;
-	int32 lucky_count = 3;
-	int32 score = 4;
+	bool is_lucky = 1;
+	int32 lucky_count = 2;
+	SharedMigrations shared_migrations = 3;
+
+	message SharedMigrations {
+		bool is_gifting_migrated = 1;
+	}
 }
