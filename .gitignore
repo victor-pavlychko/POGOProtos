@@ -12,3 +12,4 @@ tmp/
 # Backup files
 *~
 /helpers/__pycache__/
+**/class-use/*
