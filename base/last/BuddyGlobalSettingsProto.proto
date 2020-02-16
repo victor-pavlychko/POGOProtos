@@ -17,4 +17,5 @@ message BuddyGlobalSettingsProto {
 	bool plfe_auth_tokens_enabled = 13;
 	int32 group_photo_shot_interval_ms = 14;
 	string arbe_endpoint_url = 15;
+	bool buddy_on_map_required_to_open_gifts = 16;
 }

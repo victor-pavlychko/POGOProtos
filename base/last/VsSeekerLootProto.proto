@@ -11,6 +11,7 @@ message VsSeekerLootProto {
 		//item = 1;
 		//pokemon_reward = 2;
 		//item_loot_table = 3;
+		//item_loot_table_count = 4;
 	//}
 
 	message RewardProto {
@@ -19,10 +20,12 @@ message VsSeekerLootProto {
 			//item = 1;
 			//pokemon_reward = 2;
 			//item_loot_table = 3;
+			//item_loot_table_count = 4;
 		//}
 
 		LootItemProto item = 1;
 		bool pokemon_reward = 2;
 		bool item_loot_table = 3;
+		int32 item_loot_table_count = 4;
 	}
 }

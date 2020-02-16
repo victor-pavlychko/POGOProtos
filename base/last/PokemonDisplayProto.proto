@@ -29,6 +29,8 @@ message PokemonDisplayProto {
 		FEB_2019 = 9;
 		MAY_2019_NOEVOLVE = 10;
 		JAN_2020_NOEVOLVE = 11;
+		APRIL_2020_NOEVOLVE = 12;
+		SAFARI_2020_NOEVOLVE = 13;
 	}
 
 	enum Form {

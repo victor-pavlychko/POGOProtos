@@ -2,8 +2,7 @@ syntax = "proto3";
 package DumpProtos;
 
 message GetAdventureSyncSettingsResponseProto {
-	Status status = 1;
-	AdventureSyncSettingsProto adventure_sync_settings = 2;
+	AdventureSyncSettingsProto adventure_sync_settings = 1;
 
 	enum Status {
 		UNSET = 0;
