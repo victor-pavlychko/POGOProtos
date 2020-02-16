@@ -39,7 +39,7 @@ enum PlatformRequestType {
 	UPDATE_PLAYER_LOCATION = 5034;               // Implemented
 	GENERATE_GMAP_SIGNED_URL = 5035;             // Implemented
 	GET_GMAP_SETTINGS = 5036;                    // Implemented
-	REDEEM_SAMSUNG_RECEIPT = 5037;               // ???
+	REDEEM_SAMSUNG_RECEIPT = 5037;               // Implemented
 	ADD_NEW_ROUTE = 5038;                        // ??? maybe same POGOProtos.Networking.Titan.Messages.SubmitNewRouteMessage
 	GET_OUTSTANDING_WARNINGS = 5039;             // Implemented
 	ACKNOWLEDGE_WARNINGS = 5040;                 // Implemented
