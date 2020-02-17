@@ -1,0 +1,12 @@
+default:
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get -y install python3.6 curl tar bash bash-doc bash-completion wget zip maven openjdk-8-jre openjdk-8-jdk
+  
+job:
+  script:
+    - mkdir /protoc
+    - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.11.3/protoc-3.11.3-linux-x86_64.zip -P /protoc
+    - unzip /protoc/protoc-3.11.3-linux-x86_64.zip -d /protoc
+    - export PATH=/protoc/bin:$PATH
+    - python ./compile.py python --generate_desc --include_imports --include_source_info
