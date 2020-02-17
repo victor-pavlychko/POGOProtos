@@ -9,4 +9,4 @@ job:
     - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.11.3/protoc-3.11.3-linux-x86_64.zip -P /protoc
     - unzip /protoc/protoc-3.11.3-linux-x86_64.zip -d /protoc
     - export PATH=/protoc/bin:$PATH
-    - python ./compile.py python --generate_desc --include_imports --include_source_info
+    - ./compile.py python --generate_desc --include_imports --include_source_info
