@@ -38,7 +38,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.49.8       | 0.167.0       | Compatible      |  Protocol Buffers v3.11.3       |
+| 2.49.8       | 0.167.1       | Compatible      |  Protocol Buffers v3.11.4       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
@@ -69,7 +69,7 @@ python compile.py js:
 
 ```
 python compile.py java [javanano] [--java_multiple_files]:
- - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.java
+ - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.*
 ```
 
 ```
