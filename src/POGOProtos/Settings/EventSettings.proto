@@ -6,4 +6,6 @@ message EventSettings {
 	bool enable_event_link = 2;
 	bool enable_event_link_for_children = 3;
 	string event_webtoken_server_url = 4;
+	bool enable_event_lnt = 5;
+	string event_lnt_url = 6;
 }

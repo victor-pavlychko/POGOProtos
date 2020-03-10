@@ -140,6 +140,11 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Settings.Master.BuddyWalkSettings buddy_walk_settings = 69;
 		.POGOProtos.Settings.Master.PlatypusRolloutSettings platypus_rollout_settings = 70;
 		.POGOProtos.Settings.Master.BuddyHungerSettings buddy_hunger_settings = 72;
+		ProjectVacation project_vacation = 73;
+	}
+
+	message ProjectVacation {
+		bool enable2020 = 1;
 	}
 
 	enum Result {

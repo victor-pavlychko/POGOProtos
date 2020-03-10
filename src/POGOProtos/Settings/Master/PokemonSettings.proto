@@ -62,6 +62,8 @@ message PokemonSettings {
 	ShadowAttributes shadow = 46;
 	int32 buddy_group_number = 47;
 	int32 additional_cp_boost_level = 48;
+	repeated .POGOProtos.Enums.PokemonMove elite_quick_move = 49;
+	repeated .POGOProtos.Enums.PokemonMove elite_cinematic_move = 50;
 
 	message PokemonThirdMoveAttributes {
 		int32 stardust_to_unlock = 1;

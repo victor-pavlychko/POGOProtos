@@ -275,4 +275,5 @@ enum PokemonMove {
 	AURA_SPHERE = 332;
 	PAYBACK = 333;
 	ROCK_WRECKER = 334;
+	AEROBLAST = 335;
 }
