@@ -57,10 +57,12 @@ message HoloholoClientTelemetryOmniProto {
 	ShoppingPageScrollTelemetry shopping_page_scroll_telemetry = 53;
 	DeviceSpecificationsTelemetry device_specifications_telemetry = 54;
 	ScreenResolutionTelemetry screen_resolution_telemetry = 55;
+	ARBuddyMultiplayerSessionTelemetry ar_buddy_multiplayer_session_telemetry = 56;
 	BuddyMultiplayerConnectionFailedProto buddy_multiplayer_connection_failed_telemetry = 57;
 	BuddyMultiplayerConnectionSucceededProto buddy_multiplayer_connection_succeeded_telemetry = 58;
 	BuddyMultiplayerTimeToGetSessionProto buddy_multiplayer_time_to_get_session_telemetry = 59;
 	PlatformServerData server_data = 1001;
+	PlatformCommonFilterProto common_filters = 1002;
 
 	//oneof TelemetryData {
 		//none = 0;
@@ -119,6 +121,7 @@ message HoloholoClientTelemetryOmniProto {
 		//shopping_page_scroll_telemetry = 53;
 		//device_specifications_telemetry = 54;
 		//screen_resolution_telemetry = 55;
+		//ar_buddy_multiplayer_session_telemetry = 56;
 		//buddy_multiplayer_connection_failed_telemetry = 57;
 		//buddy_multiplayer_connection_succeeded_telemetry = 58;
 		//buddy_multiplayer_time_to_get_session_telemetry = 59;

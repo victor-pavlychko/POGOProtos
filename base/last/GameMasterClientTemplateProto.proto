@@ -68,4 +68,5 @@ message GameMasterClientTemplateProto {
 	BuddyWalkSettings buddy_walk_settings = 69;
 	PlatypusRolloutSettingsProto platypus_rollout_settings = 70;
 	BuddyHungerSettings buddy_hunger_settings = 72;
+	ProjectVacationProto project_vacation = 73;
 }

@@ -9,4 +9,5 @@ message GetAvailableSubmissionsOutProto {
 	int64 time_window_for_submissions_limit_ms = 5;
 	int32 max_poi_distance_in_meters = 6;
 	repeated string blacklisted_os = 7;
+	repeated AvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
 }

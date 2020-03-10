@@ -54,4 +54,6 @@ message PokemonProto {
 	string limited_pokemon_identifier = 51;
 	int32 pre_boosted_cp = 52;
 	float pre_boosted_additional_cp_multiplier = 53;
+	double deployed_gym_lat_degree = 55;
+	double deployed_gym_lng_degree = 56;
 }

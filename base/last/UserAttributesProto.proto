@@ -55,4 +55,5 @@ message UserAttributesProto {
 	string using_lure_magnetic_v2 = 51;
 	string adventure_sync_opt_in_v2 = 52;
 	string geo_fence_opt_in_v2 = 53;
+	int32 unova_dex_count = 54;
 }

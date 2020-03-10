@@ -49,6 +49,8 @@ message PokemonSettingsProto {
 	ShadowAttributesProto shadow = 46;
 	int32 buddy_group_number = 47;
 	int32 additional_cp_boost_level = 48;
+	repeated HoloPokemonMove elite_quick_move = 49;
+	repeated HoloPokemonMove elite_cinematic_move = 50;
 
 	enum BuddySize {
 		BUDDY_MEDIUM = 0;

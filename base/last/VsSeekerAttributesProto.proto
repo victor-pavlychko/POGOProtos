@@ -9,6 +9,7 @@ message VsSeekerAttributesProto {
 	int32 max_battles_in_set = 6;
 	VsSeekerRewardTrack reward_track = 7;
 	string battle_now_sku_id = 8;
+	bool additional_battles_granted = 9;
 
 	enum VsSeekerStatus {
 		UNSET = 0;
