@@ -3,10 +3,12 @@ package POGOProtos.Settings.Master;
 
 import "POGOProtos/Enums/PokemonType.proto";
 import "POGOProtos/Enums/PokemonMove.proto";
+import "POGOProtos/Enums/PokemonAnim.proto";
 
 message MoveSettings {
 	.POGOProtos.Enums.PokemonMove movement_id = 1;
-	int32 animation_id = 2;
+	//int32 animation_id = 2;
+	.POGOProtos.Enums.PokemonAnim animation_id = 2;
 	.POGOProtos.Enums.PokemonType pokemon_type = 3;
 	float power = 4;
 	float accuracy_chance = 5;
