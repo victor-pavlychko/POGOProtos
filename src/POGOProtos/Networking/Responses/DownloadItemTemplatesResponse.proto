@@ -69,8 +69,8 @@ import "POGOProtos/Settings/Master/BuddyHungerSettings.proto";
 
 message DownloadItemTemplatesResponse {
 	Result result = 1;
-	repeated GameMasterClientTemplate items = 2;
-	uint64 timestamp = 3;
+	repeated GameMasterClientTemplate item_template = 2;
+	uint64 timestamp_ms = 3;
 	int32 page_offset = 4;
 
 	message GameMasterClientTemplate {
@@ -141,10 +141,10 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Settings.Master.PlatypusRolloutSettings platypus_rollout_settings = 70;
 		.POGOProtos.Settings.Master.BuddyHungerSettings buddy_hunger_settings = 72;
 		ProjectVacation project_vacation = 73;
-	}
 
-	message ProjectVacation {
-		bool enable2020 = 1;
+		message ProjectVacation {
+			bool enable2020 = 1;
+		}
 	}
 
 	enum Result {
