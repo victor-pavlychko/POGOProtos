@@ -38,7 +38,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.49.9       | 0.169.0       | Compatible      |  Protocol Buffers v3.11.4       |
+| 2.49.9       | 0.169.2       | Compatible      |  Protocol Buffers v3.11.4       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
@@ -130,19 +130,18 @@ python compile.py rust:
 ### Extra information
  - Run ```python compile.py --help``` for help.
  - You can find all available languages here [https://github.com/google/protobuf](https://github.com/google/protobuf).
- - ![alt text][1.1] ```python compile_single.py``` need fixes, no works. ![alt text][1.1]
  
 ### Libraries
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
 
 | Language              | Source                                                                               | Status                                                                                                                       |
-|-----------------------|--------------------------------------------------------------------------------------|--------|
-| Swift                 | https://github.com/123FLO321/POGOProtos-Swift                                        |  OK                                                                                                                          |                                                                                                                         |
-| Java                  | https://github.com/pokemongo-dev-contrib/pokemongo-game-master/tree/master/lib       |  OK                                                                                                                          |
+|-----------------------|--------------------------------------------------------------------------------------|--------
+| Swift                 | https://github.com/123FLO321/POGOProtos-Swift                                        |  OK                                                                                                                         |                                                                                                                         |
+| Java                  | https://gitlab.com/AllProtos/POGOProtos-Private-Java                                 |  OK                                                                                                                          |
 
-| Additional resources  | Source                                                                               | Status |
-|-----------------------|--------------------------------------------------------------------------------------|--------|
-| Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master                       |  OK    |
+| Additional resources  | Source                                                                               | Status 
+|-----------------------|--------------------------------------------------------------------------------------|--------
+| Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master                       |  OK    
 
 ### CREDITS
  - [AeonLucid](https://github.com/AeonLucid)
