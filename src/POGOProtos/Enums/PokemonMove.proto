@@ -271,4 +271,5 @@ enum PokemonMove {
 	HORN_DRILL = 328;
 	FISSURE = 329;
 	AURA_SPHERE = 332;
+	ROCK_WRECKER = 334;
 }
