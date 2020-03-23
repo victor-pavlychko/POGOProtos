@@ -11,7 +11,7 @@ import "POGOProtos/Map/Fort/FortType.proto";
 import "POGOProtos/Map/Fort/FortSponsor.proto";
 import "POGOProtos/Map/Fort/FortRenderingType.proto";
 import "POGOProtos/Map/Pokemon/MapPokemon.proto";
-import "POGOProtos/Data/EnumWrapper.proto";
+import "POGOProtos/Enums/EnumWrapper.proto";
 
 message FortData {
 	string id = 1;
@@ -70,12 +70,12 @@ message FortData {
 		}
 
 		message CharacterDisplay {
-			.POGOProtos.Data.EnumWrapper.PokestopStyle style = 1;
-			.POGOProtos.Data.EnumWrapper.InvasionCharacter character = 2;
+			.POGOProtos.Enums.EnumWrapper.PokestopStyle style = 1;
+			.POGOProtos.Enums.EnumWrapper.InvasionCharacter character = 2;
 		}
 
 		message InvasionFinishedDisplay {
-			.POGOProtos.Data.EnumWrapper.PokestopStyle style = 1;
+			.POGOProtos.Enums.EnumWrapper.PokestopStyle style = 1;
 		}
 	}
 }

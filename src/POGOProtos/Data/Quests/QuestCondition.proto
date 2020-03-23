@@ -9,7 +9,7 @@ import "POGOProtos/Enums/RaidLevel.proto";
 import "POGOProtos/Enums/BuddyLevel.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
 import "POGOProtos/Data/PokemonDisplay.proto";
-import "POGOProtos/Data/EnumWrapper.proto";
+import "POGOProtos/Enums/EnumWrapper.proto";
 
 message QuestCondition {
 	ConditionType type = 1;
@@ -90,7 +90,7 @@ message QuestCondition {
 	}
 
 	message WithInvasionCharacter {
-		repeated .POGOProtos.Data.EnumWrapper.CharacterCategory category = 1;
+		repeated .POGOProtos.Enums.EnumWrapper.CharacterCategory category = 1;
 	}
 
 	message WithUniquePokemon {

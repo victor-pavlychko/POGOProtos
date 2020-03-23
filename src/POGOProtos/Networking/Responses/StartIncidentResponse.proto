@@ -1,7 +1,7 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses;
 
-import "POGOProtos/Data/EnumWrapper.proto";
+import "POGOProtos/Enums/EnumWrapper.proto";
 import "POGOProtos/Map/Fort/FortData.proto";
 
 message StartIncidentResponse {
@@ -35,7 +35,7 @@ message StartIncidentResponse {
 			}
 
 			message ClientInvasionBattleStep {
-				.POGOProtos.Data.EnumWrapper.InvasionCharacter character = 1;
+				.POGOProtos.Enums.EnumWrapper.InvasionCharacter character = 1;
 			}
 
 			message ClientInvasionEncounterStep {
@@ -46,8 +46,8 @@ message StartIncidentResponse {
 
 				message ClientDialogueLine {
 					string text = 1;
-					.POGOProtos.Data.EnumWrapper.InvasionCharacter character = 2;
-					.POGOProtos.Data.EnumWrapper.InvasionCharacterExpression expression = 3;
+					.POGOProtos.Enums.EnumWrapper.InvasionCharacter character = 2;
+					.POGOProtos.Enums.EnumWrapper.InvasionCharacterExpression expression = 3;
 				}
 			}
 		}
