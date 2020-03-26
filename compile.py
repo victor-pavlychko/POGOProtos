@@ -25,7 +25,7 @@ def mkdir_p(path):
 
 def finish_compile(out_path, lang):
     if lang == 'python':
-        pogo_protos_path = os.path.join(out_path, "POGOProtos")
+        pogo_protos_path = os.path.join(out_path, "pogoprotos")
 
         for root, dirnames, filenames in os.walk(pogo_protos_path):
             init_path = os.path.join(root, '__init__.py')
