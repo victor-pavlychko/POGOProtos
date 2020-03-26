@@ -3266,6 +3266,14 @@ enum HoloBadgeType {
 	BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_02_EARLYACCESS = 5060;
 	BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_03_GENERAL = 5061;
 	BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_03_EARLYACCESS = 5062;
+	BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_00_GENERAL = 5063;
+	BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_00_EARLYACCESS = 5064;
+	BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_01_GENERAL = 5065;
+	BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_01_EARLYACCESS = 5066;
+	BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_02_GENERAL = 5067;
+	BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_02_EARLYACCESS = 5068;
+	BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_03_GENERAL = 5069;
+	BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_03_EARLYACCESS = 5070;
 	BADGE_GLOBAL_TICKETED_EVENT = 5100;
 	BADGE_EVENT_0001 = 5201;
 	BADGE_EVENT_0002 = 5202;
@@ -5075,6 +5083,7 @@ enum Method {
 	CREATE_BUDDY_MUTLIPLAYER_SESSION = 1456;
 	JOIN_BUDDY_MULTIPLAYER_SESSION = 1457;
 	LEAVE_BUDDY_MULTIPLAYER_SESSION = 1458;
+	GET_TODAY_VIEW = 1501;
 }
 
 // ref: Holoholo.Rpc.NewsPageTelemetryIds
@@ -5123,6 +5132,13 @@ enum NotificationCategory {
 	BGMODE_BUDDY_ATTRACTIVE_POI = 33;
 	BUDDY_AFFECTION_ATTRACTIVE_POI = 36;
 	POI_PASSCODE_REDEEMED = 37;
+	NO_EGGS_INCUBATING = 38;
+	RETENTION_UNOPENED_GIFTS = 39;
+	RETENTION_STARPIECE = 40;
+	RETENTION_INCENSE = 41;
+	RETENTION_LUCKY_EGG = 42;
+	RETENTION_ADVSYNC_REWARDS = 43;
+	RETENTION_EGGS_NOT_INCUBATING = 44;
 }
 
 // ref: Holoholo.Rpc.OnboardingArStatus
@@ -7527,6 +7543,7 @@ message CombatGlobalSettingsProto {
 	bool enable_flyout_animations = 20;
 	bool enable_battle_hub = 21;
 	int32 matchmaking_timeout_duration_ms = 22;
+	int64 planned_downtime_timestamp_ms = 23;
 }
 
 // ref: Holoholo.Rpc.CombatHubEntranceTelemetry
@@ -7758,6 +7775,7 @@ message CombatProto {
 		int64 quick_swap_available_ms = 9;
 		int32 minigame_defense_chances_left = 10;
 		string combat_npc_personality_id = 11;
+		int32 times_combat_actions_called = 12;
 	}
 
 	// ref: Holoholo.Rpc.CombatProto/Types/CombatPokemonProto
@@ -8195,6 +8213,19 @@ message DailyQuestSettings {
 	float bonus_multiplier = 3;
 	float streak_bonus_multiplier = 4;
 	bool disable = 5;
+}
+
+// ref: Holoholo.Rpc.DailyStreaksProto
+message DailyStreaksProto {
+	// ref: Holoholo.Rpc.DailyStreaksProto/Types/StreakProto
+	message StreakProto {
+		QuestType quest_type = 1;
+		int32 count = 2;
+		int32 target = 3;
+		int32 remaining_today = 4;
+	}
+
+	repeated StreakProto streaks = 1;
 }
 
 // ref: Holoholo.Rpc.DamagePropertyProto
@@ -8734,6 +8765,76 @@ message EventInfoProto {
 	string image_url = 1;
 	string icon_url = 2;
 	string name_key = 3;
+}
+
+// ref: Holoholo.Rpc.EventSectionProto
+message EventSectionProto {
+	// ref: Holoholo.Rpc.EventSectionProto/Types/BonusBoxProto/Types/IconType
+	enum IconType {
+		UNSET = 0;
+		ADVENTURE_SYNC = 1;
+		BUDDY = 2;
+		CANDY_GENERAL = 3;
+		EGG = 4;
+		EGG_INCUBATOR = 5;
+		EVENT_MOVE = 6;
+		EVOLUTION = 7;
+		FIELD_RESEARCH = 8;
+		FRIENDSHIP = 9;
+		GIFT = 10;
+		INCENSE = 11;
+		LUCKY_EGG = 12;
+		LURE_MODULE = 13;
+		PHOTOBOMB = 14;
+		POKESTOP = 15;
+		RAID = 16;
+		RAID_PASS = 17;
+		SPAWN_UNKNOWN = 18;
+		STAR_PIECE = 19;
+		STARDUST = 20;
+		TEAM_ROCKET = 21;
+		TRADE = 22;
+		TRANSFER_CANDY = 23;
+	}
+
+	// ref: Holoholo.Rpc.EventSectionProto/Types/BonusBoxProto
+	message BonusBoxProto {
+		// ref: Holoholo.Rpc.EventSectionProto/Types/BonusBoxProto/Types/IconType
+		enum IconType {
+			UNSET = 0;
+			ADVENTURE_SYNC = 1;
+			BUDDY = 2;
+			CANDY_GENERAL = 3;
+			EGG = 4;
+			EGG_INCUBATOR = 5;
+			EVENT_MOVE = 6;
+			EVOLUTION = 7;
+			FIELD_RESEARCH = 8;
+			FRIENDSHIP = 9;
+			GIFT = 10;
+			INCENSE = 11;
+			LUCKY_EGG = 12;
+			LURE_MODULE = 13;
+			PHOTOBOMB = 14;
+			POKESTOP = 15;
+			RAID = 16;
+			RAID_PASS = 17;
+			SPAWN_UNKNOWN = 18;
+			STAR_PIECE = 19;
+			STARDUST = 20;
+			TEAM_ROCKET = 21;
+			TRADE = 22;
+			TRANSFER_CANDY = 23;
+		}
+
+		string text = 1;
+		IconType icon_type = 2;
+	}
+
+	string event_name = 1;
+	GetLocalTimeOutProto.LocalTimeProto end_time = 3;
+	string ref_news_id = 4;
+	repeated BonusBoxProto bonus_boxes = 5;
 }
 
 // ref: Holoholo.Rpc.EventSettingsProto
@@ -9906,6 +10007,23 @@ message GetServerTimeOutProto {
 message GetServerTimeProto {
 }
 
+// ref: Holoholo.Rpc.GetTodayViewOutProto
+message GetTodayViewOutProto {
+	// ref: Holoholo.Rpc.GetTodayViewOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR = 2;
+	}
+
+	Status status = 1;
+	TodayViewProto today_view = 2;
+}
+
+// ref: Holoholo.Rpc.GetTodayViewProto
+message GetTodayViewProto {
+}
+
 // ref: Holoholo.Rpc.GetTradingOutProto
 message GetTradingOutProto {
 	// ref: Holoholo.Rpc.GetTradingOutProto/Types/Result
@@ -10079,6 +10197,7 @@ message GlobalSettingsProto {
 	GmtSettingsProto gmt_settings = 45;
 	bool use_local_time_action = 47;
 	ArdkConfigSettingsProto ardk_config_settings = 48;
+	PlannedDowntimeSettingsProto planned_downtime_settings = 51;
 }
 
 // ref: Holoholo.Rpc.GmtSettingsProto
@@ -10342,6 +10461,20 @@ message GymMembershipProto {
 	PokemonProto training_pokemon = 3;
 }
 
+// ref: Holoholo.Rpc.GymPokemonSectionProto
+message GymPokemonSectionProto {
+	// ref: Holoholo.Rpc.GymPokemonSectionProto/Types/GymPokemonProto
+	message GymPokemonProto {
+		int64 pokemon_id = 1;
+		float motivation = 2;
+		int64 deployed_timestamp_ms = 3;
+		int32 coins_returned = 4;
+	}
+
+	repeated GymPokemonProto pokemon_in_gym = 1;
+	repeated GymPokemonProto pokemon_returned_today = 2;
+}
+
 // ref: Holoholo.Rpc.GymStartSessionOutProto
 message GymStartSessionOutProto {
 	// ref: Holoholo.Rpc.GymStartSessionOutProto/Types/Result
@@ -10468,6 +10601,7 @@ message HoloholoClientTelemetryOmniProto {
 		//buddy_multiplayer_connection_failed_telemetry = 57;
 		//buddy_multiplayer_connection_succeeded_telemetry = 58;
 		//buddy_multiplayer_time_to_get_session_telemetry = 59;
+		//player_hud_notification_click_telemetry = 60;
 	//}
 
 	BootTime boot_time = 1;
@@ -10529,6 +10663,7 @@ message HoloholoClientTelemetryOmniProto {
 	BuddyMultiplayerConnectionFailedProto buddy_multiplayer_connection_failed_telemetry = 57;
 	BuddyMultiplayerConnectionSucceededProto buddy_multiplayer_connection_succeeded_telemetry = 58;
 	BuddyMultiplayerTimeToGetSessionProto buddy_multiplayer_time_to_get_session_telemetry = 59;
+	PlayerHudNotificationClickTelemetry player_hud_notification_click_telemetry = 60;
 	PlatformServerData server_data = 1001;
 	PlatformCommonFilterProto common_filters = 1002;
 }
@@ -11229,6 +11364,7 @@ message LootItemProto {
 		//pokemon_candy = 4;
 		//experience = 6;
 		//pokemon_egg = 7;
+		//avatar_template_id = 8;
 	//}
 
 	Item item = 1;
@@ -11238,6 +11374,7 @@ message LootItemProto {
 	int32 count = 5;
 	bool experience = 6;
 	PokemonProto pokemon_egg = 7;
+	string avatar_template_id = 8;
 }
 
 // ref: Holoholo.Rpc.LootProto
@@ -11752,6 +11889,12 @@ message PermissionsFlowTelemetry {
 	bool success = 4;
 }
 
+// ref: Holoholo.Rpc.PlannedDowntimeSettingsProto
+message PlannedDowntimeSettingsProto {
+	int64 downtime_timestamp_ms = 1;
+	int64 no_actions_window_sec_from_downtime = 2;
+}
+
 // ref: Holoholo.Rpc.PlatformMetricData
 message PlatformMetricData {
 	// ref: Holoholo.Rpc.PlatformMetricData/DatapointValueOneofCase
@@ -11853,6 +11996,11 @@ message PlayerFriendDisplayProto {
 	int32 last_pokemon_caught_display_id = 5;
 	int64 last_pokemon_caught_timestamp = 6;
 	int32 buddy_candy_awarded = 7;
+}
+
+// ref: Holoholo.Rpc.PlayerHudNotificationClickTelemetry
+message PlayerHudNotificationClickTelemetry {
+	string notification_category = 1;
 }
 
 // ref: Holoholo.Rpc.PlayerLevelSettingsProto
@@ -12005,6 +12153,13 @@ message PokecoinPurchaseDisplaySettingsProto {
 	bool use_pokecoin_purchase_display_gmt = 4;
 }
 
+// ref: Holoholo.Rpc.PokecoinSectionProto
+message PokecoinSectionProto {
+	int32 coins_earned_today = 1;
+	int32 max_coins_per_day = 2;
+	string coins_quest_id = 3;
+}
+
 // ref: Holoholo.Rpc.PokedexEntryProto
 message PokedexEntryProto {
 	int32 pokedex_entry_number = 1;
@@ -12078,6 +12233,10 @@ message PokemonDisplayProto {
 		NOT_FOR_RELEASE_BETA = 19;
 		NOT_FOR_RELEASE_GAMMA = 20;
 		NOT_FOR_RELEASE_NOEVOLVE = 21;
+		KANTO_2020_NOEVOLVE = 22;
+		JOHTO_2020_NOEVOLVE = 23;
+		HOENN_2020_NOEVOLVE = 24;
+		SINNOH_2020_NOEVOLVE = 25;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Form
@@ -14829,6 +14988,7 @@ message QuestProto {
 		UNSET = 0;
 		STORY_QUEST = 1;
 		CHALLENGE_QUEST = 2;
+		DAILY_COIN_QUEST = 3;
 	}
 
 	// ref: Holoholo.Rpc.QuestProto/QuestOneofCase
@@ -14890,6 +15050,7 @@ message QuestRewardProto {
 		//avatar_template_id = 6;
 		//quest_template_id = 7;
 		//pokemon_encounter = 8;
+		//pokecoin = 9;
 	//}
 
 	// ref: Holoholo.Rpc.QuestRewardProto/Types/Type
@@ -14902,6 +15063,7 @@ message QuestRewardProto {
 		AVATAR_CLOTHING = 5;
 		QUEST = 6;
 		POKEMON_ENCOUNTER = 7;
+		POKECOIN = 8;
 	}
 
 	Type type = 1;
@@ -14912,6 +15074,7 @@ message QuestRewardProto {
 	string avatar_template_id = 6;
 	string quest_template_id = 7;
 	PokemonEncounterRewardProto pokemon_encounter = 8;
+	int32 pokecoin = 9;
 }
 
 // ref: Holoholo.Rpc.QuestSettingsProto
@@ -15852,6 +16015,30 @@ message ThirdMoveGlobalSettingsProto {
 	bool unlock_enabled = 1;
 }
 
+// ref: Holoholo.Rpc.TodayViewProto
+message TodayViewProto {
+	repeated TodayViewSectionProto sections = 1;
+}
+
+// ref: Holoholo.Rpc.TodayViewSectionProto
+message TodayViewSectionProto {
+	// ref: Holoholo.Rpc.TodayViewSectionProto/SectionOneofCase
+	//oneof Section {
+		//none = 0;
+		//pokecoin = 1;
+		//gym_pokemon = 2;
+		//streaks = 3;
+		//event = 4;
+		//up_next = 5;
+	//}
+
+	PokecoinSectionProto pokecoin = 1;
+	GymPokemonSectionProto gym_pokemon = 2;
+	DailyStreaksProto streaks = 3;
+	EventSectionProto event = 4;
+	UpNextSectionProto up_next = 5;
+}
+
 // ref: Holoholo.Rpc.TradePokemonQuestProto
 message TradePokemonQuestProto {
 	repeated string friend_id = 1;
@@ -16180,6 +16367,11 @@ message UpgradePokemonProto {
 	bool preview = 2;
 }
 
+// ref: Holoholo.Rpc.UpNextSectionProto
+message UpNextSectionProto {
+	repeated string event_id = 1;
+}
+
 // ref: Holoholo.Rpc.UpsightLoggingSettingsProto
 message UpsightLoggingSettingsProto {
 	bool use_verbose_logging = 1;
@@ -16337,7 +16529,6 @@ message UseItemRareCandyOutProto {
 
 	Result result = 1;
 	HoloPokemonId pokemon_id = 2;
-	int32 updated_candy_count = 3;
 }
 
 // ref: Holoholo.Rpc.UseItemRareCandyProto
@@ -17343,6 +17534,11 @@ message TelemetryCommon {
 //----- End telemetry -----
 //------------------------------
 //----- Begin token -----
+
+// ref: Niantic.Platform.Auth.Token.AppleToken
+message AppleToken {
+	string id_token = 1;
+}
 
 // ref: Niantic.Platform.Auth.Token.FbTokenProto
 message FbTokenProto {
