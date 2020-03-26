@@ -42,6 +42,7 @@ import "POGOProtos/Settings/InputSettings.proto";
 import "POGOProtos/Settings/GmtSettings.proto";
 import "POGOProtos/Settings/BuddyGlobalSettings.proto";
 import "POGOProtos/Settings/ArdkConfigSettings.proto";
+import "POGOProtos/Settings/PlannedDowntimeSettings.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
@@ -89,4 +90,5 @@ message GlobalSettings {
 	.POGOProtos.Settings.GmtSettings gmt_settings = 45;
 	bool use_local_time_action = 47;
 	.POGOProtos.Settings.ArdkConfigSettings ardk_config_settings = 48;
+	.POGOProtos.Settings.PlannedDowntimeSettings planned_downtime_settings = 51;
 }

@@ -67,6 +67,7 @@ message Quest {
 		UNSET = 0;
 		STORY_QUEST = 1;
 		CHALLENGE_QUEST = 2;
+		DAILY_COIN_QUEST = 3;
 	}
 
 	enum Status {

@@ -14,5 +14,6 @@ message LootItem {
 		int32 count = 5;
 		bool experience = 6;
 		.POGOProtos.Data.PokemonData pokemon_egg = 7;
+		string avatar_template_id = 8;
 	}
 }
