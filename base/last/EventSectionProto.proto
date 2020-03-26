@@ -1,0 +1,68 @@
+syntax = "proto3";
+package DumpProtos;
+
+message EventSectionProto {
+	string event_name = 1;
+	GetLocalTimeOutProto.LocalTimeProto end_time = 3;
+	string ref_news_id = 4;
+	repeated BonusBoxProto bonus_boxes = 5;
+
+	enum IconType {
+		UNSET = 0;
+		ADVENTURE_SYNC = 1;
+		BUDDY = 2;
+		CANDY_GENERAL = 3;
+		EGG = 4;
+		EGG_INCUBATOR = 5;
+		EVENT_MOVE = 6;
+		EVOLUTION = 7;
+		FIELD_RESEARCH = 8;
+		FRIENDSHIP = 9;
+		GIFT = 10;
+		INCENSE = 11;
+		LUCKY_EGG = 12;
+		LURE_MODULE = 13;
+		PHOTOBOMB = 14;
+		POKESTOP = 15;
+		RAID = 16;
+		RAID_PASS = 17;
+		SPAWN_UNKNOWN = 18;
+		STAR_PIECE = 19;
+		STARDUST = 20;
+		TEAM_ROCKET = 21;
+		TRADE = 22;
+		TRANSFER_CANDY = 23;
+	}
+
+	message BonusBoxProto {
+		enum IconType {
+			UNSET = 0;
+			ADVENTURE_SYNC = 1;
+			BUDDY = 2;
+			CANDY_GENERAL = 3;
+			EGG = 4;
+			EGG_INCUBATOR = 5;
+			EVENT_MOVE = 6;
+			EVOLUTION = 7;
+			FIELD_RESEARCH = 8;
+			FRIENDSHIP = 9;
+			GIFT = 10;
+			INCENSE = 11;
+			LUCKY_EGG = 12;
+			LURE_MODULE = 13;
+			PHOTOBOMB = 14;
+			POKESTOP = 15;
+			RAID = 16;
+			RAID_PASS = 17;
+			SPAWN_UNKNOWN = 18;
+			STAR_PIECE = 19;
+			STARDUST = 20;
+			TEAM_ROCKET = 21;
+			TRADE = 22;
+			TRANSFER_CANDY = 23;
+		}
+
+		string text = 1;
+		IconType icon_type = 2;
+	}
+}

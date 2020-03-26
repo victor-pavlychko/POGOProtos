@@ -1,0 +1,8 @@
+syntax = "proto3";
+package DumpProtos;
+
+message PokecoinSectionProto {
+	int32 coins_earned_today = 1;
+	int32 max_coins_per_day = 2;
+	string coins_quest_id = 3;
+}

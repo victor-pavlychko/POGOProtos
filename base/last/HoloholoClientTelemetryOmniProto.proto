@@ -61,6 +61,7 @@ message HoloholoClientTelemetryOmniProto {
 	BuddyMultiplayerConnectionFailedProto buddy_multiplayer_connection_failed_telemetry = 57;
 	BuddyMultiplayerConnectionSucceededProto buddy_multiplayer_connection_succeeded_telemetry = 58;
 	BuddyMultiplayerTimeToGetSessionProto buddy_multiplayer_time_to_get_session_telemetry = 59;
+	PlayerHudNotificationClickTelemetry player_hud_notification_click_telemetry = 60;
 	PlatformServerData server_data = 1001;
 	PlatformCommonFilterProto common_filters = 1002;
 
@@ -125,5 +126,6 @@ message HoloholoClientTelemetryOmniProto {
 		//buddy_multiplayer_connection_failed_telemetry = 57;
 		//buddy_multiplayer_connection_succeeded_telemetry = 58;
 		//buddy_multiplayer_time_to_get_session_telemetry = 59;
+		//player_hud_notification_click_telemetry = 60;
 	//}
 }

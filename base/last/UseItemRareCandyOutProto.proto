@@ -4,7 +4,6 @@ package DumpProtos;
 message UseItemRareCandyOutProto {
 	Result result = 1;
 	HoloPokemonId pokemon_id = 2;
-	int32 updated_candy_count = 3;
 
 	enum Result {
 		UNSET = 0;

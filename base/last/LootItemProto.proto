@@ -9,6 +9,7 @@ message LootItemProto {
 	int32 count = 5;
 	bool experience = 6;
 	PokemonProto pokemon_egg = 7;
+	string avatar_template_id = 8;
 
 	//oneof Type {
 		//none = 0;
@@ -18,5 +19,6 @@ message LootItemProto {
 		//pokemon_candy = 4;
 		//experience = 6;
 		//pokemon_egg = 7;
+		//avatar_template_id = 8;
 	//}
 }

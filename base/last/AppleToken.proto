@@ -1,0 +1,6 @@
+syntax = "proto3";
+package DumpProtos;
+
+message AppleToken {
+	string id_token = 1;
+}
