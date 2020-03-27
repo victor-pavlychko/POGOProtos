@@ -1,15 +1,13 @@
 # Project files
 .idea/
 *.iml
+*_file*
 
 # Protoc files
 out/
-out2/
-tmp/
+
 *.pyc
 *.DS_Store
 
 # Backup files
 *~
-/helpers/__pycache__/
-**/class-use/*
