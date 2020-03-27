@@ -13,7 +13,7 @@ message TradingProto {
 	FriendshipLevelDataProto pre_trading_friendship_level = 9;
 
 	enum ExclusionReason {
-		UNSET = 0;
+		UNSET_EXCLUSIONREASON = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -30,7 +30,7 @@ message TradingProto {
 	}
 
 	enum TradingState {
-		UNSET = 0;
+		UNSET_TRADINGSTATE = 0;
 		PRIMORDIAL = 1;
 		WAIT = 2;
 		ACTIVE = 3;
@@ -40,7 +40,7 @@ message TradingProto {
 
 	message ExcludedPokemon {
 		enum ExclusionReason {
-			UNSET = 0;
+			UNSET_EXCLUSIONREASON = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -62,7 +62,7 @@ message TradingProto {
 
 	message TradingPlayerProto {
 		enum ExclusionReason {
-			UNSET = 0;
+			UNSET_EXCLUSIONREASON = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -80,7 +80,7 @@ message TradingProto {
 
 		message ExcludedPokemon {
 			enum ExclusionReason {
-				UNSET = 0;
+				UNSET_EXCLUSIONREASON = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;

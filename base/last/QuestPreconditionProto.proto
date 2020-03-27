@@ -21,19 +21,19 @@ message QuestPreconditionProto {
 	//}
 
 	enum Name {
-		UNSET = 0;
+		UNSET_NAME = 0;
 		GIOVANNI = 1;
 	}
 
 	enum Operator {
-		UNSET = 0;
+		UNSET_OPERATOR = 0;
 		EQUALS = 1;
 		GREATER_THAN = 2;
 		LESS_THAN = 3;
 	}
 
 	enum QuestPreconditionType {
-		QUEST_PRECONDITION_UNSET = 0;
+		QUEST_PRECONDITION_UNSET_QUESTPRECONDITIONTYPE = 0;
 		QUEST_PRECONDITION_QUEST = 1;
 		QUEST_PRECONDITION_LEVEL = 2;
 		QUEST_PRECONDITION_MEDAL = 3;
@@ -47,7 +47,7 @@ message QuestPreconditionProto {
 
 	message Group {
 		enum Name {
-			UNSET = 0;
+			UNSET_NAME = 0;
 			GIOVANNI = 1;
 		}
 
