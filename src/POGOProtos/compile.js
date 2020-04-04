@@ -30,7 +30,7 @@ async function build() {
         }
     }
 
-    await fs.writeFile(path.join(__dirname, 'POGOProtos.proto'), content);
+    await fs.writeFile(path.join(__dirname, 'POGOProtos.js.inc'), content);
 }
 
 build().then(() => console.log('Done.'));
