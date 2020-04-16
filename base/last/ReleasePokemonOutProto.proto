@@ -4,6 +4,7 @@ package DumpProtos;
 message ReleasePokemonOutProto {
 	Status status = 1;
 	int32 candy_awarded = 2;
+	int32 xl_candy_awarded = 3;
 
 	enum Status {
 		UNSET = 0;

@@ -12,4 +12,5 @@ enum EncounterType {
 	PHOTOBOMB = 7;
 	INVASION = 8;
 	VS_SEEKER_REWARD = 9;
+	TIMED_STORY_QUEST = 10;
 }

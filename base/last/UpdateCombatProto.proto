@@ -4,4 +4,5 @@ package DumpProtos;
 message UpdateCombatProto {
 	string combat_id = 1;
 	CombatActionProto action = 2;
+	string debug_log = 3;
 }

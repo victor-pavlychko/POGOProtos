@@ -69,4 +69,7 @@ message GameMasterClientTemplateProto {
 	PlatypusRolloutSettingsProto platypus_rollout_settings = 70;
 	BuddyHungerSettings buddy_hunger_settings = 72;
 	ProjectVacationProto project_vacation = 73;
+	AvatarGroupOrderSettingsProto avatar_group_order_settings = 76;
+	MonodepthSettingsProto monodepth_settings = 78;
+	RaidClientSettingsProto raid_settings_proto = 81;
 }

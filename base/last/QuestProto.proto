@@ -29,12 +29,14 @@ message QuestProto {
 	int32 story_quest_template_version = 116;
 	DailyCounterProto daily_counter = 117;
 	string reward_pokemon_icon_url = 118;
+	int64 end_timestamp_ms = 119;
 
 	enum Context {
 		UNSET = 0;
 		STORY_QUEST = 1;
 		CHALLENGE_QUEST = 2;
 		DAILY_COIN_QUEST = 3;
+		TIMED_STORY_QUEST = 4;
 	}
 
 	//oneof Quest {

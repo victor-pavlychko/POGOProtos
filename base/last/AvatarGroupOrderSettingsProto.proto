@@ -1,0 +1,11 @@
+syntax = "proto3";
+package DumpProtos;
+
+message AvatarGroupOrderSettingsProto {
+	repeated AvatarGroupOrderProto group = 1;
+
+	message AvatarGroupOrderProto {
+		string name = 1;
+		int32 order = 2;
+	}
+}

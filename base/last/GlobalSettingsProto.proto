@@ -47,5 +47,7 @@ message GlobalSettingsProto {
 	GmtSettingsProto gmt_settings = 45;
 	bool use_local_time_action = 47;
 	ArdkConfigSettingsProto ardk_config_settings = 48;
+	EnabledPokemonSettingsProto enabled_pokemon = 49;
+	PokemonBulkUpgradeSettingsProto pokemon_bulk_upgrade_settings = 50;
 	PlannedDowntimeSettingsProto planned_downtime_settings = 51;
 }

@@ -56,4 +56,5 @@ message PokemonProto {
 	float pre_boosted_additional_cp_multiplier = 53;
 	double deployed_gym_lat_degree = 55;
 	double deployed_gym_lng_degree = 56;
+	HoloPokemonEggType egg_type = 58;
 }

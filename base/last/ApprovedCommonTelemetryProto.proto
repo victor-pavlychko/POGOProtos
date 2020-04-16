@@ -5,13 +5,19 @@ message ApprovedCommonTelemetryProto {
 	CommonTelemetryBootTime boot_time = 1;
 	CommonTelemetryShopClick shop_click = 2;
 	CommonTelemetryShopView shop_view = 3;
-	ServerRecordMetadata server_data = 4;
-	ClientTelemetryCommonFilterProto common_filters = 5;
+	PoiSubmissionTelemetry poi_submission_telemetry = 4;
+	PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 5;
+	CommonTelemetryLogIn log_in = 6;
+	ServerRecordMetadata server_data = 7;
+	ClientTelemetryCommonFilterProto common_filters = 8;
 
 	//oneof TelemetryData {
 		//none = 0;
 		//boot_time = 1;
 		//shop_click = 2;
 		//shop_view = 3;
+		//poi_submission_telemetry = 4;
+		//poi_submission_photo_upload_error_telemetry = 5;
+		//log_in = 6;
 	//}
 }

@@ -4,8 +4,9 @@ package DumpProtos;
 message ClientTelemetryBatchProto {
 	TelemetryScopeId telemetry_scope_id = 1;
 	repeated ClientTelemetryRecordProto events = 2;
-	string api_version = 3;
-	string message_version = 4;
+	repeated ClientTelemetryRecordProto metrics = 3;
+	string api_version = 4;
+	string message_version = 5;
 
 	enum TelemetryScopeId {
 		UNSET = 0;

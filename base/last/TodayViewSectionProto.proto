@@ -7,6 +7,7 @@ message TodayViewSectionProto {
 	DailyStreaksProto streaks = 3;
 	EventSectionProto event = 4;
 	UpNextSectionProto up_next = 5;
+	TimedQuestSectionProto timed_quest = 6;
 
 	//oneof Section {
 		//none = 0;
@@ -15,5 +16,6 @@ message TodayViewSectionProto {
 		//streaks = 3;
 		//event = 4;
 		//up_next = 5;
+		//timed_quest = 6;
 	//}
 }
