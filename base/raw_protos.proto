@@ -2195,13 +2195,6 @@ message UploadPoiPhotoByUrlProto {
 //------------------------------
 //----- Begin protos -----
 
-// ref: Niantic.Titan.Protos.PoiImageType
-enum PoiImageType {
-	UNSET = 0;
-	MAIN = 1;
-	SURROUNDING = 2;
-}
-
 // ref: Niantic.Titan.Protos.RouteVisitOrder
 enum RouteVisitOrder {
 	ROUTE_VISIT_ORDER_UNSPECIFIED = 0;
@@ -15980,7 +15973,7 @@ message SponsoredDetailsProto {
 	string call_to_action_link = 3;
 	PromoButtonMessageType promo_button_message_type = 4;
 	string campaign_id = 5;
-	niantic.vasa.ImageTextCreativeProto promo_image_creative = 6;
+	ImageTextCreativeProto promo_image_creative = 6;
 }
 
 // ref: Holoholo.Rpc.StardustBoostAttributesProto
