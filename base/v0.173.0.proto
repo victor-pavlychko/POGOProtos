@@ -17453,7 +17453,6 @@ message ApprovedCommonTelemetryProto {
 		//log_in = 6;
 	//}
 
-	// ref: Niantic.Platform.Analytics.Telemetry.ApprovedCommonTelemetryProto/<>c
 	CommonTelemetryBootTime boot_time = 1;
 	CommonTelemetryShopClick shop_click = 2;
 	CommonTelemetryShopView shop_view = 3;
@@ -17475,7 +17474,6 @@ message ClientTelemetryBatchProto {
 		COMMON = 4;
 	}
 
-	// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryBatchProto/<>c
 	TelemetryScopeId telemetry_scope_id = 1;
 	repeated ClientTelemetryRecordProto events = 2;
 	repeated ClientTelemetryRecordProto metrics = 3;
@@ -17485,7 +17483,6 @@ message ClientTelemetryBatchProto {
 
 // ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryClientSettingsProto
 message ClientTelemetryClientSettingsProto {
-	// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryClientSettingsProto/<>c
 	bool is_upload_enabled = 1;
 	int64 max_upload_size_in_bytes = 2;
 	int64 update_interval_in_sec = 3;
@@ -17502,7 +17499,6 @@ message ClientTelemetryClientSettingsProto {
 
 // ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryCommonFilterProto
 message ClientTelemetryCommonFilterProto {
-	// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryCommonFilterProto/<>c
 	string application_identifier = 1;
 	string operating_system_name = 2;
 	string device_model = 3;
@@ -17513,7 +17509,6 @@ message ClientTelemetryCommonFilterProto {
 
 // ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryRecordProto
 message ClientTelemetryRecordProto {
-	// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetryRecordProto/<>c
 	string record_id = 1;
 	bytes encoded_message = 2;
 	int64 client_timestamp_ms = 3;
@@ -17523,19 +17518,16 @@ message ClientTelemetryRecordProto {
 
 // ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetrySettingsRequestProto
 message ClientTelemetrySettingsRequestProto {
-	// ref: Niantic.Platform.Analytics.Telemetry.ClientTelemetrySettingsRequestProto/<>c
 }
 
 // ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryBootTime
 message CommonTelemetryBootTime {
-	// ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryBootTime/<>c
 	string boot_phase = 1;
 	int64 duration_ms = 2;
 }
 
 // ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryLogIn
 message CommonTelemetryLogIn {
-	// ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryLogIn/<>c
 	int64 timestamp_ms = 1;
 }
 
@@ -17548,7 +17540,6 @@ message CommonTelemetryShopClick {
 		ACTIVE = 2;
 	}
 
-	// ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryShopClick/<>c
 	string shopping_page_click_id = 1;
 	string sku_id = 2;
 	string item_id = 3;
@@ -17569,7 +17560,6 @@ message CommonTelemetryShopClick {
 
 // ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryShopView
 message CommonTelemetryShopView {
-	// ref: Niantic.Platform.Analytics.Telemetry.CommonTelemetryShopView/<>c
 	string shopping_page_view_type_id = 1;
 	int64 view_start_timestamp_ms = 2;
 	int64 view_end_timestamp_ms = 3;
@@ -17656,7 +17646,6 @@ message Distribution {
 
 // ref: Niantic.Platform.Analytics.Telemetry.InGamePurchaseDetails
 message InGamePurchaseDetails {
-	// ref: Niantic.Platform.Analytics.Telemetry.InGamePurchaseDetails/<>c
 	string ingame_type = 1;
 	int64 ingame_price = 2;
 	int64 remaining_ingame_balance = 3;
@@ -17718,7 +17707,6 @@ message PoiSubmissionPhotoUploadErrorTelemetry {
 		POI_PHOTO_UPLOAD_TIMEOUT = 2;
 	}
 
-	// ref: Niantic.Platform.Analytics.Telemetry.PoiSubmissionPhotoUploadErrorTelemetry/<>c
 	PoiSubmissionPhotoUploadErrorIds error_id = 1;
 	PoiImageType image_type = 2;
 	string error_message = 3;
@@ -17755,7 +17743,6 @@ message PoiSubmissionTelemetry {
 		POI_NOMINATION_GUIDELINES_HIT = 15;
 	}
 
-	// ref: Niantic.Platform.Analytics.Telemetry.PoiSubmissionTelemetry/<>c
 	PoiSubmissionGuiEventId gui_event_id = 1;
 	PoiImageType image_type = 2;
 	PoiCameraStepIds camera_step_id = 3;
@@ -17763,7 +17750,6 @@ message PoiSubmissionTelemetry {
 
 // ref: Niantic.Platform.Analytics.Telemetry.ServerRecordMetadata
 message ServerRecordMetadata {
-	// ref: Niantic.Platform.Analytics.Telemetry.ServerRecordMetadata/<>c
 	string user_id = 1;
 	string telemetry_name = 2;
 	string session_id = 3;
