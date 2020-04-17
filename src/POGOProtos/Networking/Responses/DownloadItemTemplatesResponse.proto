@@ -66,6 +66,9 @@ import "POGOProtos/Settings/Master/BuddyInteractionSettings.proto";
 import "POGOProtos/Settings/Master/MapBuddySettings.proto";
 import "POGOProtos/Settings/Master/BuddyWalkSettings.proto";
 import "POGOProtos/Settings/Master/BuddyHungerSettings.proto";
+import "POGOProtos/Settings/Master/AvatarGroupOrderSettings.proto";
+import "POGOProtos/Settings/Master/MonodepthSettings.proto";
+import "POGOProtos/Settings/Master/RaidClientSettings.proto";
 
 message DownloadItemTemplatesResponse {
 	Result result = 1;
@@ -141,6 +144,9 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Settings.Master.PlatypusRolloutSettings platypus_rollout_settings = 70;
 		.POGOProtos.Settings.Master.BuddyHungerSettings buddy_hunger_settings = 72;
 		ProjectVacation project_vacation = 73;
+		.POGOProtos.Settings.Master.AvatarGroupOrderSettings avatar_group_order_settings = 76;
+		.POGOProtos.Settings.Master.MonodepthSettings monodepth_settings = 78;
+		.POGOProtos.Settings.Master.RaidClientSettings raid_settings_proto = 81;
 
 		message ProjectVacation {
 			bool enable2020 = 1;

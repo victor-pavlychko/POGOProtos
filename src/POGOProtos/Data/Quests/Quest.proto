@@ -40,6 +40,7 @@ message Quest {
 	int32 story_quest_template_version = 116;
 	DailyCounter daily_counter = 117;
 	string reward_pokemon_icon_url = 118;
+	int64 end_timestamp_ms = 119;
 
 	message DaysWithARowQuest {
 		int32 last_window = 1;
@@ -68,6 +69,7 @@ message Quest {
 		STORY_QUEST = 1;
 		CHALLENGE_QUEST = 2;
 		DAILY_COIN_QUEST = 3;
+		TIMED_STORY_QUEST = 4;
 	}
 
 	enum Status {

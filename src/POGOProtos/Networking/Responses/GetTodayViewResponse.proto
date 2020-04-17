@@ -24,6 +24,11 @@ message GetTodayViewResponse {
 				DailyStreaks streaks = 3;
 				EventSection event = 4;
 				UpNextSection up_next = 5;
+				TimedQuestSection timed_quest = 6;
+			}
+
+			message TimedQuestSection {
+				string quest_id = 1;
 			}
 
 			message DailyStreaks {

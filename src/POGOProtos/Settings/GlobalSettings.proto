@@ -43,6 +43,8 @@ import "POGOProtos/Settings/GmtSettings.proto";
 import "POGOProtos/Settings/BuddyGlobalSettings.proto";
 import "POGOProtos/Settings/ArdkConfigSettings.proto";
 import "POGOProtos/Settings/PlannedDowntimeSettings.proto";
+import "POGOProtos/Settings/EnabledPokemonSettings.proto";
+import "POGOProtos/Settings/PokemonBulkUpgradeSettings.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
@@ -90,5 +92,7 @@ message GlobalSettings {
 	.POGOProtos.Settings.GmtSettings gmt_settings = 45;
 	bool use_local_time_action = 47;
 	.POGOProtos.Settings.ArdkConfigSettings ardk_config_settings = 48;
+	.POGOProtos.Settings.EnabledPokemonSettings enabled_pokemon = 49;
+	.POGOProtos.Settings.PokemonBulkUpgradeSettings pokemon_bulk_upgrade_settings = 50;
 	.POGOProtos.Settings.PlannedDowntimeSettings planned_downtime_settings = 51;
 }
