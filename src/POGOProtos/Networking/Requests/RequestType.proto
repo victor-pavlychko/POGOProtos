@@ -182,4 +182,6 @@ enum RequestType {
 	JOIN_BUDDY_MULTIPLAYER_SESSION = 1457;               // Implemented
 	LEAVE_BUDDY_MULTIPLAYER_SESSION = 1458;              // Implemented
 	GET_TODAY_VIEW = 1501;                               // Implemented
+	REMOTE_GIFT_PING = 1503;                             // Implemented
+	SEND_RAID_INVITATION = 1504;                         // Implemented
 }

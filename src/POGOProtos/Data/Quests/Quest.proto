@@ -2,6 +2,7 @@ syntax = "proto3";
 package POGOProtos.Data.Quests;
 
 import "POGOProtos/Enums/QuestType.proto";
+import "POGOProtos/Enums/PokemonId.proto";
 import "POGOProtos/Data/Quests/CatchPokemonQuest.proto";
 import "POGOProtos/Data/Quests/QuestReward.proto";
 import "POGOProtos/Data/Quests/QuestGoal.proto";
@@ -18,6 +19,8 @@ message Quest {
 		.POGOProtos.Data.Quests.AddFriendQuest add_friend = 5;
 		.POGOProtos.Data.Quests.TradePokemonQuest trade_pokemon = 6;
 		DailyBuddyAffectionQuest daily_buddy_affection = 7;
+		QuestWalk quest_walk = 8;
+		EvolveIntoPokemonQuest evolve_into_pokemon = 9;
 	}
 
 	DaysWithARowQuest days_in_arow = 99;
@@ -41,6 +44,14 @@ message Quest {
 	DailyCounter daily_counter = 117;
 	string reward_pokemon_icon_url = 118;
 	int64 end_timestamp_ms = 119;
+
+	message QuestWalk {
+		float quest_start_km_walked = 1;
+	}
+
+	message EvolveIntoPokemonQuest {
+		repeated .POGOProtos.Enums.PokemonId unique_pokemon_id = 1;
+	}
 
 	message DaysWithARowQuest {
 		int32 last_window = 1;

@@ -33,12 +33,15 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
 ### Titan (![alt text][1.1] ??? ![alt text][1.1])
  - [``Titan``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Titan)
 
+### Vasa (![alt text][1.1] ??? ![alt text][1.1])
+ - [``Vasa``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Vasa)
+
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.51.0       | 0.173.0       | Compatible      |  Protocol Buffers v3.11.4       |
+| 2.51.1       | 0.173.2       | Compatible      |  Protocol Buffers v3.11.4       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.

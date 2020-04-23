@@ -19,6 +19,7 @@ message GetRaidDetailsResponse {
 	int64 server_ms = 11;
 	int32 server_instance = 12;
 	bool display_high_user_warning = 13;
+	int32 num_friend_invites_remaining = 14;
 
 	enum Result {
 		UNSET = 0;

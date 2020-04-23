@@ -45,6 +45,8 @@ import "POGOProtos/Settings/ArdkConfigSettings.proto";
 import "POGOProtos/Settings/PlannedDowntimeSettings.proto";
 import "POGOProtos/Settings/EnabledPokemonSettings.proto";
 import "POGOProtos/Settings/PokemonBulkUpgradeSettings.proto";
+import "POGOProtos/Settings/ArMappingSettings.proto";
+import "POGOProtos/Settings/RaidInviteFriendsSettings.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
@@ -95,4 +97,6 @@ message GlobalSettings {
 	.POGOProtos.Settings.EnabledPokemonSettings enabled_pokemon = 49;
 	.POGOProtos.Settings.PokemonBulkUpgradeSettings pokemon_bulk_upgrade_settings = 50;
 	.POGOProtos.Settings.PlannedDowntimeSettings planned_downtime_settings = 51;
+	.POGOProtos.Settings.ArMappingSettings ar_mapping_settings = 52;
+	.POGOProtos.Settings.RaidInviteFriendsSettings raid_invite_friends_settings = 53;
 }

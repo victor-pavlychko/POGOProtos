@@ -64,6 +64,8 @@ import "POGOProtos/Data/Buddy/BuddyMultiplayerTimeToGetSession.proto";
 import "POGOProtos/Data/Telemetry/ARBuddyMultiplayerSessionTelemetry.proto";
 import "POGOProtos/Networking/Platform/PlatformCommonFilter.proto";
 import "POGOProtos/Data/Telemetry/MonodepthDownloadTelemetry.proto";
+import "POGOProtos/Data/Telemetry/ArMappingTelemetry.proto";
+import "POGOProtos/Data/Telemetry/RemoteRaidTelemetry.proto";
 
 message ClientTelemetryOmni {
 	oneof TelemetryData {
@@ -128,6 +130,8 @@ message ClientTelemetryOmni {
 		.POGOProtos.Data.Buddy.BuddyMultiplayerTimeToGetSession buddy_multiplayer_time_to_get_session_telemetry = 59;
 		.POGOProtos.Data.Telemetry.PlayerHudNotificationClickTelemetry player_hud_notification_click_telemetry = 60;
 		.POGOProtos.Data.Telemetry.MonodepthDownloadTelemetry monodepth_download_telemetry = 61;
+		.POGOProtos.Data.Telemetry.ArMappingTelemetry ar_mapping_telemetry = 62;
+		.POGOProtos.Data.Telemetry.RemoteRaidTelemetry remote_raid_telemetry = 63;
 	}
 
 	.POGOProtos.Data.Telemetry.PlatformServerData server_data = 1001;
