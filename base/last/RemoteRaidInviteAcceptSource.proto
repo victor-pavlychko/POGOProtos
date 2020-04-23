@@ -1,0 +1,8 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum RemoteRaidInviteAcceptSource {
+	UNDEFINED_REMOTE_RAID_INVITE_ACCEPT_SOURCE = 0;
+	REMOTE_RAID_IN_APP = 1;
+	REMOTE_RAID_PUSH_NOTIFICATION = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+package DumpProtos;
+
+message AdDetails {
+	ImageTextCreativeProto image_text_creative = 1;
+	bytes encrypted_ad_token = 2;
+}

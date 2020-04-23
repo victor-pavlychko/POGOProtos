@@ -9,6 +9,8 @@ message QuestProto {
 	AddFriendQuestProto add_friend = 5;
 	TradePokemonQuestProto trade_pokemon = 6;
 	DailyBuddyAffectionQuestProto daily_buddy_affection = 7;
+	QuestWalkProto quest_walk = 8;
+	EvolveIntoPokemonQuestProto evolve_into_pokemon = 9;
 	DaysWithARowQuestProto days_in_arow = 99;
 	string quest_id = 100;
 	int64 quest_seed = 101;
@@ -47,6 +49,8 @@ message QuestProto {
 		//add_friend = 5;
 		//trade_pokemon = 6;
 		//daily_buddy_affection = 7;
+		//quest_walk = 8;
+		//evolve_into_pokemon = 9;
 	//}
 
 	enum Status {

@@ -32,6 +32,9 @@ message EventSectionProto {
 		TEAM_ROCKET = 21;
 		TRADE = 22;
 		TRANSFER_CANDY = 23;
+		BATTLE = 24;
+		XP = 25;
+		SHOP = 26;
 	}
 
 	message BonusBoxProto {
@@ -60,6 +63,9 @@ message EventSectionProto {
 			TEAM_ROCKET = 21;
 			TRADE = 22;
 			TRANSFER_CANDY = 23;
+			BATTLE = 24;
+			XP = 25;
+			SHOP = 26;
 		}
 
 		string text = 1;

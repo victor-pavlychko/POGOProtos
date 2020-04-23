@@ -1,0 +1,8 @@
+syntax = "proto3";
+package DumpProtos;
+
+message RemoteRaidTelemetry {
+	RemoteRaidTelemetryIds remote_raid_telemetry_id = 1;
+	RemoteRaidJoinSource remote_raid_join_source = 2;
+	RemoteRaidInviteAcceptSource remote_raid_invite_accept_source = 3;
+}

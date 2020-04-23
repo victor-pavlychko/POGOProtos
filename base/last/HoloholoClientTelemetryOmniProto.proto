@@ -63,6 +63,8 @@ message HoloholoClientTelemetryOmniProto {
 	BuddyMultiplayerTimeToGetSessionProto buddy_multiplayer_time_to_get_session_telemetry = 59;
 	PlayerHudNotificationClickTelemetry player_hud_notification_click_telemetry = 60;
 	MonodepthDownloadTelemetry monodepth_download_telemetry = 61;
+	ArMappingTelemetryProto ar_mapping_telemetry = 62;
+	RemoteRaidTelemetry remote_raid_telemetry = 63;
 	PlatformServerData server_data = 1001;
 	PlatformCommonFilterProto common_filters = 1002;
 
@@ -129,5 +131,7 @@ message HoloholoClientTelemetryOmniProto {
 		//buddy_multiplayer_time_to_get_session_telemetry = 59;
 		//player_hud_notification_click_telemetry = 60;
 		//monodepth_download_telemetry = 61;
+		//ar_mapping_telemetry = 62;
+		//remote_raid_telemetry = 63;
 	//}
 }

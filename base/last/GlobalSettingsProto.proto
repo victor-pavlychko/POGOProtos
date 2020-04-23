@@ -50,4 +50,6 @@ message GlobalSettingsProto {
 	EnabledPokemonSettingsProto enabled_pokemon = 49;
 	PokemonBulkUpgradeSettingsProto pokemon_bulk_upgrade_settings = 50;
 	PlannedDowntimeSettingsProto planned_downtime_settings = 51;
+	ArMappingSettingsProto ar_mapping_settings = 52;
+	RaidInviteFriendsSettingsProto raid_invite_friends_settings = 53;
 }

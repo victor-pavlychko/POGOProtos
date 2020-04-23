@@ -11,6 +11,9 @@ message ArPhotoSessionProto {
 	int32 num_occlusions_disabled = 7;
 	ArContext ar_context = 8;
 	int64 session_length = 9;
+	int64 session_length_occlusions = 10;
+	int32 num_photos_shared_occlusions = 11;
+	string model_url = 12;
 
 	enum ArContext {
 		NONE = 0;

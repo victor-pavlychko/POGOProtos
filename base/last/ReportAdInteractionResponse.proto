@@ -1,0 +1,12 @@
+syntax = "proto3";
+package DumpProtos;
+
+message ReportAdInteractionResponse {
+	Status status = 1;
+
+	enum Status {
+		SUCCESS = 0;
+		MALFORMED = 1;
+		EXPIRED = 2;
+	}
+}

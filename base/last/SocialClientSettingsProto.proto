@@ -11,4 +11,5 @@ message SocialClientSettingsProto {
 	bool enable_facebook_friends = 7;
 	int32 facebook_friend_limit_per_request = 8;
 	bool disable_facebook_friends_opening_prompt = 9;
+	bool enable_remote_gifting = 12;
 }

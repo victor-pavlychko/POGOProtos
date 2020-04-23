@@ -1,0 +1,10 @@
+syntax = "proto3";
+package DumpProtos;
+
+enum RemoteRaidTelemetryIds {
+	UNDEFINED_REMOTE_RAID_EVENT = 0;
+	REMOTE_RAID_LOBBY_ENTER = 1;
+	REMOTE_RAID_INVITE_SENT = 2;
+	REMOTE_RAID_INVITE_ACCEPTED = 3;
+	REMOTE_RAID_INVITE_REJECTED = 4;
+}

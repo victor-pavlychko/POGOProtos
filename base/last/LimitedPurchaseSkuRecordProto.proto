@@ -7,5 +7,6 @@ message LimitedPurchaseSkuRecordProto {
 	message PurchaseProto {
 		int32 version = 1;
 		int32 num_purchases = 2;
+		int64 last_purchase_ms = 4;
 	}
 }
