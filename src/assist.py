@@ -163,3 +163,10 @@ gamewebtoken_response_path = 'GameWebToken_' + os.path.join("POGOProtos/Networki
 
 initialize_file("POGOProtos.Networking.Game.GameWebToken.Messages", "%sMessage" % message, gamewebtoken_request_path)
 initialize_file("POGOProtos.Networking.Game.GameWebToken.Responses", "%sResponse" % message, gamewebtoken_response_path)
+
+# Vasa
+vasa_request_path = 'Vasa_' + os.path.join("POGOProtos/Networking/Vasa/Messages", "%sMessage.proto" % message)
+vasa_response_path = 'Vasa_' + os.path.join("POGOProtos/Networking/Vasa/Responses", "%sResponse.proto" % message)
+
+initialize_file("POGOProtos.Networking.Vasa.Messages", "%sMessage" % message, vasa_request_path)
+initialize_file("POGOProtos.Networking.Vasa.Responses", "%sResponse" % message, vasa_response_path)
