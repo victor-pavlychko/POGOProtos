@@ -1,5 +1,5 @@
 default:
-  image: python2.7:ubuntu
+  image: python:ubuntu
   before_script:
     - apt-get update && apt-get -y tar bash bash-doc bash-completion wget zip
   
