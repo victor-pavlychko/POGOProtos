@@ -1,10 +1,10 @@
 # Project files
 .idea/
 *.iml
-*_file*
+#*_file*
 
 # Protoc files
-out/
+out*/
 
 *.pyc
 *.DS_Store
