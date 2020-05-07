@@ -1,5 +1,5 @@
 /*
-* Copyright 2020 --=FurtiF=-- Co., Ltd.
+* Copyright 2016-2020 --=FurtiF=-- Co., Ltd.
 *
 * Licensed under the
 *	Educational Community License, Version 2.0 (the "License"); you may
@@ -1256,6 +1256,7 @@ enum InvitationType {
 	INVITATION_TYPE_CODE = 1;
 	INVITATION_TYPE_FACEBOOK = 2;
 	INVITATION_TYPE_SERVER_REQUEST = 3;
+	INVITATION_TYPE_NIANTIC_SOCIAL_GRAPH = 4;
 }
 
 // ref: Niantic.Platform.Protos.NotificationState
@@ -1354,6 +1355,7 @@ enum SocialNotificationVariableName {
 	SOCIAL_CODENAME = 1;
 	SOCIAL_TEAM = 2;
 	SOCIAL_PLAYER_SUMMARY = 3;
+	SOCIAL_FULL_NAME = 4;
 }
 
 // ref: Niantic.Platform.Protos.SponsorPoiInvalidReason
@@ -1387,6 +1389,11 @@ message AcceptFriendInviteOutProto {
 // ref: Niantic.Platform.Protos.AcceptFriendInviteProto
 message AcceptFriendInviteProto {
 	string player_id = 1;
+}
+
+// ref: Niantic.Platform.Protos.AccountSettingsProto
+message AccountSettingsProto {
+	bool opt_out_social_graph_import = 1;
 }
 
 // ref: Niantic.Platform.Protos.AddLoginActionOutProto
@@ -1500,10 +1507,19 @@ message DownloadSettingsResponseProto {
 
 // ref: Niantic.Platform.Protos.FriendDetailsProto
 message FriendDetailsProto {
+	// ref: Niantic.Platform.Protos.FriendDetailsProto/Types/OnlineStatus
+	enum OnlineStatus {
+		UNSET = 0;
+		STATUS_UNKNOWN = 1;
+		STATUS_ONLINE = 2;
+		STATUS_OFFLINE = 3;
+	}
+
 	PlayerSummaryProto player = 1;
 	bytes friend_visible_data = 2;
 	int32 score = 3;
 	bytes data_with_me = 4;
+	OnlineStatus online_status = 5;
 }
 
 // ref: Niantic.Platform.Protos.GcmToken
@@ -1541,6 +1557,23 @@ message GenerateGmapSignedUrlProto {
 	string icon_params = 10;
 }
 
+// ref: Niantic.Platform.Protos.GetAccountSettingsOutProto
+message GetAccountSettingsOutProto {
+	// ref: Niantic.Platform.Protos.GetAccountSettingsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
+	AccountSettingsProto settings = 2;
+}
+
+// ref: Niantic.Platform.Protos.GetAccountSettingsProto
+message GetAccountSettingsProto {
+}
+
 // ref: Niantic.Platform.Protos.GetAvailableSubmissionsOutProto
 message GetAvailableSubmissionsOutProto {
 	int32 submissions_left = 1;
@@ -1564,6 +1597,7 @@ message GetFacebookFriendListOutProto {
 		ERROR_FACEBOOK_API = 3;
 		ERROR_FACEBOOK_PERMISSIONS = 4;
 		ERROR_NO_FACEBOOK_ID = 5;
+		ERROR_PLAYER_NOT_FOUND = 6;
 	}
 
 	// ref: Niantic.Platform.Protos.GetFacebookFriendListOutProto/Types/FacebookFriendProto
@@ -1631,6 +1665,7 @@ message GetFriendDetailsOutProto {
 		int32 fetched_from_status_cache = 4;
 		int32 failed_to_fetch = 5;
 		repeated Callee callee_list = 6;
+		int32 fetched_from_same_server_as_player = 7;
 	}
 
 	Result result = 1;
@@ -1663,6 +1698,15 @@ message GetFriendsListOutProto {
 		int64 created_ms = 7;
 		string fb_user_id = 8;
 		bool is_facebook_friendship = 9;
+		SharedFriendshipProto shared_data = 10;
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/SharedFriendshipProto
+	message SharedFriendshipProto {
+		bytes shared_data = 1;
+		int64 version = 2;
+		bytes data_from_me = 3;
+		bytes data_to_me = 4;
 	}
 
 	Result result = 1;
@@ -1717,6 +1761,64 @@ message GetIncomingFriendInvitesOutProto {
 message GetIncomingFriendInvitesProto {
 }
 
+// ref: Niantic.Platform.Protos.GetNianticFriendDetailsOutProto
+message GetNianticFriendDetailsOutProto {
+	// ref: Niantic.Platform.Protos.GetNianticFriendDetailsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
+		ERROR_SOCIAL_GRAPH_IMPORT_OPT_OUT = 4;
+	}
+
+	Result result = 1;
+	repeated NianticFriendDetailsProto niantic_friend_details = 2;
+}
+
+// ref: Niantic.Platform.Protos.GetNianticFriendDetailsProto
+message GetNianticFriendDetailsProto {
+	repeated string player_id = 1;
+}
+
+// ref: Niantic.Platform.Protos.GetNianticFriendListOutProto
+message GetNianticFriendListOutProto {
+	// ref: Niantic.Platform.Protos.GetNianticFriendListOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR = 2;
+		ERROR_SOCIAL_GRAPH_IMPORT_OPT_OUT = 3;
+	}
+
+	// ref: Niantic.Platform.Protos.GetNianticFriendListOutProto/Types/NianticFriend
+	message NianticFriend {
+		// ref: Niantic.Platform.Protos.GetNianticFriendListOutProto/Types/NianticFriend/Types/NianticFriendInfo
+		message NianticFriendInfo {
+			string codename = 1;
+			string team = 2;
+			SocialProto.AppKey app_key = 3;
+		}
+
+		string player_id = 1;
+		repeated NianticFriendInfo niantic_friend_info = 2;
+	}
+
+	// ref: Niantic.Platform.Protos.GetNianticFriendListOutProto/Types/NianticFriend/Types/NianticFriendInfo
+	message NianticFriendInfo {
+		string codename = 1;
+		string team = 2;
+		SocialProto.AppKey app_key = 3;
+	}
+
+	Result result = 1;
+	repeated NianticFriend niantic_friend = 2;
+}
+
+// ref: Niantic.Platform.Protos.GetNianticFriendListProto
+message GetNianticFriendListProto {
+}
+
 // ref: Niantic.Platform.Protos.GetNotificationInboxOutProto
 message GetNotificationInboxOutProto {
 	// ref: Niantic.Platform.Protos.GetNotificationInboxOutProto/Types/Result
@@ -1745,6 +1847,24 @@ message GetOutgoingFriendInvitesOutProto {
 
 // ref: Niantic.Platform.Protos.GetOutgoingFriendInvitesProto
 message GetOutgoingFriendInvitesProto {
+}
+
+// ref: Niantic.Platform.Protos.GetPlayerSettingsOutProto
+message GetPlayerSettingsOutProto {
+	// ref: Niantic.Platform.Protos.GetPlayerSettingsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_PLAYER_NOT_FOUND = 3;
+	}
+
+	Result result = 1;
+	PlayerSettingsProto settings = 2;
+}
+
+// ref: Niantic.Platform.Protos.GetPlayerSettingsProto
+message GetPlayerSettingsProto {
 }
 
 // ref: Niantic.Platform.Protos.GetUploadUrlOutProto
@@ -1806,6 +1926,7 @@ message IncomingFriendInviteProto {
 	int64 created_ms = 3;
 	InvitationType invitation_type = 4;
 	string full_name = 5;
+	repeated SocialProto.AppKey niantic_social_graph_app_keys = 6;
 }
 
 // ref: Niantic.Platform.Protos.InviteFacebookFriendOutProto
@@ -1876,6 +1997,13 @@ message LoginDetail {
 	string auth_provider_id = 3;
 }
 
+// ref: Niantic.Platform.Protos.NianticFriendDetailsProto
+message NianticFriendDetailsProto {
+	string player_id = 1;
+	string friend_code = 2;
+	bytes public_data = 3;
+}
+
 // ref: Niantic.Platform.Protos.OptOutProto
 message OptOutProto {
 	repeated string categories = 1;
@@ -1902,6 +2030,7 @@ message OutgoingFriendInviteProto {
 	int64 created_ms = 3;
 	InvitationType invitation_type = 4;
 	string full_name = 5;
+	repeated SocialProto.AppKey niantic_social_graph_app_keys = 6;
 }
 
 // ref: Niantic.Platform.Protos.PingRequestProto
@@ -1920,34 +2049,6 @@ message PingResponseProto {
 	string return_value = 4;
 }
 
-// ref: Niantic.Platform.Protos.PlayerChurnParameters
-message PlayerChurnParameters {
-	string account_id = 1;
-	string code_name = 2;
-	string team = 3;
-	string country = 4;
-	int32 level = 5;
-	int32 total_pokemon_caught = 6;
-	int32 gifts_opened_daily = 7;
-	int32 total_big_karps = 8;
-	int32 stardust_balance = 9;
-	int32 total_raids = 10;
-	int32 total_pokemon_evolved = 11;
-	int32 total_legendary_raids = 12;
-	int32 total_eggs_hatched = 13;
-	int32 total_battle_attack_won = 14;
-	int32 total_battle_defended_won = 15;
-	int32 total_quests_completed = 16;
-	int32 poke_coin_balance = 17;
-	int32 pokemon_caught_active_day = 18;
-	float total_km_walked = 19;
-	float num_pokedex_entries = 20;
-	float km_walked_past_active_day = 21;
-	int64 days_since_last_logon = 22;
-	int64 days_since_creation = 23;
-	int64 days_since_last_pokemon_caught = 24;
-}
-
 // ref: Niantic.Platform.Protos.PlayerReputationProto
 message PlayerReputationProto {
 	// ref: Niantic.Platform.Protos.PlayerReputationProto/Types/CheatReputation
@@ -1961,6 +2062,11 @@ message PlayerReputationProto {
 	int64 player_level = 2;
 	repeated CheatReputation cheat_reputation = 3;
 	bool is_minor = 4;
+}
+
+// ref: Niantic.Platform.Protos.PlayerSettingsProto
+message PlayerSettingsProto {
+	bool opt_out_online_status = 1;
 }
 
 // ref: Niantic.Platform.Protos.PlayerSummaryProto
@@ -2066,6 +2172,23 @@ message ReplaceLoginActionProto {
 	string auth_provider_id = 3;
 }
 
+// ref: Niantic.Platform.Protos.SavePlayerSettingsOutProto
+message SavePlayerSettingsOutProto {
+	// ref: Niantic.Platform.Protos.SavePlayerSettingsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
+}
+
+// ref: Niantic.Platform.Protos.SavePlayerSettingsProto
+message SavePlayerSettingsProto {
+	PlayerSettingsProto settings = 1;
+}
+
 // ref: Niantic.Platform.Protos.SearchPlayerOutProto
 message SearchPlayerOutProto {
 	// ref: Niantic.Platform.Protos.SearchPlayerOutProto/Types/Result
@@ -2110,6 +2233,35 @@ message SendFriendInviteOutProto {
 message SendFriendInviteProto {
 	string player_id = 1;
 	string friend_code = 2;
+}
+
+// ref: Niantic.Platform.Protos.SetAccountSettingsOutProto
+message SetAccountSettingsOutProto {
+	// ref: Niantic.Platform.Protos.SetAccountSettingsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
+}
+
+// ref: Niantic.Platform.Protos.SetAccountSettingsProto
+message SetAccountSettingsProto {
+	AccountSettingsProto settings = 1;
+}
+
+// ref: Niantic.Platform.Protos.SocialProto
+message SocialProto {
+	// ref: Niantic.Platform.Protos.SocialProto/Types/AppKey
+	enum AppKey {
+		INVALID = 0;
+		INGRESS = 1;
+		HOLOHOLO = 2;
+		LEXICON = 3;
+	}
+
 }
 
 // ref: Niantic.Platform.Protos.SubmitNewPoiOutProto
@@ -2196,6 +2348,13 @@ message UploadPoiPhotoByUrlProto {
 //----- End protos -----
 //------------------------------
 //----- Begin protos -----
+
+// ref: Niantic.Titan.Protos.PoiImageType
+enum PoiImageType {
+	UNSET = 0;
+	MAIN = 1;
+	SURROUNDING = 2;
+}
 
 // ref: Niantic.Titan.Protos.RouteVisitOrder
 enum RouteVisitOrder {
@@ -2767,6 +2926,13 @@ enum SocialAction {
 	CREATE_INVITE_CODE = 10013;
 	GET_FACEBOOK_FRIEND_LIST = 10014;
 	UPDATE_FACEBOOK_STATUS = 10015;
+	SAVE_PLAYER_SETTINGS = 10016;
+	GET_PLAYER_SETTINGS = 10017;
+	GET_NIANTIC_FRIEND_LIST = 10018;
+	GET_NIANTIC_FRIEND_DETAILS = 10019;
+	SEND_NIANTIC_FRIEND_INVITE = 10020;
+	SET_ACCOUNT_SETTINGS = 10021;
+	GET_ACCOUNT_SETTINGS = 10022;
 	REGISTER_PUSH_NOTIFICATION = 10101;
 	UNREGISTER_PUSH_NOTIFICATION = 10102;
 	UPDATE_NOTIFICATION = 10103;
@@ -2995,6 +3161,7 @@ enum EncounterType {
 	INVASION = 8;
 	VS_SEEKER_REWARD = 9;
 	TIMED_STORY_QUEST = 10;
+	DAILY_BONUS = 11;
 }
 
 // ref: Holoholo.Rpc.FortType
@@ -3396,6 +3563,8 @@ enum HoloIapItemCategory {
 	IAP_CATEGORY_TEAM_CHANGE = 7;
 	IAP_CATEGORY_GLOBAL_EVENT_TICKET = 10;
 	IAP_CATEGORY_VS_SEEKER = 11;
+	IAP_CATEGORY_STICKER = 12;
+	IAP_CATEGORY_FREE = 13;
 }
 
 // ref: Holoholo.Rpc.HoloItemCategory
@@ -3423,6 +3592,7 @@ enum HoloItemCategory {
 	ITEM_CATEGORY_INCIDENT_TICKET = 21;
 	ITEM_CATEGORY_GLOBAL_EVENT_TICKET = 22;
 	ITEM_CATEGORY_BUDDY_EXCLUSIVE_FOOD = 23;
+	ITEM_CATEGORY_STICKER = 24;
 }
 
 // ref: Holoholo.Rpc.HoloItemEffect
@@ -4477,6 +4647,9 @@ enum HoloPokemonId {
 	V0649_POKEMON_GENESECT = 649;
 	V0808_POKEMON_MELTAN = 808;
 	V0809_POKEMON_MELMETAL = 809;
+	V0862_POKEMON_OBSTAGOON = 862;
+	V0863_POKEMON_PERRSERKER = 863;
+	V0865_POKEMON_SIRFETCHD = 865;
 }
 
 // ref: Holoholo.Rpc.HoloPokemonMove
@@ -5143,6 +5316,8 @@ enum Method {
 	GET_TODAY_VIEW = 1501;
 	REMOTE_GIFT_PING = 1503;
 	SEND_RAID_INVITATION = 1504;
+	GET_DAILY_ENCOUNTER = 1601;
+	DAILY_ENCOUNTER = 1602;
 }
 
 // ref: Holoholo.Rpc.NewsPageTelemetryIds
@@ -5202,6 +5377,7 @@ enum NotificationCategory {
 	RETENTION_FUN_WITH_FRIENDS = 46;
 	BUDDY_REMOTE_GIFT = 47;
 	BGMODE_BUDDY_REMOTE_GIFT = 48;
+	REMOTE_RAID_INVITATION = 49;
 }
 
 // ref: Holoholo.Rpc.OnboardingArStatus
@@ -5597,6 +5773,7 @@ enum TutorialCompletion {
 	BATTLE_LEAGUE_HELP_TUTORIAL = 40;
 	ARMP_TOS_CONFIRMATION = 41;
 	BUDDY_REMOTE_GIFT_TUTORIAL = 42;
+	DAILY_BONUS_ENCOUNTER_TUTORIAL = 45;
 }
 
 // ref: Holoholo.Rpc.VariableName
@@ -5651,6 +5828,7 @@ enum VariableName {
 	SEASON_NUMBER = 1038;
 	POI_PASSCODE_REDEMPTION_RESPONSE = 1039;
 	GIFTBOX_COUNT = 1040;
+	RAID_INVITATION_DETAILS = 1041;
 }
 
 // ref: Holoholo.Rpc.VsSeekerRewardTrack
@@ -5907,6 +6085,7 @@ message ArMappingSettingsProto {
 	int32 max_upload_chunk_rejected_count = 10;
 	int32 ardk_desired_accuracy_mm = 11;
 	int32 ardk_update_distance_mm = 12;
+	int32 max_pending_upload_kilobytes = 13;
 }
 
 // ref: Holoholo.Rpc.ArMappingTelemetryProto
@@ -7750,6 +7929,8 @@ message CombatLeagueProto {
 		//with_pokemon_cp_limit = 4;
 		//with_pokemon_type = 5;
 		//with_pokemon_category = 6;
+		//pokemon_whitelist = 7;
+		//pokemon_banlist = 8;
 	//}
 
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonConditionProto/ConditionOneofCase
@@ -7758,6 +7939,8 @@ message CombatLeagueProto {
 		//with_pokemon_cp_limit = 2;
 		//with_pokemon_type = 3;
 		//with_pokemon_category = 4;
+		//pokemon_whitelist = 5;
+		//pokemon_banlist = 6;
 	//}
 
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/ConditionType
@@ -7768,6 +7951,21 @@ message CombatLeagueProto {
 		WITH_POKEMON_TYPE = 3;
 		WITH_POKEMON_CATEGORY = 4;
 		WITH_UNIQUE_POKEMON = 5;
+		POKEMON_WHITELIST = 6;
+		POKEMON_BANLIST = 7;
+	}
+
+	// ref: Holoholo.Rpc.CombatLeagueProto/Types/LeagueType
+	enum LeagueType {
+		NONE = 0;
+		STANDARD = 1;
+		PREMIER = 2;
+	}
+
+	// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonBanlist
+	message PokemonBanlist {
+		string name = 1;
+		repeated PokemonWithForm pokemon = 2;
 	}
 
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonConditionProto
@@ -7778,12 +7976,28 @@ message CombatLeagueProto {
 			//with_pokemon_cp_limit = 2;
 			//with_pokemon_type = 3;
 			//with_pokemon_category = 4;
+			//pokemon_whitelist = 5;
+			//pokemon_banlist = 6;
 		//}
 
 		ConditionType type = 1;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 2;
 		WithPokemonTypeProto with_pokemon_type = 3;
 		WithPokemonCategoryProto with_pokemon_category = 4;
+		PokemonWhitelist pokemon_whitelist = 5;
+		PokemonBanlist pokemon_banlist = 6;
+	}
+
+	// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonWhitelist
+	message PokemonWhitelist {
+		string name = 1;
+		repeated PokemonWithForm pokemon = 2;
+	}
+
+	// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonWithForm
+	message PokemonWithForm {
+		HoloPokemonId id = 1;
+		PokemonDisplayProto.Form form = 2;
 	}
 
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/UnlockConditionProto
@@ -7795,6 +8009,8 @@ message CombatLeagueProto {
 			//with_pokemon_cp_limit = 4;
 			//with_pokemon_type = 5;
 			//with_pokemon_category = 6;
+			//pokemon_whitelist = 7;
+			//pokemon_banlist = 8;
 		//}
 
 		ConditionType type = 1;
@@ -7803,6 +8019,8 @@ message CombatLeagueProto {
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 4;
 		WithPokemonTypeProto with_pokemon_type = 5;
 		WithPokemonCategoryProto with_pokemon_category = 6;
+		PokemonWhitelist pokemon_whitelist = 7;
+		PokemonBanlist pokemon_banlist = 8;
 	}
 
 	string title = 1;
@@ -7815,6 +8033,8 @@ message CombatLeagueProto {
 	HoloBadgeType badge_type = 8;
 	int32 minigame_defense_chance_limit = 9;
 	string battle_party_combat_league_template_id = 10;
+	LeagueType league_type = 11;
+	string border_color_hex = 12;
 }
 
 // ref: Holoholo.Rpc.CombatLeagueSettingsProto
@@ -8388,6 +8608,34 @@ message DailyBuddyAffectionQuestProto {
 message DailyCounterProto {
 	int64 window = 1;
 	int32 count = 2;
+}
+
+// ref: Holoholo.Rpc.DailyEncounterGlobalSettingsProto
+message DailyEncounterGlobalSettingsProto {
+	bool enabled = 1;
+}
+
+// ref: Holoholo.Rpc.DailyEncounterOutProto
+message DailyEncounterOutProto {
+	// ref: Holoholo.Rpc.DailyEncounterOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ENCOUNTER_NOT_AVAILABLE = 2;
+		POKEMON_INVENTORY_FULL = 3;
+	}
+
+	Result result = 1;
+	PokemonProto pokemon = 2;
+	CaptureProbabilityProto capture_probability = 3;
+	Item active_item = 4;
+	int32 arplus_attempts_until_flee = 5;
+}
+
+// ref: Holoholo.Rpc.DailyEncounterProto
+message DailyEncounterProto {
+	int64 encounter_id = 1;
+	string encounter_location = 2;
 }
 
 // ref: Holoholo.Rpc.DailyQuestProto
@@ -9594,6 +9842,7 @@ message GameMasterClientTemplateProto {
 	AvatarGroupOrderSettingsProto avatar_group_order_settings = 76;
 	MonodepthSettingsProto monodepth_settings = 78;
 	RaidClientSettingsProto raid_settings_proto = 81;
+	StickerMetadataProto sticker_metadata = 85;
 }
 
 // ref: Holoholo.Rpc.GenerateCombatChallengeIdOutProto
@@ -9731,6 +9980,32 @@ message GetCombatResultsOutProto {
 // ref: Holoholo.Rpc.GetCombatResultsProto
 message GetCombatResultsProto {
 	string combat_id = 1;
+}
+
+// ref: Holoholo.Rpc.GetDailyEncounterOutProto
+message GetDailyEncounterOutProto {
+	// ref: Holoholo.Rpc.GetDailyEncounterOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ALREADY_FINISHED_FOR_TODAY = 2;
+		MISSED_FOR_TODAY = 3;
+		NO_POKEMON_AVAILABLE = 4;
+		DISABLED = 5;
+	}
+
+	Result result = 1;
+	HoloPokemonId pokedex_id = 2;
+	double lat = 3;
+	double lng = 4;
+	string encounter_location = 5;
+	fixed64 encounter_id = 6;
+	int64 disappear_time_ms = 7;
+	PokemonDisplayProto pokemon_display = 8;
+}
+
+// ref: Holoholo.Rpc.GetDailyEncounterProto
+message GetDailyEncounterProto {
 }
 
 // ref: Holoholo.Rpc.GetFitnessRewardsOutProto
@@ -10182,6 +10457,7 @@ message GetRaidDetailsProto {
 	double player_lng_degrees = 5;
 	double gym_lat_degrees = 6;
 	double gym_lng_degrees = 7;
+	string inviter_id = 8;
 }
 
 // ref: Holoholo.Rpc.GetRemoteConfigVersionsOutProto
@@ -10337,6 +10613,7 @@ message GiftBoxDetailsProto {
 	int64 sent_timestamp = 12;
 	fixed64 delivery_pokemon_id = 13;
 	bool is_sponsored = 14;
+	repeated StickerSentProto stickers_sent = 15;
 }
 
 // ref: Holoholo.Rpc.GiftBoxesProto
@@ -10420,6 +10697,7 @@ message GlobalSettingsProto {
 	PlannedDowntimeSettingsProto planned_downtime_settings = 51;
 	ArMappingSettingsProto ar_mapping_settings = 52;
 	RaidInviteFriendsSettingsProto raid_invite_friends_settings = 53;
+	DailyEncounterGlobalSettingsProto daily_encounter_settings = 54;
 }
 
 // ref: Holoholo.Rpc.GmtSettingsProto
@@ -10433,6 +10711,8 @@ message GpsSettingsProto {
 	float driving_warning_cooldown_minutes = 2;
 	float driving_speed_sample_interval_seconds = 3;
 	int32 driving_speed_sample_count = 4;
+	float idle_threshold_speed_meters_per_second = 5;
+	int32 idle_threshold_duration_seconds = 6;
 }
 
 // ref: Holoholo.Rpc.GymBadgeGmtSettingsProto
@@ -10666,6 +10946,7 @@ message GymGetInfoProto {
 	double player_lng_degrees = 3;
 	double gym_lat_degrees = 4;
 	double gym_lng_degrees = 5;
+	string inviter_id = 6;
 }
 
 // ref: Holoholo.Rpc.GymLevelSettingsProto
@@ -10918,6 +11199,7 @@ message HoloInventoryItemProto {
 		//gift_boxes = 15;
 		//beluga_incense = 16;
 		//limited_purchase_sku_record = 19;
+		//sticker = 22;
 	//}
 
 	PokemonProto pokemon = 1;
@@ -10937,6 +11219,7 @@ message HoloInventoryItemProto {
 	GiftBoxesProto gift_boxes = 15;
 	BelugaIncenseBoxProto beluga_incense = 16;
 	LimitedPurchaseSkuRecordProto limited_purchase_sku_record = 19;
+	StickerProto sticker = 22;
 }
 
 // ref: Holoholo.Rpc.HoloInventoryKeyProto
@@ -10962,6 +11245,7 @@ message HoloInventoryKeyProto {
 		//beluga_incense_box = 16;
 		//vs_seeker_upgrades = 17;
 		//limited_purchase_sku_record = 19;
+		//sticker_id = 22;
 	//}
 
 	fixed64 pokemon_id = 1;
@@ -10982,6 +11266,7 @@ message HoloInventoryKeyProto {
 	bool beluga_incense_box = 16;
 	bool vs_seeker_upgrades = 17;
 	bool limited_purchase_sku_record = 19;
+	string sticker_id = 22;
 }
 
 // ref: Holoholo.Rpc.IapItemCategoryDisplayProto
@@ -11204,6 +11489,7 @@ message InventorySettingsProto {
 	int32 max_team_changes = 6;
 	int64 team_change_item_reset_period_in_days = 7;
 	int64 max_item_boost_duration_ms = 8;
+	int32 default_sticker_max_count = 9;
 }
 
 // ref: Holoholo.Rpc.InventoryUpgradeAttributesProto
@@ -11312,6 +11598,7 @@ message JoinLobbyOutProto {
 		ERROR_GYM_LOCKOUT = 8;
 		ERROR_NO_TICKET = 9;
 		ERROR_NO_REMOTE_TICKET = 10;
+		ERROR_NO_INVITE = 11;
 	}
 
 	Result result = 1;
@@ -11329,6 +11616,7 @@ message JoinLobbyProto {
 	double gym_lat_degrees = 7;
 	double gym_lng_degrees = 8;
 	bool use_remote_pass = 9;
+	string inviter_id = 10;
 }
 
 // ref: Holoholo.Rpc.KangarooSettingsProto
@@ -11458,6 +11746,7 @@ message LimitedPurchaseSkuRecordProto {
 		int32 version = 1;
 		int32 num_purchases = 2;
 		int64 last_purchase_ms = 4;
+		int32 total_num_purchases = 5;
 	}
 
 	map<string, PurchaseProto> purchases = 1;
@@ -11478,6 +11767,7 @@ message LimitedPurchaseSkuSettingsProto {
 	int32 purchase_limit = 1;
 	int32 version = 2;
 	ChronoUnit chrono_unit = 3;
+	string loot_table_id = 4;
 	int32 reset_interval = 20;
 }
 
@@ -11611,6 +11901,7 @@ message LootItemProto {
 		//experience = 6;
 		//pokemon_egg = 7;
 		//avatar_template_id = 8;
+		//sticker_id = 9;
 	//}
 
 	Item item = 1;
@@ -11621,6 +11912,7 @@ message LootItemProto {
 	bool experience = 6;
 	PokemonProto pokemon_egg = 7;
 	string avatar_template_id = 8;
+	string sticker_id = 9;
 }
 
 // ref: Holoholo.Rpc.LootProto
@@ -12379,6 +12671,8 @@ message PlayerStatsProto {
 	int32 num_pokemon_purified = 43;
 	int32 num_grunts_defeated = 44;
 	int32 num_best_buddies = 47;
+	int32 num_wayfarer_agreement = 54;
+	int64 wayfarer_agreement_update_ms = 55;
 }
 
 // ref: Holoholo.Rpc.PoiGlobalSettingsProto
@@ -14572,6 +14866,21 @@ message PokemonDisplayProto {
 		PIKACHU_COSTUME_2020 = 2332;
 		DRAGONITE_COSTUME_2020 = 2333;
 		ONIX_COSTUME_2020 = 2334;
+		MEOWTH_GALARIAN = 2335;
+		FARFETCHD_GALARIAN = 2338;
+		DARUMAKA_GALARIAN = 2341;
+		DARMANITAN_GALARIAN_STANDARD = 2342;
+		DARMANITAN_GALARIAN_ZEN = 2343;
+		STUNFISK_GALARIAN = 2345;
+		OBSTAGOON_NORMAL = 2501;
+		OBSTAGOON_SHADOW = 2502;
+		OBSTAGOON_PURIFIED = 2503;
+		PERRSERKER_NORMAL = 2504;
+		PERRSERKER_SHADOW = 2505;
+		PERRSERKER_PURIFIED = 2506;
+		SIRFETCHD_NORMAL = 2510;
+		SIRFETCHD_SHADOW = 2511;
+		SIRFETCHD_PURIFIED = 2512;
 	}
 
 	// ref: Holoholo.Rpc.PokemonDisplayProto/Types/Gender
@@ -15324,6 +15633,7 @@ message QuestRewardProto {
 		//quest_template_id = 7;
 		//pokemon_encounter = 8;
 		//pokecoin = 9;
+		//sticker_id = 12;
 	//}
 
 	// ref: Holoholo.Rpc.QuestRewardProto/Types/Type
@@ -15337,6 +15647,7 @@ message QuestRewardProto {
 		QUEST = 6;
 		POKEMON_ENCOUNTER = 7;
 		POKECOIN = 8;
+		STICKER = 11;
 	}
 
 	Type type = 1;
@@ -15348,6 +15659,7 @@ message QuestRewardProto {
 	string quest_template_id = 7;
 	PokemonEncounterRewardProto pokemon_encounter = 8;
 	int32 pokecoin = 9;
+	string sticker_id = 12;
 }
 
 // ref: Holoholo.Rpc.QuestSettingsProto
@@ -15414,6 +15726,8 @@ message RaidClientSettingsProto {
 	int32 friend_invite_cutoff_time_sec = 6;
 	bool can_invite_friends_in_person = 7;
 	bool can_invite_friends_remotely = 8;
+	int32 max_players_per_lobby = 9;
+	int32 max_remote_players_per_lobby = 10;
 }
 
 // ref: Holoholo.Rpc.RaidEncounterProto
@@ -15443,6 +15757,25 @@ message RaidInfoProto {
 	bool is_scheduled_raid = 10;
 	bool is_free = 11;
 	string campaign_id = 12;
+}
+
+// ref: Holoholo.Rpc.RaidInvitationDetails
+message RaidInvitationDetails {
+	string gym_id = 1;
+	repeated int32 lobby_id = 2;
+	int64 raid_seed = 3;
+	int64 raid_invitation_expire_ms = 4;
+	RaidLevel raid_level = 5;
+	string gym_name = 6;
+	string image_url = 7;
+	double latitude = 8;
+	double longitude = 9;
+	HoloPokemonId raid_pokemon_id = 10;
+	PokemonDisplayProto.Form raid_pokemon_form = 11;
+	string inviter_id = 12;
+	string inviter_nickname = 13;
+	PlayerAvatarProto inviter_avatar = 14;
+	Team inviter_team = 15;
 }
 
 // ref: Holoholo.Rpc.RaidInviteFriendsSettingsProto
@@ -15570,6 +15903,12 @@ message RedeemedItemProto {
 	int32 item_count = 2;
 }
 
+// ref: Holoholo.Rpc.RedeemedStickerProto
+message RedeemedStickerProto {
+	string sticker_id = 1;
+	int32 count = 2;
+}
+
 // ref: Holoholo.Rpc.RedeemPasscodeRewardProto
 message RedeemPasscodeRewardProto {
 	repeated RedeemedItemProto items = 1;
@@ -15580,6 +15919,7 @@ message RedeemPasscodeRewardProto {
 	int32 stardust = 6;
 	int32 pokecoins = 7;
 	repeated HoloBadgeType badges = 8;
+	repeated RedeemedStickerProto redeemed_stickers = 9;
 }
 
 // ref: Holoholo.Rpc.RegisterBackgroundDeviceActionProto
@@ -15799,6 +16139,7 @@ message SendGiftOutProto {
 		ERROR_GIFT_ALREADY_SENT_TODAY = 5;
 		ERROR_PLAYER_HAS_UNOPENED_GIFT = 6;
 		ERROR_FRIEND_UPDATE = 7;
+		ERROR_PLAYER_HAS_NO_STICKERS = 8;
 	}
 
 	Result result = 1;
@@ -15809,6 +16150,7 @@ message SendGiftOutProto {
 message SendGiftProto {
 	fixed64 giftbox_id = 1;
 	string player_id = 2;
+	repeated StickerSentProto stickers_sent = 3;
 }
 
 // ref: Holoholo.Rpc.SendProbeOutProto
@@ -15840,6 +16182,7 @@ message SendRaidInvitationOutProto {
 		ERROR_PAST_CUT_OFF_TIME = 5;
 		ERROR_NO_INVITES_REMAINING = 6;
 		ERROR_LOBBY_FULL = 7;
+		ERROR_INVITER_NOT_FOUND = 8;
 	}
 
 	Result result = 1;
@@ -16124,7 +16467,9 @@ message SocialClientSettingsProto {
 	bool enable_facebook_friends = 7;
 	int32 facebook_friend_limit_per_request = 8;
 	bool disable_facebook_friends_opening_prompt = 9;
+	bool enable_giftability_v2 = 11;
 	bool enable_remote_gifting = 12;
+	bool enable_sticker = 13;
 }
 
 // ref: Holoholo.Rpc.SocialGiftCountTelemetry
@@ -16309,6 +16654,26 @@ message StartTutorialOutProto {
 // ref: Holoholo.Rpc.StartTutorialProto
 message StartTutorialProto {
 	bool onboarding_v2_enabled = 1;
+}
+
+// ref: Holoholo.Rpc.StickerMetadataProto
+message StickerMetadataProto {
+	string sticker_id = 1;
+	string sticker_url = 2;
+	int32 max_count = 3;
+	HoloPokemonId pokemon_id = 4;
+}
+
+// ref: Holoholo.Rpc.StickerProto
+message StickerProto {
+	string sticker_id = 1;
+	int32 count = 2;
+	int32 used = 3;
+}
+
+// ref: Holoholo.Rpc.StickerSentProto
+message StickerSentProto {
+	string sticker_id = 1;
 }
 
 // ref: Holoholo.Rpc.SubmitCombatChallengePokemonsOutProto
@@ -18078,6 +18443,16 @@ message ReportAdInteractionResponse {
 	}
 
 	Status status = 1;
+}
+
+// ref: Niantic.Vasa.VasaClientAction
+message VasaClientAction {
+	// ref: Niantic.Vasa.VasaClientAction/Types/ActionEnum
+	enum ActionEnum {
+		INVALID_VASA_CLIENT_ACTION = 0;
+		COLLECT_ADID = 8000;
+	}
+
 }
 
 //----- End vasa -----
