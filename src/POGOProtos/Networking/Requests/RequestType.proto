@@ -184,4 +184,6 @@ enum RequestType {
 	GET_TODAY_VIEW = 1501;                               // Implemented
 	REMOTE_GIFT_PING = 1503;                             // Implemented
 	SEND_RAID_INVITATION = 1504;                         // Implemented
+	GET_DAILY_ENCOUNTER = 1601;                          // Implemented
+	DAILY_ENCOUNTER = 1602;                              // Implemented
 }

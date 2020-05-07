@@ -14,4 +14,5 @@ message ArMappingSettings {
 	int32 max_upload_chunk_rejected_count = 10;
 	int32 ardk_desired_accuracy_mm = 11;
 	int32 ardk_update_distance_mm = 12;
+	int32 max_pending_upload_kilobytes = 13;
 }

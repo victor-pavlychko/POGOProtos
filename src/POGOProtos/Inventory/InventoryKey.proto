@@ -25,5 +25,6 @@ message InventoryKey {
 		bool beluga_incense_box = 16;
 		bool vs_seeker_upgrades = 17;
 		bool limited_purchase_sku_record = 19;
+		string sticker_id = 22;
 	}
 }

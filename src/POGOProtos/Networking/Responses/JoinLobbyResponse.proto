@@ -19,5 +19,6 @@ message JoinLobbyResponse {
 		ERROR_GYM_LOCKOUT = 8;
 		ERROR_NO_TICKET = 9;
 		ERROR_NO_REMOTE_TICKET = 10;
+		ERROR_NO_INVITE = 11;
 	}
 }
