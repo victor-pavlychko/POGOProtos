@@ -9,32 +9,32 @@ POGOProtos [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](htt
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
 ### Implemented messages types
- - [``Global``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
- - [``Social``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
- - [``Platform``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
+ - [``Global``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
+ - [``Social``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
+ - [``Platform``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
 
 ### Game actions implemented messages types
- - [``GameAccountRegistry``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameAccountRegistry/GameAccountRegistryActions.proto)
- - [``GameAnticheat``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameAnticheat/GameAnticheatAction.proto)
- - [``GameFitness``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameFitness/GameFitnessAction.proto)
- - [``GameGmTemplates``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameGmTemplates/GameGmTemplatesAction.proto)
- - [``GameIap``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameIap/GameIapAction.proto)
- - [``GameLocationAwareness``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameLocationAwareness/GameLocationAwarenessAction.proto)
- - [``GameNotification``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameNotification/GameNotificationAction.proto)
- - [``GamePasscode``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePasscode/GamePasscodeAction.proto)
- - [``GamePing``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePing/GamePingAction.proto)
- - [``GamePlayer``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePlayer/GamePlayerAction.proto)
- - [``GamePoi``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePoi/GamePoiAction.proto)
- - [``GamePushNotification``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GamePushNotification/GamePushNotificationAction.proto)
- - [``GameSocial``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameSocial/GameSocialAction.proto)
- - [``GameTelemetry``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameTelemetry/GameTelemetryAction.proto)
- - [``GameWebToken``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Game/GameWebToken/GameWebTokenAction.proto)
+ - [``GameAccountRegistry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameAccountRegistry/GameAccountRegistryActions.proto)
+ - [``GameAnticheat``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameAnticheat/GameAnticheatAction.proto)
+ - [``GameFitness``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameFitness/GameFitnessAction.proto)
+ - [``GameGmTemplates``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameGmTemplates/GameGmTemplatesAction.proto)
+ - [``GameIap``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameIap/GameIapAction.proto)
+ - [``GameLocationAwareness``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameLocationAwareness/GameLocationAwarenessAction.proto)
+ - [``GameNotification``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameNotification/GameNotificationAction.proto)
+ - [``GamePasscode``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePasscode/GamePasscodeAction.proto)
+ - [``GamePing``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePing/GamePingAction.proto)
+ - [``GamePlayer``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePlayer/GamePlayerAction.proto)
+ - [``GamePoi``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePoi/GamePoiAction.proto)
+ - [``GamePushNotification``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePushNotification/GamePushNotificationAction.proto)
+ - [``GameSocial``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameSocial/GameSocialAction.proto)
+ - [``GameTelemetry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameTelemetry/GameTelemetryAction.proto)
+ - [``GameWebToken``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameWebToken/GameWebTokenAction.proto)
    
 ### Titan (![alt text][1.1] ??? ![alt text][1.1])
- - [``Titan``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Titan)
+ - [``Titan``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Titan)
 
 ### Vasa (![alt text][1.1] ??? ![alt text][1.1])
- - [``Vasa``](https://gitlab.com/AllProtos/POGOProtos-Private/blob/master/src/POGOProtos/Networking/Vasa)
+ - [``Vasa``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Vasa)
 
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
@@ -45,7 +45,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
-[.current-version](https://gitlab.com/AllProtos/POGOProtos-Private/raw/master/.current-version)
+[.current-version](https://github.com/Furtif/POGOProtos/raw/master/.current-version)
 *Note: This file will contain pre-release versions too.*
 
 ### Preparation
@@ -140,7 +140,7 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 | Language              | Source                                                                               | Status                                                                                                                       |
 |-----------------------|--------------------------------------------------------------------------------------|--------
 | Swift                 | https://github.com/123FLO321/POGOProtos-Swift                                        |  OK                                                                                                                         |                                                                                                                         |
-| Java                  | https://gitlab.com/AllProtos/POGOProtos-Private-Java                                 |  OK                                                                                                                          |
+| Java                  | https://github.com/Furtif/POGOProtos-Java                                 |  OK                                                                                                                          |
 
 | Additional resources  | Source                                                                               | Status 
 |-----------------------|--------------------------------------------------------------------------------------|--------
