@@ -4,4 +4,5 @@ package DumpProtos;
 message SendGiftProto {
 	fixed64 giftbox_id = 1;
 	string player_id = 2;
+	repeated StickerSentProto stickers_sent = 3;
 }

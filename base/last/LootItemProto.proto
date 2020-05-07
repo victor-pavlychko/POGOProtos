@@ -10,6 +10,7 @@ message LootItemProto {
 	bool experience = 6;
 	PokemonProto pokemon_egg = 7;
 	string avatar_template_id = 8;
+	string sticker_id = 9;
 
 	//oneof Type {
 		//none = 0;
@@ -20,5 +21,6 @@ message LootItemProto {
 		//experience = 6;
 		//pokemon_egg = 7;
 		//avatar_template_id = 8;
+		//sticker_id = 9;
 	//}
 }

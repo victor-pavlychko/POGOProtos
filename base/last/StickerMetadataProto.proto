@@ -1,0 +1,9 @@
+syntax = "proto3";
+package DumpProtos;
+
+message StickerMetadataProto {
+	string sticker_id = 1;
+	string sticker_url = 2;
+	int32 max_count = 3;
+	HoloPokemonId pokemon_id = 4;
+}

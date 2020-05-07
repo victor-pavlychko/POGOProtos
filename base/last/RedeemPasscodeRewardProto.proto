@@ -10,4 +10,5 @@ message RedeemPasscodeRewardProto {
 	int32 stardust = 6;
 	int32 pokecoins = 7;
 	repeated HoloBadgeType badges = 8;
+	repeated RedeemedStickerProto redeemed_stickers = 9;
 }

@@ -16,4 +16,5 @@ message GiftBoxDetailsProto {
 	int64 sent_timestamp = 12;
 	fixed64 delivery_pokemon_id = 13;
 	bool is_sponsored = 14;
+	repeated StickerSentProto stickers_sent = 15;
 }

@@ -1,0 +1,6 @@
+syntax = "proto3";
+package DumpProtos;
+
+message StickerSentProto {
+	string sticker_id = 1;
+}

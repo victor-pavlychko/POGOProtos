@@ -1,0 +1,15 @@
+syntax = "proto3";
+package DumpProtos;
+
+message GetNianticFriendDetailsOutProto {
+	Result result = 1;
+	repeated NianticFriendDetailsProto niantic_friend_details = 2;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
+		ERROR_SOCIAL_GRAPH_IMPORT_OPT_OUT = 4;
+	}
+}

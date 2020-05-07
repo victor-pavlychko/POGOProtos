@@ -30,5 +30,6 @@ message GetFriendDetailsOutProto {
 		int32 fetched_from_status_cache = 4;
 		int32 failed_to_fetch = 5;
 		repeated Callee callee_list = 6;
+		int32 fetched_from_same_server_as_player = 7;
 	}
 }

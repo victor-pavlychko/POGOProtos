@@ -1,0 +1,20 @@
+syntax = "proto3";
+package DumpProtos;
+
+message RaidInvitationDetails {
+	string gym_id = 1;
+	repeated int32 lobby_id = 2;
+	int64 raid_seed = 3;
+	int64 raid_invitation_expire_ms = 4;
+	RaidLevel raid_level = 5;
+	string gym_name = 6;
+	string image_url = 7;
+	double latitude = 8;
+	double longitude = 9;
+	HoloPokemonId raid_pokemon_id = 10;
+	PokemonDisplayProto.Form raid_pokemon_form = 11;
+	string inviter_id = 12;
+	string inviter_nickname = 13;
+	PlayerAvatarProto inviter_avatar = 14;
+	Team inviter_team = 15;
+}

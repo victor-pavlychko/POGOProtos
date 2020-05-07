@@ -19,6 +19,7 @@ message HoloInventoryItemProto {
 	GiftBoxesProto gift_boxes = 15;
 	BelugaIncenseBoxProto beluga_incense = 16;
 	LimitedPurchaseSkuRecordProto limited_purchase_sku_record = 19;
+	StickerProto sticker = 22;
 
 	//oneof Type {
 		//none = 0;
@@ -39,5 +40,6 @@ message HoloInventoryItemProto {
 		//gift_boxes = 15;
 		//beluga_incense = 16;
 		//limited_purchase_sku_record = 19;
+		//sticker = 22;
 	//}
 }

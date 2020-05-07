@@ -9,4 +9,5 @@ message GetRaidDetailsProto {
 	double player_lng_degrees = 5;
 	double gym_lat_degrees = 6;
 	double gym_lng_degrees = 7;
+	string inviter_id = 8;
 }

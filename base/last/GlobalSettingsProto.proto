@@ -52,4 +52,5 @@ message GlobalSettingsProto {
 	PlannedDowntimeSettingsProto planned_downtime_settings = 51;
 	ArMappingSettingsProto ar_mapping_settings = 52;
 	RaidInviteFriendsSettingsProto raid_invite_friends_settings = 53;
+	DailyEncounterGlobalSettingsProto daily_encounter_settings = 54;
 }

@@ -72,4 +72,5 @@ message GameMasterClientTemplateProto {
 	AvatarGroupOrderSettingsProto avatar_group_order_settings = 76;
 	MonodepthSettingsProto monodepth_settings = 78;
 	RaidClientSettingsProto raid_settings_proto = 81;
+	StickerMetadataProto sticker_metadata = 85;
 }

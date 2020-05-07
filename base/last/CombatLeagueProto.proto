@@ -12,6 +12,8 @@ message CombatLeagueProto {
 	HoloBadgeType badge_type = 8;
 	int32 minigame_defense_chance_limit = 9;
 	string battle_party_combat_league_template_id = 10;
+	LeagueType league_type = 11;
+	string border_color_hex = 12;
 
 	//oneof Condition {
 		//none = 0;
@@ -19,6 +21,8 @@ message CombatLeagueProto {
 		//with_pokemon_cp_limit = 4;
 		//with_pokemon_type = 5;
 		//with_pokemon_category = 6;
+		//pokemon_whitelist = 7;
+		//pokemon_banlist = 8;
 	//}
 
 	//oneof Condition {
@@ -26,6 +30,8 @@ message CombatLeagueProto {
 		//with_pokemon_cp_limit = 2;
 		//with_pokemon_type = 3;
 		//with_pokemon_category = 4;
+		//pokemon_whitelist = 5;
+		//pokemon_banlist = 6;
 	//}
 
 	enum ConditionType {
@@ -35,6 +41,19 @@ message CombatLeagueProto {
 		WITH_POKEMON_TYPE = 3;
 		WITH_POKEMON_CATEGORY = 4;
 		WITH_UNIQUE_POKEMON = 5;
+		POKEMON_WHITELIST = 6;
+		POKEMON_BANLIST = 7;
+	}
+
+	enum LeagueType {
+		NONE = 0;
+		STANDARD = 1;
+		PREMIER = 2;
+	}
+
+	message PokemonBanlist {
+		string name = 1;
+		repeated PokemonWithForm pokemon = 2;
 	}
 
 	message PokemonConditionProto {
@@ -43,12 +62,26 @@ message CombatLeagueProto {
 			//with_pokemon_cp_limit = 2;
 			//with_pokemon_type = 3;
 			//with_pokemon_category = 4;
+			//pokemon_whitelist = 5;
+			//pokemon_banlist = 6;
 		//}
 
 		ConditionType type = 1;
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 2;
 		WithPokemonTypeProto with_pokemon_type = 3;
 		WithPokemonCategoryProto with_pokemon_category = 4;
+		PokemonWhitelist pokemon_whitelist = 5;
+		PokemonBanlist pokemon_banlist = 6;
+	}
+
+	message PokemonWhitelist {
+		string name = 1;
+		repeated PokemonWithForm pokemon = 2;
+	}
+
+	message PokemonWithForm {
+		HoloPokemonId id = 1;
+		PokemonDisplayProto.Form form = 2;
 	}
 
 	message UnlockConditionProto {
@@ -58,6 +91,8 @@ message CombatLeagueProto {
 			//with_pokemon_cp_limit = 4;
 			//with_pokemon_type = 5;
 			//with_pokemon_category = 6;
+			//pokemon_whitelist = 7;
+			//pokemon_banlist = 8;
 		//}
 
 		ConditionType type = 1;
@@ -66,5 +101,7 @@ message CombatLeagueProto {
 		WithPokemonCpLimitProto with_pokemon_cp_limit = 4;
 		WithPokemonTypeProto with_pokemon_type = 5;
 		WithPokemonCategoryProto with_pokemon_category = 6;
+		PokemonWhitelist pokemon_whitelist = 7;
+		PokemonBanlist pokemon_banlist = 8;
 	}
 }

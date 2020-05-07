@@ -47,4 +47,6 @@ message PlayerStatsProto {
 	int32 num_pokemon_purified = 43;
 	int32 num_grunts_defeated = 44;
 	int32 num_best_buddies = 47;
+	int32 num_wayfarer_agreement = 54;
+	int64 wayfarer_agreement_update_ms = 55;
 }
