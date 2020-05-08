@@ -1,7 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-enum GameNotificationAction {
-	UNKNOWN_GAME_NOTIFICATION_ACTION = 0;
-	UPDATE_NOTIFICATION_STATUS = 350000;
-}

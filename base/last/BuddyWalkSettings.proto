@@ -1,6 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message BuddyWalkSettings {
-	float km_required_per_affection_point = 1;
-}

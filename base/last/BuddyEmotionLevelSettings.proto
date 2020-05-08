@@ -1,9 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message BuddyEmotionLevelSettings {
-	BuddyEmotionLevel emotion_level = 1;
-	int32 min_emotion_points_required = 2;
-	BuddyAnimation emotion_animation = 3;
-	int64 decay_prevention_duration_ms = 4;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-enum RemoteRaidJoinSource {
-	UNDEFINED_REMOTE_RAID_JOIN_SOURCE = 0;
-	REMOTE_RAID_USED_MAP = 1;
-	REMOTE_RAID_NEARBY_GUI = 2;
-	REMOTE_RAID_INVITED_BY_FRIEND = 3;
-}

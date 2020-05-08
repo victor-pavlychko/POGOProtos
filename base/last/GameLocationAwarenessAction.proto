@@ -1,8 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-enum GameLocationAwarenessAction {
-	UNKNOWN_GAME_LOCATION_AWARENESS_ACTION = 0;
-	REQUEST_GEOFENCE_UPDATES = 360000;
-	UPDATE_PLAYER_LOCATION = 360001;
-}

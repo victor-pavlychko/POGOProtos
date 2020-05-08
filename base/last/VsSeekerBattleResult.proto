@@ -1,8 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message VsSeekerBattleResult {
-	CombatPlayerFinishState battle_result = 1;
-	bool rewards_claimed = 2;
-	bool is_pending_pokemon_reward = 3;
-}

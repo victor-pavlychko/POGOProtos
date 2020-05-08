@@ -1,6 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message CombatHubEntranceTelemetry {
-	CombatHubEntranceTelemetryIds combat_hub_telemetry_id = 1;
-}

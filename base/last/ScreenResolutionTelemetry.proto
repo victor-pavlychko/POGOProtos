@@ -1,7 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message ScreenResolutionTelemetry {
-	int32 device_width = 1;
-	int32 device_height = 2;
-}

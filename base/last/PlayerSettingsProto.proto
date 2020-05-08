@@ -1,6 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message PlayerSettingsProto {
-	bool opt_out_online_status = 1;
-}

@@ -1,8 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message WallabySettingsProto {
-	bool enable = 1;
-	float activity_length_s = 2;
-	uint32 test_mask = 3;
-}

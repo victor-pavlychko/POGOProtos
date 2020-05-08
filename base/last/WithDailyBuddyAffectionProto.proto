@@ -1,6 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message WithDailyBuddyAffectionProto {
-	int32 min_buddy_affection_earned_today = 1;
-}

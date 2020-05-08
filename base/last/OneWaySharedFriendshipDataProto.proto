@@ -1,7 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message OneWaySharedFriendshipDataProto {
-	repeated GiftBoxDetailsProto giftbox_details = 1;
-	int64 open_trade_expire_ms = 2;
-}

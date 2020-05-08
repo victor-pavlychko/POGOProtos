@@ -1,9 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-enum ClientOperatingSystem {
-	OS_UNKNOWN = 0;
-	OS_ANDROID = 1;
-	OS_IOS = 2;
-	OS_DESKTOP = 3;
-}

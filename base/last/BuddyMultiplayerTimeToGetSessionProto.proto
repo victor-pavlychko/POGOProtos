@@ -1,7 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message BuddyMultiplayerTimeToGetSessionProto {
-	int32 test_number = 1;
-	int64 time_to_get_session = 2;
-}

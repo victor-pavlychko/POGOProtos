@@ -1,6 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message QuestWalkProto {
-	float quest_start_km_walked = 1;
-}

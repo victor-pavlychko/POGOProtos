@@ -1,7 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-enum GameGmTemplatesAction {
-	UNKNOWN_GAME_GM_TEMPLATES_ACTION = 0;
-	DOWNLOAD_GAME_MASTER_TEMPLATES = 340000;
-}

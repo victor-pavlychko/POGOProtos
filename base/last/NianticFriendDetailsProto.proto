@@ -1,8 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message NianticFriendDetailsProto {
-	string player_id = 1;
-	string friend_code = 2;
-	bytes public_data = 3;
-}

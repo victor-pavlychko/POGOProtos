@@ -1,7 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message BuddyGiftProto {
-	SouvenirProto souvenir = 1;
-	LootProto loot_proto = 2;
-}

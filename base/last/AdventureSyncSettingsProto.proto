@@ -1,7 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message AdventureSyncSettingsProto {
-	bool fitness_service_enabled = 1;
-	bool awareness_service_enabled = 2;
-}

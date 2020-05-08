@@ -1,8 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message CombatBaseStatsProto {
-	int32 total_battles = 1;
-	int32 wins = 2;
-	float rating = 3;
-}

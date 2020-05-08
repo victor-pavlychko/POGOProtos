@@ -1,7 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-enum PokemonBadge {
-	POKEMON_BADGE_UNSET = 0;
-	POKEMON_BADGE_BEST_BUDDY = 1;
-}

@@ -1,6 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message AccountSettingsProto {
-	bool opt_out_social_graph_import = 1;
-}

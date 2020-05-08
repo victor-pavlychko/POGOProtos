@@ -1,9 +1,0 @@
-syntax = "proto3";
-package DumpProtos;
-
-message CombatLogProto {
-	CombatSeasonResult lifetime_results = 1;
-	CombatSeasonResult current_season_results = 2;
-	repeated VsSeekerBattleResult current_vs_seeker_set_results = 4;
-	CombatSeasonResult previous_season_results = 5;
-}
