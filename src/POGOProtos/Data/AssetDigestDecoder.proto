@@ -36,7 +36,7 @@ message AssetDigestDecoder {
 				float float_value = 8;
 				uint32 uint32_value = 9;
 				uint64 uint64_value = 10;
-				*//*repeated fixed32 repeated_fixed32_value = 11;
+				repeated fixed32 repeated_fixed32_value = 11;
 				repeated fixed64 repeated_fixed64_value = 12;
 				repeated int64 repeated_int64_value = 13;
 				repeated double repeated_double_value = 14;
@@ -45,7 +45,7 @@ message AssetDigestDecoder {
 				repeated int32 repeated_int32_value = 17;
 				repeated float repeated_float_value = 18;
 				repeated uint32 repeated_uint32_value = 19;
-				repeated uint64 repeated_uint64_value = 20;*//*
+				repeated uint64 repeated_uint64_value = 20;
 			}
 		}*/
 	}

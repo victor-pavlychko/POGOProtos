@@ -44,7 +44,7 @@ message InventoryItemData {
 	message LimitedPurchaseSkuRecord {
 		map<string, Purchase> purchases = 1;
 
-		message Purchase{
+		message Purchase {
 			int32 version = 1;
 			int32 num_purchases = 2;
 			int64 last_purchase_ms = 4;
