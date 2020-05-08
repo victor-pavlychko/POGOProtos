@@ -4,13 +4,13 @@ package POGOProtos.Data.Telemetry;
 import "POGOProtos/Enums/PokemonType.proto";
 
 message CombatMinigameTelemetry {
-    MinigameCombatType combat_type = 1;
-    .POGOProtos.Enums.PokemonType move_type = 2;
-    float score = 3;
+	MinigameCombatType combat_type = 1;
+	.POGOProtos.Enums.PokemonType move_type = 2;
+	float score = 3;
 
-    enum MinigameCombatType {
-        UNSET = 0;
-        PVP = 1;
-        PVE = 2;
-    }
+	enum MinigameCombatType {
+		UNSET = 0;
+		PVP = 1;
+		PVE = 2;
+	}
 }
