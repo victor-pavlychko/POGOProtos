@@ -137,11 +137,6 @@ python compile.py rust:
 ### Libraries
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
 
-| Language              | Source                                                                               | Status                                                                                                                       |
-|-----------------------|--------------------------------------------------------------------------------------|--------
-| Swift                 | https://github.com/123FLO321/POGOProtos-Swift                                        |  OK                                                                                                                         |                                                                                                                         |
-| Java                  | https://github.com/Furtif/POGOProtos-Java                                 |  OK                                                                                                                          |
-
 | Additional resources  | Source                                                                               | Status 
 |-----------------------|--------------------------------------------------------------------------------------|--------
 | Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master                       |  OK    
