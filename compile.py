@@ -292,6 +292,7 @@ parser.add_argument(
         'go',
         'rust',
         'swift',
+        'lua',
         'dart'],
     help='language to pass to protoc')
 parser.add_argument(
@@ -443,6 +444,8 @@ elif args.language == 'csharp':
     arguments = '--csharp_opt=file_extension=.g.cs --csharp_opt=base_namespace'
 elif args.language == 'dart':
     arguments = '--plugin "pub run protoc_plugin"'
+elif args.language == 'lua':
+    arguments = '--plugin=protoc-gen-lua="../ProtoGenLua/plugin/build.bat"'
 elif args.language == 'go':
     options = 'plugins=grpc'
     all_at_once = False

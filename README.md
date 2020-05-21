@@ -41,7 +41,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.51.2       | 0.175.0       | Compatible      |  Protocol Buffers v3.12.0-rc-1  |
+| 2.51.2       | 0.175.2       | Compatible      |  Protocol Buffers v3.12.0       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
@@ -49,7 +49,7 @@ If you want to figure out the current version in an automated system, use this f
 *Note: This file will contain pre-release versions too.*
 
 ### Preparation
-Current recommended protoc version: "Protocol Buffers v3.12.0-rc-1".
+Current recommended protoc version: "Protocol Buffers v3.12.0".
 You can find download links [here](https://github.com/google/protobuf/releases).
 
 #### Windows
@@ -112,6 +112,11 @@ python compile.py ruby:
 ```
 python compile.py swift:
  - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData.pb.swift
+```
+
+```
+python compile.py lua:
+ - POGOProtos/Data/PlayerData.proto -> POGOProtos/Data/PlayerData_pb.lua
 ```
 
 ```
