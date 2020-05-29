@@ -1,9 +1,9 @@
 syntax = "proto3";
-package POGOProtos.Data;
+package POGOProtos.Tools;
 
 import "POGOProtos/Networking/Responses/DownloadItemTemplatesResponse.proto";
 
-message GameMasterDecoder {
+message GameMasterDecoderTool {
 	Result result = 1;
 	repeated ClientGameMasterTemplate template = 2;
 	repeated string deleted_template = 3;
@@ -22,7 +22,7 @@ message GameMasterDecoder {
 
 	message ClientGameMasterTemplate {
 		string template_id = 1;
-		//Ignore bytes and decode directly
+		//Ignore bytes and decode directly.
 		//bytes data = 2;
 		.POGOProtos.Networking.Responses.DownloadItemTemplatesResponse.GameMasterClientTemplate data = 2;
 	}
