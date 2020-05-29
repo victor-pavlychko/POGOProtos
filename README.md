@@ -10,38 +10,36 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
 
 ### Implemented messages types
  - [``Global``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
- - [``Social``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Social/SocialAction.proto)
- - [``Platform``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Platform/PlatformRequestType.proto) 
+ - [``Social``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Social/SocialAction.proto)
+ - [``Platform``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Platform/PlatformRequestType.proto) 
 
 ### Game actions implemented messages types
- - [``GameAccountRegistry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameAccountRegistry/GameAccountRegistryActions.proto)
- - [``GameAnticheat``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameAnticheat/GameAnticheatAction.proto)
- - [``GameFitness``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameFitness/GameFitnessAction.proto)
- - [``GameGmTemplates``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameGmTemplates/GameGmTemplatesAction.proto)
- - [``GameIap``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameIap/GameIapAction.proto)
- - [``GameLocationAwareness``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameLocationAwareness/GameLocationAwarenessAction.proto)
- - [``GameNotification``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameNotification/GameNotificationAction.proto)
- - [``GamePasscode``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePasscode/GamePasscodeAction.proto)
- - [``GamePing``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePing/GamePingAction.proto)
- - [``GamePlayer``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePlayer/GamePlayerAction.proto)
- - [``GamePoi``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePoi/GamePoiAction.proto)
- - [``GamePushNotification``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GamePushNotification/GamePushNotificationAction.proto)
- - [``GameSocial``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameSocial/GameSocialAction.proto)
- - [``GameTelemetry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameTelemetry/GameTelemetryAction.proto)
- - [``GameWebToken``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Game/GameWebToken/GameWebTokenAction.proto)
+ - [``GameAccountRegistry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameAccountRegistry/GameAccountRegistryActions.proto)
+ - [``GameAnticheat``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameAnticheat/GameAnticheatAction.proto)
+ - [``GameFitness``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameFitness/GameFitnessAction.proto)
+ - [``GameGmTemplates``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameGmTemplates/GameGmTemplatesAction.proto)
+ - [``GameIap``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameIap/GameIapAction.proto)
+ - [``GameLocationAwareness``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameLocationAwareness/GameLocationAwarenessAction.proto)
+ - [``GameNotification``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameNotification/GameNotificationAction.proto)
+ - [``GamePasscode``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GamePasscode/GamePasscodeAction.proto)
+ - [``GamePing``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GamePing/GamePingAction.proto)
+ - [``GamePlayer``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GamePlayer/GamePlayerAction.proto)
+ - [``GamePoi``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GamePoi/GamePoiAction.proto)
+ - [``GamePushNotification``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GamePushNotification/GamePushNotificationAction.proto)
+ - [``GameSocial``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameSocial/GameSocialAction.proto)
+ - [``GameTelemetry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameTelemetry/GameTelemetryAction.proto)
+ - [``GameWebToken``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameWebToken/GameWebTokenAction.proto)
    
-### Titan (![alt text][1.1] ??? ![alt text][1.1])
- - [``Titan``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Titan)
-
-### Vasa (![alt text][1.1] ??? ![alt text][1.1])
- - [``Vasa``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Vasa)
+### Titan Vasa (![alt text][1.1] ??? ![alt text][1.1])
+ - [``Titan``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Titan)
+ - [``Vasa``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Vasa)
 
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.51.2       | 0.175.2       | Compatible      |  Protocol Buffers v3.12.0       |
+| 2.51.2       | 0.175.3       | Compatible      |  Protocol Buffers v3.12.2       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
@@ -49,7 +47,7 @@ If you want to figure out the current version in an automated system, use this f
 *Note: This file will contain pre-release versions too.*
 
 ### Preparation
-Current recommended protoc version: "Protocol Buffers v3.12.0".
+Current recommended protoc version: "Protocol Buffers v3.12.2".
 You can find download links [here](https://github.com/google/protobuf/releases).
 
 #### Windows
