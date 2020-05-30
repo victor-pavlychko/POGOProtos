@@ -104,7 +104,7 @@ enum AvatarCompletion {
 	AVATARCOMPLETION_QUIT = 1;
 }
 
-message PlatformBattlePartiesProto {
+message BattlePartiesProto {
 	repeated BattlePartyProto battle_parties = 1;
 }
 
@@ -450,7 +450,7 @@ enum VfxLevel {
 	VFXLEVEL_EXCELLENT = 4;
 }
 
-message PlatformAcknowledgeWarningsRequestProto {
+message AcknowledgeWarningsRequestProto {
 	repeated PlatformWarningType warning = 1;
 }
 
