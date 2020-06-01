@@ -1,7 +1,7 @@
 # Project files
 .idea/
 *.iml
-*_file*
+*_single*
 
 # Protoc files
 out/
@@ -12,4 +12,3 @@ out/
 # Backup files
 *~
 /base/last/
-*.Rpc.desc

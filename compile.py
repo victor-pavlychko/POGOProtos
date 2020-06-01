@@ -331,9 +331,9 @@ args = parser.parse_args()
 
 protoc_path = args.protoc_path
 src_path = os.path.join(os.path.dirname(__file__), 'src')
-out_path = os.path.abspath(args.out_path)
+out_path = os.path.abspath(args.out_path + '/' + args.language)
 
-if out_path == os.path.abspath('out') and os.path.exists(out_path):
+if os.path.exists(out_path):
     shutil.rmtree(out_path)
 
 if not os.path.exists(out_path):
@@ -346,8 +346,8 @@ file_lower = False
 package_lower = False
 
 if args.language == 'go':
-    namespace = 'com.github.aeonlucid.pogoprotos'
-    path = 'github.com/aeonlucid/pogoprotos'
+    namespace = 'pogoprotos'
+    path = 'pogoprotos'
     path_lower = True
     file_lower = True
     package_lower = True
