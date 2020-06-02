@@ -12,3 +12,4 @@ out/
 # Backup files
 *~
 /base/last/
+/src/POGOProtos/Rpc/Rpc.proto
