@@ -325,6 +325,76 @@ enum PokedexGenerationId {
 
 //----- End holoholo -----
 //------------------------------
+//----- Begin iap -----
+
+// ref: Nia.Iap.SetInGameCurrencyExchangeRateOutProto
+message SetInGameCurrencyExchangeRateOutProto {
+	// ref: Nia.Iap.SetInGameCurrencyExchangeRateOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+
+	Status status = 1;
+}
+
+// ref: Nia.Iap.SetInGameCurrencyExchangeRateProto
+message SetInGameCurrencyExchangeRateProto {
+	string in_game_currency = 1;
+	string fiat_currency = 2;
+	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
+}
+
+// ref: Nia.Iap.SetInGameCurrencyExchangeRateTrackingProto
+message SetInGameCurrencyExchangeRateTrackingProto {
+	string in_game_currency = 1;
+	string fiat_currency = 2;
+	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
+	string status = 4;
+}
+
+// ref: Nia.Iap.SkuContentProto
+message SkuContentProto {
+	string item_type = 1;
+	int32 quantity = 2;
+}
+
+// ref: Nia.Iap.SkuDataProto
+message SkuDataProto {
+	// ref: Nia.Iap.SkuDataProto/Types/SkuPaymentType
+	enum SkuPaymentType {
+		UNSET = 0;
+		THIRD_PARTY = 1;
+		IN_GAME = 2;
+	}
+
+	string id = 1;
+	bool is_enabled = 2;
+	repeated SkuContentProto content = 3;
+	repeated SkuPriceProto price = 4;
+	SkuPaymentType payment_type = 5;
+	int64 last_modified_timestamp_ms = 6;
+	repeated SkuPresentationDataProto presentation_data = 7;
+	int64 enabled_window_start_ms = 8;
+	int64 enabled_window_end_ms = 9;
+	string subscription_id = 10;
+}
+
+// ref: Nia.Iap.SkuPresentationDataProto
+message SkuPresentationDataProto {
+	string key = 1;
+	string value = 2;
+}
+
+// ref: Nia.Iap.SkuPriceProto
+message SkuPriceProto {
+	string currency_type = 1;
+	int32 price = 2;
+}
+
+//----- End iap -----
+//------------------------------
 //----- Begin incident -----
 
 // ref: Niantic.Holoholo.Incident.IncidentDynamicStringTypes
@@ -637,8 +707,8 @@ message FitnessReportProto {
 
 	int32 day_offset_from_now = 1;
 	int32 week_offset_from_now = 2;
-	FitnessMetricsProto metrics = 10;
-	bytes game_data = 11;
+	FitnessMetricsProto metrics = 3;
+	bytes game_data = 4;
 }
 
 // ref: GeofenceMetadata
@@ -796,33 +866,6 @@ message RedeemPasscodeResponseProto {
 	string passcode = 4;
 }
 
-// ref: SetInGameCurrencyExchangeRateOutProto
-message SetInGameCurrencyExchangeRateOutProto {
-	// ref: SetInGameCurrencyExchangeRateOutProto/Types/Status
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-	}
-
-	Status status = 1;
-}
-
-// ref: SetInGameCurrencyExchangeRateProto
-message SetInGameCurrencyExchangeRateProto {
-	string in_game_currency = 1;
-	string fiat_currency = 2;
-	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
-}
-
-// ref: SetInGameCurrencyExchangeRateTrackingProto
-message SetInGameCurrencyExchangeRateTrackingProto {
-	string in_game_currency = 1;
-	string fiat_currency = 2;
-	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
-	string status = 4;
-}
-
 // ref: SfidaAuthToken
 message SfidaAuthToken {
 	bytes response_token = 1;
@@ -945,44 +988,6 @@ message SfidaUpdateResponse {
 	string pokestop_id = 8;
 	EncounterType encounter_type = 9;
 	int32 pokedex_number = 10;
-}
-
-// ref: SkuContentProto
-message SkuContentProto {
-	string item_type = 1;
-	int32 quantity = 2;
-}
-
-// ref: SkuDataProto
-message SkuDataProto {
-	// ref: SkuDataProto/Types/SkuPaymentType
-	enum SkuPaymentType {
-		UNSET = 0;
-		THIRD_PARTY = 1;
-		IN_GAME = 2;
-	}
-
-	string id = 1;
-	bool is_enabled = 2;
-	repeated SkuContentProto content = 3;
-	repeated SkuPriceProto price = 4;
-	SkuPaymentType payment_type = 5;
-	int64 last_modified_timestamp_ms = 6;
-	repeated SkuPresentationDataProto presentation_data = 7;
-	int64 enabled_window_start_ms = 8;
-	int64 enabled_window_end_ms = 9;
-}
-
-// ref: SkuPresentationDataProto
-message SkuPresentationDataProto {
-	string key = 1;
-	string value = 2;
-}
-
-// ref: SkuPriceProto
-message SkuPriceProto {
-	string currency_type = 1;
-	int32 price = 2;
 }
 
 // ref: UpdateAdventureSyncFitnessResponseProto
@@ -1124,6 +1129,480 @@ message WeatherSettingsProto {
 //------------------------------
 //----- Begin protos -----
 
+// ref: Niantic.Titan.Protos.PoiImageType
+enum PoiImageType {
+	UNSET = 0;
+	MAIN = 1;
+	SURROUNDING = 2;
+}
+
+// ref: Niantic.Titan.Protos.RouteVisitOrder
+enum RouteVisitOrder {
+	ROUTE_VISIT_ORDER_UNSPECIFIED = 0;
+	IN_ORDER = 1;
+	UNORDERED = 2;
+	REVERSIBLE = 3;
+}
+
+// ref: Niantic.Titan.Protos.AsyncFileUploadCompleteOutProto
+message AsyncFileUploadCompleteOutProto {
+	// ref: Niantic.Titan.Protos.AsyncFileUploadCompleteOutProto/Types/ErrorStatus
+	enum ErrorStatus {
+		UNSET = 0;
+		SERVER_UPDATE_FAILED = 1;
+		MISSING_SUBMISSION_ID = 2;
+		MISSING_SUBMISSION_TYPE = 3;
+		MISSING_UPLOAD_STATUS = 4;
+	}
+
+	ErrorStatus error = 1;
+	PlayerSubmissionTypeProto submission_type = 2;
+}
+
+// ref: Niantic.Titan.Protos.AsyncFileUploadCompleteProto
+message AsyncFileUploadCompleteProto {
+	// ref: Niantic.Titan.Protos.AsyncFileUploadCompleteProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		UPLOAD_DONE = 1;
+		UPLOAD_FAILED = 2;
+	}
+
+	string submission_id = 1;
+	Status upload_status = 3;
+}
+
+// ref: Niantic.Titan.Protos.AvailableSubmissionsPerSubmissionType
+message AvailableSubmissionsPerSubmissionType {
+	PlayerSubmissionTypeProto player_submission_type = 1;
+	int32 submissions_left = 2;
+	int32 min_player_level = 3;
+	bool is_feature_enabled = 4;
+	int64 time_window_for_submissions_limit_ms = 5;
+	int32 max_poi_distance_in_meters = 6;
+	repeated string blacklisted_os = 7;
+	repeated string blacklisted_device_id = 8;
+}
+
+// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto
+message GenerateGmapSignedUrlOutProto {
+	// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_NOT_VALID = 2;
+		ERROR_RATE_LIMITED = 3;
+		ERROR_MISSING_INPUT = 4;
+		ERROR_UNKNOWN = 5;
+	}
+
+	Result result = 1;
+	string signed_url = 2;
+}
+
+// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlProto
+message GenerateGmapSignedUrlProto {
+	double latitude = 1;
+	double longitude = 2;
+	int32 width = 3;
+	int32 height = 4;
+	int32 zoom = 5;
+	string language_code = 6;
+	string country_code = 7;
+	string map_style = 8;
+	string map_type = 9;
+	string icon_params = 10;
+}
+
+// ref: Niantic.Titan.Protos.GetAvailableSubmissionsOutProto
+message GetAvailableSubmissionsOutProto {
+	int32 submissions_left = 1;
+	int32 min_player_level = 2;
+	bool has_valid_email = 3;
+	bool is_feature_enabled = 4;
+	int64 time_window_for_submissions_limit_ms = 5;
+	int32 max_poi_distance_in_meters = 6;
+	repeated string blacklisted_os = 7;
+	repeated AvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
+	repeated string blacklisted_device_id = 9;
+}
+
+// ref: Niantic.Titan.Protos.GetAvailableSubmissionsProto
+message GetAvailableSubmissionsProto {
+	PlayerSubmissionTypeProto submission_type = 1;
+	repeated PlayerSubmissionTypeProto submission_types = 2;
+}
+
+// ref: Niantic.Titan.Protos.GetGmapSettingsOutProto
+message GetGmapSettingsOutProto {
+	// ref: Niantic.Titan.Protos.GetGmapSettingsOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_MISSING_CONFIG = 3;
+		ERROR_NO_UNIQUE_ID = 4;
+	}
+
+	Result result = 1;
+	string gmap_template_url = 2;
+	int32 max_poi_distance_in_meters = 3;
+}
+
+// ref: Niantic.Titan.Protos.GetGmapSettingsProto
+message GetGmapSettingsProto {
+}
+
+// ref: Niantic.Titan.Protos.GetGrapeshotUploadUrlOutProto
+message GetGrapeshotUploadUrlOutProto {
+	// ref: Niantic.Titan.Protos.GetGrapeshotUploadUrlOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		FAILURE = 1;
+		SUCCESS = 2;
+		MISSING_FILE_CONTEXTS = 3;
+		DUPLICATE_FILE_CONTEXT = 4;
+		MISSING_SUBMISSION_TYPE = 5;
+		MISSING_SUBMISSION_ID = 6;
+	}
+
+	Status status = 1;
+	map<string, GrapeshotUploadingDataProto> file_context_to_grapeshot_data = 4;
+}
+
+// ref: Niantic.Titan.Protos.GetGrapeshotUploadUrlProto
+message GetGrapeshotUploadUrlProto {
+	PlayerSubmissionTypeProto submission_type = 1;
+	string submission_id = 2;
+	repeated string file_upload_context = 3;
+}
+
+// ref: Niantic.Titan.Protos.GetPlayerSubmissionValidationSettingsOutProto
+message GetPlayerSubmissionValidationSettingsOutProto {
+	repeated string banned_metadata_text = 1;
+}
+
+// ref: Niantic.Titan.Protos.GetPlayerSubmissionValidationSettingsProto
+message GetPlayerSubmissionValidationSettingsProto {
+}
+
+// ref: Niantic.Titan.Protos.GetUploadUrlOutProto
+message GetUploadUrlOutProto {
+	// ref: Niantic.Titan.Protos.GetUploadUrlOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		FAILURES = 1;
+		SUCCESS = 2;
+		MISSING_IMAGE_CONTEXTS = 3;
+		DUPLICATE_IMAGE_CONTEXTS = 4;
+	}
+
+	Status status = 1;
+	string signed_url = 2;
+	string supporting_image_signed_url = 3;
+	map<string, string> context_signed_urls = 4;
+}
+
+// ref: Niantic.Titan.Protos.GetUploadUrlProto
+message GetUploadUrlProto {
+	string user_id = 1;
+	string game_unique_id = 2;
+	PlayerSubmissionTypeProto submission_type = 3;
+	string submission_id = 4;
+	repeated string image_contexts = 5;
+}
+
+// ref: Niantic.Titan.Protos.GrapeshotAuthenticationDataProto
+message GrapeshotAuthenticationDataProto {
+	string authorization = 1;
+	string date = 2;
+}
+
+// ref: Niantic.Titan.Protos.GrapeshotChunkDataProto
+message GrapeshotChunkDataProto {
+	string chunk_file_path = 1;
+	uint32 chunk_number = 2;
+	GrapeshotAuthenticationDataProto upload_authentication = 3;
+	GrapeshotAuthenticationDataProto delete_authentication = 4;
+}
+
+// ref: Niantic.Titan.Protos.GrapeshotComposeDataProto
+message GrapeshotComposeDataProto {
+	string target_file_path = 1;
+	GrapeshotAuthenticationDataProto authentication = 2;
+}
+
+// ref: Niantic.Titan.Protos.GrapeshotUploadingDataProto
+message GrapeshotUploadingDataProto {
+	repeated GrapeshotChunkDataProto chunk_data = 1;
+	GrapeshotComposeDataProto compose_data = 2;
+	string gcs_bucket = 3;
+	int32 number_of_chunks = 4;
+}
+
+// ref: Niantic.Titan.Protos.PlayerSubmissionResponseProto
+message PlayerSubmissionResponseProto {
+	// ref: Niantic.Titan.Protos.PlayerSubmissionResponseProto/Types/Status
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+		MISSING_IMAGE = 7;
+		DISTANCE_VALIDATION_FAILED = 8;
+	}
+
+	Status status = 1;
+	string submission_id = 2;
+	repeated string messages = 3;
+}
+
+// ref: Niantic.Titan.Protos.PoiPlayerMetadataTelemetry
+message PoiPlayerMetadataTelemetry {
+	string device_model = 1;
+	string device_os = 2;
+}
+
+// ref: Niantic.Titan.Protos.PoiSubmissionPhotoUploadErrorTelemetry
+message PoiSubmissionPhotoUploadErrorTelemetry {
+	// ref: Niantic.Titan.Protos.PoiSubmissionPhotoUploadErrorTelemetry/Types/PoiSubmissionPhotoUploadErrorIds
+	enum PoiSubmissionPhotoUploadErrorIds {
+		UNSET = 0;
+		POI_PHOTO_UPLOAD_ERROR = 1;
+		POI_PHOTO_UPLOAD_TIMEOUT = 2;
+	}
+
+	PoiSubmissionPhotoUploadErrorIds error_id = 1;
+	PoiImageType image_type = 2;
+	string error_message = 3;
+}
+
+// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry
+message PoiSubmissionTelemetry {
+	// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry/Types/PoiCameraStepIds
+	enum PoiCameraStepIds {
+		UNSET = 0;
+		ENTER = 1;
+		RETAKE = 2;
+		CONFIRM = 3;
+		EXIT = 4;
+	}
+
+	// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry/Types/PoiSubmissionGuiEventId
+	enum PoiSubmissionGuiEventId {
+		UNKNOWN = 0;
+		POI_NOMINATION_ENTER = 1;
+		POI_TUTORIAL_COMPLETE = 2;
+		POI_MAP_CHANGEDVIEW_MAP = 3;
+		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
+		POI_MAP_CENTER_LOCATION = 5;
+		POI_LOCATION_SET = 6;
+		POI_PHOTO_CAMERA_ENTER = 7;
+		POI_PHOTO_CAMERA_EXIT = 8;
+		POI_TITLE_ENTERED = 9;
+		POI_DESCRIPTION_ENTER = 10;
+		POI_DETAILS_CONFIRM = 11;
+		POI_SUPPORTINGINFO_ENTER = 12;
+		POI_SUBMIT_BUTTON_HIT = 13;
+		POI_EXIT_BUTTON_HIT = 14;
+	}
+
+	PoiSubmissionGuiEventId gui_event_id = 1;
+	PoiImageType image_type = 2;
+	PoiCameraStepIds camera_step_id = 3;
+}
+
+// ref: Niantic.Titan.Protos.PoiVideoSubmissionMetadataProto
+message PoiVideoSubmissionMetadataProto {
+	string poi_id = 1;
+	LocationE6Proto location = 2;
+	int32 player_level = 3;
+}
+
+// ref: Niantic.Titan.Protos.PortalCurationImageResult
+message PortalCurationImageResult {
+	// ref: Niantic.Titan.Protos.PortalCurationImageResult/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FEATURE_DISABLED = 2;
+		ALREADY_UPLOADED = 3;
+		IMAGE_NOT_FOUND = 4;
+		IMAGE_TOO_BIG = 5;
+		IMAGE_NOT_SERVABLE = 6;
+		PORTAL_NOT_FOUND = 7;
+	}
+
+}
+
+// ref: Niantic.Titan.Protos.RouteCheckpointProto
+message RouteCheckpointProto {
+	// ref: Niantic.Titan.Protos.RouteCheckpointProto/TypeOneofCase
+	//oneof Type {
+		//none = 0;
+		//poi = 1;
+		//guidepost = 2;
+	//}
+
+	RoutePoiProto poi = 1;
+	RouteGuidepostProto guidepost = 2;
+}
+
+// ref: Niantic.Titan.Protos.RouteGuidepostProto
+message RouteGuidepostProto {
+	LocationE6Proto location = 1;
+}
+
+// ref: Niantic.Titan.Protos.RouteImageProto
+message RouteImageProto {
+	// ref: Niantic.Titan.Protos.RouteImageProto/SourceOneofCase
+	//oneof Source {
+		//none = 0;
+		//image_id = 1;
+		//image_context = 2;
+	//}
+
+	string image_id = 1;
+	string image_context = 2;
+}
+
+// ref: Niantic.Titan.Protos.RoutePoiProto
+message RoutePoiProto {
+	string poi_id = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitNewPoiOutProto
+message SubmitNewPoiOutProto {
+	// ref: Niantic.Titan.Protos.SubmitNewPoiOutProto/Types/Status
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		INTERNAL_ERROR = 3;
+		TOO_MANY_RECENT_SUBMISSIONS = 4;
+		INVALID_INPUT = 5;
+		MINOR = 6;
+		NOT_AVAILABLE = 7;
+	}
+
+	Status status = 1;
+	string submission_id = 2;
+	repeated string messages = 3;
+}
+
+// ref: Niantic.Titan.Protos.SubmitNewPoiProto
+message SubmitNewPoiProto {
+	string title = 1;
+	string long_description = 2;
+	int32 lat_e6 = 4;
+	int32 lng_e6 = 5;
+	string supporting_statement = 14;
+	bool async_file_upload = 18;
+}
+
+// ref: Niantic.Titan.Protos.SubmitNewRouteOutProto
+message SubmitNewRouteOutProto {
+	// ref: Niantic.Titan.Protos.SubmitNewRouteOutProto/Types/Status
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+		MISSING_IMAGE = 7;
+		INVALID_CHECKPOINT = 8;
+		INVALID_ROUTE_LENGTH = 9;
+		DUPLICATE_CHECKPOINTS = 10;
+		ALREADY_SUBMITTED = 11;
+	}
+
+	Status status = 1;
+}
+
+// ref: Niantic.Titan.Protos.SubmitNewRouteProto
+message SubmitNewRouteProto {
+	string route_submission_id = 1;
+	string title = 2;
+	string description = 3;
+	RouteVisitOrder visit_order = 5;
+	repeated RouteCheckpointProto checkpoints = 6;
+	RouteImageProto main_image = 7;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiImageProto
+message SubmitPoiImageProto {
+	string poi_id = 1;
+	bool async_file_upload = 2;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiLocationUpdateProto
+message SubmitPoiLocationUpdateProto {
+	string poi_id = 1;
+	LocationE6Proto location = 2;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiTakedownRequestProto
+message SubmitPoiTakedownRequestProto {
+	string poi_id = 1;
+	PoiInvalidReason invalid_reason = 2;
+}
+
+// ref: Niantic.Titan.Protos.SubmitPoiTextMetadataUpdateProto
+message SubmitPoiTextMetadataUpdateProto {
+	string poi_id = 1;
+	string title = 2;
+	string description = 3;
+}
+
+// ref: Niantic.Titan.Protos.SubmitSponsorPoiLocationUpdateProto
+message SubmitSponsorPoiLocationUpdateProto {
+	string poi_id = 1;
+	LocationE6Proto location = 2;
+}
+
+// ref: Niantic.Titan.Protos.SubmitSponsorPoiReportProto
+message SubmitSponsorPoiReportProto {
+	string poi_id = 1;
+	SponsorPoiInvalidReason invalid_reason = 2;
+	string additional_details = 3;
+}
+
+// ref: Niantic.Titan.Protos.TitanGameClientTelemetryOmniProto
+message TitanGameClientTelemetryOmniProto {
+	// ref: Niantic.Titan.Protos.TitanGameClientTelemetryOmniProto/TelemetryDataOneofCase
+	//oneof TelemetryData {
+		//none = 0;
+		//poi_submission_telemetry = 1;
+		//poi_submission_photo_upload_error_telemetry = 2;
+		//player_metadata_telemetry = 3;
+	//}
+
+	PoiSubmissionTelemetry poi_submission_telemetry = 1;
+	PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
+	PoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
+	PlatformServerData server_data = 1001;
+}
+
+// ref: Niantic.Titan.Protos.UploadPoiPhotoByUrlOutProto
+message UploadPoiPhotoByUrlOutProto {
+	PortalCurationImageResult.Result status = 1;
+}
+
+// ref: Niantic.Titan.Protos.UploadPoiPhotoByUrlProto
+message UploadPoiPhotoByUrlProto {
+	string request_id = 1;
+	string image_url = 2;
+}
+
+//----- End protos -----
+//------------------------------
+//----- Begin protos -----
+
 // ref: Niantic.Platform.Protos.GameAccountRegistryActions
 enum GameAccountRegistryActions {
 	UNKNOWN_GAME_ACCOUNT_REGISTRY_ACTION = 0;
@@ -1167,6 +1646,9 @@ enum GameIapAction {
 	REDEEM_APPLE_RECEIPT = 310101;
 	REDEEM_DESKTOP_RECEIPT = 310102;
 	REDEEM_SAMSUNG_RECEIPT = 310103;
+	GET_AVAILABLE_SUBSCRIPTIONS = 310200;
+	GET_ACTIVE_SUBSCRIPTIONS = 310201;
+	REDEEM_GOOGLE_SUBSCRIPTION = 310202;
 }
 
 // ref: Niantic.Platform.Protos.GameLocationAwarenessAction
@@ -1208,6 +1690,7 @@ enum GamePoiAction {
 	ADD_NEW_POI = 620000;
 	GET_AVAILABLE_SUBMISSIONS = 620001;
 	GET_SIGNED_URL_FOR_PHOTO_UPLOAD = 620002;
+	GET_PLAYER_SUBMISSION_VALIDATION_SETTINGS = 620003;
 	SUBMIT_POI_IMAGE = 620100;
 	SUBMIT_POI_TEXT_METADATA_UPDATE = 620101;
 	SUBMIT_POI_LOCATION_UPDATE = 620102;
@@ -2340,466 +2823,6 @@ message UploadPoiPhotoByUrlOutProto {
 }
 
 // ref: Niantic.Platform.Protos.UploadPoiPhotoByUrlProto
-message UploadPoiPhotoByUrlProto {
-	string request_id = 1;
-	string image_url = 2;
-}
-
-//----- End protos -----
-//------------------------------
-//----- Begin protos -----
-
-// ref: Niantic.Titan.Protos.PoiImageType
-enum PoiImageType {
-	UNSET = 0;
-	MAIN = 1;
-	SURROUNDING = 2;
-}
-
-// ref: Niantic.Titan.Protos.RouteVisitOrder
-enum RouteVisitOrder {
-	ROUTE_VISIT_ORDER_UNSPECIFIED = 0;
-	IN_ORDER = 1;
-	UNORDERED = 2;
-	REVERSIBLE = 3;
-}
-
-// ref: Niantic.Titan.Protos.AsyncFileUploadCompleteOutProto
-message AsyncFileUploadCompleteOutProto {
-	// ref: Niantic.Titan.Protos.AsyncFileUploadCompleteOutProto/Types/ErrorStatus
-	enum ErrorStatus {
-		UNSET = 0;
-		SERVER_UPDATE_FAILED = 1;
-		MISSING_SUBMISSION_ID = 2;
-		MISSING_SUBMISSION_TYPE = 3;
-		MISSING_UPLOAD_STATUS = 4;
-	}
-
-	ErrorStatus error = 1;
-}
-
-// ref: Niantic.Titan.Protos.AsyncFileUploadCompleteProto
-message AsyncFileUploadCompleteProto {
-	// ref: Niantic.Titan.Protos.AsyncFileUploadCompleteProto/Types/Status
-	enum Status {
-		UNSET = 0;
-		UPLOAD_DONE = 1;
-		UPLOAD_FAILED = 2;
-	}
-
-	string submission_id = 1;
-	PlayerSubmissionTypeProto submission_type = 2;
-	Status upload_status = 3;
-}
-
-// ref: Niantic.Titan.Protos.AvailableSubmissionsPerSubmissionType
-message AvailableSubmissionsPerSubmissionType {
-	PlayerSubmissionTypeProto player_submission_type = 1;
-	int32 submissions_left = 2;
-	int32 min_player_level = 3;
-	bool is_feature_enabled = 4;
-	int64 time_window_for_submissions_limit_ms = 5;
-	int32 max_poi_distance_in_meters = 6;
-	repeated string blacklisted_os = 7;
-}
-
-// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto
-message GenerateGmapSignedUrlOutProto {
-	// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto/Types/Result
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_PLAYER_NOT_VALID = 2;
-		ERROR_RATE_LIMITED = 3;
-		ERROR_MISSING_INPUT = 4;
-		ERROR_UNKNOWN = 5;
-	}
-
-	Result result = 1;
-	string signed_url = 2;
-}
-
-// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlProto
-message GenerateGmapSignedUrlProto {
-	double latitude = 1;
-	double longitude = 2;
-	int32 width = 3;
-	int32 height = 4;
-	int32 zoom = 5;
-	string language_code = 6;
-	string country_code = 7;
-	string map_style = 8;
-	string map_type = 9;
-	string icon_params = 10;
-}
-
-// ref: Niantic.Titan.Protos.GetAvailableSubmissionsOutProto
-message GetAvailableSubmissionsOutProto {
-	int32 submissions_left = 1;
-	int32 min_player_level = 2;
-	bool has_valid_email = 3;
-	bool is_feature_enabled = 4;
-	int64 time_window_for_submissions_limit_ms = 5;
-	int32 max_poi_distance_in_meters = 6;
-	repeated string blacklisted_os = 7;
-	repeated AvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
-}
-
-// ref: Niantic.Titan.Protos.GetAvailableSubmissionsProto
-message GetAvailableSubmissionsProto {
-	PlayerSubmissionTypeProto submission_type = 1;
-	repeated PlayerSubmissionTypeProto submission_types = 2;
-}
-
-// ref: Niantic.Titan.Protos.GetGmapSettingsOutProto
-message GetGmapSettingsOutProto {
-	// ref: Niantic.Titan.Protos.GetGmapSettingsOutProto/Types/Result
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_MISSING_CONFIG = 3;
-		ERROR_NO_UNIQUE_ID = 4;
-	}
-
-	Result result = 1;
-	string gmap_template_url = 2;
-	int32 max_poi_distance_in_meters = 3;
-}
-
-// ref: Niantic.Titan.Protos.GetGmapSettingsProto
-message GetGmapSettingsProto {
-}
-
-// ref: Niantic.Titan.Protos.GetGrapeshotUploadUrlOutProto
-message GetGrapeshotUploadUrlOutProto {
-	// ref: Niantic.Titan.Protos.GetGrapeshotUploadUrlOutProto/Types/Status
-	enum Status {
-		UNSET = 0;
-		FAILURE = 1;
-		SUCCESS = 2;
-		MISSING_FILE_CONTEXTS = 3;
-		DUPLICATE_FILE_CONTEXT = 4;
-		MISSING_SUBMISSION_TYPE = 5;
-		MISSING_SUBMISSION_ID = 6;
-	}
-
-	Status status = 1;
-	map<string, GrapeshotUploadingDataProto> file_context_to_grapeshot_data = 4;
-}
-
-// ref: Niantic.Titan.Protos.GetGrapeshotUploadUrlProto
-message GetGrapeshotUploadUrlProto {
-	PlayerSubmissionTypeProto submission_type = 1;
-	string submission_id = 2;
-	repeated string file_upload_context = 3;
-}
-
-// ref: Niantic.Titan.Protos.GetUploadUrlOutProto
-message GetUploadUrlOutProto {
-	// ref: Niantic.Titan.Protos.GetUploadUrlOutProto/Types/Status
-	enum Status {
-		UNSET = 0;
-		FAILURES = 1;
-		SUCCESS = 2;
-		MISSING_IMAGE_CONTEXTS = 3;
-		DUPLICATE_IMAGE_CONTEXTS = 4;
-	}
-
-	Status status = 1;
-	string signed_url = 2;
-	string supporting_image_signed_url = 3;
-	map<string, string> context_signed_urls = 4;
-}
-
-// ref: Niantic.Titan.Protos.GetUploadUrlProto
-message GetUploadUrlProto {
-	string user_id = 1;
-	string game_unique_id = 2;
-	PlayerSubmissionTypeProto submission_type = 3;
-	string submission_id = 4;
-	repeated string image_contexts = 5;
-}
-
-// ref: Niantic.Titan.Protos.GrapeshotAuthenticationDataProto
-message GrapeshotAuthenticationDataProto {
-	string authorization = 1;
-	string date = 2;
-}
-
-// ref: Niantic.Titan.Protos.GrapeshotChunkDataProto
-message GrapeshotChunkDataProto {
-	string chunk_file_path = 1;
-	uint32 chunk_number = 2;
-	GrapeshotAuthenticationDataProto upload_authentication = 3;
-	GrapeshotAuthenticationDataProto delete_authentication = 4;
-}
-
-// ref: Niantic.Titan.Protos.GrapeshotComposeDataProto
-message GrapeshotComposeDataProto {
-	string target_file_path = 1;
-	GrapeshotAuthenticationDataProto authentication = 2;
-}
-
-// ref: Niantic.Titan.Protos.GrapeshotUploadingDataProto
-message GrapeshotUploadingDataProto {
-	repeated GrapeshotChunkDataProto chunk_data = 1;
-	GrapeshotComposeDataProto compose_data = 2;
-	string gcs_bucket = 3;
-	int32 number_of_chunks = 4;
-}
-
-// ref: Niantic.Titan.Protos.PlayerSubmissionResponseProto
-message PlayerSubmissionResponseProto {
-	// ref: Niantic.Titan.Protos.PlayerSubmissionResponseProto/Types/Status
-	enum Status {
-		STATUS_UNSPECIFIED = 0;
-		SUCCESS = 1;
-		INTERNAL_ERROR = 2;
-		TOO_MANY_RECENT_SUBMISSIONS = 3;
-		MINOR = 4;
-		NOT_AVAILABLE = 5;
-		INVALID_INPUT = 6;
-		MISSING_IMAGE = 7;
-	}
-
-	Status status = 1;
-	string submission_id = 2;
-}
-
-// ref: Niantic.Titan.Protos.PoiPlayerMetadataTelemetry
-message PoiPlayerMetadataTelemetry {
-	string device_model = 1;
-	string device_os = 2;
-}
-
-// ref: Niantic.Titan.Protos.PoiSubmissionPhotoUploadErrorTelemetry
-message PoiSubmissionPhotoUploadErrorTelemetry {
-	// ref: Niantic.Titan.Protos.PoiSubmissionPhotoUploadErrorTelemetry/Types/PoiSubmissionPhotoUploadErrorIds
-	enum PoiSubmissionPhotoUploadErrorIds {
-		UNSET = 0;
-		POI_PHOTO_UPLOAD_ERROR = 1;
-		POI_PHOTO_UPLOAD_TIMEOUT = 2;
-	}
-
-	PoiSubmissionPhotoUploadErrorIds error_id = 1;
-	PoiImageType image_type = 2;
-	string error_message = 3;
-}
-
-// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry
-message PoiSubmissionTelemetry {
-	// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry/Types/PoiCameraStepIds
-	enum PoiCameraStepIds {
-		UNSET = 0;
-		ENTER = 1;
-		RETAKE = 2;
-		CONFIRM = 3;
-		EXIT = 4;
-	}
-
-	// ref: Niantic.Titan.Protos.PoiSubmissionTelemetry/Types/PoiSubmissionGuiEventId
-	enum PoiSubmissionGuiEventId {
-		UNKNOWN = 0;
-		POI_NOMINATION_ENTER = 1;
-		POI_TUTORIAL_COMPLETE = 2;
-		POI_MAP_CHANGEDVIEW_MAP = 3;
-		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
-		POI_MAP_CENTER_LOCATION = 5;
-		POI_LOCATION_SET = 6;
-		POI_PHOTO_CAMERA_ENTER = 7;
-		POI_PHOTO_CAMERA_EXIT = 8;
-		POI_TITLE_ENTERED = 9;
-		POI_DESCRIPTION_ENTER = 10;
-		POI_DETAILS_CONFIRM = 11;
-		POI_SUPPORTINGINFO_ENTER = 12;
-		POI_SUBMIT_BUTTON_HIT = 13;
-		POI_EXIT_BUTTON_HIT = 14;
-	}
-
-	PoiSubmissionGuiEventId gui_event_id = 1;
-	PoiImageType image_type = 2;
-	PoiCameraStepIds camera_step_id = 3;
-}
-
-// ref: Niantic.Titan.Protos.PoiVideoSubmissionMetadataProto
-message PoiVideoSubmissionMetadataProto {
-	string poi_id = 1;
-	LocationE6Proto location = 2;
-	int32 player_level = 3;
-}
-
-// ref: Niantic.Titan.Protos.PortalCurationImageResult
-message PortalCurationImageResult {
-	// ref: Niantic.Titan.Protos.PortalCurationImageResult/Types/Result
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		FEATURE_DISABLED = 2;
-		ALREADY_UPLOADED = 3;
-		IMAGE_NOT_FOUND = 4;
-		IMAGE_TOO_BIG = 5;
-		IMAGE_NOT_SERVABLE = 6;
-		PORTAL_NOT_FOUND = 7;
-	}
-
-}
-
-// ref: Niantic.Titan.Protos.RouteCheckpointProto
-message RouteCheckpointProto {
-	// ref: Niantic.Titan.Protos.RouteCheckpointProto/TypeOneofCase
-	//oneof Type {
-		//none = 0;
-		//poi = 1;
-		//guidepost = 2;
-	//}
-
-	RoutePoiProto poi = 1;
-	RouteGuidepostProto guidepost = 2;
-}
-
-// ref: Niantic.Titan.Protos.RouteGuidepostProto
-message RouteGuidepostProto {
-	LocationE6Proto location = 1;
-}
-
-// ref: Niantic.Titan.Protos.RouteImageProto
-message RouteImageProto {
-	// ref: Niantic.Titan.Protos.RouteImageProto/SourceOneofCase
-	//oneof Source {
-		//none = 0;
-		//image_id = 1;
-		//image_context = 2;
-	//}
-
-	string image_id = 1;
-	string image_context = 2;
-}
-
-// ref: Niantic.Titan.Protos.RoutePoiProto
-message RoutePoiProto {
-	string poi_id = 1;
-}
-
-// ref: Niantic.Titan.Protos.SubmitNewPoiOutProto
-message SubmitNewPoiOutProto {
-	// ref: Niantic.Titan.Protos.SubmitNewPoiOutProto/Types/Status
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-		INTERNAL_ERROR = 3;
-		TOO_MANY_RECENT_SUBMISSIONS = 4;
-		INVALID_INPUT = 5;
-		MINOR = 6;
-		NOT_AVAILABLE = 7;
-	}
-
-	Status status = 1;
-	string submission_id = 2;
-}
-
-// ref: Niantic.Titan.Protos.SubmitNewPoiProto
-message SubmitNewPoiProto {
-	string title = 1;
-	string long_description = 2;
-	int32 lat_e6 = 4;
-	int32 lng_e6 = 5;
-	string supporting_statement = 14;
-	bool async_file_upload = 18;
-}
-
-// ref: Niantic.Titan.Protos.SubmitNewRouteOutProto
-message SubmitNewRouteOutProto {
-	// ref: Niantic.Titan.Protos.SubmitNewRouteOutProto/Types/Status
-	enum Status {
-		STATUS_UNSPECIFIED = 0;
-		SUCCESS = 1;
-		INTERNAL_ERROR = 2;
-		TOO_MANY_RECENT_SUBMISSIONS = 3;
-		MINOR = 4;
-		NOT_AVAILABLE = 5;
-		INVALID_INPUT = 6;
-		MISSING_IMAGE = 7;
-		INVALID_CHECKPOINT = 8;
-		INVALID_ROUTE_LENGTH = 9;
-		DUPLICATE_CHECKPOINTS = 10;
-		ALREADY_SUBMITTED = 11;
-	}
-
-	Status status = 1;
-}
-
-// ref: Niantic.Titan.Protos.SubmitNewRouteProto
-message SubmitNewRouteProto {
-	string route_submission_id = 1;
-	string title = 2;
-	string description = 3;
-	RouteVisitOrder visit_order = 5;
-	repeated RouteCheckpointProto checkpoints = 6;
-	RouteImageProto main_image = 7;
-}
-
-// ref: Niantic.Titan.Protos.SubmitPoiImageProto
-message SubmitPoiImageProto {
-	string poi_id = 1;
-	bool async_file_upload = 2;
-}
-
-// ref: Niantic.Titan.Protos.SubmitPoiLocationUpdateProto
-message SubmitPoiLocationUpdateProto {
-	string poi_id = 1;
-	LocationE6Proto location = 2;
-}
-
-// ref: Niantic.Titan.Protos.SubmitPoiTakedownRequestProto
-message SubmitPoiTakedownRequestProto {
-	string poi_id = 1;
-	PoiInvalidReason invalid_reason = 2;
-}
-
-// ref: Niantic.Titan.Protos.SubmitPoiTextMetadataUpdateProto
-message SubmitPoiTextMetadataUpdateProto {
-	string poi_id = 1;
-	string title = 2;
-	string description = 3;
-}
-
-// ref: Niantic.Titan.Protos.SubmitSponsorPoiLocationUpdateProto
-message SubmitSponsorPoiLocationUpdateProto {
-	string poi_id = 1;
-	LocationE6Proto location = 2;
-}
-
-// ref: Niantic.Titan.Protos.SubmitSponsorPoiReportProto
-message SubmitSponsorPoiReportProto {
-	string poi_id = 1;
-	SponsorPoiInvalidReason invalid_reason = 2;
-	string additional_details = 3;
-}
-
-// ref: Niantic.Titan.Protos.TitanGameClientTelemetryOmniProto
-message TitanGameClientTelemetryOmniProto {
-	// ref: Niantic.Titan.Protos.TitanGameClientTelemetryOmniProto/TelemetryDataOneofCase
-	//oneof TelemetryData {
-		//none = 0;
-		//poi_submission_telemetry = 1;
-		//poi_submission_photo_upload_error_telemetry = 2;
-		//player_metadata_telemetry = 3;
-	//}
-
-	PoiSubmissionTelemetry poi_submission_telemetry = 1;
-	PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
-	PoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
-	PlatformServerData server_data = 1001;
-}
-
-// ref: Niantic.Titan.Protos.UploadPoiPhotoByUrlOutProto
-message UploadPoiPhotoByUrlOutProto {
-	PortalCurationImageResult.Result status = 1;
-}
-
-// ref: Niantic.Titan.Protos.UploadPoiPhotoByUrlProto
 message UploadPoiPhotoByUrlProto {
 	string request_id = 1;
 	string image_url = 2;
@@ -6086,6 +6109,7 @@ message ArMappingSettingsProto {
 	int32 ardk_desired_accuracy_mm = 11;
 	int32 ardk_update_distance_mm = 12;
 	int32 max_pending_upload_kilobytes = 13;
+	bool enable_sponsor_poi_scan = 14;
 }
 
 // ref: Holoholo.Rpc.ArMappingTelemetryProto
@@ -6119,6 +6143,13 @@ message ArMappingTelemetryProto {
 		START_UPLOAD_SETTINGS = 13;
 		UPLOAD_SUCCESS = 14;
 		OPT_IN_LEARN_MORE = 15;
+		EXIT_FROM_PREVIEW = 16;
+		SUBMIT_POI_AR_VIDEO_METADATA_FAIL = 17;
+		UPLOAD_FAILURE = 18;
+		UPLOAD_LATER_WIFI_PROMPT = 19;
+		CLEAR_SCANS = 20;
+		OPEN_INFO_PANEL = 21;
+		RESCAN_FROM_PREVIEW = 22;
 	}
 
 	ArMappingEventId ar_mapping_telemetry_id = 1;
@@ -10698,6 +10729,7 @@ message GlobalSettingsProto {
 	ArMappingSettingsProto ar_mapping_settings = 52;
 	RaidInviteFriendsSettingsProto raid_invite_friends_settings = 53;
 	DailyEncounterGlobalSettingsProto daily_encounter_settings = 54;
+	RaidTicketSettingsProto raid_ticket_settings = 55;
 }
 
 // ref: Holoholo.Rpc.GmtSettingsProto
@@ -15797,6 +15829,7 @@ message RaidProto {
 	int64 completed_battle_ms = 10;
 	int32 num_friend_invites = 11;
 	bool is_remote = 12;
+	bool consumed_ticket = 13;
 }
 
 // ref: Holoholo.Rpc.RaidRewardsLogEntry
@@ -15832,6 +15865,11 @@ message RaidTicketProto {
 	string ticket_id = 1;
 	Item item = 2;
 	ExclusiveTicketInfoProto exclusive_info = 4;
+}
+
+// ref: Holoholo.Rpc.RaidTicketSettingsProto
+message RaidTicketSettingsProto {
+	bool consume_raid_ticket_upon_battle_start = 1;
 }
 
 // ref: Holoholo.Rpc.RaidTicketsProto
@@ -17848,21 +17886,6 @@ message WithWinRaidStatusProto {
 //------------------------------
 //----- Begin rpc -----
 
-// ref: Niantic.Platform.Rpc.ClientUpgradeRequestProto
-message ClientUpgradeRequestProto {
-	string version = 1;
-	ClientOperatingSystem operating_system = 2;
-}
-
-// ref: Niantic.Platform.Rpc.ClientUpgradeResponseProto
-message ClientUpgradeResponseProto {
-	bool needs_upgrade = 1;
-}
-
-//----- End rpc -----
-//------------------------------
-//----- Begin rpc -----
-
 // ref: Niantic.Rpc.ClientWeatherProto
 message ClientWeatherProto {
 	int64 s2_cell_id = 1;
@@ -17918,6 +17941,21 @@ message WeatherAlertProto {
 
 	Severity severity = 1;
 	bool warn_weather = 2;
+}
+
+//----- End rpc -----
+//------------------------------
+//----- Begin rpc -----
+
+// ref: Niantic.Platform.Rpc.ClientUpgradeRequestProto
+message ClientUpgradeRequestProto {
+	string version = 1;
+	ClientOperatingSystem operating_system = 2;
+}
+
+// ref: Niantic.Platform.Rpc.ClientUpgradeResponseProto
+message ClientUpgradeResponseProto {
+	bool needs_upgrade = 1;
 }
 
 //----- End rpc -----
@@ -18146,83 +18184,6 @@ message CommonTelemetryShopView {
 	string root_store_page_session_id = 5;
 }
 
-// ref: Niantic.Platform.Analytics.Telemetry.Distribution
-message Distribution {
-	// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions/BucketTypeOneofCase
-	//oneof BucketType {
-		//none = 0;
-		//linear_buckets = 1;
-		//exponential_buckets = 2;
-		//explicit_buckets = 3;
-	//}
-
-	// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions
-	message BucketOptions {
-		// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions/BucketTypeOneofCase
-		//oneof BucketType {
-			//none = 0;
-			//linear_buckets = 1;
-			//exponential_buckets = 2;
-			//explicit_buckets = 3;
-		//}
-
-		// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions/Types/ExplicitBuckets
-		message ExplicitBuckets {
-			repeated int64 bounds = 1;
-		}
-
-		// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions/Types/ExponentialBuckets
-		message ExponentialBuckets {
-			int64 num_finite_buckets = 1;
-			float growth_factor = 2;
-			float scale = 3;
-		}
-
-		// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions/Types/LinearBuckets
-		message LinearBuckets {
-			int64 num_finite_buckets = 1;
-			int64 width = 2;
-			int64 offset = 3;
-		}
-
-		LinearBuckets linear_buckets = 1;
-		ExponentialBuckets exponential_buckets = 2;
-		ExplicitBuckets explicit_buckets = 3;
-	}
-
-	// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions/Types/ExplicitBuckets
-	message ExplicitBuckets {
-		repeated int64 bounds = 1;
-	}
-
-	// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions/Types/ExponentialBuckets
-	message ExponentialBuckets {
-		int64 num_finite_buckets = 1;
-		float growth_factor = 2;
-		float scale = 3;
-	}
-
-	// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/BucketOptions/Types/LinearBuckets
-	message LinearBuckets {
-		int64 num_finite_buckets = 1;
-		int64 width = 2;
-		int64 offset = 3;
-	}
-
-	// ref: Niantic.Platform.Analytics.Telemetry.Distribution/Types/Range
-	message Range {
-		int64 min = 1;
-		int64 max = 2;
-	}
-
-	int64 count = 1;
-	float mean = 2;
-	double sum_of_squared_deviation = 3;
-	Range range = 4;
-	BucketOptions bucket_options = 5;
-	repeated int64 bucket_counts = 6;
-}
-
 // ref: Niantic.Platform.Analytics.Telemetry.InGamePurchaseDetails
 message InGamePurchaseDetails {
 	string ingame_type = 1;
@@ -18238,33 +18199,6 @@ message PlatformCommonFilterProto {
 	string locale_country_code = 4;
 	string locale_language_code = 5;
 	double sampling_probability = 6;
-}
-
-// ref: Niantic.Platform.Analytics.Telemetry.PlatformMetricData
-message PlatformMetricData {
-	// ref: Niantic.Platform.Analytics.Telemetry.PlatformMetricData/DatapointValueOneofCase
-	//oneof DatapointValue {
-		//none = 0;
-		//long_value = 2;
-		//double_value = 3;
-		//boolean_value = 4;
-		//distribution = 5;
-	//}
-
-	// ref: Niantic.Platform.Analytics.Telemetry.PlatformMetricData/Types/Kind
-	enum Kind {
-		UNSPECIFIED = 0;
-		GAUGE = 1;
-		DELTA = 2;
-		CUMULATIVE = 3;
-	}
-
-	TelemetryCommon common_telemetry = 1;
-	int64 long_value = 2;
-	double double_value = 3;
-	bool boolean_value = 4;
-	Distribution distribution = 5;
-	Kind metric_kind = 6;
 }
 
 // ref: Niantic.Platform.Analytics.Telemetry.PlatformServerData
@@ -18336,14 +18270,6 @@ message ServerRecordMetadata {
 	int64 server_timestamp_ms = 5;
 }
 
-// ref: Niantic.Platform.Analytics.Telemetry.TelemetryCommon
-message TelemetryCommon {
-	int64 timestamp = 1;
-	string correlation_vector = 2;
-	string event_id = 3;
-	int64 client_timestamp_ms = 4;
-}
-
 //----- End telemetry -----
 //------------------------------
 //----- Begin token -----
@@ -18376,6 +18302,39 @@ message SuperAwesomeTokenProto {
 message AdDetails {
 	ImageTextCreativeProto image_text_creative = 1;
 	bytes encrypted_ad_token = 2;
+}
+
+// ref: Niantic.Vasa.CollectAdIdRequestProto
+message CollectAdIdRequestProto {
+	// ref: Niantic.Vasa.CollectAdIdRequestProto/Types/CollectionFailedReason
+	enum CollectionFailedReason {
+		REASON_INVALID = 0;
+		AD_TRACKING_DISABLED = 1;
+	}
+
+	// ref: Niantic.Vasa.CollectAdIdRequestProto/Types/DevicePlatform
+	enum DevicePlatform {
+		PLATFORM_INVALID = 0;
+		ANDROID = 1;
+		IOS = 2;
+	}
+
+	string user_id = 1;
+	string ad_id = 2;
+	DevicePlatform device_platform = 3;
+	CollectionFailedReason failed_reason = 4;
+	uint64 timestamp_ms = 5;
+}
+
+// ref: Niantic.Vasa.CollectAdIdResponseProto
+message CollectAdIdResponseProto {
+	// ref: Niantic.Vasa.CollectAdIdResponseProto/Types/Status
+	enum Status {
+		INVALID = 0;
+		SUCCESS = 1;
+		ERROR = 2;
+	}
+
 }
 
 // ref: Niantic.Vasa.ImageTextCreativeProto
