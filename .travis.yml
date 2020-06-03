@@ -15,6 +15,6 @@ install:
   - popd
   - export PATH=/tmp/bin:$PATH
 script:
-  - ./compile.py python --generate_desc --include_imports --include_source_info
+  - ./compile.py cpp #--generate_desc --include_imports --include_source_info
   - clang-format-3.8 -i -style file $(find src -name "*.proto")
   - git diff --exit-code
