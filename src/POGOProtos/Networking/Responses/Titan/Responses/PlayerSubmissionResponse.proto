@@ -4,6 +4,7 @@ package POGOProtos.Networking.Responses.Titan;
 message PlayerSubmissionResponse {
 	Status status = 1;
 	string submission_id = 2;
+	repeated string messages = 3;
 
 	enum Status {
 		STATUS_UNSPECIFIED = 0;
@@ -14,5 +15,6 @@ message PlayerSubmissionResponse {
 		NOT_AVAILABLE = 5;
 		INVALID_INPUT = 6;
 		MISSING_IMAGE = 7;
+		DISTANCE_VALIDATION_FAILED = 8;
 	}
 }

@@ -48,6 +48,7 @@ import "POGOProtos/Settings/PokemonBulkUpgradeSettings.proto";
 import "POGOProtos/Settings/ArMappingSettings.proto";
 import "POGOProtos/Settings/RaidInviteFriendsSettings.proto";
 import "POGOProtos/Settings/DailyEncounterGlobalSettings.proto";
+import "POGOProtos/Settings/RaidTicketSettings.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
@@ -101,4 +102,5 @@ message GlobalSettings {
 	.POGOProtos.Settings.ArMappingSettings ar_mapping_settings = 52;
 	.POGOProtos.Settings.RaidInviteFriendsSettings raid_invite_friends_settings = 53;
 	.POGOProtos.Settings.DailyEncounterGlobalSettings daily_encounter_settings = 54;
+	.POGOProtos.Settings.RaidTicketSettings raid_ticket_settings = 55;
 }

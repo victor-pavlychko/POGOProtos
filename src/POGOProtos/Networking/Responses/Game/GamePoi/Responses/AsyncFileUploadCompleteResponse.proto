@@ -1,8 +1,11 @@
 syntax = "proto3";
 package POGOProtos.Networking.Responses.Game.GamePoi.Responses;
 
+import "POGOProtos/Enums/PlayerSubmissionType.proto";
+
 message AsyncFileUploadCompleteResponse {
 	ErrorStatus error = 1;
+	.POGOProtos.Enums.PlayerSubmissionType submission_type = 2;
 
 	enum ErrorStatus {
 		UNSET = 0;

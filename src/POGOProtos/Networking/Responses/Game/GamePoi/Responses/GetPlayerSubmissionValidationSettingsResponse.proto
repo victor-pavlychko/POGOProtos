@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses.Game.GamePoi.Responses;
+
+message GetPlayerSubmissionValidationSettingsResponse {
+	repeated string banned_metadata_text = 1;
+}

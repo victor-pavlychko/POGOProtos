@@ -16,4 +16,5 @@ message Raid {
 	int64 completed_battle_ms = 10;
 	int32 num_friend_invites = 11;
 	bool is_remote = 12;
+	bool consumed_ticket = 13;
 }

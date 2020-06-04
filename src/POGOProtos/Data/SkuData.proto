@@ -11,6 +11,7 @@ message SkuData {
 	repeated SkuPresentationData presentation_data = 7;
 	int64 enabled_window_start_ms = 8;
 	int64 enabled_window_end_ms = 9;
+	string subscription_id = 10;
 
 	enum SkuPaymentType {
 		UNSET = 0;

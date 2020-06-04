@@ -10,4 +10,7 @@ enum GameIapAction {
 	REDEEM_APPLE_RECEIPT = 310101;                // Implemented
 	REDEEM_DESKTOP_RECEIPT = 310102;              // ???
 	REDEEM_SAMSUNG_RECEIPT = 310103;              // Implemented
+	GET_AVAILABLE_SUBSCRIPTIONS = 310200;         // ???
+	GET_ACTIVE_SUBSCRIPTIONS = 310201;            // ??? CollectAdIdMessage???
+	REDEEM_GOOGLE_SUBSCRIPTION = 310202;          // ???
 }
