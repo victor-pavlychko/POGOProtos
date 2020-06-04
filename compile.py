@@ -331,7 +331,7 @@ args = parser.parse_args()
 
 protoc_path = args.protoc_path
 src_path = os.path.join(os.path.dirname(__file__), 'src')
-out_path = os.path.abspath(args.out_path + '/' + args.language)
+out_path = os.path.abspath(args.out_path)
 
 if os.path.exists(out_path):
     shutil.rmtree(out_path)
