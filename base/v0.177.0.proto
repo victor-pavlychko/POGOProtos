@@ -241,6 +241,63 @@ enum PokedexGenerationId {
 	POKEDEX_GENERATION_ID_MELTAN = 1001;
 }
 
+message SetInGameCurrencyExchangeRateOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+
+	Status status = 1;
+}
+
+message SetInGameCurrencyExchangeRateProto {
+	string in_game_currency = 1;
+	string fiat_currency = 2;
+	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
+}
+
+message SetInGameCurrencyExchangeRateTrackingProto {
+	string in_game_currency = 1;
+	string fiat_currency = 2;
+	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
+	string status = 4;
+}
+
+message SkuContentProto {
+	string item_type = 1;
+	int32 quantity = 2;
+}
+
+message SkuDataProto {
+	enum SkuPaymentType {
+		UNSET = 0;
+		THIRD_PARTY = 1;
+		IN_GAME = 2;
+	}
+
+	string id = 1;
+	bool is_enabled = 2;
+	repeated SkuContentProto content = 3;
+	repeated SkuPriceProto price = 4;
+	SkuPaymentType payment_type = 5;
+	int64 last_modified_timestamp_ms = 6;
+	repeated SkuPresentationDataProto presentation_data = 7;
+	int64 enabled_window_start_ms = 8;
+	int64 enabled_window_end_ms = 9;
+	string subscription_id = 10;
+}
+
+message SkuPresentationDataProto {
+	string key = 1;
+	string value = 2;
+}
+
+message SkuPriceProto {
+	string currency_type = 1;
+	int32 price = 2;
+}
+
 enum IncidentDynamicStringTypes {
 	INCIDENT_DYNAMIC_STRING_TYPES_GREETING = 0;
 	INCIDENT_DYNAMIC_STRING_TYPES_CHALLENGE = 1;
@@ -475,8 +532,8 @@ message FitnessMetricsProto {
 message FitnessReportProto {
 	int32 day_offset_from_now = 1;
 	int32 week_offset_from_now = 2;
-	FitnessMetricsProto metrics = 10;
-	bytes game_data = 11;
+	FitnessMetricsProto metrics = 3;
+	bytes game_data = 4;
 }
 
 message GeofenceMetadata {
@@ -610,29 +667,6 @@ message RedeemPasscodeResponseProto {
 	string passcode = 4;
 }
 
-message SetInGameCurrencyExchangeRateOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-	}
-
-	Status status = 1;
-}
-
-message SetInGameCurrencyExchangeRateProto {
-	string in_game_currency = 1;
-	string fiat_currency = 2;
-	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
-}
-
-message SetInGameCurrencyExchangeRateTrackingProto {
-	string in_game_currency = 1;
-	string fiat_currency = 2;
-	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
-	string status = 4;
-}
-
 message SfidaAuthToken {
 	bytes response_token = 1;
 	string sfida_id = 2;
@@ -739,39 +773,6 @@ message SfidaUpdateResponse {
 	string pokestop_id = 8;
 	EncounterType encounter_type = 9;
 	int32 pokedex_number = 10;
-}
-
-message SkuContentProto {
-	string item_type = 1;
-	int32 quantity = 2;
-}
-
-message SkuDataProto {
-	enum SkuPaymentType {
-		UNSET = 0;
-		THIRD_PARTY = 1;
-		IN_GAME = 2;
-	}
-
-	string id = 1;
-	bool is_enabled = 2;
-	repeated SkuContentProto content = 3;
-	repeated SkuPriceProto price = 4;
-	SkuPaymentType payment_type = 5;
-	int64 last_modified_timestamp_ms = 6;
-	repeated SkuPresentationDataProto presentation_data = 7;
-	int64 enabled_window_start_ms = 8;
-	int64 enabled_window_end_ms = 9;
-}
-
-message SkuPresentationDataProto {
-	string key = 1;
-	string value = 2;
-}
-
-message SkuPriceProto {
-	string currency_type = 1;
-	int32 price = 2;
 }
 
 message UpdateAdventureSyncFitnessResponseProto {
@@ -889,6 +890,397 @@ message WeatherSettingsProto {
 	StaleWeatherSettingsProto stale_settings = 4;
 }
 
+enum TitanPoiImageType {
+	TITAN_POI_IMAGE_TYPE_UNSET = 0;
+	TITAN_POI_IMAGE_TYPE_MAIN = 1;
+	TITAN_POI_IMAGE_TYPE_SURROUNDING = 2;
+}
+
+enum RouteVisitOrder {
+	TITAN_ROUTE_VISIT_ORDER_ROUTE_VISIT_ORDER_UNSPECIFIED = 0;
+	TITAN_ROUTE_VISIT_ORDER_IN_ORDER = 1;
+	TITAN_ROUTE_VISIT_ORDER_UNORDERED = 2;
+	TITAN_ROUTE_VISIT_ORDER_REVERSIBLE = 3;
+}
+
+message TitanAsyncFileUploadCompleteOutProto {
+	enum ErrorStatus {
+		UNSET = 0;
+		SERVER_UPDATE_FAILED = 1;
+		MISSING_SUBMISSION_ID = 2;
+		MISSING_SUBMISSION_TYPE = 3;
+		MISSING_UPLOAD_STATUS = 4;
+	}
+
+	ErrorStatus error = 1;
+	PlayerSubmissionTypeProto submission_type = 2;
+}
+
+message TitanAsyncFileUploadCompleteProto {
+	enum Status {
+		UNSET = 0;
+		UPLOAD_DONE = 1;
+		UPLOAD_FAILED = 2;
+	}
+
+	string submission_id = 1;
+	Status upload_status = 3;
+}
+
+message TitanAvailableSubmissionsPerSubmissionType {
+	PlayerSubmissionTypeProto player_submission_type = 1;
+	int32 submissions_left = 2;
+	int32 min_player_level = 3;
+	bool is_feature_enabled = 4;
+	int64 time_window_for_submissions_limit_ms = 5;
+	int32 max_poi_distance_in_meters = 6;
+	repeated string blacklisted_os = 7;
+	repeated string blacklisted_device_id = 8;
+}
+
+message TitanGenerateGmapSignedUrlOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_NOT_VALID = 2;
+		ERROR_RATE_LIMITED = 3;
+		ERROR_MISSING_INPUT = 4;
+		ERROR_UNKNOWN = 5;
+	}
+
+	Result result = 1;
+	string signed_url = 2;
+}
+
+message TitanGenerateGmapSignedUrlProto {
+	double latitude = 1;
+	double longitude = 2;
+	int32 width = 3;
+	int32 height = 4;
+	int32 zoom = 5;
+	string language_code = 6;
+	string country_code = 7;
+	string map_style = 8;
+	string map_type = 9;
+	string icon_params = 10;
+}
+
+message TitanGetAvailableSubmissionsOutProto {
+	int32 submissions_left = 1;
+	int32 min_player_level = 2;
+	bool has_valid_email = 3;
+	bool is_feature_enabled = 4;
+	int64 time_window_for_submissions_limit_ms = 5;
+	int32 max_poi_distance_in_meters = 6;
+	repeated string blacklisted_os = 7;
+	repeated TitanAvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
+	repeated string blacklisted_device_id = 9;
+}
+
+message TitanGetAvailableSubmissionsProto {
+	PlayerSubmissionTypeProto submission_type = 1;
+	repeated PlayerSubmissionTypeProto submission_types = 2;
+}
+
+message TitanGetGmapSettingsOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_MISSING_CONFIG = 3;
+		ERROR_NO_UNIQUE_ID = 4;
+	}
+
+	Result result = 1;
+	string gmap_template_url = 2;
+	int32 max_poi_distance_in_meters = 3;
+}
+
+message TitanGetGmapSettingsProto {
+}
+
+message TitanGetGrapeshotUploadUrlOutProto {
+	enum Status {
+		UNSET = 0;
+		FAILURE = 1;
+		SUCCESS = 2;
+		MISSING_FILE_CONTEXTS = 3;
+		DUPLICATE_FILE_CONTEXT = 4;
+		MISSING_SUBMISSION_TYPE = 5;
+		MISSING_SUBMISSION_ID = 6;
+	}
+
+	Status status = 1;
+	map<string, TitanGrapeshotUploadingDataProto> file_context_to_grapeshot_data = 4;
+}
+
+message TitanGetGrapeshotUploadUrlProto {
+	PlayerSubmissionTypeProto submission_type = 1;
+	string submission_id = 2;
+	repeated string file_upload_context = 3;
+}
+
+message TitanGetPlayerSubmissionValidationSettingsOutProto {
+	repeated string banned_metadata_text = 1;
+}
+
+message TitanGetPlayerSubmissionValidationSettingsProto {
+}
+
+message TitanGetUploadUrlOutProto {
+	enum Status {
+		UNSET = 0;
+		FAILURES = 1;
+		SUCCESS = 2;
+		MISSING_IMAGE_CONTEXTS = 3;
+		DUPLICATE_IMAGE_CONTEXTS = 4;
+	}
+
+	Status status = 1;
+	string signed_url = 2;
+	string supporting_image_signed_url = 3;
+	map<string, string> context_signed_urls = 4;
+}
+
+message TitanGetUploadUrlProto {
+	string user_id = 1;
+	string game_unique_id = 2;
+	PlayerSubmissionTypeProto submission_type = 3;
+	string submission_id = 4;
+	repeated string image_contexts = 5;
+}
+
+message TitanGrapeshotAuthenticationDataProto {
+	string authorization = 1;
+	string date = 2;
+}
+
+message TitanGrapeshotChunkDataProto {
+	string chunk_file_path = 1;
+	uint32 chunk_number = 2;
+	TitanGrapeshotAuthenticationDataProto upload_authentication = 3;
+	TitanGrapeshotAuthenticationDataProto delete_authentication = 4;
+}
+
+message TitanGrapeshotComposeDataProto {
+	string target_file_path = 1;
+	TitanGrapeshotAuthenticationDataProto authentication = 2;
+}
+
+message TitanGrapeshotUploadingDataProto {
+	repeated TitanGrapeshotChunkDataProto chunk_data = 1;
+	TitanGrapeshotComposeDataProto compose_data = 2;
+	string gcs_bucket = 3;
+	int32 number_of_chunks = 4;
+}
+
+message TitanPlayerSubmissionResponseProto {
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+		MISSING_IMAGE = 7;
+		DISTANCE_VALIDATION_FAILED = 8;
+	}
+
+	Status status = 1;
+	string submission_id = 2;
+	repeated string messages = 3;
+}
+
+message TitanPoiPlayerMetadataTelemetry {
+	string device_model = 1;
+	string device_os = 2;
+}
+
+message TitanPoiSubmissionPhotoUploadErrorTelemetry {
+	enum PoiSubmissionPhotoUploadErrorIds {
+		UNSET = 0;
+		POI_PHOTO_UPLOAD_ERROR = 1;
+		POI_PHOTO_UPLOAD_TIMEOUT = 2;
+	}
+
+	PoiSubmissionPhotoUploadErrorIds error_id = 1;
+	TitanPoiImageType image_type = 2;
+	string error_message = 3;
+}
+
+message TitanPoiSubmissionTelemetry {
+	enum PoiCameraStepIds {
+		UNSET = 0;
+		ENTER = 1;
+		RETAKE = 2;
+		CONFIRM = 3;
+		EXIT = 4;
+	}
+
+	enum PoiSubmissionGuiEventId {
+		UNKNOWN = 0;
+		POI_NOMINATION_ENTER = 1;
+		POI_TUTORIAL_COMPLETE = 2;
+		POI_MAP_CHANGEDVIEW_MAP = 3;
+		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
+		POI_MAP_CENTER_LOCATION = 5;
+		POI_LOCATION_SET = 6;
+		POI_PHOTO_CAMERA_ENTER = 7;
+		POI_PHOTO_CAMERA_EXIT = 8;
+		POI_TITLE_ENTERED = 9;
+		POI_DESCRIPTION_ENTER = 10;
+		POI_DETAILS_CONFIRM = 11;
+		POI_SUPPORTINGINFO_ENTER = 12;
+		POI_SUBMIT_BUTTON_HIT = 13;
+		POI_EXIT_BUTTON_HIT = 14;
+	}
+
+	PoiSubmissionGuiEventId gui_event_id = 1;
+	TitanPoiImageType image_type = 2;
+	PoiCameraStepIds camera_step_id = 3;
+}
+
+message TitanPoiVideoSubmissionMetadataProto {
+	string poi_id = 1;
+	PlatformLocationE6Proto location = 2;
+	int32 player_level = 3;
+}
+
+message TitanPortalCurationImageResult {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FEATURE_DISABLED = 2;
+		ALREADY_UPLOADED = 3;
+		IMAGE_NOT_FOUND = 4;
+		IMAGE_TOO_BIG = 5;
+		IMAGE_NOT_SERVABLE = 6;
+		PORTAL_NOT_FOUND = 7;
+	}
+
+}
+
+message TitanRouteCheckpointProto {
+	TitanRoutePoiProto poi = 1;
+	TitanRouteGuidepostProto guidepost = 2;
+}
+
+message TitanRouteGuidepostProto {
+	PlatformLocationE6Proto location = 1;
+}
+
+message TitanRouteImageProto {
+	string image_id = 1;
+	string image_context = 2;
+}
+
+message TitanRoutePoiProto {
+	string poi_id = 1;
+}
+
+message TitanSubmitNewPoiOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		INTERNAL_ERROR = 3;
+		TOO_MANY_RECENT_SUBMISSIONS = 4;
+		INVALID_INPUT = 5;
+		MINOR = 6;
+		NOT_AVAILABLE = 7;
+	}
+
+	Status status = 1;
+	string submission_id = 2;
+	repeated string messages = 3;
+}
+
+message TitanSubmitNewPoiProto {
+	string title = 1;
+	string long_description = 2;
+	int32 lat_e6 = 4;
+	int32 lng_e6 = 5;
+	string supporting_statement = 14;
+	bool async_file_upload = 18;
+}
+
+message TitanSubmitNewRouteOutProto {
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+		MISSING_IMAGE = 7;
+		INVALID_CHECKPOINT = 8;
+		INVALID_ROUTE_LENGTH = 9;
+		DUPLICATE_CHECKPOINTS = 10;
+		ALREADY_SUBMITTED = 11;
+	}
+
+	Status status = 1;
+}
+
+message TitanSubmitNewRouteProto {
+	string route_submission_id = 1;
+	string title = 2;
+	string description = 3;
+	RouteVisitOrder visit_order = 5;
+	repeated TitanRouteCheckpointProto checkpoints = 6;
+	TitanRouteImageProto main_image = 7;
+}
+
+message TitanSubmitPoiImageProto {
+	string poi_id = 1;
+	bool async_file_upload = 2;
+}
+
+message TitanSubmitPoiLocationUpdateProto {
+	string poi_id = 1;
+	PlatformLocationE6Proto location = 2;
+}
+
+message TitanSubmitPoiTakedownRequestProto {
+	string poi_id = 1;
+	PoiInvalidReason invalid_reason = 2;
+}
+
+message TitanSubmitPoiTextMetadataUpdateProto {
+	string poi_id = 1;
+	string title = 2;
+	string description = 3;
+}
+
+message TitanSubmitSponsorPoiLocationUpdateProto {
+	string poi_id = 1;
+	PlatformLocationE6Proto location = 2;
+}
+
+message TitanSubmitSponsorPoiReportProto {
+	string poi_id = 1;
+	SponsorPoiInvalidReason invalid_reason = 2;
+	string additional_details = 3;
+}
+
+message TitanTitanGameClientTelemetryOmniProto {
+	TitanPoiSubmissionTelemetry poi_submission_telemetry = 1;
+	TitanPoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
+	TitanPoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
+	PlatformPlatformServerData server_data = 1001;
+}
+
+message TitanUploadPoiPhotoByUrlOutProto {
+	PlatformPortalCurationImageResult.Result status = 1;
+}
+
+message TitanUploadPoiPhotoByUrlProto {
+	string request_id = 1;
+	string image_url = 2;
+}
+
 enum GameAccountRegistryActions {
 	PLATFORM_GAME_ACCOUNT_REGISTRY_ACTIONS_UNKNOWN_GAME_ACCOUNT_REGISTRY_ACTION = 0;
 	PLATFORM_GAME_ACCOUNT_REGISTRY_ACTIONS_ADD_LOGIN_ACTION = 600000;
@@ -927,6 +1319,9 @@ enum GameIapAction {
 	PLATFORM_GAME_IAP_ACTION_REDEEM_APPLE_RECEIPT = 310101;
 	PLATFORM_GAME_IAP_ACTION_REDEEM_DESKTOP_RECEIPT = 310102;
 	PLATFORM_GAME_IAP_ACTION_REDEEM_SAMSUNG_RECEIPT = 310103;
+	PLATFORM_GAME_IAP_ACTION_GET_AVAILABLE_SUBSCRIPTIONS = 310200;
+	PLATFORM_GAME_IAP_ACTION_GET_ACTIVE_SUBSCRIPTIONS = 310201;
+	PLATFORM_GAME_IAP_ACTION_REDEEM_GOOGLE_SUBSCRIPTION = 310202;
 }
 
 enum GameLocationAwarenessAction {
@@ -962,6 +1357,7 @@ enum GamePoiAction {
 	PLATFORM_GAME_POI_ACTION_ADD_NEW_POI = 620000;
 	PLATFORM_GAME_POI_ACTION_GET_AVAILABLE_SUBMISSIONS = 620001;
 	PLATFORM_GAME_POI_ACTION_GET_SIGNED_URL_FOR_PHOTO_UPLOAD = 620002;
+	PLATFORM_GAME_POI_ACTION_GET_PLAYER_SUBMISSION_VALIDATION_SETTINGS = 620003;
 	PLATFORM_GAME_POI_ACTION_SUBMIT_POI_IMAGE = 620100;
 	PLATFORM_GAME_POI_ACTION_SUBMIT_POI_TEXT_METADATA_UPDATE = 620101;
 	PLATFORM_GAME_POI_ACTION_SUBMIT_POI_LOCATION_UPDATE = 620102;
@@ -1942,385 +2338,6 @@ message PlatformUploadPoiPhotoByUrlOutProto {
 }
 
 message PlatformUploadPoiPhotoByUrlProto {
-	string request_id = 1;
-	string image_url = 2;
-}
-
-enum TitanPoiImageType {
-	TITAN_POI_IMAGE_TYPE_UNSET = 0;
-	TITAN_POI_IMAGE_TYPE_MAIN = 1;
-	TITAN_POI_IMAGE_TYPE_SURROUNDING = 2;
-}
-
-enum RouteVisitOrder {
-	TITAN_ROUTE_VISIT_ORDER_ROUTE_VISIT_ORDER_UNSPECIFIED = 0;
-	TITAN_ROUTE_VISIT_ORDER_IN_ORDER = 1;
-	TITAN_ROUTE_VISIT_ORDER_UNORDERED = 2;
-	TITAN_ROUTE_VISIT_ORDER_REVERSIBLE = 3;
-}
-
-message TitanAsyncFileUploadCompleteOutProto {
-	enum ErrorStatus {
-		UNSET = 0;
-		SERVER_UPDATE_FAILED = 1;
-		MISSING_SUBMISSION_ID = 2;
-		MISSING_SUBMISSION_TYPE = 3;
-		MISSING_UPLOAD_STATUS = 4;
-	}
-
-	ErrorStatus error = 1;
-}
-
-message TitanAsyncFileUploadCompleteProto {
-	enum Status {
-		UNSET = 0;
-		UPLOAD_DONE = 1;
-		UPLOAD_FAILED = 2;
-	}
-
-	string submission_id = 1;
-	PlayerSubmissionTypeProto submission_type = 2;
-	Status upload_status = 3;
-}
-
-message TitanAvailableSubmissionsPerSubmissionType {
-	PlayerSubmissionTypeProto player_submission_type = 1;
-	int32 submissions_left = 2;
-	int32 min_player_level = 3;
-	bool is_feature_enabled = 4;
-	int64 time_window_for_submissions_limit_ms = 5;
-	int32 max_poi_distance_in_meters = 6;
-	repeated string blacklisted_os = 7;
-}
-
-message TitanGenerateGmapSignedUrlOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_PLAYER_NOT_VALID = 2;
-		ERROR_RATE_LIMITED = 3;
-		ERROR_MISSING_INPUT = 4;
-		ERROR_UNKNOWN = 5;
-	}
-
-	Result result = 1;
-	string signed_url = 2;
-}
-
-message TitanGenerateGmapSignedUrlProto {
-	double latitude = 1;
-	double longitude = 2;
-	int32 width = 3;
-	int32 height = 4;
-	int32 zoom = 5;
-	string language_code = 6;
-	string country_code = 7;
-	string map_style = 8;
-	string map_type = 9;
-	string icon_params = 10;
-}
-
-message TitanGetAvailableSubmissionsOutProto {
-	int32 submissions_left = 1;
-	int32 min_player_level = 2;
-	bool has_valid_email = 3;
-	bool is_feature_enabled = 4;
-	int64 time_window_for_submissions_limit_ms = 5;
-	int32 max_poi_distance_in_meters = 6;
-	repeated string blacklisted_os = 7;
-	repeated TitanAvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
-}
-
-message TitanGetAvailableSubmissionsProto {
-	PlayerSubmissionTypeProto submission_type = 1;
-	repeated PlayerSubmissionTypeProto submission_types = 2;
-}
-
-message TitanGetGmapSettingsOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_MISSING_CONFIG = 3;
-		ERROR_NO_UNIQUE_ID = 4;
-	}
-
-	Result result = 1;
-	string gmap_template_url = 2;
-	int32 max_poi_distance_in_meters = 3;
-}
-
-message TitanGetGmapSettingsProto {
-}
-
-message TitanGetGrapeshotUploadUrlOutProto {
-	enum Status {
-		UNSET = 0;
-		FAILURE = 1;
-		SUCCESS = 2;
-		MISSING_FILE_CONTEXTS = 3;
-		DUPLICATE_FILE_CONTEXT = 4;
-		MISSING_SUBMISSION_TYPE = 5;
-		MISSING_SUBMISSION_ID = 6;
-	}
-
-	Status status = 1;
-	map<string, TitanGrapeshotUploadingDataProto> file_context_to_grapeshot_data = 4;
-}
-
-message TitanGetGrapeshotUploadUrlProto {
-	PlayerSubmissionTypeProto submission_type = 1;
-	string submission_id = 2;
-	repeated string file_upload_context = 3;
-}
-
-message TitanGetUploadUrlOutProto {
-	enum Status {
-		UNSET = 0;
-		FAILURES = 1;
-		SUCCESS = 2;
-		MISSING_IMAGE_CONTEXTS = 3;
-		DUPLICATE_IMAGE_CONTEXTS = 4;
-	}
-
-	Status status = 1;
-	string signed_url = 2;
-	string supporting_image_signed_url = 3;
-	map<string, string> context_signed_urls = 4;
-}
-
-message TitanGetUploadUrlProto {
-	string user_id = 1;
-	string game_unique_id = 2;
-	PlayerSubmissionTypeProto submission_type = 3;
-	string submission_id = 4;
-	repeated string image_contexts = 5;
-}
-
-message TitanGrapeshotAuthenticationDataProto {
-	string authorization = 1;
-	string date = 2;
-}
-
-message TitanGrapeshotChunkDataProto {
-	string chunk_file_path = 1;
-	uint32 chunk_number = 2;
-	TitanGrapeshotAuthenticationDataProto upload_authentication = 3;
-	TitanGrapeshotAuthenticationDataProto delete_authentication = 4;
-}
-
-message TitanGrapeshotComposeDataProto {
-	string target_file_path = 1;
-	TitanGrapeshotAuthenticationDataProto authentication = 2;
-}
-
-message TitanGrapeshotUploadingDataProto {
-	repeated TitanGrapeshotChunkDataProto chunk_data = 1;
-	TitanGrapeshotComposeDataProto compose_data = 2;
-	string gcs_bucket = 3;
-	int32 number_of_chunks = 4;
-}
-
-message TitanPlayerSubmissionResponseProto {
-	enum Status {
-		STATUS_UNSPECIFIED = 0;
-		SUCCESS = 1;
-		INTERNAL_ERROR = 2;
-		TOO_MANY_RECENT_SUBMISSIONS = 3;
-		MINOR = 4;
-		NOT_AVAILABLE = 5;
-		INVALID_INPUT = 6;
-		MISSING_IMAGE = 7;
-	}
-
-	Status status = 1;
-	string submission_id = 2;
-}
-
-message TitanPoiPlayerMetadataTelemetry {
-	string device_model = 1;
-	string device_os = 2;
-}
-
-message TitanPoiSubmissionPhotoUploadErrorTelemetry {
-	enum PoiSubmissionPhotoUploadErrorIds {
-		UNSET = 0;
-		POI_PHOTO_UPLOAD_ERROR = 1;
-		POI_PHOTO_UPLOAD_TIMEOUT = 2;
-	}
-
-	PoiSubmissionPhotoUploadErrorIds error_id = 1;
-	TitanPoiImageType image_type = 2;
-	string error_message = 3;
-}
-
-message TitanPoiSubmissionTelemetry {
-	enum PoiCameraStepIds {
-		UNSET = 0;
-		ENTER = 1;
-		RETAKE = 2;
-		CONFIRM = 3;
-		EXIT = 4;
-	}
-
-	enum PoiSubmissionGuiEventId {
-		UNKNOWN = 0;
-		POI_NOMINATION_ENTER = 1;
-		POI_TUTORIAL_COMPLETE = 2;
-		POI_MAP_CHANGEDVIEW_MAP = 3;
-		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
-		POI_MAP_CENTER_LOCATION = 5;
-		POI_LOCATION_SET = 6;
-		POI_PHOTO_CAMERA_ENTER = 7;
-		POI_PHOTO_CAMERA_EXIT = 8;
-		POI_TITLE_ENTERED = 9;
-		POI_DESCRIPTION_ENTER = 10;
-		POI_DETAILS_CONFIRM = 11;
-		POI_SUPPORTINGINFO_ENTER = 12;
-		POI_SUBMIT_BUTTON_HIT = 13;
-		POI_EXIT_BUTTON_HIT = 14;
-	}
-
-	PoiSubmissionGuiEventId gui_event_id = 1;
-	TitanPoiImageType image_type = 2;
-	PoiCameraStepIds camera_step_id = 3;
-}
-
-message TitanPoiVideoSubmissionMetadataProto {
-	string poi_id = 1;
-	PlatformLocationE6Proto location = 2;
-	int32 player_level = 3;
-}
-
-message TitanPortalCurationImageResult {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		FEATURE_DISABLED = 2;
-		ALREADY_UPLOADED = 3;
-		IMAGE_NOT_FOUND = 4;
-		IMAGE_TOO_BIG = 5;
-		IMAGE_NOT_SERVABLE = 6;
-		PORTAL_NOT_FOUND = 7;
-	}
-
-}
-
-message TitanRouteCheckpointProto {
-	TitanRoutePoiProto poi = 1;
-	TitanRouteGuidepostProto guidepost = 2;
-}
-
-message TitanRouteGuidepostProto {
-	PlatformLocationE6Proto location = 1;
-}
-
-message TitanRouteImageProto {
-	string image_id = 1;
-	string image_context = 2;
-}
-
-message TitanRoutePoiProto {
-	string poi_id = 1;
-}
-
-message TitanSubmitNewPoiOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-		INTERNAL_ERROR = 3;
-		TOO_MANY_RECENT_SUBMISSIONS = 4;
-		INVALID_INPUT = 5;
-		MINOR = 6;
-		NOT_AVAILABLE = 7;
-	}
-
-	Status status = 1;
-	string submission_id = 2;
-}
-
-message TitanSubmitNewPoiProto {
-	string title = 1;
-	string long_description = 2;
-	int32 lat_e6 = 4;
-	int32 lng_e6 = 5;
-	string supporting_statement = 14;
-	bool async_file_upload = 18;
-}
-
-message TitanSubmitNewRouteOutProto {
-	enum Status {
-		STATUS_UNSPECIFIED = 0;
-		SUCCESS = 1;
-		INTERNAL_ERROR = 2;
-		TOO_MANY_RECENT_SUBMISSIONS = 3;
-		MINOR = 4;
-		NOT_AVAILABLE = 5;
-		INVALID_INPUT = 6;
-		MISSING_IMAGE = 7;
-		INVALID_CHECKPOINT = 8;
-		INVALID_ROUTE_LENGTH = 9;
-		DUPLICATE_CHECKPOINTS = 10;
-		ALREADY_SUBMITTED = 11;
-	}
-
-	Status status = 1;
-}
-
-message TitanSubmitNewRouteProto {
-	string route_submission_id = 1;
-	string title = 2;
-	string description = 3;
-	RouteVisitOrder visit_order = 5;
-	repeated TitanRouteCheckpointProto checkpoints = 6;
-	TitanRouteImageProto main_image = 7;
-}
-
-message TitanSubmitPoiImageProto {
-	string poi_id = 1;
-	bool async_file_upload = 2;
-}
-
-message TitanSubmitPoiLocationUpdateProto {
-	string poi_id = 1;
-	PlatformLocationE6Proto location = 2;
-}
-
-message TitanSubmitPoiTakedownRequestProto {
-	string poi_id = 1;
-	PoiInvalidReason invalid_reason = 2;
-}
-
-message TitanSubmitPoiTextMetadataUpdateProto {
-	string poi_id = 1;
-	string title = 2;
-	string description = 3;
-}
-
-message TitanSubmitSponsorPoiLocationUpdateProto {
-	string poi_id = 1;
-	PlatformLocationE6Proto location = 2;
-}
-
-message TitanSubmitSponsorPoiReportProto {
-	string poi_id = 1;
-	SponsorPoiInvalidReason invalid_reason = 2;
-	string additional_details = 3;
-}
-
-message TitanTitanGameClientTelemetryOmniProto {
-	TitanPoiSubmissionTelemetry poi_submission_telemetry = 1;
-	TitanPoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
-	TitanPoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
-	PlatformPlatformServerData server_data = 1001;
-}
-
-message TitanUploadPoiPhotoByUrlOutProto {
-	PlatformPortalCurationImageResult.Result status = 1;
-}
-
-message TitanUploadPoiPhotoByUrlProto {
 	string request_id = 1;
 	string image_url = 2;
 }
@@ -5446,6 +5463,7 @@ message ArMappingSettingsProto {
 	int32 ardk_desired_accuracy_mm = 11;
 	int32 ardk_update_distance_mm = 12;
 	int32 max_pending_upload_kilobytes = 13;
+	bool enable_sponsor_poi_scan = 14;
 }
 
 message ArMappingTelemetryProto {
@@ -5476,6 +5494,13 @@ message ArMappingTelemetryProto {
 		START_UPLOAD_SETTINGS = 13;
 		UPLOAD_SUCCESS = 14;
 		OPT_IN_LEARN_MORE = 15;
+		EXIT_FROM_PREVIEW = 16;
+		SUBMIT_POI_AR_VIDEO_METADATA_FAIL = 17;
+		UPLOAD_FAILURE = 18;
+		UPLOAD_LATER_WIFI_PROMPT = 19;
+		CLEAR_SCANS = 20;
+		OPEN_INFO_PANEL = 21;
+		RESCAN_FROM_PREVIEW = 22;
 	}
 
 	ArMappingEventId ar_mapping_telemetry_id = 1;
@@ -9470,6 +9495,7 @@ message GlobalSettingsProto {
 	ArMappingSettingsProto ar_mapping_settings = 52;
 	RaidInviteFriendsSettingsProto raid_invite_friends_settings = 53;
 	DailyEncounterGlobalSettingsProto daily_encounter_settings = 54;
+	RaidTicketSettingsProto raid_ticket_settings = 55;
 }
 
 message GmtSettingsProto {
@@ -14062,6 +14088,7 @@ message RaidProto {
 	int64 completed_battle_ms = 10;
 	int32 num_friend_invites = 11;
 	bool is_remote = 12;
+	bool consumed_ticket = 13;
 }
 
 message RaidRewardsLogEntry {
@@ -14093,6 +14120,10 @@ message RaidTicketProto {
 	string ticket_id = 1;
 	Item item = 2;
 	ExclusiveTicketInfoProto exclusive_info = 4;
+}
+
+message RaidTicketSettingsProto {
+	bool consume_raid_ticket_upon_battle_start = 1;
 }
 
 message RaidTicketsProto {
@@ -15783,15 +15814,6 @@ message WithWinGymBattleStatusProto {
 message WithWinRaidStatusProto {
 }
 
-message PlatformClientUpgradeRequestProto {
-	string version = 1;
-	ClientOperatingSystem operating_system = 2;
-}
-
-message PlatformClientUpgradeResponseProto {
-	bool needs_upgrade = 1;
-}
-
 message ClientWeatherProto {
 	int64 s2_cell_id = 1;
 	DisplayWeatherProto display_weather = 2;
@@ -15840,6 +15862,15 @@ message WeatherAlertProto {
 
 	Severity severity = 1;
 	bool warn_weather = 2;
+}
+
+message PlatformClientUpgradeRequestProto {
+	string version = 1;
+	ClientOperatingSystem operating_system = 2;
+}
+
+message PlatformClientUpgradeResponseProto {
+	bool needs_upgrade = 1;
 }
 
 message PasscodeRedemptionFlowRequest {
@@ -16019,58 +16050,6 @@ message PlatformCommonTelemetryShopView {
 	string root_store_page_session_id = 5;
 }
 
-message PlatformDistribution {
-	message BucketOptions {
-		message ExplicitBuckets {
-			repeated int64 bounds = 1;
-		}
-
-		message ExponentialBuckets {
-			int64 num_finite_buckets = 1;
-			float growth_factor = 2;
-			float scale = 3;
-		}
-
-		message LinearBuckets {
-			int64 num_finite_buckets = 1;
-			int64 width = 2;
-			int64 offset = 3;
-		}
-
-		LinearBuckets linear_buckets = 1;
-		ExponentialBuckets exponential_buckets = 2;
-		ExplicitBuckets explicit_buckets = 3;
-	}
-
-	message ExplicitBuckets {
-		repeated int64 bounds = 1;
-	}
-
-	message ExponentialBuckets {
-		int64 num_finite_buckets = 1;
-		float growth_factor = 2;
-		float scale = 3;
-	}
-
-	message LinearBuckets {
-		int64 num_finite_buckets = 1;
-		int64 width = 2;
-		int64 offset = 3;
-	}
-
-	message Range {
-		int64 min = 1;
-		int64 max = 2;
-	}
-
-	int64 count = 1;
-	float mean = 2;
-	double sum_of_squared_deviation = 3;
-	Range range = 4;
-	BucketOptions bucket_options = 5;
-	repeated int64 bucket_counts = 6;
-}
-
 message PlatformInGamePurchaseDetails {
 	string ingame_type = 1;
 	int64 ingame_price = 2;
@@ -16084,22 +16063,6 @@ message PlatformPlatformCommonFilterProto {
 	string locale_country_code = 4;
 	string locale_language_code = 5;
 	double sampling_probability = 6;
-}
-
-message PlatformPlatformMetricData {
-	enum Kind {
-		UNSPECIFIED = 0;
-		GAUGE = 1;
-		DELTA = 2;
-		CUMULATIVE = 3;
-	}
-
-	TelemetryCommon common_telemetry = 1;
-	int64 long_value = 2;
-	double double_value = 3;
-	bool boolean_value = 4;
-	Distribution distribution = 5;
-	Kind metric_kind = 6;
 }
 
 message PlatformPlatformServerData {
@@ -16164,13 +16127,6 @@ message PlatformServerRecordMetadata {
 	int64 server_timestamp_ms = 5;
 }
 
-message PlatformTelemetryCommon {
-	int64 timestamp = 1;
-	string correlation_vector = 2;
-	string event_id = 3;
-	int64 client_timestamp_ms = 4;
-}
-
 message PlatformAppleToken {
 	string id_token = 1;
 }
@@ -16190,6 +16146,34 @@ message PlatformSuperAwesomeTokenProto {
 message AdDetails {
 	ImageTextCreativeProto image_text_creative = 1;
 	bytes encrypted_ad_token = 2;
+}
+
+message CollectAdIdRequestProto {
+	enum CollectionFailedReason {
+		REASON_INVALID = 0;
+		AD_TRACKING_DISABLED = 1;
+	}
+
+	enum DevicePlatform {
+		PLATFORM_INVALID = 0;
+		ANDROID = 1;
+		IOS = 2;
+	}
+
+	string user_id = 1;
+	string ad_id = 2;
+	DevicePlatform device_platform = 3;
+	CollectionFailedReason failed_reason = 4;
+	uint64 timestamp_ms = 5;
+}
+
+message CollectAdIdResponseProto {
+	enum Status {
+		INVALID = 0;
+		SUCCESS = 1;
+		ERROR = 2;
+	}
+
 }
 
 message ImageTextCreativeProto {
