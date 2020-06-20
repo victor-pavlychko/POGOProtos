@@ -22645,6 +22645,52 @@ message VasaClientAction {
 
 }
 
+message AssetDigestDecoderTool {
+	repeated AssetDigestEntry digest = 1;
+	uint64 timestamp_ms = 2;
+	Result result = 3;
+	int32 page_offset = 4;
+	enum Result {
+		RESULT_UNSET = 0;
+		RESULT_SUCCESS = 1;
+		RESULT_PAGE = 2;
+		RESULT_RETRY = 3;
+	}
+
+	message AssetDigestEntry {
+		string asset_id = 1;
+		string bundle_name = 2;
+		int64 version = 3;
+		fixed32 checksum = 4;
+		int32 size = 5;
+		bytes key = 6;
+	}
+
+}
+
+message GameMasterDecoderTool {
+	Result result = 1;
+	repeated ClientGameMasterTemplate template = 2;
+	repeated string deleted_template = 3;
+	uint64 batch_id = 4;
+	int32 page_offset = 5;
+	repeated int32 experiment_id = 6;
+	enum Result {
+		RESULT_UNSET = 0;
+		RESULT_COMPLETE = 1;
+		RESULT_MORE_RESULTS = 2;
+		RESULT_BATCH_ID_NOT_LIVE = 3;
+		RESULT_INVALID_BASIS_BATCH_ID = 4;
+		RESULT_WRONG_EXPERIMENTS = 5;
+	}
+
+	message ClientGameMasterTemplate {
+		string template_id = 1;
+		ONNCJBKOAKD data = 2;
+	}
+
+}
+
 message AuthInfo {
 	string provider = 1;
 	JWT token = 2;
