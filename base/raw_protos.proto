@@ -24940,28 +24940,3 @@ message VasaClientAction {
 
 //----- End vasa -----
 //------------------------------
-//----- Begin Optimize Dump File's -----
-
-message AuthInfo {
-	string provider = 1;
-	JWT token = 2;
-	AuthOptions options = 3;
-
-	message JWT {
-		string contents = 1;
-		int32 unknown2 = 2;
-	}
-
-	message AuthOptions {
-		bool prevent_account_creation = 1;
-	}
-}
-
-message AuthTicket {
-	bytes start = 1;
-	uint64 expire_timestamp_ms = 2;
-	bytes end = 3;
-}
-
-//----- End Optimize Dump File's -----
-//------------------------------
