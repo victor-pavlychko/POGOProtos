@@ -8,6 +8,8 @@ POGOProtos [![Build Status](https://travis-ci.org/Furtif/POGOProtos.svg?branch=m
 
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
+### ![alt text][1.1] DEPRECATED ![alt text][1.1]
+``` 
 ### Implemented messages types
  - [``Global``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
  - [``Social``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Social/SocialAction.proto)
@@ -34,12 +36,15 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``Titan``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Titan)
  - [``Vasa``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Vasa/VasaClientAction.proto#L5)
 
+```
+
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
 | Version      | API           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.51.5       |  [0.179.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.177.1.proto)       | Obfuscated      |  Protocol Buffers v3.12.3       |
+| 2.51.5       |  [0.177.1](https://github.com/Furtif/POGOProtos/blob/master/base/v0.177.1.proto)       | Compatible      |  Protocol Buffers v3.12.3       |
+| 2.52.0       |  [0.179.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.179.0.proto)       | Obfuscated      |  Protocol Buffers v3.12.3       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
