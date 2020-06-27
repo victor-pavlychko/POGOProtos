@@ -179,7 +179,7 @@ message ProxyResponseProto {
 
 // ref: PokemonGoPlus.CentralState
 enum CentralState {
-	UNKNOWN = 0;
+	UNKNOWN_ab09 = 0;
 	RESETTING = 1;
 	UNSUPPORTED = 2;
 	UNAUTHORIZED = 3;
@@ -203,7 +203,7 @@ enum NotificationType {
 
 // ref: PokemonGoPlus.PluginState
 enum PluginState {
-	UNKNOWN = 0;
+	UNKNOWN_a654 = 0;
 	INITIALIZED = 1;
 	STARTING = 2;
 	STARTED = 3;
@@ -376,7 +376,7 @@ enum BPNEAFKDBFD {
 // ref: CICBELJLIID
 enum CICBELJLIID {
 	NPC = 0;
-	POKESTOP = 1;
+	POKESTOP_a535 = 1;
 	BALLOON = 2;
 }
 
@@ -399,7 +399,7 @@ enum CNOMHMACLAC {
 
 // ref: EAFBDDFPNIC
 enum EAFBDDFPNIC {
-	GYM = 0;
+	GYM_a29a = 0;
 	CHECKPOINT = 1;
 }
 
@@ -412,11 +412,11 @@ enum EAKDILIIGLB {
 	PROFILE = 4;
 	SETTINGS = 5;
 	SHOP_FROM_MAP = 6;
-	GYM = 7;
-	POKESTOP = 8;
+	GYM_aea8 = 7;
+	POKESTOP_aea8 = 8;
 	RESEARCH = 9;
 	COMPASS = 10;
-	NEARBY = 11;
+	NEARBY_aea8 = 11;
 }
 
 // ref: EFDAPGMCHLL
@@ -530,12 +530,12 @@ enum ELHMKIDEGLL {
 // ref: ENJAPGDNAKG
 enum ENJAPGDNAKG {
 	NORMAL = 0;
-	VICTORY = 1;
+	VICTORY_a69b = 1;
 }
 
 // ref: EOPFDBBDIAJ
 enum EOPFDBBDIAJ {
-	NONE = 0;
+	NONE_a86e = 0;
 	INVASION_GRUNT = 1;
 	INVASION_LEADER = 2;
 	INVASION_GIOVANNI = 3;
@@ -592,7 +592,7 @@ enum FKLIFLGJHBF {
 
 // ref: FKNLKHMBCPG
 enum FKNLKHMBCPG {
-	UNSET = 0;
+	UNSET_a9c4 = 0;
 	MAIN = 1;
 	SURROUNDING = 2;
 }
@@ -972,8 +972,8 @@ enum GFJDJIMMCFG {
 
 // ref: GGADDHAACMC
 enum GGADDHAACMC {
-	V1 = 0;
-	V2 = 1;
+	V1_a2e3 = 0;
+	V2_a2e3 = 1;
 }
 
 // ref: GGMHFHFOJPA
@@ -981,7 +981,7 @@ enum GGMHFHFOJPA {
 	GREETING = 0;
 	CHALLENGE = 1;
 	DEFEAT = 2;
-	VICTORY = 3;
+	VICTORY_a150 = 3;
 	PRE_BATTLE = 4;
 	POST_BATTLE = 5;
 	ITEMS_STOLEN = 6;
@@ -996,9 +996,9 @@ enum GGMHFHFOJPA {
 
 // ref: GJPOBAPMAJI
 enum GJPOBAPMAJI {
-	UNSET = 0;
-	V1 = 1;
-	V2 = 2;
+	UNSET_a3ab = 0;
+	V1_a3ab = 1;
+	V2_a3ab = 2;
 }
 
 // ref: GLIPIJCMBAJ
@@ -1013,7 +1013,7 @@ enum GOHLGCIFFHK {
 	SOLO = 1;
 	QR_CODE = 2;
 	FRIENDS = 3;
-	NEARBY = 4;
+	NEARBY_ae33 = 4;
 	SOLO_INVASION = 5;
 	VS_SEEKER = 6;
 }
@@ -1056,7 +1056,7 @@ enum HDNBNCGJFBC {
 	CONVERSATION = 2;
 	ENCOUNTER_ENTER = 3;
 	ENCOUNTER_LEAVE = 4;
-	AVATAR_SELECTION = 5;
+	AVATAR_SELECTION_a58a = 5;
 	AVATAR_GENDER = 6;
 	AVATAR_GENDER_CHOSEN = 7;
 	AVATAR_HEAD_CHOSEN = 8;
@@ -1119,7 +1119,7 @@ enum HLKONKNPGCN {
 
 // ref: HOBIHENNNCD
 enum HOBIHENNNCD {
-	UNKNOWN = 0;
+	UNKNOWN_a72f = 0;
 	POKECOIN = 1;
 	STARDUST = 2;
 }
@@ -1503,19 +1503,19 @@ enum JHDGELDNKBP {
 	GET_SERVER_TIME = 11;
 	GET_LOCAL_TIME = 12;
 	FORT_SEARCH = 101;
-	ENCOUNTER = 102;
-	CATCH_POKEMON = 103;
+	ENCOUNTER_a222 = 102;
+	CATCH_POKEMON_a222 = 103;
 	FORT_DETAILS = 104;
 	GET_MAP_OBJECTS = 106;
 	FORT_DEPLOY_POKEMON = 110;
 	FORT_RECALL_POKEMON = 111;
-	RELEASE_POKEMON = 112;
+	RELEASE_POKEMON_a222 = 112;
 	USE_ITEM_POTION = 113;
 	USE_ITEM_CAPTURE = 114;
 	USE_ITEM_FLEE = 115;
 	USE_ITEM_REVIVE = 116;
 	GET_PLAYER_PROFILE = 121;
-	EVOLVE_POKEMON = 125;
+	EVOLVE_POKEMON_a222 = 125;
 	GET_HATCHED_EGGS = 126;
 	ENCOUNTER_TUTORIAL_COMPLETE = 127;
 	LEVEL_UP_REWARDS = 128;
@@ -1531,7 +1531,7 @@ enum JHDGELDNKBP {
 	DISK_ENCOUNTER = 145;
 	UPGRADE_POKEMON = 147;
 	SET_FAVORITE_POKEMON = 148;
-	NICKNAME_POKEMON = 149;
+	NICKNAME_POKEMON_a222 = 149;
 	EQUIP_BADGE = 150;
 	SET_CONTACT_SETTINGS = 151;
 	SET_BUDDY_POKEMON = 152;
@@ -1702,14 +1702,14 @@ enum JOKPGHMNCLN {
 
 // ref: KALEDNPIKKG
 enum KALEDNPIKKG {
-	NONE = 0;
+	NONE_a950 = 0;
 	PORTRAIT = 1;
 	DIALOG = 2;
 }
 
 // ref: KCBCFFEJMLF
 enum KCBCFFEJMLF {
-	ENCOUNTER = 0;
+	ENCOUNTER_a3a7 = 0;
 }
 
 // ref: KDFMMLKBLJK
@@ -1722,7 +1722,7 @@ enum KDFMMLKBLJK {
 
 // ref: KDKIHCJMIMK
 enum KDKIHCJMIMK {
-	UNSET = 0;
+	UNSET_ae0e = 0;
 	TEAM_BLUE = 1;
 	TEAM_RED = 2;
 	TEAM_YELLOW = 3;
@@ -1847,12 +1847,12 @@ enum KNEHONAODOH {
 	PROFILE_PAGE = 6;
 	SHOPPING_PAGE = 7;
 	ENCOUNTER_POKEMON = 8;
-	CATCH_POKEMON = 9;
+	CATCH_POKEMON_a683 = 9;
 	DEPLOY_POKEMON = 10;
 	FEED_POKEMON = 11;
-	EVOLVE_POKEMON = 12;
-	RELEASE_POKEMON = 13;
-	NICKNAME_POKEMON = 14;
+	EVOLVE_POKEMON_a683 = 12;
+	RELEASE_POKEMON_a683 = 13;
+	NICKNAME_POKEMON_a683 = 14;
 	NEWS_PAGE = 15;
 	ITEM = 16;
 	BATTLE_PARTY = 17;
@@ -1890,14 +1890,14 @@ enum KNEHONAODOH {
 
 // ref: KPKAKJAEKAL
 enum KPKAKJAEKAL {
-	NONE = 0;
+	NONE_a892 = 0;
 	ARSTANDARD = 1;
 	ARPLUS = 2;
 }
 
 // ref: LDPBJOJDOLG
 enum LDPBJOJDOLG {
-	UNKNOWN = 0;
+	UNKNOWN_a5c6 = 0;
 	CATEGORY = 1;
 	SORT = 2;
 	SALE = 3;
@@ -1905,9 +1905,9 @@ enum LDPBJOJDOLG {
 
 // ref: LEHLNCPCFKP
 enum LEHLNCPCFKP {
-	ADD = 0;
+	ADD_a9e9 = 0;
 	MODIFY = 1;
-	REMOVE = 2;
+	REMOVE_a9e9 = 2;
 	PREDICTED_MODIFY = 3;
 	PREDICTED_REMOVE = 4;
 	ROLLED_BACK_MODIFY = 5;
@@ -1924,11 +1924,11 @@ enum LEPDLNAOMCK {
 
 // ref: LGMDKFAKHAE
 enum LGMDKFAKHAE {
-	NONE = 0;
+	NONE_a60c = 0;
 	START = 1;
-	NICE = 2;
-	GREAT = 3;
-	EXCELLENT = 4;
+	NICE_a60c = 2;
+	GREAT_a60c = 3;
+	EXCELLENT_a60c = 4;
 }
 
 // ref: LIPLKDBHAEF
@@ -1969,7 +1969,7 @@ enum LMFBCPPEJCD {
 
 // ref: LNKDCMPAOKI
 enum LNKDCMPAOKI {
-	SUCCESS = 0;
+	SUCCESS_ac50 = 0;
 	FAILURE = 1;
 }
 
@@ -1997,52 +1997,52 @@ enum MAIMCBBGNLN {
 
 // ref: MBBOBBPODKH
 enum MBBOBBPODKH {
-	NONE = 0;
-	GYM_REMOVAL = 1;
-	POKEMON_HUNGRY = 2;
-	EXCLUSIVE_RAID_INVITE = 3;
-	EXCLUSIVE_RAID_CANCELLATION = 4;
-	SHARED_EXCLUSIVE_RAID_INVITE = 5;
-	GIFTBOX_INCOMING = 6;
-	GIFTBOX_DELIVERED = 7;
-	FRIENDSHIP_MILESTONE_REWARD = 8;
-	GYM_BATTLE_FRIENDSHIP_INCREMENT = 9;
-	BGMODE_EGG_HATCH = 10;
-	BGMODE_BUDDY_CANDY = 11;
-	BGMODE_WEEKLY_FITNESS_REPORT = 12;
-	BGMODE_OFF_SESSION_DISTANCE = 13;
-	BGMODE_POI_PROXIMITY = 14;
-	BGMODE_NAMED_BUDDY_CANDY = 15;
-	APP_BADGE_ONLY = 16;
-	COMBAT_CHALLENGE_OPENED = 17;
-	LUCKY_FRIEND = 18;
-	BUDDY_HUNGRY = 19;
-	BUDDY_FOUND_GIFT = 20;
-	BUDDY_AFFECTION_LEVEL_MILESTONE = 21;
-	BUDDY_AFFECTION_WALKING = 22;
-	BUDDY_AFFECTION_CARE = 23;
-	BUDDY_AFFECTION_BATTLE = 24;
-	BUDDY_AFFECTION_PHOTO = 25;
-	BUDDY_AFFECTION_POI = 26;
-	BUDDY_ATTRACTIVE_POI = 27;
+	NONE_a670 = 0;
+	GYM_REMOVAL_a670 = 1;
+	POKEMON_HUNGRY_a670 = 2;
+	EXCLUSIVE_RAID_INVITE_a670 = 3;
+	EXCLUSIVE_RAID_CANCELLATION_a670 = 4;
+	SHARED_EXCLUSIVE_RAID_INVITE_a670 = 5;
+	GIFTBOX_INCOMING_a670 = 6;
+	GIFTBOX_DELIVERED_a670 = 7;
+	FRIENDSHIP_MILESTONE_REWARD_a670 = 8;
+	GYM_BATTLE_FRIENDSHIP_INCREMENT_a670 = 9;
+	BGMODE_EGG_HATCH_a670 = 10;
+	BGMODE_BUDDY_CANDY_a670 = 11;
+	BGMODE_WEEKLY_FITNESS_REPORT_a670 = 12;
+	BGMODE_OFF_SESSION_DISTANCE_a670 = 13;
+	BGMODE_POI_PROXIMITY_a670 = 14;
+	BGMODE_NAMED_BUDDY_CANDY_a670 = 15;
+	APP_BADGE_ONLY_a670 = 16;
+	COMBAT_CHALLENGE_OPENED_a670 = 17;
+	LUCKY_FRIEND_a670 = 18;
+	BUDDY_HUNGRY_a670 = 19;
+	BUDDY_FOUND_GIFT_a670 = 20;
+	BUDDY_AFFECTION_LEVEL_MILESTONE_a670 = 21;
+	BUDDY_AFFECTION_WALKING_a670 = 22;
+	BUDDY_AFFECTION_CARE_a670 = 23;
+	BUDDY_AFFECTION_BATTLE_a670 = 24;
+	BUDDY_AFFECTION_PHOTO_a670 = 25;
+	BUDDY_AFFECTION_POI_a670 = 26;
+	BUDDY_ATTRACTIVE_POI_a670 = 27;
 	FRIEND_INVITE_RECEIVED = 28;
 	FRIEND_INVITE_ACCEPTED = 29;
-	COMBAT_VS_SEEKER_CHARGED = 30;
-	COMBAT_COMPETITIVE_SEASON_END = 31;
-	BUDDY_AFFECTION_ATTRACTIVE_POI = 32;
-	POI_PASSCODE_REDEEMED = 33;
-	NO_EGGS_INCUBATING = 34;
-	RETENTION_UNOPENED_GIFTS = 39;
-	RETENTION_STARPIECE = 40;
-	RETENTION_INCENSE = 41;
-	RETENTION_LUCKY_EGG = 42;
-	RETENTION_ADVSYNC_REWARDS = 43;
-	RETENTION_EGGS_NOT_INCUBATING = 44;
-	RETENTION_POWER_WALK = 45;
-	RETENTION_FUN_WITH_FRIENDS = 46;
-	BUDDY_REMOTE_GIFT = 47;
-	BGMODE_BUDDY_REMOTE_GIFT = 48;
-	REMOTE_RAID_INVITATION = 49;
+	COMBAT_VS_SEEKER_CHARGED_a670 = 30;
+	COMBAT_COMPETITIVE_SEASON_END_a670 = 31;
+	BUDDY_AFFECTION_ATTRACTIVE_POI_a670 = 32;
+	POI_PASSCODE_REDEEMED_a670 = 33;
+	NO_EGGS_INCUBATING_a670 = 34;
+	RETENTION_UNOPENED_GIFTS_a670 = 39;
+	RETENTION_STARPIECE_a670 = 40;
+	RETENTION_INCENSE_a670 = 41;
+	RETENTION_LUCKY_EGG_a670 = 42;
+	RETENTION_ADVSYNC_REWARDS_a670 = 43;
+	RETENTION_EGGS_NOT_INCUBATING_a670 = 44;
+	RETENTION_POWER_WALK_a670 = 45;
+	RETENTION_FUN_WITH_FRIENDS_a670 = 46;
+	BUDDY_REMOTE_GIFT_a670 = 47;
+	BGMODE_BUDDY_REMOTE_GIFT_a670 = 48;
+	REMOTE_RAID_INVITATION_a670 = 49;
 }
 
 // ref: MBOHFBGCKOA
@@ -2129,7 +2129,7 @@ enum MGAGEFBKNAG {
 
 // ref: MLBDHNKHCLC
 enum MLBDHNKHCLC {
-	UNKNOWN = 0;
+	UNKNOWN_a3f2 = 0;
 	PERMISSION_DENIED = -2;
 	NOT_ADDED = -1;
 	ADDED = 1;
@@ -2137,21 +2137,21 @@ enum MLBDHNKHCLC {
 
 // ref: MMGMJAABKLN
 enum MMGMJAABKLN {
-	NONE = 0;
-	VICTORY = 1;
+	NONE_a98a = 0;
+	VICTORY_a98a = 1;
 }
 
 // ref: MMMKAFHIEEK
 enum MMMKAFHIEEK {
-	DEFAULT = 0;
-	NICE = 1;
-	GREAT = 2;
-	EXCELLENT = 3;
+	DEFAULT_aedc = 0;
+	NICE_aedc = 1;
+	GREAT_aedc = 2;
+	EXCELLENT_aedc = 3;
 }
 
 // ref: MOJECJKJNAH
 enum MOJECJKJNAH {
-	DEFAULT = 0;
+	DEFAULT_aa05 = 0;
 	SHOULDER = 1;
 	ENEMY_POKEMON_FOCUS = 2;
 	MY_POKEMON_FOCUS = 3;
@@ -2182,12 +2182,12 @@ enum MPCHFGHFPNN {
 // ref: MPFOBGAAMAH
 enum MPFOBGAAMAH {
 	LEGAL_SCREEN = 0;
-	AVATAR_SELECTION = 1;
+	AVATAR_SELECTION_a81e = 1;
 	ACCOUNT_CREATION = 2;
 	POKEMON_CAPTURE = 3;
 	NAME_SELECTION = 4;
 	POKEMON_BERRY = 5;
-	USE_ITEM = 6;
+	USE_ITEM_a81e = 6;
 	FIRST_TIME_EXPERIENCE_COMPLETE = 7;
 	POKESTOP_TUTORIAL = 8;
 	GYM_TUTORIAL = 9;
@@ -2256,8 +2256,8 @@ enum NCNJDICEHPO {
 // ref: NDACCJFKFDC
 enum NDACCJFKFDC {
 	UNDEFINED_BATTLE_PARTY_EVENT = 0;
-	ADD = 1;
-	REMOVE = 2;
+	ADD_a53a = 1;
+	REMOVE_a53a = 2;
 	GYM_BATTLE = 3;
 	RAID_BATTLE = 4;
 	BATTLE_POKEMON_CHANGED = 5;
@@ -2265,7 +2265,7 @@ enum NDACCJFKFDC {
 
 // ref: NGIDBPJEMMJ
 enum NGIDBPJEMMJ {
-	UNSET = 0;
+	UNSET_a6a9 = 0;
 	OFF = 1;
 	AR_STANDARD = 2;
 	AR_PLUS = 3;
@@ -2274,7 +2274,7 @@ enum NGIDBPJEMMJ {
 // ref: NJIILACBHOA
 enum NJIILACBHOA {
 	UNDEFINED_ITEM_EVENT = 0;
-	USE_ITEM = 1;
+	USE_ITEM_aad1 = 1;
 	RECYCLE_ITEM = 2;
 	UPDATE_ITEM_EQUIPPED = 3;
 }
@@ -3346,52 +3346,52 @@ enum OOLJMNJMMOC {
 // ref: PANENGEFPPO
 enum PANENGEFPPO {
 	unset__notification_category = 0;
-	GYM_REMOVAL = 1;
-	POKEMON_HUNGRY = 2;
+	GYM_REMOVAL_a3cc = 1;
+	POKEMON_HUNGRY_a3cc = 2;
 	POKEMON_WON = 3;
-	EXCLUSIVE_RAID_INVITE = 4;
-	EXCLUSIVE_RAID_CANCELLATION = 5;
-	GIFTBOX_INCOMING = 6;
-	GIFTBOX_DELIVERED = 7;
-	FRIENDSHIP_MILESTONE_REWARD = 8;
-	GYM_BATTLE_FRIENDSHIP_INCREMENT = 9;
-	SHARED_EXCLUSIVE_RAID_INVITE = 10;
-	BGMODE_EGG_HATCH = 11;
-	BGMODE_BUDDY_CANDY = 12;
-	BGMODE_WEEKLY_FITNESS_REPORT = 13;
-	COMBAT_CHALLENGE_OPENED = 14;
-	BGMODE_OFF_SESSION_DISTANCE = 15;
-	BGMODE_POI_PROXIMITY = 16;
-	LUCKY_FRIEND = 17;
-	BGMODE_NAMED_BUDDY_CANDY = 18;
-	APP_BADGE_ONLY = 19;
-	COMBAT_VS_SEEKER_CHARGED = 20;
-	COMBAT_COMPETITIVE_SEASON_END = 21;
-	BUDDY_HUNGRY = 22;
-	BUDDY_FOUND_GIFT = 24;
-	BUDDY_AFFECTION_LEVEL_MILESTONE = 25;
-	BUDDY_AFFECTION_WALKING = 26;
-	BUDDY_AFFECTION_CARE = 27;
-	BUDDY_AFFECTION_BATTLE = 28;
-	BUDDY_AFFECTION_PHOTO = 29;
-	BUDDY_AFFECTION_POI = 30;
+	EXCLUSIVE_RAID_INVITE_a3cc = 4;
+	EXCLUSIVE_RAID_CANCELLATION_a3cc = 5;
+	GIFTBOX_INCOMING_a3cc = 6;
+	GIFTBOX_DELIVERED_a3cc = 7;
+	FRIENDSHIP_MILESTONE_REWARD_a3cc = 8;
+	GYM_BATTLE_FRIENDSHIP_INCREMENT_a3cc = 9;
+	SHARED_EXCLUSIVE_RAID_INVITE_a3cc = 10;
+	BGMODE_EGG_HATCH_a3cc = 11;
+	BGMODE_BUDDY_CANDY_a3cc = 12;
+	BGMODE_WEEKLY_FITNESS_REPORT_a3cc = 13;
+	COMBAT_CHALLENGE_OPENED_a3cc = 14;
+	BGMODE_OFF_SESSION_DISTANCE_a3cc = 15;
+	BGMODE_POI_PROXIMITY_a3cc = 16;
+	LUCKY_FRIEND_a3cc = 17;
+	BGMODE_NAMED_BUDDY_CANDY_a3cc = 18;
+	APP_BADGE_ONLY_a3cc = 19;
+	COMBAT_VS_SEEKER_CHARGED_a3cc = 20;
+	COMBAT_COMPETITIVE_SEASON_END_a3cc = 21;
+	BUDDY_HUNGRY_a3cc = 22;
+	BUDDY_FOUND_GIFT_a3cc = 24;
+	BUDDY_AFFECTION_LEVEL_MILESTONE_a3cc = 25;
+	BUDDY_AFFECTION_WALKING_a3cc = 26;
+	BUDDY_AFFECTION_CARE_a3cc = 27;
+	BUDDY_AFFECTION_BATTLE_a3cc = 28;
+	BUDDY_AFFECTION_PHOTO_a3cc = 29;
+	BUDDY_AFFECTION_POI_a3cc = 30;
 	BGMODE_BUDDY_FOUND_GIFT = 31;
-	BUDDY_ATTRACTIVE_POI = 32;
+	BUDDY_ATTRACTIVE_POI_a3cc = 32;
 	BGMODE_BUDDY_ATTRACTIVE_POI = 33;
-	BUDDY_AFFECTION_ATTRACTIVE_POI = 36;
-	POI_PASSCODE_REDEEMED = 37;
-	NO_EGGS_INCUBATING = 38;
-	RETENTION_UNOPENED_GIFTS = 39;
-	RETENTION_STARPIECE = 40;
-	RETENTION_INCENSE = 41;
-	RETENTION_LUCKY_EGG = 42;
-	RETENTION_ADVSYNC_REWARDS = 43;
-	RETENTION_EGGS_NOT_INCUBATING = 44;
-	RETENTION_POWER_WALK = 45;
-	RETENTION_FUN_WITH_FRIENDS = 46;
-	BUDDY_REMOTE_GIFT = 47;
-	BGMODE_BUDDY_REMOTE_GIFT = 48;
-	REMOTE_RAID_INVITATION = 49;
+	BUDDY_AFFECTION_ATTRACTIVE_POI_a3cc = 36;
+	POI_PASSCODE_REDEEMED_a3cc = 37;
+	NO_EGGS_INCUBATING_a3cc = 38;
+	RETENTION_UNOPENED_GIFTS_a3cc = 39;
+	RETENTION_STARPIECE_a3cc = 40;
+	RETENTION_INCENSE_a3cc = 41;
+	RETENTION_LUCKY_EGG_a3cc = 42;
+	RETENTION_ADVSYNC_REWARDS_a3cc = 43;
+	RETENTION_EGGS_NOT_INCUBATING_a3cc = 44;
+	RETENTION_POWER_WALK_a3cc = 45;
+	RETENTION_FUN_WITH_FRIENDS_a3cc = 46;
+	BUDDY_REMOTE_GIFT_a3cc = 47;
+	BGMODE_BUDDY_REMOTE_GIFT_a3cc = 48;
+	REMOTE_RAID_INVITATION_a3cc = 49;
 }
 
 // ref: PECOOLPEIBM
@@ -3406,13 +3406,13 @@ enum PECOOLPEIBM {
 
 // ref: PFAMHNOGPIE
 enum PFAMHNOGPIE {
-	SUCCESS = 0;
+	SUCCESS_ae14 = 0;
 	QUIT = 1;
 }
 
 // ref: PFKMKMIHCGP
 enum PFKMKMIHCGP {
-	NONE = 0;
+	NONE_afb4 = 0;
 	IDLE_01 = 1;
 	IDLE_02 = 2;
 	LAND = 3;
@@ -3620,10 +3620,26 @@ message AECFIPBPIGI {
 
 // ref: AEDJCFPOEMK
 message AEDJCFPOEMK {
+	// ref: AEDJCFPOEMK/<>c
+	message <>c_a24f {
+	}
+
+	// ref: AEDJCFPOEMK/CAPJOMHDLKL/JMNEFLHJOKN/<>c
+	message <>c_addf {
+	}
+
 	// ref: AEDJCFPOEMK/CAPJOMHDLKL
 	message CAPJOMHDLKL {
+		// ref: AEDJCFPOEMK/CAPJOMHDLKL/JMNEFLHJOKN/<>c
+		message <>c_addf {
+		}
+
 		// ref: AEDJCFPOEMK/CAPJOMHDLKL/JMNEFLHJOKN
 		message JMNEFLHJOKN {
+			// ref: AEDJCFPOEMK/CAPJOMHDLKL/JMNEFLHJOKN/<>c
+			message <>c_addf {
+			}
+
 			int32 ghlmfmiekpb = 1;
 			int32 ibiofcoedab = 2;
 			int32 dkmiehcjkhm = 3;
@@ -3635,6 +3651,10 @@ message AEDJCFPOEMK {
 
 	// ref: AEDJCFPOEMK/CAPJOMHDLKL/JMNEFLHJOKN
 	message JMNEFLHJOKN {
+		// ref: AEDJCFPOEMK/CAPJOMHDLKL/JMNEFLHJOKN/<>c
+		message <>c_addf {
+		}
+
 		int32 ghlmfmiekpb = 1;
 		int32 ibiofcoedab = 2;
 		int32 dkmiehcjkhm = 3;
@@ -4454,8 +4474,20 @@ message BEKFJJIBJAI {
 		FAILED_PLAYER_LEVEL_TOO_LOW = 6;
 	}
 
+	// ref: BEKFJJIBJAI/MHGHNIHJJGJ/JJCCKIDJHFD/<>c
+	message <>c_aa88 {
+	}
+
+	// ref: BEKFJJIBJAI/<>c
+	message <>c_af7e {
+	}
+
 	// ref: BEKFJJIBJAI/MHGHNIHJJGJ/JJCCKIDJHFD
 	message JJCCKIDJHFD {
+		// ref: BEKFJJIBJAI/MHGHNIHJJGJ/JJCCKIDJHFD/<>c
+		message <>c_aa88 {
+		}
+
 		int64 fllkfeihpem = 1;
 		float iibgomchpmo = 2;
 		int64 hbhbhpegjfc = 3;
@@ -4475,8 +4507,16 @@ message BEKFJJIBJAI {
 			FAILED_PLAYER_LEVEL_TOO_LOW = 6;
 		}
 
+		// ref: BEKFJJIBJAI/MHGHNIHJJGJ/JJCCKIDJHFD/<>c
+		message <>c_aa88 {
+		}
+
 		// ref: BEKFJJIBJAI/MHGHNIHJJGJ/JJCCKIDJHFD
 		message JJCCKIDJHFD {
+			// ref: BEKFJJIBJAI/MHGHNIHJJGJ/JJCCKIDJHFD/<>c
+			message <>c_aa88 {
+			}
+
 			int64 fllkfeihpem = 1;
 			float iibgomchpmo = 2;
 			int64 hbhbhpegjfc = 3;
@@ -4569,20 +4609,52 @@ message BGHEAEJNPEL {
 
 // ref: BGLONLGENCE
 message BGLONLGENCE {
+	// ref: BGLONLGENCE/NDCBLJKFHIF/HDKJAAKCBLF/<>c
+	message <>c_a1dc {
+	}
+
+	// ref: BGLONLGENCE/NDCBLJKFHIF/PBPPDOMLEJB/<>c
+	message <>c_a2c7 {
+	}
+
+	// ref: BGLONLGENCE/<>c
+	message <>c_ae00 {
+	}
+
 	// ref: BGLONLGENCE/NDCBLJKFHIF/HDKJAAKCBLF
 	message HDKJAAKCBLF {
+		// ref: BGLONLGENCE/NDCBLJKFHIF/HDKJAAKCBLF/<>c
+		message <>c_a1dc {
+		}
+
 		repeated CJMAELFGFEG gnccejocjgp = 1;
 	}
 
 	// ref: BGLONLGENCE/NDCBLJKFHIF
 	message NDCBLJKFHIF {
+		// ref: BGLONLGENCE/NDCBLJKFHIF/HDKJAAKCBLF/<>c
+		message <>c_a1dc {
+		}
+
+		// ref: BGLONLGENCE/NDCBLJKFHIF/PBPPDOMLEJB/<>c
+		message <>c_a2c7 {
+		}
+
 		// ref: BGLONLGENCE/NDCBLJKFHIF/HDKJAAKCBLF
 		message HDKJAAKCBLF {
+			// ref: BGLONLGENCE/NDCBLJKFHIF/HDKJAAKCBLF/<>c
+			message <>c_a1dc {
+			}
+
 			repeated CJMAELFGFEG gnccejocjgp = 1;
 		}
 
 		// ref: BGLONLGENCE/NDCBLJKFHIF/PBPPDOMLEJB
 		message PBPPDOMLEJB {
+			// ref: BGLONLGENCE/NDCBLJKFHIF/PBPPDOMLEJB/<>c
+			message <>c_a2c7 {
+			}
+
 			CJMAELFGFEG dlfhmjhklig = 1;
 			repeated PECOOLPEIBM lmlblhpldnb = 2;
 		}
@@ -4591,6 +4663,10 @@ message BGLONLGENCE {
 
 	// ref: BGLONLGENCE/NDCBLJKFHIF/PBPPDOMLEJB
 	message PBPPDOMLEJB {
+		// ref: BGLONLGENCE/NDCBLJKFHIF/PBPPDOMLEJB/<>c
+		message <>c_a2c7 {
+		}
+
 		CJMAELFGFEG dlfhmjhklig = 1;
 		repeated PECOOLPEIBM lmlblhpldnb = 2;
 	}
@@ -4688,8 +4764,20 @@ message BHDMNCNCCIO {
 
 // ref: BHHDFCFKFKK
 message BHHDFCFKFKK {
+	// ref: BHHDFCFKFKK/CMJAPLDHBNI/ALANINAIJMD/<>c
+	message <>c_a491 {
+	}
+
+	// ref: BHHDFCFKFKK/<>c
+	message <>c_a71d {
+	}
+
 	// ref: BHHDFCFKFKK/CMJAPLDHBNI/ALANINAIJMD
 	message ALANINAIJMD {
+		// ref: BHHDFCFKFKK/CMJAPLDHBNI/ALANINAIJMD/<>c
+		message <>c_a491 {
+		}
+
 		int64 lcekclicnop = 1;
 		float fmbipobeedf = 2;
 		int64 nhhflpkkmag = 3;
@@ -4698,8 +4786,16 @@ message BHHDFCFKFKK {
 
 	// ref: BHHDFCFKFKK/CMJAPLDHBNI
 	message CMJAPLDHBNI {
+		// ref: BHHDFCFKFKK/CMJAPLDHBNI/ALANINAIJMD/<>c
+		message <>c_a491 {
+		}
+
 		// ref: BHHDFCFKFKK/CMJAPLDHBNI/ALANINAIJMD
 		message ALANINAIJMD {
+			// ref: BHHDFCFKFKK/CMJAPLDHBNI/ALANINAIJMD/<>c
+			message <>c_a491 {
+			}
+
 			int64 lcekclicnop = 1;
 			float fmbipobeedf = 2;
 			int64 nhhflpkkmag = 3;
@@ -4886,14 +4982,14 @@ message BMNHCMBLDEH {
 message BNBIDNJNKLH {
 	// ref: BNBIDNJNKLH/MOPKBLIDFNE/OCFNEDOMGFN/CHLIANHEHNB
 	enum CHLIANHEHNB {
-		none = 0;
+		none_a8b0 = 0;
 		with_player_level = 3;
-		with_pokemon_cp_limit = 4;
-		with_pokemon_type = 5;
-		with_pokemon_category = 6;
-		pokemon_whitelist = 7;
-		pokemon_banlist = 8;
-		pokemon_caught_timestamp = 9;
+		with_pokemon_cp_limit_a8b0 = 4;
+		with_pokemon_type_a8b0 = 5;
+		with_pokemon_category_a8b0 = 6;
+		pokemon_whitelist_a8b0 = 7;
+		pokemon_banlist_a8b0 = 8;
+		pokemon_caught_timestamp_a8b0 = 9;
 	}
 
 	// ref: BNBIDNJNKLH/MOPKBLIDFNE/IABKHIMOEND
@@ -4911,13 +5007,13 @@ message BNBIDNJNKLH {
 
 	// ref: BNBIDNJNKLH/MOPKBLIDFNE/PKDENPOLDFC/JILKCPOOIFF
 	enum JILKCPOOIFF {
-		none = 0;
-		with_pokemon_cp_limit = 2;
-		with_pokemon_type = 3;
-		with_pokemon_category = 4;
-		pokemon_whitelist = 5;
-		pokemon_banlist = 6;
-		pokemon_caught_timestamp = 7;
+		none_a4f4 = 0;
+		with_pokemon_cp_limit_a4f4 = 2;
+		with_pokemon_type_a4f4 = 3;
+		with_pokemon_category_a4f4 = 4;
+		pokemon_whitelist_a4f4 = 5;
+		pokemon_banlist_a4f4 = 6;
+		pokemon_caught_timestamp_a4f4 = 7;
 	}
 
 	// ref: BNBIDNJNKLH/MOPKBLIDFNE/ODJCMAMDOFH
@@ -4927,20 +5023,60 @@ message BNBIDNJNKLH {
 		PREMIER = 2;
 	}
 
+	// ref: BNBIDNJNKLH/MOPKBLIDFNE/PKDENPOLDFC/<>c
+	message <>c_a1e6 {
+	}
+
+	// ref: BNBIDNJNKLH/<>c
+	message <>c_a32e {
+	}
+
+	// ref: BNBIDNJNKLH/MOPKBLIDFNE/CCAOHLKFFDD/<>c
+	message <>c_a400 {
+	}
+
+	// ref: BNBIDNJNKLH/MOPKBLIDFNE/JFKJCLPBGLH/<>c
+	message <>c_a7b3 {
+	}
+
+	// ref: BNBIDNJNKLH/MOPKBLIDFNE/OCFNEDOMGFN/<>c
+	message <>c_a8ca {
+	}
+
+	// ref: BNBIDNJNKLH/MOPKBLIDFNE/NCPAONGGNKA/<>c
+	message <>c_aaa1 {
+	}
+
+	// ref: BNBIDNJNKLH/MOPKBLIDFNE/BNJCNMALNLG/<>c
+	message <>c_ae0d {
+	}
+
 	// ref: BNBIDNJNKLH/MOPKBLIDFNE/BNJCNMALNLG
 	message BNJCNMALNLG {
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/BNJCNMALNLG/<>c
+		message <>c_ae0d {
+		}
+
 		string obnmioehmhk = 1;
 		repeated NCPAONGGNKA jgdhooikglk = 2;
 	}
 
 	// ref: BNBIDNJNKLH/MOPKBLIDFNE/CCAOHLKFFDD
 	message CCAOHLKFFDD {
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/CCAOHLKFFDD/<>c
+		message <>c_a400 {
+		}
+
 		int64 oefdccnhhbh = 1;
 		int64 mpakbbnadeh = 2;
 	}
 
 	// ref: BNBIDNJNKLH/MOPKBLIDFNE/JFKJCLPBGLH
 	message JFKJCLPBGLH {
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/JFKJCLPBGLH/<>c
+		message <>c_a7b3 {
+		}
+
 		string obnmioehmhk = 1;
 		repeated NCPAONGGNKA jgdhooikglk = 2;
 	}
@@ -4949,14 +5085,14 @@ message BNBIDNJNKLH {
 	message MOPKBLIDFNE {
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/OCFNEDOMGFN/CHLIANHEHNB
 		enum CHLIANHEHNB {
-			none = 0;
+			none_a8b0 = 0;
 			with_player_level = 3;
-			with_pokemon_cp_limit = 4;
-			with_pokemon_type = 5;
-			with_pokemon_category = 6;
-			pokemon_whitelist = 7;
-			pokemon_banlist = 8;
-			pokemon_caught_timestamp = 9;
+			with_pokemon_cp_limit_a8b0 = 4;
+			with_pokemon_type_a8b0 = 5;
+			with_pokemon_category_a8b0 = 6;
+			pokemon_whitelist_a8b0 = 7;
+			pokemon_banlist_a8b0 = 8;
+			pokemon_caught_timestamp_a8b0 = 9;
 		}
 
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/IABKHIMOEND
@@ -4974,13 +5110,13 @@ message BNBIDNJNKLH {
 
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/PKDENPOLDFC/JILKCPOOIFF
 		enum JILKCPOOIFF {
-			none = 0;
-			with_pokemon_cp_limit = 2;
-			with_pokemon_type = 3;
-			with_pokemon_category = 4;
-			pokemon_whitelist = 5;
-			pokemon_banlist = 6;
-			pokemon_caught_timestamp = 7;
+			none_a4f4 = 0;
+			with_pokemon_cp_limit_a4f4 = 2;
+			with_pokemon_type_a4f4 = 3;
+			with_pokemon_category_a4f4 = 4;
+			pokemon_whitelist_a4f4 = 5;
+			pokemon_banlist_a4f4 = 6;
+			pokemon_caught_timestamp_a4f4 = 7;
 		}
 
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/ODJCMAMDOFH
@@ -4990,26 +5126,66 @@ message BNBIDNJNKLH {
 			PREMIER = 2;
 		}
 
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/PKDENPOLDFC/<>c
+		message <>c_a1e6 {
+		}
+
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/CCAOHLKFFDD/<>c
+		message <>c_a400 {
+		}
+
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/JFKJCLPBGLH/<>c
+		message <>c_a7b3 {
+		}
+
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/OCFNEDOMGFN/<>c
+		message <>c_a8ca {
+		}
+
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/NCPAONGGNKA/<>c
+		message <>c_aaa1 {
+		}
+
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/BNJCNMALNLG/<>c
+		message <>c_ae0d {
+		}
+
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/BNJCNMALNLG
 		message BNJCNMALNLG {
+			// ref: BNBIDNJNKLH/MOPKBLIDFNE/BNJCNMALNLG/<>c
+			message <>c_ae0d {
+			}
+
 			string obnmioehmhk = 1;
 			repeated NCPAONGGNKA jgdhooikglk = 2;
 		}
 
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/CCAOHLKFFDD
 		message CCAOHLKFFDD {
+			// ref: BNBIDNJNKLH/MOPKBLIDFNE/CCAOHLKFFDD/<>c
+			message <>c_a400 {
+			}
+
 			int64 oefdccnhhbh = 1;
 			int64 mpakbbnadeh = 2;
 		}
 
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/JFKJCLPBGLH
 		message JFKJCLPBGLH {
+			// ref: BNBIDNJNKLH/MOPKBLIDFNE/JFKJCLPBGLH/<>c
+			message <>c_a7b3 {
+			}
+
 			string obnmioehmhk = 1;
 			repeated NCPAONGGNKA jgdhooikglk = 2;
 		}
 
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/NCPAONGGNKA
 		message NCPAONGGNKA {
+			// ref: BNBIDNJNKLH/MOPKBLIDFNE/NCPAONGGNKA/<>c
+			message <>c_aaa1 {
+			}
+
 			OOLJMNJMMOC imheenfbald = 1;
 			MLFGCANELKN.EPKNHKIIAGJ hjnkbbmnafj = 2;
 		}
@@ -5018,14 +5194,18 @@ message BNBIDNJNKLH {
 		message OCFNEDOMGFN {
 			// ref: BNBIDNJNKLH/MOPKBLIDFNE/OCFNEDOMGFN/CHLIANHEHNB
 			enum CHLIANHEHNB {
-				none = 0;
+				none_a8b0 = 0;
 				with_player_level = 3;
-				with_pokemon_cp_limit = 4;
-				with_pokemon_type = 5;
-				with_pokemon_category = 6;
-				pokemon_whitelist = 7;
-				pokemon_banlist = 8;
-				pokemon_caught_timestamp = 9;
+				with_pokemon_cp_limit_a8b0 = 4;
+				with_pokemon_type_a8b0 = 5;
+				with_pokemon_category_a8b0 = 6;
+				pokemon_whitelist_a8b0 = 7;
+				pokemon_banlist_a8b0 = 8;
+				pokemon_caught_timestamp_a8b0 = 9;
+			}
+
+			// ref: BNBIDNJNKLH/MOPKBLIDFNE/OCFNEDOMGFN/<>c
+			message <>c_a8ca {
 			}
 
 			IABKHIMOEND pjjngigopjd = 1;
@@ -5043,13 +5223,17 @@ message BNBIDNJNKLH {
 		message PKDENPOLDFC {
 			// ref: BNBIDNJNKLH/MOPKBLIDFNE/PKDENPOLDFC/JILKCPOOIFF
 			enum JILKCPOOIFF {
-				none = 0;
-				with_pokemon_cp_limit = 2;
-				with_pokemon_type = 3;
-				with_pokemon_category = 4;
-				pokemon_whitelist = 5;
-				pokemon_banlist = 6;
-				pokemon_caught_timestamp = 7;
+				none_a4f4 = 0;
+				with_pokemon_cp_limit_a4f4 = 2;
+				with_pokemon_type_a4f4 = 3;
+				with_pokemon_category_a4f4 = 4;
+				pokemon_whitelist_a4f4 = 5;
+				pokemon_banlist_a4f4 = 6;
+				pokemon_caught_timestamp_a4f4 = 7;
+			}
+
+			// ref: BNBIDNJNKLH/MOPKBLIDFNE/PKDENPOLDFC/<>c
+			message <>c_a1e6 {
 			}
 
 			IABKHIMOEND pjjngigopjd = 1;
@@ -5065,6 +5249,10 @@ message BNBIDNJNKLH {
 
 	// ref: BNBIDNJNKLH/MOPKBLIDFNE/NCPAONGGNKA
 	message NCPAONGGNKA {
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/NCPAONGGNKA/<>c
+		message <>c_aaa1 {
+		}
+
 		OOLJMNJMMOC imheenfbald = 1;
 		MLFGCANELKN.EPKNHKIIAGJ hjnkbbmnafj = 2;
 	}
@@ -5073,14 +5261,18 @@ message BNBIDNJNKLH {
 	message OCFNEDOMGFN {
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/OCFNEDOMGFN/CHLIANHEHNB
 		enum CHLIANHEHNB {
-			none = 0;
+			none_a8b0 = 0;
 			with_player_level = 3;
-			with_pokemon_cp_limit = 4;
-			with_pokemon_type = 5;
-			with_pokemon_category = 6;
-			pokemon_whitelist = 7;
-			pokemon_banlist = 8;
-			pokemon_caught_timestamp = 9;
+			with_pokemon_cp_limit_a8b0 = 4;
+			with_pokemon_type_a8b0 = 5;
+			with_pokemon_category_a8b0 = 6;
+			pokemon_whitelist_a8b0 = 7;
+			pokemon_banlist_a8b0 = 8;
+			pokemon_caught_timestamp_a8b0 = 9;
+		}
+
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/OCFNEDOMGFN/<>c
+		message <>c_a8ca {
 		}
 
 		IABKHIMOEND pjjngigopjd = 1;
@@ -5098,13 +5290,17 @@ message BNBIDNJNKLH {
 	message PKDENPOLDFC {
 		// ref: BNBIDNJNKLH/MOPKBLIDFNE/PKDENPOLDFC/JILKCPOOIFF
 		enum JILKCPOOIFF {
-			none = 0;
-			with_pokemon_cp_limit = 2;
-			with_pokemon_type = 3;
-			with_pokemon_category = 4;
-			pokemon_whitelist = 5;
-			pokemon_banlist = 6;
-			pokemon_caught_timestamp = 7;
+			none_a4f4 = 0;
+			with_pokemon_cp_limit_a4f4 = 2;
+			with_pokemon_type_a4f4 = 3;
+			with_pokemon_category_a4f4 = 4;
+			pokemon_whitelist_a4f4 = 5;
+			pokemon_banlist_a4f4 = 6;
+			pokemon_caught_timestamp_a4f4 = 7;
+		}
+
+		// ref: BNBIDNJNKLH/MOPKBLIDFNE/PKDENPOLDFC/<>c
+		message <>c_a1e6 {
 		}
 
 		IABKHIMOEND pjjngigopjd = 1;
@@ -5366,6 +5562,14 @@ message CDGHGMNIAGC {
 		MONTH = 5;
 	}
 
+	// ref: CDGHGMNIAGC/FLNMFIIFJFB/NLCBJMEPPFG/<>c
+	message <>c_a430 {
+	}
+
+	// ref: CDGHGMNIAGC/<>c
+	message <>c_aac8 {
+	}
+
 	// ref: CDGHGMNIAGC/FLNMFIIFJFB
 	message FLNMFIIFJFB {
 		// ref: CDGHGMNIAGC/FLNMFIIFJFB/IKOOHCLODBC
@@ -5378,8 +5582,16 @@ message CDGHGMNIAGC {
 			MONTH = 5;
 		}
 
+		// ref: CDGHGMNIAGC/FLNMFIIFJFB/NLCBJMEPPFG/<>c
+		message <>c_a430 {
+		}
+
 		// ref: CDGHGMNIAGC/FLNMFIIFJFB/NLCBJMEPPFG
 		message NLCBJMEPPFG {
+			// ref: CDGHGMNIAGC/FLNMFIIFJFB/NLCBJMEPPFG/<>c
+			message <>c_a430 {
+			}
+
 			int32 jfajechbecl = 1;
 			int32 epikcpiccnl = 2;
 			int64 akmcoidcgkp = 3;
@@ -5390,6 +5602,10 @@ message CDGHGMNIAGC {
 
 	// ref: CDGHGMNIAGC/FLNMFIIFJFB/NLCBJMEPPFG
 	message NLCBJMEPPFG {
+		// ref: CDGHGMNIAGC/FLNMFIIFJFB/NLCBJMEPPFG/<>c
+		message <>c_a430 {
+		}
+
 		int32 jfajechbecl = 1;
 		int32 epikcpiccnl = 2;
 		int64 akmcoidcgkp = 3;
@@ -5567,10 +5783,26 @@ message CFBHCOBKMEE {
 
 // ref: CFIHNBINHFI
 message CFIHNBINHFI {
+	// ref: CFIHNBINHFI/BCKAIBONCJD/JGDCCBCPGND/<>c
+	message <>c_a320 {
+	}
+
+	// ref: CFIHNBINHFI/<>c
+	message <>c_a6bb {
+	}
+
 	// ref: CFIHNBINHFI/BCKAIBONCJD
 	message BCKAIBONCJD {
+		// ref: CFIHNBINHFI/BCKAIBONCJD/JGDCCBCPGND/<>c
+		message <>c_a320 {
+		}
+
 		// ref: CFIHNBINHFI/BCKAIBONCJD/JGDCCBCPGND
 		message JGDCCBCPGND {
+			// ref: CFIHNBINHFI/BCKAIBONCJD/JGDCCBCPGND/<>c
+			message <>c_a320 {
+			}
+
 			int64 ejiocnpfkdo = 1;
 			map<int32, float> edhndaeeiha = 2;
 		}
@@ -5579,6 +5811,10 @@ message CFIHNBINHFI {
 
 	// ref: CFIHNBINHFI/BCKAIBONCJD/JGDCCBCPGND
 	message JGDCCBCPGND {
+		// ref: CFIHNBINHFI/BCKAIBONCJD/JGDCCBCPGND/<>c
+		message <>c_a320 {
+		}
+
 		int64 ejiocnpfkdo = 1;
 		map<int32, float> edhndaeeiha = 2;
 	}
@@ -5738,6 +5974,14 @@ message CKGPAAALIJP {
 		ERROR_UNKNOWN = 2;
 	}
 
+	// ref: CKGPAAALIJP/KHNKMENNFIB/LKFEGBGCJOP/<>c
+	message <>c_a3ba {
+	}
+
+	// ref: CKGPAAALIJP/<>c
+	message <>c_acbf {
+	}
+
 	// ref: CKGPAAALIJP/KHNKMENNFIB
 	message KHNKMENNFIB {
 		// ref: CKGPAAALIJP/KHNKMENNFIB/FIPPNMIEFIB
@@ -5747,8 +5991,16 @@ message CKGPAAALIJP {
 			ERROR_UNKNOWN = 2;
 		}
 
+		// ref: CKGPAAALIJP/KHNKMENNFIB/LKFEGBGCJOP/<>c
+		message <>c_a3ba {
+		}
+
 		// ref: CKGPAAALIJP/KHNKMENNFIB/LKFEGBGCJOP
 		message LKFEGBGCJOP {
+			// ref: CKGPAAALIJP/KHNKMENNFIB/LKFEGBGCJOP/<>c
+			message <>c_a3ba {
+			}
+
 			int64 hbkeoecjbhm = 1;
 			int32 accgepidbek = 2;
 			int32 ikdgcljnfie = 3;
@@ -5765,6 +6017,10 @@ message CKGPAAALIJP {
 
 	// ref: CKGPAAALIJP/KHNKMENNFIB/LKFEGBGCJOP
 	message LKFEGBGCJOP {
+		// ref: CKGPAAALIJP/KHNKMENNFIB/LKFEGBGCJOP/<>c
+		message <>c_a3ba {
+		}
+
 		int64 hbkeoecjbhm = 1;
 		int32 accgepidbek = 2;
 		int32 ikdgcljnfie = 3;
@@ -5888,8 +6144,20 @@ message CLMHMBPHANH {
 		ERROR_DUPLICATE_REQUEST = 6;
 	}
 
+	// ref: CLMHMBPHANH/<>c
+	message <>c_a792 {
+	}
+
+	// ref: CLMHMBPHANH/OAFENELMAAI/CHFGCEJODFJ/<>c
+	message <>c_ad5a {
+	}
+
 	// ref: CLMHMBPHANH/OAFENELMAAI/CHFGCEJODFJ
 	message CHFGCEJODFJ {
+		// ref: CLMHMBPHANH/OAFENELMAAI/CHFGCEJODFJ/<>c
+		message <>c_ad5a {
+		}
+
 		int32 hbimaakcnod = 1;
 		int32 loandkpdnjk = 2;
 		int32 lpajdddhkob = 3;
@@ -5912,8 +6180,16 @@ message CLMHMBPHANH {
 			ERROR_DUPLICATE_REQUEST = 6;
 		}
 
+		// ref: CLMHMBPHANH/OAFENELMAAI/CHFGCEJODFJ/<>c
+		message <>c_ad5a {
+		}
+
 		// ref: CLMHMBPHANH/OAFENELMAAI/CHFGCEJODFJ
 		message CHFGCEJODFJ {
+			// ref: CLMHMBPHANH/OAFENELMAAI/CHFGCEJODFJ/<>c
+			message <>c_ad5a {
+			}
+
 			int32 hbimaakcnod = 1;
 			int32 loandkpdnjk = 2;
 			int32 lpajdddhkob = 3;
@@ -6195,10 +6471,26 @@ message DCMDBPAKLCP {
 
 // ref: DCMEMNJEMDM
 message DCMEMNJEMDM {
+	// ref: DCMEMNJEMDM/BJNECNMAEMJ/NLADIKBCJJM/<>c
+	message <>c_a229 {
+	}
+
+	// ref: DCMEMNJEMDM/<>c
+	message <>c_ab78 {
+	}
+
 	// ref: DCMEMNJEMDM/BJNECNMAEMJ
 	message BJNECNMAEMJ {
+		// ref: DCMEMNJEMDM/BJNECNMAEMJ/NLADIKBCJJM/<>c
+		message <>c_a229 {
+		}
+
 		// ref: DCMEMNJEMDM/BJNECNMAEMJ/NLADIKBCJJM
 		message NLADIKBCJJM {
+			// ref: DCMEMNJEMDM/BJNECNMAEMJ/NLADIKBCJJM/<>c
+			message <>c_a229 {
+			}
+
 			int64 lhcebflnjjd = 1;
 			double bigpmlkcpai = 2;
 			double jfkkffnnlap = 3;
@@ -6208,6 +6500,10 @@ message DCMEMNJEMDM {
 
 	// ref: DCMEMNJEMDM/BJNECNMAEMJ/NLADIKBCJJM
 	message NLADIKBCJJM {
+		// ref: DCMEMNJEMDM/BJNECNMAEMJ/NLADIKBCJJM/<>c
+		message <>c_a229 {
+		}
+
 		int64 lhcebflnjjd = 1;
 		double bigpmlkcpai = 2;
 		double jfkkffnnlap = 3;
@@ -6426,8 +6722,20 @@ message DHNKHMDOCOE {
 
 // ref: DHOFKCNOPNC
 message DHOFKCNOPNC {
+	// ref: DHOFKCNOPNC/<>c
+	message <>c_a48b {
+	}
+
+	// ref: DHOFKCNOPNC/HGLJICIMPJI/EOAIPCIPJJP/<>c
+	message <>c_a795 {
+	}
+
 	// ref: DHOFKCNOPNC/HGLJICIMPJI/EOAIPCIPJJP
 	message EOAIPCIPJJP {
+		// ref: DHOFKCNOPNC/HGLJICIMPJI/EOAIPCIPJJP/<>c
+		message <>c_a795 {
+		}
+
 		int32 doaocjlecna = 1;
 		int32 kobnjbdgicp = 2;
 		int32 eeffkmbmigl = 3;
@@ -6436,8 +6744,16 @@ message DHOFKCNOPNC {
 
 	// ref: DHOFKCNOPNC/HGLJICIMPJI
 	message HGLJICIMPJI {
+		// ref: DHOFKCNOPNC/HGLJICIMPJI/EOAIPCIPJJP/<>c
+		message <>c_a795 {
+		}
+
 		// ref: DHOFKCNOPNC/HGLJICIMPJI/EOAIPCIPJJP
 		message EOAIPCIPJJP {
+			// ref: DHOFKCNOPNC/HGLJICIMPJI/EOAIPCIPJJP/<>c
+			message <>c_a795 {
+			}
+
 			int32 doaocjlecna = 1;
 			int32 kobnjbdgicp = 2;
 			int32 eeffkmbmigl = 3;
@@ -6948,6 +7264,14 @@ message ECEOKHBLEBB {
 		BUDDY_HEART_DOUBLE = 2;
 	}
 
+	// ref: ECEOKHBLEBB/<>c
+	message <>c_a7bc {
+	}
+
+	// ref: ECEOKHBLEBB/DJKNMHJKNFK/PAHBHACAGCK/<>c
+	message <>c_af4d {
+	}
+
 	// ref: ECEOKHBLEBB/DJKNMHJKNFK
 	message DJKNMHJKNFK {
 		// ref: ECEOKHBLEBB/DJKNMHJKNFK/GLADJDHEDDK
@@ -6957,8 +7281,16 @@ message ECEOKHBLEBB {
 			BUDDY_HEART_DOUBLE = 2;
 		}
 
+		// ref: ECEOKHBLEBB/DJKNMHJKNFK/PAHBHACAGCK/<>c
+		message <>c_af4d {
+		}
+
 		// ref: ECEOKHBLEBB/DJKNMHJKNFK/PAHBHACAGCK
 		message PAHBHACAGCK {
+			// ref: ECEOKHBLEBB/DJKNMHJKNFK/PAHBHACAGCK/<>c
+			message <>c_af4d {
+			}
+
 			repeated GLADJDHEDDK lmhmnggehjk = 1;
 		}
 
@@ -6966,6 +7298,10 @@ message ECEOKHBLEBB {
 
 	// ref: ECEOKHBLEBB/DJKNMHJKNFK/PAHBHACAGCK
 	message PAHBHACAGCK {
+		// ref: ECEOKHBLEBB/DJKNMHJKNFK/PAHBHACAGCK/<>c
+		message <>c_af4d {
+		}
+
 		repeated GLADJDHEDDK lmhmnggehjk = 1;
 	}
 
@@ -6995,13 +7331,41 @@ message ECHCBMEGPMP {
 		cta_clicked = 8;
 	}
 
+	// ref: ECHCBMEGPMP/MMFHFDOKGKH/JHJCIFPBMDH/<>c
+	message <>c_a3e5 {
+	}
+
+	// ref: ECHCBMEGPMP/MMFHFDOKGKH/PNNHKDEMODA/<>c
+	message <>c_a4b7 {
+	}
+
+	// ref: ECHCBMEGPMP/<>c
+	message <>c_ab8f {
+	}
+
+	// ref: ECHCBMEGPMP/MMFHFDOKGKH/DOMELMPHOOG/<>c
+	message <>c_abbc {
+	}
+
+	// ref: ECHCBMEGPMP/MMFHFDOKGKH/NPDEPIPABCL/<>c
+	message <>c_ae02 {
+	}
+
 	// ref: ECHCBMEGPMP/MMFHFDOKGKH/DOMELMPHOOG
 	message DOMELMPHOOG {
+		// ref: ECHCBMEGPMP/MMFHFDOKGKH/DOMELMPHOOG/<>c
+		message <>c_abbc {
+		}
+
 		string kfkmckiicng = 1;
 	}
 
 	// ref: ECHCBMEGPMP/MMFHFDOKGKH/JHJCIFPBMDH
 	message JHJCIFPBMDH {
+		// ref: ECHCBMEGPMP/MMFHFDOKGKH/JHJCIFPBMDH/<>c
+		message <>c_a3e5 {
+		}
+
 		string khbfbngcdad = 1;
 		int64 gkddajopglb = 2;
 		int64 eifmcffckce = 3;
@@ -7010,13 +7374,37 @@ message ECHCBMEGPMP {
 
 	// ref: ECHCBMEGPMP/MMFHFDOKGKH
 	message MMFHFDOKGKH {
+		// ref: ECHCBMEGPMP/MMFHFDOKGKH/JHJCIFPBMDH/<>c
+		message <>c_a3e5 {
+		}
+
+		// ref: ECHCBMEGPMP/MMFHFDOKGKH/PNNHKDEMODA/<>c
+		message <>c_a4b7 {
+		}
+
+		// ref: ECHCBMEGPMP/MMFHFDOKGKH/DOMELMPHOOG/<>c
+		message <>c_abbc {
+		}
+
+		// ref: ECHCBMEGPMP/MMFHFDOKGKH/NPDEPIPABCL/<>c
+		message <>c_ae02 {
+		}
+
 		// ref: ECHCBMEGPMP/MMFHFDOKGKH/DOMELMPHOOG
 		message DOMELMPHOOG {
+			// ref: ECHCBMEGPMP/MMFHFDOKGKH/DOMELMPHOOG/<>c
+			message <>c_abbc {
+			}
+
 			string kfkmckiicng = 1;
 		}
 
 		// ref: ECHCBMEGPMP/MMFHFDOKGKH/JHJCIFPBMDH
 		message JHJCIFPBMDH {
+			// ref: ECHCBMEGPMP/MMFHFDOKGKH/JHJCIFPBMDH/<>c
+			message <>c_a3e5 {
+			}
+
 			string khbfbngcdad = 1;
 			int64 gkddajopglb = 2;
 			int64 eifmcffckce = 3;
@@ -7025,11 +7413,19 @@ message ECHCBMEGPMP {
 
 		// ref: ECHCBMEGPMP/MMFHFDOKGKH/NPDEPIPABCL
 		message NPDEPIPABCL {
+			// ref: ECHCBMEGPMP/MMFHFDOKGKH/NPDEPIPABCL/<>c
+			message <>c_ae02 {
+			}
+
 			string khbfbngcdad = 1;
 		}
 
 		// ref: ECHCBMEGPMP/MMFHFDOKGKH/PNNHKDEMODA
 		message PNNHKDEMODA {
+			// ref: ECHCBMEGPMP/MMFHFDOKGKH/PNNHKDEMODA/<>c
+			message <>c_a4b7 {
+			}
+
 			string fmgdlbaiepp = 1;
 			bool benmmkhonlo = 2;
 		}
@@ -7038,11 +7434,19 @@ message ECHCBMEGPMP {
 
 	// ref: ECHCBMEGPMP/MMFHFDOKGKH/NPDEPIPABCL
 	message NPDEPIPABCL {
+		// ref: ECHCBMEGPMP/MMFHFDOKGKH/NPDEPIPABCL/<>c
+		message <>c_ae02 {
+		}
+
 		string khbfbngcdad = 1;
 	}
 
 	// ref: ECHCBMEGPMP/MMFHFDOKGKH/PNNHKDEMODA
 	message PNNHKDEMODA {
+		// ref: ECHCBMEGPMP/MMFHFDOKGKH/PNNHKDEMODA/<>c
+		message <>c_a4b7 {
+		}
+
 		string fmgdlbaiepp = 1;
 		bool benmmkhonlo = 2;
 	}
@@ -7063,16 +7467,36 @@ message ECLANMFNLDF {
 
 // ref: EDNOIHAMOPE
 message EDNOIHAMOPE {
+	// ref: EDNOIHAMOPE/HKCOBKNAPKL/CMBJPEIOKMC/<>c
+	message <>c_a0cc {
+	}
+
+	// ref: EDNOIHAMOPE/<>c
+	message <>c_adbe {
+	}
+
 	// ref: EDNOIHAMOPE/HKCOBKNAPKL/CMBJPEIOKMC
 	message CMBJPEIOKMC {
+		// ref: EDNOIHAMOPE/HKCOBKNAPKL/CMBJPEIOKMC/<>c
+		message <>c_a0cc {
+		}
+
 		double capepphbngo = 1;
 		double fjlfpmmelep = 2;
 	}
 
 	// ref: EDNOIHAMOPE/HKCOBKNAPKL
 	message HKCOBKNAPKL {
+		// ref: EDNOIHAMOPE/HKCOBKNAPKL/CMBJPEIOKMC/<>c
+		message <>c_a0cc {
+		}
+
 		// ref: EDNOIHAMOPE/HKCOBKNAPKL/CMBJPEIOKMC
 		message CMBJPEIOKMC {
+			// ref: EDNOIHAMOPE/HKCOBKNAPKL/CMBJPEIOKMC/<>c
+			message <>c_a0cc {
+			}
+
 			double capepphbngo = 1;
 			double fjlfpmmelep = 2;
 		}
@@ -7204,6 +7628,14 @@ message EHNAPIMPOGH {
 		EXPIRED = 3;
 	}
 
+	// ref: EHNAPIMPOGH/AKDHHIDHFCA/MNCJACBJHMG/<>c
+	message <>c_a85c {
+	}
+
+	// ref: EHNAPIMPOGH/<>c
+	message <>c_afd1 {
+	}
+
 	// ref: EHNAPIMPOGH/AKDHHIDHFCA
 	message AKDHHIDHFCA {
 		// ref: EHNAPIMPOGH/AKDHHIDHFCA/BMKKLICIJDJ
@@ -7214,8 +7646,16 @@ message EHNAPIMPOGH {
 			EXPIRED = 3;
 		}
 
+		// ref: EHNAPIMPOGH/AKDHHIDHFCA/MNCJACBJHMG/<>c
+		message <>c_a85c {
+		}
+
 		// ref: EHNAPIMPOGH/AKDHHIDHFCA/MNCJACBJHMG
 		message MNCJACBJHMG {
+			// ref: EHNAPIMPOGH/AKDHHIDHFCA/MNCJACBJHMG/<>c
+			message <>c_a85c {
+			}
+
 			BMKKLICIJDJ okfkkaodcgn = 1;
 			AMBPGKEFPBE dcjedmffjph = 2;
 			string ndciofklddf = 3;
@@ -7225,6 +7665,10 @@ message EHNAPIMPOGH {
 
 	// ref: EHNAPIMPOGH/AKDHHIDHFCA/MNCJACBJHMG
 	message MNCJACBJHMG {
+		// ref: EHNAPIMPOGH/AKDHHIDHFCA/MNCJACBJHMG/<>c
+		message <>c_a85c {
+		}
+
 		BMKKLICIJDJ okfkkaodcgn = 1;
 		AMBPGKEFPBE dcjedmffjph = 2;
 		string ndciofklddf = 3;
@@ -7514,6 +7958,14 @@ message EMKIOKGJPMN {
 		STATUS_EXPIRED = 9;
 	}
 
+	// ref: EMKIOKGJPMN/AJBGDBMJGAH/MCIMAKAFIGG/<>c
+	message <>c_a885 {
+	}
+
+	// ref: EMKIOKGJPMN/<>c
+	message <>c_aae4 {
+	}
+
 	// ref: EMKIOKGJPMN/AJBGDBMJGAH
 	message AJBGDBMJGAH {
 		// ref: EMKIOKGJPMN/AJBGDBMJGAH/PEJHJNBDNPM
@@ -7530,8 +7982,16 @@ message EMKIOKGJPMN {
 			STATUS_EXPIRED = 9;
 		}
 
+		// ref: EMKIOKGJPMN/AJBGDBMJGAH/MCIMAKAFIGG/<>c
+		message <>c_a885 {
+		}
+
 		// ref: EMKIOKGJPMN/AJBGDBMJGAH/MCIMAKAFIGG
 		message MCIMAKAFIGG {
+			// ref: EMKIOKGJPMN/AJBGDBMJGAH/MCIMAKAFIGG/<>c
+			message <>c_a885 {
+			}
+
 			string mipacjnbigc = 1;
 			int32 ociapogiihi = 2;
 		}
@@ -7540,6 +8000,10 @@ message EMKIOKGJPMN {
 
 	// ref: EMKIOKGJPMN/AJBGDBMJGAH/MCIMAKAFIGG
 	message MCIMAKAFIGG {
+		// ref: EMKIOKGJPMN/AJBGDBMJGAH/MCIMAKAFIGG/<>c
+		message <>c_a885 {
+		}
+
 		string mipacjnbigc = 1;
 		int32 ociapogiihi = 2;
 	}
@@ -7935,10 +8399,26 @@ message FEEHJPPLMDA {
 
 // ref: FEKPAMPLGCE
 message FEKPAMPLGCE {
+	// ref: FEKPAMPLGCE/FBBKEAFENNC/OALCOBAAJNM/<>c
+	message <>c_a86d {
+	}
+
+	// ref: FEKPAMPLGCE/<>c
+	message <>c_aa20 {
+	}
+
 	// ref: FEKPAMPLGCE/FBBKEAFENNC
 	message FBBKEAFENNC {
+		// ref: FEKPAMPLGCE/FBBKEAFENNC/OALCOBAAJNM/<>c
+		message <>c_a86d {
+		}
+
 		// ref: FEKPAMPLGCE/FBBKEAFENNC/OALCOBAAJNM
 		message OALCOBAAJNM {
+			// ref: FEKPAMPLGCE/FBBKEAFENNC/OALCOBAAJNM/<>c
+			message <>c_a86d {
+			}
+
 			int32 lpdaohgaced = 1;
 			int32 ikomljcdafk = 2;
 			int32 nllfnmpljbg = 3;
@@ -7949,6 +8429,10 @@ message FEKPAMPLGCE {
 
 	// ref: FEKPAMPLGCE/FBBKEAFENNC/OALCOBAAJNM
 	message OALCOBAAJNM {
+		// ref: FEKPAMPLGCE/FBBKEAFENNC/OALCOBAAJNM/<>c
+		message <>c_a86d {
+		}
+
 		int32 lpdaohgaced = 1;
 		int32 ikomljcdafk = 2;
 		int32 nllfnmpljbg = 3;
@@ -7971,6 +8455,14 @@ message FEOAGDNGKMM {
 		ERROR_PLAYER_QUIT = 4;
 	}
 
+	// ref: FEOAGDNGKMM/<>c
+	message <>c_aba6 {
+	}
+
+	// ref: FEOAGDNGKMM/MDGFEJDIIDC/ODOPPKFJDOA/<>c
+	message <>c_afb9 {
+	}
+
 	// ref: FEOAGDNGKMM/MDGFEJDIIDC
 	message MDGFEJDIIDC {
 		// ref: FEOAGDNGKMM/MDGFEJDIIDC/LAFDHHAMIPE
@@ -7982,8 +8474,16 @@ message FEOAGDNGKMM {
 			ERROR_PLAYER_QUIT = 4;
 		}
 
+		// ref: FEOAGDNGKMM/MDGFEJDIIDC/ODOPPKFJDOA/<>c
+		message <>c_afb9 {
+		}
+
 		// ref: FEOAGDNGKMM/MDGFEJDIIDC/ODOPPKFJDOA
 		message ODOPPKFJDOA {
+			// ref: FEOAGDNGKMM/MDGFEJDIIDC/ODOPPKFJDOA/<>c
+			message <>c_afb9 {
+			}
+
 			string lgajlifhbmm = 1;
 			string ifmbcoaefdk = 2;
 		}
@@ -7992,6 +8492,10 @@ message FEOAGDNGKMM {
 
 	// ref: FEOAGDNGKMM/MDGFEJDIIDC/ODOPPKFJDOA
 	message ODOPPKFJDOA {
+		// ref: FEOAGDNGKMM/MDGFEJDIIDC/ODOPPKFJDOA/<>c
+		message <>c_afb9 {
+		}
+
 		string lgajlifhbmm = 1;
 		string ifmbcoaefdk = 2;
 	}
@@ -8168,6 +8672,18 @@ message FLBNOIMIEED {
 		TIMEOUT = 8;
 	}
 
+	// ref: FLBNOIMIEED/ECINDPHBEHO/FHLNNEBGHMJ/<>c
+	message <>c_a61f {
+	}
+
+	// ref: FLBNOIMIEED/<>c
+	message <>c_a6fa {
+	}
+
+	// ref: FLBNOIMIEED/ECINDPHBEHO/EHJFFHHDKPF/<>c
+	message <>c_ae78 {
+	}
+
 	// ref: FLBNOIMIEED/ECINDPHBEHO
 	message ECINDPHBEHO {
 		// ref: FLBNOIMIEED/ECINDPHBEHO/AFECMCIEJMP
@@ -8183,8 +8699,20 @@ message FLBNOIMIEED {
 			TIMEOUT = 8;
 		}
 
+		// ref: FLBNOIMIEED/ECINDPHBEHO/FHLNNEBGHMJ/<>c
+		message <>c_a61f {
+		}
+
+		// ref: FLBNOIMIEED/ECINDPHBEHO/EHJFFHHDKPF/<>c
+		message <>c_ae78 {
+		}
+
 		// ref: FLBNOIMIEED/ECINDPHBEHO/EHJFFHHDKPF
 		message EHJFFHHDKPF {
+			// ref: FLBNOIMIEED/ECINDPHBEHO/EHJFFHHDKPF/<>c
+			message <>c_ae78 {
+			}
+
 			FADBFKFGIIK odelkhagodn = 1;
 			FHLNNEBGHMJ fbpapgmjbkj = 2;
 			repeated FHLNNEBGHMJ jfbnekdalln = 3;
@@ -8201,6 +8729,10 @@ message FLBNOIMIEED {
 
 		// ref: FLBNOIMIEED/ECINDPHBEHO/FHLNNEBGHMJ
 		message FHLNNEBGHMJ {
+			// ref: FLBNOIMIEED/ECINDPHBEHO/FHLNNEBGHMJ/<>c
+			message <>c_a61f {
+			}
+
 			uint64 lcekclicnop = 1;
 			int32 pjnfcdmkkmn = 2;
 			int32 pagbjabahkd = 3;
@@ -8227,6 +8759,10 @@ message FLBNOIMIEED {
 
 	// ref: FLBNOIMIEED/ECINDPHBEHO/EHJFFHHDKPF
 	message EHJFFHHDKPF {
+		// ref: FLBNOIMIEED/ECINDPHBEHO/EHJFFHHDKPF/<>c
+		message <>c_ae78 {
+		}
+
 		FADBFKFGIIK odelkhagodn = 1;
 		FHLNNEBGHMJ fbpapgmjbkj = 2;
 		repeated FHLNNEBGHMJ jfbnekdalln = 3;
@@ -8243,6 +8779,10 @@ message FLBNOIMIEED {
 
 	// ref: FLBNOIMIEED/ECINDPHBEHO/FHLNNEBGHMJ
 	message FHLNNEBGHMJ {
+		// ref: FLBNOIMIEED/ECINDPHBEHO/FHLNNEBGHMJ/<>c
+		message <>c_a61f {
+		}
+
 		uint64 lcekclicnop = 1;
 		int32 pjnfcdmkkmn = 2;
 		int32 pagbjabahkd = 3;
@@ -9341,8 +9881,20 @@ message GPKKELNPCLK {
 		FAILURE = 2;
 	}
 
+	// ref: GPKKELNPCLK/<>c
+	message <>c_aa2d {
+	}
+
+	// ref: GPKKELNPCLK/DNPMCAGALHL/AMBJCBMGDND/<>c
+	message <>c_ac52 {
+	}
+
 	// ref: GPKKELNPCLK/DNPMCAGALHL/AMBJCBMGDND
 	message AMBJCBMGDND {
+		// ref: GPKKELNPCLK/DNPMCAGALHL/AMBJCBMGDND/<>c
+		message <>c_ac52 {
+		}
+
 		string hgpjhdiflap = 1;
 		repeated COAEOOIJCKF cheppadlfkj = 2;
 	}
@@ -9370,8 +9922,16 @@ message GPKKELNPCLK {
 			FAILURE = 2;
 		}
 
+		// ref: GPKKELNPCLK/DNPMCAGALHL/AMBJCBMGDND/<>c
+		message <>c_ac52 {
+		}
+
 		// ref: GPKKELNPCLK/DNPMCAGALHL/AMBJCBMGDND
 		message AMBJCBMGDND {
+			// ref: GPKKELNPCLK/DNPMCAGALHL/AMBJCBMGDND/<>c
+			message <>c_ac52 {
+			}
+
 			string hgpjhdiflap = 1;
 			repeated COAEOOIJCKF cheppadlfkj = 2;
 		}
@@ -9721,16 +10281,36 @@ message HFDPBMGCFPH {
 
 // ref: HFFNEGEBAMG
 message HFFNEGEBAMG {
+	// ref: HFFNEGEBAMG/MJCDNIGIKID/LIHBELEOOCD/<>c
+	message <>c_acc3 {
+	}
+
+	// ref: HFFNEGEBAMG/<>c
+	message <>c_afe5 {
+	}
+
 	// ref: HFFNEGEBAMG/MJCDNIGIKID/LIHBELEOOCD
 	message LIHBELEOOCD {
+		// ref: HFFNEGEBAMG/MJCDNIGIKID/LIHBELEOOCD/<>c
+		message <>c_acc3 {
+		}
+
 		string fciebigpbmb = 1;
 		uint32 gdkcamiabkc = 2;
 	}
 
 	// ref: HFFNEGEBAMG/MJCDNIGIKID
 	message MJCDNIGIKID {
+		// ref: HFFNEGEBAMG/MJCDNIGIKID/LIHBELEOOCD/<>c
+		message <>c_acc3 {
+		}
+
 		// ref: HFFNEGEBAMG/MJCDNIGIKID/LIHBELEOOCD
 		message LIHBELEOOCD {
+			// ref: HFFNEGEBAMG/MJCDNIGIKID/LIHBELEOOCD/<>c
+			message <>c_acc3 {
+			}
+
 			string fciebigpbmb = 1;
 			uint32 gdkcamiabkc = 2;
 		}
@@ -10386,27 +10966,43 @@ message IBALDAHLKML {
 message IBOMONBHMAA {
 	// ref: IBOMONBHMAA/KLNFGDGECBL/KLEJFPFAPJF/LLDIDDHNJBL
 	enum LLDIDDHNJBL {
-		none = 0;
+		none_ad39 = 0;
 		range = 1;
 		zero = 2;
 	}
 
 	// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ/MBELAEKLAJB
 	enum MBELAEKLAJB {
-		none = 0;
+		none_a572 = 0;
 		pokemon = 1;
 		limited_pokemon_reward = 2;
 		guaranteed_limited_pokemon_reward = 3;
+	}
+
+	// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ/<>c
+	message <>c_a1c8 {
+	}
+
+	// ref: IBOMONBHMAA/<>c
+	message <>c_a46f {
+	}
+
+	// ref: IBOMONBHMAA/KLNFGDGECBL/KLEJFPFAPJF/<>c
+	message <>c_af0f {
 	}
 
 	// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ
 	message JLCFPLLPJAJ {
 		// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ/MBELAEKLAJB
 		enum MBELAEKLAJB {
-			none = 0;
+			none_a572 = 0;
 			pokemon = 1;
 			limited_pokemon_reward = 2;
 			guaranteed_limited_pokemon_reward = 3;
+		}
+
+		// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ/<>c
+		message <>c_a1c8 {
 		}
 
 		AGGKPEMMAPL jgdhooikglk = 1;
@@ -10423,9 +11019,13 @@ message IBOMONBHMAA {
 	message KLEJFPFAPJF {
 		// ref: IBOMONBHMAA/KLNFGDGECBL/KLEJFPFAPJF/LLDIDDHNJBL
 		enum LLDIDDHNJBL {
-			none = 0;
+			none_ad39 = 0;
 			range = 1;
 			zero = 2;
+		}
+
+		// ref: IBOMONBHMAA/KLNFGDGECBL/KLEJFPFAPJF/<>c
+		message <>c_af0f {
 		}
 
 		IINEAJKOLNO iigdaehoijm = 1;
@@ -10436,27 +11036,39 @@ message IBOMONBHMAA {
 	message KLNFGDGECBL {
 		// ref: IBOMONBHMAA/KLNFGDGECBL/KLEJFPFAPJF/LLDIDDHNJBL
 		enum LLDIDDHNJBL {
-			none = 0;
+			none_ad39 = 0;
 			range = 1;
 			zero = 2;
 		}
 
 		// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ/MBELAEKLAJB
 		enum MBELAEKLAJB {
-			none = 0;
+			none_a572 = 0;
 			pokemon = 1;
 			limited_pokemon_reward = 2;
 			guaranteed_limited_pokemon_reward = 3;
+		}
+
+		// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ/<>c
+		message <>c_a1c8 {
+		}
+
+		// ref: IBOMONBHMAA/KLNFGDGECBL/KLEJFPFAPJF/<>c
+		message <>c_af0f {
 		}
 
 		// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ
 		message JLCFPLLPJAJ {
 			// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ/MBELAEKLAJB
 			enum MBELAEKLAJB {
-				none = 0;
+				none_a572 = 0;
 				pokemon = 1;
 				limited_pokemon_reward = 2;
 				guaranteed_limited_pokemon_reward = 3;
+			}
+
+			// ref: IBOMONBHMAA/KLNFGDGECBL/JLCFPLLPJAJ/<>c
+			message <>c_a1c8 {
 			}
 
 			AGGKPEMMAPL jgdhooikglk = 1;
@@ -10473,9 +11085,13 @@ message IBOMONBHMAA {
 		message KLEJFPFAPJF {
 			// ref: IBOMONBHMAA/KLNFGDGECBL/KLEJFPFAPJF/LLDIDDHNJBL
 			enum LLDIDDHNJBL {
-				none = 0;
+				none_ad39 = 0;
 				range = 1;
 				zero = 2;
+			}
+
+			// ref: IBOMONBHMAA/KLNFGDGECBL/KLEJFPFAPJF/<>c
+			message <>c_af0f {
 			}
 
 			IINEAJKOLNO iigdaehoijm = 1;
@@ -12062,8 +12678,20 @@ message JPPIKHBEBPI {
 
 // ref: KAGEOKBKMON
 message KAGEOKBKMON {
+	// ref: KAGEOKBKMON/<>c
+	message <>c_a4b7 {
+	}
+
+	// ref: KAGEOKBKMON/MAACOOEKLLP/DBFOJNDGPGH/<>c
+	message <>c_aae4 {
+	}
+
 	// ref: KAGEOKBKMON/MAACOOEKLLP/DBFOJNDGPGH
 	message DBFOJNDGPGH {
+		// ref: KAGEOKBKMON/MAACOOEKLLP/DBFOJNDGPGH/<>c
+		message <>c_aae4 {
+		}
+
 		KICHDDOGFNB fdbodgdepoi = 1;
 		int32 ociapogiihi = 2;
 		int32 blklglanagd = 3;
@@ -12072,8 +12700,16 @@ message KAGEOKBKMON {
 
 	// ref: KAGEOKBKMON/MAACOOEKLLP
 	message MAACOOEKLLP {
+		// ref: KAGEOKBKMON/MAACOOEKLLP/DBFOJNDGPGH/<>c
+		message <>c_aae4 {
+		}
+
 		// ref: KAGEOKBKMON/MAACOOEKLLP/DBFOJNDGPGH
 		message DBFOJNDGPGH {
+			// ref: KAGEOKBKMON/MAACOOEKLLP/DBFOJNDGPGH/<>c
+			message <>c_aae4 {
+			}
+
 			KICHDDOGFNB fdbodgdepoi = 1;
 			int32 ociapogiihi = 2;
 			int32 blklglanagd = 3;
@@ -12545,15 +13181,35 @@ message KKFLJKLFMJD {
 
 // ref: KKHGGHMPCDH
 message KKHGGHMPCDH {
+	// ref: KKHGGHMPCDH/MECFDKPJGNE/KKIBLJNEFKH/<>c
+	message <>c_a4a6 {
+	}
+
+	// ref: KKHGGHMPCDH/<>c
+	message <>c_ab6e {
+	}
+
 	// ref: KKHGGHMPCDH/MECFDKPJGNE/KKIBLJNEFKH
 	message KKIBLJNEFKH {
+		// ref: KKHGGHMPCDH/MECFDKPJGNE/KKIBLJNEFKH/<>c
+		message <>c_a4a6 {
+		}
+
 		bool ocjelomfpfb = 1;
 	}
 
 	// ref: KKHGGHMPCDH/MECFDKPJGNE
 	message MECFDKPJGNE {
+		// ref: KKHGGHMPCDH/MECFDKPJGNE/KKIBLJNEFKH/<>c
+		message <>c_a4a6 {
+		}
+
 		// ref: KKHGGHMPCDH/MECFDKPJGNE/KKIBLJNEFKH
 		message KKIBLJNEFKH {
+			// ref: KKHGGHMPCDH/MECFDKPJGNE/KKIBLJNEFKH/<>c
+			message <>c_a4a6 {
+			}
+
 			bool ocjelomfpfb = 1;
 		}
 
@@ -12989,16 +13645,36 @@ message LBGJCLNDNOP {
 
 // ref: LBKJNOCNHOC
 message LBKJNOCNHOC {
+	// ref: LBKJNOCNHOC/NCFAIDNJLCP/ABKHDPKPIDP/<>c
+	message <>c_a0e5 {
+	}
+
+	// ref: LBKJNOCNHOC/<>c
+	message <>c_abd9 {
+	}
+
 	// ref: LBKJNOCNHOC/NCFAIDNJLCP/ABKHDPKPIDP
 	message ABKHDPKPIDP {
+		// ref: LBKJNOCNHOC/NCFAIDNJLCP/ABKHDPKPIDP/<>c
+		message <>c_a0e5 {
+		}
+
 		int32 hdemoidjiif = 1;
 		int32 hhnhhokohcp = 2;
 	}
 
 	// ref: LBKJNOCNHOC/NCFAIDNJLCP
 	message NCFAIDNJLCP {
+		// ref: LBKJNOCNHOC/NCFAIDNJLCP/ABKHDPKPIDP/<>c
+		message <>c_a0e5 {
+		}
+
 		// ref: LBKJNOCNHOC/NCFAIDNJLCP/ABKHDPKPIDP
 		message ABKHDPKPIDP {
+			// ref: LBKJNOCNHOC/NCFAIDNJLCP/ABKHDPKPIDP/<>c
+			message <>c_a0e5 {
+			}
+
 			int32 hdemoidjiif = 1;
 			int32 hhnhhokohcp = 2;
 		}
@@ -13066,8 +13742,20 @@ message LDMKHDCLKGD {
 		SUCCESS = 1;
 	}
 
+	// ref: LDMKHDCLKGD/PLCLGDJPOBG/IGMGLPFAHIE/<>c
+	message <>c_ac10 {
+	}
+
+	// ref: LDMKHDCLKGD/<>c
+	message <>c_aeff {
+	}
+
 	// ref: LDMKHDCLKGD/PLCLGDJPOBG/IGMGLPFAHIE
 	message IGMGLPFAHIE {
+		// ref: LDMKHDCLKGD/PLCLGDJPOBG/IGMGLPFAHIE/<>c
+		message <>c_ac10 {
+		}
+
 		repeated PJNCFJHJIND lpkoekignbc = 1;
 		int32 ciiejlenmgo = 2;
 	}
@@ -13080,8 +13768,16 @@ message LDMKHDCLKGD {
 			SUCCESS = 1;
 		}
 
+		// ref: LDMKHDCLKGD/PLCLGDJPOBG/IGMGLPFAHIE/<>c
+		message <>c_ac10 {
+		}
+
 		// ref: LDMKHDCLKGD/PLCLGDJPOBG/IGMGLPFAHIE
 		message IGMGLPFAHIE {
+			// ref: LDMKHDCLKGD/PLCLGDJPOBG/IGMGLPFAHIE/<>c
+			message <>c_ac10 {
+			}
+
 			repeated PJNCFJHJIND lpkoekignbc = 1;
 			int32 ciiejlenmgo = 2;
 		}
@@ -13098,7 +13794,7 @@ message LDMKHDCLKGD {
 message LDOJBEPICDE {
 	// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 	enum ALFCOBEFIMK {
-		UNSET = 0;
+		UNSET_a278 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -13116,7 +13812,7 @@ message LDOJBEPICDE {
 
 	// ref: LDOJBEPICDE/BCHFANMDJKD/BFGIDPFBLJE
 	enum BFGIDPFBLJE {
-		UNSET = 0;
+		UNSET_ae35 = 0;
 		PRIMORDIAL = 1;
 		WAIT = 2;
 		ACTIVE = 3;
@@ -13124,11 +13820,27 @@ message LDOJBEPICDE {
 		FINISHED = 5;
 	}
 
+	// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+	message <>c_a057 {
+	}
+
+	// ref: LDOJBEPICDE/<>c
+	message <>c_a169 {
+	}
+
+	// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/<>c
+	message <>c_a26c {
+	}
+
+	// ref: LDOJBEPICDE/BCHFANMDJKD/IFKEMEOBGEA/<>c
+	message <>c_a5e1 {
+	}
+
 	// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 	message AJIMFKHLPJC {
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 		enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13150,7 +13862,7 @@ message LDOJBEPICDE {
 	message BCHFANMDJKD {
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 		enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13168,7 +13880,7 @@ message LDOJBEPICDE {
 
 		// ref: LDOJBEPICDE/BCHFANMDJKD/BFGIDPFBLJE
 		enum BFGIDPFBLJE {
-			UNSET = 0;
+			UNSET_ae35 = 0;
 			PRIMORDIAL = 1;
 			WAIT = 2;
 			ACTIVE = 3;
@@ -13176,11 +13888,23 @@ message LDOJBEPICDE {
 			FINISHED = 5;
 		}
 
+		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+		message <>c_a057 {
+		}
+
+		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/<>c
+		message <>c_a26c {
+		}
+
+		// ref: LDOJBEPICDE/BCHFANMDJKD/IFKEMEOBGEA/<>c
+		message <>c_a5e1 {
+		}
+
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 		message AJIMFKHLPJC {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13200,6 +13924,10 @@ message LDOJBEPICDE {
 
 		// ref: LDOJBEPICDE/BCHFANMDJKD/IFKEMEOBGEA
 		message IFKEMEOBGEA {
+			// ref: LDOJBEPICDE/BCHFANMDJKD/IFKEMEOBGEA/<>c
+			message <>c_a5e1 {
+			}
+
 			uint64 lcekclicnop = 1;
 			int32 bhddpadkppl = 2;
 			int32 jdjohdjfjij = 3;
@@ -13228,7 +13956,7 @@ message LDOJBEPICDE {
 		message KMPEFBDIENM {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13244,11 +13972,15 @@ message LDOJBEPICDE {
 				FAVORITE = 13;
 			}
 
+			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+			message <>c_a057 {
+			}
+
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 			message AJIMFKHLPJC {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-		UNSET = 0;
+		UNSET_a278 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -13274,7 +14006,7 @@ message LDOJBEPICDE {
 		message LOOBOGEFLEG {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13290,11 +14022,15 @@ message LDOJBEPICDE {
 			FAVORITE = 13;
 			}
 
+			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+			message <>c_a057 {
+			}
+
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 			message AJIMFKHLPJC {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13316,7 +14052,7 @@ message LDOJBEPICDE {
 			message KMPEFBDIENM {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13332,11 +14068,15 @@ message LDOJBEPICDE {
 				FAVORITE = 13;
 				}
 
+				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+				message <>c_a057 {
+				}
+
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 				message AJIMFKHLPJC {
 					// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 					enum ALFCOBEFIMK {
-		UNSET = 0;
+		UNSET_a278 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -13364,7 +14104,7 @@ message LDOJBEPICDE {
 		message MKEGDOBFNPE {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13380,11 +14120,19 @@ message LDOJBEPICDE {
 			FAVORITE = 13;
 			}
 
+			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+			message <>c_a057 {
+			}
+
+			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/<>c
+			message <>c_a26c {
+			}
+
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 			message AJIMFKHLPJC {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13406,7 +14154,7 @@ message LDOJBEPICDE {
 			message KMPEFBDIENM {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13422,11 +14170,15 @@ message LDOJBEPICDE {
 				FAVORITE = 13;
 				}
 
+				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+				message <>c_a057 {
+				}
+
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 				message AJIMFKHLPJC {
 					// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 					enum ALFCOBEFIMK {
-		UNSET = 0;
+		UNSET_a278 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -13452,7 +14204,7 @@ message LDOJBEPICDE {
 			message LOOBOGEFLEG {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13468,11 +14220,15 @@ message LDOJBEPICDE {
 			FAVORITE = 13;
 				}
 
+				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+				message <>c_a057 {
+				}
+
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 				message AJIMFKHLPJC {
 					// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 					enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13494,7 +14250,7 @@ message LDOJBEPICDE {
 				message KMPEFBDIENM {
 					// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 					enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13510,11 +14266,15 @@ message LDOJBEPICDE {
 				FAVORITE = 13;
 					}
 
+					// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+					message <>c_a057 {
+					}
+
 					// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 					message AJIMFKHLPJC {
 						// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 						enum ALFCOBEFIMK {
-		UNSET = 0;
+		UNSET_a278 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -13552,6 +14312,10 @@ message LDOJBEPICDE {
 
 	// ref: LDOJBEPICDE/BCHFANMDJKD/IFKEMEOBGEA
 	message IFKEMEOBGEA {
+		// ref: LDOJBEPICDE/BCHFANMDJKD/IFKEMEOBGEA/<>c
+		message <>c_a5e1 {
+		}
+
 		uint64 lcekclicnop = 1;
 		int32 bhddpadkppl = 2;
 		int32 jdjohdjfjij = 3;
@@ -13580,7 +14344,7 @@ message LDOJBEPICDE {
 	message KMPEFBDIENM {
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 		enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13596,11 +14360,15 @@ message LDOJBEPICDE {
 			FAVORITE = 13;
 		}
 
+		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+		message <>c_a057 {
+		}
+
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 		message AJIMFKHLPJC {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13626,7 +14394,7 @@ message LDOJBEPICDE {
 	message LOOBOGEFLEG {
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 		enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13642,11 +14410,15 @@ message LDOJBEPICDE {
 			FAVORITE = 13;
 		}
 
+		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+		message <>c_a057 {
+		}
+
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 		message AJIMFKHLPJC {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13668,7 +14440,7 @@ message LDOJBEPICDE {
 		message KMPEFBDIENM {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13684,11 +14456,15 @@ message LDOJBEPICDE {
 				FAVORITE = 13;
 			}
 
+			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+			message <>c_a057 {
+			}
+
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 			message AJIMFKHLPJC {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-		UNSET = 0;
+		UNSET_a278 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -13716,7 +14492,7 @@ message LDOJBEPICDE {
 	message MKEGDOBFNPE {
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 		enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13732,11 +14508,19 @@ message LDOJBEPICDE {
 			FAVORITE = 13;
 		}
 
+		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+		message <>c_a057 {
+		}
+
+		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/<>c
+		message <>c_a26c {
+		}
+
 		// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 		message AJIMFKHLPJC {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13758,7 +14542,7 @@ message LDOJBEPICDE {
 		message KMPEFBDIENM {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13774,11 +14558,15 @@ message LDOJBEPICDE {
 				FAVORITE = 13;
 			}
 
+			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+			message <>c_a057 {
+			}
+
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 			message AJIMFKHLPJC {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-		UNSET = 0;
+		UNSET_a278 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -13804,7 +14592,7 @@ message LDOJBEPICDE {
 		message LOOBOGEFLEG {
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 			enum ALFCOBEFIMK {
-			UNSET = 0;
+			UNSET_a278 = 0;
 			MYTHICAL_POKEMON = 1;
 			SLASHED = 2;
 			GYM_DEPLOYED = 3;
@@ -13820,11 +14608,15 @@ message LDOJBEPICDE {
 			FAVORITE = 13;
 			}
 
+			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+			message <>c_a057 {
+			}
+
 			// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 			message AJIMFKHLPJC {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13846,7 +14638,7 @@ message LDOJBEPICDE {
 			message KMPEFBDIENM {
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 				enum ALFCOBEFIMK {
-				UNSET = 0;
+				UNSET_a278 = 0;
 				MYTHICAL_POKEMON = 1;
 				SLASHED = 2;
 				GYM_DEPLOYED = 3;
@@ -13862,11 +14654,15 @@ message LDOJBEPICDE {
 				FAVORITE = 13;
 				}
 
+				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/<>c
+				message <>c_a057 {
+				}
+
 				// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC
 				message AJIMFKHLPJC {
 					// ref: LDOJBEPICDE/BCHFANMDJKD/MKEGDOBFNPE/LOOBOGEFLEG/KMPEFBDIENM/AJIMFKHLPJC/ALFCOBEFIMK
 					enum ALFCOBEFIMK {
-		UNSET = 0;
+		UNSET_a278 = 0;
 		MYTHICAL_POKEMON = 1;
 		SLASHED = 2;
 		GYM_DEPLOYED = 3;
@@ -14192,6 +14988,14 @@ message LLFFIMJACDA {
 		SHOP = 26;
 	}
 
+	// ref: LLFFIMJACDA/<>c
+	message <>c_a724 {
+	}
+
+	// ref: LLFFIMJACDA/AEHIINGEGPL/KOCAAPKIGNA/<>c
+	message <>c_afe0 {
+	}
+
 	// ref: LLFFIMJACDA/AEHIINGEGPL
 	message AEHIINGEGPL {
 		// ref: LLFFIMJACDA/AEHIINGEGPL/KOCAAPKIGNA/EKCOAOOPBKF/LIEICLFIAGD
@@ -14223,6 +15027,10 @@ message LLFFIMJACDA {
 			BATTLE = 24;
 			XP = 25;
 			SHOP = 26;
+		}
+
+		// ref: LLFFIMJACDA/AEHIINGEGPL/KOCAAPKIGNA/<>c
+		message <>c_afe0 {
 		}
 
 		// ref: LLFFIMJACDA/AEHIINGEGPL/KOCAAPKIGNA/EKCOAOOPBKF
@@ -14291,6 +15099,10 @@ message LLFFIMJACDA {
 				BATTLE = 24;
 				XP = 25;
 				SHOP = 26;
+			}
+
+			// ref: LLFFIMJACDA/AEHIINGEGPL/KOCAAPKIGNA/<>c
+			message <>c_afe0 {
 			}
 
 			// ref: LLFFIMJACDA/AEHIINGEGPL/KOCAAPKIGNA/EKCOAOOPBKF
@@ -14400,6 +15212,10 @@ message LLFFIMJACDA {
 			BATTLE = 24;
 			XP = 25;
 			SHOP = 26;
+		}
+
+		// ref: LLFFIMJACDA/AEHIINGEGPL/KOCAAPKIGNA/<>c
+		message <>c_afe0 {
 		}
 
 		// ref: LLFFIMJACDA/AEHIINGEGPL/KOCAAPKIGNA/EKCOAOOPBKF
@@ -14850,10 +15666,26 @@ message MDMDOCEAHFJ {
 
 // ref: MDMNFHDLBNG
 message MDMNFHDLBNG {
+	// ref: MDMNFHDLBNG/<>c
+	message <>c_a489 {
+	}
+
+	// ref: MDMNFHDLBNG/NHANCEEOCKI/PCNDHNIMJMG/<>c
+	message <>c_a892 {
+	}
+
 	// ref: MDMNFHDLBNG/NHANCEEOCKI
 	message NHANCEEOCKI {
+		// ref: MDMNFHDLBNG/NHANCEEOCKI/PCNDHNIMJMG/<>c
+		message <>c_a892 {
+		}
+
 		// ref: MDMNFHDLBNG/NHANCEEOCKI/PCNDHNIMJMG
 		message PCNDHNIMJMG {
+			// ref: MDMNFHDLBNG/NHANCEEOCKI/PCNDHNIMJMG/<>c
+			message <>c_a892 {
+			}
+
 			string obnmioehmhk = 1;
 			int32 bpbgpdgmckk = 2;
 		}
@@ -14862,6 +15694,10 @@ message MDMNFHDLBNG {
 
 	// ref: MDMNFHDLBNG/NHANCEEOCKI/PCNDHNIMJMG
 	message PCNDHNIMJMG {
+		// ref: MDMNFHDLBNG/NHANCEEOCKI/PCNDHNIMJMG/<>c
+		message <>c_a892 {
+		}
+
 		string obnmioehmhk = 1;
 		int32 bpbgpdgmckk = 2;
 	}
@@ -14925,7 +15761,7 @@ message MEEFDDFFDHJ {
 
 	// ref: MEEFDDFFDHJ/KOMJJFDENOK/CFLNOLALIHO
 	enum CFLNOLALIHO {
-		UNSET = 0;
+		UNSET_a645 = 0;
 		EQUALS = 1;
 		GREATER_THAN = 2;
 		LESS_THAN = 3;
@@ -14933,7 +15769,7 @@ message MEEFDDFFDHJ {
 
 	// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM/GAOPGENDEJG
 	enum GAOPGENDEJG {
-		UNSET = 0;
+		UNSET_ae2f = 0;
 		GIOVANNI = 1;
 	}
 
@@ -14951,8 +15787,36 @@ message MEEFDDFFDHJ {
 		QUEST_PRECONDITION_EXCLUSIVE_IN_PROGRESS_GROUP = 9;
 	}
 
+	// ref: MEEFDDFFDHJ/KOMJJFDENOK/IMOPNEOJHBO/<>c
+	message <>c_a66e {
+	}
+
+	// ref: MEEFDDFFDHJ/<>c
+	message <>c_a9fb {
+	}
+
+	// ref: MEEFDDFFDHJ/KOMJJFDENOK/BECIBBAJJBE/<>c
+	message <>c_ab5f {
+	}
+
+	// ref: MEEFDDFFDHJ/KOMJJFDENOK/NMHKMHJCPHD/<>c
+	message <>c_ab84 {
+	}
+
+	// ref: MEEFDDFFDHJ/KOMJJFDENOK/FPJOLLMNLED/<>c
+	message <>c_abe5 {
+	}
+
+	// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/<>c
+	message <>c_ae02 {
+	}
+
 	// ref: MEEFDDFFDHJ/KOMJJFDENOK/BECIBBAJJBE
 	message BECIBBAJJBE {
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/BECIBBAJJBE/<>c
+		message <>c_ab5f {
+		}
+
 		IMILEAPINEO pjjngigopjd = 1;
 		CFLNOLALIHO fphehpnccel = 2;
 		int32 bgohkofkpom = 3;
@@ -14962,7 +15826,7 @@ message MEEFDDFFDHJ {
 	message BGECACHKDDM {
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM/GAOPGENDEJG
 		enum GAOPGENDEJG {
-			UNSET = 0;
+			UNSET_ae2f = 0;
 			GIOVANNI = 1;
 		}
 
@@ -14970,11 +15834,19 @@ message MEEFDDFFDHJ {
 
 	// ref: MEEFDDFFDHJ/KOMJJFDENOK/FPJOLLMNLED
 	message FPJOLLMNLED {
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/FPJOLLMNLED/<>c
+		message <>c_abe5 {
+		}
+
 		repeated string iihgpdakfkl = 1;
 	}
 
 	// ref: MEEFDDFFDHJ/KOMJJFDENOK/IMOPNEOJHBO
 	message IMOPNEOJHBO {
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/IMOPNEOJHBO/<>c
+		message <>c_a66e {
+		}
+
 		CFLNOLALIHO fphehpnccel = 1;
 		int32 pbggfdfbbna = 2;
 	}
@@ -14983,15 +15855,19 @@ message MEEFDDFFDHJ {
 	message KMOPIFFLJDJ {
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM/GAOPGENDEJG
 		enum GAOPGENDEJG {
-			UNSET = 0;
+			UNSET_ae2f = 0;
 			GIOVANNI = 1;
+		}
+
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/<>c
+		message <>c_ae02 {
 		}
 
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM
 		message BGECACHKDDM {
 			// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM/GAOPGENDEJG
 			enum GAOPGENDEJG {
-				UNSET = 0;
+				UNSET_ae2f = 0;
 				GIOVANNI = 1;
 			}
 
@@ -15004,7 +15880,7 @@ message MEEFDDFFDHJ {
 	message KOMJJFDENOK {
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/CFLNOLALIHO
 		enum CFLNOLALIHO {
-			UNSET = 0;
+			UNSET_a645 = 0;
 			EQUALS = 1;
 			GREATER_THAN = 2;
 			LESS_THAN = 3;
@@ -15012,7 +15888,7 @@ message MEEFDDFFDHJ {
 
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM/GAOPGENDEJG
 		enum GAOPGENDEJG {
-			UNSET = 0;
+			UNSET_ae2f = 0;
 			GIOVANNI = 1;
 		}
 
@@ -15030,8 +15906,32 @@ message MEEFDDFFDHJ {
 			QUEST_PRECONDITION_EXCLUSIVE_IN_PROGRESS_GROUP = 9;
 		}
 
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/IMOPNEOJHBO/<>c
+		message <>c_a66e {
+		}
+
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/BECIBBAJJBE/<>c
+		message <>c_ab5f {
+		}
+
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/NMHKMHJCPHD/<>c
+		message <>c_ab84 {
+		}
+
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/FPJOLLMNLED/<>c
+		message <>c_abe5 {
+		}
+
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/<>c
+		message <>c_ae02 {
+		}
+
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/BECIBBAJJBE
 		message BECIBBAJJBE {
+			// ref: MEEFDDFFDHJ/KOMJJFDENOK/BECIBBAJJBE/<>c
+			message <>c_ab5f {
+			}
+
 			IMILEAPINEO pjjngigopjd = 1;
 			CFLNOLALIHO fphehpnccel = 2;
 			int32 bgohkofkpom = 3;
@@ -15041,7 +15941,7 @@ message MEEFDDFFDHJ {
 		message BGECACHKDDM {
 			// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM/GAOPGENDEJG
 			enum GAOPGENDEJG {
-				UNSET = 0;
+				UNSET_ae2f = 0;
 				GIOVANNI = 1;
 			}
 
@@ -15049,11 +15949,19 @@ message MEEFDDFFDHJ {
 
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/FPJOLLMNLED
 		message FPJOLLMNLED {
+			// ref: MEEFDDFFDHJ/KOMJJFDENOK/FPJOLLMNLED/<>c
+			message <>c_abe5 {
+			}
+
 			repeated string iihgpdakfkl = 1;
 		}
 
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/IMOPNEOJHBO
 		message IMOPNEOJHBO {
+			// ref: MEEFDDFFDHJ/KOMJJFDENOK/IMOPNEOJHBO/<>c
+			message <>c_a66e {
+			}
+
 			CFLNOLALIHO fphehpnccel = 1;
 			int32 pbggfdfbbna = 2;
 		}
@@ -15062,15 +15970,19 @@ message MEEFDDFFDHJ {
 		message KMOPIFFLJDJ {
 			// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM/GAOPGENDEJG
 			enum GAOPGENDEJG {
-				UNSET = 0;
+				UNSET_ae2f = 0;
 				GIOVANNI = 1;
+			}
+
+			// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/<>c
+			message <>c_ae02 {
 			}
 
 			// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM
 			message BGECACHKDDM {
 				// ref: MEEFDDFFDHJ/KOMJJFDENOK/KMOPIFFLJDJ/BGECACHKDDM/GAOPGENDEJG
 				enum GAOPGENDEJG {
-		UNSET = 0;
+		UNSET_ae2f = 0;
 		GIOVANNI = 1;
 				}
 
@@ -15081,6 +15993,10 @@ message MEEFDDFFDHJ {
 
 		// ref: MEEFDDFFDHJ/KOMJJFDENOK/NMHKMHJCPHD
 		message NMHKMHJCPHD {
+			// ref: MEEFDDFFDHJ/KOMJJFDENOK/NMHKMHJCPHD/<>c
+			message <>c_ab84 {
+			}
+
 		int32 accgepidbek = 1;
 		int32 ikdgcljnfie = 2;
 		}
@@ -15089,6 +16005,10 @@ message MEEFDDFFDHJ {
 
 	// ref: MEEFDDFFDHJ/KOMJJFDENOK/NMHKMHJCPHD
 	message NMHKMHJCPHD {
+		// ref: MEEFDDFFDHJ/KOMJJFDENOK/NMHKMHJCPHD/<>c
+		message <>c_ab84 {
+		}
+
 		int32 accgepidbek = 1;
 		int32 ikdgcljnfie = 2;
 	}
@@ -15429,8 +16349,36 @@ message MKNJGPJAIAA {
 		explicit_buckets = 3;
 	}
 
+	// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+	message <>c_a22c {
+	}
+
+	// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+	message <>c_a5d3 {
+	}
+
+	// ref: MKNJGPJAIAA/<>c
+	message <>c_a7a7 {
+	}
+
+	// ref: MKNJGPJAIAA/KGDCPPFKOOE/HAEAOCENELA/<>c
+	message <>c_aa6c {
+	}
+
+	// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/<>c
+	message <>c_ac43 {
+	}
+
+	// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+	message <>c_af0b {
+	}
+
 	// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK
 	message AMGPPLGBCCK {
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+		message <>c_a22c {
+		}
+
 		int64 jebhinfpglo = 1;
 		int64 oeobjlbpiaa = 2;
 		int64 eleedneajgk = 3;
@@ -15438,8 +16386,24 @@ message MKNJGPJAIAA {
 
 	// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB
 	message EHBGDFMLJEB {
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+		message <>c_a22c {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+		message <>c_a5d3 {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+		message <>c_af0b {
+		}
+
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK
 		message AMGPPLGBCCK {
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+			message <>c_a22c {
+			}
+
 			int64 jebhinfpglo = 1;
 			int64 oeobjlbpiaa = 2;
 			int64 eleedneajgk = 3;
@@ -15447,11 +16411,19 @@ message MKNJGPJAIAA {
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF
 		message MMHBGIJMMIF {
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+			message <>c_af0b {
+			}
+
 			repeated int64 gefgkmhenng = 1;
 		}
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP
 		message MMPLFLNLKJP {
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+			message <>c_a5d3 {
+			}
+
 			int64 jebhinfpglo = 1;
 			float fajabbnngon = 2;
 			float ncnohgjgaka = 3;
@@ -15461,6 +16433,10 @@ message MKNJGPJAIAA {
 
 	// ref: MKNJGPJAIAA/KGDCPPFKOOE/HAEAOCENELA
 	message HAEAOCENELA {
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/HAEAOCENELA/<>c
+		message <>c_aa6c {
+		}
+
 		int64 ghdkhciegdl = 1;
 		int64 lffnmdcajie = 2;
 	}
@@ -15475,8 +16451,32 @@ message MKNJGPJAIAA {
 			explicit_buckets = 3;
 		}
 
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+		message <>c_a22c {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+		message <>c_a5d3 {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/HAEAOCENELA/<>c
+		message <>c_aa6c {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/<>c
+		message <>c_ac43 {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+		message <>c_af0b {
+		}
+
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK
 		message AMGPPLGBCCK {
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+			message <>c_a22c {
+			}
+
 			int64 jebhinfpglo = 1;
 			int64 oeobjlbpiaa = 2;
 			int64 eleedneajgk = 3;
@@ -15484,8 +16484,24 @@ message MKNJGPJAIAA {
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB
 		message EHBGDFMLJEB {
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+			message <>c_a22c {
+			}
+
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+			message <>c_a5d3 {
+			}
+
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+			message <>c_af0b {
+			}
+
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK
 			message AMGPPLGBCCK {
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+				message <>c_a22c {
+				}
+
 				int64 jebhinfpglo = 1;
 				int64 oeobjlbpiaa = 2;
 				int64 eleedneajgk = 3;
@@ -15493,69 +16509,133 @@ message MKNJGPJAIAA {
 
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF
 			message MMHBGIJMMIF {
-				repeated int64 gefgkmhenng = 1;
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+				message <>c_af0b {
+				}
+
+		repeated int64 gefgkmhenng = 1;
 			}
 
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP
 			message MMPLFLNLKJP {
-				int64 jebhinfpglo = 1;
-				float fajabbnngon = 2;
-				float ncnohgjgaka = 3;
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+				message <>c_a5d3 {
+				}
+
+		int64 jebhinfpglo = 1;
+		float fajabbnngon = 2;
+		float ncnohgjgaka = 3;
 			}
 
 		}
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/HAEAOCENELA
 		message HAEAOCENELA {
-			int64 ghdkhciegdl = 1;
-			int64 lffnmdcajie = 2;
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/HAEAOCENELA/<>c
+			message <>c_aa6c {
+			}
+
+		int64 ghdkhciegdl = 1;
+		int64 lffnmdcajie = 2;
 		}
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF
 		message MMHBGIJMMIF {
-			repeated int64 gefgkmhenng = 1;
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+			message <>c_af0b {
+			}
+
+		repeated int64 gefgkmhenng = 1;
 		}
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP
 		message MMPLFLNLKJP {
-			int64 jebhinfpglo = 1;
-			float fajabbnngon = 2;
-			float ncnohgjgaka = 3;
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+			message <>c_a5d3 {
+			}
+
+		int64 jebhinfpglo = 1;
+		float fajabbnngon = 2;
+		float ncnohgjgaka = 3;
 		}
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ
 		message NLCAJAGCNNJ {
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/LHIFEDMNJML
 			enum LHIFEDMNJML {
-				none = 0;
-				linear_buckets = 1;
-				exponential_buckets = 2;
-				explicit_buckets = 3;
+			none = 0;
+			linear_buckets = 1;
+			exponential_buckets = 2;
+			explicit_buckets = 3;
+			}
+
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+			message <>c_a22c {
+			}
+
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+			message <>c_a5d3 {
+			}
+
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/<>c
+			message <>c_ac43 {
+			}
+
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+			message <>c_af0b {
 			}
 
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK
 			message AMGPPLGBCCK {
-				int64 jebhinfpglo = 1;
-				int64 oeobjlbpiaa = 2;
-				int64 eleedneajgk = 3;
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+				message <>c_a22c {
+				}
+
+			int64 jebhinfpglo = 1;
+			int64 oeobjlbpiaa = 2;
+			int64 eleedneajgk = 3;
 			}
 
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB
 			message EHBGDFMLJEB {
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+				message <>c_a22c {
+				}
+
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+				message <>c_a5d3 {
+				}
+
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+				message <>c_af0b {
+				}
+
 				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK
 				message AMGPPLGBCCK {
-		int64 jebhinfpglo = 1;
-		int64 oeobjlbpiaa = 2;
-		int64 eleedneajgk = 3;
+					// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+					message <>c_a22c {
+					}
+
+					int64 jebhinfpglo = 1;
+					int64 oeobjlbpiaa = 2;
+					int64 eleedneajgk = 3;
 				}
 
 				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF
 				message MMHBGIJMMIF {
+					// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+					message <>c_af0b {
+					}
+
 		repeated int64 gefgkmhenng = 1;
 				}
 
 				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP
 				message MMPLFLNLKJP {
+					// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+					message <>c_a5d3 {
+					}
+
 		int64 jebhinfpglo = 1;
 		float fajabbnngon = 2;
 		float ncnohgjgaka = 3;
@@ -15565,11 +16645,19 @@ message MKNJGPJAIAA {
 
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF
 			message MMHBGIJMMIF {
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+				message <>c_af0b {
+				}
+
 		repeated int64 gefgkmhenng = 1;
 			}
 
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP
 			message MMPLFLNLKJP {
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+				message <>c_a5d3 {
+				}
+
 		int64 jebhinfpglo = 1;
 		float fajabbnngon = 2;
 		float ncnohgjgaka = 3;
@@ -15584,11 +16672,19 @@ message MKNJGPJAIAA {
 
 	// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF
 	message MMHBGIJMMIF {
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+		message <>c_af0b {
+		}
+
 		repeated int64 gefgkmhenng = 1;
 	}
 
 	// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP
 	message MMPLFLNLKJP {
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+		message <>c_a5d3 {
+		}
+
 		int64 jebhinfpglo = 1;
 		float fajabbnngon = 2;
 		float ncnohgjgaka = 3;
@@ -15604,8 +16700,28 @@ message MKNJGPJAIAA {
 			explicit_buckets = 3;
 		}
 
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+		message <>c_a22c {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+		message <>c_a5d3 {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/<>c
+		message <>c_ac43 {
+		}
+
+		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+		message <>c_af0b {
+		}
+
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK
 		message AMGPPLGBCCK {
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+			message <>c_a22c {
+			}
+
 			int64 jebhinfpglo = 1;
 			int64 oeobjlbpiaa = 2;
 			int64 eleedneajgk = 3;
@@ -15613,8 +16729,24 @@ message MKNJGPJAIAA {
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB
 		message EHBGDFMLJEB {
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+			message <>c_a22c {
+			}
+
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+			message <>c_a5d3 {
+			}
+
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+			message <>c_af0b {
+			}
+
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK
 			message AMGPPLGBCCK {
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/AMGPPLGBCCK/<>c
+				message <>c_a22c {
+				}
+
 				int64 jebhinfpglo = 1;
 				int64 oeobjlbpiaa = 2;
 				int64 eleedneajgk = 3;
@@ -15622,33 +16754,49 @@ message MKNJGPJAIAA {
 
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF
 			message MMHBGIJMMIF {
-				repeated int64 gefgkmhenng = 1;
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+				message <>c_af0b {
+				}
+
+		repeated int64 gefgkmhenng = 1;
 			}
 
 			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP
 			message MMPLFLNLKJP {
-				int64 jebhinfpglo = 1;
-				float fajabbnngon = 2;
-				float ncnohgjgaka = 3;
+				// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+				message <>c_a5d3 {
+				}
+
+		int64 jebhinfpglo = 1;
+		float fajabbnngon = 2;
+		float ncnohgjgaka = 3;
 			}
 
 		}
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF
 		message MMHBGIJMMIF {
-			repeated int64 gefgkmhenng = 1;
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMHBGIJMMIF/<>c
+			message <>c_af0b {
+			}
+
+		repeated int64 gefgkmhenng = 1;
 		}
 
 		// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP
 		message MMPLFLNLKJP {
-			int64 jebhinfpglo = 1;
-			float fajabbnngon = 2;
-			float ncnohgjgaka = 3;
+			// ref: MKNJGPJAIAA/KGDCPPFKOOE/NLCAJAGCNNJ/EHBGDFMLJEB/MMPLFLNLKJP/<>c
+			message <>c_a5d3 {
+			}
+
+		int64 jebhinfpglo = 1;
+		float fajabbnngon = 2;
+		float ncnohgjgaka = 3;
 		}
 
-		AMGPPLGBCCK ggagonnfloe = 1;
-		MMPLFLNLKJP clfdcdnkoji = 2;
-		MMHBGIJMMIF baeopklijea = 3;
+		MKNJGPJAIAA.AMGPPLGBCCK ggagonnfloe = 1;
+		MKNJGPJAIAA.MMPLFLNLKJP clfdcdnkoji = 2;
+		MKNJGPJAIAA.MMHBGIJMMIF baeopklijea = 3;
 	}
 
 	int64 ociapogiihi = 1;
@@ -20540,8 +21688,20 @@ message NCBFLACADJB {
 		TIMEOUT = 7;
 	}
 
+	// ref: NCBFLACADJB/OKLLKCONCHN/CMNPAOECBDO/<>c
+	message <>c_a4dd {
+	}
+
+	// ref: NCBFLACADJB/<>c
+	message <>c_a57b {
+	}
+
 	// ref: NCBFLACADJB/OKLLKCONCHN/CMNPAOECBDO
 	message CMNPAOECBDO {
+		// ref: NCBFLACADJB/OKLLKCONCHN/CMNPAOECBDO/<>c
+		message <>c_a4dd {
+		}
+
 		string pjfjhjhmbje = 1;
 		KOJHGNGMEHE bhgajiloadp = 2;
 		int64 pojhedlmjnd = 3;
@@ -20563,8 +21723,16 @@ message NCBFLACADJB {
 			TIMEOUT = 7;
 		}
 
+		// ref: NCBFLACADJB/OKLLKCONCHN/CMNPAOECBDO/<>c
+		message <>c_a4dd {
+		}
+
 		// ref: NCBFLACADJB/OKLLKCONCHN/CMNPAOECBDO
 		message CMNPAOECBDO {
+			// ref: NCBFLACADJB/OKLLKCONCHN/CMNPAOECBDO/<>c
+			message <>c_a4dd {
+			}
+
 			string pjfjhjhmbje = 1;
 			KOJHGNGMEHE bhgajiloadp = 2;
 			int64 pojhedlmjnd = 3;
@@ -20733,6 +21901,14 @@ message NFMJNHIHBIC {
 		item_ranking_loot_table_count = 5;
 	}
 
+	// ref: NFMJNHIHBIC/<>c
+	message <>c_a846 {
+	}
+
+	// ref: NFMJNHIHBIC/GKJKPBEFGFF/IDKAEICFFCB/<>c
+	message <>c_ae13 {
+	}
+
 	// ref: NFMJNHIHBIC/GKJKPBEFGFF
 	message GKJKPBEFGFF {
 		// ref: NFMJNHIHBIC/GKJKPBEFGFF/IDKAEICFFCB/EPDDAIOPDCN
@@ -20745,6 +21921,10 @@ message NFMJNHIHBIC {
 			item_ranking_loot_table_count = 5;
 		}
 
+		// ref: NFMJNHIHBIC/GKJKPBEFGFF/IDKAEICFFCB/<>c
+		message <>c_ae13 {
+		}
+
 		// ref: NFMJNHIHBIC/GKJKPBEFGFF/IDKAEICFFCB
 		message IDKAEICFFCB {
 			// ref: NFMJNHIHBIC/GKJKPBEFGFF/IDKAEICFFCB/EPDDAIOPDCN
@@ -20755,6 +21935,10 @@ message NFMJNHIHBIC {
 				item_loot_table = 3;
 				item_loot_table_count = 4;
 				item_ranking_loot_table_count = 5;
+			}
+
+			// ref: NFMJNHIHBIC/GKJKPBEFGFF/IDKAEICFFCB/<>c
+			message <>c_ae13 {
 			}
 
 			FBMCMBBDOLK mipacjnbigc = 1;
@@ -20776,6 +21960,10 @@ message NFMJNHIHBIC {
 			item_loot_table = 3;
 			item_loot_table_count = 4;
 			item_ranking_loot_table_count = 5;
+		}
+
+		// ref: NFMJNHIHBIC/GKJKPBEFGFF/IDKAEICFFCB/<>c
+		message <>c_ae13 {
 		}
 
 		FBMCMBBDOLK mipacjnbigc = 1;
@@ -23244,8 +24432,20 @@ message RedeemPasscodeResponseProto {
 		OVER_PLAYER_REDEMPTION_LIMIT = 5;
 	}
 
+	// ref: RedeemPasscodeResponseProto/<>c
+	message <>c_a0c7 {
+	}
+
+	// ref: RedeemPasscodeResponseProto/Types/AcquiredItem/<>c
+	message <>c_aa1a {
+	}
+
 	// ref: RedeemPasscodeResponseProto/Types/AcquiredItem
 	message AcquiredItem {
+		// ref: RedeemPasscodeResponseProto/Types/AcquiredItem/<>c
+		message <>c_aa1a {
+		}
+
 		string item = 1;
 		int64 count = 2;
 	}
@@ -23706,8 +24906,20 @@ message ClientInbox {
 		IMMEDIATE = 3;
 	}
 
+	// ref: Niantic.Platform.Protos.ClientInbox/Types/Notification/<>c
+	message <>c_a068 {
+	}
+
+	// ref: Niantic.Platform.Protos.ClientInbox/<>c
+	message <>c_a233 {
+	}
+
 	// ref: Niantic.Platform.Protos.ClientInbox/Types/Notification
 	message Notification {
+		// ref: Niantic.Platform.Protos.ClientInbox/Types/Notification/<>c
+		message <>c_a068 {
+		}
+
 		string notification_id = 1;
 		string title_key = 2;
 		string category = 3;
@@ -23839,8 +25051,20 @@ message GetFacebookFriendListOutProto {
 		ERROR_PLAYER_NOT_FOUND = 6;
 	}
 
+	// ref: Niantic.Platform.Protos.GetFacebookFriendListOutProto/Types/FacebookFriendProto/<>c
+	message <>c_a558 {
+	}
+
+	// ref: Niantic.Platform.Protos.GetFacebookFriendListOutProto/<>c
+	message <>c_abe4 {
+	}
+
 	// ref: Niantic.Platform.Protos.GetFacebookFriendListOutProto/Types/FacebookFriendProto
 	message FacebookFriendProto {
+		// ref: Niantic.Platform.Protos.GetFacebookFriendListOutProto/Types/FacebookFriendProto/<>c
+		message <>c_a558 {
+		}
+
 		PlayerSummaryProto player = 1;
 		string full_name = 2;
 	}
@@ -23882,15 +25106,43 @@ message GetFriendDetailsOutProto {
 		EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
 	}
 
+	// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/<>c
+	message <>c_a1bc {
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/Types/Callee/<>c
+	message <>c_a8a8 {
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/<>c
+	message <>c_afee {
+	}
+
 	// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/Types/Callee
 	message Callee {
+		// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/Types/Callee/<>c
+		message <>c_a8a8 {
+		}
+
 		string player_id = 2;
 	}
 
 	// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto
 	message DebugProto {
+		// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/<>c
+		message <>c_a1bc {
+		}
+
+		// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/Types/Callee/<>c
+		message <>c_a8a8 {
+		}
+
 		// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/Types/Callee
 		message Callee {
+			// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/Types/Callee/<>c
+			message <>c_a8a8 {
+			}
+
 			string player_id = 2;
 		}
 
@@ -23914,15 +25166,40 @@ message GetFriendDetailsProto {
 // ref: Niantic.Platform.Protos.GetFriendDetailsResponse
 message GetFriendDetailsResponse {
 	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/Result
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
+	enum Result_ae19 {
+		UNSET_ae19 = 0;
+		SUCCESS_ae19 = 1;
+		ERROR_UNKNOWN_ae19 = 2;
 		ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/PlayerStatusDetailsProto/Types/Result
+	enum Result_ae45 {
+		UNSET_ae45 = 0;
+		SUCCESS_ae45 = 1;
+		ERROR_UNKNOWN_ae45 = 2;
+		ERROR_STATUS_UNKNOWN = 3;
+		ERROR_STALE_DATA = 4;
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/<>c
+	message <>c_a351 {
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/FriendDetailsEntryProto/<>c
+	message <>c_a8ce {
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/PlayerStatusDetailsProto/<>c
+	message <>c_ab5f {
 	}
 
 	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/FriendDetailsEntryProto
 	message FriendDetailsEntryProto {
+		// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/FriendDetailsEntryProto/<>c
+		message <>c_a8ce {
+		}
+
 		string player_id = 1;
 		ProfileDetailsProto profile = 2;
 		PlayerStatusDetailsProto player_status = 3;
@@ -23932,12 +25209,16 @@ message GetFriendDetailsResponse {
 	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/PlayerStatusDetailsProto
 	message PlayerStatusDetailsProto {
 		// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/PlayerStatusDetailsProto/Types/Result
-		enum Result {
-			UNSET = 0;
-			SUCCESS = 1;
-			ERROR_UNKNOWN = 2;
+		enum Result_ae45 {
+			UNSET_ae45 = 0;
+			SUCCESS_ae45 = 1;
+			ERROR_UNKNOWN_ae45 = 2;
 			ERROR_STATUS_UNKNOWN = 3;
 			ERROR_STALE_DATA = 4;
+		}
+
+		// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/PlayerStatusDetailsProto/<>c
+		message <>c_ab5f {
 		}
 
 		double distance_to_player_km = 1;
@@ -23946,7 +25227,7 @@ message GetFriendDetailsResponse {
 		string last_played_app_key = 4;
 	}
 
-	Result result = 1;
+	Result_ae19 result = 1;
 	repeated FriendDetailsEntryProto friend_details = 2;
 }
 
@@ -23954,7 +25235,7 @@ message GetFriendDetailsResponse {
 message GetFriendsListOutProto {
 	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto/Types/OnlineStatus
 	enum OnlineStatus {
-		UNSET = 0;
+		UNSET_a4b3 = 0;
 		STATUS_UNKNOWN = 1;
 		STATUS_ONLINE = 2;
 		STATUS_OFFLINE = 3;
@@ -23962,19 +25243,35 @@ message GetFriendsListOutProto {
 
 	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/Result
 	enum Result {
-		UNSET = 0;
+		UNSET_aa60 = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/SharedFriendshipProto/<>c
+	message <>c_aba0 {
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto/<>c
+	message <>c_ae7b {
+	}
+
+	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/<>c
+	message <>c_af62 {
 	}
 
 	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto
 	message FriendProto {
 		// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto/Types/OnlineStatus
 		enum OnlineStatus {
-			UNSET = 0;
+			UNSET_a4b3 = 0;
 			STATUS_UNKNOWN = 1;
 			STATUS_ONLINE = 2;
 			STATUS_OFFLINE = 3;
+		}
+
+		// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto/<>c
+		message <>c_ae7b {
 		}
 
 		string player_id = 1;
@@ -23991,6 +25288,10 @@ message GetFriendsListOutProto {
 
 	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/SharedFriendshipProto
 	message SharedFriendshipProto {
+		// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/SharedFriendshipProto/<>c
+		message <>c_aba0 {
+		}
+
 		bytes shared_data = 1;
 		int64 version = 2;
 		bytes data_from_me = 3;
@@ -24071,8 +25372,20 @@ message GetProfileResponse {
 		ERROR_NOT_FRIEND = 3;
 	}
 
+	// ref: Niantic.Platform.Protos.GetProfileResponse/<>c
+	message <>c_aaf5 {
+	}
+
+	// ref: Niantic.Platform.Protos.GetProfileResponse/Types/PlayerProfileDetailsProto/<>c
+	message <>c_ad93 {
+	}
+
 	// ref: Niantic.Platform.Protos.GetProfileResponse/Types/PlayerProfileDetailsProto
 	message PlayerProfileDetailsProto {
+		// ref: Niantic.Platform.Protos.GetProfileResponse/Types/PlayerProfileDetailsProto/<>c
+		message <>c_ad93 {
+		}
+
 		string app_key = 1;
 		string codename = 2;
 		string faction = 3;
@@ -24334,6 +25647,14 @@ message SocialClientFeatures {
 		FRIEND_LIST = 3;
 	}
 
+	// ref: Niantic.Platform.Protos.SocialClientFeatures/<>c
+	message <>c_a24c {
+	}
+
+	// ref: Niantic.Platform.Protos.SocialClientFeatures/Types/CrossGameSocialClientSettingsProto/<>c
+	message <>c_acf1 {
+	}
+
 	// ref: Niantic.Platform.Protos.SocialClientFeatures/Types/CrossGameSocialClientSettingsProto
 	message CrossGameSocialClientSettingsProto {
 		// ref: Niantic.Platform.Protos.SocialClientFeatures/Types/CrossGameSocialClientSettingsProto/Types/AppLinkType
@@ -24349,6 +25670,10 @@ message SocialClientFeatures {
 			NIANTIC_PROFILE = 1;
 			ONLINE_STATUS = 2;
 			FRIEND_LIST = 3;
+		}
+
+		// ref: Niantic.Platform.Protos.SocialClientFeatures/Types/CrossGameSocialClientSettingsProto/<>c
+		message <>c_acf1 {
 		}
 
 		repeated FeatureType disabled_features = 1;
@@ -24459,8 +25784,20 @@ message UpdateNotificationProto {
 
 // ref: Niantic.Platform.Protos.UpdateProfileRequest
 message UpdateProfileRequest {
+	// ref: Niantic.Platform.Protos.UpdateProfileRequest/<>c
+	message <>c_a404 {
+	}
+
+	// ref: Niantic.Platform.Protos.UpdateProfileRequest/Types/ProfileProto/<>c
+	message <>c_aa65 {
+	}
+
 	// ref: Niantic.Platform.Protos.UpdateProfileRequest/Types/ProfileProto
 	message ProfileProto {
+		// ref: Niantic.Platform.Protos.UpdateProfileRequest/Types/ProfileProto/<>c
+		message <>c_aa65 {
+		}
+
 		string profile_name_app_key = 1;
 	}
 
