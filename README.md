@@ -36,8 +36,6 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``Titan``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Titan)
  - [``Vasa``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Vasa/VasaClientAction.proto#L5)
 
-### ![alt text][1.1] END DEPRECATED ![alt text][1.1]
-
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
