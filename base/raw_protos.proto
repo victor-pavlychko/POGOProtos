@@ -1613,7 +1613,7 @@ message GetFriendsListOutProto {
 	message FriendProto {
 		// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto/Types/OnlineStatus
 		enum OnlineStatus {
-			UNSET = 0;
+			ONLINE_STATUS_UNSET = 0;
 			STATUS_UNKNOWN = 1;
 			STATUS_ONLINE = 2;
 			STATUS_OFFLINE = 3;
@@ -17832,7 +17832,6 @@ message VasaClientAction {
 //----- End vasa -----
 //------------------------------
 //----- Begin Optimize Dump File's -----
-
 
 message AuthInfo {
 	string provider = 1;
