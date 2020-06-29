@@ -177,7 +177,7 @@ message PlatformDownloadGmTemplatesResponseProto {
 		WRONG_EXPERIMENTS = 5;
 	}
 
-	repeated ClientGameMasterTemplateProto template = 1;
+	repeated PlatformClientGameMasterTemplateProto template = 1;
 	repeated string deleted_template = 2;
 	uint64 batch_id = 3;
 	int32 page_offset = 4;
@@ -974,7 +974,7 @@ message TitanTitanGameClientTelemetryOmniProto {
 }
 
 message TitanUploadPoiPhotoByUrlOutProto {
-	PlatformPortalCurationImageResult.Result status = 1;
+	TitanPortalCurationImageResult.Result status = 1;
 }
 
 message TitanUploadPoiPhotoByUrlProto {
@@ -1031,7 +1031,7 @@ message PlatformAcceptFriendInviteOutProto {
 		ERROR_RECEIVER_HAS_MAX_FRIENDS = 7;
 	}
 
-	PlayerSummaryProto friend = 1;
+	PlatformPlayerSummaryProto friend = 1;
 }
 
 message PlatformAcceptFriendInviteProto {
@@ -1040,8 +1040,8 @@ message PlatformAcceptFriendInviteProto {
 
 message PlatformAccountSettingsProto {
 	bool opt_out_social_graph_import = 1;
-	SocialSettings.ConsentStatus online_status_consent = 2;
-	SocialSettings.ConsentStatus last_played_date_consent = 3;
+	PlatformSocialSettings.ConsentStatus online_status_consent = 2;
+	PlatformSocialSettings.ConsentStatus last_played_date_consent = 3;
 }
 
 message PlatformAddLoginActionOutProto {
@@ -1176,7 +1176,7 @@ message PlatformGetClientFeatureFlagsRequest {
 }
 
 message PlatformGetClientFeatureFlagsResponse {
-	SocialClientFeatures feature_flags = 1;
+	PlatformSocialClientFeatures feature_flags = 1;
 }
 
 message PlatformGetFacebookFriendListOutProto {
@@ -1259,19 +1259,11 @@ message PlatformGetFriendDetailsResponse {
 		ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;
 	}
 
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_STATUS_UNKNOWN = 3;
-		ERROR_STALE_DATA = 4;
-	}
-
 	message FriendDetailsEntryProto {
 		string player_id = 1;
-		ProfileDetailsProto profile = 2;
+		PlatformProfileDetailsProto profile = 2;
 		PlayerStatusDetailsProto player_status = 3;
-		FriendDetailsProto calling_game_data = 4;
+		PlatformFriendDetailsProto calling_game_data = 4;
 	}
 
 	message PlayerStatusDetailsProto {
@@ -1285,7 +1277,7 @@ message PlatformGetFriendDetailsResponse {
 
 		double distance_to_player_km = 1;
 		PlatformPlayerLocaleProto locale = 2;
-		SocialV2Enum.OnlineStatus online_status = 3;
+		PlatformSocialV2Enum.OnlineStatus online_status = 3;
 		string last_played_app_key = 4;
 	}
 
@@ -1295,7 +1287,7 @@ message PlatformGetFriendDetailsResponse {
 
 message PlatformGetFriendsListOutProto {
 	enum OnlineStatus {
-		UNSET = 0;
+		ONLINE_STATUS_UNSET = 0;
 		STATUS_UNKNOWN = 1;
 		STATUS_ONLINE = 2;
 		STATUS_OFFLINE = 3;
@@ -1366,7 +1358,7 @@ message PlatformGetNotificationInboxOutProto {
 		FAILURE = 2;
 	}
 
-	ClientInbox inbox = 1;
+	PlatformClientInbox inbox = 1;
 }
 
 message PlatformGetPlayerSettingsOutProto {
@@ -1407,7 +1399,7 @@ message PlatformGetProfileResponse {
 	}
 
 	Result result = 1;
-	ProfileDetailsProto profile_details = 2;
+	PlatformProfileDetailsProto profile_details = 2;
 	repeated PlayerProfileDetailsProto player_profile_details = 3;
 }
 
@@ -1478,7 +1470,7 @@ message PlatformOptOutProto {
 
 message PlatformPlayerSettingsProto {
 	bool opt_out_online_status = 1;
-	repeated SocialSettings.TutorialType completed_tutorials = 2;
+	repeated PlatformSocialSettings.TutorialType completed_tutorials = 2;
 }
 
 message PlatformPlayerSummaryProto {
@@ -1733,8 +1725,8 @@ message PlatformUpdateProfileResponse {
 message PlatformAvailableSkuProto {
 	string id = 1;
 	bool is_third_party_vendor_item = 2;
-	repeated CurrencyQuantityProto price = 3;
-	repeated CurrencyQuantityProto currency_granted = 4;
+	repeated PlatformCurrencyQuantityProto price = 3;
+	repeated PlatformCurrencyQuantityProto currency_granted = 4;
 	repeated PlatformGameItemContentProto game_item_content = 5;
 	repeated PlatformSkuPresentationProto presentation_data = 6;
 	bool can_be_purchased = 7;
@@ -1765,7 +1757,7 @@ message PlatformGetAvailableSkusAndBalancesOutProto {
 	}
 
 	repeated PlatformAvailableSkuProto available_sku = 1;
-	repeated CurrencyQuantityProto balance = 2;
+	repeated PlatformCurrencyQuantityProto balance = 2;
 	string player_token = 3;
 }
 
@@ -6248,7 +6240,7 @@ message ClientPlayerProto {
 	DailyBonusProto daily_bonus_proto = 11;
 	EquippedBadgeProto equipped_badge_proto = 12;
 	ContactSettingsProto contact_settings_proto = 13;
-	repeated CurrencyQuantityProto currency_balance = 14;
+	repeated PlatformCurrencyQuantityProto currency_balance = 14;
 	int32 remaining_codename_claims = 15;
 	BuddyPokemonProto buddy_pokemon_proto = 16;
 	int64 battle_lockout_end_ms = 17;
@@ -15738,52 +15730,6 @@ message VasaClientAction {
 	enum ActionEnum {
 		INVALID_VASA_CLIENT_ACTION = 0;
 		COLLECT_ADID = 8000;
-	}
-
-}
-
-message AssetDigestDecoderTool {
-	repeated AssetDigestEntry digest = 1;
-	uint64 timestamp_ms = 2;
-	Result result = 3;
-	int32 page_offset = 4;
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		PAGE = 2;
-		RETRY = 3;
-	}
-
-	message AssetDigestEntry {
-		string asset_id = 1;
-		string bundle_name = 2;
-		int64 version = 3;
-		fixed32 checksum = 4;
-		int32 size = 5;
-		bytes key = 6;
-	}
-
-}
-
-message GameMasterDecoderTool {
-	Result result = 1;
-	repeated ClientGameMasterTemplate template = 2;
-	repeated string deleted_template = 3;
-	uint64 batch_id = 4;
-	int32 page_offset = 5;
-	repeated int32 experiment_id = 6;
-	enum Result {
-		UNSET = 0;
-		COMPLETE = 1;
-		MORE_RESULTS = 2;
-		BATCH_ID_NOT_LIVE = 3;
-		INVALID_BASIS_BATCH_ID = 4;
-		WRONG_EXPERIMENTS = 5;
-	}
-
-	message ClientGameMasterTemplate {
-		string template_id = 1;
-		DHOMCDPNOBN data = 2;
 	}
 
 }

@@ -1563,15 +1563,6 @@ message GetFriendDetailsResponse {
 		ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;
 	}
 
-	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/PlayerStatusDetailsProto/Types/Result
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_STATUS_UNKNOWN = 3;
-		ERROR_STALE_DATA = 4;
-	}
-
 	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/FriendDetailsEntryProto
 	message FriendDetailsEntryProto {
 		string player_id = 1;
@@ -1605,7 +1596,7 @@ message GetFriendDetailsResponse {
 message GetFriendsListOutProto {
 	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto/Types/OnlineStatus
 	enum OnlineStatus {
-		UNSET = 0;
+		ONLINE_STATUS_UNSET = 0;
 		STATUS_UNKNOWN = 1;
 		STATUS_ONLINE = 2;
 		STATUS_OFFLINE = 3;
@@ -17842,52 +17833,6 @@ message VasaClientAction {
 //------------------------------
 //----- Begin Optimize Dump File's -----
 
-
-message AssetDigestDecoderTool {
-	repeated AssetDigestEntry digest = 1;
-	uint64 timestamp_ms = 2;
-	Result result = 3;
-	int32 page_offset = 4;
-
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		PAGE = 2;
-		RETRY = 3;
-	}
-
-	message AssetDigestEntry {
-		string asset_id = 1;
-		string bundle_name = 2;
-		int64 version = 3;
-		fixed32 checksum = 4;
-		int32 size = 5;
-		bytes key = 6;
-	}
-}
-
-message GameMasterDecoderTool {
-	Result result = 1;
-	repeated ClientGameMasterTemplate template = 2;
-	repeated string deleted_template = 3;
-	uint64 batch_id = 4;
-	int32 page_offset = 5;
-	repeated int32 experiment_id = 6;
-
-	enum Result {
-		UNSET = 0;
-		COMPLETE = 1;
-		MORE_RESULTS = 2;
-		BATCH_ID_NOT_LIVE = 3;
-		INVALID_BASIS_BATCH_ID = 4;
-		WRONG_EXPERIMENTS = 5;
-	}
-
-	message ClientGameMasterTemplate {
-		string template_id = 1;
-		DHOMCDPNOBN data = 2;
-	}
-}
 
 message AuthInfo {
 	string provider = 1;
