@@ -1301,7 +1301,7 @@ message PlatformGetFriendsListOutProto {
 
 	message FriendProto {
 		enum OnlineStatus {
-			UNSET = 0;
+			ONLINE_STATUS_UNSET = 0;
 			STATUS_UNKNOWN = 1;
 			STATUS_ONLINE = 2;
 			STATUS_OFFLINE = 3;
