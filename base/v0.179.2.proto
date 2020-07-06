@@ -155,7 +155,8 @@ message PlatformDeveloperToken {
 
 message PlatformClientGameMasterTemplateProto {
 	string template_id = 1;
-	bytes data = 2;
+	//bytes data = 2;
+	GameMasterClientTemplateProto data = 2;
 }
 
 message PlatformDownloadGmTemplatesRequestProto {
@@ -177,11 +178,12 @@ message PlatformDownloadGmTemplatesResponseProto {
 		WRONG_EXPERIMENTS = 5;
 	}
 
-	repeated PlatformClientGameMasterTemplateProto template = 1;
-	repeated string deleted_template = 2;
-	uint64 batch_id = 3;
-	int32 page_offset = 4;
-	repeated int32 experiment_id = 5;
+	Result result = 1;
+	repeated PlatformClientGameMasterTemplateProto template = 2;
+	repeated string deleted_template = 3;
+	uint64 batch_id = 4;
+	int32 page_offset = 5;
+	repeated int32 experiment_id = 6;
 }
 
 enum BattleResultsExit {
@@ -1111,7 +1113,7 @@ message PlatformDownloadSettingsActionProto {
 message PlatformDownloadSettingsResponseProto {
 	string error = 1;
 	string sha1 = 2;
-	bytes values = 3;
+    GlobalSettingsProto values = 3;
 }
 
 message PlatformFriendDetailsProto {
