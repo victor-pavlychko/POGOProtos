@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Settings;
+
+message LobbyClientSettings {
+	int64 lobby_refresh_interval_ms = 1;
+}

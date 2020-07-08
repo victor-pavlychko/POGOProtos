@@ -1,0 +1,14 @@
+syntax = "proto3";
+package POGOProtos.Data.Rocket;
+
+import "POGOProtos/Data/Rocket/RocketBalloonIncidentDisplay.proto";
+
+message RocketBalloonDisplay {
+	BalloonType type = 1;
+	.POGOProtos.Data.Rocket.RocketBalloonIncidentDisplay incident_display = 2;
+
+	enum BalloonType {
+		ROCKET = 0;
+		ROCKET_B = 1;
+	}
+}

@@ -163,6 +163,8 @@ enum RequestType {
 	INVASION_BATTLE_UPDATE = 1203;                     // Implemented
 	INVASION_ENCOUNTER = 1204;                         // Implemented
 	PURIFY_POKEMON = 1205;                             // Implemented
+	GET_ROCKET_BALLOON = 1206;                         // Implemented
+	START_ROCKET_BALLOON_INCIDENT = 1207;              // ???
 	VS_SEEKER_START_MATCHMAKING = 1300;                // Implemented
 	CANCEL_MATCHMAKING = 1301;                         // Implemented
 	GET_MATCHMAKING_STATUS = 1302;                     // Implemented
@@ -186,4 +188,7 @@ enum RequestType {
 	SEND_RAID_INVITATION = 1504;                       // Implemented
 	GET_DAILY_ENCOUNTER = 1601;                        // Implemented
 	DAILY_ENCOUNTER = 1602;                            // Implemented
+	OPEN_SPONSORED_GIFT = 1650;                        // Implemented
+	SPONSORED_GIFT_REPORT_INTERACTION = 1651;          // ???
+	SAVE_PLAYER_PREFERENCES = 1652;                    // Implemented
 }

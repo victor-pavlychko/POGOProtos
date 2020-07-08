@@ -1,6 +1,8 @@
 syntax = "proto3";
 package POGOProtos.Settings;
 
+import "POGOProtos/Settings/CrossGameSocialGlobalSettings.proto";
+
 message SocialClientSettings {
 	bool enable_social = 1;
 	int32 max_friend_details = 2;
@@ -14,6 +16,7 @@ message SocialClientSettings {
 	bool enable_giftability_v2 = 11;
 	bool enable_remote_gifting = 12;
 	bool enable_sticker = 13;
+	.POGOProtos.Settings.CrossGameSocialGlobalSettings cross_game_social_settings = 14;
 }
 
 message SocialGiftCountTelemetry {

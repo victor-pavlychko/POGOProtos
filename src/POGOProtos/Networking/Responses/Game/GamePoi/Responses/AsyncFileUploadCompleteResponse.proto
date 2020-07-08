@@ -6,6 +6,7 @@ import "POGOProtos/Enums/PlayerSubmissionType.proto";
 message AsyncFileUploadCompleteResponse {
 	ErrorStatus error = 1;
 	.POGOProtos.Enums.PlayerSubmissionType submission_type = 2;
+	string poi_id = 3;
 
 	enum ErrorStatus {
 		UNSET = 0;

@@ -1,9 +1,12 @@
 syntax = "proto3";
 package POGOProtos.Map.Fort;
 
+import "POGOProtos/Enums/EnumWrapper.proto";
+
 message IncidentLookup {
 	string incident_id = 1;
 	string fort_id = 2;
 	double fort_lat = 3;
 	double fort_lng = 4;
+	.POGOProtos.Enums.EnumWrapper.InvasionContext context = 5;
 }

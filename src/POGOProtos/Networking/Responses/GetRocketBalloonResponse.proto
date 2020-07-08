@@ -1,0 +1,19 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses;
+
+import "POGOProtos/Data/Rocket/RocketBalloonDisplay.proto";
+
+message GetRocketBalloonResponse {
+	Status status = 1;
+	.POGOProtos.Data.Rocket.RocketBalloonDisplay display = 2;
+
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		IN_COOL_DOWN = 2;
+		NO_BALLOON_AVAILABLE = 3;
+		DISABLED = 4;
+		EQUIPPED_ITEM_INVALID = 5;
+		SUCCESS_BALLOON_ALREADY_EXISTS = 6;
+	}
+}

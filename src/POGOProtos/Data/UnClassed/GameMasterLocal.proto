@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos.Data.UnClassed;
+
+import "POGOProtos/Networking/Responses/DownloadItemTemplatesResponse.proto";
+
+message GameMasterLocal {
+	repeated .POGOProtos.Networking.Responses.DownloadItemTemplatesResponse.GameMasterClientTemplate templates = 1;
+}

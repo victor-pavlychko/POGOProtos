@@ -7,6 +7,7 @@ import "POGOProtos/Inventory/Item/ItemAward.proto";
 import "POGOProtos/Inventory/Loot.proto";
 import "POGOProtos/Data/Badge/AwardedGymBadge.proto";
 import "POGOProtos/Data/Gift/GiftBox.proto";
+import "POGOProtos/Data/Vasa/AdDetails.proto";
 
 message FortSearchResponse {
 	Result result = 1;
@@ -24,6 +25,7 @@ message FortSearchResponse {
 	string fort_id = 13;
 	.POGOProtos.Data.Quests.ClientQuest challenge_quest = 14;
 	.POGOProtos.Data.Gift.GiftBox gift_box = 15;
+	.POGOProtos.Data.Vasa.AdDetails sponsored_gift = 16;
 
 	enum Result {
 		NO_RESULT_SET = 0;

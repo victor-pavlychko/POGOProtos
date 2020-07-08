@@ -12,4 +12,6 @@ message IapItemCategoryDisplay {
 	string banner_title = 6;
 	string image_url = 7;
 	string description = 8;
+	int32 display_rows = 9;
+	string subcategory = 10;
 }

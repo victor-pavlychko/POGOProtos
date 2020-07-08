@@ -15,6 +15,7 @@ import "POGOProtos/Data/Combat/CombatPlayerPreferences.proto";
 import "POGOProtos/Enums/PokemonId.proto";
 import "POGOProtos/Data/Combat/CombatLog.proto";
 import "POGOProtos/Data/Buddy/BuddyObservedData.proto";
+import "POGOProtos/Data/Player/PlayerPreferences.proto";
 
 message PlayerData {
 	int64 creation_timestamp_ms = 1;
@@ -42,4 +43,5 @@ message PlayerData {
 	int64 time_zone_offset_ms = 26;
 	.POGOProtos.Data.Buddy.BuddyObservedData buddy_observed_data = 27;
 	string helpshift_user_id = 28;
+	.POGOProtos.Data.Player.PlayerPreferences player_preferences = 29;
 }

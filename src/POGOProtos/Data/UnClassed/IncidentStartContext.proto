@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos.Data.UnClassed;
+
+enum IncidentStartContext {
+	NPC = 0;
+	POKESTOP = 1;
+	BALLOON = 2;
+}

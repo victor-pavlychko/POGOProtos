@@ -1,6 +1,10 @@
 syntax = "proto3";
 package POGOProtos.Settings;
 
+import "POGOProtos/Settings/SocialSettings.proto";
+
 message AccountSettings {
 	bool opt_out_social_graph_import = 1;
+	.POGOProtos.Settings.SocialSettings.ConsentStatus online_status_consent = 2;
+	.POGOProtos.Settings.SocialSettings.ConsentStatus last_played_date_consent = 3;
 }

@@ -1,0 +1,60 @@
+syntax = "proto3";
+package POGOProtos.Data.UnClassed;
+
+import "POGOProtos/Data/UnClassed/GetProfileResponse.proto";
+import "POGOProtos/Data/Friends/FriendDetails.proto";
+
+message GetFriendDetailsResponse {
+	Result result = 1;
+	repeated FriendDetailsEntryProto friend_details = 2;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;
+	}
+
+	message FriendDetailsEntryProto {
+		string player_id = 1;
+		.POGOProtos.Data.UnClassed.GetProfileResponse.ProfileDetails profile = 2;
+		PlayerStatusDetailsProto player_status = 3;
+		.POGOProtos.Data.Friends.FriendDetails calling_game_data = 4;
+	}
+
+	message PlayerStatusDetailsProto {
+		enum Result {
+			UNSET = 0;
+			SUCCESS = 1;
+			ERROR_UNKNOWN = 2;
+			ERROR_STATUS_UNKNOWN = 3;
+			ERROR_STALE_DATA = 4;
+		}
+
+		double distance_to_player_km = 1;
+		PlatformPlayerLocale locale = 2;
+		SocialV2Enum.OnlineStatus online_status = 3;
+		string last_played_app_key = 4;
+	}
+
+	message SocialV2Enum {
+		enum OnlineStatus {
+			STATUS_UNSET = 0;
+			STATUS_UNKNOWN = 1;
+			STATUS_ONLINE = 2;
+			STATUS_OFFLINE = 3;
+		}
+	}
+
+	message PlatformPlayerLocale {
+		string country = 1;
+		string language = 2;
+		string timezone = 3;
+	}
+
+	enum OnlineStatus {
+		NOT_ONLINE = 0;
+		ONLINE_ELSEWHERE = 1;
+		ONLINE = 2;
+	}
+}

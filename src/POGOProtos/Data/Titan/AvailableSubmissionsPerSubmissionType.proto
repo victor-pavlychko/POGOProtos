@@ -12,4 +12,5 @@ message AvailableSubmissionsPerSubmissionType {
 	int32 max_poi_distance_in_meters = 6;
 	repeated string blacklisted_os = 7;
 	repeated string blacklisted_device_id = 8;
+	bool is_whitelisted_user = 9;
 }

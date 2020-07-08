@@ -20,6 +20,8 @@ message GetRaidDetailsResponse {
 	int32 server_instance = 12;
 	bool display_high_user_warning = 13;
 	int32 num_friend_invites_remaining = 14;
+	bool remote_ticket_used = 15;
+	bool is_within_plfe_range = 16;
 
 	enum Result {
 		UNSET = 0;

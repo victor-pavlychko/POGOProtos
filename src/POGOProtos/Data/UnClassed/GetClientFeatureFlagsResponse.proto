@@ -1,0 +1,28 @@
+syntax = "proto3";
+package POGOProtos.Data.UnClassed;
+
+message GetClientFeatureFlagsResponse {
+	SocialClientFeatures feature_flags = 1;
+
+	message SocialClientFeatures {
+		CrossGameSocialClientSettings cross_game_social_settings = 1;
+
+		message CrossGameSocialClientSettings {
+			enum AppLinkType {
+				NO_LINK = 0;
+				WEB_LINK = 1;
+				APP_STORE_LINK = 2;
+			}
+
+			enum FeatureType {
+				UNSET = 0;
+				NIANTIC_PROFILE = 1;
+				ONLINE_STATUS = 2;
+				FRIEND_LIST = 3;
+			}
+
+			repeated FeatureType disabled_features = 1;
+			AppLinkType app_link = 2;
+		}
+	}
+}

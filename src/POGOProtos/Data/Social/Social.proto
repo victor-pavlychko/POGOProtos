@@ -4,8 +4,8 @@ package POGOProtos.Data.Social;
 message Social {
 	enum AppKey {
 		INVALID = 0;
-		INGRESS = 1;
-		HOLOHOLO = 2;
-		LEXICON = 3;
+		INGRESS_DELETED = 1;
+		HOLOHOLO_DELETED = 2;
+		LEXICON_DELETED = 3;
 	}
 }

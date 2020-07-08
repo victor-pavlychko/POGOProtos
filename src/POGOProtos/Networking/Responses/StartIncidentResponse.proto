@@ -26,6 +26,7 @@ message StartIncidentResponse {
 		int32 current_step = 5;
 		repeated ClientIncidentStep step = 6;
 		.POGOProtos.Map.Fort.FortData.PokestopIncidentDisplay completion_display = 7;
+		.POGOProtos.Enums.EnumWrapper.InvasionContext context = 8;
 
 		message ClientIncidentStep {
 			oneof ClientIncidentStep {

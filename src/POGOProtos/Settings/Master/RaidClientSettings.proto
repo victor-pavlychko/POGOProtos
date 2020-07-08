@@ -1,6 +1,8 @@
 syntax = "proto3";
 package POGOProtos.Settings.Master;
 
+import "POGOProtos/Enums/RaidLevel.proto";
+
 message RaidClientSettings {
 	bool remote_raid_enabled = 1;
 	int32 max_remote_raid_passes = 2;
@@ -12,4 +14,7 @@ message RaidClientSettings {
 	bool can_invite_friends_remotely = 8;
 	int32 max_players_per_lobby = 9;
 	int32 max_remote_players_per_lobby = 10;
+	int64 invite_cooldown_duration_millis = 11;
+	int32 max_num_friend_invites_per_action = 12;
+	repeated .POGOProtos.Enums.RaidLevel unsupported_raid_levels_for_friend_invites = 13;
 }

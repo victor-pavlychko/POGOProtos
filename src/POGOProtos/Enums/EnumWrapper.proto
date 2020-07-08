@@ -10,6 +10,8 @@ message EnumWrapper {
 		CLIFF = 4;
 		SIERRA = 5;
 		GIOVANNI = 6;
+		GRUNTBF = 7;
+		GRUNTBM = 8;
 	}
 
 	enum InvasionCharacter {
@@ -64,6 +66,10 @@ message EnumWrapper {
 		CHARACTER_GHOST_GRUNT_MALE = 48;
 		CHARACTER_ELECTRIC_GRUNT_FEMALE = 49;
 		CHARACTER_ELECTRIC_GRUNT_MALE = 50;
+		CHARACTER_BALLOON_GRUNT_FEMALE = 51;
+		CHARACTER_BALLOON_GRUNT_MALE = 52;
+		CHARACTER_GRUNTB_FEMALE = 53;
+		CHARACTER_GRUNTB_MALE = 54;
 	}
 
 	enum InvasionCharacterExpression {
@@ -72,6 +78,15 @@ message EnumWrapper {
 		PLACEHOLDER_2 = 2;
 		PLACEHOLDER_3 = 3;
 		PLACEHOLDER_4 = 4;
+		GREETING = 5;
+		CHALLENGE = 6;
+		VICTORY = 7;
+		DEFEAT = 8;
+	}
+
+	enum InvasionContext {
+		POKESTOP_INCIDENT = 0;
+		ROCKET_BALLOON = 1;
 	}
 
 	enum PokestopStyle {

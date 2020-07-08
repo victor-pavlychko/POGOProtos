@@ -3,4 +3,5 @@ package POGOProtos.Settings;
 
 message GmtSettings {
 	bool enable_gmtdownload_v2 = 1;
+	int32 download_poll_period_ms = 2;
 }

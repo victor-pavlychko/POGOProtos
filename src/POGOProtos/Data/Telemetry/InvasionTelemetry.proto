@@ -3,6 +3,7 @@ package POGOProtos.Data.Telemetry;
 
 import "POGOProtos/Enums/EnumWrapper.proto";
 import "POGOProtos/Enums/TelemetryIds.proto";
+import "POGOProtos/Data/Rocket/RocketBalloonDisplay.proto";
 
 message InvasionTelemetry {
 	.POGOProtos.Enums.InvasionTelemetryIds invasion_telemetry_id = 1;
@@ -18,4 +19,6 @@ message InvasionTelemetry {
 	bool curfew = 11;
 	float duration = 12;
 	float distance = 13;
+	.POGOProtos.Enums.EnumWrapper.InvasionContext invasion_context = 14;
+	.POGOProtos.Data.Rocket.RocketBalloonDisplay.BalloonType balloon_type = 15;
 }

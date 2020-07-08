@@ -1,0 +1,9 @@
+syntax = "proto3";
+package POGOProtos.Settings;
+
+message CrossGameSocialGlobalSettings {
+	int32 online_status_min_level = 1;
+	int32 niantic_profile_min_level = 2;
+	int32 friends_list_min_level = 3;
+	int32 max_friends_per_detail_page = 4;
+}

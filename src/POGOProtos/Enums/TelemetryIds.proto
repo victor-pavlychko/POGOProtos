@@ -15,6 +15,7 @@ enum InvasionTelemetryIds {
 	INVASION_RADAR_VIEW_EMPTY = 10;
 	INVASION_DECOY_FOUND = 11;
 	INVASION_GIOVANNI_FOUND = 12;
+	INVASION_BALLOON_TAP = 13;
 }
 
 enum DeviceServiceTelemetryIds {

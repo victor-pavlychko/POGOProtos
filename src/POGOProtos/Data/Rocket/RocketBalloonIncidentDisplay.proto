@@ -1,0 +1,9 @@
+syntax = "proto3";
+package POGOProtos.Data.Rocket;
+
+import "POGOProtos/Map/Fort/FortData.proto";
+
+message RocketBalloonIncidentDisplay {
+	string incident_id = 1;
+	.POGOProtos.Map.Fort.FortData.PokestopIncidentDisplay.IncidentDisplayType incident_display_type = 2;
+}

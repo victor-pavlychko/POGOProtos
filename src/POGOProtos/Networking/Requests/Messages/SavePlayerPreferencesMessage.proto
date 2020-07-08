@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos.Networking.Requests.Messages;
+
+import "POGOProtos/Data/Player/PlayerPreferences.proto";
+
+message SavePlayerPreferencesMessage {
+	.POGOProtos.Data.Player.PlayerPreferences player_preferences_proto = 1;
+}
