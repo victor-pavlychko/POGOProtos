@@ -2,7 +2,6 @@ syntax = "proto3";
 package POGOProtos.Settings;
 
 message SocialSettings {
-
 	enum ConsentStatus {
 		UNKNOWN = 0;
 		OPT_IN = 1;
