@@ -6543,24 +6543,7 @@ message CombatHubEntranceTelemetry {
 }
 
 message CombatLeagueProto {
-	oneof Condition {
-			WithPlayerLevelProto with_player_level = 3;
-			WithPokemonCpLimitProto with_pokemon_cp_limit = 4;
-			WithPokemonTypeProto with_pokemon_type = 5;
-			WithPokemonCategoryProto with_pokemon_category = 6;
-			PokemonWhitelist pokemon_whitelist = 7;
-			PokemonBanlist pokemon_banlist = 8;
-			PokemonCaughtTimestamp pokemon_caught_timestamp = 9;
-	}
 
-	oneof Condition {
-			WithPokemonCpLimitProto with_pokemon_cp_limit = 2;
-			WithPokemonTypeProto with_pokemon_type = 3;
-			WithPokemonCategoryProto with_pokemon_category = 4;
-			PokemonWhitelist pokemon_whitelist = 5;
-			PokemonBanlist pokemon_banlist = 6;
-			PokemonCaughtTimestamp pokemon_caught_timestamp = 7;
-	}
 
 	enum ConditionType {
 		UNSET = 0;
@@ -7366,11 +7349,6 @@ message DiskEncounterProto {
 }
 
 message Distribution {
-	oneof BucketType {
-			LinearBuckets linear_buckets = 1;
-			ExponentialBuckets exponential_buckets = 2;
-			ExplicitBuckets explicit_buckets = 3;
-	}
 
 	message BucketOptions {
 		oneof BucketType {
@@ -15342,13 +15320,6 @@ message VsSeekerCompleteSeasonLogEntry {
 }
 
 message VsSeekerLootProto {
-	oneof RewardType {
-			LootItemProto item = 1;
-			bool pokemon_reward = 2;
-			bool item_loot_table = 3;
-			int32 item_loot_table_count = 4;
-			int32 item_ranking_loot_table_count = 5;
-	}
 
 	message RewardProto {
 		oneof RewardType {
@@ -15367,16 +15338,7 @@ message VsSeekerLootProto {
 }
 
 message VsSeekerPokemonRewardsProto {
-	oneof OverrideType {
-			RangeProto range = 1;
-			bool zero = 2;
-	}
 
-	oneof RewardType {
-			PokemonEncounterRewardProto pokemon = 1;
-			LimitedEditionPokemonEncounterRewardProto limited_pokemon_reward = 2;
-			LimitedEditionPokemonEncounterRewardProto guaranteed_limited_pokemon_reward = 3;
-	}
 
 	message OverrideIvRangeProto {
 		oneof OverrideType {
@@ -16077,4 +16039,3 @@ message AuthTicket {
 	uint64 expire_timestamp_ms = 2;
 	bytes end = 3;
 }
-
