@@ -1,0 +1,7 @@
+syntax = "proto3";
+package POGOProtos.Networking.Requests.Messages;
+
+message GetTimedGroupChallengeMessage {
+	string challenge_id = 1;
+	string active_city_hash = 2;
+}

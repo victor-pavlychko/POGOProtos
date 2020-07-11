@@ -25,6 +25,24 @@ message GetTodayViewResponse {
 				EventSection event = 4;
 				UpNextSection up_next = 5;
 				TimedQuestSection timed_quest = 6;
+				EventBannerSection event_banner = 7;
+				TimedGroupChallengeSection timed_group_challenge = 8;
+			}
+
+			message TimedGroupChallengeSection {
+				string challenge_id = 1;
+				string header_image_url = 2;
+			}
+
+			message EventBannerSection {
+				string event_icon = 1;
+				string title_text = 2;
+				string body_text = 3;
+				string image_url = 4;
+				string header_image_url = 5;
+				string image_overlay_text = 6;
+				string link_from_image = 7;
+				string image_sub_text = 8;
 			}
 
 			message TimedQuestSection {

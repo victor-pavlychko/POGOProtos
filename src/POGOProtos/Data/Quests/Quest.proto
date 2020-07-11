@@ -82,6 +82,7 @@ message Quest {
 		CHALLENGE_QUEST = 2;
 		DAILY_COIN_QUEST = 3;
 		TIMED_STORY_QUEST = 4;
+		TGC_TRACKING_QUEST = 7;
 	}
 
 	enum Status {

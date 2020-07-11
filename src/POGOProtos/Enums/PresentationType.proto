@@ -6,4 +6,5 @@ enum PresentationType {
 	CATEGORY = 1;
 	SORT = 2;
 	SALE = 3;
+	ML_BUNDLE_TRACKING_ID = 4;
 }

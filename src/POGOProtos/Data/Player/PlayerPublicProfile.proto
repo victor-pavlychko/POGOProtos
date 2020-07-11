@@ -3,6 +3,7 @@ package POGOProtos.Data.Player;
 
 import "POGOProtos/Data/Player/PlayerAvatar.proto";
 import "POGOProtos/Data/Player/PlayerBadge.proto";
+import "POGOProtos/Data/Player/TimedGroupChallengePlayerStats.proto";
 import "POGOProtos/Enums/TeamColor.proto";
 import "POGOProtos/Enums/GymBadgeType.proto";
 
@@ -20,4 +21,5 @@ message PlayerPublicProfile {
 	bool has_shared_ex_pass = 11;
 	int32 combat_rank = 12;
 	float combat_rating = 13;
+	.POGOProtos.Data.Player.TimedGroupChallengePlayerStats timed_group_challenge_stats = 14;
 }

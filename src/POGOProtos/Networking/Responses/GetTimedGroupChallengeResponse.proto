@@ -1,0 +1,40 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses;
+
+import "POGOProtos/Enums/QuestType.proto";
+import "POGOProtos/Data/Quests/QuestGoal.proto";
+import "POGOProtos/Networking/Responses/GetTodayViewResponse.proto";
+
+message GetTimedGroupChallengeResponse {
+	Status status = 1;
+	TimedGroupChallengeDefinition challenge_definition = 2;
+	int32 current_score = 3;
+	int32 player_score = 4;
+	string active_city_hash = 5;
+	repeated string active_city_localization_key_changes = 6;
+
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_CHALLENGE_NOT_FOUND = 3;
+	}
+
+	message TimedGroupChallengeDefinition {
+		string challenge_id = 1;
+		GroupChallengeDisplay display = 2;
+		int64 start_time_ms_inclusive = 3;
+		int64 end_time_ms_exclusive = 4;
+		GroupChallengeCriteria challenge_criteria = 5;
+	}
+
+	message GroupChallengeCriteria {
+		.POGOProtos.Enums.QuestType challenge_type = 1;
+		.POGOProtos.Data.Quests.QuestGoal challenge_goal = 2;
+	}
+
+	message GroupChallengeDisplay {
+		string title = 1;
+		repeated .POGOProtos.Networking.Responses.GetTodayViewResponse.TodayView.TodayViewSection.EventSection.BonusBox boost_rewards = 2;
+	}
+}

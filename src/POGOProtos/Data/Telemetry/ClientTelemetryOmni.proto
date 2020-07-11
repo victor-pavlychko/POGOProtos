@@ -66,6 +66,7 @@ import "POGOProtos/Data/Platform/PlatformCommonFilter.proto";
 import "POGOProtos/Data/Telemetry/MonodepthDownloadTelemetry.proto";
 import "POGOProtos/Data/Telemetry/ArMappingTelemetry.proto";
 import "POGOProtos/Data/Telemetry/RemoteRaidTelemetry.proto";
+import "POGOProtos/Data/Telemetry/DeviceOSTelemetry.proto";
 
 message ClientTelemetryOmni {
 	oneof TelemetryData {
@@ -132,6 +133,7 @@ message ClientTelemetryOmni {
 		.POGOProtos.Data.Telemetry.MonodepthDownloadTelemetry monodepth_download_telemetry = 61;
 		.POGOProtos.Data.Telemetry.ArMappingTelemetry ar_mapping_telemetry = 62;
 		.POGOProtos.Data.Telemetry.RemoteRaidTelemetry remote_raid_telemetry = 63;
+		.POGOProtos.Data.Telemetry.DeviceOSTelemetry device_os_telemetry = 64;
 	}
 
 	.POGOProtos.Data.Telemetry.PlatformServerData server_data = 1001;

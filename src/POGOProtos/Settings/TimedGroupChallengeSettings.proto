@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos.Settings;
+
+message TimedGroupChallengeSettings {
+	int32 widget_auto_update_period_ms = 1;
+	int64 friend_leaderboard_background_update_period_ms = 2;
+	int32 friend_leaderboard_friends_per_rpc = 3;
+}

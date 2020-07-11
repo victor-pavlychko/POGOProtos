@@ -7,6 +7,7 @@ import "POGOProtos/Enums/PokemonMove.proto";
 import "POGOProtos/Enums/HoloPokemonEggType.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
 import "POGOProtos/Data/Combat/PokemonCombatStats.proto";
+import "POGOProtos/Data/Quests/ClientQuest.proto";
 
 message PokemonData {
 	fixed64 id = 1;
@@ -64,4 +65,5 @@ message PokemonData {
 	double deployed_gym_lat_degree = 55;
 	double deployed_gym_lng_degree = 56;
 	.POGOProtos.Enums.HoloPokemonEggType egg_type = 58;
+	repeated .POGOProtos.Data.Quests.ClientQuest quest_buddy_evolution_requirement = 62;
 }

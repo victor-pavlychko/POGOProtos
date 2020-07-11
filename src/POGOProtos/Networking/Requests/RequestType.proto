@@ -191,4 +191,5 @@ enum RequestType {
 	OPEN_SPONSORED_GIFT = 1650;                        // Implemented
 	SPONSORED_GIFT_REPORT_INTERACTION = 1651;          // ???
 	SAVE_PLAYER_PREFERENCES = 1652;                    // Implemented
+	GET_TIMED_GROUP_CHALLENGE = 1700;                  // Implemented
 }

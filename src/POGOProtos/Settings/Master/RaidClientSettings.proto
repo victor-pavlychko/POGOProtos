@@ -17,4 +17,5 @@ message RaidClientSettings {
 	int64 invite_cooldown_duration_millis = 11;
 	int32 max_num_friend_invites_per_action = 12;
 	repeated .POGOProtos.Enums.RaidLevel unsupported_raid_levels_for_friend_invites = 13;
+	repeated .POGOProtos.Enums.RaidLevel unsupported_remote_raid_levels = 14;
 }

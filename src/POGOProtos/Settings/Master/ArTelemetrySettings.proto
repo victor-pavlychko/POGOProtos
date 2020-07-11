@@ -1,0 +1,11 @@
+syntax = "proto3";
+package POGOProtos.Settings.Master;
+
+message ArTelemetrySettings {
+	bool measure_battery = 1;
+	int32 battery_sampling_interval_ms = 2;
+	bool measure_processor = 3;
+	int32 processor_sampling_interval_ms = 4;
+	bool measure_framerate = 5;
+	int32 framerate_sampling_interval_ms = 6;
+}
