@@ -449,6 +449,8 @@ elif args.language == 'lua':
 elif args.language == 'go':
     options = 'plugins=grpc'
     all_at_once = False
+elif args.language == 'swift':
+    arguments = '--swift_opt=Visibility=Public'
 
 if all_at_once:
     proto_folders = [proto_files]
