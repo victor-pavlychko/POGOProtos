@@ -18,6 +18,20 @@
 syntax = "proto3";
 package DumpProtos;
 
+//----- Begin analytics -----
+
+// ref: Niantic.Titan.Core.Analytics.ArMappingEntrySource
+enum ArMappingEntrySource {
+	EDIT_MENU = 0;
+	EDIT_TITLE = 1;
+	EDIT_DESCRIPTION = 2;
+	EDIT_PHOTO = 3;
+	EDIT_LOCATION = 4;
+	POI_SUBMISSION = 5;
+}
+
+//----- End analytics -----
+//------------------------------
 //----- Begin ar -----
 
 // ref: Niantic.Holoholo.AR.ArMode
@@ -33,6 +47,15 @@ enum ArToggleContext {
 }
 
 //----- End ar -----
+//------------------------------
+//----- Begin armapping -----
+
+// ref: Niantic.Titan.ArMapping.ArMappingTutorialPage
+enum ArMappingTutorialPage {
+	RECORDING_TIPS = 0;
+}
+
+//----- End armapping -----
 //------------------------------
 //----- Begin assetbundles -----
 
@@ -91,7 +114,34 @@ message JournalVersionProto {
 
 //----- End assetcache -----
 //------------------------------
+//----- Begin assets -----
+
+// ref: Niantic.Zeppelin.Assets.LoadPolicy
+enum LoadPolicy {
+	SYNCHRONOUS = 0;
+	ASYNCHRONOUS = 1;
+}
+
+//----- End assets -----
+//------------------------------
 //----- Begin auth -----
+
+// ref: Com.Nianticproject.Platform.Auth.IdentityProvider
+enum IdentityProvider {
+	UNSET_IDENTITY_PROVIDER = 0;
+	GOOGLE = 1;
+	PTC = 2;
+	FACEBOOK = 3;
+	BACKGROUND = 4;
+	INTERNAL = 5;
+	SFIDA = 6;
+	SUPER_AWESOME = 7;
+	DEVELOPER = 8;
+	SHARED_SECRET = 9;
+	POSEIDON = 10;
+	NINTENDO = 11;
+	APPLE = 12;
+}
 
 // ref: Com.Nianticproject.Platform.Auth.BackgroundToken
 message BackgroundToken {
@@ -146,6 +196,33 @@ message BattlePartyProto {
 }
 
 //----- End battle -----
+//------------------------------
+//----- Begin character -----
+
+// ref: Niantic.Holoholo.Assets.Character.AnimationTake
+enum AnimationTake {
+	SINGLE = 0;
+	BRANCHING = 1;
+	SEQUENCE = 2;
+}
+
+// ref: Niantic.Holoholo.Assets.Character.PokemonAnim
+enum PokemonAnim {
+	NONE = 0;
+	IDLE_01 = 1;
+	IDLE_02 = 2;
+	LAND = 3;
+	ATTACK_01 = 4;
+	ATTACK_02 = 5;
+	DAMAGED = 6;
+	STUNNED = 7;
+	LOOP = 8;
+	SLEEP_01 = 9;
+	SLEEP_02 = 10;
+	SLEEP_WAIT = 11;
+}
+
+//----- End character -----
 //------------------------------
 //----- Begin clientinboxservice -----
 
@@ -204,6 +281,18 @@ enum NotificationCategory {
 
 //----- End clientinboxservice -----
 //------------------------------
+//----- Begin conversations -----
+
+// ref: Niantic.Holoholo.UI.Conversations.Speaker
+enum Speaker {
+	PROF = 0;
+	BLUE_LEADER = 1;
+	RED_LEADER = 2;
+	YELLOW_LEADER = 3;
+}
+
+//----- End conversations -----
+//------------------------------
 //----- Begin developertoken -----
 
 // ref: Niantic.Platform.Auth.Plugins.DeveloperToken.DeveloperToken
@@ -214,12 +303,22 @@ message DeveloperToken {
 
 //----- End developertoken -----
 //------------------------------
+//----- Begin downloader -----
+
+// ref: ARDK.Utilities.Downloader.Features
+enum Features {
+	MONODEPTH = 0;
+	DBOW = 1;
+}
+
+//----- End downloader -----
+//------------------------------
 //----- Begin gamemaster -----
 
 // ref: Niantic.Platform.GameMaster.ClientGameMasterTemplateProto
 message ClientGameMasterTemplateProto {
 	string template_id = 1;
-	GameMasterClientTemplateProto data = 2;
+	bytes data = 2;
 }
 
 // ref: Niantic.Platform.GameMaster.DownloadGmTemplatesRequestProto
@@ -244,16 +343,24 @@ message DownloadGmTemplatesResponseProto {
 		WRONG_EXPERIMENTS = 5;
 	}
 
-
-	Result result = 1;
-	repeated ClientGameMasterTemplateProto template = 2;
-	repeated string deleted_template = 3;
-	uint64 batch_id = 4;
-	int32 page_offset = 5;
-	repeated int32 experiment_id = 6;
+	repeated ClientGameMasterTemplateProto template = 1;
+	repeated string deleted_template = 2;
+	uint64 batch_id = 3;
+	int32 page_offset = 4;
+	repeated int32 experiment_id = 5;
 }
 
 //----- End gamemaster -----
+//------------------------------
+//----- Begin gui -----
+
+// ref: Niantic.Platform.CrossGameSocial.Gui.GuiTransitionType
+enum GuiTransitionType {
+	IN = 0;
+	OUT = 1;
+}
+
+//----- End gui -----
 //------------------------------
 //----- Begin gym -----
 
@@ -265,6 +372,16 @@ enum BattleResultsExit {
 }
 
 //----- End gym -----
+//------------------------------
+//----- Begin helpshift -----
+
+// ref: Helpshift.HelpshiftAuthFailureReason
+enum HelpshiftAuthFailureReason {
+	AUTH_TOKEN_NOT_PROVIDED = 0;
+	INVALID_AUTH_TOKEN = 1;
+}
+
+//----- End helpshift -----
 //------------------------------
 //----- Begin holoholo -----
 
@@ -324,6 +441,17 @@ message SetInGameCurrencyExchangeRateProto {
 }
 
 //----- End iap -----
+//------------------------------
+//----- Begin inappmessage -----
+
+// ref: Appboy.Models.InAppMessage.InAppMessageType
+enum InAppMessageType {
+	FULL = 0;
+	MODAL = 1;
+	SLIDEUP = 2;
+}
+
+//----- End inappmessage -----
 //------------------------------
 //----- Begin incident -----
 
@@ -419,6 +547,154 @@ enum IncubationResult {
 }
 
 //----- End items -----
+//------------------------------
+//----- Begin map -----
+
+// ref: Niantic.Holoholo.Map.ExitVfxContext
+enum ExitVfxContext {
+	NORMAL = 0;
+	VICTORY = 1;
+}
+
+//----- End map -----
+//------------------------------
+//----- Begin map -----
+
+// ref: Niantic.Platform.Ditto.Map.FeatureKind
+enum FeatureKind {
+	UNDEFINED = 0;
+	BASIN = 1;
+	CANAL = 2;
+	CEMETERY = 3;
+	CINEMA = 4;
+	COLLEGE = 5;
+	COMMERCIAL = 6;
+	COMMON = 7;
+	DAM = 8;
+	DITCH = 9;
+	DOCK = 10;
+	DRAIN = 11;
+	FARM = 12;
+	FARMLAND = 13;
+	FARMYARD = 14;
+	FOOTWAY = 15;
+	FOREST = 16;
+	GARDEN = 17;
+	GLACIER = 18;
+	GOLF_COURSE = 19;
+	GRASS = 20;
+	HIGHWAY = 21;
+	HOSPITAL = 22;
+	HOTEL = 23;
+	INDUSTRIAL = 24;
+	LAKE = 25;
+	LAND = 26;
+	LIBRARY = 27;
+	MAJOR_ROAD = 28;
+	MEADOW = 29;
+	MINOR_ROAD = 30;
+	NATURE_RESERVE = 31;
+	OCEAN = 32;
+	PARK = 33;
+	PARKING = 34;
+	PATH = 35;
+	PEDESTRIAN = 36;
+	PITCH = 37;
+	PLACE_OF_WORSHIP = 38;
+	PLAYA = 39;
+	PLAYGROUND = 40;
+	QUARRY = 41;
+	RAILWAY = 42;
+	RECREATION_AREA = 43;
+	RESERVOIR = 44;
+	RESIDENTIAL = 45;
+	RETAIL = 46;
+	RIVER = 47;
+	RIVERBANK = 48;
+	RUNWAY = 49;
+	SCHOOL = 50;
+	SPORTS_CENTER = 51;
+	STADIUM = 52;
+	STREAM = 53;
+	TAXIWAY = 54;
+	THEATRE = 55;
+	UNIVERSITY = 56;
+	URBAN_AREA = 57;
+	WATER = 58;
+	WETLAND = 59;
+	WOOD = 60;
+	DEBUG_TILE_OUTLINE = 61;
+	DEBUG_TILE_SURFACE = 62;
+	OTHER = 63;
+	ANY = 2000;
+}
+
+// ref: Niantic.Platform.Ditto.Map.MapLayer
+enum MapLayer {
+	UNDEFINED = 0;
+	BOUNDARIES = 1;
+	BUILDINGS = 2;
+	LANDMASS = 3;
+	LANDUSE = 4;
+	PLACES = 5;
+	POIS = 6;
+	ROADS = 7;
+	TRANSIT = 8;
+	WATER = 9;
+	DEBUG_TILE_BOUNDARIES = 10;
+}
+
+//----- End map -----
+//------------------------------
+//----- Begin models -----
+
+// ref: Appboy.Models.AppboyNotificationSubscriptionType
+enum AppboyNotificationSubscriptionType {
+	OPTED_IN = 0;
+	SUBSCRIBED = 1;
+	UNSUBSCRIBED = 2;
+}
+
+// ref: Appboy.Models.CardCategory
+enum CardCategory {
+	ADVERTISING = 0;
+	ANNOUNCEMENTS = 1;
+	NEWS = 2;
+	SOCIAL = 3;
+	NO_CATEGORY = 4;
+}
+
+// ref: Appboy.Models.ClickAction
+enum ClickAction {
+	NEWS_FEED = 0;
+	URI = 1;
+	NONE = 2;
+}
+
+// ref: Appboy.Models.DismissType
+enum DismissType {
+	AUTO_DISMISS = 0;
+	SWIPE = 1;
+}
+
+// ref: Appboy.Models.SlideFrom
+enum SlideFrom {
+	TOP = 0;
+	BOTTOM = 1;
+}
+
+//----- End models -----
+//------------------------------
+//----- Begin notifications -----
+
+// ref: Niantic.Platform.Marketing.Notifications.OmniNotificationSubscriptionType
+enum OmniNotificationSubscriptionType {
+	OPTED_IN = 0;
+	SUBSCRIBED = 1;
+	UNSUBSCRIBED = 2;
+}
+
+//----- End notifications -----
 //------------------------------
 //----- Begin platform -----
 
@@ -543,6 +819,54 @@ enum SfidaConnectState {
 //----- End pokemongoplus -----
 //------------------------------
 //----- Begin proto -----
+
+// ref: TweenAction
+enum TweenAction {
+	MOVE_X = 0;
+	MOVE_Y = 1;
+	MOVE_Z = 2;
+	MOVE_LOCAL_X = 3;
+	MOVE_LOCAL_Y = 4;
+	MOVE_LOCAL_Z = 5;
+	MOVE_CURVED = 6;
+	MOVE_CURVED_LOCAL = 7;
+	MOVE_SPLINE = 8;
+	MOVE_SPLINE_LOCAL = 9;
+	SCALE_X = 10;
+	SCALE_Y = 11;
+	SCALE_Z = 12;
+	ROTATE_X = 13;
+	ROTATE_Y = 14;
+	ROTATE_Z = 15;
+	ROTATE_AROUND = 16;
+	ROTATE_AROUND_LOCAL = 17;
+	CANVAS_ROTATEAROUND = 18;
+	CANVAS_ROTATEAROUND_LOCAL = 19;
+	CANVAS_PLAYSPRITE = 20;
+	ALPHA = 21;
+	TEXT_ALPHA = 22;
+	CANVAS_ALPHA = 23;
+	ALPHA_VERTEX = 24;
+	COLOR = 25;
+	CALLBACK_COLOR = 26;
+	TEXT_COLOR = 27;
+	CANVAS_COLOR = 28;
+	CALLBACK = 29;
+	MOVE = 30;
+	MOVE_LOCAL = 31;
+	ROTATE = 32;
+	ROTATE_LOCAL = 33;
+	SCALE = 34;
+	VALUE3 = 35;
+	GUI_MOVE = 36;
+	GUI_MOVE_MARGIN = 37;
+	GUI_SCALE = 38;
+	GUI_ALPHA = 39;
+	GUI_ROTATE = 40;
+	DELAYED_SOUND = 41;
+	CANVAS_MOVE = 42;
+	CANVAS_SCALE = 43;
+}
 
 // ref: UpdateType
 enum UpdateType {
@@ -843,6 +1167,27 @@ message UpdateAdventureSyncSettingsRequestProto {
 //----- End proto -----
 //------------------------------
 //----- Begin protos -----
+
+// ref: Niantic.Titan.Protos.PlayerSubmissionAction
+enum PlayerSubmissionAction {
+	UNKNOWN_GAME_POI_ACTION = 0;
+	ADD_NEW_POI = 620000;
+	GET_AVAILABLE_SUBMISSIONS = 620001;
+	GET_SIGNED_URL_FOR_PHOTO_UPLOAD = 620002;
+	GET_PLAYER_SUBMISSION_VALIDATION_SETTINGS = 620003;
+	SUBMIT_POI_IMAGE = 620100;
+	SUBMIT_POI_TEXT_METADATA_UPDATE = 620101;
+	SUBMIT_POI_LOCATION_UPDATE = 620102;
+	SUBMIT_POI_TAKEDOWN_REQUEST = 620103;
+	SUBMIT_SPONSOR_POI_REPORT = 620104;
+	SUBMIT_SPONSOR_POI_LOCATION_UPDATE = 620105;
+	ADD_NEW_ROUTE = 620200;
+	GENERATE_GMAP_SIGNED_URL = 620300;
+	GET_GMAP_SETTINGS = 620301;
+	SUBMIT_POI_AR_VIDEO_METADATA = 620400;
+	GET_GRAPESHOT_FILE_UPLOAD_URL = 620401;
+	ASYNC_FILE_UPLOAD_COMPLETE = 620402;
+}
 
 // ref: Niantic.Titan.Protos.PoiImageType
 enum PoiImageType {
@@ -1245,10 +1590,71 @@ message UploadPoiPhotoByUrlProto {
 //------------------------------
 //----- Begin protos -----
 
+// ref: Niantic.Platform.Protos.InvitationType
+enum InvitationType {
+	INVITATION_TYPE_UNSET = 0;
+	INVITATION_TYPE_CODE = 1;
+	INVITATION_TYPE_FACEBOOK = 2;
+	INVITATION_TYPE_SERVER_REQUEST = 3;
+	INVITATION_TYPE_NIANTIC_SOCIAL_GRAPH = 4;
+}
+
 // ref: Niantic.Platform.Protos.NotificationState
 enum NotificationState {
 	UNSET_STATE = 0;
 	VIEWED = 1;
+}
+
+// ref: Niantic.Platform.Protos.PlatformClientAction
+enum PlatformClientAction {
+	UNKNOWN_PLATFORM_CLIENT_ACTION = 0;
+	REGISTER_PUSH_NOTIFICATION = 5000;
+	UNREGISTER_PUSH_NOTIFICATION = 5001;
+	UPDATE_NOTIFICATION_STATUS = 5002;
+	OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003;
+	DOWNLOAD_GAME_MASTER_TEMPLATES = 5004;
+	GET_INVENTORY = 5005;
+	REDEEM_PASSCODE = 5006;
+	PING = 5007;
+	ADD_LOGIN_ACTION = 5008;
+	REMOVE_LOGIN_ACTION = 5009;
+	LIST_LOGIN_ACTION = 5010;
+	ADD_NEW_POI = 5011;
+	PROXY_SOCIAL_ACTION = 5012;
+	DEPRECATED_CLIENT_TELEMETRY = 5013;
+	GET_AVAILABLE_SUBMISSIONS = 5014;
+	GET_SIGNED_URL_FOR_PHOTO_UPLOAD = 5015;
+	REPLACE_LOGIN_ACTION = 5016;
+	PROXY_SOCIAL_SIDE_CHANNEL_ACTION = 5017;
+	COLLECT_CLIENT_TELEMETRY = 5018;
+	PURCHASE_SKU = 5019;
+	GET_AVAILABLE_SKUS_AND_BALANCES = 5020;
+	REDEEM_GOOGLE_RECEIPT = 5021;
+	REDEEM_APPLE_RECEIPT = 5022;
+	REDEEM_DESKTOP_RECEIPT = 5023;
+	UPDATE_FITNESS_METRICS = 5024;
+	GET_FITNESS_REPORT = 5025;
+	GET_CLIENT_TELEMETRY_SETTINGS = 5026;
+	PING_ASYNC = 5027;
+	REGISTER_BACKGROUND_SERVICE = 5028;
+	GET_CLIENT_BGMODE_SETTINGS = 5029;
+	PING_DOWNSTREAM = 5030;
+	SET_IN_GAME_CURRENCY_EXCHANGE_RATE = 5032;
+	REQUEST_GEOFENCE_UPDATES = 5033;
+	UPDATE_PLAYER_LOCATION = 5034;
+	GENERATE_GMAP_SIGNED_URL = 5035;
+	GET_GMAP_SETTINGS = 5036;
+	REDEEM_SAMSUNG_RECEIPT = 5037;
+	ADD_NEW_ROUTE = 5038;
+	GET_OUTSTANDING_WARNINGS = 5039;
+	ACKNOWLEDGE_WARNINGS = 5040;
+	SUBMIT_POI_IMAGE = 5041;
+	SUBMIT_POI_TEXT_METADATA_UPDATE = 5042;
+	SUBMIT_POI_LOCATION_UPDATE = 5043;
+	SUBMIT_POI_TAKEDOWN_REQUEST = 5044;
+	GET_WEB_TOKEN_ACTION = 5045;
+	GET_ADVENTURE_SYNC_SETTINGS = 5046;
+	UPDATE_ADVENTURE_SYNC_SETTINGS = 5047;
 }
 
 // ref: Niantic.Platform.Protos.PlayerSubmissionTypeProto
@@ -1331,7 +1737,7 @@ message AddLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.AddLoginActionProto
 message AddLoginActionProto {
-	int32 identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	bytes inner_message = 2;
 	string auth_provider_id = 3;
 }
@@ -1394,7 +1800,7 @@ message DownloadSettingsActionProto {
 message DownloadSettingsResponseProto {
 	string error = 1;
 	string sha1 = 2;
-	GlobalSettingsProto values = 3;
+	bytes values = 3;
 }
 
 // ref: Niantic.Platform.Protos.FriendDetailsProto
@@ -1568,6 +1974,15 @@ message GetFriendDetailsResponse {
 		ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;
 	}
 
+	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/PlayerStatusDetailsProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_STATUS_UNKNOWN = 3;
+		ERROR_STALE_DATA = 4;
+	}
+
 	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/FriendDetailsEntryProto
 	message FriendDetailsEntryProto {
 		string player_id = 1;
@@ -1601,7 +2016,7 @@ message GetFriendDetailsResponse {
 message GetFriendsListOutProto {
 	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto/Types/OnlineStatus
 	enum OnlineStatus {
-		ONLINE_STATUS_UNSET = 0;
+		UNSET = 0;
 		STATUS_UNKNOWN = 1;
 		STATUS_ONLINE = 2;
 		STATUS_OFFLINE = 3;
@@ -1800,7 +2215,7 @@ message LocationE6Proto {
 
 // ref: Niantic.Platform.Protos.LoginDetail
 message LoginDetail {
-	int32 identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	string email = 2;
 	string auth_provider_id = 3;
 }
@@ -1883,7 +2298,7 @@ message RemoveLoginActionOutProto {
 
 // ref: Niantic.Platform.Protos.RemoveLoginActionProto
 message RemoveLoginActionProto {
-	int32 identity_provider = 1;
+	IdentityProvider identity_provider = 1;
 	string auth_provider_id = 2;
 }
 
@@ -2207,6 +2622,54 @@ message RedeemAppleReceiptProto {
 message SkuPresentationProto {
 	string key = 1;
 	string value = 2;
+}
+
+//----- End protos -----
+//------------------------------
+//----- Begin protos -----
+
+// ref: Niantic.Social.Protos.SocialAction
+enum SocialAction {
+	UNKNOWN_SOCIAL_ACTION = 0;
+	SEARCH_PLAYER = 10000;
+	SEND_FRIEND_INVITE = 10002;
+	CANCEL_FRIEND_INVITE = 10003;
+	ACCEPT_FRIEND_INVITE = 10004;
+	DECLINE_FRIEND_INVITE = 10005;
+	LIST_FRIENDS = 10006;
+	LIST_OUTGOING_FRIEND_INVITES = 10007;
+	LIST_INCOMING_FRIEND_INVITES = 10008;
+	REMOVE_FRIEND = 10009;
+	LIST_FRIEND_STATUS = 10010;
+	SEND_FACEBOOK_FRIEND_INVITE = 10011;
+	IS_MY_FRIEND = 10012;
+	CREATE_INVITE_CODE = 10013;
+	GET_FACEBOOK_FRIEND_LIST = 10014;
+	UPDATE_FACEBOOK_STATUS = 10015;
+	SAVE_PLAYER_SETTINGS = 10016;
+	GET_PLAYER_SETTINGS = 10017;
+	GET_NIANTIC_FRIEND_LIST_DELETED = 10018;
+	GET_NIANTIC_FRIEND_DETAILS_DELETED = 10019;
+	SEND_NIANTIC_FRIEND_INVITE_DELETED = 10020;
+	SET_ACCOUNT_SETTINGS = 10021;
+	GET_ACCOUNT_SETTINGS = 10022;
+	REGISTER_PUSH_NOTIFICATION = 10101;
+	UNREGISTER_PUSH_NOTIFICATION = 10102;
+	UPDATE_NOTIFICATION = 10103;
+	OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 10104;
+	GET_INBOX = 10105;
+	GET_SIGNED_URL = 10201;
+	SUBMIT_IMAGE = 10202;
+	GET_PHOTOS = 10203;
+	DELETE_PHOTO = 10204;
+	UPDATE_PROFILE_V2 = 20001;
+	UPDATE_FRIENDSHIP_V2 = 20002;
+	GET_PROFILE_V2 = 20003;
+	INVITE_GAME_V2 = 20004;
+	SEND_FRIEND_INVITE_V2 = 20005;
+	LIST_FRIENDS_V2 = 20006;
+	GET_FRIEND_DETAILS_V2 = 20007;
+	GET_CLIENT_FEATURE_FLAGS_V2 = 20008;
 }
 
 //----- End protos -----
@@ -17586,6 +18049,47 @@ message WeatherAlertProto {
 
 //----- End rpc -----
 //------------------------------
+//----- Begin scheduler -----
+
+// ref: Niantic.Zeppelin.Scheduler.SchedulerFlags
+enum SchedulerFlags {
+	NONE = 0;
+	PAUSE_IN_HIGH_PERFORMANCE_MODE = 1;
+	DO_NOT_PAUSE_WITH_CONTEXT = 2;
+	PAUSE_WHEN_CONTEXT_INACTIVE_IN_HIERARCHY = 4;
+}
+
+//----- End scheduler -----
+//------------------------------
+//----- Begin scripts -----
+
+// ref: Niantic.Platform.CrossGameSocial.Scripts.FeatureType
+enum FeatureType {
+	UNSET = 0;
+	ONLINE_STATUS = 1;
+	NIANTIC_PROFILE = 2;
+	FRIENDS_LIST = 3;
+}
+
+// ref: Niantic.Platform.CrossGameSocial.Scripts.OnboardingType
+enum OnboardingType {
+	UNSET = 0;
+	PROFILE = 1;
+	FRIEND_LIST_V2 = 2;
+	ONLINE_STATUS_OVERVIEW = 3;
+	ONLINE_STATUS_TOGGLE = 4;
+}
+
+// ref: Niantic.Platform.CrossGameSocial.Scripts.ProviderType
+enum ProviderType {
+	NONE = 0;
+	GOOGLE = 1;
+	FACEBOOK = 2;
+	APPLE = 3;
+}
+
+//----- End scripts -----
+//------------------------------
 //----- Begin shared -----
 
 // ref: Com.Nianticproject.Partner.Passcode.Shared.PasscodeRedemptionFlowRequest
@@ -17932,6 +18436,34 @@ message SuperAwesomeTokenProto {
 }
 
 //----- End token -----
+//------------------------------
+//----- Begin ui -----
+
+// ref: Niantic.Holoholo.Player.UI.BannedPlayerReason
+enum BannedPlayerReason {
+	BANNED = 0;
+	UNAUTHORIZED_DEVICE = 1;
+	SUSPENDED = 2;
+	RESTRICTION_VIOLATION = 3;
+}
+
+//----- End ui -----
+//------------------------------
+//----- Begin ui -----
+
+// ref: Niantic.Holoholo.UI.IncubatorSelectionResult
+enum IncubatorSelectionResult {
+	SELECTED = 0;
+	EXIT = 1;
+}
+
+// ref: Niantic.Holoholo.UI.WarnedPlayerReason
+enum WarnedPlayerReason {
+	CHEAT_WARNING = 0;
+	POST_SUSPENSION_WARNING = 1;
+}
+
+//----- End ui -----
 //------------------------------
 //----- Begin vasa -----
 
