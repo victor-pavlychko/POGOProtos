@@ -382,7 +382,7 @@ message PlatformInventoryDeltaProto {
 message PlatformInventoryItemProto {
 	oneof InventoryItem {
 		bytes deleted_item_key = 2;
-		bytes item = 3;
+		HoloInventoryItemProto inventory_item_data = 3;
 	}
 
 	int64 modified_timestamp = 1;
@@ -10136,7 +10136,7 @@ message InventoryUpgradesProto {
 }
 
 message ItemProto {
-	Item item = 1;
+	Item item_id = 1;
 	int32 count = 2;
 	bool unseen = 3;
 }
