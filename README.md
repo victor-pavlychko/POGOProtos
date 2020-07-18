@@ -8,7 +8,7 @@ POGOProtos [![Build Status](https://travis-ci.org/Furtif/POGOProtos.svg?branch=m
 
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
-### ![alt text][1.1] DEPRECATED ![alt text][1.1]
+<!-- ### ![alt text][1.1] DEPRECATED ![alt text][1.1] -->
 
 ### Implemented messages types
  - [``Global``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
