@@ -165,7 +165,8 @@ message RegisterBackgroundDeviceResponseProto {
 		ERROR = 2;
 	}
 
-	BackgroundToken token = 1;
+	Status status = 1;
+	BackgroundToken token = 2;
 }
 
 //----- End auth -----
@@ -343,11 +344,12 @@ message DownloadGmTemplatesResponseProto {
 		WRONG_EXPERIMENTS = 5;
 	}
 
-	repeated ClientGameMasterTemplateProto template = 1;
-	repeated string deleted_template = 2;
-	uint64 batch_id = 3;
-	int32 page_offset = 4;
-	repeated int32 experiment_id = 5;
+	Result result = 1;
+	repeated ClientGameMasterTemplateProto template = 2;
+	repeated string deleted_template = 3;
+	uint64 batch_id = 4;
+	int32 page_offset = 5;
+	repeated int32 experiment_id = 6;
 }
 
 //----- End gamemaster -----
@@ -431,6 +433,7 @@ message SetInGameCurrencyExchangeRateOutProto {
 		FAILURE = 2;
 	}
 
+	Status status = 1;
 }
 
 // ref: Nia.Iap.SetInGameCurrencyExchangeRateProto
@@ -722,8 +725,9 @@ message ProxyResponseProto {
 		RATE_LIMITED = 10;
 	}
 
-	string assigned_host = 1;
-	bytes payload = 2;
+	Status status = 1;
+	string assigned_host = 2;
+	bytes payload = 3;
 }
 
 //----- End platform -----
@@ -933,7 +937,8 @@ message GetAdventureSyncSettingsResponseProto {
 		ERROR_PLAYER_NOT_FOUND = 3;
 	}
 
-	AdventureSyncSettingsProto adventure_sync_settings = 1;
+	Status status = 1;
+	AdventureSyncSettingsProto adventure_sync_settings = 2;
 }
 
 // ref: GetFitnessReportOutProto
@@ -948,9 +953,10 @@ message GetFitnessReportOutProto {
 		ERROR_UNKNOWN = 5;
 	}
 
-	repeated FitnessReportProto daily_reports = 1;
-	repeated FitnessReportProto weekly_reports = 2;
-	int64 week_reset_timestamp_since_monday_ms = 3;
+	Status status = 1;
+	repeated FitnessReportProto daily_reports = 2;
+	repeated FitnessReportProto weekly_reports = 3;
+	int64 week_reset_timestamp_since_monday_ms = 4;
 }
 
 // ref: GetFitnessReportProto
@@ -970,6 +976,7 @@ message OpenSponsoredGiftOutProto {
 		ERROR_GIFT_REDEEMED = 4;
 	}
 
+	Result result = 1;
 	LootProto rewards = 2;
 }
 
@@ -1019,9 +1026,10 @@ message RedeemPasscodeResponseProto {
 		int64 count = 2;
 	}
 
-	repeated AcquiredItem acquired_item = 1;
-	bytes acquired_items_proto = 2;
-	string passcode = 3;
+	Result result = 1;
+	repeated AcquiredItem acquired_item = 2;
+	bytes acquired_items_proto = 3;
+	string passcode = 4;
 }
 
 // ref: SfidaAuthToken
@@ -1157,6 +1165,7 @@ message UpdateAdventureSyncFitnessResponseProto {
 		ERROR_UNKNOWN = 2;
 	}
 
+	Status status = 1;
 }
 
 // ref: UpdateAdventureSyncSettingsRequestProto
@@ -1706,7 +1715,8 @@ message AcceptFriendInviteOutProto {
 		ERROR_RECEIVER_HAS_MAX_FRIENDS = 7;
 	}
 
-	PlayerSummaryProto friend = 1;
+	Result result = 1;
+	PlayerSummaryProto friend = 2;
 }
 
 // ref: Niantic.Platform.Protos.AcceptFriendInviteProto
@@ -1784,6 +1794,7 @@ message DeclineFriendInviteOutProto {
 		ERROR_INVITE_ALREADY_DECLINED = 4;
 	}
 
+	Result result = 1;
 }
 
 // ref: Niantic.Platform.Protos.DeclineFriendInviteProto
@@ -1817,6 +1828,7 @@ message FriendDetailsProto {
 	bytes friend_visible_data = 2;
 	int32 score = 3;
 	bytes data_with_me = 4;
+	OnlineStatus online_status = 5;
 }
 
 // ref: Niantic.Platform.Protos.GcmToken
@@ -1836,7 +1848,8 @@ message GenerateGmapSignedUrlOutProto {
 		ERROR_UNKNOWN = 5;
 	}
 
-	string signed_url = 1;
+	Result result = 1;
+	string signed_url = 2;
 }
 
 // ref: Niantic.Platform.Protos.GenerateGmapSignedUrlProto
@@ -1898,6 +1911,7 @@ message GetFacebookFriendListOutProto {
 		string full_name = 2;
 	}
 
+	Result result = 1;
 	repeated FacebookFriendProto friend = 2;
 	string next_cursor = 3;
 }
@@ -1917,6 +1931,7 @@ message GetFriendCodeOutProto {
 		SUCCESS = 1;
 	}
 
+	Result result = 1;
 	string friend_code = 2;
 }
 
@@ -1955,6 +1970,7 @@ message GetFriendDetailsOutProto {
 		int32 fetched_from_same_server_as_player = 7;
 	}
 
+	Result result = 1;
 	repeated FriendDetailsProto friend = 2;
 	DebugProto friend_details_debug_info = 3;
 }
@@ -1972,15 +1988,6 @@ message GetFriendDetailsResponse {
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 		ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;
-	}
-
-	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/PlayerStatusDetailsProto/Types/Result
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_STATUS_UNKNOWN = 3;
-		ERROR_STALE_DATA = 4;
 	}
 
 	// ref: Niantic.Platform.Protos.GetFriendDetailsResponse/Types/FriendDetailsEntryProto
@@ -2002,10 +2009,11 @@ message GetFriendDetailsResponse {
 			ERROR_STALE_DATA = 4;
 		}
 
-		double distance_to_player_km = 1;
-		PlatformPlayerLocaleProto locale = 2;
-		SocialV2Enum.OnlineStatus online_status = 3;
-		string last_played_app_key = 4;
+		Result result = 1;
+		double distance_to_player_km = 2;
+		PlatformPlayerLocaleProto locale = 3;
+		SocialV2Enum.OnlineStatus online_status = 4;
+		string last_played_app_key = 5;
 	}
 
 	Result result = 1;
@@ -2014,14 +2022,6 @@ message GetFriendDetailsResponse {
 
 // ref: Niantic.Platform.Protos.GetFriendsListOutProto
 message GetFriendsListOutProto {
-	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/FriendProto/Types/OnlineStatus
-	enum OnlineStatus {
-		UNSET = 0;
-		STATUS_UNKNOWN = 1;
-		STATUS_ONLINE = 2;
-		STATUS_OFFLINE = 3;
-	}
-
 	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/Result
 	enum Result {
 		UNSET = 0;
@@ -2049,6 +2049,7 @@ message GetFriendsListOutProto {
 		string fb_user_id = 8;
 		bool is_facebook_friendship = 9;
 		SharedFriendshipProto shared_data = 10;
+		OnlineStatus online_status = 11;
 	}
 
 	// ref: Niantic.Platform.Protos.GetFriendsListOutProto/Types/SharedFriendshipProto
@@ -2059,7 +2060,8 @@ message GetFriendsListOutProto {
 		bytes data_to_me = 4;
 	}
 
-	repeated FriendProto friend = 1;
+	Result result = 1;
+	repeated FriendProto friend = 2;
 }
 
 // ref: Niantic.Platform.Protos.GetFriendsListProto
@@ -2082,6 +2084,7 @@ message GetIncomingFriendInvitesOutProto {
 		ERROR_UNKNOWN = 2;
 	}
 
+	Result result = 1;
 	repeated IncomingFriendInviteDisplayProto invites = 2;
 }
 
@@ -2098,7 +2101,8 @@ message GetNotificationInboxOutProto {
 		FAILURE = 2;
 	}
 
-	ClientInbox inbox = 1;
+	Result result = 1;
+	ClientInbox inbox = 2;
 }
 
 // ref: Niantic.Platform.Protos.GetPlayerSettingsOutProto
@@ -2111,7 +2115,8 @@ message GetPlayerSettingsOutProto {
 		ERROR_PLAYER_NOT_FOUND = 3;
 	}
 
-	PlayerSettingsProto settings = 1;
+	Result result = 1;
+	PlayerSettingsProto settings = 2;
 }
 
 // ref: Niantic.Platform.Protos.GetPlayerSettingsProto
@@ -2193,6 +2198,7 @@ message InviteFacebookFriendOutProto {
 		ERROR_INVALID_SENDER_FACEBOOK_ID = 14;
 	}
 
+	Result result = 1;
 }
 
 // ref: Niantic.Platform.Protos.InviteFacebookFriendProto
@@ -2257,6 +2263,7 @@ message PushNotificationRegistryOutProto {
 		NO_CHANGE = 2;
 	}
 
+	Result result = 1;
 }
 
 // ref: Niantic.Platform.Protos.PushNotificationRegistryProto
@@ -2311,6 +2318,7 @@ message SavePlayerSettingsOutProto {
 		ERROR_UNKNOWN = 2;
 	}
 
+	Result result = 1;
 }
 
 // ref: Niantic.Platform.Protos.SavePlayerSettingsProto
@@ -2328,6 +2336,7 @@ message SearchPlayerOutProto {
 		ERROR_PLAYER_NOT_FOUND = 3;
 	}
 
+	Result result = 1;
 	PlayerSummaryProto player = 2;
 }
 
@@ -2354,6 +2363,7 @@ message SendFriendInviteOutProto {
 		ERROR_RECEIVER_HAS_MAX_FRIENDS = 11;
 	}
 
+	Result result = 1;
 }
 
 // ref: Niantic.Platform.Protos.SendFriendInviteProto
@@ -2485,6 +2495,7 @@ message UpdateFacebookStatusOutProto {
 		ERROR_ALREADY_EXISTS = 5;
 	}
 
+	Result result = 1;
 }
 
 // ref: Niantic.Platform.Protos.UpdateFacebookStatusProto
@@ -2570,9 +2581,10 @@ message GetAvailableSkusAndBalancesOutProto {
 		FAILURE = 2;
 	}
 
-	repeated AvailableSkuProto available_sku = 1;
-	repeated CurrencyQuantityProto balance = 2;
-	string player_token = 3;
+	Status status = 1;
+	repeated AvailableSkuProto available_sku = 2;
+	repeated CurrencyQuantityProto balance = 3;
+	string player_token = 4;
 }
 
 // ref: Niantic.Platform.Iap.Protos.GetAvailableSkusAndBalancesProto
@@ -2591,6 +2603,7 @@ message PurchaseSkuOutProto {
 		OVER_INVENTORY_LIMIT = 5;
 	}
 
+	Status status = 1;
 }
 
 // ref: Niantic.Platform.Iap.Protos.PurchaseSkuProto
@@ -2607,7 +2620,8 @@ message RedeemAppleReceiptOutProto {
 		FAILURE = 2;
 	}
 
-	repeated string provisioned_transaction_tokens = 1;
+	Status status = 1;
+	repeated string provisioned_transaction_tokens = 2;
 }
 
 // ref: Niantic.Platform.Iap.Protos.RedeemAppleReceiptProto
@@ -18504,6 +18518,7 @@ message CollectAdIdResponseProto {
 		ERROR = 2;
 	}
 
+	Status status = 1;
 }
 
 // ref: Niantic.Vasa.ImageTextCreativeProto
