@@ -114,16 +114,6 @@ message JournalVersionProto {
 
 //----- End assetcache -----
 //------------------------------
-//----- Begin assets -----
-
-// ref: Niantic.Zeppelin.Assets.LoadPolicy
-enum LoadPolicy {
-	SYNCHRONOUS = 0;
-	ASYNCHRONOUS = 1;
-}
-
-//----- End assets -----
-//------------------------------
 //----- Begin auth -----
 
 // ref: Com.Nianticproject.Platform.Auth.IdentityProvider
@@ -304,16 +294,6 @@ message DeveloperToken {
 
 //----- End developertoken -----
 //------------------------------
-//----- Begin downloader -----
-
-// ref: ARDK.Utilities.Downloader.Features
-enum Features {
-	MONODEPTH = 0;
-	DBOW = 1;
-}
-
-//----- End downloader -----
-//------------------------------
 //----- Begin gamemaster -----
 
 // ref: Niantic.Platform.GameMaster.ClientGameMasterTemplateProto
@@ -353,16 +333,6 @@ message DownloadGmTemplatesResponseProto {
 }
 
 //----- End gamemaster -----
-//------------------------------
-//----- Begin gui -----
-
-// ref: Niantic.Platform.CrossGameSocial.Gui.GuiTransitionType
-enum GuiTransitionType {
-	IN = 0;
-	OUT = 1;
-}
-
-//----- End gui -----
 //------------------------------
 //----- Begin gym -----
 
@@ -444,17 +414,6 @@ message SetInGameCurrencyExchangeRateProto {
 }
 
 //----- End iap -----
-//------------------------------
-//----- Begin inappmessage -----
-
-// ref: Appboy.Models.InAppMessage.InAppMessageType
-enum InAppMessageType {
-	FULL = 0;
-	MODAL = 1;
-	SLIDEUP = 2;
-}
-
-//----- End inappmessage -----
 //------------------------------
 //----- Begin incident -----
 
@@ -648,45 +607,6 @@ enum MapLayer {
 }
 
 //----- End map -----
-//------------------------------
-//----- Begin models -----
-
-// ref: Appboy.Models.AppboyNotificationSubscriptionType
-enum AppboyNotificationSubscriptionType {
-	OPTED_IN = 0;
-	SUBSCRIBED = 1;
-	UNSUBSCRIBED = 2;
-}
-
-// ref: Appboy.Models.CardCategory
-enum CardCategory {
-	ADVERTISING = 0;
-	ANNOUNCEMENTS = 1;
-	NEWS = 2;
-	SOCIAL = 3;
-	NO_CATEGORY = 4;
-}
-
-// ref: Appboy.Models.ClickAction
-enum ClickAction {
-	NEWS_FEED = 0;
-	URI = 1;
-	NONE = 2;
-}
-
-// ref: Appboy.Models.DismissType
-enum DismissType {
-	AUTO_DISMISS = 0;
-	SWIPE = 1;
-}
-
-// ref: Appboy.Models.SlideFrom
-enum SlideFrom {
-	TOP = 0;
-	BOTTOM = 1;
-}
-
-//----- End models -----
 //------------------------------
 //----- Begin notifications -----
 
@@ -17870,47 +17790,6 @@ message WeatherAlertProto {
 }
 
 //----- End rpc -----
-//------------------------------
-//----- Begin scheduler -----
-
-// ref: Niantic.Zeppelin.Scheduler.SchedulerFlags
-enum SchedulerFlags {
-	NONE = 0;
-	PAUSE_IN_HIGH_PERFORMANCE_MODE = 1;
-	DO_NOT_PAUSE_WITH_CONTEXT = 2;
-	PAUSE_WHEN_CONTEXT_INACTIVE_IN_HIERARCHY = 4;
-}
-
-//----- End scheduler -----
-//------------------------------
-//----- Begin scripts -----
-
-// ref: Niantic.Platform.CrossGameSocial.Scripts.FeatureType
-enum FeatureType {
-	UNSET = 0;
-	ONLINE_STATUS = 1;
-	NIANTIC_PROFILE = 2;
-	FRIENDS_LIST = 3;
-}
-
-// ref: Niantic.Platform.CrossGameSocial.Scripts.OnboardingType
-enum OnboardingType {
-	UNSET = 0;
-	PROFILE = 1;
-	FRIEND_LIST_V2 = 2;
-	ONLINE_STATUS_OVERVIEW = 3;
-	ONLINE_STATUS_TOGGLE = 4;
-}
-
-// ref: Niantic.Platform.CrossGameSocial.Scripts.ProviderType
-enum ProviderType {
-	NONE = 0;
-	GOOGLE = 1;
-	FACEBOOK = 2;
-	APPLE = 3;
-}
-
-//----- End scripts -----
 //------------------------------
 //----- Begin shared -----
 
