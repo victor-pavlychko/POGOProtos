@@ -78,11 +78,6 @@ message JournalVersionProto {
 	int32 version = 1;
 }
 
-enum LoadPolicy {
-	LOAD_POLICY_SYNCHRONOUS = 0;
-	LOAD_POLICY_ASYNCHRONOUS = 1;
-}
-
 enum IdentityProvider {
 	PLATFORM_IDENTITY_PROVIDER_UNSET_IDENTITY_PROVIDER = 0;
 	PLATFORM_IDENTITY_PROVIDER_GOOGLE = 1;
@@ -118,7 +113,7 @@ message PlatformRegisterBackgroundDeviceResponseProto {
 	}
 
 	Status status = 1;
-	BackgroundToken token = 2;
+	PlatformBackgroundToken token = 2;
 }
 
 enum AvatarCompletion {
@@ -222,11 +217,6 @@ message PlatformDeveloperToken {
 	string owner_email = 2;
 }
 
-enum Features {
-	FEATURES_MONODEPTH = 0;
-	FEATURES_DBOW = 1;
-}
-
 message PlatformClientGameMasterTemplateProto {
 	string template_id = 1;
 	GameMasterClientTemplateProto data = 2;
@@ -257,11 +247,6 @@ message PlatformDownloadGmTemplatesResponseProto {
 	uint64 batch_id = 4;
 	int32 page_offset = 5;
 	repeated int32 experiment_id = 6;
-}
-
-enum GuiTransitionType {
-	PLATFORM_GUI_TRANSITION_TYPE_IN = 0;
-	PLATFORM_GUI_TRANSITION_TYPE_OUT = 1;
 }
 
 enum BattleResultsExit {
@@ -318,12 +303,6 @@ message SetInGameCurrencyExchangeRateProto {
 	string in_game_currency = 1;
 	string fiat_currency = 2;
 	int64 fiat_currency_cost_e6_per_in_game_unit = 3;
-}
-
-enum InAppMessageType {
-	IN_APP_MESSAGE_TYPE_FULL = 0;
-	IN_APP_MESSAGE_TYPE_MODAL = 1;
-	IN_APP_MESSAGE_TYPE_SLIDEUP = 2;
 }
 
 enum IncidentDynamicStringTypes {
@@ -478,36 +457,6 @@ enum MapLayer {
 	PLATFORM_MAP_LAYER_TRANSIT = 8;
 	PLATFORM_MAP_LAYER_WATER = 9;
 	PLATFORM_MAP_LAYER_DEBUG_TILE_BOUNDARIES = 10;
-}
-
-enum AppboyNotificationSubscriptionType {
-	APPBOY_NOTIFICATION_SUBSCRIPTION_TYPE_OPTED_IN = 0;
-	APPBOY_NOTIFICATION_SUBSCRIPTION_TYPE_SUBSCRIBED = 1;
-	APPBOY_NOTIFICATION_SUBSCRIPTION_TYPE_UNSUBSCRIBED = 2;
-}
-
-enum CardCategory {
-	CARD_CATEGORY_ADVERTISING = 0;
-	CARD_CATEGORY_ANNOUNCEMENTS = 1;
-	CARD_CATEGORY_NEWS = 2;
-	CARD_CATEGORY_SOCIAL = 3;
-	CARD_CATEGORY_NO_CATEGORY = 4;
-}
-
-enum ClickAction {
-	CLICK_ACTION_NEWS_FEED = 0;
-	CLICK_ACTION_URI = 1;
-	CLICK_ACTION_NONE = 2;
-}
-
-enum DismissType {
-	DISMISS_TYPE_AUTO_DISMISS = 0;
-	DISMISS_TYPE_SWIPE = 1;
-}
-
-enum SlideFrom {
-	SLIDE_FROM_TOP = 0;
-	SLIDE_FROM_BOTTOM = 1;
 }
 
 enum OmniNotificationSubscriptionType {
@@ -1588,10 +1537,6 @@ message PlatformGetFriendDetailsOutProto {
 		EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
 	}
 
-	message Callee {
-		string player_id = 2;
-	}
-
 	message DebugProto {
 		message Callee {
 			string player_id = 2;
@@ -1966,19 +1911,6 @@ message PlatformSetAccountSettingsProto {
 }
 
 message PlatformSocialClientFeatures {
-	enum AppLinkType {
-		NO_LINK = 0;
-		WEB_LINK = 1;
-		APP_STORE_LINK = 2;
-	}
-
-	enum FeatureType {
-		UNSET = 0;
-		NIANTIC_PROFILE = 1;
-		ONLINE_STATUS = 2;
-		FRIEND_LIST = 3;
-	}
-
 	message CrossGameSocialClientSettingsProto {
 		enum AppLinkType {
 			NO_LINK = 0;
@@ -6941,8 +6873,6 @@ message CombatHubEntranceTelemetry {
 }
 
 message CombatLeagueProto {
-
-
 	enum ConditionType {
 		UNSET = 0;
 		WITH_POKEMON_CP_LIMIT = 1;
@@ -7747,7 +7677,6 @@ message DiskEncounterProto {
 }
 
 message Distribution {
-
 	message BucketOptions {
 		oneof BucketType {
 			LinearBuckets linear_buckets = 1;
@@ -7771,22 +7700,6 @@ message Distribution {
 			int64 offset = 3;
 		}
 
-	}
-
-	message ExplicitBuckets {
-		repeated int64 bounds = 1;
-	}
-
-	message ExponentialBuckets {
-		int64 num_finite_buckets = 1;
-		float growth_factor = 2;
-		float scale = 3;
-	}
-
-	message LinearBuckets {
-		int64 num_finite_buckets = 1;
-		int64 width = 2;
-		int64 offset = 3;
 	}
 
 	message Range {
@@ -8101,36 +8014,6 @@ message EventInfoProto {
 }
 
 message EventSectionProto {
-	enum IconType {
-		UNSET = 0;
-		ADVENTURE_SYNC = 1;
-		BUDDY = 2;
-		CANDY_GENERAL = 3;
-		EGG = 4;
-		EGG_INCUBATOR = 5;
-		EVENT_MOVE = 6;
-		EVOLUTION = 7;
-		FIELD_RESEARCH = 8;
-		FRIENDSHIP = 9;
-		GIFT = 10;
-		INCENSE = 11;
-		LUCKY_EGG = 12;
-		LURE_MODULE = 13;
-		PHOTOBOMB = 14;
-		POKESTOP = 15;
-		RAID = 16;
-		RAID_PASS = 17;
-		SPAWN_UNKNOWN = 18;
-		STAR_PIECE = 19;
-		STARDUST = 20;
-		TEAM_ROCKET = 21;
-		TRADE = 22;
-		TRANSFER_CANDY = 23;
-		BATTLE = 24;
-		XP = 25;
-		SHOP = 26;
-	}
-
 	message BonusBoxProto {
 		enum IconType {
 			UNSET = 0;
@@ -13903,11 +13786,6 @@ message QuestPreconditionProto {
 		Group group = 7;
 	}
 
-	enum Name {
-		UNSET_NAME = 0;
-		GIOVANNI = 1;
-	}
-
 	enum Operator {
 		UNSET_OPERATOR = 0;
 		EQUALS = 1;
@@ -14290,7 +14168,7 @@ message RegisterBackgroundDeviceResponseProto {
 	}
 
 	Status status = 1;
-	BackgroundToken token = 2;
+	PlatformBackgroundToken token = 2;
 }
 
 message RegisterSfidaRequest {
@@ -15106,23 +14984,6 @@ message TradingLogEntry {
 }
 
 message TradingProto {
-	enum ExclusionReason {
-		UNSET_EXCLUSIONREASON = 0;
-		MYTHICAL_POKEMON = 1;
-		SLASHED = 2;
-		GYM_DEPLOYED = 3;
-		BUDDY = 4;
-		STAMINA_NOT_FULL = 5;
-		EGG_NOT_HATCHED = 6;
-		FRIENDSHIP_LEVEL_LOW = 7;
-		FRIEND_CANNOT_AFFORD = 8;
-		FRIEND_REACHED_DAILY_LIMIT = 9;
-		ALREADY_TRADED = 10;
-		PLAYER_CANNOT_AFFORD = 11;
-		PLAYER_REACHED_DAILY_LIMIT = 12;
-		FAVORITE = 13;
-	}
-
 	enum TradingState {
 		UNSET_TRADINGSTATE = 0;
 		PRIMORDIAL = 1;
@@ -15132,46 +14993,7 @@ message TradingProto {
 		FINISHED = 5;
 	}
 
-	message ExcludedPokemon {
-		enum ExclusionReason {
-			UNSET_EXCLUSIONREASON = 0;
-			MYTHICAL_POKEMON = 1;
-			SLASHED = 2;
-			GYM_DEPLOYED = 3;
-			BUDDY = 4;
-			STAMINA_NOT_FULL = 5;
-			EGG_NOT_HATCHED = 6;
-			FRIENDSHIP_LEVEL_LOW = 7;
-			FRIEND_CANNOT_AFFORD = 8;
-			FRIEND_REACHED_DAILY_LIMIT = 9;
-			ALREADY_TRADED = 10;
-			PLAYER_CANNOT_AFFORD = 11;
-			PLAYER_REACHED_DAILY_LIMIT = 12;
-			FAVORITE = 13;
-		}
-
-		fixed64 pokemon_id = 1;
-		ExclusionReason exclusion_reason = 2;
-	}
-
 	message TradingPlayerProto {
-		enum ExclusionReason {
-			UNSET_EXCLUSIONREASON = 0;
-			MYTHICAL_POKEMON = 1;
-			SLASHED = 2;
-			GYM_DEPLOYED = 3;
-			BUDDY = 4;
-			STAMINA_NOT_FULL = 5;
-			EGG_NOT_HATCHED = 6;
-			FRIENDSHIP_LEVEL_LOW = 7;
-			FRIEND_CANNOT_AFFORD = 8;
-			FRIEND_REACHED_DAILY_LIMIT = 9;
-			ALREADY_TRADED = 10;
-			PLAYER_CANNOT_AFFORD = 11;
-			PLAYER_REACHED_DAILY_LIMIT = 12;
-			FAVORITE = 13;
-		}
-
 		message ExcludedPokemon {
 			enum ExclusionReason {
 				UNSET_EXCLUSIONREASON = 0;
@@ -15718,7 +15540,6 @@ message VsSeekerCompleteSeasonLogEntry {
 }
 
 message VsSeekerLootProto {
-
 	message RewardProto {
 		oneof RewardType {
 			LootItemProto item = 1;
@@ -15736,8 +15557,6 @@ message VsSeekerLootProto {
 }
 
 message VsSeekerPokemonRewardsProto {
-
-
 	message OverrideIvRangeProto {
 		oneof OverrideType {
 			RangeProto range = 1;
@@ -16042,35 +15861,6 @@ message WeatherAlertProto {
 	}
 
 	bool warn_weather = 2;
-}
-
-enum SchedulerFlags {
-	SCHEDULER_FLAGS_NONE = 0;
-	SCHEDULER_FLAGS_PAUSE_IN_HIGH_PERFORMANCE_MODE = 1;
-	SCHEDULER_FLAGS_DO_NOT_PAUSE_WITH_CONTEXT = 2;
-	SCHEDULER_FLAGS_PAUSE_WHEN_CONTEXT_INACTIVE_IN_HIERARCHY = 4;
-}
-
-enum FeatureType {
-	PLATFORM_FEATURE_TYPE_UNSET = 0;
-	PLATFORM_FEATURE_TYPE_ONLINE_STATUS = 1;
-	PLATFORM_FEATURE_TYPE_NIANTIC_PROFILE = 2;
-	PLATFORM_FEATURE_TYPE_FRIENDS_LIST = 3;
-}
-
-enum OnboardingType {
-	PLATFORM_ONBOARDING_TYPE_UNSET = 0;
-	PLATFORM_ONBOARDING_TYPE_PROFILE = 1;
-	PLATFORM_ONBOARDING_TYPE_FRIEND_LIST_V2 = 2;
-	PLATFORM_ONBOARDING_TYPE_ONLINE_STATUS_OVERVIEW = 3;
-	PLATFORM_ONBOARDING_TYPE_ONLINE_STATUS_TOGGLE = 4;
-}
-
-enum ProviderType {
-	PLATFORM_PROVIDER_TYPE_NONE = 0;
-	PLATFORM_PROVIDER_TYPE_GOOGLE = 1;
-	PLATFORM_PROVIDER_TYPE_FACEBOOK = 2;
-	PLATFORM_PROVIDER_TYPE_APPLE = 3;
 }
 
 message PasscodeRedemptionFlowRequest {
