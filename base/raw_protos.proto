@@ -1950,11 +1950,6 @@ message GetFriendDetailsOutProto {
 		EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
 	}
 
-	// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/Types/Callee
-	message Callee {
-		string player_id = 2;
-	}
-
 	// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto
 	message DebugProto {
 		// ref: Niantic.Platform.Protos.GetFriendDetailsOutProto/Types/DebugProto/Types/Callee
@@ -2391,21 +2386,6 @@ message SetAccountSettingsProto {
 
 // ref: Niantic.Platform.Protos.SocialClientFeatures
 message SocialClientFeatures {
-	// ref: Niantic.Platform.Protos.SocialClientFeatures/Types/CrossGameSocialClientSettingsProto/Types/AppLinkType
-	enum AppLinkType {
-		NO_LINK = 0;
-		WEB_LINK = 1;
-		APP_STORE_LINK = 2;
-	}
-
-	// ref: Niantic.Platform.Protos.SocialClientFeatures/Types/CrossGameSocialClientSettingsProto/Types/FeatureType
-	enum FeatureType {
-		UNSET = 0;
-		NIANTIC_PROFILE = 1;
-		ONLINE_STATUS = 2;
-		FRIEND_LIST = 3;
-	}
-
 	// ref: Niantic.Platform.Protos.SocialClientFeatures/Types/CrossGameSocialClientSettingsProto
 	message CrossGameSocialClientSettingsProto {
 		// ref: Niantic.Platform.Protos.SocialClientFeatures/Types/CrossGameSocialClientSettingsProto/Types/AppLinkType
@@ -7768,29 +7748,6 @@ message CombatHubEntranceTelemetry {
 
 // ref: Holoholo.Rpc.CombatLeagueProto
 message CombatLeagueProto {
-	// ref: Holoholo.Rpc.CombatLeagueProto/Types/UnlockConditionProto/ConditionOneofCase
-	//oneof Condition {
-		//none = 0;
-		//with_player_level = 3;
-		//with_pokemon_cp_limit = 4;
-		//with_pokemon_type = 5;
-		//with_pokemon_category = 6;
-		//pokemon_whitelist = 7;
-		//pokemon_banlist = 8;
-		//pokemon_caught_timestamp = 9;
-	//}
-
-	// ref: Holoholo.Rpc.CombatLeagueProto/Types/PokemonConditionProto/ConditionOneofCase
-	//oneof Condition {
-		//none = 0;
-		//with_pokemon_cp_limit = 2;
-		//with_pokemon_type = 3;
-		//with_pokemon_category = 4;
-		//pokemon_whitelist = 5;
-		//pokemon_banlist = 6;
-		//pokemon_caught_timestamp = 7;
-	//}
-
 	// ref: Holoholo.Rpc.CombatLeagueProto/Types/ConditionType
 	enum ConditionType {
 		UNSET = 0;
@@ -8721,14 +8678,6 @@ message DiskEncounterProto {
 
 // ref: Holoholo.Rpc.Distribution
 message Distribution {
-	// ref: Holoholo.Rpc.Distribution/Types/BucketOptions/BucketTypeOneofCase
-	//oneof BucketType {
-		//none = 0;
-		//linear_buckets = 1;
-		//exponential_buckets = 2;
-		//explicit_buckets = 3;
-	//}
-
 	// ref: Holoholo.Rpc.Distribution/Types/BucketOptions
 	message BucketOptions {
 		// ref: Holoholo.Rpc.Distribution/Types/BucketOptions/BucketTypeOneofCase
@@ -8761,25 +8710,6 @@ message Distribution {
 		LinearBuckets linear_buckets = 1;
 		ExponentialBuckets exponential_buckets = 2;
 		ExplicitBuckets explicit_buckets = 3;
-	}
-
-	// ref: Holoholo.Rpc.Distribution/Types/BucketOptions/Types/ExplicitBuckets
-	message ExplicitBuckets {
-		repeated int64 bounds = 1;
-	}
-
-	// ref: Holoholo.Rpc.Distribution/Types/BucketOptions/Types/ExponentialBuckets
-	message ExponentialBuckets {
-		int64 num_finite_buckets = 1;
-		float growth_factor = 2;
-		float scale = 3;
-	}
-
-	// ref: Holoholo.Rpc.Distribution/Types/BucketOptions/Types/LinearBuckets
-	message LinearBuckets {
-		int64 num_finite_buckets = 1;
-		int64 width = 2;
-		int64 offset = 3;
 	}
 
 	// ref: Holoholo.Rpc.Distribution/Types/Range
@@ -9133,37 +9063,6 @@ message EventInfoProto {
 
 // ref: Holoholo.Rpc.EventSectionProto
 message EventSectionProto {
-	// ref: Holoholo.Rpc.EventSectionProto/Types/BonusBoxProto/Types/IconType
-	enum IconType {
-		UNSET = 0;
-		ADVENTURE_SYNC = 1;
-		BUDDY = 2;
-		CANDY_GENERAL = 3;
-		EGG = 4;
-		EGG_INCUBATOR = 5;
-		EVENT_MOVE = 6;
-		EVOLUTION = 7;
-		FIELD_RESEARCH = 8;
-		FRIENDSHIP = 9;
-		GIFT = 10;
-		INCENSE = 11;
-		LUCKY_EGG = 12;
-		LURE_MODULE = 13;
-		PHOTOBOMB = 14;
-		POKESTOP = 15;
-		RAID = 16;
-		RAID_PASS = 17;
-		SPAWN_UNKNOWN = 18;
-		STAR_PIECE = 19;
-		STARDUST = 20;
-		TEAM_ROCKET = 21;
-		TRADE = 22;
-		TRANSFER_CANDY = 23;
-		BATTLE = 24;
-		XP = 25;
-		SHOP = 26;
-	}
-
 	// ref: Holoholo.Rpc.EventSectionProto/Types/BonusBoxProto
 	message BonusBoxProto {
 		// ref: Holoholo.Rpc.EventSectionProto/Types/BonusBoxProto/Types/IconType
@@ -15528,12 +15427,6 @@ message QuestPreconditionProto {
 		//group = 7;
 	//}
 
-	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Group/Types/Name
-	enum Name {
-		UNSET_NAME = 0;
-		GIOVANNI = 1;
-	}
-
 	// ref: Holoholo.Rpc.QuestPreconditionProto/Types/Operator
 	enum Operator {
 		UNSET_OPERATOR = 0;
@@ -16950,24 +16843,6 @@ message TradingLogEntry {
 
 // ref: Holoholo.Rpc.TradingProto
 message TradingProto {
-	// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
-	enum ExclusionReason {
-		UNSET_EXCLUSIONREASON = 0;
-		MYTHICAL_POKEMON = 1;
-		SLASHED = 2;
-		GYM_DEPLOYED = 3;
-		BUDDY = 4;
-		STAMINA_NOT_FULL = 5;
-		EGG_NOT_HATCHED = 6;
-		FRIENDSHIP_LEVEL_LOW = 7;
-		FRIEND_CANNOT_AFFORD = 8;
-		FRIEND_REACHED_DAILY_LIMIT = 9;
-		ALREADY_TRADED = 10;
-		PLAYER_CANNOT_AFFORD = 11;
-		PLAYER_REACHED_DAILY_LIMIT = 12;
-		FAVORITE = 13;
-	}
-
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingState
 	enum TradingState {
 		UNSET_TRADINGSTATE = 0;
@@ -16978,50 +16853,8 @@ message TradingProto {
 		FINISHED = 5;
 	}
 
-	// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon
-	message ExcludedPokemon {
-		// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
-		enum ExclusionReason {
-			UNSET_EXCLUSIONREASON = 0;
-			MYTHICAL_POKEMON = 1;
-			SLASHED = 2;
-			GYM_DEPLOYED = 3;
-			BUDDY = 4;
-			STAMINA_NOT_FULL = 5;
-			EGG_NOT_HATCHED = 6;
-			FRIENDSHIP_LEVEL_LOW = 7;
-			FRIEND_CANNOT_AFFORD = 8;
-			FRIEND_REACHED_DAILY_LIMIT = 9;
-			ALREADY_TRADED = 10;
-			PLAYER_CANNOT_AFFORD = 11;
-			PLAYER_REACHED_DAILY_LIMIT = 12;
-			FAVORITE = 13;
-		}
-
-		fixed64 pokemon_id = 1;
-		ExclusionReason exclusion_reason = 2;
-	}
-
 	// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto
 	message TradingPlayerProto {
-		// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
-		enum ExclusionReason {
-			UNSET_EXCLUSIONREASON = 0;
-			MYTHICAL_POKEMON = 1;
-			SLASHED = 2;
-			GYM_DEPLOYED = 3;
-			BUDDY = 4;
-			STAMINA_NOT_FULL = 5;
-			EGG_NOT_HATCHED = 6;
-			FRIENDSHIP_LEVEL_LOW = 7;
-			FRIEND_CANNOT_AFFORD = 8;
-			FRIEND_REACHED_DAILY_LIMIT = 9;
-			ALREADY_TRADED = 10;
-			PLAYER_CANNOT_AFFORD = 11;
-			PLAYER_REACHED_DAILY_LIMIT = 12;
-			FAVORITE = 13;
-		}
-
 		// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon
 		message ExcludedPokemon {
 			// ref: Holoholo.Rpc.TradingProto/Types/TradingPlayerProto/Types/ExcludedPokemon/Types/ExclusionReason
@@ -17635,16 +17468,6 @@ message VsSeekerCompleteSeasonLogEntry {
 
 // ref: Holoholo.Rpc.VsSeekerLootProto
 message VsSeekerLootProto {
-	// ref: Holoholo.Rpc.VsSeekerLootProto/Types/RewardProto/RewardTypeOneofCase
-	//oneof RewardType {
-		//none = 0;
-		//item = 1;
-		//pokemon_reward = 2;
-		//item_loot_table = 3;
-		//item_loot_table_count = 4;
-		//item_ranking_loot_table_count = 5;
-	//}
-
 	// ref: Holoholo.Rpc.VsSeekerLootProto/Types/RewardProto
 	message RewardProto {
 		// ref: Holoholo.Rpc.VsSeekerLootProto/Types/RewardProto/RewardTypeOneofCase
@@ -17671,21 +17494,6 @@ message VsSeekerLootProto {
 
 // ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto
 message VsSeekerPokemonRewardsProto {
-	// ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto/Types/OverrideIvRangeProto/OverrideTypeOneofCase
-	//oneof OverrideType {
-		//none = 0;
-		//range = 1;
-		//zero = 2;
-	//}
-
-	// ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto/Types/PokemonUnlockProto/RewardTypeOneofCase
-	//oneof RewardType {
-		//none = 0;
-		//pokemon = 1;
-		//limited_pokemon_reward = 2;
-		//guaranteed_limited_pokemon_reward = 3;
-	//}
-
 	// ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto/Types/OverrideIvRangeProto
 	message OverrideIvRangeProto {
 		// ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto/Types/OverrideIvRangeProto/OverrideTypeOneofCase
