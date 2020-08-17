@@ -132,7 +132,7 @@ message DeveloperToken {
 // ref: Niantic.Platform.GameMaster.ClientGameMasterTemplateProto
 message ClientGameMasterTemplateProto {
 	string template_id = 1;
-	bytes data = 2;
+	GMAMKLOHMIF data = 2;
 }
 
 // ref: Niantic.Platform.GameMaster.DownloadGmTemplatesRequestProto
@@ -8558,76 +8558,76 @@ message GMAMKLOHMIF {
 	GEBGKMJNGJE nelgaedghic = 3;
 	JJIIEOIAEJN ppjhjlpkcjh = 4;
 	AHAJNNBNOPI plohmplgfoi = 5;
-	JHEBEKMOEJL mobncgpebmd = 6;
-	BCADLMKLIFA fdepoihmbbc = 7;
-	DBMJNMKINNG cffddgghcpd = 8;
-	MCPPKHGDIFP emkemifkaho = 9;
-	JKFKHKFBALN pfjfobhfcfc = 10;
-	LAENOBGIJKN lkgfkobdbeh = 11;
-	HBCCAPPMNLI alafdimkcof = 12;
-	BPFPFEEJIJA hplbingicnm = 13;
-	JAKIJELMHLE ajpfmhgabdo = 14;
-	OLONNLILGHK mghecaaildj = 15;
-	MGOJAAGNAMO cfhcefncoao = 16;
-	HOGFFHJIBME cophmpaddha = 17;
-	FPNLEOAICLK fjooamdebli = 18;
-	MDCELIOBPML jjkgafnehdp = 19;
-	FDPEEPNKKFK dhbichemmod = 20;
-	OOMLMKBHDLH ijndlmocpop = 21;
-	HIMBPKIBEKO pklllmicgko = 22;
-	ABPHMMIGJLJ hnpdohehfgf = 23;
-	ANGALDBBDDJ bhmamaodfbm = 24;
-	BOKEAICKMGB mciejdkdnoh = 25;
-	KKMKBNEHPEG mfogkkkhdkb = 26;
-	JACNEBNBCPB paaonhpmogl = 27;
-	BBNLPNGIOPF ekelcapbelk = 28;
-	FPJMMKDGIGH jlgadhecpfj = 29;
-	OADPMMCLPAE nbpkncimole = 30;
-	PKLBHPGKCME lglleoogicd = 31;
-	IJLONPCDOEN nbelnjnblab = 32;
-	DLBMBACCDFP aaanhdfojpb = 33;
-	FNJMDAOMFCO lanmchkmoho = 34;
-	PFEFPIIEDAG nojppnkdcon = 35;
-	FKACEGBBLPO cljaadpmfie = 36;
-	AFMFOAFNBFF mjeobncjhnf = 37;
-	DOLGOMLGJIG geoglmfiilc = 38;
-	OBFFEHCAEFH jihejcdfgni = 39;
-	NIOIPELHEEC ioejidgbopp = 40;
-	BPCCLMGJFEI hnhncbponjb = 41;
-	HGDHNGCKKED fdbcoaeghcp = 42;
-	PBMEKDDHCFH bfcohbdjhko = 43;
-	MAJMOALIDCD ebdlfhkmdbd = 44;
-	GJEENDPHFDB cmeelinaelf = 45;
-	CCBPEMKHGMM nenjmjkibjj = 46;
-	CBFBNHBPCOE jmioodibdlm = 47;
-	LDDCAHIBOLB ggikhnpekff = 48;
-	LKGKEPHNEDM hmienpkbcjb = 49;
-	IOBEBMBFBAG aabgjfpfmjk = 50;
-	IPNCAFABINJ cgcgejclpef = 51;
-	IJJEPHHOHFA pbbioeidgki = 52;
-	FKJJJNMDKHJ edncmobbbod = 53;
-	JCGKADKCAKO giamokampmh = 54;
-	PEBPAJEJJAM gclnlokdjhj = 55;
-	AFBKPOBFKIJ ijepengbkii = 56;
-	IBHMLBDGLKP aocinhpnkhd = 57;
-	MPGCHMICEIF lpmdgknnnom = 58;
-	GIGBELOEHDC peadbhhmmap = 59;
-	NDPOLEOPCMK emjankaihcd = 60;
-	FNGKDFCDEBM bekfpnegbbe = 61;
-	HJIKBEHNDKI palgpoehecc = 62;
-	FEOCELOHGNB cmingedbhif = 63;
-	DFJEHBHJEHE lgaelneodhk = 64;
-	ICPNOEDELKI ilgnebihfaf = 65;
-	JGCJBMBOFKI nbhimcpkoic = 66;
-	IDELEHMNPBD jhfegpipckk = 67;
-	HBJIMDNLGFN obmmgbkfgnl = 68;
-	BFCLGGGJFMI ccjffobklll = 69;
-	HNJEPAPEJLE gnkbdedkiae = 70;
-	PNJHCPOBAIG pjimkemmogj = 71;
-	JIJIPHHOHCC dmkdneinpfg = 72;
-	BMHGDKKKEMI hagancmfhle = 73;
-	CKKPDDKJJED cchgdajecpk = 74;
-	DPGEAECPBGA ebhnkhjnecf = 75;
+	JHEBEKMOEJL mobncgpebmd = 8;
+	BCADLMKLIFA fdepoihmbbc = 10;
+	DBMJNMKINNG cffddgghcpd = 11;
+	MCPPKHGDIFP emkemifkaho = 12;
+	JKFKHKFBALN pfjfobhfcfc = 13;
+	LAENOBGIJKN lkgfkobdbeh = 14;
+	HBCCAPPMNLI alafdimkcof = 15;
+	BPFPFEEJIJA hplbingicnm = 16;
+	JAKIJELMHLE ajpfmhgabdo = 17;
+	OLONNLILGHK mghecaaildj = 18;
+	MGOJAAGNAMO cfhcefncoao = 19;
+	HOGFFHJIBME cophmpaddha = 20;
+	FPNLEOAICLK fjooamdebli = 21;
+	MDCELIOBPML jjkgafnehdp = 22;
+	FDPEEPNKKFK dhbichemmod = 23;
+	OOMLMKBHDLH ijndlmocpop = 24;
+	HIMBPKIBEKO pklllmicgko = 25;
+	ABPHMMIGJLJ hnpdohehfgf = 26;
+	ANGALDBBDDJ bhmamaodfbm = 27;
+	BOKEAICKMGB mciejdkdnoh = 28;
+	KKMKBNEHPEG mfogkkkhdkb = 29;
+	JACNEBNBCPB paaonhpmogl = 30;
+	BBNLPNGIOPF ekelcapbelk = 31;
+	FPJMMKDGIGH jlgadhecpfj = 32;
+	OADPMMCLPAE nbpkncimole = 33;
+	PKLBHPGKCME lglleoogicd = 34;
+	IJLONPCDOEN nbelnjnblab = 35;
+	DLBMBACCDFP aaanhdfojpb = 36;
+	FNJMDAOMFCO lanmchkmoho = 37;
+	PFEFPIIEDAG nojppnkdcon = 38;
+	FKACEGBBLPO cljaadpmfie = 39;
+	AFMFOAFNBFF mjeobncjhnf = 40;
+	DOLGOMLGJIG geoglmfiilc = 41;
+	OBFFEHCAEFH jihejcdfgni = 42;
+	NIOIPELHEEC ioejidgbopp = 43;
+	BPCCLMGJFEI hnhncbponjb = 44;
+	HGDHNGCKKED fdbcoaeghcp = 45;
+	PBMEKDDHCFH bfcohbdjhko = 46;
+	MAJMOALIDCD ebdlfhkmdbd = 47;
+	GJEENDPHFDB cmeelinaelf = 48;
+	CCBPEMKHGMM nenjmjkibjj = 49;
+	CBFBNHBPCOE jmioodibdlm = 50;
+	LDDCAHIBOLB ggikhnpekff = 51;
+	LKGKEPHNEDM hmienpkbcjb = 52;
+	IOBEBMBFBAG aabgjfpfmjk = 53;
+	IPNCAFABINJ cgcgejclpef = 54;
+	IJJEPHHOHFA pbbioeidgki = 56;
+	FKJJJNMDKHJ edncmobbbod = 58;
+	JCGKADKCAKO giamokampmh = 59;
+	PEBPAJEJJAM gclnlokdjhj = 60;
+	AFBKPOBFKIJ ijepengbkii = 61;
+	IBHMLBDGLKP aocinhpnkhd = 62;
+	MPGCHMICEIF lpmdgknnnom = 63;
+	GIGBELOEHDC peadbhhmmap = 64;
+	NDPOLEOPCMK emjankaihcd = 65;
+	FNGKDFCDEBM bekfpnegbbe = 66;
+	HJIKBEHNDKI palgpoehecc = 67;
+	FEOCELOHGNB cmingedbhif = 68;
+	DFJEHBHJEHE lgaelneodhk = 69;
+	ICPNOEDELKI ilgnebihfaf = 70;
+	JGCJBMBOFKI nbhimcpkoic = 72;
+	IDELEHMNPBD jhfegpipckk = 73;
+	HBJIMDNLGFN obmmgbkfgnl = 76;
+	BFCLGGGJFMI ccjffobklll = 78;
+	HNJEPAPEJLE gnkbdedkiae = 81;
+	PNJHCPOBAIG pjimkemmogj = 84;
+	JIJIPHHOHCC dmkdneinpfg = 85;
+	BMHGDKKKEMI hagancmfhle = 86;
+	CKKPDDKJJED cchgdajecpk = 87;
+	DPGEAECPBGA ebhnkhjnecf = 90;
 }
 
 // ref: GMEDIGMFDII
@@ -13918,54 +13918,54 @@ message LLKIEINOHBF {
 	}
 
 	EDOCFGBIHNP bgldnekkdoi = 1;
-	float bhdfflhieib = 2;
-	CLAPAJMEHPD cdfgbdgakam = 3;
-	CLAPAJMEHPD lkgdecngepl = 4;
-	FFEKOMHCDPI cffddgghcpd = 5;
-	FDOCKGKNJFB piffamdaakg = 6;
-	AOFIGJKGBKH adinjdpgokg = 7;
-	repeated MBJPAHADFHJ jjfdjkfecge = 8;
-	repeated MBJPAHADFHJ dchnmpgcemf = 9;
-	repeated float ccdnfojlagb = 10;
-	repeated EDOCFGBIHNP kglplbngfmn = 11;
-	int32 pefbiplkmng = 12;
-	DIAJPDKPBDF dmopebdeimm = 13;
-	float kgpckhiffmc = 14;
-	float ghfogjbbnjk = 15;
-	EDOCFGBIHNP nogonjhbjlo = 16;
-	float pjjmffcmiga = 17;
-	float kdcnbkpihnf = 18;
-	float boalidnecgj = 19;
-	GFGDPHLEMLA eaadmmpleil = 20;
-	int32 ennoohkpaha = 21;
-	float oaagnfeddjp = 22;
-	DPCKHOOFMCJ jgmdchfoeoi = 23;
-	float cnlldooiekc = 24;
-	repeated AEDCCMNBEAA okgoipimamc = 25;
-	float lfmgmhaahbc = 26;
-	KHJALPABIMA.BJHMONIPPEH mdklanmfele = 27;
-	MBJPAHADFHJ jlpmghpdnhn = 28;
-	MBJPAHADFHJ hniecgoffop = 29;
-	repeated float hnoljohpbcd = 30;
-	repeated float lipihoeafim = 31;
-	float eldnhabigcg = 32;
-	repeated float eldmojfpcco = 33;
-	KHJALPABIMA.BJHMONIPPEH jednlnmpgni = 34;
-	EMACJFFFPDO biehkpfgagh = 35;
-	bool oehodjppcgc = 36;
-	bool ppncoogfidk = 37;
-	repeated float maefdideeop = 38;
-	bool dnddpladmba = 39;
-	repeated float plmiapgpcjb = 40;
-	repeated float eknaambmdgc = 41;
-	repeated float akkinbjpcei = 42;
-	repeated float cianhaoofpb = 43;
-	repeated ODHCHCOIHEM geikmppjnkh = 44;
-	GKMAAMFBBIA hpgpkncjlel = 45;
-	int32 emdoondapel = 46;
-	int32 igckkjgcaij = 47;
-	repeated MBJPAHADFHJ fiahkgdcooh = 48;
-	repeated MBJPAHADFHJ ifpmepiohac = 49;
+	float bhdfflhieib = 3;
+	CLAPAJMEHPD cdfgbdgakam = 4;
+	CLAPAJMEHPD lkgdecngepl = 5;
+	FFEKOMHCDPI cffddgghcpd = 6;
+	FDOCKGKNJFB piffamdaakg = 7;
+	AOFIGJKGBKH adinjdpgokg = 8;
+	repeated MBJPAHADFHJ jjfdjkfecge = 9;
+	repeated MBJPAHADFHJ dchnmpgcemf = 10;
+	repeated float ccdnfojlagb = 11;
+	repeated EDOCFGBIHNP kglplbngfmn = 12;
+	int32 pefbiplkmng = 13;
+	DIAJPDKPBDF dmopebdeimm = 14;
+	float kgpckhiffmc = 15;
+	float ghfogjbbnjk = 16;
+	EDOCFGBIHNP nogonjhbjlo = 17;
+	float pjjmffcmiga = 18;
+	float kdcnbkpihnf = 19;
+	float boalidnecgj = 20;
+	GFGDPHLEMLA eaadmmpleil = 21;
+	int32 ennoohkpaha = 22;
+	float oaagnfeddjp = 23;
+	DPCKHOOFMCJ jgmdchfoeoi = 24;
+	float cnlldooiekc = 25;
+	repeated AEDCCMNBEAA okgoipimamc = 26;
+	float lfmgmhaahbc = 27;
+	KHJALPABIMA.BJHMONIPPEH mdklanmfele = 28;
+	MBJPAHADFHJ jlpmghpdnhn = 29;
+	MBJPAHADFHJ hniecgoffop = 30;
+	repeated float hnoljohpbcd = 31;
+	repeated float lipihoeafim = 32;
+	float eldnhabigcg = 33;
+	repeated float eldmojfpcco = 34;
+	KHJALPABIMA.BJHMONIPPEH jednlnmpgni = 35;
+	EMACJFFFPDO biehkpfgagh = 36;
+	bool oehodjppcgc = 37;
+	bool ppncoogfidk = 38;
+	repeated float maefdideeop = 39;
+	bool dnddpladmba = 40;
+	repeated float plmiapgpcjb = 41;
+	repeated float eknaambmdgc = 42;
+	repeated float akkinbjpcei = 43;
+	repeated float cianhaoofpb = 44;
+	repeated ODHCHCOIHEM geikmppjnkh = 45;
+	GKMAAMFBBIA hpgpkncjlel = 46;
+	int32 emdoondapel = 47;
+	int32 igckkjgcaij = 48;
+	repeated MBJPAHADFHJ fiahkgdcooh = 49;
+	repeated MBJPAHADFHJ ifpmepiohac = 50;
 }
 
 // ref: LMBDAJPCCHP
@@ -16750,6 +16750,36 @@ message GcmToken {
 	string registration_id = 1;
 }
 
+// ref: Niantic.Platform.Protos.GenerateGmapSignedUrlOutProto
+message GenerateGmapSignedUrlOutProto {
+	// ref: Niantic.Platform.Protos.GenerateGmapSignedUrlOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_NOT_VALID = 2;
+		ERROR_RATE_LIMITED = 3;
+		ERROR_MISSING_INPUT = 4;
+		ERROR_UNKNOWN = 5;
+	}
+
+	Result result = 1;
+	string signed_url = 2;
+}
+
+// ref: Niantic.Platform.Protos.GenerateGmapSignedUrlProto
+message GenerateGmapSignedUrlProto {
+	double latitude = 1;
+	double longitude = 2;
+	int32 width = 3;
+	int32 height = 4;
+	int32 zoom = 5;
+	string language_code = 6;
+	string country_code = 7;
+	string map_style = 8;
+	string map_type = 9;
+	string icon_params = 10;
+}
+
 // ref: Niantic.Platform.Protos.GetAccountSettingsOutProto
 message GetAccountSettingsOutProto {
 	// ref: Niantic.Platform.Protos.GetAccountSettingsOutProto/Types/Result
@@ -17488,36 +17518,6 @@ message AvailableSubmissionsPerSubmissionType {
 	repeated string blacklisted_os = 7;
 	repeated string blacklisted_device_id = 8;
 	bool is_whitelisted_user = 9;
-}
-
-// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto
-message GenerateGmapSignedUrlOutProto {
-	// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto/Types/Result
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_PLAYER_NOT_VALID = 2;
-		ERROR_RATE_LIMITED = 3;
-		ERROR_MISSING_INPUT = 4;
-		ERROR_UNKNOWN = 5;
-	}
-
-	Result result = 1;
-	string signed_url = 2;
-}
-
-// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlProto
-message GenerateGmapSignedUrlProto {
-	double latitude = 1;
-	double longitude = 2;
-	int32 width = 3;
-	int32 height = 4;
-	int32 zoom = 5;
-	string language_code = 6;
-	string country_code = 7;
-	string map_style = 8;
-	string map_type = 9;
-	string icon_params = 10;
 }
 
 // ref: Niantic.Titan.Protos.GetAvailableSubmissionsOutProto
