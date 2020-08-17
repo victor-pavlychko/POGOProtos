@@ -2,6 +2,7 @@
 .idea/
 *.iml
 *_single*
+*pogo_*
 
 # Protoc files
 out/
