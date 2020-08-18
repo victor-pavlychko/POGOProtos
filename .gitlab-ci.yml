@@ -6,8 +6,8 @@ default:
 job:
   script:
     - mkdir /protoc
-    - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protoc-3.12.3-linux-x86_64.zip -P /protoc
-    - unzip /protoc/protoc-3.12.3-linux-x86_64.zip -d /protoc
+    - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-linux-x86_64.zip -P /protoc
+    - unzip /protoc/protoc-3.13.0-linux-x86_64.zip -d /protoc
     - export PATH=/protoc/bin:$PATH
     - chmod +x ./compile_base.py
     - ./compile_base.py -l cpp -1 -k
