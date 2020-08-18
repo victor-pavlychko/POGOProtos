@@ -18,4 +18,4 @@ script:
   - chmod +x ./compile_base.py
   - ./compile_base.py -l cpp -1 -k
   # - clang-format-3.8 -i -style file $(find src -name "*.proto")
-  - git diff --exit-code
+  # - git diff --exit-code
