@@ -9,8 +9,22 @@ job:
     - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-linux-x86_64.zip -P /protoc
     - unzip /protoc/protoc-3.13.0-linux-x86_64.zip -d /protoc
     - export PATH=/protoc/bin:$PATH
+    # Build all test...
     - chmod +x ./compile_base.py
-    - ./compile_base.py -l cpp -1 -k
+    # Generates new Rcp.proto from raw and all test...
     - ./compile_base.py -g -r -1
+    - ./compile_base.py -l cpp -1 -k
+    - ./compile_base.py -l csharp -1 -k
+    - ./compile_base.py -l java -1 -k
+    - ./compile_base.py -l js -1 -k
+    - ./compile_base.py -l python -1 -k
+    - ./compile_base.py -l php -1 -k
+    - ./compile_base.py -l objc -1 -k
     - chmod +x ./compile_src.py
     - ./compile_src.py cpp --include_imports --include_source_info
+    - ./compile_src.py csharp --include_imports --include_source_info
+    - ./compile_src.py java --include_imports --include_source_info
+    - ./compile_src.py js --include_imports --include_source_info
+    - ./compile_src.py python --include_imports --include_source_info
+    - ./compile_src.py php --include_imports --include_source_info
+    - ./compile_src.py objc --include_imports --include_source_info
