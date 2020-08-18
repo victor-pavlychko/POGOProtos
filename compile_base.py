@@ -383,9 +383,8 @@ def add_command_for_new_proto_file(file):
     )
 
 
-if not gen_only:
-    print("Protocol Buffers version:")
-    call(""""{0}" --version""".format(protoc_executable), shell=True)
+# print("Protocol Buffers version:")
+# call(""""{0}" --version""".format(protoc_executable), shell=True)
 
 open_proto_file(raw_proto_file, package_name)
 generated_file = raw_proto_file.replace("raw_protos.proto", input_file)
