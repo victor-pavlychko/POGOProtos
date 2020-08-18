@@ -2637,14 +2637,6 @@ enum JCPOMALNOCO {
 	TIMED_GROUP_CHALLENGE_GOAL_MET = 52;
 }
 
-// ref: JFALOEJJAHB
-enum JFALOEJJAHB {
-	UNKNOWN = 0;
-	PERMISSION_DENIED = -2;
-	NOT_ADDED = -1;
-	ADDED = 1;
-}
-
 // ref: JGHFNGKDHPJ
 enum JGHFNGKDHPJ {
 	UNDEFINED_REMOTE_RAID_JOIN_SOURCE = 0;
@@ -18273,30 +18265,4 @@ message VasaClientAction {
 }
 
 //----- End vasa -----
-//------------------------------
-//----- Begin Optimize Dump File's -----
-
-
-message AuthInfo {
-	string provider = 1;
-	JWT token = 2;
-	AuthOptions options = 3;
-
-	message JWT {
-		string contents = 1;
-		int32 unknown2 = 2;
-	}
-
-	message AuthOptions {
-		bool prevent_account_creation = 1;
-	}
-}
-
-message AuthTicket {
-	bytes start = 1;
-	uint64 expire_timestamp_ms = 2;
-	bytes end = 3;
-}
-
-//----- End Optimize Dump File's -----
 //------------------------------
