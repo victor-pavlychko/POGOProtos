@@ -18,8 +18,8 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | Base           | Notes           | Extra                           |
 |--------------|---------------|-----------------|---------------------------------|
-| 2.52.3       |  [v0.183.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.183.0_obf.proto)       | Obfuscated      |  Protocol Buffers v3.12.3       |
-| 2.52.2       |  [v0.181.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.181.0.proto)       | Compatible      |  Protocol Buffers v3.12.3       |
+| 2.52.3       |  [v0.183.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.183.0_obf.proto)       | Obfuscated      |  Protocol Buffers v3.13.0       |
+| 2.52.2       |  [v0.181.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.181.0.proto)       | Compatible      |  Protocol Buffers v3.13.0       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
@@ -27,7 +27,7 @@ If you want to figure out the current version in an automated system, use this f
 *Note: This file will contain pre-release versions too.*
 
 ### Preparation
-Current recommended protoc version: "Protocol Buffers v3.12.3".
+Current recommended protoc version: "Protocol Buffers v3.13.0".
 You can find download links [here](https://github.com/google/protobuf/releases).
 
 #### Windows
