@@ -1,7 +1,7 @@
 default:
   image: ubuntu:14.04
   before_script:
-    - apt-get update && apt-get install -y python2.7 python-pip tar bash bash-doc bash-completion wget zip
+    - apt-get update && apt-get install -y python2.7 python-pip tar bash bash-doc bash-completion wget zip clang-format-3.8
   
 job:
   script:
@@ -30,5 +30,5 @@ job:
     - ./compile_src.py php --include_imports --include_source_info --generate_desc
     - ./compile_src.py objc --include_imports --include_source_info --generate_desc
     - ./compile_src.py ruby
-    # - clang-format-3.8 -i -style file $(find src -name "*.proto")
+    - clang-format-3.8 -i -style file $(find src -name "*.proto")
     # - git diff --exit-code
