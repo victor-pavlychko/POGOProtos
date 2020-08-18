@@ -42,8 +42,15 @@ Use `homebrew` to install `protobuf ` with `brew install --devel protobuf`.
 The compilation creates output specifically for the target language, i.e. respecting naming conventions, etc.  
 This is an example of how the generated code will be organized:
 
-* Rename base file (vx.xxx.x.proto) to POGOProtos.Rpc.proto
-* Compile the file for the language you want
+##### Compile last raw
+
+```
+python compile_base.py -l cpp -1 -k:
+ - raw_protos.proto -> out/single_file/cpp/POGOProtos.Rpc.pb.desc
+ -                  -> out/single_file/cpp/POGOProtos.Rpc.pb.cc
+ -                  -> out/single_file/cpp/POGOProtos.Rpc.pb.h
+ -                  -> out/single_file/cpp/POGOProtos.Rpc.proto
+```
 
 ### Libraries
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.

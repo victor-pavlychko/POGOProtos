@@ -10,4 +10,4 @@ job:
     - unzip /protoc/protoc-3.12.3-linux-x86_64.zip -d /protoc
     - export PATH=/protoc/bin:$PATH
     - chmod +x ./compile.py
-    - ./compile.py cpp #--generate_desc --include_imports --include_source_info
+    - ./compile_base.py -l cpp -1 -k
