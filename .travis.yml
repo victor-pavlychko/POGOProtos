@@ -29,12 +29,12 @@ script:
   - ./compile_base.py -l ruby -1 -k
   - chmod +x ./compile_src.py
   - ./compile_src.py cpp --include_imports --include_source_info --generate_desc
-  - ./compile_src.py csharp --include_imports --include_source_info --generate_desc
-  - ./compile_src.py java --java_multiple_files
-  - ./compile_src.py js
-  - ./compile_src.py python --include_imports --include_source_info --generate_desc
-  - ./compile_src.py php
-  - ./compile_src.py objc --include_imports --include_source_info --generate_desc
-  - ./compile_src.py ruby
+  - ./compile_src.py csharp --generate_desc
+  - ./compile_src.py java --java_multiple_files --generate_desc
+  - ./compile_src.py js --generate_desc
+  - ./compile_src.py python --generate_desc
+  - ./compile_src.py php --generate_desc
+  - ./compile_src.py objc --generate_desc
+  - ./compile_src.py ruby --generate_desc
   # - clang-format-3.8 -i -style file $(find src -name "*.proto")
   # - git diff --exit-code
