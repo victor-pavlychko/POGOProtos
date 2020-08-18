@@ -59,5 +59,6 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 |-----------------------|--------------------------------------------------------------------------------------|--------
 | Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master                       |  OK    
 
-### CREDITS
- - [AeonLucid](https://github.com/AeonLucid)
+### Code sources initial
+- https://github.com/AeonLucid/POGOProtos
+- https://github.com/pogosandbox/pogo-protos
