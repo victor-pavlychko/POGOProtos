@@ -5373,6 +5373,7 @@ message CEDLGOLCCFN {
 		NIA_OPS = 22;
 		WHISK = 23;
 	}
+
 }
 
 // ref: CEGBLFGIEPH
@@ -8956,6 +8957,7 @@ message HHHJFDDOLPD {
 		INVALID_VASA_CLIENT_ACTION = 0;
 		COLLECT_ADID = 8000;
 	}
+
 }
 
 // ref: HHMPLMBFIFO
@@ -9495,6 +9497,7 @@ message IIBBLPBGJBH {
 		ERROR_INVALID_HEALTH_UPDATES = 20;
 		ERROR_ATTACKING_POKEMON_INVALID = 30;
 	}
+
 }
 
 // ref: IIHEGPNDIMO
@@ -13660,6 +13663,7 @@ message LEHFFGLJPID {
 		CHARACTER_ELECTRIC_BALLOON_GRUNT_FEMALE = 89;
 		CHARACTER_ELECTRIC_BALLOON_GRUNT_MALE = 90;
 	}
+
 }
 
 // ref: LFNDBMGLGNJ
@@ -16386,6 +16390,7 @@ message PNBKMANKKAO {
 		DEFAULT = 0;
 		INTERNAL_TEST = 1;
 	}
+
 }
 
 // ref: PNEJJEAAEMA
@@ -17320,6 +17325,7 @@ message SocialProto {
 		HOLOHOLO_DELETED = 2;
 		LEXICON_DELETED = 3;
 	}
+
 }
 
 // ref: Niantic.Platform.Protos.SocialSettings
@@ -17339,6 +17345,7 @@ message SocialSettings {
 		ONLINE_STATUS_OVERVIEW = 3;
 		ONLINE_STATUS_TOGGLE = 4;
 	}
+
 }
 
 // ref: Niantic.Platform.Protos.SocialV2Enum
@@ -17356,6 +17363,7 @@ message SocialV2Enum {
 		STATUS_ONLINE = 2;
 		STATUS_OFFLINE = 3;
 	}
+
 }
 
 // ref: Niantic.Platform.Protos.TemplateVariable
@@ -17671,6 +17679,7 @@ message PortalCurationImageResult {
 		IMAGE_NOT_SERVABLE = 6;
 		PORTAL_NOT_FOUND = 7;
 	}
+
 }
 
 // ref: Niantic.Titan.Protos.SubmitNewPoiOutProto
@@ -17945,6 +17954,7 @@ message GameplayWeatherProto {
 		SNOW = 6;
 		FOG = 7;
 	}
+
 }
 
 // ref: Niantic.Rpc.WeatherAlertProto
@@ -18251,6 +18261,7 @@ message VasaClientAction {
 		INVALID_VASA_CLIENT_ACTION = 0;
 		COLLECT_ADID = 8000;
 	}
+
 }
 
 //----- End vasa -----
