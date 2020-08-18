@@ -11,3 +11,5 @@ job:
     - export PATH=/protoc/bin:$PATH
     - chmod +x ./compile_base.py
     - ./compile_base.py -l cpp -1 -k
+    - chmod +x ./compile_src.py
+    - ./compile_src.py cpp --include_imports --include_source_info
