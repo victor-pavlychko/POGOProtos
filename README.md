@@ -46,7 +46,7 @@ This is an example of how the generated code will be organized:
 
 ```
 python compile_base.py -l cpp -1 -k:
- - raw_protos.proto -> out/single_file/cpp/POGOProtos.Rpc.pb.desc
+ - raw_protos.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
  -                  -> out/single_file/cpp/POGOProtos.Rpc.pb.cc
  -                  -> out/single_file/cpp/POGOProtos.Rpc.pb.h
  -                  -> out/single_file/cpp/POGOProtos.Rpc.proto
