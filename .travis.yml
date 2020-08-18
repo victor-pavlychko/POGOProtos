@@ -17,5 +17,6 @@ install:
 script:
   - chmod +x ./compile_base.py
   - ./compile_base.py -l cpp -1 -k
+  - chmod +x ./compile_src.py cpp --include_imports --include_source_info
   # - clang-format-3.8 -i -style file $(find src -name "*.proto")
   # - git diff --exit-code
