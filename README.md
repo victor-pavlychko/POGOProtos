@@ -8,12 +8,18 @@ POGOProtos [![Build Status](https://travis-ci.org/Furtif/POGOProtos.svg?branch=m
 
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
+### ![alt text][1.1] DEPRECATED ![alt text][1.1]
+
+##### Recommend using the base [vx.xxx.x.proto](https://github.com/Furtif/POGOProtos/tree/master/base)
+
 ### Implemented messages types
  - [``Global``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto)
  - [``Social``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Social/SocialAction.proto)
  - [``Platform``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Platform/PlatformRequestType.proto) 
 
 ### ![alt text][1.1] DEPRECATED ![alt text][1.1]
+
+##### Recommend using the base [vx.xxx.x.proto](https://github.com/Furtif/POGOProtos/tree/master/base)
 
 ### Game actions implemented messages types
  - [``GameAccountRegistry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameAccountRegistry/GameAccountRegistryActions.proto)
@@ -32,6 +38,10 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
  - [``GameTelemetry``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameTelemetry/GameTelemetryAction.proto)
  - [``GameWebToken``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Game/GameWebToken/GameWebTokenAction.proto)
    
+### ![alt text][1.1] DEPRECATED ![alt text][1.1]
+
+##### Recommend using the base [vx.xxx.x.proto](https://github.com/Furtif/POGOProtos/tree/master/base)
+
 ### Titan Vasa (![alt text][1.1] ??? ![alt text][1.1])
  - [``Titan``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Titan)
  - [``Vasa``](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/Vasa/VasaClientAction.proto#L5)
