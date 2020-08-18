@@ -30,7 +30,7 @@ script:
   - chmod +x ./compile_src.py
   - ./compile_src.py cpp --include_imports --include_source_info --generate_desc
   - ./compile_src.py csharp --include_imports --include_source_info --generate_desc
-  - ./compile_src.py java --java_multiple_files --include_imports --include_source_info --generate_desc
+  - ./compile_src.py java --java_multiple_files
   - ./compile_src.py js --include_imports --include_source_info --generate_desc
   - ./compile_src.py python --include_imports --include_source_info --generate_desc
   - ./compile_src.py php --include_imports --include_source_info --generate_desc
