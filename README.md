@@ -59,6 +59,12 @@ python compile_base.py -l cpp -1 -k:
 python compile_src.py cpp --include_imports --include_source_info
 ```
 
+##### Generate new Rpc.proto
+
+```
+python compile_base.py -g -r -1
+```
+
 ### Libraries
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
 
