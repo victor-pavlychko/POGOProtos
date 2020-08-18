@@ -13,6 +13,7 @@ protoc_executable = "protoc"
 package_name = 'POGOProtos.Rpc'
 input_file = "POGOProtos.Rpc.proto"
 
+
 def is_blank(my_string):
     if my_string and my_string.strip():
         return False
@@ -234,7 +235,6 @@ def open_proto_file(main_file, package_name):
 
         messages = messagesNew
 
-
     for fix_line in messages.split("\n"):
         # ignore refs
         if operator.contains(fix_line, "//"):
@@ -382,8 +382,10 @@ def add_command_for_new_proto_file(file):
         )
     )
 
-print("Protocol Buffers version:")
-call(""""{0}" --version""".format(protoc_executable), shell=True)
+
+if not gen_only:
+    print("Protocol Buffers version:")
+    call(""""{0}" --version""".format(protoc_executable), shell=True)
 
 open_proto_file(raw_proto_file, package_name)
 generated_file = raw_proto_file.replace("raw_protos.proto", input_file)
