@@ -10,7 +10,7 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
 
 ### ![alt text][1.1] NOTE: All content of folder ```./src/*``` is deprecated ![alt text][1.1]
 
-##### Recommend using the base [vx.xxx.x](https://github.com/Furtif/POGOProtos/tree/master/base)
+##### Recommend using the base [Rpc](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Rpc/Rpc.proto)
 
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
