@@ -22,13 +22,13 @@ job:
     - ./compile_base.py -l objc -1 -k
     - ./compile_base.py -l ruby -1 -k
     - chmod +x ./compile_src.py
-    - ./compile_src.py cpp --include_imports --include_source_info
-    - ./compile_src.py csharp --include_imports --include_source_info
-    - ./compile_src.py java --include_imports --include_source_info
-    - ./compile_src.py js --include_imports --include_source_info
-    - ./compile_src.py python --include_imports --include_source_info
-    - ./compile_src.py php --include_imports --include_source_info
-    - ./compile_src.py objc --include_imports --include_source_info
-    - ./compile_src.py ruby --include_imports --include_source_info
+    - ./compile_src.py cpp --include_imports --include_source_info --generate_desc
+    - ./compile_src.py csharp --include_imports --include_source_info --generate_desc
+    - ./compile_src.py java --include_imports --include_source_info --generate_desc
+    - ./compile_src.py js --include_imports --include_source_info --generate_desc
+    - ./compile_src.py python --include_imports --include_source_info --generate_desc
+    - ./compile_src.py php --include_imports --include_source_info --generate_desc
+    - ./compile_src.py objc --include_imports --include_source_info --generate_desc
+    - ./compile_src.py ruby --include_imports --include_source_info --generate_desc
     # - clang-format-3.8 -i -style file $(find src -name "*.proto")
     # - git diff --exit-code
