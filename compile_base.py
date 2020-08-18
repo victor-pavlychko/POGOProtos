@@ -234,10 +234,6 @@ def open_proto_file(main_file, package_name):
 
         messages = messagesNew
 
-    # messages == string read base
-    # Find and convert 'bytes' to 'proto'
-    message_for_fix = ''
-    fixed_messages = ''
 
     for fix_line in messages.split("\n"):
         # ignore refs
@@ -415,9 +411,8 @@ if gen_only:
         if not os.path.exists(dir_rpc):
             os.makedirs(dir_rpc)
 
-        # shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
+        shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
     shutil.copy(generated_file, protos_path + '/v0.183.0_obf.proto')
-    # shutil.copy(generated_file, protos_path + '/base.proto')
     shutil.move(generated_file, out_path)
 
 if keep_file:
