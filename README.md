@@ -45,7 +45,7 @@ This is an example of how the generated code will be organized:
 
 ##### Compile last raw
 
- * _Note: the **.desc file is auto created in this function*_
+ * _Note: the *.desc file is auto created in this function_
 
 ```
 python compile_base.py -l cpp -1 -k:
@@ -64,9 +64,7 @@ python compile_base.py -g -r -1
 
 ##### Compile src with rpc
 
-```
-python compile_src.py cpp --include_imports --include_source_info --generate_desc
-```
+``` python compile_src.py cpp``` __*[Optional*__ *--include_imports --include_source_info --generate_desc*__*]*__
 
 ### Libraries
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
