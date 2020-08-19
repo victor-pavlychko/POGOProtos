@@ -253,7 +253,6 @@ def open_proto_file(main_file, package_name):
         #     print('elif message_for_fix == "' + message_for_fix + '" and operator.contains(fix_line, "' + byte_fix +'"):')
         #     print('\tfix_line = fix_line.replace("bytes", "Good_Proto_Here")')
 
-        # if package == "pogo":
         # Replace bytes for good proto here by condition
         # if message_for_fix == "PlatformClientGameMasterTemplateProto" and operator.contains(fix_line, "bytes data"):
         #     fix_line = fix_line.replace("bytes", "GameMasterClientTemplateProto")
