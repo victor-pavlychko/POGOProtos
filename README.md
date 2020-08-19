@@ -45,7 +45,7 @@ This is an example of how the generated code will be organized:
 
 ##### Compile last raw
 
-_Note: the **.desc file is auto created in this function*_
+ * _Note: the **.desc file is auto created in this function*_
 
 ```
 python compile_base.py -l cpp -1 -k:
