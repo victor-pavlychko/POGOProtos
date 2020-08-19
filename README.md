@@ -54,17 +54,12 @@ python compile_base.py -l cpp -1 -k:
  -                  -> out/single_file/cpp/POGOProtos.Rpc.pb.h
  -                  -> out/single_file/cpp/POGOProtos.Rpc.proto
 ```
+### Compile src with rpc
 
 ##### Generate new Rpc.proto
 
-```
-python compile_base.py -g -r -1
-```
-
-
-##### Compile src with rpc
-
-``` python compile_src.py cpp``` __*[Optional*__ *--include_imports --include_source_info --generate_desc*__*]*__
+ * ``` python compile_base.py -g -r -1 ```
+ * ``` python compile_src.py cpp``` __*[Optional*__ *--include_imports --include_source_info --generate_desc*__*]*__
 
 ### Libraries
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
