@@ -116,9 +116,19 @@ def open_proto_file(main_file, package_name):
     enum_name = ''
     is_one_off = False
     refs = []
+    is_ignored = False
 
     with open(main_file, 'r') as proto_file:
         for proto_line in proto_file.readlines():
+            if is_ignored and operator.contains(proto_line, "}"):
+                 is_ignored = False
+            if operator.contains(proto_line, "//ignored_"):
+                messages += proto_line
+                is_ignored = True
+                continue
+            if is_ignored:
+                messages += proto_line
+                continue
             if proto_line.startswith("syntax"):
                 continue
             if proto_line.startswith("package"):
@@ -181,11 +191,14 @@ def open_proto_file(main_file, package_name):
 
             if not proto_line.startswith("}") and operator.contains(proto_line, "}"):
                 messages += "\n"
+                is_one_off = False
+                is_enum = False
 
             if proto_line.startswith("}"):
                 messages += "\n"
                 is_enum = False
                 enum_name = ''
+                is_one_off = False
 
     if gen_one_off:
         messagesNew = ""
@@ -219,9 +232,7 @@ def open_proto_file(main_file, package_name):
                 is_one_off = False
                 setSkipFalse = True
 
-            if not skip and not ((operator.contains(proto_line, "// ref:") or operator.contains(proto_line,
-                                                                                                "//----") or operator.contains(
-                proto_line, "//}")) and gen_only):
+            if not skip and not ((operator.contains(proto_line, "// ref:") or operator.contains(proto_line,"//----")) and gen_only):
                 if not removeLast:
                     messagesNew += lastLine
                 removeLast = False

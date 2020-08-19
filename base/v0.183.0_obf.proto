@@ -4410,11 +4410,11 @@ message BGEKMKKPEHA {
 }
 
 message BHCDFDJCBLM {
-	enum MJNOBABPKPL {
-		none = 0;
-		lifetime_max_count = 3;
-		per_competitive_combat_season_max_count = 4;
-	}
+	//ignored_oneof MJNOBABPKPL {
+		//none = 0;
+		//lifetime_max_count = 3;
+		//per_competitive_combat_season_max_count = 4;
+	//}
 
 	DNDPBCPBEJG eckehhkmngi = 1;
 	string mhdhckdbkff = 2;
@@ -4681,31 +4681,31 @@ message BPFPFEEJIJA {
 }
 
 message CAJBPNHHKAH {
-	enum KPGOAPMDJOH {
-		none = 0;
-		catch_pokemon = 3;
-		fort_search = 4;
-		buddy_pokemon = 5;
-		raid_rewards = 6;
-		passcode_rewards = 7;
-		complete_quest = 8;
-		complete_quest_stamp_card = 9;
-		complete_quest_pokemon_encounter = 10;
-		beluga_transfer = 11;
-		open_gift = 12;
-		send_gift = 13;
-		trading = 14;
-		share_ex_raid_pass = 15;
-		decline_ex_raid_pass = 16;
-		fitness_rewards = 17;
-		combat = 18;
-		purify_pokemon = 19;
-		invasion_victory = 20;
-		vs_seeker_set = 21;
-		vs_seeker_complete_season = 22;
-		vs_seeker_win_rewards = 23;
-		buddy_consumables = 24;
-	}
+	//ignored_oneof KPGOAPMDJOH {
+		//none = 0;
+		//catch_pokemon = 3;
+		//fort_search = 4;
+		//buddy_pokemon = 5;
+		//raid_rewards = 6;
+		//passcode_rewards = 7;
+		//complete_quest = 8;
+		//complete_quest_stamp_card = 9;
+		//complete_quest_pokemon_encounter = 10;
+		//beluga_transfer = 11;
+		//open_gift = 12;
+		//send_gift = 13;
+		//trading = 14;
+		//share_ex_raid_pass = 15;
+		//decline_ex_raid_pass = 16;
+		//fitness_rewards = 17;
+		//combat = 18;
+		//purify_pokemon = 19;
+		//invasion_victory = 20;
+		//vs_seeker_set = 21;
+		//vs_seeker_complete_season = 22;
+		//vs_seeker_win_rewards = 23;
+		//buddy_consumables = 24;
+	//}
 
 	int64 calefbgldlm = 1;
 	bool edmkiennpdc = 2;
@@ -4998,27 +4998,27 @@ message CFADHGNPDHE {
 }
 
 message CFEJDFBAKEE {
-	enum JGOPHPONMDP {
-		none = 0;
-		pokemon = 1;
-		item = 2;
-		pokedex_entry = 3;
-		player_stats = 4;
-		player_currency = 5;
-		player_camera = 6;
-		inventory_upgrades = 7;
-		applied_items = 8;
-		egg_incubators = 9;
-		pokemon_family = 10;
-		quest = 11;
-		avatar_item = 12;
-		raid_tickets = 13;
-		quests = 14;
-		gift_boxes = 15;
-		beluga_incense = 16;
-		limited_purchase_sku_record = 19;
-		sticker = 22;
-	}
+	//ignored_oneof JGOPHPONMDP {
+		//none = 0;
+		//pokemon = 1;
+		//item = 2;
+		//pokedex_entry = 3;
+		//player_stats = 4;
+		//player_currency = 5;
+		//player_camera = 6;
+		//inventory_upgrades = 7;
+		//applied_items = 8;
+		//egg_incubators = 9;
+		//pokemon_family = 10;
+		//quest = 11;
+		//avatar_item = 12;
+		//raid_tickets = 13;
+		//quests = 14;
+		//gift_boxes = 15;
+		//beluga_incense = 16;
+		//limited_purchase_sku_record = 19;
+		//sticker = 22;
+	//}
 
 	GHPMJABIHAN eckehhkmngi = 1;
 	JENHAMPADGI nelgaedghic = 2;
@@ -5170,17 +5170,17 @@ message CIBOAGOJMEG {
 }
 
 message CICLKMIIONF {
-	enum KFPKOEOKMMP {
-		none = 0;
-		item = 1;
-		stardust = 2;
-		pokecoin = 3;
-		pokemon_candy = 4;
-		experience = 6;
-		pokemon_egg = 7;
-		avatar_template_id = 8;
-		sticker_id = 9;
-	}
+	//ignored_oneof KFPKOEOKMMP {
+		//none = 0;
+		//item = 1;
+		//stardust = 2;
+		//pokecoin = 3;
+		//pokemon_candy = 4;
+		//experience = 6;
+		//pokemon_egg = 7;
+		//avatar_template_id = 8;
+		//sticker_id = 9;
+	//}
 
 	AAFOLENLBBM nelgaedghic = 1;
 	bool kjkbfgmggno = 2;
@@ -5921,11 +5921,11 @@ message DMENCIGGMEF {
 }
 
 message DNDPBCPBEJG {
-	enum MADKMMJGFLG {
-		none = 0;
-		pokemon_id = 1;
-		use_quest_pokemon_encounter_distribuition = 2;
-	}
+	//ignored_oneof MADKMMJGFLG {
+		//none = 0;
+		//pokemon_id = 1;
+		//use_quest_pokemon_encounter_distribuition = 2;
+	//}
 
 	EDOCFGBIHNP nnebggojamj = 1;
 	bool gaaoepmmgea = 2;
@@ -6291,17 +6291,17 @@ message EIKGIPIPJGL {
 		TGC_TRACKING_QUEST = 7;
 	}
 
-	enum PMBODGEMADF {
-		none = 0;
-		daily_quest = 2;
-		multi_part = 3;
-		catch_pokemon = 4;
-		add_friend = 5;
-		trade_pokemon = 6;
-		daily_buddy_affection = 7;
-		quest_walk = 8;
-		evolve_into_pokemon = 9;
-	}
+	//ignored_oneof PMBODGEMADF {
+		//none = 0;
+		//daily_quest = 2;
+		//multi_part = 3;
+		//catch_pokemon = 4;
+		//add_friend = 5;
+		//trade_pokemon = 6;
+		//daily_buddy_affection = 7;
+		//quest_walk = 8;
+		//evolve_into_pokemon = 9;
+	//}
 
 	HIBLCNHLANL aklnjblbanm = 1;
 	JMMMKAKOPJH odhllnhjgce = 2;
@@ -6336,18 +6336,18 @@ message EIKGIPIPJGL {
 }
 
 message EIMLCIGGHAL {
-	enum ACIDMFNGKGB {
-		none = 0;
-		exp = 2;
-		item = 3;
-		stardust = 4;
-		candy = 5;
-		avatar_template_id = 6;
-		quest_template_id = 7;
-		pokemon_encounter = 8;
-		pokecoin = 9;
-		sticker = 12;
-	}
+	//ignored_oneof ACIDMFNGKGB {
+		//none = 0;
+		//exp = 2;
+		//item = 3;
+		//stardust = 4;
+		//candy = 5;
+		//avatar_template_id = 6;
+		//quest_template_id = 7;
+		//pokemon_encounter = 8;
+		//pokecoin = 9;
+		//sticker = 12;
+	//}
 
 	enum NANLEIFKHHB {
 		UNSET = 0;
@@ -7302,34 +7302,34 @@ message GEBGKMJNGJE {
 }
 
 message GELDKIIMPLJ {
-	enum BJJAKJNCFLI {
-		none = 0;
-		with_pokemon_type = 2;
-		with_pokemon_category = 3;
-		with_weather_boost = 4;
-		with_daily_capture_bonus = 5;
-		with_daily_spin_bonus = 6;
-		with_win_raid_status = 7;
-		with_raid_level = 8;
-		with_throw_type = 9;
-		with_win_gym_battle_status = 10;
-		with_super_effective_charge_move = 11;
-		with_item = 12;
-		with_unique_pokestop = 13;
-		with_quest_context = 14;
-		with_badge_type = 15;
-		with_player_level = 16;
-		with_win_battle_status = 17;
-		with_unique_pokemon = 18;
-		with_npc_combat = 19;
-		with_pvp_combat = 20;
-		with_location = 21;
-		with_distance = 22;
-		with_invasion_character = 23;
-		with_pokemon_alignment = 24;
-		with_buddy = 25;
-		with_daily_buddy_affection = 26;
-	}
+	//ignored_oneof BJJAKJNCFLI {
+		//none = 0;
+		//with_pokemon_type = 2;
+		//with_pokemon_category = 3;
+		//with_weather_boost = 4;
+		//with_daily_capture_bonus = 5;
+		//with_daily_spin_bonus = 6;
+		//with_win_raid_status = 7;
+		//with_raid_level = 8;
+		//with_throw_type = 9;
+		//with_win_gym_battle_status = 10;
+		//with_super_effective_charge_move = 11;
+		//with_item = 12;
+		//with_unique_pokestop = 13;
+		//with_quest_context = 14;
+		//with_badge_type = 15;
+		//with_player_level = 16;
+		//with_win_battle_status = 17;
+		//with_unique_pokemon = 18;
+		//with_npc_combat = 19;
+		//with_pvp_combat = 20;
+		//with_location = 21;
+		//with_distance = 22;
+		//with_invasion_character = 23;
+		//with_pokemon_alignment = 24;
+		//with_buddy = 25;
+		//with_daily_buddy_affection = 26;
+	//}
 
 	enum FBIKMOFAEIP {
 		UNSET = 0;
@@ -7487,17 +7487,17 @@ message GHHCDHHIHKH {
 }
 
 message GHIJLDFFGMG {
-	enum DFHGEALPKDJ {
-		none = 0;
-		pokecoin = 1;
-		gym_pokemon = 2;
-		streaks = 3;
-		event = 4;
-		up_next = 5;
-		timed_quest = 6;
-		event_banner = 7;
-		timed_group_challenge = 8;
-	}
+	//ignored_oneof DFHGEALPKDJ {
+		//none = 0;
+		//pokecoin = 1;
+		//gym_pokemon = 2;
+		//streaks = 3;
+		//event = 4;
+		//up_next = 5;
+		//timed_quest = 6;
+		//event_banner = 7;
+		//timed_group_challenge = 8;
+	//}
 
 	HDICEALMOCB jdgeacencpg = 1;
 	AJJNKADBDEP eohplafjfie = 2;
@@ -7585,14 +7585,14 @@ message GIAPIPBBCNJ {
 
 message GIGBELOEHDC {
 	message HCILDNGMFJC {
-		enum FLDMPCKBPJD {
-			none = 0;
-			item = 1;
-			pokemon_reward = 2;
-			item_loot_table = 3;
-			item_loot_table_count = 4;
-			item_ranking_loot_table_count = 5;
-		}
+		//ignored_oneof FLDMPCKBPJD {
+			//none = 0;
+			//item = 1;
+			//pokemon_reward = 2;
+			//item_loot_table = 3;
+			//item_loot_table_count = 4;
+			//item_ranking_loot_table_count = 5;
+		//}
 
 		CICLKMIIONF nelgaedghic = 1;
 		bool fmhblmnnpgb = 2;
@@ -7994,11 +7994,11 @@ message HCAGPGLGPMF {
 }
 
 message HCAOHBJPKJI {
-	enum DHLOPOFEHGL {
-		none = 0;
-		character_display = 10;
-		invasion_finished = 11;
-	}
+	//ignored_oneof DHLOPOFEHGL {
+		//none = 0;
+		//character_display = 10;
+		//invasion_finished = 11;
+	//}
 
 	string jdkebfgeccg = 1;
 	int64 hdkbepfbchk = 2;
@@ -8656,73 +8656,73 @@ message IJJEPHHOHFA {
 }
 
 message IJJHPFGGPKB {
-	enum BFPEDGCJKNH {
-		none = 0;
-		boot_time = 1;
-		frame_rate = 2;
-		generic_click_telemetry = 3;
-		map_events_telemetry = 4;
-		spin_pokestop_telemetry = 5;
-		profile_page_telemetry = 6;
-		shopping_page_telemetry = 7;
-		encounter_pokemon_telemetry = 8;
-		catch_pokemon_telemetry = 9;
-		deploy_pokemon_telemetry = 10;
-		feed_pokemon_telemetry = 11;
-		evolve_pokemon_telemetry = 12;
-		release_pokemon_telemetry = 13;
-		nickname_pokemon_telemetry = 14;
-		news_page_telemetry = 15;
-		item_telemetry = 16;
-		battle_party_telemetry = 17;
-		passcode_redeem_telemetry = 18;
-		link_login_telemetry = 19;
-		raid_telemetry = 20;
-		push_notification_telemetry = 21;
-		avatar_customization_telemetry = 22;
-		read_point_of_interest_description_telemetry = 23;
-		web_telemetry = 24;
-		change_ar_telemetry = 25;
-		weather_detail_click_telemetry = 26;
-		user_issue_weather_report = 27;
-		pokemon_inventory_telemetry = 28;
-		social_telemetry = 29;
-		check_encounter_info_telemetry = 30;
-		pokemon_go_plus_telemetry = 31;
-		rpc_timing_telemetry = 32;
-		social_gift_count_telemetry = 33;
-		asset_bundle_telemetry = 34;
-		asset_poi_download_telemetry = 35;
-		asset_stream_download_telemetry = 36;
-		asset_stream_cache_culled_telemetry = 37;
-		rpc_socket_timing_telemetry = 38;
-		permissions_flow = 39;
-		device_service_toggle = 40;
-		boot_telemetry = 41;
-		user_attributes = 42;
-		onboarding_telemetry = 43;
-		login_action_telemetry = 44;
-		ar_photo_session_telemetry = 45;
-		invasion_telemetry = 46;
-		combat_minigame_telemetry = 47;
-		leave_point_of_interest_telemetry = 48;
-		view_point_of_interest_image_telemetry = 49;
-		combat_hub_entrance_telemetry = 50;
-		leave_interaction_range_telemetry = 51;
-		shopping_page_click_telemetry = 52;
-		shopping_page_scroll_telemetry = 53;
-		device_specifications_telemetry = 54;
-		screen_resolution_telemetry = 55;
-		ar_buddy_multiplayer_session_telemetry = 56;
-		buddy_multiplayer_connection_failed_telemetry = 57;
-		buddy_multiplayer_connection_succeeded_telemetry = 58;
-		buddy_multiplayer_time_to_get_session_telemetry = 59;
-		player_hud_notification_click_telemetry = 60;
-		monodepth_download_telemetry = 61;
-		ar_mapping_telemetry = 62;
-		remote_raid_telemetry = 63;
-		device_os_telemetry = 64;
-	}
+	//ignored_oneof BFPEDGCJKNH {
+		//none = 0;
+		//boot_time = 1;
+		//frame_rate = 2;
+		//generic_click_telemetry = 3;
+		//map_events_telemetry = 4;
+		//spin_pokestop_telemetry = 5;
+		//profile_page_telemetry = 6;
+		//shopping_page_telemetry = 7;
+		//encounter_pokemon_telemetry = 8;
+		//catch_pokemon_telemetry = 9;
+		//deploy_pokemon_telemetry = 10;
+		//feed_pokemon_telemetry = 11;
+		//evolve_pokemon_telemetry = 12;
+		//release_pokemon_telemetry = 13;
+		//nickname_pokemon_telemetry = 14;
+		//news_page_telemetry = 15;
+		//item_telemetry = 16;
+		//battle_party_telemetry = 17;
+		//passcode_redeem_telemetry = 18;
+		//link_login_telemetry = 19;
+		//raid_telemetry = 20;
+		//push_notification_telemetry = 21;
+		//avatar_customization_telemetry = 22;
+		//read_point_of_interest_description_telemetry = 23;
+		//web_telemetry = 24;
+		//change_ar_telemetry = 25;
+		//weather_detail_click_telemetry = 26;
+		//user_issue_weather_report = 27;
+		//pokemon_inventory_telemetry = 28;
+		//social_telemetry = 29;
+		//check_encounter_info_telemetry = 30;
+		//pokemon_go_plus_telemetry = 31;
+		//rpc_timing_telemetry = 32;
+		//social_gift_count_telemetry = 33;
+		//asset_bundle_telemetry = 34;
+		//asset_poi_download_telemetry = 35;
+		//asset_stream_download_telemetry = 36;
+		//asset_stream_cache_culled_telemetry = 37;
+		//rpc_socket_timing_telemetry = 38;
+		//permissions_flow = 39;
+		//device_service_toggle = 40;
+		//boot_telemetry = 41;
+		//user_attributes = 42;
+		//onboarding_telemetry = 43;
+		//login_action_telemetry = 44;
+		//ar_photo_session_telemetry = 45;
+		//invasion_telemetry = 46;
+		//combat_minigame_telemetry = 47;
+		//leave_point_of_interest_telemetry = 48;
+		//view_point_of_interest_image_telemetry = 49;
+		//combat_hub_entrance_telemetry = 50;
+		//leave_interaction_range_telemetry = 51;
+		//shopping_page_click_telemetry = 52;
+		//shopping_page_scroll_telemetry = 53;
+		//device_specifications_telemetry = 54;
+		//screen_resolution_telemetry = 55;
+		//ar_buddy_multiplayer_session_telemetry = 56;
+		//buddy_multiplayer_connection_failed_telemetry = 57;
+		//buddy_multiplayer_connection_succeeded_telemetry = 58;
+		//buddy_multiplayer_time_to_get_session_telemetry = 59;
+		//player_hud_notification_click_telemetry = 60;
+		//monodepth_download_telemetry = 61;
+		//ar_mapping_telemetry = 62;
+		//remote_raid_telemetry = 63;
+		//device_os_telemetry = 64;
+	//}
 
 	MMOCGBOEMLH mhilecnhide = 1;
 	IPLFALOLFGB njpappikhkc = 2;
@@ -8822,15 +8822,15 @@ message IJLONPCDOEN {
 	}
 
 	message IIFLNDKHBNK {
-		enum MOAMDEKPGAJ {
-			none = 0;
-			with_pokemon_cp_limit = 2;
-			with_pokemon_type = 3;
-			with_pokemon_category = 4;
-			pokemon_whitelist = 5;
-			pokemon_banlist = 6;
-			pokemon_caught_timestamp = 7;
-		}
+		//ignored_oneof MOAMDEKPGAJ {
+			//none = 0;
+			//with_pokemon_cp_limit = 2;
+			//with_pokemon_type = 3;
+			//with_pokemon_category = 4;
+			//pokemon_whitelist = 5;
+			//pokemon_banlist = 6;
+			//pokemon_caught_timestamp = 7;
+		//}
 
 		OICENHELMBH khlidpmipfk = 1;
 		AKLIBHKFJLC ccdailkdbfa = 2;
@@ -8847,16 +8847,16 @@ message IJLONPCDOEN {
 	}
 
 	message NAAOMDFOILA {
-		enum HDCPKMEBEKP {
-			none = 0;
-			with_player_level = 3;
-			with_pokemon_cp_limit = 4;
-			with_pokemon_type = 5;
-			with_pokemon_category = 6;
-			pokemon_whitelist = 7;
-			pokemon_banlist = 8;
-			pokemon_caught_timestamp = 9;
-		}
+		//ignored_oneof HDCPKMEBEKP {
+			//none = 0;
+			//with_player_level = 3;
+			//with_pokemon_cp_limit = 4;
+			//with_pokemon_type = 5;
+			//with_pokemon_category = 6;
+			//pokemon_whitelist = 7;
+			//pokemon_banlist = 8;
+			//pokemon_caught_timestamp = 9;
+		//}
 
 		OICENHELMBH khlidpmipfk = 1;
 		int32 cnfcmaodgnn = 2;
@@ -9259,13 +9259,13 @@ message JEKBNHFCNIG {
 }
 
 message JEMIPLNNCOC {
-	enum DHJIOEJBPJE {
-		none = 0;
-		long_value = 2;
-		double_value = 3;
-		boolean_value = 4;
-		distribution = 5;
-	}
+	//ignored_oneof DHJIOEJBPJE {
+		//none = 0;
+		//long_value = 2;
+		//double_value = 3;
+		//boolean_value = 4;
+		//distribution = 5;
+	//}
 
 	enum IGJABFDJDFK {
 		UNSPECIFIED = 0;
@@ -12194,13 +12194,13 @@ message KLMEJJAGMJG {
 }
 
 message KLOOGJCGPLO {
-	enum HCBIGPHAPFL {
-		none = 0;
-		view_impression = 5;
-		view_fullscreen = 6;
-		fullscreen_interaction = 7;
-		cta_clicked = 8;
-	}
+	//ignored_oneof HCBIGPHAPFL {
+		//none = 0;
+		//view_impression = 5;
+		//view_fullscreen = 6;
+		//fullscreen_interaction = 7;
+		//cta_clicked = 8;
+	//}
 
 	message AJPCKLOCFCG {
 		string mkhdcnniblb = 1;
@@ -12322,11 +12322,11 @@ message LAENOBGIJKN {
 }
 
 message LAPHFMPHGBN {
-	enum OAPAAGOAANG {
-		none = 0;
-		throw_type = 1;
-		hit = 2;
-	}
+	//ignored_oneof OAPAAGOAANG {
+		//none = 0;
+		//throw_type = 1;
+		//hit = 2;
+	//}
 
 	IIPILEHEBOD docemkipboj = 1;
 	bool fokkphmcoeg = 2;
@@ -13470,15 +13470,15 @@ message MNLNOJFDOOG {
 		QUEST_PRECONDITION_EXCLUSIVE_IN_PROGRESS_GROUP = 9;
 	}
 
-	enum FHAGMOABBCO {
-		none = 0;
-		quest_template_id = 2;
-		level = 3;
-		medal = 4;
-		quests = 5;
-		month_year_bucket = 6;
-		group = 7;
-	}
+	//ignored_oneof FHAGMOABBCO {
+		//none = 0;
+		//quest_template_id = 2;
+		//level = 3;
+		//medal = 4;
+		//quests = 5;
+		//month_year_bucket = 6;
+		//group = 7;
+	//}
 
 	enum KNPNMPFCHCO {
 		UNSET = 0;
@@ -13746,12 +13746,12 @@ message NDLAMFLHFFM {
 }
 
 message NDLBKHKKJAB {
-	enum LDLGHIBBILG {
-		none = 0;
-		add_entry = 1;
-		read_entry = 2;
-		remove_entry = 3;
-	}
+	//ignored_oneof LDLGHIBBILG {
+		//none = 0;
+		//add_entry = 1;
+		//read_entry = 2;
+		//remove_entry = 3;
+	//}
 
 	KEDNMCLNOCC aedgccjldaa = 1;
 	CJLEAODIBDA dpilokdblmj = 2;
@@ -13760,23 +13760,23 @@ message NDLBKHKKJAB {
 
 message NDPOLEOPCMK {
 	message COKGEPPKLGD {
-		enum KBFJEMKMDGF {
-			none = 0;
-			range = 1;
-			zero = 2;
-		}
+		//ignored_oneof KBFJEMKMDGF {
+			//none = 0;
+			//range = 1;
+			//zero = 2;
+		//}
 
 		NOKKPMDDALC aakjmefeoom = 1;
 		bool jbihldpiieb = 2;
 	}
 
 	message JPHBHICJNMK {
-		enum OJLDMDLOAOC {
-			none = 0;
-			pokemon = 1;
-			limited_pokemon_reward = 2;
-			guaranteed_limited_pokemon_reward = 3;
-		}
+		//ignored_oneof OJLDMDLOAOC {
+			//none = 0;
+			//pokemon = 1;
+			//limited_pokemon_reward = 2;
+			//guaranteed_limited_pokemon_reward = 3;
+		//}
 
 		DNDPBCPBEJG eckehhkmngi = 1;
 		BHCDFDJCBLM gehpkhejinm = 2;
@@ -13973,12 +13973,12 @@ message NMIJMKEKMCD {
 	}
 
 	message LGNHILEKIMJ {
-		enum KMIJBKGLKLM {
-			none = 0;
-			linear_buckets = 1;
-			exponential_buckets = 2;
-			explicit_buckets = 3;
-		}
+		//ignored_oneof KMIJBKGLKLM {
+			//none = 0;
+			//linear_buckets = 1;
+			//exponential_buckets = 2;
+			//explicit_buckets = 3;
+		//}
 
 		message CNAHBHMILMC {
 			repeated int64 aafgnhmkkpb = 1;
@@ -14336,12 +14336,12 @@ message OGLFNJPDDDL {
 }
 
 message OHLHNAIMJLF {
-	enum LFGIILGOOHE {
-		none = 0;
-		invasion_battle = 1;
-		invasion_encounter = 2;
-		pokestop_dialogue = 3;
-	}
+	//ignored_oneof LFGIILGOOHE {
+		//none = 0;
+		//invasion_battle = 1;
+		//invasion_encounter = 2;
+		//pokestop_dialogue = 3;
+	//}
 
 	CEGGLOJPJBM fdohooeoghl = 1;
 	LMKCMEENNFC nhbdenckphi = 2;
@@ -14592,28 +14592,28 @@ message PBIEAANDFPB {
 }
 
 message PBLGPAPJJFH {
-	enum PKNEALNADNI {
-		none = 0;
-		pokemon_id = 1;
-		item = 2;
-		pokedex_entry_id = 3;
-		player_stats = 4;
-		player_currency = 5;
-		player_camera = 6;
-		inventory_upgrades = 7;
-		applied_items = 8;
-		egg_incubators = 9;
-		pokemon_family_id = 10;
-		quest_type = 11;
-		avatar_template_id = 12;
-		raid_tickets = 13;
-		quests = 14;
-		gift_boxes = 15;
-		beluga_incense_box = 16;
-		vs_seeker_upgrades = 17;
-		limited_purchase_sku_record = 19;
-		sticker_id = 22;
-	}
+	//ignored_oneof PKNEALNADNI {
+		//none = 0;
+		//pokemon_id = 1;
+		//item = 2;
+		//pokedex_entry_id = 3;
+		//player_stats = 4;
+		//player_currency = 5;
+		//player_camera = 6;
+		//inventory_upgrades = 7;
+		//applied_items = 8;
+		//egg_incubators = 9;
+		//pokemon_family_id = 10;
+		//quest_type = 11;
+		//avatar_template_id = 12;
+		//raid_tickets = 13;
+		//quests = 14;
+		//gift_boxes = 15;
+		//beluga_incense_box = 16;
+		//vs_seeker_upgrades = 17;
+		//limited_purchase_sku_record = 19;
+		//sticker_id = 22;
+	//}
 
 	uint64 nnebggojamj = 1;
 	AAFOLENLBBM nelgaedghic = 2;
@@ -14662,12 +14662,12 @@ message PCEBBHIFEEN {
 }
 
 message PCEBJMKNKDI {
-	enum BGOIAOELPKL {
-		none = 0;
-		poi_submission_telemetry = 1;
-		poi_submission_photo_upload_error_telemetry = 2;
-		player_metadata_telemetry = 3;
-	}
+	//ignored_oneof BGOIAOELPKL {
+		//none = 0;
+		//poi_submission_telemetry = 1;
+		//poi_submission_photo_upload_error_telemetry = 2;
+		//player_metadata_telemetry = 3;
+	//}
 
 	CBJFIJNCIFM bokdhaegclk = 1;
 	EBFLALJMCIL hnhdibkgnla = 2;
