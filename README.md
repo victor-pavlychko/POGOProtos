@@ -11,7 +11,7 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
 ### ![alt text][1.1] NOTE: All content of folder ```./src/*``` is deprecated ![alt text][1.1]
 
  * **Recommend using the base [Rpc](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Rpc/Rpc.proto)**
- * **NOTE:** ```compile_src.py cpp``` (__*old ```compile.py``` has a new name: ```compile_src.py```*__) works but uses ```POGOProtos.Rpc.*```
+ * **NOTE:** __*```compile_src.py cpp```*__ (__*old ```compile.py``` has a new name: ```compile_src.py```*__) works but uses ```POGOProtos.Rpc.*```
 
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
@@ -53,16 +53,17 @@ python compile_base.py -l cpp -1 -k:
  -                  -> out/single_file/cpp/POGOProtos.Rpc.proto
 ```
 
-##### Compile src with rpc
-
-```
-python compile_src.py cpp --include_imports --include_source_info
-```
-
 ##### Generate new Rpc.proto
 
 ```
 python compile_base.py -g -r -1
+```
+
+
+##### Compile src with rpc
+
+```
+python compile_src.py cpp --include_imports --include_source_info --generate_desc
 ```
 
 ### Libraries
