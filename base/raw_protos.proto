@@ -17512,9 +17512,9 @@ message AvailableSubmissionsPerSubmissionType {
 	bool is_whitelisted_user = 9;
 }
 
-// ref: Niantic.Titan.Protos.TiTanGenerateGmapSignedUrlOutProto
-message TiTanGenerateGmapSignedUrlOutProto {
-	// ref: Niantic.Titan.Protos.TiTanGenerateGmapSignedUrlOutProto/Types/Result
+// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto
+message TitanGenerateGmapSignedUrlOutProto {
+	// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlOutProto/Types/Result
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -17528,8 +17528,8 @@ message TiTanGenerateGmapSignedUrlOutProto {
 	string signed_url = 2;
 }
 
-// ref: Niantic.Titan.Protos.TiTanGenerateGmapSignedUrlProto
-message TiTanGenerateGmapSignedUrlProto {
+// ref: Niantic.Titan.Protos.GenerateGmapSignedUrlProto
+message TitanGenerateGmapSignedUrlProto {
 	double latitude = 1;
 	double longitude = 2;
 	int32 width = 3;

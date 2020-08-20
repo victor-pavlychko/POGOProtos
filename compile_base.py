@@ -273,8 +273,6 @@ def open_proto_file(main_file, package_name):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "BackgroundToken" and operator.contains(fix_line, "bytes iv"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "ClientGameMasterTemplateProto" and operator.contains(fix_line, "bytes data"):
-        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes deleted_item_key"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes item"):

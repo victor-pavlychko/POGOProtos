@@ -15947,7 +15947,7 @@ message AvailableSubmissionsPerSubmissionType {
 	bool is_whitelisted_user = 9;
 }
 
-message TiTanGenerateGmapSignedUrlOutProto {
+message TitanGenerateGmapSignedUrlOutProto {
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -15961,7 +15961,7 @@ message TiTanGenerateGmapSignedUrlOutProto {
 	string signed_url = 2;
 }
 
-message TiTanGenerateGmapSignedUrlProto {
+message TitanGenerateGmapSignedUrlProto {
 	double latitude = 1;
 	double longitude = 2;
 	int32 width = 3;
