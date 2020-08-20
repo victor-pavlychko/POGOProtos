@@ -132,7 +132,7 @@ message DeveloperToken {
 // ref: Niantic.Platform.GameMaster.ClientGameMasterTemplateProto
 message ClientGameMasterTemplateProto {
 	string template_id = 1;
-	GMAMKLOHMIF data = 2;
+	bytes data = 2;
 }
 
 // ref: Niantic.Platform.GameMaster.DownloadGmTemplatesRequestProto
@@ -17510,6 +17510,36 @@ message AvailableSubmissionsPerSubmissionType {
 	repeated string blacklisted_os = 7;
 	repeated string blacklisted_device_id = 8;
 	bool is_whitelisted_user = 9;
+}
+
+// ref: Niantic.Titan.Protos.TiTanGenerateGmapSignedUrlOutProto
+message TiTanGenerateGmapSignedUrlOutProto {
+	// ref: Niantic.Titan.Protos.TiTanGenerateGmapSignedUrlOutProto/Types/Result
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_NOT_VALID = 2;
+		ERROR_RATE_LIMITED = 3;
+		ERROR_MISSING_INPUT = 4;
+		ERROR_UNKNOWN = 5;
+	}
+
+	Result result = 1;
+	string signed_url = 2;
+}
+
+// ref: Niantic.Titan.Protos.TiTanGenerateGmapSignedUrlProto
+message TiTanGenerateGmapSignedUrlProto {
+	double latitude = 1;
+	double longitude = 2;
+	int32 width = 3;
+	int32 height = 4;
+	int32 zoom = 5;
+	string language_code = 6;
+	string country_code = 7;
+	string map_style = 8;
+	string map_type = 9;
+	string icon_params = 10;
 }
 
 // ref: Niantic.Titan.Protos.GetAvailableSubmissionsOutProto

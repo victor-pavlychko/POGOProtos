@@ -117,11 +117,12 @@ def open_proto_file(main_file, package_name):
     is_one_off = False
     refs = []
     is_ignored = False
+    fixed_messages = ''
 
     with open(main_file, 'r') as proto_file:
         for proto_line in proto_file.readlines():
             if is_ignored and operator.contains(proto_line, "}"):
-                 is_ignored = False
+                is_ignored = False
             if operator.contains(proto_line, "//ignored_"):
                 messages += proto_line
                 is_ignored = True
@@ -232,7 +233,8 @@ def open_proto_file(main_file, package_name):
                 is_one_off = False
                 setSkipFalse = True
 
-            if not skip and not ((operator.contains(proto_line, "// ref:") or operator.contains(proto_line,"//----")) and gen_only):
+            if not skip and not (
+                    (operator.contains(proto_line, "// ref:") or operator.contains(proto_line, "//----")) and gen_only):
                 if not removeLast:
                     messagesNew += lastLine
                 removeLast = False
@@ -246,16 +248,16 @@ def open_proto_file(main_file, package_name):
 
         messages = messagesNew
 
+    message_for_fix = None
+
     for fix_line in messages.split("\n"):
         # ignore refs
-        if operator.contains(fix_line, "//"):
-            continue
-
         if fix_line.startswith("message"):
             match = re.split(r'\s', fix_line)
             message_for_fix = match[1]
-        elif fix_line.startswith("}"):
-            message_for_fix = ''
+        elif fix_line.startswith("enum"):
+            match = re.split(r'\s', fix_line)
+            message_for_fix = match[1]
 
         # Check for all bytes refs
         # if operator.contains(fix_line, "\tbytes"):
@@ -265,8 +267,8 @@ def open_proto_file(main_file, package_name):
         #     print('\tfix_line = fix_line.replace("bytes", "Good_Proto_Here")')
 
         # Replace bytes for good proto here by condition
-        # if message_for_fix == "PlatformClientGameMasterTemplateProto" and operator.contains(fix_line, "bytes data"):
-        #     fix_line = fix_line.replace("bytes", "GameMasterClientTemplateProto")
+        if message_for_fix == "ClientGameMasterTemplateProto" and operator.contains(fix_line, "bytes data"):
+            fix_line = fix_line.replace("bytes", "GMAMKLOHMIF")
         # elif message_for_fix == "PlatformDownloadSettingsResponseProto" and operator.contains(fix_line, "bytes values"):
         #     fix_line = fix_line.replace("bytes", "GlobalSettingsProto")
         # elif message_for_fix == "PlatformInventoryItemProto" and operator.contains(fix_line, "bytes item"):
@@ -354,9 +356,9 @@ def open_proto_file(main_file, package_name):
         # elif message_for_fix == "AuthTicket" and operator.contains(fix_line, "bytes end"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
 
-        # fixed_messages += fix_line + "\n"
+        fixed_messages += fix_line + "\n"
 
-    # messages = fixed_messages[:-1]
+    messages = fixed_messages[:-1]
 
     open_for_new.writelines(messages[:-1])
     open_for_new.close()
