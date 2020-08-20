@@ -7,7 +7,7 @@ addons:
     packages:
       - clang-format-3.8
 python:
-  - "3.6"
+  - "3.8"
 install:
   - pushd /tmp
   - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-linux-x86_64.zip
