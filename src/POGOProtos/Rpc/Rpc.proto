@@ -245,7 +245,7 @@ message InventoryDeltaProto {
 message InventoryItemProto {
 	oneof InventoryItem {
 		bytes deleted_item_key = 2;
-		bytes item = 3;
+		MKBNBGHGGBA item = 3;
 	}
 
 	int64 modified_timestamp = 1;
@@ -15745,7 +15745,7 @@ message DownloadSettingsActionProto {
 message DownloadSettingsResponseProto {
 	string error = 1;
 	string sha1 = 2;
-	bytes values = 3;
+	PGBOCBAKEJG values = 3;
 }
 
 message FriendDetailsProto {

@@ -275,8 +275,8 @@ def open_proto_file(main_file, package_name):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes deleted_item_key"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes item"):
-        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
+        elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes item"):
+            fix_line = fix_line.replace("bytes", "MKBNBGHGGBA")
         # elif message_for_fix == "ProxyRequestProto" and operator.contains(fix_line, "bytes payload"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "ProxyResponseProto" and operator.contains(fix_line, "bytes payload"):
@@ -327,8 +327,8 @@ def open_proto_file(main_file, package_name):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "AddLoginActionProto" and operator.contains(fix_line, "bytes inner_message"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "DownloadSettingsResponseProto" and operator.contains(fix_line, "bytes values"):
-        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
+        elif message_for_fix == "DownloadSettingsResponseProto" and operator.contains(fix_line, "bytes values"):
+            fix_line = fix_line.replace("bytes", "PGBOCBAKEJG")
         # elif message_for_fix == "FriendDetailsProto" and operator.contains(fix_line, "bytes friend_visible_data"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "FriendDetailsProto" and operator.contains(fix_line, "bytes data_with_me"):
