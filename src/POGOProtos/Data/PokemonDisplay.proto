@@ -5,6 +5,7 @@ import "POGOProtos/Enums/Costume.proto";
 import "POGOProtos/Enums/Form.proto";
 import "POGOProtos/Enums/Gender.proto";
 import "POGOProtos/Enums/WeatherCondition.proto";
+import "POGOProtos/Enums/PokemonEvolution.proto";
 
 message PokemonDisplay {
 	.POGOProtos.Enums.Costume costume = 1;
@@ -14,6 +15,7 @@ message PokemonDisplay {
 	.POGOProtos.Enums.WeatherCondition weather_boosted_condition = 5;
 	Alignment alignment = 6;
 	PokemonBadge pokemon_badge = 7;
+	.POGOProtos.Enums.PokemonEvolution pokemon_evolution = 8;
 
 	enum Alignment {
 		ALIGNMENT_UNSET = 0;
