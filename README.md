@@ -56,9 +56,7 @@ python compile_base.py -l cpp -1 -k:
 ```
 ### Compile src with rpc
 
-##### Generate new Rpc.proto
-
- * ``` python compile_base.py -g -r -1 ```
+ * ``` python compile_base.py -g -r -1 ``` *(Generate new Rpc.proto)*
  * ``` python compile_src.py cpp``` __*[Optional*__ *--include_imports --include_source_info --generate_desc*__*]*__
 
 ### Libraries
