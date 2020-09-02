@@ -10,6 +10,7 @@ import "POGOProtos/Enums/BuddyLevel.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
 import "POGOProtos/Data/PokemonDisplay.proto";
 import "POGOProtos/Enums/EnumWrapper.proto";
+import "POGOProtos/Enums/PokemonEvolution.proto";
 
 message QuestCondition {
 	ConditionType type = 1;
@@ -40,6 +41,7 @@ message QuestCondition {
 		WithPokemonAlignment with_pokemon_alignment = 24;
 		WithBuddy with_buddy = 25;
 		WithDailyBuddyAffection with_daily_buddy_affection = 26;
+		WithMegaEvoPokemon with_mega_evo_pokemon = 29;
 	}
 
 	enum ConditionType {
@@ -74,6 +76,7 @@ message QuestCondition {
 		WITH_BUDDY = 28;
 		WITH_BUDDY_INTERESTING_POI = 29;
 		WITH_DAILY_BUDDY_AFFECTION = 30;
+		WITH_MEGA_EVO_POKEMON = 37;
 	}
 
 	message WithDailyBuddyAffection {
@@ -183,5 +186,9 @@ message QuestCondition {
 	}
 
 	message WithWinBattleStatus {
+	}
+
+	message WithMegaEvoPokemon {
+		repeated .POGOProtos.Enums.PokemonEvolution pokemon_evolution = 1;
 	}
 }
