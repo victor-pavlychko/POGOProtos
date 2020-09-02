@@ -283,4 +283,6 @@ enum PokemonMove {
 	TECHNO_BLAST_SHOCK = 340;
 	FLY = 341;
 	V_CREATE = 342;
+	LEAF_STORM = 343;
+	TRI_ATTACK = 344;
 }
