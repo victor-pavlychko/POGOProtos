@@ -18,6 +18,7 @@ message QuestReward {
 		PokemonEncounterReward pokemon_encounter = 8;
 		int32 pokecoin = 9;
 		StickerReward sticker = 12;
+		PokemonCandyReward mega_resource = 13;
 	}
 
 	enum Type {
@@ -31,6 +32,7 @@ message QuestReward {
 		POKEMON_ENCOUNTER = 7;
 		POKECOIN = 8;
 		STICKER = 11;
+		MEGA_RESOURCE = 12;
 	}
 
 	message StickerReward {
