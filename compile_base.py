@@ -268,7 +268,7 @@ def open_proto_file(main_file, package_name):
 
         # Replace bytes for good proto here by condition
         if message_for_fix == "ClientGameMasterTemplateProto" and operator.contains(fix_line, "bytes data"):
-            fix_line = fix_line.replace("bytes", "GELJPJIBFOA")
+            fix_line = fix_line.replace("bytes", "FMCHABOILMM")
         # elif message_for_fix == "BackgroundToken" and operator.contains(fix_line, "bytes token"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "BackgroundToken" and operator.contains(fix_line, "bytes iv"):
@@ -276,7 +276,7 @@ def open_proto_file(main_file, package_name):
         # elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes deleted_item_key"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes item"):
-            fix_line = fix_line.replace("bytes", "GIHDKPLAGIO")
+            fix_line = fix_line.replace("bytes", "DNNGDJLGPPP")
         # elif message_for_fix == "ProxyRequestProto" and operator.contains(fix_line, "bytes payload"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "ProxyResponseProto" and operator.contains(fix_line, "bytes payload"):
@@ -328,7 +328,7 @@ def open_proto_file(main_file, package_name):
         # elif message_for_fix == "AddLoginActionProto" and operator.contains(fix_line, "bytes inner_message"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         elif message_for_fix == "DownloadSettingsResponseProto" and operator.contains(fix_line, "bytes values"):
-            fix_line = fix_line.replace("bytes", "NGPDKHMMKGF")
+            fix_line = fix_line.replace("bytes", "EIIOIPNIHIB")
         # elif message_for_fix == "FriendDetailsProto" and operator.contains(fix_line, "bytes friend_visible_data"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "FriendDetailsProto" and operator.contains(fix_line, "bytes data_with_me"):
@@ -421,7 +421,7 @@ if gen_only:
             os.makedirs(dir_rpc)
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
-    shutil.copy(generated_file, protos_path + '/v0.185.1_obf.proto')
+    shutil.copy(generated_file, protos_path + '/v0.185.3_obf.proto')
     shutil.move(generated_file, out_path)
 
 if keep_file:
