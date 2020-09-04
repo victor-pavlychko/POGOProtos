@@ -2,13 +2,13 @@ syntax = "proto3";
 package POGOProtos.Data.Map;
 
 message MapTileBundle {
-	repeated MapTileDataProto map_tile = 1;
+	repeated MapTileData map_tile = 1;
 
-	message MapTileDataProto {
-		MapTileProto map_tile = 1;
-		bytes tile_data = 2;
+	message MapTileData {
+		MapTile map_tile = 1;
+		MapCompositionRoot tile_data = 2;
 
-		message MapTileProto {
+		message MapTile {
 			uint32 tile_variant = 1;
 			int32 tile_index_x = 2;
 			int32 tile_index_y = 3;
@@ -40,6 +40,97 @@ message MapTileBundle {
 				INDOOR = 14;
 				LABELS_ONLY = 15;
 				PERSONALIZED_SMARTMAPS = 16;
+			}
+		}
+
+		message MapCompositionRoot {
+			repeated MapArea map_area = 1;
+			repeated MapProvider map_provider = 2;
+			repeated NamedMapSettings named_map_settings = 3;
+
+			message MapArea {
+				string description = 1;
+				int32 epoch = 2;
+				string map_provider = 3;
+				repeated BoundingRect bounding_rect = 4;
+
+				message BoundingRect {
+					double north = 1;
+					double south = 2;
+					double east = 3;
+					double west = 4;
+				}
+			}
+
+			message MapProvider {
+				string name = 1;
+				string base_url = 2;
+				string query_format = 3;
+
+				oneof Settings {
+					GmmSettings gmm_settings = 4;
+					string settings_name = 5;
+				}
+
+				MapType map_type = 6;
+				bool hide_attribution = 7;
+				int32 min_tile_level = 8;
+				int32 max_tile_level = 9;
+				repeated BundleZoomRange bundle_zoom_range = 10;
+
+				enum MapType {
+					UNSET = 0;
+					GMM = 1;
+					OSM = 2;
+					BLANK = 3;
+					GMM_BUNDLE = 4;
+				}
+
+				message BundleZoomRange {
+					int32 min_zoom = 1;
+					int32 max_zoom = 2;
+					int32 request_zoom_offset = 3;
+				}
+			}
+
+			message NamedMapSettings {
+				string name = 1;
+				GmmSettings gmm_settings = 2;
+			}
+
+			message GmmSettings {
+				repeated LayerRule layer_rules = 1;
+
+				message LayerRule {
+					repeated MaskedColor fill_colors = 1;
+					repeated GmmRoadPriority road_priority = 2;
+					uint32 road_attribute_bitfield = 3;
+
+					enum GmmLayerType {
+						AREA = 0;
+						ROAD = 1;
+						BUILDING = 2;
+						LINE_MESH = 3;
+					}
+
+					enum GmmRoadPriority {
+						PRIORITY_NONE = 0;
+						PRIORITY_TERMINAL = 1;
+						PRIORITY_LOCAL = 2;
+						PRIORITY_MINOR_ARTERIAL = 3;
+						PRIORITY_MAJOR_ARTERIAL = 4;
+						PRIORITY_SECONDARY_ROAD = 5;
+						PRIORITY_PRIMARY_HIGHWAY = 6;
+						PRIORITY_LIMITED_ACCESS = 7;
+						PRIORITY_CONTROLLED_ACCESS = 8;
+						PRIORITY_NON_TRAFFIC = 9;
+					}
+
+					message MaskedColor {
+						uint32 color_argb = 1;
+						uint32 color_mask_argb = 2;
+					}
+				}
 			}
 		}
 	}
