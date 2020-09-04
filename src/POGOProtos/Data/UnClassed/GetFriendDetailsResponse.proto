@@ -20,6 +20,7 @@ message GetFriendDetailsResponse {
 		.POGOProtos.Data.UnClassed.GetProfileResponse.ProfileDetails profile = 2;
 		PlayerStatusDetailsProto player_status = 3;
 		.POGOProtos.Data.Friends.FriendDetails calling_game_data = 4;
+		SocialV2Enum.InvitationStatus invitation_status = 5;
 	}
 
 	message PlayerStatusDetailsProto {
@@ -38,6 +39,11 @@ message GetFriendDetailsResponse {
 	}
 
 	message SocialV2Enum {
+		enum InvitationStatus {
+			INVITATION_STATUS_UNSET = 0;
+			INVITED = 1;
+		}
+
 		enum OnlineStatus {
 			STATUS_UNSET = 0;
 			STATUS_UNKNOWN = 1;

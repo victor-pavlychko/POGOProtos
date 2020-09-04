@@ -13,4 +13,5 @@ message GetAvailableSubmissionsResponse {
 	repeated string blacklisted_os = 7;
 	repeated .POGOProtos.Data.Titan.AvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
 	repeated string blacklisted_device_id = 9;
+	int32 max_poi_location_edit_move_distance_meters = 10;
 }

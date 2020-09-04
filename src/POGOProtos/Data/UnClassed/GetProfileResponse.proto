@@ -27,5 +27,6 @@ message GetProfileResponse {
 	message ProfileDetails {
 		string profile_name_app_key = 1;
 		string nickname = 2;
+		string profile_name = 3;
 	}
 }

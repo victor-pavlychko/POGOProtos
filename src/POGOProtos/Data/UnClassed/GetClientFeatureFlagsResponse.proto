@@ -1,8 +1,11 @@
 syntax = "proto3";
 package POGOProtos.Data.UnClassed;
 
+import "POGOProtos/Settings/SocialClientSettings.proto";
+
 message GetClientFeatureFlagsResponse {
 	SocialClientFeatures feature_flags = 1;
+	.POGOProtos.Settings.SocialClientSettings global_settings = 2;
 
 	message SocialClientFeatures {
 		CrossGameSocialClientSettings cross_game_social_settings = 1;
