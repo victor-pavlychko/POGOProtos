@@ -79,7 +79,7 @@ def open_proto_file(main_file, package_name):
     new_proto_single_file = main_file.replace("raw_protos.proto", "POGOProtos.Rpc.proto")
     # Add licenses
     head = '/*\n'
-    head += '* Copyright 2016-2020 --=FurtiF=-- Co., Ltd.\n'
+    head += '* Copyright 2016-2020 --=FurtiF=--.\n'
     head += '*\n'
     head += '* Licensed under the\n'
     head += '*	Educational Community License, Version 2.0 (the "License"); you may\n'
