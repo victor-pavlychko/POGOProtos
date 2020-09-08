@@ -989,10 +989,10 @@ enum Team {
 	TEAM_TEAM_YELLOW = 3;
 }
 
-enum EMAAAOIEPBN {
-	EMAAAOIEPBN_CREATE_CONTEXT_WILD = 0;
-	EMAAAOIEPBN_CREATE_CONTEXT_EGG = 1;
-	EMAAAOIEPBN_CREATE_CONTEXT_EVOLVE = 2;
+enum PokemonCreateContext {
+	PokemonCreateContext_CREATE_CONTEXT_WILD = 0;
+	PokemonCreateContext_CREATE_CONTEXT_EGG = 1;
+	PokemonCreateContext_CREATE_CONTEXT_EVOLVE = 2;
 }
 
 enum QuestType {
@@ -1939,11 +1939,11 @@ enum OnboardingEventIds {
 	ONBOARDINGEVENTIDS_AR_PLUS_REJECTED = 27;
 }
 
-enum IBCDGAICHEK {
-	IBCDGAICHEK_TEMP_EVOLUTION_UNSET = 0;
-	IBCDGAICHEK_TEMP_EVOLUTION_MEGA = 1;
-	IBCDGAICHEK_TEMP_EVOLUTION_MEGA_X = 2;
-	IBCDGAICHEK_TEMP_EVOLUTION_MEGA_Y = 3;
+enum HoloTemporaryEvolutionId {
+	HoloTemporaryEvolutionId_TEMP_EVOLUTION_UNSET = 0;
+	HoloTemporaryEvolutionId_TEMP_EVOLUTION_MEGA = 1;
+	HoloTemporaryEvolutionId_TEMP_EVOLUTION_MEGA_X = 2;
+	HoloTemporaryEvolutionId_TEMP_EVOLUTION_MEGA_Y = 3;
 }
 
 enum ArToggleContext {
@@ -3652,8 +3652,8 @@ message ABCBGAELBMC {
 
 	CMNOJMFBNPH lknpioglmib = 1;
 	string haigmbjcoff = 2;
-	ALDBMMPFJEL bpeoggcnapi = 3;
-	ALDBMMPFJEL ickcgfkhfcp = 4;
+	PokemonProto bpeoggcnapi = 3;
+	PokemonProto ickcgfkhfcp = 4;
 	NJAEBCDCPIG mkllhjhebdg = 5;
 	NJAEBCDCPIG abgalnbidak = 6;
 }
@@ -3686,7 +3686,7 @@ message ABMHEINCJAD {
 	}
 
 	FPGEBIHKENB.AMOJKLIMIJN kmieohojnij = 1;
-	ALDBMMPFJEL pijaijooief = 2;
+	PokemonProto pijaijooief = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 hgemjecnlhf = 5;
@@ -3706,7 +3706,7 @@ message ABMPOJJICGP {
 	}
 
 	CFCMIIHNPJN lknpioglmib = 1;
-	ALDBMMPFJEL ichkglcaffb = 2;
+	PokemonProto ichkglcaffb = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 ipgmaoblgkn = 5;
@@ -3775,12 +3775,12 @@ message AEKAPBDIIEK {
 	double nkmhnpecina = 8;
 	double efkjhbpfkip = 9;
 	HoloPokemonId boebojekgkc = 10;
-	FDPJDLGIKKO.BJBKFJGILGJ gcalhijnmag = 11;
+	PokemonDisplayProto.Form gcalhijnmag = 11;
 	string mbnjekgpmkl = 12;
 	string fbbkfonhkkp = 13;
 	GLJCLNIGCFO hafpaeohlkn = 14;
 	Team fdeihkodddi = 15;
-	IBCDGAICHEK oagmgkfnoag = 16;
+	HoloTemporaryEvolutionId oagmgkfnoag = 16;
 }
 
 message AEMKPGHHGCF {
@@ -3801,7 +3801,7 @@ message AFCIIHIODAP {
 	map<int32, EAADJDLLFJC> abaomcngljl = 2;
 }
 
-message AFDHAOGFHPA {
+message ClientSpawnPointProto {
 	double nkmhnpecina = 2;
 	double efkjhbpfkip = 3;
 }
@@ -3871,8 +3871,8 @@ message AJBFAJFIEKO {
 }
 
 message AJBLMFMDHOA {
-	double iimgehocmop = 1;
-	double ajilbnppjoj = 2;
+	double player_lat = 1;
+	double player_lng = 2;
 }
 
 message AJDKJIOGICI {
@@ -3920,7 +3920,7 @@ message AKJPJMKIPBA {
 	bool lgehoepjopp = 3;
 }
 
-message AKKONFFDDEH {
+message PokemonCombatStatsProto {
 	int32 knbcmgifaio = 1;
 	int32 oopgjjifjci = 2;
 }
@@ -3934,68 +3934,68 @@ message ALBOAFOCHCK {
 	bool eflpcigckab = 1;
 }
 
-message ALDBMMPFJEL {
-	uint64 omkipbfoaho = 1;
-	int32 dbdedahhmhm = 2;
-	int32 heeghghpjpm = 3;
-	int32 bjhlhjeenbl = 4;
-	int32 blgliecjmig = 5;
-	int32 diaceelinac = 6;
-	int32 gjnfnfelhmp = 7;
-	string ncmpnephgil = 8;
-	string fooecmlgjom = 9;
-	bool midfhiiaagc = 10;
-	double onaaopnfech = 11;
-	double dinpjdbanpg = 12;
-	EMAAAOIEPBN ghjfenbahba = 14;
-	float cppdfdlogdg = 15;
-	float dcieoglfdoe = 16;
-	int32 flfklhjolgm = 17;
-	int32 ecbmljeldpn = 18;
-	int32 paanofadngm = 19;
-	float cfhhnbblfof = 20;
-	Item ggffkpacoln = 21;
-	int64 apliafjaimk = 22;
-	int32 cmbelfdnloi = 23;
-	int32 fgfbbfhcaph = 24;
-	string bjekmobdpeh = 25;
-	int64 bkbcjipiiho = 26;
-	int32 giaomcfplka = 27;
-	float gdnnmcdmkpd = 28;
-	bool hakbdoolgih = 29;
-	string bfdgalmpgha = 30;
-	bool gaajbaciaph = 31;
-	int32 djppabfhijn = 32;
-	float japbblkonkn = 33;
-	int32 gaacmfaigce = 34;
-	int32 mhpfniopfoo = 35;
-	FDPJDLGIKKO oekplilfldp = 36;
-	bool iedgclldkop = 37;
-	bool gkkglkjnjko = 38;
-	int32 ebjkikephla = 39;
-	int64 cfnppbkfaib = 40;
-	int64 cmmcdnbjeig = 41;
-	float jcihplcgcdh = 42;
-	int32 ibiomlikknp = 43;
-	string angmojcfohk = 44;
-	int64 nammmaaande = 45;
-	bool dhflmfjlkeh = 46;
-	int32 cmmdjjngedi = 47;
-	AKKONFFDDEH gganginecba = 48;
-	AKKONFFDDEH pjfbnihhdck = 49;
-	bool lcfjhflcope = 50;
-	string daffdapoaio = 51;
-	int32 aeknemnohmd = 52;
-	float jmgmkcpglnm = 53;
-	double blnfbihmgpo = 55;
-	double ldlocbefkej = 56;
-	bool pidpjmnofep = 57;
-	HoloPokemonEggType aoneeagnjnb = 58;
-	int32 mlaekfehmae = 59;
-	float ebimllfphld = 60;
-	float fjgjkcdpdoa = 61;
-	repeated IBCDGAICHEK gnlnlcokilf = 63;
-	JLCOIMDHDMA hcalahfflem = 66;
+message PokemonProto {
+	uint64 id = 1;
+	int32 pokemon_id = 2;
+	int32 cp = 3;
+	int32 stamina = 4;
+	int32 max_stamina = 5;
+	int32 move1 = 6;
+	int32 move2 = 7;
+	string deployed_fort_id = 8;
+	string owner_name = 9;
+	bool is_egg = 10;
+	double egg_km_walked_target = 11;
+	double egg_km_walked_start = 12;
+	PokemonCreateContext origin = 14;
+	float height_m = 15;
+	float weight_kg = 16;
+	int32 individual_attack = 17;
+	int32 individual_defense = 18;
+	int32 individual_stamina = 19;
+	float cp_multiplier = 20;
+	Item pokeball = 21;
+	int64 captured_s2_cell_id = 22;
+	int32 battles_attacked = 23;
+	int32 battles_defended = 24;
+	string egg_incubator_id = 25;
+	int64 creation_time_ms = 26;
+	int32 num_upgrades = 27;
+	float additional_cp_multiplier = 28;
+	bool favorite = 29;
+	string nickname = 30;
+	bool from_fort = 31;
+	int32 buddy_candy_awarded = 32;
+	float buddy_km_walked = 33;
+	int32 display_pokemon_id = 34;
+	int32 display_cp = 35;
+	PokemonDisplayProto pokemon_display = 36;
+	bool is_bad = 37;
+	bool hatched_from_egg = 38;
+	int32 coins_returned = 39;
+	int64 deployed_duration_ms = 40;
+	int64 deployed_returned_timestamp_ms = 41;
+	float cp_multiplier_before_trading = 42;
+	int32 trading_original_owner_hash = 43;
+	string original_owner_nickname = 44;
+	int64 traded_time_ms = 45;
+	bool is_lucky = 46;
+	int32 move3 = 47;
+	PokemonCombatStatsProto pvp_combat_stats = 48;
+	PokemonCombatStatsProto npc_combat_stats = 49;
+	bool move2_is_purified_exclusive = 50;
+	string limited_pokemon_identifier = 51;
+	int32 pre_boosted_cp = 52;
+	float pre_boosted_additional_cp_multiplier = 53;
+	double deployed_gym_lat_degree = 55;
+	double deployed_gym_lng_degree = 56;
+	bool has_mega_evolved = 57;
+	HoloPokemonEggType egg_type = 58;
+	int32 temp_evo_cp = 59;
+	float temp_evo_stamina_modifier = 60;
+	float temp_evo_cp_multiplier = 61;
+	repeated HoloTemporaryEvolutionId mega_evolved_forms = 63;
+	PokemonCreateDetail origin_detail = 66;
 }
 
 message ALNMIHJCIDE {
@@ -4008,8 +4008,8 @@ message ALNMIHJCIDE {
 	HJKIECIHNEG lknpioglmib = 1;
 	int32 elmflkhhleb = 2;
 	int32 imiajlnomhl = 3;
-	uint64 dbdedahhmhm = 4;
-	FDPJDLGIKKO oekplilfldp = 5;
+	uint64 pokemon_id = 4;
+	PokemonDisplayProto pokemon_display = 5;
 	EncounterType gjmajhipkmg = 6;
 }
 
@@ -4108,7 +4108,7 @@ message ANJLIHIEALE {
 	}
 
 	IJPGGFEBCIE lknpioglmib = 1;
-	ALDBMMPFJEL odkhmgbpebc = 2;
+	PokemonProto odkhmgbpebc = 2;
 }
 
 message ANKHHNOCDOO {
@@ -4174,7 +4174,7 @@ message APBGDIKJOHO {
 	string imcahnopnbp = 2;
 	repeated CAEGHIJGHIP bhfobbjmkjn = 3;
 	int32 pedlffgknhn = 4;
-	repeated ALDBMMPFJEL diiedcpdiia = 5;
+	repeated PokemonProto diiedcpdiia = 5;
 	FortType mefmgklgpan = 6;
 	repeated CAEGHIJGHIP kopapjifbcg = 7;
 	repeated CAEGHIJGHIP plidbejhkdp = 8;
@@ -4187,17 +4187,17 @@ message APBHHGAPIIC {
 	string gnfepfaiijk = 1;
 	string denfbehfggn = 2;
 	int32 fkeckmnbicp = 3;
-	HoloPokemonId dbdedahhmhm = 4;
+	HoloPokemonId pokemon_id = 4;
 }
 
-message APBKNGNNCJM {
+message MapPokemonProto {
 	string cjkkpijggdk = 1;
 	uint64 ofpebfcdpip = 2;
 	int32 ohkkghgcafd = 3;
 	int64 gleoahfefcb = 4;
 	double nkmhnpecina = 5;
 	double efkjhbpfkip = 6;
-	FDPJDLGIKKO oekplilfldp = 7;
+	PokemonDisplayProto pokemon_display = 7;
 }
 
 message APJAPJBAPNO {
@@ -4234,7 +4234,7 @@ message APMCAOIKMGE {
 	}
 
 	GGCENDAMEBO lknpioglmib = 1;
-	ALDBMMPFJEL pijfbheoioc = 2;
+	PokemonProto pijfbheoioc = 2;
 	int32 dkooogjgkol = 3;
 }
 
@@ -4243,9 +4243,9 @@ message APPLHPJCBAF {
 }
 
 message BAAHCABOMIK {
-	HoloPokemonId dbdedahhmhm = 1;
+	HoloPokemonId pokemon_id = 1;
 	float chkcifeodio = 2;
-	FDPJDLGIKKO.BJBKFJGILGJ dgblalodoga = 3;
+	PokemonDisplayProto.Form form = 3;
 }
 
 message BALAAGILBNJ {
@@ -4253,7 +4253,7 @@ message BALAAGILBNJ {
 	int64 mngmdfidoha = 2;
 	int64 jbbfhfijcgi = 3;
 	int64 jbnlmjnpddn = 4;
-	ALDBMMPFJEL okgnilhjglm = 5;
+	PokemonProto okgnilhjglm = 5;
 	RaidLevel pfmpbpkljpb = 6;
 	bool jmdbakhanon = 7;
 	bool doddfdhmidl = 8;
@@ -4372,9 +4372,9 @@ message BFMMJIGKNND {
 	DIKABGBAPBF bbjkgkekbam = 1;
 	repeated ODJMHHBHFBB macpgmjmoil = 2;
 	string enlljhnggpn = 3;
-	string bfdgalmpgha = 4;
+	string nickname = 4;
 	int64 mfageggakib = 5;
-	bool dhflmfjlkeh = 6;
+	bool is_lucky = 6;
 	int32 mhdncbphfgn = 7;
 }
 
@@ -4388,7 +4388,7 @@ message BGAOPEOFHHE {
 }
 
 message BGELLBFMFGL {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 }
 
 message BHAHABBMMLA {
@@ -4440,7 +4440,7 @@ message BIOPFEGKCPH {
 
 message BIPKOOFAFIB {
 	Item oiedebkalie = 1;
-	uint64 dbdedahhmhm = 2;
+	uint64 pokemon_id = 2;
 }
 
 message BJDMBIGNJFA {
@@ -4482,10 +4482,10 @@ message BLOABEADCAP {
 }
 
 message BLPOAJIEDOP {
-	int32 dbdedahhmhm = 1;
-	int32 heeghghpjpm = 2;
-	float dcieoglfdoe = 3;
-	float cppdfdlogdg = 4;
+	int32 pokemon_id = 1;
+	int32 cp = 2;
+	float weight_kg = 3;
+	float height_m = 4;
 	int32 mdjgeimkdpa = 5;
 }
 
@@ -4709,7 +4709,7 @@ message CEAJGAFLNHB {
 	}
 
 	PIFBIMGBKFI lknpioglmib = 1;
-	ALDBMMPFJEL ichkglcaffb = 2;
+	PokemonProto ichkglcaffb = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 ipgmaoblgkn = 5;
@@ -4787,8 +4787,8 @@ message CIBHMLLKCNJ {
 }
 
 message CIGJGMFLAPM {
-	uint64 dbdedahhmhm = 1;
-	string bfdgalmpgha = 2;
+	uint64 pokemon_id = 1;
+	string nickname = 2;
 }
 
 message CIILIKDPINC {
@@ -4932,7 +4932,7 @@ message CNICGGJIFHF {
 }
 
 message COADIGMJGMB {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 }
 
 message COIFCGGCIJH {
@@ -4984,14 +4984,14 @@ message CPPJCGKLFPM {
 }
 
 message DAFILIEKAIJ {
-	string omkipbfoaho = 1;
+	string id = 1;
 	int32 occjnjgeblb = 2;
-	repeated ALDBMMPFJEL ichkglcaffb = 3;
+	repeated PokemonProto ichkglcaffb = 3;
 	string jemkidipklg = 4;
 	repeated string cmdehaandpc = 5;
 	int32 fehiimebgih = 6;
-	int32 bjhlhjeenbl = 7;
-	int32 blgliecjmig = 8;
+	int32 stamina = 7;
+	int32 max_stamina = 8;
 	FortType mefmgklgpan = 9;
 	double nkmhnpecina = 10;
 	double efkjhbpfkip = 11;
@@ -5015,7 +5015,7 @@ message DBEOJHAOHGE {
 	HoloItemCategory pidapendjkj = 3;
 	float ihbelmomkmo = 4;
 	int32 didjpojpffk = 5;
-	GHNLLMBLLJN ggffkpacoln = 6;
+	GHNLLMBLLJN pokeball = 6;
 	HEEGBGLAKHB chfijleflmh = 7;
 	LPGACBHBABH oehpkcigiof = 8;
 	HEKGIKCKDIL kpmdnfepeho = 9;
@@ -5052,10 +5052,10 @@ message DCJDAKLAGHH {
 
 message DCMIECMMAOK {
 	string gfaenodgbfj = 1;
-	ALDBMMPFJEL ichkglcaffb = 2;
+	PokemonProto ichkglcaffb = 2;
 	EncounterType gjmajhipkmg = 3;
 	bool gjoahoigmck = 4;
-	ALDBMMPFJEL ffigdgocnij = 5;
+	PokemonProto ffigdgocnij = 5;
 }
 
 message DDEPDHFNKGM {
@@ -5176,15 +5176,15 @@ message DGMEHHFPOML {
 	map<int32, JAAACDNDHBM> dbffblgpgej = 69;
 	map<int32, JAAACDNDHBM> oimidebfjoc = 70;
 	BGLHNJNENOC pkhdlhjcekk = 71;
-	FDPJDLGIKKO oekplilfldp = 72;
-	bool gkkglkjnjko = 73;
-	string bfdgalmpgha = 74;
-	int64 apliafjaimk = 75;
+	PokemonDisplayProto pokemon_display = 72;
+	bool hatched_from_egg = 73;
+	string nickname = 74;
+	int64 captured_s2_cell_id = 75;
 	HoloPokemonId mgjcoegpbdk = 76;
 	int64 nmfejghdeap = 77;
-	Item ggffkpacoln = 78;
-	string angmojcfohk = 79;
-	int64 nammmaaande = 80;
+	Item pokeball = 78;
+	string original_owner_nickname = 79;
+	int64 traded_time_ms = 80;
 	string ldjkeobmbkc = 81;
 	int64 iojfmmgpbmd = 82;
 	int64 anmllgcbndn = 83;
@@ -5236,9 +5236,9 @@ message DHFNCFFEEMK {
 }
 
 message DHKBEGDDNOB {
-	int64 omkipbfoaho = 1;
+	int64 id = 1;
 	HoloPokemonId gagejdodbko = 2;
-	int32 heeghghpjpm = 3;
+	int32 cp = 3;
 	float eihiiiiommn = 4;
 }
 
@@ -5246,7 +5246,7 @@ message DHKCIJGAMJN {
 	repeated ANIDHIOGDDC efabolkpapd = 1;
 	int32 aefdmakedik = 2;
 	int32 dghlmpcaagm = 3;
-	string omkipbfoaho = 4;
+	string id = 4;
 	string epnblingbll = 5;
 }
 
@@ -5307,10 +5307,10 @@ message DIFCPMBOEGC {
 }
 
 message DIHJKGAPMPA {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 	Item khcfdlenphk = 2;
 	HoloPokemonId ddgejokpdih = 3;
-	FDPJDLGIKKO.BJBKFJGILGJ pcdmeihiffd = 4;
+	PokemonDisplayProto.Form pcdmeihiffd = 4;
 	bool llmcofiloon = 5;
 }
 
@@ -5417,26 +5417,26 @@ message DNHLJKAJAHL {
 	NILGMDEIFND bglpfhcaigd = 3;
 	int32 hjhoieangbp = 4;
 	int32 gagejdodbko = 5;
-	int32 heeghghpjpm = 6;
+	int32 cp = 6;
 	float mdjgeimkdpa = 7;
 	int32 oanejfjeejo = 8;
 	double ddldhnhiahf = 9;
 	double pjaljohbefn = 10;
 	float cnblimcofmp = 11;
 	float chkcifeodio = 12;
-	int32 flfklhjolgm = 13;
-	int32 ecbmljeldpn = 14;
-	int32 paanofadngm = 15;
+	int32 individual_attack = 13;
+	int32 individual_defense = 14;
+	int32 individual_stamina = 15;
 	int32 comfkhilnlk = 16;
 	int32 blhoilojbfa = 17;
 	int32 deiielbobog = 18;
-	string bfdgalmpgha = 19;
-	IJLBAACLMHJ gdnbdfhjbjj = 20;
-	DIEBFEJGPKO bejbcladihn = 21;
-	FLLCKCMOLCG dgblalodoga = 22;
-	bool nkbpmkkngki = 23;
-	int32 diaceelinac = 24;
-	int32 gjnfnfelhmp = 25;
+	string nickname = 19;
+	IJLBAACLMHJ gender = 20;
+	DIEBFEJGPKO costume = 21;
+	FLLCKCMOLCG form = 22;
+	bool shiny = 23;
+	int32 move1 = 24;
+	int32 move2 = 25;
 }
 
 message DNNGDJLGPPP {
@@ -5464,7 +5464,7 @@ message DNNGDJLGPPP {
 	//sticker_id = 22;
 	//}
 
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 	Item oiedebkalie = 2;
 	int32 mdamobkhmmp = 3;
 	bool fmgnojhgnpg = 4;
@@ -5491,7 +5491,7 @@ message DNPCHABOALN {
 
 message DONKAMDNCNH {
 	HoloPokemonId ichkglcaffb = 1;
-	ELOKNDENLAN gdnbdfhjbjj = 2;
+	ELOKNDENLAN gender = 2;
 }
 
 message DPKLFEKGLBN {
@@ -5583,7 +5583,7 @@ message EBBKNEGDJKB {
 		//sticker = 22;
 	//}
 
-	ALDBMMPFJEL ichkglcaffb = 1;
+	PokemonProto ichkglcaffb = 1;
 	CAEGHIJGHIP oiedebkalie = 2;
 	LKEDOEDIPKO hgipdibgipm = 3;
 	LLMLGFKAAAP fmgnojhgnpg = 4;
@@ -5604,13 +5604,13 @@ message EBBKNEGDJKB {
 	GFKPKPDIKCG cloahadfaip = 22;
 }
 
-message EBLABMKPKNA {
+message NearbyPokemonProto {
 	int32 elmflkhhleb = 1;
 	float hajlpajgmhk = 2;
 	uint64 ofpebfcdpip = 3;
 	string imcahnopnbp = 4;
 	string mpkcnbipnpf = 5;
-	FDPJDLGIKKO oekplilfldp = 6;
+	PokemonDisplayProto pokemon_display = 6;
 }
 
 message EBMBOPDKAKD {
@@ -5676,7 +5676,7 @@ message ECGINAKCNDG {
 		DEFAULT_TEMPLATE = 1;
 	}
 
-	string omkipbfoaho = 1;
+	string id = 1;
 	repeated string cmdehaandpc = 2;
 	string fcffocnakgl = 3;
 	string hoalaaddlgk = 4;
@@ -6027,7 +6027,7 @@ message ELCCHAHMOGD {
 	}
 
 	DIJALIACLEF lknpioglmib = 1;
-	string omkipbfoaho = 2;
+	string id = 2;
 	int64 mkffbahdnoc = 3;
 }
 
@@ -6362,8 +6362,8 @@ message FDJLJKHBCOD {
 	int64 kbkaddojmmo = 3;
 }
 
-message FDPJDLGIKKO {
-	enum BJBKFJGILGJ {
+message PokemonDisplayProto {
+	enum Form {
 		FORM_UNSET = 0;
 		UNOWN_A = 1;
 		UNOWN_B = 2;
@@ -8455,7 +8455,7 @@ message FDPJDLGIKKO {
 		GENGAR_COSTUME_2020 = 2586;
 	}
 
-	enum HFAHLALEHBI {
+	enum Costume {
 		UNSET = 0;
 		HOLIDAY_2016 = 1;
 		ANNIVERSARY = 2;
@@ -8485,31 +8485,31 @@ message FDPJDLGIKKO {
 		HALLOWEEN_2020 = 26;
 	}
 
-	enum JILFIENGDDD {
+	enum Gender {
 		GENDER_UNSET = 0;
 		MALE = 1;
 		FEMALE = 2;
 		GENDERLESS = 3;
 	}
 
-	enum JIPHOGHPEJL {
+	enum Alignment {
 		ALIGNMENT_UNSET = 0;
 		SHADOW = 1;
 		PURIFIED = 2;
 	}
 
-	HFAHLALEHBI bejbcladihn = 1;
-	JILFIENGDDD gdnbdfhjbjj = 2;
-	bool nkbpmkkngki = 3;
-	BJBKFJGILGJ dgblalodoga = 4;
-	GameplayWeatherProto.WeatherCondition dhafnjmpleh = 5;
-	JIPHOGHPEJL giclcilnmbp = 6;
-	PokemonBadge pdecbcphpaj = 7;
-	IBCDGAICHEK igcbhglfpec = 8;
-	int64 phenhpojcbm = 9;
-	bool ckfodhegpcm = 10;
-	IBCDGAICHEK knbijlhakia = 11;
-	HFAHLALEHBI pknfdbkpnni = 12;
+	Costume costume = 1;
+	Gender gender = 2;
+	bool shiny = 3;
+	Form form = 4;
+	GameplayWeatherProto.WeatherCondition weather_boosted_condition = 5;
+	Alignment alignment = 6;
+	PokemonBadge pokemon_badge = 7;
+	HoloTemporaryEvolutionId current_temp_evolution = 8;
+	int64 temporary_evolution_finish_ms = 9;
+	bool temp_evolution_is_locked = 10;
+	HoloTemporaryEvolutionId locked_temp_evolution = 11;
+	Costume original_costume = 12;
 }
 
 message FEEKAKCGDEG {
@@ -8519,7 +8519,7 @@ message FEEKAKCGDEG {
 	}
 
 	HBEHCBKLOKB kmieohojnij = 1;
-	bool pihipiofkgj = 2;
+	bool nearby_pokemons = 2;
 	bool adoifjigkid = 3;
 	bool nblpaoggfml = 4;
 	string cjkkpijggdk = 5;
@@ -8599,7 +8599,7 @@ message FGNABPNBPGH {
 	Item oiedebkalie = 1;
 	int32 chfmlobebbo = 2;
 	string plccbgieopg = 3;
-	uint64 dbdedahhmhm = 4;
+	uint64 pokemon_id = 4;
 	double nbolglmejnc = 5;
 	double libhmbbcogc = 6;
 }
@@ -8686,7 +8686,7 @@ message FIDCFPOOKKG {
 	bool gimfcconkaf = 112;
 	bool dejkmhajfcg = 113;
 	int32 phlfepnclmp = 114;
-	int64 aigphkealbc = 115;
+	int64 s2_cell_id = 115;
 	int32 ekmcbbbkafn = 116;
 	JAAACDNDHBM ndhodgihlhp = 117;
 	string jjdnjnnbihb = 118;
@@ -8735,7 +8735,7 @@ message FKBBEAMOKBJ {
 	Item oiedebkalie = 2;
 	EggIncubatorType obpagkjfkko = 3;
 	int32 acdobbepocf = 4;
-	int64 dbdedahhmhm = 5;
+	int64 pokemon_id = 5;
 	double peopiknibmg = 6;
 	double holnpeepnam = 7;
 }
@@ -8754,7 +8754,7 @@ message FKHMLMELHNH {
 
 	DCGJNOKPAHJ kmieohojnij = 1;
 	HoloPokemonId foagdffahnf = 2;
-	FDPJDLGIKKO kolmkdcjnli = 3;
+	PokemonDisplayProto kolmkdcjnli = 3;
 	uint64 ofpebfcdpip = 4;
 	string pibbfdmchdf = 5;
 }
@@ -8768,8 +8768,8 @@ message FKKEPBEEOAN {
 	NEFAGJIFHJD lknpioglmib = 1;
 	HoloPokemonId gbbmdnjfgmh = 2;
 	int32 mbgpljllccj = 3;
-	FDPJDLGIKKO oekplilfldp = 4;
-	uint64 dbdedahhmhm = 5;
+	PokemonDisplayProto pokemon_display = 4;
+	uint64 pokemon_id = 5;
 }
 
 message FKOICJEKIGP {
@@ -8959,7 +8959,7 @@ message GAAKFMAGDLB {
 }
 
 message GAJNKGKDMCL {
-	IBCDGAICHEK jiephffmknb = 1;
+	HoloTemporaryEvolutionId jiephffmknb = 1;
 	int32 cpbmplabhfl = 2;
 	string hmkglhkakdj = 3;
 }
@@ -8994,13 +8994,13 @@ message GBLNNABKFFO {
 	bool hpbbkmeeoip = 3;
 }
 
-message GCCMBOBIIMM {
+message WildPokemonProto {
 	uint64 ofpebfcdpip = 1;
 	int64 oalbpkadiml = 2;
 	double nkmhnpecina = 3;
 	double efkjhbpfkip = 4;
 	string amckjidfljc = 5;
-	ALDBMMPFJEL ichkglcaffb = 7;
+	PokemonProto ichkglcaffb = 7;
 	int32 jaalkeldbkd = 11;
 }
 
@@ -9241,7 +9241,7 @@ message GHCPPAHENFP {
 message GHMBBDDNJPI {
 	repeated int32 glgaipbdopj = 1;
 	repeated int32 jfgioafdokk = 2;
-	repeated float cfhhnbblfof = 3;
+	repeated float cp_multiplier = 3;
 	int32 iaflfdfdcec = 4;
 	int32 iabbfnbfnnm = 5;
 	int32 dmbkmmpngji = 6;
@@ -9261,7 +9261,7 @@ message GIDGIFEOINA {
 		bool hhjloebbnle = 1;
 	}
 
-	bool dhflmfjlkeh = 1;
+	bool is_lucky = 1;
 	int32 mhdncbphfgn = 2;
 	LICEADEMPAA lopkpaikhbj = 3;
 }
@@ -9468,15 +9468,15 @@ message GKOKDOCBCBE {
 	Item khcfdlenphk = 2;
 	int32 pjfmkoeppfg = 3;
 	float piooidmepgc = 4;
-	FDPJDLGIKKO.BJBKFJGILGJ dgblalodoga = 5;
-	FDPJDLGIKKO.JILFIENGDDD aghemnmjbfg = 6;
+	PokemonDisplayProto.Form form = 5;
+	PokemonDisplayProto.Gender aghemnmjbfg = 6;
 	Item nddmmflmeoc = 8;
 	bool jpgfpjmpinl = 9;
 	bool liogooobebb = 10;
 	bool fokgcbhceca = 11;
 	int32 ghbhjcdhgkp = 12;
 	bool kdemejmahbj = 13;
-	IBCDGAICHEK kiandpklnee = 14;
+	HoloTemporaryEvolutionId kiandpklnee = 14;
 	int32 lccepocjbpe = 15;
 	int32 bckhedjneoh = 16;
 }
@@ -9486,7 +9486,7 @@ message GLCIKPHLOEA {
 }
 
 message GLEMBHBMNFM {
-	repeated FDPJDLGIKKO.JIPHOGHPEJL giclcilnmbp = 1;
+	repeated PokemonDisplayProto.Alignment alignment = 1;
 }
 
 message GLILAIHNDEF {
@@ -9613,7 +9613,7 @@ message GMCNHKOOMJG {
 	int64 kdmdegnfgdc = 1;
 	string plccbgieopg = 2;
 	repeated int32 bflgofknmep = 3;
-	repeated uint64 dbdedahhmhm = 4;
+	repeated uint64 pokemon_id = 4;
 }
 
 message GMHNEDDCEPA {
@@ -9622,7 +9622,7 @@ message GMHNEDDCEPA {
 }
 
 message GMIPBKNKBKP {
-	int64 dbdedahhmhm = 1;
+	int64 pokemon_id = 1;
 	bool bmbdapckaji = 2;
 }
 
@@ -9656,7 +9656,7 @@ message GMPPMOGGEKF {
 		NIGHT = 2;
 	}
 
-	repeated JDIMDOMNIDF okgalaefnhc = 1;
+	repeated MapCell okgalaefnhc = 1;
 	LCENAEABBPC kmieohojnij = 2;
 	MPCCLFFMKIA jfmepigaeln = 3;
 	repeated ClientWeatherProto hgobolfleka = 4;
@@ -9673,8 +9673,8 @@ message GOBOAGDIPON {
 	CMDHEBBDFJM lknpioglmib = 1;
 	int32 elmflkhhleb = 2;
 	int32 imiajlnomhl = 3;
-	uint64 dbdedahhmhm = 4;
-	FDPJDLGIKKO oekplilfldp = 5;
+	uint64 pokemon_id = 4;
+	PokemonDisplayProto pokemon_display = 5;
 }
 
 message GOCOMOPEHGI {
@@ -9687,7 +9687,7 @@ message GOCOMOPEHGI {
 	}
 
 	EIGKNDIDJIE lknpioglmib = 1;
-	int32 bjhlhjeenbl = 2;
+	int32 stamina = 2;
 }
 
 message GOHMDLEEDFI {
@@ -9718,7 +9718,7 @@ message GPOBLNOMGJC {
 	FAIDEINDGCI kmjcifjodki = 5;
 	int32 imkhpmbjnhp = 6;
 	int32 hgemjecnlhf = 7;
-	FDPJDLGIKKO oekplilfldp = 8;
+	PokemonDisplayProto pokemon_display = 8;
 }
 
 message GPOPHCHAMIC {
@@ -9781,12 +9781,12 @@ message HBBIAGALHMH {
 
 message HBCEOIBCMKH {
 	bool lgehoepjopp = 1;
-	repeated uint64 dbdedahhmhm = 2;
+	repeated uint64 pokemon_id = 2;
 	repeated int32 dkooogjgkol = 3;
 	repeated int32 lakphipmdje = 4;
 	repeated int32 lcikmkfbldi = 5;
 	repeated float igjenienhnd = 6;
-	repeated ALDBMMPFJEL lblildeohik = 7;
+	repeated PokemonProto lblildeohik = 7;
 	repeated int32 jbinpiieooo = 8;
 }
 
@@ -9910,11 +9910,11 @@ message HDBONPCAEMJ {
 	}
 
 	PBMEEDNMHOC lknpioglmib = 1;
-	int32 bjhlhjeenbl = 2;
+	int32 stamina = 2;
 }
 
 message HDCIJFIONNN {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 	bool dpbfndcacig = 2;
 	uint32 lmllafgjbjo = 3;
 	int32 lioeeeffllh = 4;
@@ -9931,7 +9931,7 @@ message HDJJJBKOGHK {
 	}
 
 	message JHBKEICAPFA {
-		uint64 dbdedahhmhm = 1;
+		uint64 pokemon_id = 1;
 		int32 mgjcoegpbdk = 2;
 		int32 bbnodenahep = 3;
 		int32 icmkbjelchp = 4;
@@ -9940,19 +9940,19 @@ message HDJJJBKOGHK {
 		int32 kmalgnlaeng = 7;
 		int32 kflidamdeil = 8;
 		bool labaeipoogb = 9;
-		int32 diaceelinac = 10;
-		int32 gjnfnfelhmp = 11;
-		FDPJDLGIKKO oekplilfldp = 12;
-		int64 apliafjaimk = 13;
-		ALDBMMPFJEL fdjfhpgdhlk = 14;
-		Item ggffkpacoln = 15;
-		int32 flfklhjolgm = 16;
-		int32 ecbmljeldpn = 17;
-		int32 paanofadngm = 18;
-		string bfdgalmpgha = 19;
-		bool hakbdoolgih = 20;
-		int32 cmmdjjngedi = 21;
-		int64 bkbcjipiiho = 22;
+		int32 move1 = 10;
+		int32 move2 = 11;
+		PokemonDisplayProto pokemon_display = 12;
+		int64 captured_s2_cell_id = 13;
+		PokemonProto fdjfhpgdhlk = 14;
+		Item pokeball = 15;
+		int32 individual_attack = 16;
+		int32 individual_defense = 17;
+		int32 individual_stamina = 18;
+		string nickname = 19;
+		bool favorite = 20;
+		int32 move3 = 21;
+		int64 creation_time_ms = 22;
 	}
 
 	message LNIANFLKNFD {
@@ -9975,7 +9975,7 @@ message HDJJJBKOGHK {
 				TEMP_EVOLVED = 14;
 			}
 
-			uint64 dbdedahhmhm = 1;
+			uint64 pokemon_id = 1;
 			GOAJJBAKHIH kdjnialhikf = 2;
 		}
 
@@ -10001,7 +10001,7 @@ message HDJJJBKOGHK {
 }
 
 message HDLFEGCFNPF {
-	repeated int64 aigphkealbc = 1;
+	repeated int64 s2_cell_id = 1;
 }
 
 message HECLOGGLADP {
@@ -10092,7 +10092,7 @@ message HFGBHKJMLID {
 
 message HFKBHGOLCLK {
 	HoloPokemonId gbbmdnjfgmh = 1;
-	FDPJDLGIKKO oekplilfldp = 2;
+	PokemonDisplayProto pokemon_display = 2;
 }
 
 message HFLFHEGCBPL {
@@ -10119,7 +10119,7 @@ message HGEIOBPEIKB {
 	}
 
 	MFIOBHLKIBM lknpioglmib = 1;
-	ALDBMMPFJEL ichkglcaffb = 2;
+	PokemonProto ichkglcaffb = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 }
@@ -10146,7 +10146,7 @@ message HHIDOPMDPDH {
 }
 
 message HHNKFEAOIBH {
-	MOPKMNANHJA.LDFPDJCNJBG ghjfenbahba = 1;
+	MOPKMNANHJA.LDFPDJCNJBG origin = 1;
 }
 
 message HIBONCNMDNE {
@@ -10377,7 +10377,7 @@ message HMPDHHCMICJ {
 
 message HNCGBECINCL {
 	string glankgjddic = 1;
-	uint64 dbdedahhmhm = 2;
+	uint64 pokemon_id = 2;
 }
 
 message HOALANDJDMB {
@@ -10516,7 +10516,7 @@ message ICCCBJJIMMJ {
 }
 
 message ICCDBJHAEID {
-	IBCDGAICHEK bgegndnmcai = 1;
+	HoloTemporaryEvolutionId bgegndnmcai = 1;
 	OIAPMPHCADH iiaphcnkjek = 2;
 	float eofbilbnnko = 3;
 	float bpodhpiccmb = 4;
@@ -10540,7 +10540,7 @@ message ICIGAOMBAPH {
 }
 
 message ICNAOBMJMJG {
-	OGFNBIKAJBJ olgjdgcgcdi = 1;
+	PokemonFortProto olgjdgcgcdi = 1;
 	repeated LPOIJGIMPAL iphnggkkfdc = 2;
 }
 
@@ -10602,7 +10602,7 @@ message IFGCIKBAFPP {
 	}
 
 	OLPBHKIPNJD lknpioglmib = 1;
-	ALDBMMPFJEL ichkglcaffb = 2;
+	PokemonProto ichkglcaffb = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 ipgmaoblgkn = 5;
@@ -10649,7 +10649,7 @@ message IGPBGBBJNKI {
 	string cojlbkbjoig = 5;
 	uint64 ofpebfcdpip = 6;
 	int64 gdmphaibabn = 7;
-	FDPJDLGIKKO oekplilfldp = 8;
+	PokemonDisplayProto pokemon_display = 8;
 }
 
 message IHEAKDKLDHM {
@@ -10699,7 +10699,7 @@ message IICEJACIIFA {
 	MDKCKNEPGHH lknpioglmib = 1;
 	string haigmbjcoff = 2;
 	NJAEBCDCPIG bhfobbjmkjn = 3;
-	repeated ALDBMMPFJEL diiedcpdiia = 4;
+	repeated PokemonProto diiedcpdiia = 4;
 }
 
 message IIFJILCPJDN {
@@ -10813,11 +10813,11 @@ message IKOPCNKPOIA {
 	int32 heoadjimphh = 1;
 }
 
-message ILAJMOBPOBF {
-	repeated uint64 jljmlodbnme = 1;
-	repeated int64 pkioongpjjk = 2;
-	double iimgehocmop = 3;
-	double ajilbnppjoj = 4;
+message GetMapObjectsProto {
+	repeated uint64 cell_id = 1;
+	repeated int64 since_time_ms = 2;
+	double player_lat = 3;
+	double player_lng = 4;
 }
 
 message ILFOHJLOCOA {
@@ -10888,7 +10888,7 @@ message ILPABPEKGGC {
 
 message IMAJOFHHNOF {
 	uint64 ofpebfcdpip = 1;
-	int32 ggffkpacoln = 2;
+	int32 pokeball = 2;
 	double jipbcmpennb = 3;
 	string eofhedkiaeh = 4;
 	bool nbikjgcfnmd = 5;
@@ -10944,7 +10944,7 @@ message INIBHANFCCO {
 }
 
 message INLMKLIMNMK {
-	HoloPokemonId dbdedahhmhm = 1;
+	HoloPokemonId pokemon_id = 1;
 	int32 mbgpljllccj = 2;
 }
 
@@ -10958,7 +10958,7 @@ message IOGLPONIKAH {
 
 message IOOOEMJNGNL {
 	Item oiedebkalie = 1;
-	HoloPokemonId dbdedahhmhm = 2;
+	HoloPokemonId pokemon_id = 2;
 	int32 ageajmoihbc = 3;
 }
 
@@ -11048,7 +11048,7 @@ message JBDHOGIEHJM {
 	bool finbnodhhcc = 3;
 	HoloPokemonId geijhkafmlo = 4;
 	bool ifihlgoajdl = 6;
-	ALDBMMPFJEL bebeddeimdf = 7;
+	PokemonProto bebeddeimdf = 7;
 	string pjjnhmcllkp = 8;
 	string gnfepfaiijk = 9;
 	int32 loopidkcgli = 10;
@@ -11077,7 +11077,7 @@ message JCGJIOOMJCH {
 }
 
 message JCHFICPLBBF {
-	EncounterType ghjfenbahba = 1;
+	EncounterType origin = 1;
 }
 
 message JCOCAMILFCP {
@@ -11112,10 +11112,10 @@ message JDENPBNOALC {
 
 message JDGAGONPAEE {
 	message OALBGJHDGCJ {
-		int64 dbdedahhmhm = 1;
+		int64 pokemon_id = 1;
 		float jdmfmllcioe = 2;
 		int64 fnjocahobgf = 3;
-		int32 ebjkikephla = 4;
+		int32 coins_returned = 4;
 	}
 
 	repeated OALBGJHDGCJ ndafcpnolff = 1;
@@ -11131,18 +11131,18 @@ message JDIMDKJIMDA {
 	int32 gagejdodbko = 1;
 }
 
-message JDIMDOMNIDF {
-	uint64 aigphkealbc = 1;
-	int64 ioongpjfofb = 2;
-	repeated OGFNBIKAJBJ kjonllkgbhl = 3;
-	repeated AFDHAOGFHPA manlclfnklh = 4;
-	repeated GCCMBOBIIMM efecifnpnoe = 5;
-	repeated string bpfbboklonk = 6;
-	bool ahgoflpnnlh = 7;
-	repeated PLLHEFPPADP kcflcoaakda = 8;
-	repeated AFDHAOGFHPA lonnafhplep = 9;
-	repeated APBKNGNNCJM hgjekfmlnoe = 10;
-	repeated EBLABMKPKNA pihipiofkgj = 11;
+message MapCell {
+	uint64 s2_cell_id = 1;
+	int64 current_timestamp_ms = 2;
+	repeated PokemonFortProto forts = 3;
+	repeated ClientSpawnPointProto spawn_points = 4;
+	repeated WildPokemonProto wild_pokemons = 5;
+	repeated string deleted_objects = 6;
+	bool is_truncated_list = 7;
+	repeated PokemonSummaryFortProto fort_summary = 8;
+	repeated ClientSpawnPointProto decimated_spawn_points = 9;
+	repeated MapPokemonProto catchable_pokemons = 10;
+	repeated NearbyPokemonProto nearby_pokemons = 11;
 }
 
 message JDPGHELCPOC {
@@ -11166,7 +11166,7 @@ message JEEMOBAOPLN {
 }
 
 message JEHDGBFNEBG {
-	ALDBMMPFJEL ichkglcaffb = 1;
+	PokemonProto ichkglcaffb = 1;
 	int64 mbdcdocfegm = 2;
 	int32 ojapihjcejg = 3;
 	double ldacdlonkad = 4;
@@ -11454,7 +11454,7 @@ message JLAOPGHAGAL {
 	DAFILIEKAIJ hhgmolgegga = 2;
 }
 
-message JLCOIMDHDMA {
+message PokemonCreateDetail {
 	//ignored_oneof PDCGLBHNIHB {
 		//none = 0;
 		//wild_detail = 1;
@@ -11612,7 +11612,7 @@ message KCHCHJNPHKI {
 	}
 
 	KIOMOEPDKME lknpioglmib = 1;
-	ALDBMMPFJEL ichkglcaffb = 2;
+	PokemonProto ichkglcaffb = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 ipgmaoblgkn = 5;
@@ -11648,7 +11648,7 @@ message KDFNDCBIDDH {
 }
 
 message KDHELLCEOJD {
-	int64 bkbcjipiiho = 1;
+	int64 creation_time_ms = 1;
 	string jemkidipklg = 2;
 	int32 occjnjgeblb = 5;
 	repeated HGOFDPGHLDI lpphkomoaej = 7;
@@ -11683,7 +11683,7 @@ message KDJAODGGLCN {
 }
 
 message KDMAEPLELBN {
-	OGFNBIKAJBJ imejejfnfii = 1;
+	PokemonFortProto imejejfnfii = 1;
 	repeated MJAPPOEHFJM bgooljjiaap = 2;
 	bool kkfkgcflpbf = 3;
 }
@@ -11718,7 +11718,7 @@ message KEEFPOBOKJC {
 	}
 
 	MFNPPLFEOEF lknpioglmib = 1;
-	ALDBMMPFJEL pijfbheoioc = 2;
+	PokemonProto pijfbheoioc = 2;
 	int32 dkooogjgkol = 3;
 	int32 lakphipmdje = 4;
 }
@@ -11844,13 +11844,13 @@ message KHJPDDMGJJL {
 }
 
 message KIDDNMANIIK {
-	FDPJDLGIKKO ahlfnkfhffk = 1;
+	PokemonDisplayProto ahlfnkfhffk = 1;
 	int32 bjfoeolcaeo = 2;
 	string hiopeabpfei = 3;
-	FDPJDLGIKKO mlcajcfjmga = 4;
+	PokemonDisplayProto mlcajcfjmga = 4;
 	int32 ajobgleaaae = 5;
 	int64 hphfcpibhed = 6;
-	int32 djppabfhijn = 7;
+	int32 buddy_candy_awarded = 7;
 }
 
 message KIDHOAJIECF {
@@ -11983,7 +11983,7 @@ message KKIADOKNBDD {
 
 message KKMEBDCDHAA {
 	BLPOAJIEDOP ichkglcaffb = 1;
-	string bfdgalmpgha = 2;
+	string nickname = 2;
 }
 
 message KLBNBOBKGJL {
@@ -12141,17 +12141,17 @@ message KMLCJMIDHAC {
 	}
 
 	APBPGFBIAOP kmieohojnij = 1;
-	HoloPokemonId dbdedahhmhm = 2;
+	HoloPokemonId pokemon_id = 2;
 	double minbjcmkcbh = 3;
 	double cmmpgojjlfb = 4;
 	string cojlbkbjoig = 5;
 	uint64 ofpebfcdpip = 6;
 	int64 gdmphaibabn = 7;
-	FDPJDLGIKKO oekplilfldp = 8;
+	PokemonDisplayProto pokemon_display = 8;
 }
 
 message KMMFEFPCNJH {
-	FDPJDLGIKKO.BJBKFJGILGJ dgblalodoga = 1;
+	PokemonDisplayProto.Form form = 1;
 	int32 cpbmplabhfl = 2;
 	string hmkglhkakdj = 3;
 }
@@ -12269,8 +12269,8 @@ message KOCAAPCGIIM {
 	}
 
 	message JKFIOHACPOM {
-		HoloPokemonId omkipbfoaho = 1;
-		FDPJDLGIKKO.BJBKFJGILGJ dgblalodoga = 2;
+		HoloPokemonId id = 1;
+		PokemonDisplayProto.Form form = 2;
 	}
 
 	message OOPOEIDDOIC {
@@ -12326,7 +12326,7 @@ message KPIBHGNLNJJ {
 }
 
 message KPLKEPPADKK {
-	string omkipbfoaho = 1;
+	string id = 1;
 	double nbolglmejnc = 2;
 	double libhmbbcogc = 3;
 	double okeldjlephi = 4;
@@ -12340,11 +12340,11 @@ message KPOIJJDCECJ {
 	//use_quest_pokemon_encounter_distribuition = 2;
 	//}
 
-	HoloPokemonId dbdedahhmhm = 1;
+	HoloPokemonId pokemon_id = 1;
 	bool bcdofdfomca = 2;
-	FDPJDLGIKKO oekplilfldp = 3;
+	PokemonDisplayProto pokemon_display = 3;
 	bool gjoahoigmck = 4;
-	FDPJDLGIKKO lkhilbplobf = 5;
+	PokemonDisplayProto lkhilbplobf = 5;
 }
 
 message KPPPJMEABFA {
@@ -12369,7 +12369,7 @@ message LAIJAPBCCLE {
 	}
 
 	MFEOLCONAMK lknpioglmib = 1;
-	ALDBMMPFJEL ichkglcaffb = 2;
+	PokemonProto ichkglcaffb = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	uint64 ofpebfcdpip = 5;
@@ -12429,7 +12429,7 @@ message LCIOOJOPLCF {
 	string cojlbkbjoig = 5;
 	uint64 ofpebfcdpip = 6;
 	int64 gdmphaibabn = 7;
-	FDPJDLGIKKO oekplilfldp = 8;
+	PokemonDisplayProto pokemon_display = 8;
 }
 
 message LDFBPNLBNHK {
@@ -12437,7 +12437,7 @@ message LDFBPNLBNHK {
 }
 
 message LDLKOEOCMDD {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 	int32 diigephfbli = 2;
 }
 
@@ -12469,7 +12469,7 @@ message LENKFJIIJMI {
 }
 
 message LEPNPFFHOOP {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 	int32 ageajmoihbc = 2;
 }
 
@@ -12606,7 +12606,7 @@ message LJFFJIBHHGF {
 
 message LJGGCMADMNK {
 	Item oiedebkalie = 1;
-	uint64 dbdedahhmhm = 2;
+	uint64 pokemon_id = 2;
 	bool ifbmhbmmggn = 3;
 	HoloPokemonMove okbimmhbdha = 4;
 }
@@ -12652,11 +12652,11 @@ message LKECHLLILDC {
 
 message LKEDOEDIPKO {
 	message JEMDJIFBGCH {
-		IBCDGAICHEK bgegndnmcai = 1;
+		HoloTemporaryEvolutionId bgegndnmcai = 1;
 		int32 nflbcimogdc = 2;
 		int32 omlekgeogdn = 3;
-		repeated FDPJDLGIKKO.JILFIENGDDD ifolkdbdhbh = 4;
-		repeated FDPJDLGIKKO.JILFIENGDDD nmddhchlgbd = 5;
+		repeated PokemonDisplayProto.Gender ifolkdbdhbh = 4;
+		repeated PokemonDisplayProto.Gender nmddhchlgbd = 5;
 	}
 
 	int32 mgjcoegpbdk = 1;
@@ -12664,18 +12664,18 @@ message LKEDOEDIPKO {
 	int32 bkgigkfjgkb = 3;
 	int32 dhdfgflpnpi = 4;
 	int32 jpgfiapjchi = 5;
-	repeated FDPJDLGIKKO.HFAHLALEHBI dlpfhogicdb = 6;
-	repeated FDPJDLGIKKO.BJBKFJGILGJ boamijclabm = 7;
-	repeated FDPJDLGIKKO.JILFIENGDDD hpcjmhhooik = 8;
+	repeated PokemonDisplayProto.Costume dlpfhogicdb = 6;
+	repeated PokemonDisplayProto.Form boamijclabm = 7;
+	repeated PokemonDisplayProto.Gender hpcjmhhooik = 8;
 	bool cmdlbajipfo = 9;
-	repeated FDPJDLGIKKO.HFAHLALEHBI cggpkohgeoh = 10;
-	repeated FDPJDLGIKKO.BJBKFJGILGJ oomhnmdfilh = 11;
-	repeated FDPJDLGIKKO.JILFIENGDDD kibffhbaapg = 12;
+	repeated PokemonDisplayProto.Costume cggpkohgeoh = 10;
+	repeated PokemonDisplayProto.Form oomhnmdfilh = 11;
+	repeated PokemonDisplayProto.Gender kibffhbaapg = 12;
 	bool andoiojifcp = 13;
 	int32 lckilbmchib = 14;
 	int32 acllhhamkii = 15;
 	repeated JEMDJIFBGCH mobgeblbnkl = 16;
-	repeated FDPJDLGIKKO.BJBKFJGILGJ emdnnoklpci = 17;
+	repeated PokemonDisplayProto.Form emdnnoklpci = 17;
 }
 
 message LLIEHOFCPGJ {
@@ -12750,22 +12750,22 @@ message LLPKEJCEDEF {
 }
 
 message LMFFPDIABAP {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 	HoloPokemonId gagejdodbko = 2;
-	FDPJDLGIKKO oekplilfldp = 3;
-	bool gkkglkjnjko = 4;
-	string bfdgalmpgha = 5;
-	int64 apliafjaimk = 6;
+	PokemonDisplayProto pokemon_display = 3;
+	bool hatched_from_egg = 4;
+	string nickname = 5;
+	int64 captured_s2_cell_id = 6;
 	int64 nmfejghdeap = 7;
-	Item ggffkpacoln = 8;
+	Item pokeball = 8;
 	NIFECJJHOFB pjbfmkmmdek = 9;
 	int32 knmodedekpk = 10;
 	int64 bogcleacojl = 11;
 	int64 glopjilbpcc = 12;
 	int32 hhhghnhljfg = 13;
 	bool nifiaiaaiio = 14;
-	string angmojcfohk = 15;
-	int64 nammmaaande = 16;
+	string original_owner_nickname = 15;
+	int64 traded_time_ms = 16;
 	map<int32, EKOGBDHBFPD> ejcdhifcfpo = 17;
 	float ipocjhggpkh = 18;
 }
@@ -12782,7 +12782,7 @@ message LMHAGNFHPMF {
 }
 
 message LNAKPLCCHNF {
-	int32 dbdedahhmhm = 1;
+	int32 pokemon_id = 1;
 	int32 ngoojkdbmmf = 2;
 	int32 nnokaegcgpc = 3;
 }
@@ -12804,8 +12804,8 @@ message LNNNMJBLDMG {
 message LOAPKEFBJFA {
 	repeated CBBGPFNKAND bhfobbjmkjn = 1;
 	repeated NJDBAEDGAPB gciffeidlch = 2;
-	repeated ALDBMMPFJEL bonckjnbjme = 3;
-	repeated ALDBMMPFJEL ichkglcaffb = 4;
+	repeated PokemonProto bonckjnbjme = 3;
+	repeated PokemonProto ichkglcaffb = 4;
 	repeated LEPNPFFHOOP hlopieapaab = 5;
 	int32 oapfndplfbo = 6;
 	int32 mjhlkfmpnbo = 7;
@@ -12916,8 +12916,8 @@ message MAHHPJKLCBJ {
 }
 
 message MANIPANCBIK {
-	int32 dbdedahhmhm = 1;
-	int32 heeghghpjpm = 2;
+	int32 pokemon_id = 1;
+	int32 cp = 2;
 	string gjmajhipkmg = 3;
 	bool knngdeibpkj = 4;
 	bool dbnmmnmjojk = 5;
@@ -13138,9 +13138,9 @@ message MJAPBBMIDMO {
 }
 
 message MJAPPOEHFJM {
-	ALDBMMPFJEL ichkglcaffb = 1;
+	PokemonProto ichkglcaffb = 1;
 	PHGHEIGIHFE haihihhglfc = 2;
-	ALDBMMPFJEL dojpmomglha = 3;
+	PokemonProto dojpmomglha = 3;
 }
 
 message MJHCOKKBNEN {
@@ -13190,7 +13190,7 @@ message MLOLLIEFIOP {
 }
 
 message MMLGJJHAEAP {
-	repeated int64 dbdedahhmhm = 1;
+	repeated int64 pokemon_id = 1;
 	string oheempgnpfd = 2;
 	string dkfagcocnco = 3;
 }
@@ -13213,8 +13213,8 @@ message MNCNHKPOILA {
 }
 
 message MNOEOGAHAHK {
-	HoloPokemonId dbdedahhmhm = 1;
-	FDPJDLGIKKO oekplilfldp = 2;
+	HoloPokemonId pokemon_id = 1;
+	PokemonDisplayProto pokemon_display = 2;
 	uint64 ipbfkoobekb = 3;
 }
 
@@ -13404,14 +13404,14 @@ message MPHAOMIEANN {
 	float dmeaadbpjkb = 25;
 	repeated GKOKDOCBCBE djacoonoekl = 26;
 	float mikcffcoaaj = 27;
-	FDPJDLGIKKO.BJBKFJGILGJ dgblalodoga = 28;
+	PokemonDisplayProto.Form form = 28;
 	HoloPokemonMove kobnciibepc = 29;
 	HoloPokemonMove pkonegkdogc = 30;
 	repeated float nmgimflbado = 31;
 	repeated float dkcbmknfcmf = 32;
 	float endkhmfdakk = 33;
 	repeated float mlfomibhgdd = 34;
-	FDPJDLGIKKO.BJBKFJGILGJ khidhmiegnd = 35;
+	PokemonDisplayProto.Form khidhmiegnd = 35;
 	NKGOLOGHDGI bofllnafmkl = 36;
 	bool haplmcjpbck = 37;
 	bool ohhnppljlnn = 38;
@@ -13476,7 +13476,7 @@ message NAMFJMAANNH {
 	}
 
 	BNNKIEPAHNM lknpioglmib = 1;
-	ALDBMMPFJEL ichkglcaffb = 2;
+	PokemonProto ichkglcaffb = 2;
 	BECIKFFJAKP jkgmmkilnkp = 3;
 }
 
@@ -13627,12 +13627,12 @@ message NCGGMPNLDCI {
 
 	FFCEMHIMBAA lknpioglmib = 1;
 	DAFILIEKAIJ hhgmolgegga = 2;
-	ALDBMMPFJEL bonckjnbjme = 3;
+	PokemonProto bonckjnbjme = 3;
 	KDMAEPLELBN hgilgdabmlm = 4;
 }
 
 message NCMFDMCPOCO {
-	ALDBMMPFJEL ichkglcaffb = 1;
+	PokemonProto ichkglcaffb = 1;
 	int64 ofpebfcdpip = 2;
 	string cjkkpijggdk = 3;
 	KIKHLAJCKFP afmfefkfmjd = 4;
@@ -13692,12 +13692,12 @@ message NEBCHLHAMFD {
 }
 
 message NEJKMAAODHA {
-	uint64 dbdedahhmhm = 1;
-	IBCDGAICHEK bgegndnmcai = 2;
+	uint64 pokemon_id = 1;
+	HoloTemporaryEvolutionId bgegndnmcai = 2;
 }
 
 message NELMIKIPFBN {
-	ALDBMMPFJEL ichkglcaffb = 1;
+	PokemonProto ichkglcaffb = 1;
 	int32 ghkamnaceia = 2;
 	int32 lnnalhbfckj = 3;
 }
@@ -13707,7 +13707,7 @@ message NFBBGIONDPB {
 }
 
 message NFDNFDHCKHB {
-	string omkipbfoaho = 1;
+	string id = 1;
 	double nkmhnpecina = 2;
 	double efkjhbpfkip = 3;
 }
@@ -13843,7 +13843,7 @@ message NJELMBCBJPD {
 }
 
 message NJILJCNOPKP {
-	string omkipbfoaho = 1;
+	string id = 1;
 	string ncmadphkank = 2;
 }
 
@@ -13917,7 +13917,7 @@ message NLPLDFNBNEK {
 	HGOCIHMONMJ lknpioglmib = 1;
 	repeated EHJHIJNNLBI bhfobbjmkjn = 2;
 	int32 oeoiijapold = 3;
-	ALDBMMPFJEL bonckjnbjme = 4;
+	PokemonProto bonckjnbjme = 4;
 	int32 pknkcfdnppd = 5;
 	int64 nefkhkannmf = 6;
 	int32 endcfecclfi = 7;
@@ -14026,8 +14026,8 @@ message NOKLABCIJFM {
 message NOPBOLOABLA {
 	string cjkkpijggdk = 1;
 	int64 ofpebfcdpip = 2;
-	double iimgehocmop = 3;
-	double ajilbnppjoj = 4;
+	double player_lat = 3;
+	double player_lng = 4;
 	EncounterType gjmajhipkmg = 5;
 	double ddbnokfmfop = 6;
 	double fngdafpliok = 7;
@@ -14048,13 +14048,13 @@ message NOPCPOFBDCP {
 
 	COCKOCNLFCD lknpioglmib = 1;
 	NJAEBCDCPIG bhfobbjmkjn = 2;
-	ALDBMMPFJEL bonckjnbjme = 3;
+	PokemonProto bonckjnbjme = 3;
 	DIKABGBAPBF miekmaanpnh = 4;
 	PHGHEIGIHFE ipbgjddigkf = 5;
 }
 
 message NPHKICGOIGC {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 }
 
 message NPJBFJNLIDG {
@@ -14113,7 +14113,7 @@ message OAJFPEHJMMI {
 
 message OAMCMFMEBOG {
 	string imcahnopnbp = 1;
-	uint64 dbdedahhmhm = 2;
+	uint64 pokemon_id = 2;
 	double nbolglmejnc = 3;
 	double libhmbbcogc = 4;
 }
@@ -14302,8 +14302,8 @@ message ODOMIPGABCI {
 	}
 
 	IJCIBNDKAKP lknpioglmib = 1;
-	ALDBMMPFJEL kandajecmkp = 2;
-	ALDBMMPFJEL moilllmchcg = 3;
+	PokemonProto kandajecmkp = 2;
+	PokemonProto moilllmchcg = 3;
 	repeated ELOCLIIHNEI kjghdnhehed = 4;
 }
 
@@ -14368,7 +14368,7 @@ message OFMDMCEACDO {
 	repeated BMPNOJLNMKE oiedebkalie = 4;
 }
 
-message OGFNBIKAJBJ {
+message PokemonFortProto {
 	string imcahnopnbp = 1;
 	int64 oalbpkadiml = 2;
 	double nkmhnpecina = 3;
@@ -14381,12 +14381,12 @@ message OGFNBIKAJBJ {
 	int64 cibelfjpjon = 10;
 	bool gjbinglkofd = 11;
 	repeated Item kehfgjhpfdg = 12;
-	APBKNGNNCJM pbakecbmgef = 13;
+	MapPokemonProto pbakecbmgef = 13;
 	int64 gbcfgebmnao = 14;
 	HECLOGGLADP.HFMNNJOEFHD jhenlipfdoe = 15;
 	EKJPELBCOEI.GPKPGEJMJAG ampgaiimaip = 16;
 	int64 mecbdfchejd = 17;
-	FDPJDLGIKKO dlfpdcglbin = 18;
+	PokemonDisplayProto dlfpdcglbin = 18;
 	bool fchpbnodggh = 19;
 	BALAAGILBNJ lebikepfljp = 20;
 	IIKKHBEEICA gapmcdooanb = 21;
@@ -14443,7 +14443,7 @@ message OIAPMPHCADH {
 }
 
 message OIIAJOJJCJE {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 	string gfaenodgbfj = 2;
 }
 
@@ -14459,7 +14459,7 @@ message OIIEOOGMOIE {
 	}
 
 	GPBCFCGBOEC lknpioglmib = 1;
-	ALDBMMPFJEL nilfcplopob = 2;
+	PokemonProto nilfcplopob = 2;
 }
 
 message OIJEAIHIFKP {
@@ -14467,7 +14467,7 @@ message OIJEAIHIFKP {
 }
 
 message OILFGNLGMMC {
-	repeated IBCDGAICHEK fgoaoapfmnf = 1;
+	repeated HoloTemporaryEvolutionId fgoaoapfmnf = 1;
 }
 
 message OJENOALKMBA {
@@ -14579,7 +14579,7 @@ message OKEDDJDODBE {
 	string cjnjnhpmcpn = 9;
 	int64 aljicaodama = 10;
 	bool icgkicajbco = 11;
-	ALDBMMPFJEL okgnilhjglm = 12;
+	PokemonProto okgnilhjglm = 12;
 	OFEJEIDKKCC napolfdjibe = 13;
 	OFEJEIDKKCC kkffollmkph = 14;
 }
@@ -14596,7 +14596,7 @@ message OKILOKGCHJI {
 	}
 
 	PEHHHDPNLKE lknpioglmib = 1;
-	HoloPokemonId dbdedahhmhm = 2;
+	HoloPokemonId pokemon_id = 2;
 }
 
 message OKODKEACAJI {
@@ -14634,7 +14634,7 @@ message OKOKBENEGML {
 }
 
 message OLDCCHBKKIB {
-	uint64 dbdedahhmhm = 1;
+	uint64 pokemon_id = 1;
 	repeated uint64 oeidpodkpda = 2;
 }
 
@@ -14733,7 +14733,7 @@ message OMNNOKBKLGH {
 		DESERT = 1;
 	}
 
-	GCCMBOBIIMM ichkglcaffb = 1;
+	WildPokemonProto ichkglcaffb = 1;
 	NFEMCPANPPG hfbofekjdlh = 2;
 	ICAECOHOEAD kmieohojnij = 3;
 	KIKHLAJCKFP klnafjahpce = 4;
@@ -14755,8 +14755,8 @@ message OMOIOGHPNAA {
 message ONBEJIOEPLA {
 	int32 caofijjekjd = 1;
 	repeated HoloPokemonId ckcgdmiokod = 2;
-	repeated FDPJDLGIKKO.BJBKFJGILGJ gmhimidfdak = 3;
-	repeated FDPJDLGIKKO.HFAHLALEHBI dfalonhjpbj = 4;
+	repeated PokemonDisplayProto.Form gmhimidfdak = 3;
+	repeated PokemonDisplayProto.Costume dfalonhjpbj = 4;
 }
 
 message ONCPGFDDMFG {
@@ -14894,7 +14894,7 @@ message PBIELDMOCHI {
 	int64 dgeeakhhfcb = 2;
 	JEIFAHDMBGO kkpbdloefgp = 3;
 	int32 gagejdodbko = 4;
-	uint64 dbdedahhmhm = 5;
+	uint64 pokemon_id = 5;
 }
 
 message PBJAFGLJBHD {
@@ -14945,7 +14945,7 @@ message PEENJJIEMFI {
 	}
 
 	GNGMGJHLEKK kmieohojnij = 1;
-	ALDBMMPFJEL gofabgbblie = 2;
+	PokemonProto gofabgbblie = 2;
 }
 
 message PEGHGGLCAKJ {
@@ -15204,7 +15204,7 @@ message PKAAAMFELOH {
 
 message PKDJIOFHMKP {
 	string imcahnopnbp = 1;
-	uint64 dbdedahhmhm = 2;
+	uint64 pokemon_id = 2;
 	double nbolglmejnc = 3;
 	double libhmbbcogc = 4;
 }
@@ -15223,26 +15223,26 @@ message PKFFFFHFEMC {
 	}
 
 	message GOCDDNAFPPK {
-		uint64 dbdedahhmhm = 1;
+		uint64 pokemon_id = 1;
 		int32 gagejdodbko = 2;
-		int32 heeghghpjpm = 3;
-		float cfhhnbblfof = 4;
-		int32 bjhlhjeenbl = 5;
-		int32 blgliecjmig = 6;
-		int32 diaceelinac = 7;
-		int32 gjnfnfelhmp = 8;
-		int32 cmmdjjngedi = 9;
+		int32 cp = 3;
+		float cp_multiplier = 4;
+		int32 stamina = 5;
+		int32 max_stamina = 6;
+		int32 move1 = 7;
+		int32 move2 = 8;
+		int32 move3 = 9;
 		int32 enphhpkjopd = 10;
-		FDPJDLGIKKO oekplilfldp = 11;
-		int32 flfklhjolgm = 12;
-		int32 ecbmljeldpn = 13;
-		int32 paanofadngm = 14;
+		PokemonDisplayProto pokemon_display = 11;
+		int32 individual_attack = 12;
+		int32 individual_defense = 13;
+		int32 individual_stamina = 14;
 		int32 hhlagbmbfhl = 15;
 		int32 llkjcghijcj = 16;
 		int32 cefjefdfchf = 17;
 		int32 eickpdhlobo = 18;
-		string bfdgalmpgha = 19;
-		Item ggffkpacoln = 20;
+		string nickname = 19;
+		Item pokeball = 20;
 	}
 
 	message OJLFKPEOLHG {
@@ -15307,12 +15307,12 @@ message PlatformPlayerLocaleProto {
 }
 
 message PLKINHKFOLE {
-	IBCDGAICHEK jiephffmknb = 1;
+	HoloTemporaryEvolutionId jiephffmknb = 1;
 	int32 okaeaomdlma = 2;
 	int32 chjfgdmngln = 3;
 }
 
-message PLLHEFPPADP {
+message PokemonSummaryFortProto {
 	string kbpagklcblg = 1;
 	int64 oalbpkadiml = 2;
 	double nkmhnpecina = 3;
@@ -15424,7 +15424,7 @@ message POCEJNDELFK {
 
 message POHFHMGJHIC {
 	Item oiedebkalie = 1;
-	uint64 dbdedahhmhm = 2;
+	uint64 pokemon_id = 2;
 }
 
 message POIDDFIGCOO {
@@ -15478,7 +15478,7 @@ message PPAHMAOFBLN {
 
 message PPKCPKNJPOB {
 	string imcahnopnbp = 1;
-	uint64 dbdedahhmhm = 2;
+	uint64 pokemon_id = 2;
 	double nbolglmejnc = 3;
 	double libhmbbcogc = 4;
 }
