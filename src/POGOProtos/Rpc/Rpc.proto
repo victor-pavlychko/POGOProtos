@@ -3650,7 +3650,7 @@ message ABCBGAELBMC {
 		SUCCESS = 1;
 	}
 
-	CMNOJMFBNPH lknpioglmib = 1;
+	CMNOJMFBNPH result = 1;
 	string haigmbjcoff = 2;
 	PokemonProto bpeoggcnapi = 3;
 	PokemonProto ickcgfkhfcp = 4;
@@ -3685,11 +3685,11 @@ message ABMHEINCJAD {
 		int32 nkpmpolioeg = 4;
 	}
 
-	FPGEBIHKENB.AMOJKLIMIJN kmieohojnij = 1;
+	FPGEBIHKENB.AMOJKLIMIJN status = 1;
 	PokemonProto pijaijooief = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
-	int32 hgemjecnlhf = 5;
+	int32 throws_remaining = 5;
 	uint64 ofpebfcdpip = 6;
 	string eofhedkiaeh = 7;
 	IJHJCAMNAOC cgnhbimkenh = 8;
@@ -3705,15 +3705,15 @@ message ABMPOJJICGP {
 		POKEMON_INVENTORY_FULL = 5;
 	}
 
-	CFCMIIHNPJN lknpioglmib = 1;
-	PokemonProto ichkglcaffb = 2;
+	CFCMIIHNPJN result = 1;
+	PokemonProto pokemon = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 ipgmaoblgkn = 5;
 }
 
 message ACCLPNAOAEO {
-	string lknpioglmib = 1;
+	string result = 1;
 	string imcahnopnbp = 2;
 	int32 mefmgklgpan = 3;
 	int64 ajiplgkmbjm = 4;
@@ -3821,7 +3821,7 @@ message AFKOBDGPOAM {
 		ERROR_BATTLE_ID_NOT_RAID = 6;
 	}
 
-	PBDMNICIAIC lknpioglmib = 1;
+	PBDMNICIAIC result = 1;
 	DNENDKDMLOI pkflpdmemff = 2;
 	LFJKDLOAJBO jfejkepehdk = 3;
 }
@@ -3859,7 +3859,7 @@ message AIDOHMOFEJL {
 		ERROR_UNKNOWN = 2;
 	}
 
-	FNPEBNNCBEJ lknpioglmib = 1;
+	FNPEBNNCBEJ result = 1;
 	int64 hiehmodming = 2;
 }
 
@@ -3892,7 +3892,7 @@ message AJGPKMDOBJJ {
 		SUCCESS = 1;
 	}
 
-	HACPEJKFAME lknpioglmib = 1;
+	HACPEJKFAME result = 1;
 	NJAEBCDCPIG mkllhjhebdg = 2;
 	int32 cofocmihggk = 3;
 	int32 ekphkieopmh = 4;
@@ -4005,12 +4005,12 @@ message ALNMIHJCIDE {
 		POKEMON_FLED = 2;
 	}
 
-	HJKIECIHNEG lknpioglmib = 1;
-	int32 elmflkhhleb = 2;
-	int32 imiajlnomhl = 3;
+	HJKIECIHNEG result = 1;
+	int32 pokedex_number = 2;
+	int32 combat_points = 3;
 	uint64 pokemon_id = 4;
 	PokemonDisplayProto pokemon_display = 5;
-	EncounterType gjmajhipkmg = 6;
+	EncounterType encounter_type = 6;
 }
 
 message AMCOKCNMDJA {
@@ -4023,7 +4023,7 @@ message AMCOKCNMDJA {
 		POI_INACCESSIBLE = 5;
 	}
 
-	OMHKMPINAJC lknpioglmib = 1;
+	OMHKMPINAJC result = 1;
 	DAFILIEKAIJ hhgmolgegga = 2;
 }
 
@@ -4046,7 +4046,7 @@ message AMHDGFAGKBD {
 		ERROR_NO_POKEMON_SPECIFIED = 10;
 	}
 
-	AMGDPEHOHNJ kmieohojnij = 1;
+	AMGDPEHOHNJ status = 1;
 	FMKAHOBBKHB jefpgmoedpe = 2;
 	bytes jpohffgkkgh = 3;
 }
@@ -4068,11 +4068,11 @@ message AMJLNEPMKMJ {
 		ERROR_EXCEEDED_CHANGE_LIMIT = 6;
 	}
 
-	NAMONILICKK lknpioglmib = 1;
+	NAMONILICKK result = 1;
 }
 
 message AMMPPKLHMML {
-	string gfaenodgbfj = 1;
+	string quest_id = 1;
 }
 
 message ANADILCOJDF {
@@ -4084,7 +4084,7 @@ message ANADILCOJDF {
 		ERROR_PLAYER_OUT_OF_RANGE = 4;
 	}
 
-	DJFCHPNGIIK lknpioglmib = 1;
+	DJFCHPNGIIK result = 1;
 }
 
 message ANIDHIOGDDC {
@@ -4107,7 +4107,7 @@ message ANJLIHIEALE {
 		INVALID_ELITE_MOVE = 10;
 	}
 
-	IJPGGFEBCIE lknpioglmib = 1;
+	IJPGGFEBCIE result = 1;
 	PokemonProto odkhmgbpebc = 2;
 }
 
@@ -4127,7 +4127,7 @@ message ANMJCIHAOPD {
 		ERROR_UNKNOWN = 3;
 	}
 
-	MMKOGBIBDHD lknpioglmib = 1;
+	MMKOGBIBDHD result = 1;
 }
 
 message ANPDNLCEIFP {
@@ -4138,7 +4138,7 @@ message ANPDNLCEIFP {
 		NOT_QUALIFIED = 3;
 	}
 
-	HDCFAOEKHKG lknpioglmib = 1;
+	HDCFAOEKHKG result = 1;
 	HPHJDAHMJLE ifnblpfllic = 2;
 }
 
@@ -4152,7 +4152,7 @@ message AOEOAPCPIOD {
 		ERROR_BUDDY_NOT_VALID = 2;
 	}
 
-	DICECIEAOKL lknpioglmib = 1;
+	DICECIEAOKL result = 1;
 	int64 ehmhioegndc = 2;
 	int64 kmgacehpmof = 3;
 	GCJJKGJEEEF jodndjickjg = 4;
@@ -4170,7 +4170,7 @@ message APBGDIKJOHO {
 		SUCCESS = 1;
 	}
 
-	BGGHOEPOFLI lknpioglmib = 1;
+	BGGHOEPOFLI result = 1;
 	string imcahnopnbp = 2;
 	repeated CAEGHIJGHIP bhfobbjmkjn = 3;
 	int32 pedlffgknhn = 4;
@@ -4211,7 +4211,7 @@ message APJFIJBFNIM {
 		SUCCESS = 1;
 	}
 
-	ABKPOJGCCCJ lknpioglmib = 1;
+	ABKPOJGCCCJ result = 1;
 	NJAEBCDCPIG mkllhjhebdg = 2;
 	int32 dnpociomhpj = 3;
 	float joecegklged = 4;
@@ -4233,7 +4233,7 @@ message APMCAOIKMGE {
 		FAILED_POKEMON_ALREADY_MEGA_EVOLVED = 7;
 	}
 
-	GGCENDAMEBO lknpioglmib = 1;
+	GGCENDAMEBO result = 1;
 	PokemonProto pijfbheoioc = 2;
 	int32 dkooogjgkol = 3;
 }
@@ -4318,23 +4318,23 @@ message BBCKABPEDBN {
 	IMMPHAEMGIL gbkmeakaejp = 6;
 }
 
-message BBOGEEDGFKL {
-	int32 dfmncmhjnhh = 1;
-	int32 dhdmlbchfen = 2;
-	bool ngopjjcmjfi = 3;
-	repeated string bbjchmnofmj = 4;
-	int32 ljppifiaalm = 5;
-	int32 pfidnompene = 6;
-	int32 aiiljggpdha = 7;
-	int32 bhkheicnpde = 8;
-	int32 ggkpooeaici = 9;
-	bool ghoglbnjlnm = 10;
-	int32 keffhbmejff = 11;
-	int32 bpbeihaggjd = 12;
-	bool ofknibgjmod = 13;
-	int32 lnbcgeooenk = 14;
-	string hlhmffdafim = 15;
-	bool ofdnngnapfk = 16;
+message BuddyGlobalSettings {
+	int32 buddy_v2_min_player_level = 1;
+	int32 buddy_multiplayer_min_player_level = 2;
+	bool enable_monodepth = 3;
+	repeated string monodepth_devices = 4;
+	int32 lobby_status_message_duration_ms = 5;
+	int32 mapping_instruction_duration_ms = 6;
+	int32 group_photo_leader_tracking_interval_ms = 7;
+	int32 group_photo_countdown_ms = 8;
+	int32 lobby_timeout_ms = 9;
+	bool enable_wallaby_telemetry = 10;
+	int32 mapping_hint_timeout_ms = 11;
+	int32 group_photo_simultaneous_shots = 12;
+	bool plfe_auth_tokens_enabled = 13;
+	int32 group_photo_shot_interval_ms = 14;
+	string arbe_endpoint_url = 15;
+	bool buddy_on_map_required_to_open_gifts = 16;
 }
 
 message BCKBAHNELOP {
@@ -4343,11 +4343,11 @@ message BCKBAHNELOP {
 	uint32 loiejlocpgk = 3;
 }
 
-message BECIKFFJAKP {
-	repeated HoloActivityType colganokalo = 1;
-	repeated int32 mnmpnlbcmga = 2;
-	repeated int32 ogdfcmpkkdi = 3;
-	repeated int32 oapfndplfbo = 4;
+message CaptureAward {
+	repeated HoloActivityType activity_type = 1;
+	repeated int32 xp = 2;
+	repeated int32 candy = 3;
+	repeated int32 stardust = 4;
 }
 
 message BEOEJOGBKAL {
@@ -4435,7 +4435,7 @@ message BIOPFEGKCPH {
 		FAILURE = 2;
 	}
 
-	CPHHPJOAKEO lknpioglmib = 1;
+	CPHHPJOAKEO result = 1;
 }
 
 message BIPKOOFAFIB {
@@ -4448,7 +4448,7 @@ message BJDMBIGNJFA {
 }
 
 message BJFPJJNMOBO {
-	string gfaenodgbfj = 1;
+	string quest_id = 1;
 }
 
 message BJJIJIDPBJG {
@@ -4534,7 +4534,7 @@ message BOGLPAINIHB {
 	bytes dlbgipgogej = 2;
 	int64 mnhmmjdcpfb = 3;
 	int32 bopbhiekded = 4;
-	AIEMDOGMEEC lknpioglmib = 5;
+	AIEMDOGMEEC result = 5;
 }
 
 message BOKKJPBAPLK {
@@ -4547,7 +4547,7 @@ message BOKKJPBAPLK {
 
 	repeated BJJIJIDPBJG njpekoeejdc = 1;
 	uint64 bbaflhkgaha = 2;
-	NMPPMINJEGJ lknpioglmib = 3;
+	NMPPMINJEGJ result = 3;
 	int32 flmnggdnnin = 4;
 }
 
@@ -4561,12 +4561,12 @@ message BPCCABNBDHC {
 }
 
 message BPDMDBPKPHJ {
-	string kmieohojnij = 1;
+	string status = 1;
 	MLDIDGPMNBD kmfhjdcdpkf = 2;
 	int32 fibpkaghild = 3;
 	int32 eaphhpcckij = 4;
 	bool fnmeoiangne = 5;
-	double anjkjgbdooa = 6;
+	double miss_percent = 6;
 }
 
 message BPGNLCIMNMM {
@@ -4612,7 +4612,7 @@ message BPIPMONNGBO {
 
 	int64 dgeeakhhfcb = 1;
 	bool kmionnibohi = 2;
-	GOBOAGDIPON kipggpmfaoj = 3;
+	CatchPokemonLogEntry kipggpmfaoj = 3;
 	APBGDIKJOHO gaephkchnpf = 4;
 	FKKEPBEEOAN gdigginfjjc = 5;
 	HKEHHKMJGCH ggelgaegpfk = 6;
@@ -4662,7 +4662,7 @@ message CBBMLGLCMIL {
 	KDMAEPLELBN fhlamjfjhck = 1;
 	string jemkidipklg = 2;
 	repeated string hjjjglcmfcn = 3;
-	NLLDFFLGGEA lknpioglmib = 4;
+	NLLDFFLGGEA result = 4;
 	string ckamanebocf = 5;
 	repeated string ncondcjknpn = 6;
 	string fkckjhcddkm = 7;
@@ -4708,8 +4708,8 @@ message CEAJGAFLNHB {
 		ERROR_UNKNOWN = 4;
 	}
 
-	PIFBIMGBKFI lknpioglmib = 1;
-	PokemonProto ichkglcaffb = 2;
+	PIFBIMGBKFI result = 1;
+	PokemonProto pokemon = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 ipgmaoblgkn = 5;
@@ -4770,7 +4770,7 @@ message CHFOABMKGHE {
 		ERROR_STATE_HANDLER = 6;
 	}
 
-	KKMFACLPBNH lknpioglmib = 1;
+	KKMFACLPBNH result = 1;
 	HDJJJBKOGHK mfcgefaehpn = 2;
 }
 
@@ -4856,7 +4856,7 @@ message CKIKHFDOKJM {
 		ERROR_SOCIAL_RPC = 5;
 	}
 
-	GFINJCCAHEM lknpioglmib = 1;
+	GFINJCCAHEM result = 1;
 }
 
 message CKILMCJNLKM {
@@ -4864,7 +4864,7 @@ message CKILMCJNLKM {
 }
 
 message CKKFPAKEEPD {
-	string gfaenodgbfj = 1;
+	string quest_id = 1;
 	string ojmlleijelj = 2;
 }
 
@@ -4875,7 +4875,7 @@ message CKKHJCJFMMF {
 		ERROR = 2;
 	}
 
-	FELADNICGHN kmieohojnij = 1;
+	FELADNICGHN status = 1;
 	LOKFJJKGMFM apemhpaapnm = 2;
 }
 
@@ -4943,7 +4943,7 @@ message COIFCGGCIJH {
 		ERROR_UNKNOWN = 3;
 	}
 
-	PMFOILGNOJI lknpioglmib = 1;
+	PMFOILGNOJI result = 1;
 	NJAEBCDCPIG mkllhjhebdg = 2;
 }
 
@@ -4966,7 +4966,7 @@ message CPNAPILIJDM {
 		ERROR_RETRY_UNSUCCESSFUL = 6;
 	}
 
-	BNFCFLCEONC lknpioglmib = 1;
+	BNFCFLCEONC result = 1;
 	GJLECHMJABM hnoncfdkkha = 2;
 	string fplbjhfdcik = 3;
 }
@@ -4986,7 +4986,7 @@ message CPPJCGKLFPM {
 message DAFILIEKAIJ {
 	string id = 1;
 	int32 occjnjgeblb = 2;
-	repeated PokemonProto ichkglcaffb = 3;
+	repeated PokemonProto pokemon = 3;
 	string jemkidipklg = 4;
 	repeated string cmdehaandpc = 5;
 	int32 fehiimebgih = 6;
@@ -5050,12 +5050,12 @@ message DCJDAKLAGHH {
 	OCNHGIDKGHN boglkhfolag = 1;
 }
 
-message DCMIECMMAOK {
-	string gfaenodgbfj = 1;
-	PokemonProto ichkglcaffb = 2;
-	EncounterType gjmajhipkmg = 3;
-	bool gjoahoigmck = 4;
-	PokemonProto ffigdgocnij = 5;
+message QuestPokemonEncounterProto {
+	string quest_id = 1;
+	PokemonProto pokemon = 2;
+	EncounterType encounter_type = 3;
+	bool is_hidden_ditto = 4;
+	PokemonProto ditto = 5;
 }
 
 message DDEPDHFNKGM {
@@ -5079,7 +5079,7 @@ message DEGKKEHEOHB {
 }
 
 message DEGPIEOKFCP {
-	string lknpioglmib = 1;
+	string result = 1;
 	string imcahnopnbp = 2;
 	int32 mefmgklgpan = 3;
 	int64 ajiplgkmbjm = 4;
@@ -5213,7 +5213,7 @@ message DHEJIKKONLA {
 		ERROR = 2;
 	}
 
-	OAEPFPICMCA lknpioglmib = 1;
+	OAEPFPICMCA result = 1;
 }
 
 message DHFFEPDIKIH {
@@ -5225,7 +5225,7 @@ message DHFFEPDIKIH {
 		ERROR_QUEUE_NOT_FOUND = 4;
 	}
 
-	KCGAKLMOMCM lknpioglmib = 1;
+	KCGAKLMOMCM result = 1;
 }
 
 message DHFNCFFEEMK {
@@ -5272,7 +5272,7 @@ message DIANNIAMLNE {
 		ERROR_POI_INACCESSIBLE = 14;
 	}
 
-	CCHIBDMFBKO lknpioglmib = 1;
+	CCHIBDMFBKO result = 1;
 	int64 bbkkbkglpca = 2;
 	int64 mapllccpgeh = 3;
 	string ijnfkbjbimj = 4;
@@ -5301,7 +5301,7 @@ message DIFCPMBOEGC {
 	string enlljhnggpn = 1;
 	string fncimgnlhed = 2;
 	bool abgcbmkeheo = 3;
-	JFAJACNDHHM kmieohojnij = 4;
+	JFAJACNDHHM status = 4;
 	KDHELLCEOJD icphdioaefb = 5;
 	repeated string miojimbjmoh = 6;
 }
@@ -5490,7 +5490,7 @@ message DNPCHABOALN {
 }
 
 message DONKAMDNCNH {
-	HoloPokemonId ichkglcaffb = 1;
+	HoloPokemonId pokemon = 1;
 	ELOKNDENLAN gender = 2;
 }
 
@@ -5542,7 +5542,7 @@ message EAFJGLIOOJA {
 		ERROR_FAILED_TO_UPDATE = 5;
 	}
 
-	NAHHKMGBCHN lknpioglmib = 1;
+	NAHHKMGBCHN result = 1;
 	int64 enhgfeljpii = 2;
 	string nconcpeggaa = 3;
 }
@@ -5583,7 +5583,7 @@ message EBBKNEGDJKB {
 		//sticker = 22;
 	//}
 
-	PokemonProto ichkglcaffb = 1;
+	PokemonProto pokemon = 1;
 	CAEGHIJGHIP oiedebkalie = 2;
 	LKEDOEDIPKO hgipdibgipm = 3;
 	LLMLGFKAAAP fmgnojhgnpg = 4;
@@ -5605,7 +5605,7 @@ message EBBKNEGDJKB {
 }
 
 message NearbyPokemonProto {
-	int32 elmflkhhleb = 1;
+	int32 pokedex_number = 1;
 	float hajlpajgmhk = 2;
 	uint64 ofpebfcdpip = 3;
 	string imcahnopnbp = 4;
@@ -5633,7 +5633,7 @@ message EBNLNFJDDPB {
 		ERROR = 2;
 	}
 
-	HPBMBIAEMNJ kmieohojnij = 1;
+	HPBMBIAEMNJ status = 1;
 	EABMEELCNBG ojceedicdbf = 2;
 }
 
@@ -5646,7 +5646,7 @@ message EBOHDCGKJOC {
 }
 
 message EBOOBOKAKIC {
-	ShareExRaidPassResult lknpioglmib = 1;
+	ShareExRaidPassResult result = 1;
 	DIKABGBAPBF miekmaanpnh = 2;
 	PHGHEIGIHFE ipbgjddigkf = 3;
 }
@@ -5660,7 +5660,7 @@ message ECFBFHBLNGK {
 		ERROR_VS_SEEKER_NEVER_STARTED_CHARGING = 4;
 	}
 
-	MFNJIGIAFEF lknpioglmib = 1;
+	MFNJIGIAFEF result = 1;
 	KFMIIFMAEED ohddfmphepg = 2;
 	bool kkcdimnkmoa = 3;
 	IMCGAOMOKPE ipjhekmnemj = 4;
@@ -5701,7 +5701,7 @@ message EDGCIFNDFNB {
 		ERROR_GIFT_DOES_NOT_EXIST = 3;
 	}
 
-	NGGDFLOMCOI lknpioglmib = 1;
+	NGGDFLOMCOI result = 1;
 }
 
 message EDGEFHGFIEN {
@@ -5726,7 +5726,7 @@ message EECDJNFJPDA {
 		ERROR_NOT_IN_RANGE = 3;
 	}
 
-	ACAOAMPNEDF lknpioglmib = 1;
+	ACAOAMPNEDF result = 1;
 	KAKABFPJGBL lodbnpjpcda = 2;
 	string ijnfkbjbimj = 3;
 	NELMIKIPFBN ncnkpamlfjm = 4;
@@ -5783,7 +5783,7 @@ message EHEADEAJJPO {
 		ERROR_NOT_V2_FLOW = 4;
 	}
 
-	BEKOLFFJAAL lknpioglmib = 1;
+	BEKOLFFJAAL result = 1;
 }
 
 message EHHIPEMHKMO {
@@ -5825,7 +5825,7 @@ message EIAMJIJBKIG {
 		LEAVE_UNKNOWN_ERROR = 3;
 	}
 
-	CELIGOAJDMN lknpioglmib = 1;
+	CELIGOAJDMN result = 1;
 }
 
 message EIDEDNCDAJL {
@@ -5834,7 +5834,7 @@ message EIDEDNCDAJL {
 		SUCCESS = 1;
 	}
 
-	GLEKDIGDCGE lknpioglmib = 1;
+	GLEKDIGDCGE result = 1;
 	string njmifimehac = 2;
 	LOAPKEFBJFA mkllhjhebdg = 3;
 }
@@ -5880,7 +5880,7 @@ message EIIOIPNIHIB {
 	JDCDGFFEOLL pdkmidojham = 39;
 	GBLNNABKFFO plhdmfaejbi = 40;
 	PBJAFGLJBHD nhaklepmpkg = 41;
-	BBOGEEDGFKL nbgiffkfain = 43;
+	BuddyGlobalSettings nbgiffkfain = 43;
 	IFABFGLHKJN fhcniebabeh = 44;
 	ODNCDJJPEIF jnkicjicojc = 45;
 	bool jjoomokpcof = 47;
@@ -5914,7 +5914,7 @@ message EJFPEGKBOGJ {
 		ERROR_GIFT_REDEEMED = 4;
 	}
 
-	OBPBFBFEIBB lknpioglmib = 1;
+	OBPBFBFEIBB result = 1;
 	NJAEBCDCPIG mkllhjhebdg = 2;
 }
 
@@ -5927,7 +5927,7 @@ message EJGOGPLOONK {
 		ERROR_REQUEST_TIMED_OUT = 4;
 	}
 
-	MFBPFOGEIFJ lknpioglmib = 1;
+	MFBPFOGEIFJ result = 1;
 }
 
 message EJMECINBIHI {
@@ -5950,7 +5950,7 @@ message EJMECINBIHI {
 		ERROR_DAILY_LIMIT_REACHED = 15;
 	}
 
-	HCODFIGEOHB lknpioglmib = 1;
+	HCODFIGEOHB result = 1;
 	HDJJJBKOGHK mfcgefaehpn = 2;
 }
 
@@ -5970,7 +5970,7 @@ message EKBJDBHFEND {
 		ERROR_INVALID_DISPLAY = 3;
 	}
 
-	JPFOGPBOCFH kmieohojnij = 1;
+	JPFOGPBOCFH status = 1;
 	repeated EDNFCLGDGHC eaobmomkgej = 2;
 }
 
@@ -6026,7 +6026,7 @@ message ELCCHAHMOGD {
 		SUCCESS = 1;
 	}
 
-	DIJALIACLEF lknpioglmib = 1;
+	DIJALIACLEF result = 1;
 	string id = 2;
 	int64 mkffbahdnoc = 3;
 }
@@ -6064,12 +6064,12 @@ message ELGNGJBMNIH {
 		ERROR_ACCESS_DENIED = 10;
 	}
 
-	OPNHJJIJPML lknpioglmib = 1;
+	OPNHJJIJPML result = 1;
 	GJLECHMJABM hnoncfdkkha = 2;
 }
 
 message ELJPJEJGIFO {
-	repeated string gfaenodgbfj = 1;
+	repeated string quest_id = 1;
 }
 
 message ELOKNDENLAN {
@@ -6103,7 +6103,7 @@ message EMIENKIBFDC {
 		ERROR_ACCESS_DENIED = 4;
 	}
 
-	IGFEHDDIBKF lknpioglmib = 1;
+	IGFEHDDIBKF result = 1;
 	PKFFFFHFEMC hgjkjcjaoeh = 2;
 }
 
@@ -6162,7 +6162,7 @@ message ENPDEOALMPA {
 		string jojhdjhonho = 10;
 	}
 
-	GAKJPAPJHFE kmieohojnij = 1;
+	GAKJPAPJHFE status = 1;
 	repeated BEGLBCMGJCB acdlgmlhhbe = 2;
 }
 
@@ -6185,7 +6185,7 @@ message EOJPEHGJNGD {
 		ERROR_UNKNOWN = 2;
 	}
 
-	DMMMIMEBBEN kmieohojnij = 1;
+	DMMMIMEBBEN status = 1;
 	string aicmffombmc = 2;
 }
 
@@ -6221,14 +6221,14 @@ message EPNKANFHAGJ {
 		ERROR_INVALD_NUMBER_ATTACKING_POKEMON_IDS = 2;
 	}
 
-	PNPFLJJCDLE lknpioglmib = 1;
+	PNPFLJJCDLE result = 1;
 	CombatRewardStatus aegmjamgjnn = 2;
 	NJAEBCDCPIG mkllhjhebdg = 3;
 	int32 fdmajoleinf = 4;
 }
 
 message EPPBNOAFPBP {
-	FPGEBIHKENB.AMOJKLIMIJN kmieohojnij = 1;
+	FPGEBIHKENB.AMOJKLIMIJN status = 1;
 	NJAEBCDCPIG mkllhjhebdg = 2;
 	bool nlkojkakmgb = 3;
 }
@@ -6270,7 +6270,7 @@ message FALICJNCHKN {
 	}
 
 	message DGDANKOMHLD {
-		MDPBJBMBPNJ lknpioglmib = 1;
+		MDPBJBMBPNJ result = 1;
 		BJJIJIDPBJG njpekoeejdc = 2;
 		string hjjjglcmfcn = 3;
 	}
@@ -6352,7 +6352,7 @@ message FDJIHGKMFHI {
 		SUCCESS_BALLOON_ALREADY_EXISTS = 6;
 	}
 
-	PMAMDBAMODI kmieohojnij = 1;
+	PMAMDBAMODI status = 1;
 	LENKFJIIJMI cgmdofohjeg = 2;
 }
 
@@ -8518,7 +8518,7 @@ message FEEKAKCGDEG {
 		SUCCESS = 1;
 	}
 
-	HBEHCBKLOKB kmieohojnij = 1;
+	HBEHCBKLOKB status = 1;
 	bool nearby_pokemons = 2;
 	bool adoifjigkid = 3;
 	bool nblpaoggfml = 4;
@@ -8526,8 +8526,8 @@ message FEEKAKCGDEG {
 	int64 ofpebfcdpip = 6;
 	bool dfkjpapgplo = 7;
 	string efbmifbamni = 8;
-	EncounterType gjmajhipkmg = 9;
-	int32 elmflkhhleb = 10;
+	EncounterType encounter_type = 9;
+	int32 pokedex_number = 10;
 }
 
 message FEIENOHJGEK {
@@ -8542,7 +8542,7 @@ message FEIENOHJGEK {
 		ERROR_ACCESS_DENIED = 7;
 	}
 
-	BDFBHCIDNHF lknpioglmib = 1;
+	BDFBHCIDNHF result = 1;
 }
 
 message FFAMKAANHIO {
@@ -8557,7 +8557,7 @@ message FFELGOMNDAO {
 		NO_NEWS_FOUND = 2;
 	}
 
-	FBCCCGCEIBO lknpioglmib = 1;
+	FBCCCGCEIBO result = 1;
 	EGGLICKGJPN mmaamhgdmhg = 2;
 }
 
@@ -8671,13 +8671,13 @@ message FIDCFPOOKKG {
 	PNDLNDCFKNE bnegcekbjhh = 8;
 	HJDNPPOCILK cccmoegfpoo = 9;
 	HEPHIKDHOMM ndpmplepcmc = 99;
-	string gfaenodgbfj = 100;
+	string quest_id = 100;
 	int64 oidpmafbboo = 101;
 	LAJHINHAOEL bennlieoijh = 102;
 	string dmdlmedeace = 103;
 	int32 kjajkaocpfb = 104;
 	GOHMDLEEDFI caeidlciene = 105;
-	EKCKPOLFPPB kmieohojnij = 106;
+	EKCKPOLFPPB status = 106;
 	repeated HOALANDJDMB eplppgdadfi = 107;
 	int64 nmfejghdeap = 108;
 	int64 aailfkjiepb = 109;
@@ -8725,7 +8725,7 @@ message FJDLAOAJMFH {
 		NOT_AVAILABLE = 5;
 	}
 
-	IMOFFPJEDNF lknpioglmib = 1;
+	IMOFFPJEDNF result = 1;
 	int32 mfikbpgkane = 2;
 	string cjkkpijggdk = 3;
 }
@@ -8752,7 +8752,7 @@ message FKHMLMELHNH {
 		ERROR_UNKNOWN = 3;
 	}
 
-	DCGJNOKPAHJ kmieohojnij = 1;
+	DCGJNOKPAHJ status = 1;
 	HoloPokemonId foagdffahnf = 2;
 	PokemonDisplayProto kolmkdcjnli = 3;
 	uint64 ofpebfcdpip = 4;
@@ -8765,7 +8765,7 @@ message FKKEPBEEOAN {
 		CANDY_FOUND = 1;
 	}
 
-	NEFAGJIFHJD lknpioglmib = 1;
+	NEFAGJIFHJD result = 1;
 	HoloPokemonId gbbmdnjfgmh = 2;
 	int32 mbgpljllccj = 3;
 	PokemonDisplayProto pokemon_display = 4;
@@ -8789,7 +8789,7 @@ message FMAFEHEBKME {
 
 message FMCHABOILMM {
 	string dmdlmedeace = 1;
-	MPHAOMIEANN ichkglcaffb = 2;
+	MPHAOMIEANN pokemon = 2;
 	DBEOJHAOHGE oiedebkalie = 3;
 	LPBNPBEHHOL mapecdeeeob = 4;
 	GLOJKFNCMMC khoijpbphke = 5;
@@ -8945,7 +8945,7 @@ message FPNENBBFHPH {
 		ERROR_UNKNOWN = 2;
 	}
 
-	AACBPDMNKIP lknpioglmib = 1;
+	AACBPDMNKIP result = 1;
 }
 
 message GAAKFMAGDLB {
@@ -8980,7 +8980,7 @@ message GBDKJIEMBMF {
 		ERROR_REWARDS_ALREADY_COLLECTED = 3;
 	}
 
-	HLOKLJKLOFN lknpioglmib = 1;
+	HLOKLJKLOFN result = 1;
 	NJAEBCDCPIG mgeefhcmogm = 2;
 	int32 dnpociomhpj = 3;
 	float joecegklged = 4;
@@ -9000,7 +9000,7 @@ message WildPokemonProto {
 	double nkmhnpecina = 3;
 	double efkjhbpfkip = 4;
 	string amckjidfljc = 5;
-	PokemonProto ichkglcaffb = 7;
+	PokemonProto pokemon = 7;
 	int32 jaalkeldbkd = 11;
 }
 
@@ -9114,7 +9114,7 @@ message GDCCFGCJKEI {
 		ERROR_FRIEND_BELOW_MINIMUM_LEVEL = 16;
 	}
 
-	OPCJAIOJDEP lknpioglmib = 1;
+	OPCJAIOJDEP result = 1;
 	HDJJJBKOGHK mfcgefaehpn = 2;
 }
 
@@ -9638,7 +9638,7 @@ message GMNGHJDBPNC {
 		ERROR_INCUBATOR_NO_USES_REMAINING = 7;
 	}
 
-	BGMKLFNNCBP lknpioglmib = 1;
+	BGMKLFNNCBP result = 1;
 	FKBBEAMOKBJ jekeflamioj = 2;
 }
 
@@ -9657,22 +9657,22 @@ message GMPPMOGGEKF {
 	}
 
 	repeated MapCell okgalaefnhc = 1;
-	LCENAEABBPC kmieohojnij = 2;
+	LCENAEABBPC status = 2;
 	MPCCLFFMKIA jfmepigaeln = 3;
 	repeated ClientWeatherProto hgobolfleka = 4;
 }
 
-message GOBOAGDIPON {
-	enum CMDHEBBDFJM {
+message CatchPokemonLogEntry {
+	enum Result {
 		UNSET = 0;
 		POKEMON_CAPTURED = 1;
 		POKEMON_FLED = 2;
 		POKEMON_HATCHED = 3;
 	}
 
-	CMDHEBBDFJM lknpioglmib = 1;
-	int32 elmflkhhleb = 2;
-	int32 imiajlnomhl = 3;
+	Result result = 1;
+	int32 pokedex_number = 2;
+	int32 combat_points = 3;
 	uint64 pokemon_id = 4;
 	PokemonDisplayProto pokemon_display = 5;
 }
@@ -9686,7 +9686,7 @@ message GOCOMOPEHGI {
 		ERROR_DEPLOYED_TO_FORT = 4;
 	}
 
-	EIGKNDIDJIE lknpioglmib = 1;
+	EIGKNDIDJIE result = 1;
 	int32 stamina = 2;
 }
 
@@ -9695,15 +9695,16 @@ message GOHMDLEEDFI {
 	int32 aefdmakedik = 2;
 }
 
-message GPOBLNOMGJC {
-	enum FAIDEINDGCI {
+message CatchPokemonOutProto {
+	// Using the exact nomenclature from Binary, not previous split proto nomenclature, CatchPokemonOutProto ==> CatchPokemonResponse
+	enum CaptureReason {
 		UNSET = 0;
 		DEFAULT = 1;
 		ELEMENTAL_BADGE = 2;
 		CRITICAL_CATCH = 3;
 	}
 
-	enum MMNOCHMIBBA {
+	enum Status {
 		CATCH_ERROR = 0;
 		CATCH_SUCCESS = 1;
 		CATCH_ESCAPE = 2;
@@ -9711,13 +9712,13 @@ message GPOBLNOMGJC {
 		CATCH_MISSED = 4;
 	}
 
-	MMNOCHMIBBA kmieohojnij = 1;
-	double anjkjgbdooa = 2;
-	uint64 ecnfhljhlcd = 3;
-	BECIKFFJAKP jkgmmkilnkp = 4;
-	FAIDEINDGCI kmjcifjodki = 5;
-	int32 imkhpmbjnhp = 6;
-	int32 hgemjecnlhf = 7;
+	Status status = 1;
+	double miss_percent = 2;
+	uint64 captured_pokemon_id = 3;
+	CaptureAward capture_award = 4;
+	CaptureReason capture_reason = 5;
+	int32 display_pokedex_id = 6;
+	int32 throws_remaining = 7;
 	PokemonDisplayProto pokemon_display = 8;
 }
 
@@ -9750,13 +9751,13 @@ message HABFFNDINAM {
 		INVALID_ITEM_CATEGORY = 4;
 	}
 
-	LKKPNBEBOMD kmieohojnij = 1;
+	LKKPNBEBOMD status = 1;
 	KIKHLAJCKFP klnafjahpce = 2;
 	Item llfflapmphl = 3;
 }
 
 message HAMLDIEEMHJ {
-	string lknpioglmib = 1;
+	string result = 1;
 	string imcahnopnbp = 2;
 	int32 mefmgklgpan = 3;
 	repeated BFPGDLLLMOE eafnacomcph = 4;
@@ -9770,7 +9771,7 @@ message HANHAMKDKJA {
 		ERROR_UNKNOWN = 2;
 	}
 
-	HLODCAHOGKC lknpioglmib = 1;
+	HLODCAHOGKC result = 1;
 }
 
 message HBBIAGALHMH {
@@ -9806,7 +9807,7 @@ message HBGCHNHAKAC {
 		ERROR_INVENTORY_FULL = 11;
 	}
 
-	JHMHANHAAEO kmieohojnij = 1;
+	JHMHANHAAEO status = 1;
 	EDNFCLGDGHC plfcpdclpmm = 2;
 	repeated ANIDHIOGDDC efabolkpapd = 3;
 }
@@ -9819,7 +9820,7 @@ message HBNAMMIBILM {
 		FAILURE = 3;
 	}
 
-	NFCBOIBKNLN kmieohojnij = 1;
+	NFCBOIBKNLN status = 1;
 	KDHELLCEOJD ockinehgelh = 2;
 }
 
@@ -9889,7 +9890,7 @@ message HCKOLLIAADD {
 		ENCOUNTER_ALREADY_FINISHED = 7;
 	}
 
-	OFPPPOGGHFH lknpioglmib = 1;
+	OFPPPOGGHFH result = 1;
 	int32 jkflnibcmbn = 2;
 }
 
@@ -9909,7 +9910,7 @@ message HDBONPCAEMJ {
 		ERROR_DEPLOYED_TO_FORT = 4;
 	}
 
-	PBMEEDNMHOC lknpioglmib = 1;
+	PBMEEDNMHOC result = 1;
 	int32 stamina = 2;
 }
 
@@ -10056,7 +10057,7 @@ message HELIMAOOLGD {
 		SUCCESS = 1;
 	}
 
-	GFIGIKMOCHE lknpioglmib = 1;
+	GFIGIKMOCHE result = 1;
 	uint64 kldoojnaeoe = 2;
 	uint64 klhcfcpcfgi = 3;
 	repeated uint32 blopfilkkcl = 4;
@@ -10105,7 +10106,7 @@ message HGAOKKDKKHC {
 		SUCCESS = 1;
 	}
 
-	NPCGDBFKCMC lknpioglmib = 1;
+	NPCGDBFKCMC result = 1;
 	string haigmbjcoff = 2;
 }
 
@@ -10118,8 +10119,8 @@ message HGEIOBPEIKB {
 		POKEMON_INVENTORY_FULL = 4;
 	}
 
-	MFIOBHLKIBM lknpioglmib = 1;
-	PokemonProto ichkglcaffb = 2;
+	MFIOBHLKIBM result = 1;
+	PokemonProto pokemon = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 }
@@ -10171,7 +10172,7 @@ message HJFMOIMCCNG {
 	ICNAOBMJMJG oopfikllogm = 1;
 	string jemkidipklg = 2;
 	string hjjjglcmfcn = 3;
-	LEFCCJNEBPF lknpioglmib = 4;
+	LEFCCJNEBPF result = 4;
 	string ckamanebocf = 5;
 	string ncondcjknpn = 6;
 	PIABIFIABDB hfjoggejohf = 7;
@@ -10196,7 +10197,7 @@ message HJIBMKOACKG {
 		ERROR_FRIEND_UPDATE = 6;
 	}
 
-	DKGLJNNJHEJ lknpioglmib = 1;
+	DKGLJNNJHEJ result = 1;
 }
 
 message HJJOIFPHMGB {
@@ -10271,11 +10272,11 @@ message HKEHHKMJGCH {
 		SUCCESS = 1;
 	}
 
-	CLKBICLBFLG lknpioglmib = 1;
+	CLKBICLBFLG result = 1;
 	bool doddfdhmidl = 2;
 	repeated CAEGHIJGHIP bhfobbjmkjn = 3;
 	repeated CAEGHIJGHIP nibjbdopnom = 4;
-	int32 oapfndplfbo = 5;
+	int32 stardust = 5;
 	repeated JBDHOGIEHJM dgncijidddb = 6;
 	bool fikbfhmglbc = 7;
 	INLMKLIMNMK bojjbnknjjn = 8;
@@ -10296,7 +10297,7 @@ message HKJFELNLMLK {
 		ERROR_PLAYER_HAS_UNOPENED_GIFT = 6;
 	}
 
-	ACHFHKBEAGL lknpioglmib = 1;
+	ACHFHKBEAGL result = 1;
 }
 
 message HKKLHDEKGLO {
@@ -10369,7 +10370,7 @@ message HMPDHHCMICJ {
 		ERROR_BUDDY_NOT_ON_MAP = 6;
 	}
 
-	GAOBLEIPIAN lknpioglmib = 1;
+	GAOBLEIPIAN result = 1;
 	AKOBPIKCOPE nakpgokhnmo = 2;
 	GCJJKGJEEEF jodndjickjg = 4;
 	AFCIIHIODAP.DNFGNGOPJNC eajjadfogaj = 5;
@@ -10410,10 +10411,10 @@ message HOALANDJDMB {
 	}
 
 	OGBOKDNJMIL imnggammpjc = 1;
-	int32 mnmpnlbcmga = 2;
+	int32 xp = 2;
 	GMHNEDDCEPA oiedebkalie = 3;
-	int32 oapfndplfbo = 4;
-	INLMKLIMNMK ogdfcmpkkdi = 5;
+	int32 stardust = 4;
+	INLMKLIMNMK candy = 5;
 	string pjjnhmcllkp = 6;
 	string ignjfhnkmlm = 7;
 	KPOIJJDCECJ ghkalahbpko = 8;
@@ -10438,7 +10439,7 @@ message HOJIHBNEBPN {
 		ERROR_STILL_IN_PROGRESS = 2;
 	}
 
-	CMIOGOEIPFM kmieohojnij = 1;
+	CMIOGOEIPFM status = 1;
 	repeated HOALANDJDMB lgmepgeecmg = 2;
 }
 
@@ -10467,7 +10468,7 @@ message HPBMAKJBJDA {
 		ERROR_ALREADY_CANCELLED = 5;
 	}
 
-	JOKGHHGEMGF lknpioglmib = 1;
+	JOKGHHGEMGF result = 1;
 }
 
 message HPGJCJOEKKP {
@@ -10482,7 +10483,7 @@ message HPGJCJOEKKP {
 		ERROR_PLAYER_HAS_UNCLAIMED_REWARDS = 7;
 	}
 
-	IFLPOICCCLF lknpioglmib = 1;
+	IFLPOICCCLF result = 1;
 	KFMIIFMAEED ohddfmphepg = 2;
 	NJAEBCDCPIG mgeefhcmogm = 3;
 	MPIKCGEDHEE ckgpkdinpop = 4;
@@ -10533,9 +10534,9 @@ message ICCDBJHAEID {
 }
 
 message ICIGAOMBAPH {
-	int32 dfmncmhjnhh = 1;
-	int32 dhdmlbchfen = 2;
-	bool ngopjjcmjfi = 3;
+	int32 buddy_v2_min_player_level = 1;
+	int32 buddy_multiplayer_min_player_level = 2;
+	bool enable_monodepth = 3;
 	KDJAODGGLCN gncfipppcpa = 4;
 }
 
@@ -10550,7 +10551,7 @@ message IDHDDFHHHKL {
 		SUCCESS = 1;
 	}
 
-	NOHBAFDIGNG lknpioglmib = 1;
+	NOHBAFDIGNG result = 1;
 	NJAEBCDCPIG mkllhjhebdg = 2;
 	double ppbjhoeaboh = 3;
 }
@@ -10601,8 +10602,8 @@ message IFGCIKBAFPP {
 		POKEMON_INVENTORY_FULL = 3;
 	}
 
-	OLPBHKIPNJD lknpioglmib = 1;
-	PokemonProto ichkglcaffb = 2;
+	OLPBHKIPNJD result = 1;
+	PokemonProto pokemon = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 ipgmaoblgkn = 5;
@@ -10642,7 +10643,7 @@ message IGPBGBBJNKI {
 		INCENSE_ENCOUNTER_NOT_AVAILABLE = 2;
 	}
 
-	JDNHMBHNOIH lknpioglmib = 1;
+	JDNHMBHNOIH result = 1;
 	int32 ffphnpabnon = 2;
 	double minbjcmkcbh = 3;
 	double cmmpgojjlfb = 4;
@@ -10686,7 +10687,7 @@ message IHGMENFPKJM {
 		FAILURE = 2;
 	}
 
-	FIJELCPPNFE kmieohojnij = 1;
+	FIJELCPPNFE status = 1;
 	KDHELLCEOJD ockinehgelh = 2;
 }
 
@@ -10696,7 +10697,7 @@ message IICEJACIIFA {
 		SUCCESS = 1;
 	}
 
-	MDKCKNEPGHH lknpioglmib = 1;
+	MDKCKNEPGHH result = 1;
 	string haigmbjcoff = 2;
 	NJAEBCDCPIG bhfobbjmkjn = 3;
 	repeated PokemonProto diiedcpdiia = 4;
@@ -10728,7 +10729,7 @@ message IJFDPFICCBN {
 		ERROR_INVENTORY_FULL = 5;
 	}
 
-	GKNJGPLCEKG lknpioglmib = 1;
+	GKNJGPLCEKG result = 1;
 	NJAEBCDCPIG mkllhjhebdg = 2;
 }
 
@@ -10738,7 +10739,7 @@ message IJGDOGAPDKJ {
 		SUCCESS = 1;
 	}
 
-	HFHBIDNDGKC lknpioglmib = 1;
+	HFHBIDNDGKC result = 1;
 	CombatPlayerFinishState jbpndbioifp = 2;
 	NJAEBCDCPIG mkllhjhebdg = 3;
 	string lnbepblibbm = 4;
@@ -10753,7 +10754,7 @@ message IJNDPJCIMAA {
 		//per_competitive_combat_season_max_count = 4;
 	//}
 
-	KPOIJJDCECJ ichkglcaffb = 1;
+	KPOIJJDCECJ pokemon = 1;
 	string hckplfiaeak = 2;
 	int32 bkmojhngpcj = 3;
 	int32 ajmfmcaihlm = 4;
@@ -10768,7 +10769,7 @@ message IKEIELDNLGD {
 }
 
 message IKEMHLKHBJP {
-	ShareExRaidPassResult lknpioglmib = 1;
+	ShareExRaidPassResult result = 1;
 }
 
 message IKIIOBLGJLM {
@@ -10798,7 +10799,7 @@ message IKJJGMAHBMF {
 		ERROR_RAID_ACTIVE = 19;
 	}
 
-	DNOLBBLFIFP lknpioglmib = 1;
+	DNOLBBLFIFP result = 1;
 	ICNAOBMJMJG oopfikllogm = 2;
 	PIABIFIABDB hfjoggejohf = 3;
 	int64 fdfbgkldedi = 4;
@@ -10858,7 +10859,7 @@ message ILKBMBPMMBA {
 		ERROR_ACCESS_DENIED = 4;
 	}
 
-	DDBODPBBPNL lknpioglmib = 1;
+	DDBODPBBPNL result = 1;
 	GJLECHMJABM hnoncfdkkha = 2;
 }
 
@@ -10874,7 +10875,7 @@ message ILLDFKKOIIH {
 		ERROR_CHALLENGE_NOT_FOUND = 2;
 	}
 
-	HKFNODCAPAM lknpioglmib = 1;
+	HKFNODCAPAM result = 1;
 	GJLECHMJABM hnoncfdkkha = 2;
 }
 
@@ -10926,7 +10927,7 @@ message IMIPKNJKMOB {
 		SUCCESS = 1;
 	}
 
-	CPHLFOACCPI lknpioglmib = 1;
+	CPHLFOACCPI result = 1;
 	string haigmbjcoff = 2;
 }
 
@@ -10968,8 +10969,8 @@ message IPBGHLDDLIK {
 }
 
 message IPDKNKPFGCN {
-	int32 kmieohojnij = 1;
-	BLPOAJIEDOP ichkglcaffb = 2;
+	int32 status = 1;
+	BLPOAJIEDOP pokemon = 2;
 	string plccbgieopg = 3;
 	int32 occjnjgeblb = 4;
 	int32 nmdhhlhmnnp = 5;
@@ -11026,7 +11027,7 @@ message JAHLGBHMHEL {
 }
 
 message JBCNBOJLELE {
-	HoloPokemonId ichkglcaffb = 1;
+	HoloPokemonId pokemon = 1;
 	repeated GAJNKGKDMCL eggicpaehpi = 2;
 }
 
@@ -11044,7 +11045,7 @@ message JBDHOGIEHJM {
 	//}
 
 	Item oiedebkalie = 1;
-	bool oapfndplfbo = 2;
+	bool stardust = 2;
 	bool finbnodhhcc = 3;
 	HoloPokemonId geijhkafmlo = 4;
 	bool ifihlgoajdl = 6;
@@ -11072,11 +11073,11 @@ message JCGJIOOMJCH {
 		ERROR_INVALID_POKEMON = 4;
 	}
 
-	AAEOIMOLMMO lknpioglmib = 1;
+	AAEOIMOLMMO result = 1;
 	EMGGNFJGANL lolnpfcphnd = 2;
 }
 
-message JCHFICPLBBF {
+message QuestCreateDetail {
 	EncounterType origin = 1;
 }
 
@@ -11100,7 +11101,7 @@ message JDCMFNCAALM {
 		ERROR_UNKNOWN = 5;
 	}
 
-	GKBDJCEDJHL kmieohojnij = 1;
+	GKBDJCEDJHL status = 1;
 	KDHELLCEOJD icphdioaefb = 2;
 }
 
@@ -11166,7 +11167,7 @@ message JEEMOBAOPLN {
 }
 
 message JEHDGBFNEBG {
-	PokemonProto ichkglcaffb = 1;
+	PokemonProto pokemon = 1;
 	int64 mbdcdocfegm = 2;
 	int32 ojapihjcejg = 3;
 	double ldacdlonkad = 4;
@@ -11183,7 +11184,7 @@ message JEJMAAGCNFG {
 		ERROR = 2;
 	}
 
-	HJPIAHEHMEA lknpioglmib = 1;
+	HJPIAHEHMEA result = 1;
 	repeated LMFFPDIABAP mhkgfghloff = 2;
 }
 
@@ -11194,7 +11195,7 @@ message JFAINMJJGHG {
 		NO_NEWS_FOUND = 2;
 	}
 
-	MLPMFDEOGPO lknpioglmib = 1;
+	MLPMFDEOGPO result = 1;
 }
 
 message JFIFKHGMNKB {
@@ -11219,7 +11220,7 @@ message JFKPNKCKHFF {
 		ERROR_LOCATION_UNSET = 5;
 	}
 
-	IFABLLBGPAN lknpioglmib = 1;
+	IFABLLBGPAN result = 1;
 	OFMDMCEACDO pfkpoagphle = 2;
 }
 
@@ -11230,7 +11231,7 @@ message JFNLAFHHKAO {
 		AWARDED_ALREADY = 2;
 	}
 
-	DOEIANCPDBM lknpioglmib = 1;
+	DOEIANCPDBM result = 1;
 	repeated EHJHIJNNLBI bhfobbjmkjn = 2;
 	repeated Item bnnbkblklfh = 4;
 	repeated string immoenhnoof = 5;
@@ -11255,7 +11256,7 @@ message JHHKEHFNIEB {
 		EXPIRED = 2;
 	}
 
-	CKBGCEONBBG kmieohojnij = 1;
+	CKBGCEONBBG status = 1;
 }
 
 message JHLPMFNBNKA {
@@ -11267,7 +11268,7 @@ message JHLPMFNBNKA {
 		ERROR_PLAYER_NOT_IN_COMBAT = 4;
 	}
 
-	KGNFHOFPKDM lknpioglmib = 1;
+	KGNFHOFPKDM result = 1;
 	PKFFFFHFEMC hgjkjcjaoeh = 2;
 }
 
@@ -11377,7 +11378,7 @@ message JILHOLBJFFP {
 		ERROR_CHALLENGE_NOT_FOUND = 3;
 	}
 
-	PJFFPACAKNF kmieohojnij = 1;
+	PJFFPACAKNF status = 1;
 	CIBHMLLKCNJ icalajnlnha = 2;
 	int32 ijjlbcbkepg = 3;
 	int32 iojikjdnamp = 4;
@@ -11386,7 +11387,7 @@ message JILHOLBJFFP {
 }
 
 message JINCDBFIDDB {
-	string lknpioglmib = 1;
+	string result = 1;
 	string imcahnopnbp = 2;
 	int32 mefmgklgpan = 3;
 	string pipnkbidpig = 4;
@@ -11416,7 +11417,7 @@ message JJGMPKOCJMJ {
 		ERROR_POKEMON_IS_BUDDY = 5;
 	}
 
-	EDONHLJGGPF kmieohojnij = 1;
+	EDONHLJGGPF status = 1;
 	int32 lakphipmdje = 2;
 	int32 jbinpiieooo = 3;
 }
@@ -11450,7 +11451,7 @@ message JLAOPGHAGAL {
 		ERROR_NO_PLAYER = 4;
 	}
 
-	JLLGNOGIFGM lknpioglmib = 1;
+	JLLGNOGIFGM result = 1;
 	DAFILIEKAIJ hhgmolgegga = 2;
 }
 
@@ -11469,7 +11470,7 @@ message PokemonCreateDetail {
 	MKHMKDMPBDJ imflfoamnne = 1;
 	FNPFPLHMGIN jebhfcghbpk = 2;
 	KEAJEFHFPFJ mkglmbblbcp = 3;
-	JCHFICPLBBF mjnaadkfnlo = 4;
+	QuestCreateDetail mjnaadkfnlo = 4;
 	PAEGHCPNBMJ kdppfcmgbbo = 5;
 	HHNKFEAOIBH kikfmlmhfnk = 6;
 	AEKAEPPIILE okkmidaimeg = 7;
@@ -11483,7 +11484,7 @@ message JMCIINGALIF {
 		ERROR_UNKNOWN = 3;
 	}
 
-	KJBHHNHFNGH kmieohojnij = 1;
+	KJBHHNHFNGH status = 1;
 }
 
 message JMGNJLPFPGK {
@@ -11500,7 +11501,7 @@ message JMOGLGILOIK {
 }
 
 message JNDHCDMGJDH {
-	HoloPokemonId ichkglcaffb = 1;
+	HoloPokemonId pokemon = 1;
 	repeated KMMFEFPCNJH mdlodpfnkjl = 2;
 }
 
@@ -11541,7 +11542,7 @@ message KABNNKKLGIM {
 		ERROR_FAILED_TO_START = 3;
 	}
 
-	PEJKNOLPGOC lknpioglmib = 1;
+	PEJKNOLPGOC result = 1;
 }
 
 message KAHNFJOGGGO {
@@ -11587,7 +11588,7 @@ message KAPBJCJMDJB {
 		SUCCESS = 1;
 	}
 
-	MBDDOJBIBHO lknpioglmib = 1;
+	MBDDOJBIBHO result = 1;
 	repeated BPIPMONNGBO bolfgbpjjdc = 2;
 }
 
@@ -11599,7 +11600,7 @@ message KBHJBBAHPCL {
 		ERROR_LOBBY_NOT_FOUND = 3;
 	}
 
-	PJPJPGANPFD lknpioglmib = 1;
+	PJPJPGANPFD result = 1;
 	EMGGNFJGANL lolnpfcphnd = 2;
 }
 
@@ -11611,8 +11612,8 @@ message KCHCHJNPHKI {
 		POKEMON_INVENTORY_FULL = 3;
 	}
 
-	KIOMOEPDKME lknpioglmib = 1;
-	PokemonProto ichkglcaffb = 2;
+	KIOMOEPDKME result = 1;
+	PokemonProto pokemon = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	int32 ipgmaoblgkn = 5;
@@ -11635,7 +11636,7 @@ message KDAFEAMLMKO {
 }
 
 message KDFDIAEIBOC {
-	string lknpioglmib = 1;
+	string result = 1;
 	string imcahnopnbp = 2;
 	int32 mefmgklgpan = 3;
 	bool pacmhnfjicb = 4;
@@ -11717,7 +11718,7 @@ message KEEFPOBOKJC {
 		FAILED_INVALID_ITEM_REQUIREMENT = 6;
 	}
 
-	MFNPPLFEOEF lknpioglmib = 1;
+	MFNPPLFEOEF result = 1;
 	PokemonProto pijfbheoioc = 2;
 	int32 dkooogjgkol = 3;
 	int32 lakphipmdje = 4;
@@ -11745,7 +11746,7 @@ message KFHOGPNPLEF {
 		ERROR_EXCEEDED_CHANGE_LIMIT = 7;
 	}
 
-	FAKIJGKPMHK lknpioglmib = 1;
+	FAKIJGKPMHK result = 1;
 }
 
 message KFMIIFMAEED {
@@ -11810,7 +11811,7 @@ message KGEOCCJLLEE {
 		ERROR_LOBBY_EXPIRED = 14;
 	}
 
-	OJBLHBLBKCC lknpioglmib = 1;
+	OJBLHBLBKCC result = 1;
 	EMGGNFJGANL lolnpfcphnd = 2;
 }
 
@@ -11833,7 +11834,7 @@ message KHJLHNHFGIF {
 		RETRY = 3;
 	}
 
-	BMCNMBIIIAF lknpioglmib = 1;
+	BMCNMBIIIAF result = 1;
 	repeated FMCHABOILMM bhfobbjmkjn = 2;
 	uint64 bbaflhkgaha = 3;
 	int32 flmnggdnnin = 4;
@@ -11881,7 +11882,7 @@ message KIHJOHIFDCC {
 			//guaranteed_limited_pokemon_reward = 3;
 		//}
 
-		KPOIJJDCECJ ichkglcaffb = 1;
+		KPOIJJDCECJ pokemon = 1;
 		IJNDPJCIMAA ceegeadgnge = 2;
 		IJNDPJCIMAA olonjokjpig = 3;
 		int32 dkdgcihinec = 4;
@@ -11935,7 +11936,7 @@ message KIMPFBNKLAF {
 		int32 bhcmmlalebi = 2;
 	}
 
-	MNOIBJLKLEH lknpioglmib = 1;
+	MNOIBJLKLEH result = 1;
 	int64 hnfkipcphcm = 2;
 	repeated NDHBGOIDANO cfbgekbiaeg = 3;
 	IDDJKNMDMHN adhncflpcoh = 4;
@@ -11957,7 +11958,7 @@ message KJFHECNBPPH {
 		ERROR_CANNOT_RECYCLE_INCUBATORS = 3;
 	}
 
-	MHEDEJNBKEI lknpioglmib = 1;
+	MHEDEJNBKEI result = 1;
 	int32 kkbpnplcekg = 2;
 }
 
@@ -11969,7 +11970,7 @@ message KKAJKAOKNAI {
 		ERROR_ACCESS_DENIED = 3;
 	}
 
-	KKLPFMFCCFH lknpioglmib = 1;
+	KKLPFMFCCFH result = 1;
 	string lmfmlhckoie = 2;
 }
 
@@ -11982,7 +11983,7 @@ message KKIADOKNBDD {
 }
 
 message KKMEBDCDHAA {
-	BLPOAJIEDOP ichkglcaffb = 1;
+	BLPOAJIEDOP pokemon = 1;
 	string nickname = 2;
 }
 
@@ -12027,7 +12028,7 @@ message KLLCKEEOPBK {
 		ERROR_MISSING_TRANSACTION_ID = 8;
 	}
 
-	IHPMHMILGEC kmieohojnij = 1;
+	IHPMHMILGEC status = 1;
 	int32 lakphipmdje = 2;
 	NJAEBCDCPIG mhkcikobnei = 3;
 	JMOGLGILOIK ajleokfojoe = 4;
@@ -12066,7 +12067,7 @@ message KLOKEFMANDO {
 		SUCCESS = 1;
 	}
 
-	DMFECCFAHNL lknpioglmib = 1;
+	DMFECCFAHNL result = 1;
 	bool clhkldojlln = 2;
 	NJAEBCDCPIG hinejbkmbpi = 3;
 }
@@ -12140,7 +12141,7 @@ message KMLCJMIDHAC {
 		ERROR_UNKNOWN = 4;
 	}
 
-	APBPGFBIAOP kmieohojnij = 1;
+	APBPGFBIAOP status = 1;
 	HoloPokemonId pokemon_id = 2;
 	double minbjcmkcbh = 3;
 	double cmmpgojjlfb = 4;
@@ -12170,7 +12171,7 @@ message KNFBLGNDOJA {
 		SUCCESS = 1;
 	}
 
-	IJKBIOKJNGE kmieohojnij = 1;
+	IJKBIOKJNGE status = 1;
 	int64 jkajbhejlpo = 2;
 }
 
@@ -12192,7 +12193,7 @@ message KNGOICOCJLL {
 message KNOGBJFBLAK {
 	repeated FIDCFPOOKKG plfcpdclpmm = 1;
 	repeated string kkpcpnnfnin = 2;
-	repeated DCMIECMMAOK ocejbmdoemc = 3;
+	repeated QuestPokemonEncounterProto ocejbmdoemc = 3;
 	DHKCIJGAMJN edpelpacdfm = 4;
 }
 
@@ -12217,7 +12218,7 @@ message KOCAAPCGIIM {
 
 	message DAJGFIJAPAD {
 		string jemkidipklg = 1;
-		repeated JKFIOHACPOM ichkglcaffb = 2;
+		repeated JKFIOHACPOM pokemon = 2;
 	}
 
 	message GACGONKJOGD {
@@ -12275,7 +12276,7 @@ message KOCAAPCGIIM {
 
 	message OOPOEIDDOIC {
 		string jemkidipklg = 1;
-		repeated JKFIOHACPOM ichkglcaffb = 2;
+		repeated JKFIOHACPOM pokemon = 2;
 	}
 
 	string gaomkbeedkc = 1;
@@ -12343,7 +12344,7 @@ message KPOIJJDCECJ {
 	HoloPokemonId pokemon_id = 1;
 	bool bcdofdfomca = 2;
 	PokemonDisplayProto pokemon_display = 3;
-	bool gjoahoigmck = 4;
+	bool is_hidden_ditto = 4;
 	PokemonDisplayProto lkhilbplobf = 5;
 }
 
@@ -12368,8 +12369,8 @@ message LAIJAPBCCLE {
 		ERROR_REDEEM_ITEM = 5;
 	}
 
-	MFEOLCONAMK lknpioglmib = 1;
-	PokemonProto ichkglcaffb = 2;
+	MFEOLCONAMK result = 1;
+	PokemonProto pokemon = 2;
 	KIKHLAJCKFP klnafjahpce = 3;
 	Item llfflapmphl = 4;
 	uint64 ofpebfcdpip = 5;
@@ -12385,7 +12386,7 @@ message LBECJCOCDEE {
 }
 
 message LBFFJCHONHI {
-	FPGEBIHKENB.AMOJKLIMIJN kmieohojnij = 1;
+	FPGEBIHKENB.AMOJKLIMIJN status = 1;
 	PKFFFFHFEMC hgjkjcjaoeh = 2;
 }
 
@@ -12400,7 +12401,7 @@ message LBPKIJKDGJA {
 		ERROR_FORT_SEARCH = 6;
 	}
 
-	BCHAKINHHAJ lknpioglmib = 1;
+	BCHAKINHHAJ result = 1;
 	repeated ODJMHHBHFBB nkdpllibood = 2;
 }
 
@@ -12422,7 +12423,7 @@ message LCIOOJOPLCF {
 		DISABLED = 5;
 	}
 
-	AKKPJFDKNKO lknpioglmib = 1;
+	AKKPJFDKNKO result = 1;
 	HoloPokemonId gagejdodbko = 2;
 	double minbjcmkcbh = 3;
 	double cmmpgojjlfb = 4;
@@ -12449,7 +12450,7 @@ message LEADCOHJGIN {
 		ERROR_POKEMON_IS_EGG = 3;
 	}
 
-	DONOAKFNDHP lknpioglmib = 1;
+	DONOAKFNDHP result = 1;
 }
 
 message LEEKDPFGDOJ {
@@ -12538,7 +12539,7 @@ message LFJKDLOAJBO {
 }
 
 message LFOIPLOKGCG {
-	BLPOAJIEDOP ichkglcaffb = 1;
+	BLPOAJIEDOP pokemon = 1;
 }
 
 message LHAODNFOAGE {
@@ -12553,7 +12554,7 @@ message LHFFGOHEDMF {
 		SUCCESS = 1;
 	}
 
-	IHLCINJCPBH lknpioglmib = 1;
+	IHLCINJCPBH result = 1;
 	NJAEBCDCPIG mkllhjhebdg = 2;
 	int32 cofocmihggk = 3;
 	float kcnlgeddpbg = 4;
@@ -12613,7 +12614,7 @@ message LJGGCMADMNK {
 
 message LJNKPKDOMME {
 	HoloPokemonFamilyId lnbjagopaon = 1;
-	int32 ogdfcmpkkdi = 2;
+	int32 candy = 2;
 	repeated PLKINHKFOLE goplcbilpbk = 3;
 }
 
@@ -12632,7 +12633,7 @@ message LKDFLDEMHCB {
 		LOCATION_UNSET = 4;
 	}
 
-	EMMOBDFPKED lknpioglmib = 1;
+	EMMOBDFPKED result = 1;
 	BMPNOJLNMKE gpdnipabdbn = 2;
 }
 
@@ -12798,16 +12799,16 @@ message LNNNMJBLDMG {
 		ERROR_UNKNOWN = 2;
 	}
 
-	DNOGIMDIEIN lknpioglmib = 1;
+	DNOGIMDIEIN result = 1;
 }
 
 message LOAPKEFBJFA {
 	repeated CBBGPFNKAND bhfobbjmkjn = 1;
 	repeated NJDBAEDGAPB gciffeidlch = 2;
 	repeated PokemonProto bonckjnbjme = 3;
-	repeated PokemonProto ichkglcaffb = 4;
+	repeated PokemonProto pokemon = 4;
 	repeated LEPNPFFHOOP hlopieapaab = 5;
-	int32 oapfndplfbo = 6;
+	int32 stardust = 6;
 	int32 mjhlkfmpnbo = 7;
 	repeated HoloBadgeType cfbgekbiaeg = 8;
 	repeated OLNMDBNOOBO gijhkabfnea = 9;
@@ -12872,7 +12873,7 @@ message LPLLKFDLAPI {
 		ERROR_TRADING_FINISHED = 10;
 	}
 
-	LDBNGEFEEOL lknpioglmib = 1;
+	LDBNGEFEEOL result = 1;
 	HDJJJBKOGHK mfcgefaehpn = 2;
 }
 
@@ -12888,7 +12889,7 @@ message LPMFBMPBDFL {
 		AVATAR_RESET = 7;
 	}
 
-	PGOEEMFCJDC kmieohojnij = 1;
+	PGOEEMFCJDC status = 1;
 	KDHELLCEOJD ockinehgelh = 2;
 }
 
@@ -12904,7 +12905,7 @@ message MAECIHLBCKH {
 		SUCCESS = 1;
 	}
 
-	DLKDFJDOFBN lknpioglmib = 1;
+	DLKDFJDOFBN result = 1;
 	EDNFCLGDGHC plfcpdclpmm = 2;
 	repeated ANIDHIOGDDC efabolkpapd = 3;
 }
@@ -12918,7 +12919,7 @@ message MAHHPJKLCBJ {
 message MANIPANCBIK {
 	int32 pokemon_id = 1;
 	int32 cp = 2;
-	string gjmajhipkmg = 3;
+	string encounter_type = 3;
 	bool knngdeibpkj = 4;
 	bool dbnmmnmjojk = 5;
 	EncounterType lollkbdmaed = 6;
@@ -13015,7 +13016,7 @@ message MEJDNDOGNLC {
 		ERROR_NEVER_JOINED_BATTLE = 12;
 	}
 
-	DLBLHIFANIE lknpioglmib = 1;
+	DLBLHIFANIE result = 1;
 	OMOIOGHPNAA kpmdnfepeho = 2;
 }
 
@@ -13054,7 +13055,7 @@ message MFPJAANBCDF {
 		ERROR_RAID_UNAVAILABLE = 4;
 	}
 
-	HJLMMNLDJNF lknpioglmib = 1;
+	HJLMMNLDJNF result = 1;
 	EMGGNFJGANL lolnpfcphnd = 2;
 }
 
@@ -13073,7 +13074,7 @@ message MGLJCICEPII {
 		ERROR_BUDDY_NOT_VALID = 2;
 	}
 
-	OOMAHEBDCBJ lknpioglmib = 1;
+	OOMAHEBDCBJ result = 1;
 	GCJJKGJEEEF jodndjickjg = 2;
 	AFCIIHIODAP.DNFGNGOPJNC eajjadfogaj = 3;
 }
@@ -13084,7 +13085,7 @@ message MGMAEMHGLEJ {
 }
 
 message MGNAFFOHCPG {
-	FPGEBIHKENB.AMOJKLIMIJN kmieohojnij = 1;
+	FPGEBIHKENB.AMOJKLIMIJN status = 1;
 }
 
 message MGPEADEHLOE {
@@ -13138,7 +13139,7 @@ message MJAPBBMIDMO {
 }
 
 message MJAPPOEHFJM {
-	PokemonProto ichkglcaffb = 1;
+	PokemonProto pokemon = 1;
 	PHGHEIGIHFE haihihhglfc = 2;
 	PokemonProto dojpmomglha = 3;
 }
@@ -13169,7 +13170,7 @@ message MKHMKDMPBDJ {
 }
 
 message MLDIDGPMNBD {
-	BLPOAJIEDOP ichkglcaffb = 1;
+	BLPOAJIEDOP pokemon = 1;
 	string ekhbkhccckd = 2;
 	bool adagkoecilf = 3;
 	bool dbnmmnmjojk = 4;
@@ -13442,7 +13443,7 @@ message MPIKCGEDHEE {
 }
 
 message MPKEAOCNKEJ {
-	string gfaenodgbfj = 1;
+	string quest_id = 1;
 	repeated GFKEKBDHHFM ibldcghjhll = 2;
 	string ckamanebocf = 3;
 	string gaomkbeedkc = 4;
@@ -13475,9 +13476,9 @@ message NAMFJMAANNH {
 		ERROR_INVALID_POKEMON = 2;
 	}
 
-	BNNKIEPAHNM lknpioglmib = 1;
-	PokemonProto ichkglcaffb = 2;
-	BECIKFFJAKP jkgmmkilnkp = 3;
+	BNNKIEPAHNM result = 1;
+	PokemonProto pokemon = 2;
+	CaptureAward capture_award = 3;
 }
 
 message NAPEEODOGAE {
@@ -13596,7 +13597,7 @@ message NBPCLICDDKK {
 		ERROR_BUDDY_SWAP_LIMIT_EXCEEDED = 6;
 	}
 
-	EHJHPKOKDOL lknpioglmib = 1;
+	EHJHPKOKDOL result = 1;
 	KDAFEAMLMKO jealejabdef = 2;
 	GCJJKGJEEEF jodndjickjg = 3;
 	double diglolenand = 4;
@@ -13625,18 +13626,18 @@ message NCGGMPNLDCI {
 		ERROR_INVALID_POKEMON = 14;
 	}
 
-	FFCEMHIMBAA lknpioglmib = 1;
+	FFCEMHIMBAA result = 1;
 	DAFILIEKAIJ hhgmolgegga = 2;
 	PokemonProto bonckjnbjme = 3;
 	KDMAEPLELBN hgilgdabmlm = 4;
 }
 
 message NCMFDMCPOCO {
-	PokemonProto ichkglcaffb = 1;
+	PokemonProto pokemon = 1;
 	int64 ofpebfcdpip = 2;
 	string cjkkpijggdk = 3;
 	KIKHLAJCKFP afmfefkfmjd = 4;
-	int32 hgemjecnlhf = 5;
+	int32 throws_remaining = 5;
 	RaidLevel pfmpbpkljpb = 6;
 	string imcahnopnbp = 7;
 	bool doddfdhmidl = 8;
@@ -13660,7 +13661,7 @@ message NDKJLBOBDNE {
 		ERROR = 1;
 	}
 
-	LDBDCBPDBCP kmieohojnij = 1;
+	LDBDCBPDBCP status = 1;
 }
 
 message NDMLABPBFJF {
@@ -13688,7 +13689,7 @@ message NEBCHLHAMFD {
 		ERROR_NO_REMOTE_GIFTS = 5;
 	}
 
-	BKGLONFLEHN lknpioglmib = 1;
+	BKGLONFLEHN result = 1;
 }
 
 message NEJKMAAODHA {
@@ -13697,7 +13698,7 @@ message NEJKMAAODHA {
 }
 
 message NELMIKIPFBN {
-	PokemonProto ichkglcaffb = 1;
+	PokemonProto pokemon = 1;
 	int32 ghkamnaceia = 2;
 	int32 lnnalhbfckj = 3;
 }
@@ -13726,7 +13727,7 @@ message NFIGJCKHNHF {
 		ERROR_RAID_ACTIVE = 5;
 	}
 
-	CPEFIMJJJDL lknpioglmib = 1;
+	CPEFIMJJJDL result = 1;
 	DNENDKDMLOI pkflpdmemff = 2;
 	PIABIFIABDB dapboajonce = 3;
 }
@@ -13757,7 +13758,7 @@ message NHEBDHJPFHA {
 		ERROR_ALREADY_DECLINED = 9;
 	}
 
-	EAAKNHJLLJB lknpioglmib = 1;
+	EAAKNHJLLJB result = 1;
 	GJLECHMJABM hnoncfdkkha = 2;
 }
 
@@ -13885,7 +13886,7 @@ message NLIJCPJGNFG {
 		ERROR_STORY_QUEST_NOT_REMOVABLE = 3;
 	}
 
-	ELHJKAJLAAD kmieohojnij = 1;
+	ELHJKAJLAAD status = 1;
 }
 
 message NLKDAJABOAD {
@@ -13914,7 +13915,7 @@ message NLPLDFNBNEK {
 		POI_INACCESSIBLE = 6;
 	}
 
-	HGOCIHMONMJ lknpioglmib = 1;
+	HGOCIHMONMJ result = 1;
 	repeated EHJHIJNNLBI bhfobbjmkjn = 2;
 	int32 oeoiijapold = 3;
 	PokemonProto bonckjnbjme = 4;
@@ -13933,7 +13934,7 @@ message NLPLDFNBNEK {
 }
 
 message NMBBBIEIMMP {
-	BLPOAJIEDOP ichkglcaffb = 1;
+	BLPOAJIEDOP pokemon = 1;
 	BLPOAJIEDOP pijfbheoioc = 2;
 }
 
@@ -13943,7 +13944,7 @@ message NMGEGCGOLDF {
 }
 
 message NMLGCJAMEFE {
-	BLPOAJIEDOP ichkglcaffb = 1;
+	BLPOAJIEDOP pokemon = 1;
 	bool bhlmbgflodh = 2;
 }
 
@@ -13987,7 +13988,7 @@ message NNCCFIGIEOP {
 		ERROR_QUEUE_TOO_FULL = 12;
 	}
 
-	GGGHPJHNDLF lknpioglmib = 1;
+	GGGHPJHNDLF result = 1;
 	GJLECHMJABM hnoncfdkkha = 2;
 	string fplbjhfdcik = 3;
 }
@@ -14009,7 +14010,7 @@ message NOKIEKBKKCJ {
 		TIMED_OUT = 3;
 	}
 
-	KCKLLOEJFGI lknpioglmib = 1;
+	KCKLLOEJFGI result = 1;
 	ClientInbox bbfhbnicidn = 2;
 }
 
@@ -14028,7 +14029,7 @@ message NOPBOLOABLA {
 	int64 ofpebfcdpip = 2;
 	double player_lat = 3;
 	double player_lng = 4;
-	EncounterType gjmajhipkmg = 5;
+	EncounterType encounter_type = 5;
 	double ddbnokfmfop = 6;
 	double fngdafpliok = 7;
 }
@@ -14046,7 +14047,7 @@ message NOPCPOFBDCP {
 		ERROR_FRIEND_UPDATE = 8;
 	}
 
-	COCKOCNLFCD lknpioglmib = 1;
+	COCKOCNLFCD result = 1;
 	NJAEBCDCPIG bhfobbjmkjn = 2;
 	PokemonProto bonckjnbjme = 3;
 	DIKABGBAPBF miekmaanpnh = 4;
@@ -14071,7 +14072,7 @@ message NPKFGICIOEO {
 		NO_DEFENDERS = 4;
 	}
 
-	DCHMNBALMJC lknpioglmib = 1;
+	DCHMNBALMJC result = 1;
 	repeated string abpjgngpccj = 2;
 	repeated int32 okkcddeclpi = 3;
 	int32 pbkoofngdcd = 4;
@@ -14100,7 +14101,7 @@ message OAGBAMGKPFL {
 		ERROR_UNKNOWN = 4;
 	}
 
-	OONOLJBOIAB kmieohojnij = 1;
+	OONOLJBOIAB status = 1;
 }
 
 message OAGEEEPCMDH {
@@ -14151,7 +14152,7 @@ message OBOLKELJMDK {
 		ERROR_INVALID_DISPLAY = 2;
 	}
 
-	KEGNEGIAAHF kmieohojnij = 1;
+	KEGNEGIAAHF status = 1;
 	repeated EDNFCLGDGHC eaobmomkgej = 2;
 	repeated EDNFCLGDGHC lmkkjnocmma = 3;
 }
@@ -14207,7 +14208,7 @@ message ODLKBKLONLK {
 		ERROR_QUICK_SWAP_NOT_AVAILABLE = 15;
 	}
 
-	NPKKJDOFGNC lknpioglmib = 1;
+	NPKKJDOFGNC result = 1;
 	PKFFFFHFEMC hgjkjcjaoeh = 2;
 }
 
@@ -14233,7 +14234,7 @@ message ODNIIDCCAPL {
 		ERROR_PLAYER_HAS_NO_BATTLE_PASSES = 12;
 	}
 
-	DKALLDMCIMK lknpioglmib = 1;
+	DKALLDMCIMK result = 1;
 	PKFFFFHFEMC hgjkjcjaoeh = 2;
 	bool hhmjbnkflof = 3;
 }
@@ -14301,7 +14302,7 @@ message ODOMIPGABCI {
 		int32 deoibmgfdhk = 7;
 	}
 
-	IJCIBNDKAKP lknpioglmib = 1;
+	IJCIBNDKAKP result = 1;
 	PokemonProto kandajecmkp = 2;
 	PokemonProto moilllmchcg = 3;
 	repeated ELOCLIIHNEI kjghdnhehed = 4;
@@ -14356,7 +14357,7 @@ message OFGALEBNLAI {
 		SUCCESS = 1;
 	}
 
-	KAEBDMDLGFG lknpioglmib = 1;
+	KAEBDMDLGFG result = 1;
 	int32 apejbdnfojc = 2;
 }
 
@@ -14424,7 +14425,7 @@ message OGPBIKEOCPF {
 		ERROR_INELIGIBLE_OPPONENT = 13;
 	}
 
-	GLCFNNBHKHH lknpioglmib = 1;
+	GLCFNNBHKHH result = 1;
 	GJLECHMJABM hnoncfdkkha = 2;
 }
 
@@ -14444,7 +14445,7 @@ message OIAPMPHCADH {
 
 message OIIAJOJJCJE {
 	uint64 pokemon_id = 1;
-	string gfaenodgbfj = 2;
+	string quest_id = 2;
 }
 
 message OIIEOOGMOIE {
@@ -14458,7 +14459,7 @@ message OIIEOOGMOIE {
 		ERROR_DISABLED = 6;
 	}
 
-	GPBCFCGBOEC lknpioglmib = 1;
+	GPBCFCGBOEC result = 1;
 	PokemonProto nilfcplopob = 2;
 }
 
@@ -14480,7 +14481,7 @@ message OJENOALKMBA {
 		FAILED_BUDDY_STILL_FULL_FROM_POFFIN = 5;
 	}
 
-	HBBLOJHBOCF lknpioglmib = 1;
+	HBBLOJHBOCF result = 1;
 	GCJJKGJEEEF jodndjickjg = 3;
 	AFCIIHIODAP.DNFGNGOPJNC eajjadfogaj = 4;
 }
@@ -14537,7 +14538,7 @@ message OJIJECBMOIE {
 	message JLLOAMMLBAL {
 		EKOFFFNKKBG ebgkhidmglh = 1;
 		float lgpdkjaibib = 2;
-		DNANEKNEEAJ kmieohojnij = 3;
+		DNANEKNEEAJ status = 3;
 	}
 
 	HBLGAJHFLIM ljandihaojb = 1;
@@ -14595,7 +14596,7 @@ message OKILOKGCHJI {
 		NOT_ENOUGH_ITEMS = 6;
 	}
 
-	PEHHHDPNLKE lknpioglmib = 1;
+	PEHHHDPNLKE result = 1;
 	HoloPokemonId pokemon_id = 2;
 }
 
@@ -14618,11 +14619,11 @@ message OKOKBENEGML {
 	EMGGNFJGANL lolnpfcphnd = 1;
 	OMOIOGHPNAA kddpebfgnhb = 2;
 	bool pdnkglfofod = 3;
-	GKBPBAJFPPM lknpioglmib = 4;
+	GKBPBAJFPPM result = 4;
 	BALAAGILBNJ lebikepfljp = 5;
 	bool ckbbblcgjee = 6;
 	bool oooemjdegno = 7;
-	int32 hgemjecnlhf = 8;
+	int32 throws_remaining = 8;
 	bool bemldmijann = 9;
 	int32 ficlbnikalm = 10;
 	int64 eblmekmjaoi = 11;
@@ -14646,7 +14647,7 @@ message OLDHBBINBHF {
 		TOO_SOON = 3;
 	}
 
-	GKMACPKHBJJ lknpioglmib = 1;
+	GKMACPKHBJJ result = 1;
 }
 
 message OLJNBPAOLFB {
@@ -14678,7 +14679,7 @@ message OLPGEKBGECN {
 		ERROR_PLAYER_HAS_NO_STICKERS = 8;
 	}
 
-	HIBOOMMPGJE lknpioglmib = 1;
+	HIBOOMMPGJE result = 1;
 	int32 jmmbajofdlf = 2;
 }
 
@@ -14696,7 +14697,7 @@ message OMALJAAKCKN {
 		ERROR_NO_REMOTE_SLOTS_REMAINING = 9;
 	}
 
-	LPLKPAIOGNL lknpioglmib = 1;
+	LPLKPAIOGNL result = 1;
 	int32 foidgcdocdd = 2;
 }
 
@@ -14733,9 +14734,9 @@ message OMNNOKBKLGH {
 		DESERT = 1;
 	}
 
-	WildPokemonProto ichkglcaffb = 1;
+	WildPokemonProto pokemon = 1;
 	NFEMCPANPPG hfbofekjdlh = 2;
-	ICAECOHOEAD kmieohojnij = 3;
+	ICAECOHOEAD status = 3;
 	KIKHLAJCKFP klnafjahpce = 4;
 	Item llfflapmphl = 5;
 	int32 ipgmaoblgkn = 6;
@@ -14799,7 +14800,7 @@ message OOHHONPCBFM {
 		ERROR_ACCESS_DENIED = 3;
 	}
 
-	IGLKJOPFJOG lknpioglmib = 1;
+	IGLKJOPFJOG result = 1;
 	ENENOEFJKJL fhpccgahlme = 2;
 }
 
@@ -14858,7 +14859,7 @@ message PABFIIEHJMI {
 		string bdippedheoo = 2;
 	}
 
-	JDOFNGMFJNB lknpioglmib = 1;
+	JDOFNGMFJNB result = 1;
 	CombatRewardStatus aegmjamgjnn = 2;
 	NJAEBCDCPIG mkllhjhebdg = 3;
 	OKODKEACAJI anlaeeaeebk = 4;
@@ -14912,7 +14913,7 @@ message PBOKODFPACI {
 }
 
 message PCHOEPPPPJB {
-	string lknpioglmib = 1;
+	string result = 1;
 	string njmifimehac = 2;
 	string gjbpeijdhcp = 3;
 	string padhhfbbhbi = 4;
@@ -14944,7 +14945,7 @@ message PEENJJIEMFI {
 		ERROR_POKEMON_NOT_SHADOW = 6;
 	}
 
-	GNGMGJHLEKK kmieohojnij = 1;
+	GNGMGJHLEKK status = 1;
 	PokemonProto gofabgbblie = 2;
 }
 
@@ -14965,7 +14966,7 @@ message PFHJDJHGPDB {
 		SUCCESS = 1;
 	}
 
-	DNMPGIGNOMG lknpioglmib = 1;
+	DNMPGIGNOMG result = 1;
 	repeated HOALANDJDMB lgmepgeecmg = 2;
 }
 
@@ -15019,7 +15020,7 @@ message PHLHDMECOMJ {
 		ERROR_BUDDY_NOT_VALID = 2;
 	}
 
-	JKIKEEPDLOD lknpioglmib = 1;
+	JKIKEEPDLOD result = 1;
 	GCJJKGJEEEF jodndjickjg = 2;
 }
 
@@ -15056,7 +15057,7 @@ message PIBCAILMDLJ {
 		ERROR = 6;
 	}
 
-	KIJBBAEBCOP kmieohojnij = 1;
+	KIJBBAEBCOP status = 1;
 	NIAJOLJNOAF knnkolacobc = 2;
 }
 
@@ -15085,7 +15086,7 @@ message PIDFCHGHCNP {
 		repeated OIGOJNIGGBN dhgmlbjhooo = 2;
 	}
 
-	PFHIJEDFPBG lknpioglmib = 1;
+	PFHIJEDFPBG result = 1;
 	repeated CANHCGAHINM fflbnphohfk = 2;
 }
 
@@ -15099,7 +15100,7 @@ message PIDIBDBDPLO {
 		ERROR_LOCATION_UNSET = 5;
 	}
 
-	PCCCPHCDECE lknpioglmib = 1;
+	PCCCPHCDECE result = 1;
 	OFMDMCEACDO pfkpoagphle = 2;
 }
 
@@ -15118,7 +15119,7 @@ message PIKEJGGBLNI {
 
 	string kphbmejpecd = 1;
 	string fcjmhfddbhk = 2;
-	repeated string bbjchmnofmj = 3;
+	repeated string monodepth_devices = 3;
 	repeated IPIEALKKIEJ kgpefooafbp = 4;
 	string kaamcbocheb = 5;
 	string coggimfeppo = 6;
@@ -15141,7 +15142,7 @@ message PJEBLHHBHEP {
 		ERROR_TEMPORARILY_UNAVAILABLE = 6;
 	}
 
-	GGPPGLFLDEM lknpioglmib = 1;
+	GGPPGLFLDEM result = 1;
 	KFMIIFMAEED ohddfmphepg = 2;
 }
 
@@ -15155,7 +15156,7 @@ message PJOEMIKPPGE {
 		SUCCESS = 1;
 	}
 
-	CBEBPLFANEG lknpioglmib = 1;
+	CBEBPLFANEG result = 1;
 	string haigmbjcoff = 2;
 }
 
@@ -15190,13 +15191,13 @@ message PJPFEIAGHAO {
 		ERROR_STATE_HANDLER = 6;
 	}
 
-	OICGHCIDMJP lknpioglmib = 1;
+	OICGHCIDMJP result = 1;
 	HDJJJBKOGHK mfcgefaehpn = 2;
 }
 
 message PKAAAMFELOH {
-	int32 kmieohojnij = 1;
-	BLPOAJIEDOP ichkglcaffb = 2;
+	int32 status = 1;
+	BLPOAJIEDOP pokemon = 2;
 	string plccbgieopg = 3;
 	int32 occjnjgeblb = 4;
 	int32 nmdhhlhmnnp = 5;
@@ -15344,7 +15345,7 @@ message PMCCKEFPOCA {
 		int32 loopidkcgli = 2;
 	}
 
-	LCMLJOEENDE kmieohojnij = 1;
+	LCMLJOEENDE status = 1;
 	int32 dhmdboeocna = 2;
 	repeated HBAMICKKFLD mkllhjhebdg = 3;
 	string hhjpnedfaea = 5;
@@ -15375,7 +15376,7 @@ message PMIMOKKGJJF {
 		JOIN_U13_NO_PERMISSION = 10;
 	}
 
-	NNKGBNJPCBB lknpioglmib = 1;
+	NNKGBNJPCBB result = 1;
 	bytes dlbgipgogej = 2;
 	int64 mnhmmjdcpfb = 3;
 	int32 bopbhiekded = 4;
@@ -15445,7 +15446,7 @@ message POIDDFIGCOO {
 		ERROR_GYM_CLOSED = 13;
 	}
 
-	AIEEPKCFPCD lknpioglmib = 1;
+	AIEEPKCFPCD result = 1;
 	ICNAOBMJMJG oopfikllogm = 2;
 	PIABIFIABDB dapboajonce = 3;
 	int32 lcikmkfbldi = 4;
@@ -15503,7 +15504,7 @@ message PPMOPNCEJDH {
 		ERROR_RAID_ACTIVE = 15;
 	}
 
-	PJJNEENDCNM lknpioglmib = 1;
+	PJJNEENDCNM result = 1;
 	OMOIOGHPNAA kpmdnfepeho = 2;
 }
 
