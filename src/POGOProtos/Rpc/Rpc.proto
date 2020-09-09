@@ -16951,8 +16951,8 @@ message CommonTelemetryShopClick {
 	int64 time_elapsed_since_enter_page = 10;
 	string root_STORE_page_session_id = 11;
 	int64 pair_id = 12;
-	string STORE_page_name = 13;
-	string root_STORE_page_name = 14;
+	string store_page_name = 13;
+	string root_store_page_name = 14;
 	AccessType access_type = 15;
 	string fiat_formatted_price = 16;
 }
@@ -16962,7 +16962,7 @@ message CommonTelemetryShopView {
 	int64 view_start_timestamp_ms = 2;
 	int64 view_end_timestamp_ms = 3;
 	repeated string consolidated_item_id = 4;
-	string root_STORE_page_session_id = 5;
+	string root_store_page_session_id = 5;
 }
 
 message InGamePurchaseDetails {
