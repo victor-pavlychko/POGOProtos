@@ -4231,7 +4231,6 @@ message AHIBIAAAMJN {
 		INVALID_VASA_CLIENT_ACTION = 0;
 		COLLECT_ADID = 8000;
 	}
-
 }
 
 // ref: AHKJBODOHCP
@@ -8105,7 +8104,7 @@ message CIKJDBDAMBC {
 
 // ref: CJMLEDBHDIK
 message CJMLEDBHDIK {
-	repeated string okhnndacgfo = 1;
+	repeated string asset_id = 1;
 }
 
 // ref: CJNBLMCFPHF
@@ -8699,7 +8698,6 @@ message DFJBGELCPOL {
 		ERROR_INVALID_HEALTH_UPDATES = 20;
 		ERROR_ATTACKING_POKEMON_INVALID = 30;
 	}
-
 }
 
 // ref: DFNGJGIIHEO
@@ -9977,7 +9975,6 @@ message EPGFKENDEAC {
 		NIA_OPS = 22;
 		WHISK = 23;
 	}
-
 }
 
 // ref: EPHNFIBHJHD
@@ -10408,12 +10405,12 @@ message FJFOOCMHLBJ {
 
 // ref: FJMIKJFMAAP
 message AssetDigestEntryProto {
-	string okhnndacgfo = 1;
-	string gokdgpmblda = 2;
-	int64 liolpilecbj = 3;
-	uint32 mdobnekifng = 4;
-	int32 djkelmocljo = 5;
-	bytes fmidiibcmlp = 6;
+	string asset_id = 1;
+	string bundle_name = 2;
+	int64 version = 3;
+	fixed32 checksum = 4;
+	int32 size = 5;
+	bytes key = 6;
 }
 
 // ref: FJOCEPCLNAJ
@@ -10656,7 +10653,7 @@ message FNDIPLJHGDD {
 message FNICMBIPNPB {
 	// ref: FNICMBIPNPB/IMKMJLKGAEL/JFLGJJMOLHK
 	message JFLGJJMOLHK {
-		string okhnndacgfo = 1;
+		string asset_id = 1;
 		uint32 mdobnekifng = 2;
 	}
 
@@ -13120,7 +13117,7 @@ message BuddyEncounterCameoSettings {
 
 // ref: KACEADFJNEB
 message KACEADFJNEB {
-	string okhnndacgfo = 1;
+	string asset_id = 1;
 	string hhnbfajichl = 2;
 	int32 djkelmocljo = 3;
 	uint32 mdobnekifng = 4;
@@ -18037,7 +18034,6 @@ message SocialProto {
 		HOLOHOLO_DELETED = 2;
 		LEXICON_DELETED = 3;
 	}
-
 }
 
 // ref: Niantic.Platform.Protos.SocialSettings
@@ -18057,7 +18053,6 @@ message SocialSettings {
 		ONLINE_STATUS_OVERVIEW = 3;
 		ONLINE_STATUS_TOGGLE = 4;
 	}
-
 }
 
 // ref: Niantic.Platform.Protos.SocialV2Enum
@@ -18075,7 +18070,6 @@ message SocialV2Enum {
 		STATUS_ONLINE = 2;
 		STATUS_OFFLINE = 3;
 	}
-
 }
 
 // ref: Niantic.Platform.Protos.TemplateVariable
@@ -18476,7 +18470,6 @@ message PortalCurationImageResult {
 		IMAGE_NOT_SERVABLE = 6;
 		PORTAL_NOT_FOUND = 7;
 	}
-
 }
 
 // ref: Niantic.Titan.Protos.SubmitNewPoiOutProto
@@ -18772,7 +18765,6 @@ message GameplayWeatherProto {
 		SNOW = 6;
 		FOG = 7;
 	}
-
 }
 
 // ref: Niantic.Rpc.WeatherAlertProto
@@ -19321,7 +19313,6 @@ message VasaClientAction {
 		INVALID_VASA_CLIENT_ACTION = 0;
 		COLLECT_ADID = 8000;
 	}
-
 }
 
 //----- End vasa -----
