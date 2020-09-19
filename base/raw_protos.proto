@@ -800,7 +800,7 @@ enum OnboardingArStatus {
 
 // ref: DAKOAEGGPED
 enum VariableName {
-	unset__variable_name = 0;
+	UNSET = 0;
 	CODE_NAME = 1;
 	TEAM = 2;
 	LEVEL = 3;
