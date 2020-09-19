@@ -147,7 +147,16 @@ def open_proto_file(main_file, package_name):
 
             if proto_line.startswith("enum"):
                 is_enum = True
-                enum_name = re.split(r'\s', proto_line)[1].upper()
+                match = re.split(r'\s', proto_line)
+                i = 0
+                enum_name = ''
+                for x in match[1]:
+                    if x.isupper() and i > 0:
+                        enum_name += '_' + x
+                    else:
+                        enum_name += x
+                    i = i + 1
+                enum_name = enum_name.upper().replace('P_O_I_', 'POI_')
 
             # refs
             if operator.contains(proto_line, "// ref:"):
@@ -267,59 +276,59 @@ def open_proto_file(main_file, package_name):
         #     print('\tfix_line = fix_line.replace("bytes", "Good_Proto_Here")')
 
         # Replace bytes for good proto here by condition
-        if message_for_fix == "ClientGameMasterTemplateProto" and operator.contains(fix_line, "bytes data"):
-            fix_line = fix_line.replace("bytes", "FMCHABOILMM")
+        # if message_for_fix == "ClientGameMasterTemplateProto" and operator.contains(fix_line, "bytes data"):
+        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "BackgroundToken" and operator.contains(fix_line, "bytes token"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "BackgroundToken" and operator.contains(fix_line, "bytes iv"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes deleted_item_key"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes item"):
-            fix_line = fix_line.replace("bytes", "DNNGDJLGPPP")
+        # elif message_for_fix == "InventoryItemProto" and operator.contains(fix_line, "bytes item"):
+        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "ProxyRequestProto" and operator.contains(fix_line, "bytes payload"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "ProxyResponseProto" and operator.contains(fix_line, "bytes payload"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "AEECDHCIKCM" and operator.contains(fix_line, "bytes eafbmckfnli"):
+        # elif message_for_fix == "CJOJGABMFPD" and operator.contains(fix_line, "bytes gkbagaidnki"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "ANOMPFPBIPM" and operator.contains(fix_line, "bytes lfcpdhhaefn"):
+        # elif message_for_fix == "CPGAILBKMIE" and operator.contains(fix_line, "bytes dbfmaclhflp"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "ANOMPFPBIPM" and operator.contains(fix_line, "bytes lakniimfnlb"):
-        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "BBAJDEEEDEF" and operator.contains(fix_line, "bytes cpijocndncp"):
-        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "CEHDJEMNBBC" and operator.contains(fix_line, "bytes pjnecadedfi"):
+        # elif message_for_fix == "DAMCNEKILPL" and operator.contains(fix_line, "bytes mlghifehoah"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "FitnessReportProto" and operator.contains(fix_line, "bytes game_data"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "GADPHKHAIMJ" and operator.contains(fix_line, "bytes pjnecadedfi"):
+        # elif message_for_fix == "FJMIKJFMAAP" and operator.contains(fix_line, "bytes fmidiibcmlp"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "GPHLJOLGGMF" and operator.contains(fix_line, "bytes jjfjedaecam"):
+        # elif message_for_fix == "HBPEACAIODI" and operator.contains(fix_line, "bytes mdnhcfkhmpj"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "GPHLJOLGGMF" and operator.contains(fix_line, "bytes edilgaoikmd"):
+        # elif message_for_fix == "IEJJEJEBLHB" and operator.contains(fix_line, "bytes dbfmaclhflp"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "HAAJDBDDIIJ" and operator.contains(fix_line, "bytes bdlohknpdhl"):
+        # elif message_for_fix == "JBLBFLKNFPL" and operator.contains(fix_line, "bytes clhhgpcpfal"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "IFPNMHEPBGF" and operator.contains(fix_line, "bytes dcongihbmfb"):
+        # elif message_for_fix == "JFGDKGLEJDK" and operator.contains(fix_line, "bytes clhhgpcpfal"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "JFJNABPPJLH" and operator.contains(fix_line, "bytes kaiamlgepej"):
+        # elif message_for_fix == "JGGNAANFMKJ" and operator.contains(fix_line, "bytes mjpeknofebo"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "JHDOEDMJKHI" and operator.contains(fix_line, "bytes moljgjghggp"):
+        # elif message_for_fix == "JGGNAANFMKJ" and operator.contains(fix_line, "bytes odoaokjbbni"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "JMOJFCBHMPO" and operator.contains(fix_line, "bytes bdlohknpdhl"):
+        # elif message_for_fix == "KFMPBNDFOOJ" and operator.contains(fix_line, "bytes dbfmaclhflp"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "LDBLNDNGEEC" and operator.contains(fix_line, "bytes gbddmbdejfj"):
+        # elif message_for_fix == "MECGHHCIGAO" and operator.contains(fix_line, "bytes apibanmfegp"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "LMJMNIKIMMF" and operator.contains(fix_line, "bytes kaiamlgepej"):
+        # elif message_for_fix == "OBFGGMFMJDB" and operator.contains(fix_line, "bytes dbfmaclhflp"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "MKOOLBIJEBG" and operator.contains(fix_line, "bytes pjnecadedfi"):
+        # elif message_for_fix == "ODENGIIEGNB" and operator.contains(fix_line, "bytes gkbagaidnki"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "NEJJFPEMFAP" and operator.contains(fix_line, "bytes kaiamlgepej"):
+        # elif message_for_fix == "OEFEGPKJFFO" and operator.contains(fix_line, "bytes mlghifehoah"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "NNFGPFNNGNB" and operator.contains(fix_line, "bytes moljgjghggp"):
+        # elif message_for_fix == "OMELPMNEODN" and operator.contains(fix_line, "bytes mbopgfdlmol"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "PHEGKNLDPFP" and operator.contains(fix_line, "bytes pjnecadedfi"):
+        # elif message_for_fix == "PCDOMMOHALD" and operator.contains(fix_line, "bytes aohfihankjc"):
+        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
+        # elif message_for_fix == "PCDOMMOHALD" and operator.contains(fix_line, "bytes demnjojbgli"):
+        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
+        # elif message_for_fix == "PFPJGDJKEKH" and operator.contains(fix_line, "bytes mlghifehoah"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "PlatformClientApiSettingsProto" and operator.contains(fix_line, "bytes payload"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
@@ -327,8 +336,8 @@ def open_proto_file(main_file, package_name):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "AddLoginActionProto" and operator.contains(fix_line, "bytes inner_message"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        elif message_for_fix == "DownloadSettingsResponseProto" and operator.contains(fix_line, "bytes values"):
-            fix_line = fix_line.replace("bytes", "EIIOIPNIHIB")
+        # elif message_for_fix == "DownloadSettingsResponseProto" and operator.contains(fix_line, "bytes values"):
+        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "FriendDetailsProto" and operator.contains(fix_line, "bytes friend_visible_data"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "FriendDetailsProto" and operator.contains(fix_line, "bytes data_with_me"):
@@ -421,7 +430,7 @@ if gen_only:
             os.makedirs(dir_rpc)
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
-    shutil.copy(generated_file, protos_path + '/v0.185.3_obf.proto')
+    shutil.copy(generated_file, protos_path + '/v0.187.1_obf.proto')
     shutil.move(generated_file, out_path)
 
 if keep_file:
