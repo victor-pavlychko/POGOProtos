@@ -6958,9 +6958,9 @@ message RpcTimingTelemetry {
 }
 
 message EggIncubatorAttributesProto {
-	EggIncubatorType dcpcbogjpld = 1;
-	int32 pmdookglgff = 2;
-	float cnjkbellmkm = 3;
+	EggIncubatorType incubator_type = 1;
+	int32 uses = 2;
+	float distance_multiplier = 3;
 }
 
 message BMKIJFBLFAN {
@@ -13420,8 +13420,8 @@ message TemporaryEvolutionResourceProto {
 }
 
 message ExperienceBoostAttributesProto {
-	float kdbhkdclnca = 1;
-	int32 kbagoidgipf = 2;
+	float xp_multiplier = 1;
+	int32 boost_duration_ms = 2;
 }
 
 message PlayerPublicProfileProto {
