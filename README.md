@@ -16,10 +16,10 @@ This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.pr
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
 
-| Version      | Base           | Notes           | Extra                           |
-|--------------|---------------|-----------------|---------------------------------|
-| 2.52.7       |  [v0.187.1](https://github.com/Furtif/POGOProtos/blob/master/base/v0.187.1_obf.proto)       | Obfuscated      |  Protocol Buffers v3.13.0       |
-| 2.52.2       |  [v0.181.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.181.0.proto)       | Compatible      |  Protocol Buffers v3.13.0       |
+| Version      | Base                                                                                        | Notes                  | Extra                           |
+|--------------|---------------------------------------------------------------------------------------------|------------------------|---------------------------------|
+| 2.52.7       |  [v0.187.1](https://github.com/Furtif/POGOProtos/blob/master/base/v0.187.1_obf.proto)       | Semi DeObfuscated      |  Protocol Buffers v3.13.0       |
+| 2.52.2       |  [v0.181.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.181.0.proto)           | Compatible             |  Protocol Buffers v3.13.0       |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
