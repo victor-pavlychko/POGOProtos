@@ -7488,7 +7488,7 @@ message BNLLCCIDBHC {
 }
 
 // ref: BNNFCHBIAFB
-message BNNFCHBIAFB {
+message BuddyConsumablesLogEntry {
 	LootProto nldndpcfdmh = 1;
 }
 
@@ -7678,7 +7678,7 @@ message NewsGlobalSettingsProto {
 }
 
 // ref: CDAOMJCMIID
-message CDAOMJCMIID {
+message PurifyPokemonLogEntry {
 	HoloPokemonId mfkgkhdmbpb = 1;
 	PokemonDisplayProto efpknnlchbc = 2;
 	uint64 kclapienbkb = 3;
@@ -7706,7 +7706,7 @@ message CEHDIKGGFGB {
 }
 
 // ref: CEHFKPCKKBJ
-message CEHFKPCKKBJ {
+message CompleteQuestLogEntry {
 	// ref: CEHFKPCKKBJ/JFCLLHJJBHK/IDKABLKHHIM
 	enum Result {
 		UNSET = 0;
@@ -8167,7 +8167,7 @@ message CKPCDEEENMB {
 }
 
 // ref: CLDNIPGKMMO
-message CLDNIPGKMMO {
+message CombatLogEntry {
 	// ref: CLDNIPGKMMO/GKFENAKLGEN/KFAAELBOPHG
 	enum Result {
 		UNSET = 0;
@@ -8271,7 +8271,7 @@ message LoginSettingsProto {
 }
 
 // ref: COAKEJJNBOG
-message COAKEJJNBOG {
+message PasscodeRewardsLogEntry {
 	// ref: COAKEJJNBOG/DMDIIAOMKLM/BIPMJBOHKPC
 	enum Result {
 		UNSET = 0;
@@ -8533,7 +8533,7 @@ message RaidTelemetry {
 }
 
 // ref: DCMNLENGGMJ
-message DCMNLENGGMJ {
+message InvasionVictoryLogEntry {
 	LootProto nldndpcfdmh = 1;
 	EnumWrapper.InvasionCharacter idahddppmgi = 2;
 }
@@ -10301,7 +10301,7 @@ message FHHMKBFJKNL {
 }
 
 // ref: FHKKDGGNLLP
-message FHKKDGGNLLP {
+message ShareExRaidPassLogEntry {
 	// ref: FHKKDGGNLLP/ACLBCJFMJKM/CLPABMDBDNA
 	enum Result {
 		UNSET = 0;
@@ -10838,7 +10838,7 @@ message GetFitnessReportProto {
 }
 
 // ref: GFIMONPKLPA
-message GFIMONPKLPA {
+message TradingLogEntry {
 	// ref: GFIMONPKLPA/LFMECJDMDPH/DIPPMPOMEFO
 	enum Result {
 		UNSET = 0;
@@ -11028,58 +11028,58 @@ message CombatBaseStatsProto {
 }
 
 // ref: GKODOJLKFHB
-message GKODOJLKFHB {
+message ActionLogEntry {
 	// ref: GKODOJLKFHB/GGKBIOAAKBB
-	//oneof Data {
-	//none = 0;
-	//catch_pokemon = 3;
-	//fort_search = 4;
-	//buddy_pokemon = 5;
-	//raid_rewards = 6;
-	//passcode_rewards = 7;
-	//complete_quest = 8;
-	//complete_quest_stamp_card = 9;
-	//complete_quest_pokemon_encounter = 10;
-	//beluga_transfer = 11;
-	//open_gift = 12;
-	//send_gift = 13;
-	//trading = 14;
-	//share_ex_raid_pass = 15;
-	//decline_ex_raid_pass = 16;
-	//fitness_rewards = 17;
-	//combat = 18;
-	//purify_pokemon = 19;
-	//invasion_victory = 20;
-	//vs_seeker_set = 21;
-	//vs_seeker_complete_season = 22;
-	//vs_seeker_win_rewards = 23;
-	//buddy_consumables = 24;
+	//oneof Action {
+		//none = 0;
+		//catch_pokemon = 3;
+		//fort_search = 4;
+		//buddy_pokemon = 5;
+		//raid_rewards = 6;
+		//passcode_rewards = 7;
+		//complete_quest = 8;
+		//complete_quest_stamp_card = 9;
+		//complete_quest_pokemon_encounter = 10;
+		//beluga_transfer = 11;
+		//open_gift = 12;
+		//send_gift = 13;
+		//trading = 14;
+		//share_ex_raid_pass = 15;
+		//decline_ex_raid_pass = 16;
+		//fitness_rewards = 17;
+		//combat = 18;
+		//purify_pokemon = 19;
+		//invasion_victory = 20;
+		//vs_seeker_set = 21;
+		//vs_seeker_complete_season = 22;
+		//vs_seeker_win_rewards = 23;
+		//buddy_consumables = 24;
 	//}
 
 	int64 hencndffkoi = 1;
 	bool aalakcggice = 2;
 	CatchPokemonLogEntry catch_pokemon = 3;
-	MOOKPLNJKFA fort_search = 4;
+	FortSearchLogEntry fort_search = 4;
 	BuddyPokemonLogEntry buddy_pokemon = 5;
-	JPFMNNIBKLH raid_rewards = 6;
-	COAKEJJNBOG passcode_rewards = 7;
-	CEHFKPCKKBJ complete_quest = 8;
-	OABFJHBECOO complete_quest_stamp_card = 9;
+	RaidRewardsLogEntry raid_rewards = 6;
+	PasscodeRewardsLogEntry passcode_rewards = 7;
+	CompleteQuestLogEntry complete_quest = 8;
+	CompleteQuestStampCardLogEntry complete_quest_stamp_card = 9;
 	CompleteQuestPokemonEncounterLogEntry complete_quest_pokemon_encounter = 10;
-	JNHBKAEPKLN beluga_transfer = 11;
-	LJBGFBAFOEB open_gift = 12;
+	BelugaDailyTransferLogEntry beluga_transfer = 11;
+	OpenGiftLogEntry open_gift = 12;
 	SendGiftLogEntry send_gift = 13;
-	GFIMONPKLPA trading = 14;
-	FHKKDGGNLLP share_ex_raid_pass = 15;
-	JMIMOIIDGAG decline_ex_raid_pass = 16;
-	HHGLLIKHNBI fitness_rewards = 17;
-	CLDNIPGKMMO combat = 18;
-	CDAOMJCMIID purify_pokemon = 19;
-	DCMNLENGGMJ invasion_victory = 20;
-	MMLINCEHMIN vs_seeker_set = 21;
+	TradingLogEntry trading = 14;
+	ShareExRaidPassLogEntry share_ex_raid_pass = 15;
+	DeclineExRaidPassLogEntry decline_ex_raid_pass = 16;
+	FitnessRewardsLogEntry fitness_rewards = 17;
+	CombatLogEntry combat = 18;
+	PurifyPokemonLogEntry purify_pokemon = 19;
+	InvasionVictoryLogEntry invasion_victory = 20;
+	VsSeekerSetLogEntry vs_seeker_set = 21;
 	VsSeekerCompleteSeasonLogEntry vs_seeker_complete_season = 22;
-	KDAOIKKFKMH vs_seeker_win_rewards = 23;
-	BNNFCHBIAFB buddy_consumables = 24;
+	VsSeekerWinRewardsLogEntry vs_seeker_win_rewards = 23;
+	BuddyConsumablesLogEntry buddy_consumables = 24;
 }
 
 // ref: GLMOLENLKPL
@@ -11571,7 +11571,7 @@ message UserAttributesProto {
 }
 
 // ref: HHGLLIKHNBI
-message HHGLLIKHNBI {
+message FitnessRewardsLogEntry {
 	// ref: HHGLLIKHNBI/AFDPGJMKCLD/HDBEPHLMFHP
 	enum Result {
 		UNSET = 0;
@@ -12954,7 +12954,7 @@ message MoveSequenceSettingsProto {
 }
 
 // ref: JMIMOIIDGAG
-message JMIMOIIDGAG {
+message DeclineExRaidPassLogEntry {
 	// ref: JMIMOIIDGAG/PNDNLKIIDCH/GBHJCENFCGC
 	enum Result {
 		UNSET = 0;
@@ -12979,7 +12979,7 @@ message JMPBNDAGIDC {
 }
 
 // ref: JNHBKAEPKLN
-message JNHBKAEPKLN {
+message BelugaDailyTransferLogEntry {
 	// ref: JNHBKAEPKLN/EGJEDFIJPCA/ENAPKDCEDNE
 	enum Result {
 		UNSET = 0;
@@ -13076,7 +13076,7 @@ message JPDNHFBAFHM {
 }
 
 // ref: JPFMNNIBKLH
-message JPFMNNIBKLH {
+message RaidRewardsLogEntry {
 	// ref: JPFMNNIBKLH/PFEJGKNFPMI/CJKHCKGDOAG
 	enum Result {
 		UNSET = 0;
@@ -13365,7 +13365,7 @@ message KCKOHGABILA {
 }
 
 // ref: KDAOIKKFKMH
-message KDAOIKKFKMH {
+message VsSeekerWinRewardsLogEntry {
 	// ref: KDAOIKKFKMH/CHFLJCPJJMM/NIOONLIPMAO
 	enum Result {
 		UNSET = 0;
@@ -14235,7 +14235,7 @@ message MapPokemonProto {
 }
 
 // ref: LJBGFBAFOEB
-message LJBGFBAFOEB {
+message OpenGiftLogEntry {
 	// ref: LJBGFBAFOEB/FGCPFNNEJJK/DIEMLGLNGON
 	enum Result {
 		UNSET = 0;
@@ -15118,7 +15118,7 @@ message MMLENDPLHNA {
 }
 
 // ref: MMLINCEHMIN
-message MMLINCEHMIN {
+message VsSeekerSetLogEntry {
 	// ref: MMLINCEHMIN/NMDDGDCBBJE/KBDFOBKHNFI
 	enum Result {
 		UNSET = 0;
@@ -15212,7 +15212,7 @@ message TradingGlobalSettingsProto {
 }
 
 // ref: MOOKPLNJKFA
-message MOOKPLNJKFA {
+message FortSearchLogEntry {
 	// ref: MOOKPLNJKFA/IMGOLIAPJHB/PFCBFLGMBME
 	enum Result {
 		UNSET = 0;
@@ -15793,7 +15793,7 @@ message BuddySwapSettings {
 }
 
 // ref: OABFJHBECOO
-message OABFJHBECOO {
+message CompleteQuestStampCardLogEntry {
 	// ref: OABFJHBECOO/DMDIBKMHJJJ/FCLDLMEEBHL
 	enum Result {
 		UNSET = 0;
@@ -16759,7 +16759,7 @@ message PGBOLEFLDPI {
 	}
 
 	Result result = 1;
-	repeated GKODOJLKFHB ioghbpknjbd = 2;
+	repeated ActionLogEntry ioghbpknjbd = 2;
 }
 
 // ref: PGCPOAOCFGI
