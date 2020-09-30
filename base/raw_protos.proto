@@ -4550,7 +4550,7 @@ message QuestRewardProto {
 
 // ref: ANDNALDHEHJ
 message CombatDefensiveInputChallengeSettings {
-	float dolfdlbhkfp = 1;
+	float full_rotations_for_max_score = 1;
 }
 
 // ref: ANOJIAIKAFF
@@ -7054,12 +7054,12 @@ message BHBNFOFHPEF {
 
 // ref: BHCGCKFKKGM
 message BuddyPokemonProto {
-	uint64 jkenapdnljb = 1;
-	double gcnhojkbghp = 2;
-	double aphbdljdccf = 3;
-	DailyCounterProto bfhhnfniilo = 4;
-	int64 focomgejgnj = 5;
-	bool agdodlmbfng = 6;
+	fixed64 buddy_pokemon_id = 1;
+	double start_km_walked = 2;
+	double last_km_awarded = 3;
+	DailyCounterProto daily_buddy_swaps = 4;
+	int64 last_km_awarded_ms = 5;
+	bool best_buddies_backfilled = 6;
 }
 
 // ref: BIAPKEFGFHP
@@ -7489,7 +7489,7 @@ message BNLLCCIDBHC {
 
 // ref: BNNFCHBIAFB
 message BuddyConsumablesLogEntry {
-	LootProto nldndpcfdmh = 1;
+	LootProto rewards = 1;
 }
 
 // ref: BOKEDLPHNJB
@@ -7933,7 +7933,7 @@ message CombatChallengeProto {
 	CombatChallengeState state = 7;
 	int64 created_timestamp_ms = 8;
 	int64 expiration_timestamp_ms = 19;
-	string field1 = 20;
+	string combat_id = 20;
 }
 
 // ref: CGCDHIJBCDO
@@ -8175,11 +8175,11 @@ message CombatLogEntry {
 	}
 
 	Result result = 1;
-	CombatPlayerFinishState jhkojebcolb = 2;
-	LootProto nldndpcfdmh = 3;
-	string hlpfmbellom = 4;
+	CombatPlayerFinishState finish_state = 2;
+	LootProto rewards = 3;
+	string opponent = 4;
 	string combat_league_template_id = 5;
-	string ldmcdmnidmc = 6;
+	string npc_template_id = 6;
 }
 
 // ref: CLFMAPFDIPP
@@ -8371,20 +8371,20 @@ message BattleActionProto {
 		SPECIAL_ATTACK_2 = 11;
 	}
 
-	ActionType gnkgaimjkch = 1;
-	int64 bfdecmfknbn = 2;
-	int32 pifklnodglf = 3;
-	int32 jlpbgbgfoim = 5;
-	int32 fpinkpobima = 6;
-	int32 dhbchblnmec = 7;
-	uint64 mcmcjgaiaec = 8;
-	BattleParticipantProto cejoiijjpgb = 9;
-	BattleResultsProto bdaimiebpjh = 10;
-	int64 blhkmpmkced = 11;
-	int64 dndhpofaelj = 12;
-	BattleParticipantProto bdbbbdjbmbl = 13;
-	uint64 dlgdgnjagoo = 14;
-	LeveledUpFriendsProto flgmceonepp = 15;
+	ActionType type = 1;
+	int64 action_start_ms = 2;
+	int32 duration_ms = 3;
+	int32 energy_delta = 5;
+	int32 attacker_index = 6;
+	int32 target_index = 7;
+	fixed64 active_pokemon_id = 8;
+	BattleParticipantProto joined_player = 9;
+	BattleResultsProto battle_results = 10;
+	int64 damage_window_start_ms = 11;
+	int64 damage_window_end_ms = 12;
+	BattleParticipantProto quit_player = 13;
+	fixed64 target_pokemon_id = 14;
+	LeveledUpFriendsProto leveled_up_friends = 15;
 }
 
 // ref: CPBONJPEICI
@@ -8676,7 +8676,7 @@ message CancelTradingOutProto {
 	}
 
 	Result result = 1;
-	TradingProto jikkdljggho = 2;
+	TradingProto trading = 2;
 }
 
 // ref: DFJBGELCPOL
@@ -8978,7 +8978,7 @@ message DJIGAKOIDEO {
 
 // ref: DJJBEOFKIJD
 message CatchPokemonQuestProto {
-	repeated HoloPokemonId ggnacafcdmp = 1;
+	repeated HoloPokemonId unique_pokemon_id = 1;
 }
 
 // ref: DJLDMHBHCFG
@@ -9264,8 +9264,8 @@ message BuddyFeedingOutProto {
 	}
 
 	Result result = 1;
-	BuddyObservedData cfncokpnoeg = 3;
-	BuddyStatsShownHearts.BuddyShownHeartType ecenmhkdegj = 4;
+	BuddyObservedData observed_data = 3;
+	BuddyStatsShownHearts.BuddyShownHeartType shown_hearts = 4;
 }
 
 // ref: EBJNDCLKJJE
@@ -9297,7 +9297,7 @@ message ClaimVsSeekerRewardsOutProto {
 	}
 
 	Result result = 1;
-	LootProto nldndpcfdmh = 2;
+	LootProto rewards = 2;
 }
 
 // ref: ECEJPOEBHBL
@@ -9432,10 +9432,10 @@ message BuddyPokemonLogEntry {
 	}
 
 	Result result = 1;
-	HoloPokemonId bgdcaommfao = 2;
-	int32 ligbfceekdo = 3;
-	PokemonDisplayProto efpknnlchbc = 4;
-	uint64 mfkgkhdmbpb = 5;
+	HoloPokemonId pokemon_type = 2;
+	int32 amount = 3;
+	PokemonDisplayProto pokemon_display = 4;
+	fixed64 pokemon_id = 5;
 }
 
 // ref: EFJJJFHEMFK
@@ -10922,8 +10922,8 @@ message GGFCIHDONNG {
 
 // ref: GGKKBFPDINF
 message CharacterDisplayProto {
-	EnumWrapper.PokestopStyle adbhjffoedg = 1;
-	EnumWrapper.InvasionCharacter jfindmcpnim = 2;
+	EnumWrapper.PokestopStyle style = 1;
+	EnumWrapper.InvasionCharacter character = 2;
 }
 
 // ref: GHDAPCNAJGM
@@ -11016,15 +11016,15 @@ message GJFHOGOMIAF {
 
 // ref: GJHABFJFEON
 message BuddyMultiplayerTimeToGetSessionProto {
-	int32 nenieieiffk = 1;
-	int64 phmnofmefpb = 2;
+	int32 test_number = 1;
+	int64 time_to_get_session = 2;
 }
 
 // ref: GKJPFDCIBKE
 message CombatBaseStatsProto {
-	int32 mbjmbggodpa = 1;
-	int32 oclmbbphlgj = 2;
-	float bpcigoddmja = 3;
+	int32 total_battles = 1;
+	int32 wins = 2;
+	float rating = 3;
 }
 
 // ref: GKODOJLKFHB
@@ -11056,8 +11056,8 @@ message ActionLogEntry {
 		//buddy_consumables = 24;
 	//}
 
-	int64 hencndffkoi = 1;
-	bool aalakcggice = 2;
+	int64 timestamp_ms = 1;
+	bool sfida = 2;
 	CatchPokemonLogEntry catch_pokemon = 3;
 	FortSearchLogEntry fort_search = 4;
 	BuddyPokemonLogEntry buddy_pokemon = 5;
@@ -11115,16 +11115,16 @@ message VsSeekerLootProto {
 
 // ref: GMBNLGDBPMG
 message CaptureProbabilityProto {
-	repeated Item blkbkkfpiio = 1;
-	repeated float dbianmbmnch = 2;
-	double agbccfadhfo = 12;
+	repeated Item pokeball_type = 1;
+	repeated float capture_probability = 2;
+	double reticle_difficulty_scale = 12;
 }
 
 // ref: GMEKONCDLGC
 message BattlePartyTelemetry {
-	BattlePartyTelemetryIds jfjdkdhppdd = 1;
-	int32 efbgmldiemp = 2;
-	int32 kokkgoimcbo = 3;
+	BattlePartyTelemetryIds battle_party_click_id = 1;
+	int32 battle_party_count = 2;
+	int32 battle_party_number = 3;
 }
 
 // ref: GMJBNFKFLNI
@@ -11805,12 +11805,12 @@ message InventoryUpgradesProto {
 
 // ref: HPIFJELPBGP
 message BuddyStats {
-	float ofofmblglkf = 1;
-	int32 cpnaojfjeni = 2;
-	int32 hbifodjbjil = 3;
-	int32 ibokhlaeioc = 4;
-	int32 mjfofaedecg = 5;
-	int32 plnblkcoaen = 6;
+	float km_walked = 1;
+	int32 berries_fed = 2;
+	int32 communication = 3;
+	int32 battles = 4;
+	int32 photos = 5;
+	int32 new_visits = 6;
 }
 
 // ref: HPIPFHEAONI
@@ -11857,60 +11857,60 @@ message CombatProto {
 
 	// ref: IAEODBIFOMA/JIFBNFGCDNO/CEAKNELMNKK
 	message CombatPlayerProto {
-		PlayerPublicProfileProto jeenccbbffk = 1;
-		CombatPokemonProto jjjmbcihbli = 2;
-		repeated CombatPokemonProto mnnafnmiaaf = 3;
-		repeated CombatPokemonProto mhnodplodjh = 4;
-		CombatActionProto bjmjpbndeil = 5;
-		bool jkdlhblamma = 6;
-		int32 gageimmlnbj = 7;
-		CombatActionProto ififhafklnk = 8;
-		int64 jmcnhebeepn = 9;
-		int32 jojoifnmopa = 10;
-		string kabdkaelnce = 11;
-		int32 pmhidaplcnm = 12;
-		int64 dmmcbhcceml = 13;
-		int32 mljngmnekij = 14;
+		PlayerPublicProfileProto public_profile = 1;
+		CombatPokemonProto active_pokemon = 2;
+		repeated CombatPokemonProto reserve_pokemon = 3;
+		repeated CombatPokemonProto fainted_pokemon = 4;
+		CombatActionProto current_action = 5;
+		bool lockstep_ack = 6;
+		int32 last_updated_turn = 7;
+		CombatActionProto minigame_action = 8;
+		int64 quick_swap_available_ms = 9;
+		int32 minigame_defense_chances_left = 10;
+		string combat_npc_personality_id = 11;
+		int32 times_combat_actions_called = 12;
+		int64 field1 = 13;
+		int32 field2 = 14;
 	}
 
 	// ref: IAEODBIFOMA/JIFBNFGCDNO/HPJNAEABNAM
 	message CombatPokemonProto {
-		uint64 mfkgkhdmbpb = 1;
-		int32 kcbcpdfdkel = 2;
-		int32 fgeliggeohb = 3;
-		float maacbjpdnoi = 4;
-		int32 lhpockkkeea = 5;
-		int32 nieieblomfi = 6;
-		int32 gpohdhbnacg = 7;
-		int32 kndopccmkin = 8;
-		int32 agdlchgaokn = 9;
-		int32 kpegaeemkia = 10;
-		PokemonDisplayProto efpknnlchbc = 11;
-		int32 gijnbmdfmog = 12;
-		int32 jlcebfglean = 13;
-		int32 meakfplpbof = 14;
-		int32 dlnhmligjbh = 15;
-		int32 akdganpkjfl = 16;
-		int32 ffolmgblfik = 17;
-		int32 ahifombjill = 18;
-		string lecobcejkpk = 19;
-		Item eajohpjbknk = 20;
+		fixed64 pokemon_id = 1;
+		int32 pokedex_id = 2;
+		int32 cp = 3;
+		float cp_multiplier = 4;
+		int32 stamina = 5;
+		int32 max_stamina = 6;
+		int32 move1 = 7;
+		int32 move2 = 8;
+		int32 move3 = 9;
+		int32 energy = 10;
+		PokemonDisplayProto pokemon_display = 11;
+		int32 individual_attack = 12;
+		int32 individual_defense = 13;
+		int32 individual_stamina = 14;
+		int32 attack_stat_stage = 15;
+		int32 defense_stat_stage = 16;
+		int32 battles_won = 17;
+		int32 battles_lost = 18;
+		string nickname = 19;
+		Item pokeball = 20;
 	}
 
-	CombatState eihblpligfa = 1;
-	string hdegllgmeih = 2;
-	CombatPlayerProto ekinggfmndg = 3;
-	CombatPlayerProto hlpfmbellom = 4;
-	int64 ibbcgicfalh = 5;
-	int64 ndfohhnjkka = 6;
-	int64 dikaifhaigb = 7;
-	int32 didegcjnmpl = 8;
-	int64 lcoheelaocd = 9;
-	int64 pigoecpdfgc = 10;
-	int64 niibnpojdek = 11;
-	int64 goelpbehckl = 12;
-	int64 jeneikajhel = 13;
-	int64 dmjeiagkjlo = 14;
+	CombatState combat_state = 1;
+	string combat_id = 2;
+	CombatPlayerProto player = 3;
+	CombatPlayerProto opponent = 4;
+	int64 combat_start_ms = 5;
+	int64 combat_end_ms = 6;
+	int64 server_ms = 7;
+	int32 current_turn = 8;
+	int64 turn_start_ms = 9;
+	int64 minigame_end_ms = 10;
+	int64 minigame_submit_score_end_ms = 11;
+	int64 change_pokemon_end_ms = 12;
+	int64 quick_swap_cooldown_duration_ms = 13;
+	int64 state_change_delay_until_turn = 14;
 }
 
 // ref: IBCBPKLGKOL
@@ -12049,8 +12049,8 @@ message IEFLNAKACDC {
 
 // ref: IEJJEJEBLHB
 message AdDetails {
-	ImageTextCreativeProto emdpeilkhki = 1;
-	bytes dbfmaclhflp = 2;
+	ImageTextCreativeProto image_text_creative = 1;
+	bytes encrypted_ad_token = 2;
 }
 
 // ref: IFEPLFNNNJP
@@ -12399,7 +12399,7 @@ message IINLAKAIGMM {
 
 // ref: IJEILLOPBAB
 message AppliedItemsProto {
-	repeated AppliedItemProto ekpohjfklal = 4;
+	repeated AppliedItemProto item = 4;
 }
 
 // ref: IJFBPNHPFJN
@@ -12567,12 +12567,12 @@ message BattleLogProto {
 		TIMED_OUT = 4;
 	}
 
-	State jlnijhmemnj = 1;
-	BattleType dbecogechda = 2;
-	int64 dikaifhaigb = 3;
-	repeated BattleActionProto ncilckfpfoe = 4;
-	int64 llocahndhdn = 5;
-	int64 kkfifghaonk = 6;
+	State state = 1;
+	BattleType battle_type = 2;
+	int64 server_ms = 3;
+	repeated BattleActionProto battle_actions = 4;
+	int64 battle_start_ms = 5;
+	int64 battle_end_ms = 6;
 }
 
 // ref: IOEGOBEDBFL
@@ -12657,23 +12657,23 @@ message BuddyObservedData {
 
 	// ref: JBIAAAMCMEG/DHPPAGIEOGN/AJECMKHAMNF
 	message BuddyFeedStats {
-		int64 pbmdmjcdlno = 1;
-		float bmlkehlgdem = 2;
-		int64 afmodaneioo = 3;
-		int64 pfflicakohk = 4;
+		int64 map_expiration_ms = 1;
+		float pre_map_fullness_percentage = 2;
+		int64 fullness_expiration_ms = 3;
+		int64 poffin_expiration_ms = 4;
 	}
 
-	int32 cppkjnmpbkb = 1;
-	BuddyStats bcnfhogkjfj = 3;
-	BuddyGiftProto nchennmhggm = 6;
-	int32 nkhenfnjjge = 7;
-	BuddyValidationResult pecaginmfan = 8;
-	map<int32, SouvenirProto> oegphmcaenb = 9;
-	BuddyStatsShownHearts enjffacophd = 10;
-	BuddyFeedStats cncabapaflc = 11;
-	string jpneiholigi = 12;
-	int64 ahojbebbjah = 13;
-	int32 klakafabbeh = 14;
+	int32 current_points_earned = 1;
+	BuddyStats total_stats = 3;
+	BuddyGiftProto buddy_gift_picked_up = 6;
+	int32 current_emotion_points = 7;
+	BuddyValidationResult buddy_validation_result = 8;
+	map<int32, SouvenirProto> souvenirs_collected = 9;
+	BuddyStatsShownHearts today_stats_shown_hearts = 10;
+	BuddyFeedStats buddy_feed_stats = 11;
+	string attractive_poi_id = 12;
+	int64 attractive_poi_expiration_time_ms = 13;
+	int32 num_days_spent_with_buddy = 14;
 }
 
 // ref: JBLBFLKNFPL
@@ -12987,8 +12987,8 @@ message BelugaDailyTransferLogEntry {
 	}
 
 	Result result = 1;
-	bool koildmmdmjp = 2;
-	LootProto nloefkmbbhn = 3;
+	bool includes_weekly_bonus = 2;
+	LootProto items_awarded = 3;
 }
 
 // ref: JNHMPPJONEO
@@ -13102,8 +13102,8 @@ message JPICNIPDGLJ {
 
 // ref: JPJNJMHLBOP
 message ClientQuestProto {
-	QuestProto iblilgjehdh = 1;
-	QuestDisplayProto pbiankchnhp = 2;
+	QuestProto quest = 1;
+	QuestDisplayProto quest_display = 2;
 }
 
 // ref: KAACJPLLGFN
@@ -13478,7 +13478,7 @@ message KFMPBNDFOOJ {
 // ref: KGDMAGOFKCE
 message BootTime {
 	// ref: KGDMAGOFKCE/FHPOAMLOAJG/CLIIACAJEIG
-	enum CLIIACAJEIG {
+	enum BootPhase {
 		UNDEFINED = 0;
 		TIME_TO_MAP = 1;
 		LOGO_SCREEN_TIME = 2;
@@ -13499,8 +13499,8 @@ message BootTime {
 		INITIALIZE_ADJUST = 17;
 	}
 
-	PlatformMetricData ephppddioph = 1;
-	CLIIACAJEIG bpebfhonkmg = 2;
+	PlatformMetricData duration = 1;
+	BootPhase boot_phase = 2;
 }
 
 // ref: KHFMNGFEAME
@@ -13552,7 +13552,7 @@ message LimitedPurchaseSkuRecordProto {
 
 // ref: KJGFFNLHCOB
 message CombatHubEntranceTelemetry {
-	CombatHubEntranceTelemetryIds iakbebdcjpf = 1;
+	CombatHubEntranceTelemetryIds combat_hub_telemetry_id = 1;
 }
 
 // ref: KJGOMCGJCBI
@@ -13656,9 +13656,9 @@ message KMAIEOEJNJP {
 
 // ref: KMBAGFABMNL
 message AssetPoiDownloadTelemetry {
-	AssetTelemetryIds hiijbokbgde = 1;
-	string lndigkkjfml = 2;
-	uint32 djkelmocljo = 3;
+	AssetTelemetryIds asset_event_id = 1;
+	string fort_id = 2;
+	uint32 size = 3;
 }
 
 // ref: KMFDPCNCONL
@@ -13669,8 +13669,8 @@ message WithBuddyProto {
 
 // ref: KMGAPBOCBGK
 message CombatPlayerPreferencesProto {
-	bool lnnmkppfcbk = 1;
-	bool dhapjjaddjc = 2;
+	bool friends_combat_opt_out = 1;
+	bool nearby_combat_opt_in = 2;
 }
 
 // ref: KMLBKFBOINN
@@ -13690,8 +13690,8 @@ message KMLBKFBOINN {
 
 // ref: KNBANCLIOGP
 message AssetStreamCacheCulledTelemetry {
-	AssetTelemetryIds hiijbokbgde = 1;
-	uint32 amelmiapbic = 2;
+	AssetTelemetryIds asset_event_id = 1;
+	uint32 space_released = 2;
 }
 
 // ref: KNBJCBMCKFC
@@ -13907,10 +13907,10 @@ message LBKAOIOIJKC {
 
 // ref: LBLNNGLBOGB
 message BattleAttributesProto {
-	float mopajblfilb = 1;
-	float ekgmjpdbpcg = 2;
-	float hdpfooknanf = 3;
-	float adbcjmkmpnn = 4;
+	float sta_percent = 1;
+	float atk_percent = 2;
+	float def_percent = 3;
+	float duration_s = 4;
 }
 
 // ref: LCBCMHCLIOJ
@@ -14216,11 +14216,11 @@ message SubmitCombatChallengePokemonsOutProto {
 // ref: LIODKMJGBMN
 message CatchPokemonTelemetry {
 	string status = 1;
-	EncounterPokemonTelemetry obpljimiogi = 2;
-	int32 djiekgjhkdg = 3;
-	int32 fanngcfnojm = 4;
-	bool fflmlnpidfb = 5;
-	double kckbhmcliga = 6;
+	EncounterPokemonTelemetry encounter_pokemon_telemetry = 2;
+	int32 balltype = 3;
+	int32 hit_grade = 4;
+	bool curve_ball = 5;
+	double miss_percent = 6;
 }
 
 // ref: LIPFKEBDDOH
@@ -14250,32 +14250,32 @@ message OpenGiftLogEntry {
 
 // ref: LJCGDJLLFDG
 message ClientPlayerProto {
-	int64 ppghkhaiopn = 1;
-	string fgmkglfgljh = 2;
-	int32 nbpfkgpfhpc = 5;
-	repeated TutorialCompletion bambfakddab = 7;
-	PlayerAvatarProto egpifmoakco = 8;
-	int32 ecceblnpanl = 9;
-	int32 adedlghfhie = 10;
-	DailyBonusProto dfoecgbmbhn = 11;
-	EquippedBadgeProto ibdgmlchhkp = 12;
-	ContactSettingsProto aiifjelhmlm = 13;
-	repeated PlatformCurrencyQuantityProto eeiaamoemkh = 14;
-	int32 iepkpebbcpl = 15;
-	BuddyPokemonProto gchmnmgcogk = 16;
-	int64 ojmehflcljk = 17;
-	PlayerAvatarProto mmnipjeacai = 18;
-	bool lablpghilin = 19;
-	SocialPlayerSettingsProto gpmdheopjhf = 20;
-	CombatPlayerPreferencesProto jnoillflbkb = 21;
-	string fomhnhnkgnn = 22;
-	TeamChangeInfoProto faljldnilhn = 23;
-	repeated HoloPokemonId mecekmdmljk = 24;
-	CombatLogProto djkccedkfdc = 25;
-	int64 lemkbnfgono = 26;
-	BuddyObservedData bamjgfoagbn = 27;
-	string adocjpgdflg = 28;
-	PlayerPreferencesProto eppomfmlneh = 29;
+	int64 creation_time_ms = 1;
+	string name = 2;
+	int32 team = 5;
+	repeated TutorialCompletion tutorial_complete = 7;
+	PlayerAvatarProto player_avatar_proto = 8;
+	int32 max_pokemon_storage = 9;
+	int32 max_item_storage = 10;
+	DailyBonusProto daily_bonus_proto = 11;
+	EquippedBadgeProto equipped_badge_proto = 12;
+	ContactSettingsProto contact_settings_proto = 13;
+	repeated PlatformCurrencyQuantityProto currency_balance = 14;
+	int32 remaining_codename_claims = 15;
+	BuddyPokemonProto buddy_pokemon_proto = 16;
+	int64 battle_lockout_end_ms = 17;
+	PlayerAvatarProto secondary_player_avatar_proto = 18;
+	bool name_is_blacklisted = 19;
+	SocialPlayerSettingsProto social_player_settings = 20;
+	CombatPlayerPreferencesProto combat_player_preferences = 21;
+	string player_support_id = 22;
+	TeamChangeInfoProto team_change_info = 23;
+	repeated HoloPokemonId consumed_eevee_easter_eggs = 24;
+	CombatLogProto combat_log = 25;
+	int64 time_zone_offset_ms = 26;
+	BuddyObservedData buddy_observed_data = 27;
+	string helpshift_user_id = 28;
+	PlayerPreferencesProto player_preferences = 29;
 }
 
 // ref: LJDICEPJKPN
@@ -14410,8 +14410,8 @@ message LNGNLGBMPAG {
 
 // ref: LNHJLPNELEL
 message BuddyMultiplayerConnectionSucceededProto {
-	int32 nenieieiffk = 1;
-	int64 ljhmgpcaoil = 2;
+	int32 test_number = 1;
+	int64 response_time = 2;
 }
 
 // ref: LNIICNIMOEH
@@ -15350,21 +15350,21 @@ message ReadPointOfInterestDescriptionTelemetry {
 
 // ref: NDLAECIHENK
 message AwardedGymBadge {
-	string lndigkkjfml = 1;
-	GymBadgeType pkgelpgpohg = 2;
-	uint32 hobhbkgonlk = 3;
-	GymBadgeStats hibekaijkho = 4;
-	uint64 ggcajdfaibl = 5;
-	uint64 bdmpfipljfk = 11;
-	uint32 bgechkcgoah = 12;
-	float gflfaledbio = 13;
-	bool linmfjlkkcm = 14;
-	string fgmkglfgljh = 15;
-	string ipfnaapigeh = 16;
-	string lcdegoaaeao = 17;
-	double phiabghihcc = 18;
-	double icmnhajccaa = 19;
-	PlayerRaidInfoProto bilabhihdjn = 20;
+	string fort_id = 1;
+	GymBadgeType gym_badge_type = 2;
+	uint32 score = 3;
+	GymBadgeStats gym_badge_stats = 4;
+	uint64 last_update_timestamp_ms = 5;
+	uint64 last_check_timestamp_ms = 11;
+	uint32 earned_points = 12;
+	float progress = 13;
+	bool level_up = 14;
+	string name = 15;
+	string image_url = 16;
+	string description = 17;
+	double latitude = 18;
+	double longitude = 19;
+	PlayerRaidInfoProto raids = 20;
 }
 
 // ref: NDMMCIHLLDK
@@ -15465,8 +15465,8 @@ message NEODGFMEIIK {
 
 // ref: NEPPMJBEPBK
 message BuddyMultiplayerConnectionFailedProto {
-	int32 nenieieiffk = 1;
-	int64 ljhmgpcaoil = 2;
+	int32 test_number = 1;
+	int64 response_time = 2;
 }
 
 // ref: NFCEMINHDFC
@@ -15611,8 +15611,8 @@ message NJMIBDMILHG {
 
 // ref: NLOCPHGFFNM
 message BuddyGiftProto {
-	SouvenirProto bohgjjmmpfd = 1;
-	LootProto jbejbaggpfa = 2;
+	SouvenirProto souvenir = 1;
+	LootProto loot_proto = 2;
 }
 
 // ref: NMENNOCENFN
@@ -15647,7 +15647,7 @@ message PokemonInventoryTelemetry {
 // ref: NMKJLOKHILG
 message ArMappingTelemetryProto {
 	// ref: NMKJLOKHILG/PDCFKBBCJDI/BGINAFFACFI
-	enum BGINAFFACFI {
+	enum ArMappingEntryPoint {
 		UNKNOWN_ENTRY = 0;
 		POI_EDIT_MENU = 1;
 		POI_EDIT_TITLE = 2;
@@ -15658,7 +15658,7 @@ message ArMappingTelemetryProto {
 	}
 
 	// ref: NMKJLOKHILG/PDCFKBBCJDI/BHGPDIGNHOP
-	enum BHGPDIGNHOP {
+	enum Reason {
 		UNKNOWN_REASON = 0;
 		TOO_FAST = 1;
 		TOO_SLOW = 2;
@@ -15666,7 +15666,7 @@ message ArMappingTelemetryProto {
 	}
 
 	// ref: NMKJLOKHILG/PDCFKBBCJDI/FBEKAPMLCIB
-	enum FBEKAPMLCIB {
+	enum ArMappingEventId {
 		UNKNOWN = 0;
 		ENTER_STATE = 1;
 		OPT_IN_ACCEPT = 2;
@@ -15693,13 +15693,13 @@ message ArMappingTelemetryProto {
 		SCAN_VALIDATION_FAILURE = 23;
 	}
 
-	FBEKAPMLCIB nhhlaklpccb = 1;
-	BGINAFFACFI cjnogfbeifp = 2;
-	float pmamlplpgpl = 3;
-	float ohkohhdjeof = 4;
-	float lhnhiieaell = 5;
-	int64 gfgkajjdcnn = 6;
-	BHGPDIGNHOP acpimmgafif = 7;
+	ArMappingEventId ar_mapping_telemetry_id = 1;
+	ArMappingEntryPoint source = 2;
+	float recording_length_seconds = 3;
+	float time_elapsed_seconds = 4;
+	float percent_encoded = 5;
+	int64 data_size_bytes = 6;
+	Reason reason = 7;
 }
 
 // ref: NNCCJDIHJKF
@@ -15718,13 +15718,13 @@ message BuddyStatsShownHearts {
 	}
 
 	// ref: NNEIKBCFGPD/EDAKBLEDJOB/DAPPDAAFDIA
-	message DAPPDAAFDIA {
-		repeated BuddyShownHeartType fjebkkbjeaa = 1;
+	message BuddyShownHeartsList {
+		repeated BuddyShownHeartType buddy_shown_heart_types = 1;
 	}
 
-	float hbbidigfcnm = 1;
-	map<int32, DAPPDAAFDIA> jikdopmmlag = 2;
-	PEKJNHJPJIB dalfiomenog = 3;
+	float buddy_affection_km_in_progress = 1;
+	map<int32, BuddyShownHeartsList> buddy_shown_hearts_per_category = 2;
+	PEKJNHJPJIB field1 = 3;
 }
 
 // ref: NNHPOEPICBH
@@ -15806,18 +15806,18 @@ message CompleteQuestStampCardLogEntry {
 
 // ref: OAFCLMPKJOC
 message BattleResultsProto {
-	GymStateProto dgcfpgedhba = 1;
-	repeated BattleParticipantProto hlafiinkicf = 2;
-	repeated int32 aonlmambjdk = 3;
-	int64 ghnamckmnok = 4;
-	int32 dnfohjmcbgo = 5;
-	GymStatusAndDefendersProto chffneobbag = 6;
-	repeated ParticipationProto mchnofleihe = 7;
-	repeated LootProto ejpdanjlapf = 8;
-	repeated RaidEncounterProto pfnocphbhhl = 9;
-	repeated AwardedGymBadge hdinlbkpiel = 10;
-	repeated LootProto hfkdompoacl = 11;
-	int64 bepbccahahc = 12;
+	GymStateProto gym_state = 1;
+	repeated BattleParticipantProto attackers = 2;
+	repeated int32 player_xp_awarded = 3;
+	int64 next_defender_pokemon_id = 4;
+	int32 gym_points_delta = 5;
+	GymStatusAndDefendersProto gym_status = 6;
+	repeated ParticipationProto participation = 7;
+	repeated LootProto raid_item_rewards = 8;
+	repeated RaidEncounterProto post_raid_encounter = 9;
+	repeated AwardedGymBadge gym_badge = 10;
+	repeated LootProto default_raid_item_rewards = 11;
+	int64 field1 = 12;
 }
 
 // ref: OAJAOJGAAOH
@@ -15840,7 +15840,7 @@ message TelemetryGlobalSettingsProto {
 // ref: OANEOIOHADA
 message CombatActionProto {
 	// ref: OANEOIOHADA/EKALMLJPGNI/KENEKEMIGDB
-	enum KENEKEMIGDB {
+	enum ActionType {
 		UNSET = 0;
 		ATTACK = 1;
 		SPECIAL_ATTACK = 2;
@@ -15853,15 +15853,15 @@ message CombatActionProto {
 		QUICK_SWAP_POKEMON = 9;
 	}
 
-	KENEKEMIGDB gnkgaimjkch = 1;
-	int32 inchanehmfa = 3;
-	int32 dmdcnoefklc = 5;
-	int32 fpinkpobima = 6;
-	int32 dhbchblnmec = 7;
-	uint64 mcmcjgaiaec = 8;
-	uint64 dlgdgnjagoo = 14;
-	float fcfempciffe = 15;
-	int32 lnjjofibmfe = 16;
+	ActionType type = 1;
+	int32 action_start_turn = 3;
+	int32 duration_turns = 5;
+	int32 attacker_index = 6;
+	int32 target_index = 7;
+	fixed64 active_pokemon_id = 8;
+	fixed64 target_pokemon_id = 14;
+	float minigame_score = 15;
+	int32 move = 16;
 }
 
 // ref: OAOPBMPJAGM
@@ -16223,8 +16223,8 @@ message OHIJOMIHHJO {
 
 // ref: OHKGNMGGKEL
 message BelugaIncenseBoxProto {
-	bool apbjiikojoo = 1;
-	int64 jgdmeadlnpg = 2;
+	bool is_usable = 1;
+	int64 cool_down_finished_timestamp_ms = 2;
 }
 
 // ref: OHKPHLGMBCC
@@ -16308,24 +16308,24 @@ message InventoryUpgradeProto {
 
 // ref: OJBADFLGNDN
 message BadgeCaptureReward {
-	float fccpajmnogf = 1;
-	repeated string ckkpmkmhgbg = 2;
+	float capture_reward_multiplier = 1;
+	repeated string avatar_template_ids = 2;
 }
 
 // ref: OJHFGEHKAHC
 message CombatPlayerProfileProto {
 	// ref: OJHFGEHKAHC/ACGOELEGOHN/JOAFFEHFBLB
-	message JOAFFEHFBLB {
+	message Location {
 		double nehgecafhii = 1;
 		double agpcbldpoji = 2;
 	}
 
-	string pegfachkbdd = 1;
-	PlayerPublicProfileProto jeenccbbffk = 2;
+	string player_id = 1;
+	PlayerPublicProfileProto public_profile = 2;
 	repeated string combat_league_template_id = 3;
-	uint64 jkenapdnljb = 4;
-	JOAFFEHFBLB cocmjnjboed = 5;
-	CombatPlayerPreferencesProto jnoillflbkb = 6;
+	fixed64 buddy_pokemon_id = 4;
+	Location location = 5;
+	CombatPlayerPreferencesProto combat_player_preferences = 6;
 }
 
 // ref: OJOAONNAPCJ
@@ -16391,11 +16391,11 @@ message CurrentNewsProto {
 
 // ref: OMNGINENDKO
 message BattleUpdateProto {
-	BattleLogProto pnoglnfphgl = 1;
-	string ganccamkoba = 2;
-	PokemonInfo jbkhphopgal = 3;
-	PokemonInfo loniljadbml = 4;
-	FriendshipLevelMilestone gmfmholhdcg = 5;
+	BattleLogProto battle_log = 1;
+	string battle_id = 2;
+	PokemonInfo active_defender = 3;
+	PokemonInfo active_attacker = 4;
+	FriendshipLevelMilestone highest_friendship_milestone = 5;
 }
 
 // ref: ONICENHDNKM
@@ -16439,9 +16439,9 @@ message PokemonCreateDetail {
 
 // ref: OOLKFIOELFG
 message ClientFortModifierProto {
-	Item pgknpdaambd = 1;
-	int64 fdmckneabfk = 2;
-	string gmmnjoafnlo = 3;
+	Item modifier_type = 1;
+	int64 expiration_time_ms = 2;
+	string deploying_player_codename = 3;
 }
 
 // ref: OOLNABECHEK
@@ -16808,9 +16808,9 @@ message PHKMKLAMCBN {
 
 // ref: PHNPDJIHOHJ
 message AwardItemProto {
-	Item ekpohjfklal = 1;
-	int32 mhpodigefok = 2;
-	int32 igfkafiiaen = 3;
+	Item item = 1;
+	int32 item_count = 2;
+	int32 bonus_count = 3;
 }
 
 // ref: PIHKDGFNFCE
