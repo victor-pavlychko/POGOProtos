@@ -8,7 +8,7 @@ POGOProtos [![Build Status](https://travis-ci.org/Furtif/POGOProtos.svg?branch=m
 
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
-### ![alt text][1.1] NOTE: All content of folder ```./src/*``` except the ```./src/Rpc``` folder is deprecated ![alt text][1.1]
+### ![alt text][1.1] NOTE: All content of folder ```./src/*``` except the ```./src/Rpc``` ``(obfuscated)`` folder is deprecated ![alt text][1.1]
 
  * **Recommend using the base [Rpc](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Rpc/Rpc.proto)**
  * **NOTE:** (__*old ```compile.py``` has a new name: ```compile_src.py```*__) works but uses ```POGOProtos.Rpc.*```
