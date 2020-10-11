@@ -4440,7 +4440,7 @@ message PokemonProto {
 	float temp_evo_stamina_modifier = 60;
 	float temp_evo_cp_multiplier = 61;
 	repeated HoloTemporaryEvolutionId mega_evolved_forms = 63;
-	repeated PokemonField1 field1 = 64;
+	repeated ClientQuestProto quest_buddy_evolution_requirement = 64;
 	PokemonCreateDetail origin_detail = 66;
 }
 
@@ -9245,10 +9245,10 @@ message EvolutionBranchProto {
 	bool only_nighttime = 11;
 	int32 priority = 12;
 	bool no_candy_cost_via_trade = 13;
-	HoloTemporaryEvolutionId temporary_evolution_id = 14;
-	int32 field1 = 15;
-	int32 field2 = 16;
-	repeated PokemonField1Sub field3 = 17;
+	HoloTemporaryEvolutionId temp_evolution = 14;
+	int32 first_temp_evolution_candy_cost = 15;
+	int32 subsequent_temp_evolution_candy_cost = 16;
+	repeated PokemonField1Sub evo_branch_field1 = 17;
 }
 
 // ref: EAPEPPJPFJD
@@ -9812,26 +9812,26 @@ message ENHGDHHKDKI {
 message HoloInventoryItemProto {
 	// ref: ENHOCPLJKMD/JPAJAHAFKBK
 	//oneof Type {
-		//none = 0;
-		//pokemon = 1;
-		//item = 2;
-		//pokedex_entry = 3;
-		//player_stats = 4;
-		//player_currency = 5;
-		//player_camera = 6;
-		//inventory_upgrades = 7;
-		//applied_items = 8;
-		//egg_incubators = 9;
-		//pokemon_family = 10;
-		//quest = 11;
-		//avatar_item = 12;
-		//raid_tickets = 13;
-		//quests = 14;
-		//gift_boxes = 15;
-		//beluga_incense = 16;
-		//limited_purchase_sku_record = 19;
-		//mega_evolve_species = 21;
-		//sticker = 22;
+	//none = 0;
+	//pokemon = 1;
+	//item = 2;
+	//pokedex_entry = 3;
+	//player_stats = 4;
+	//player_currency = 5;
+	//player_camera = 6;
+	//inventory_upgrades = 7;
+	//applied_items = 8;
+	//egg_incubators = 9;
+	//pokemon_family = 10;
+	//quest = 11;
+	//avatar_item = 12;
+	//raid_tickets = 13;
+	//quests = 14;
+	//gift_boxes = 15;
+	//beluga_incense = 16;
+	//limited_purchase_sku_record = 19;
+	//mega_evolve_species = 21;
+	//sticker = 22;
 	//}
 
 	PokemonProto pokemon = 1;
@@ -9847,7 +9847,7 @@ message HoloInventoryItemProto {
 	QuestProto quest = 11;
 	AvatarItemProto avatar_item = 12;
 	RaidTicketsProto raid_tickets = 13;
-	QuestsProto quests = 14;
+	PokemonField1 quests = 14;
 	GiftBoxesProto gift_boxes = 15;
 	BelugaIncenseBoxProto beluga_incense = 16;
 	LimitedPurchaseSkuRecordProto limited_purchase_sku_record = 19;
@@ -10079,7 +10079,7 @@ message PokemonSettingsProto {
 	int32 additional_cp_boost_level = 48;
 	repeated HoloPokemonMove elite_quick_move = 49;
 	repeated HoloPokemonMove elite_cinematic_move = 50;
-	repeated MegaEvolutionAttributes temporary_evolution = 51;
+	repeated MegaEvolutionAttributes temporary_evolutions = 51;
 }
 
 // ref: FBLILLDHOEA
@@ -11968,8 +11968,8 @@ message DailyQuestProto {
 
 // ref: ICNOBJCGJJC
 message VsSeekerClientSettingsProto {
-	string ihdadhjlfbo = 1;
-	repeated string dkkjmmjijfl = 2;
+	string upgrade_iap_sku_id = 1;
+	repeated string allowed_vs_seeker_league_template_id = 2;
 }
 
 // ref: ICOGKMMELDH
@@ -13428,9 +13428,9 @@ message KEKDMKONDBF {
 }
 
 // ref: KENJMGPGKPA
-message GameMasterField1 {
+message TemporaryEvolutionSettingsProto {
 	HoloPokemonId pokemon_id = 1;
-	repeated MegaEvosField1 evolutions = 2;
+	repeated TemporaryEvolutionsProto temporary_evolutions = 2;
 }
 
 // ref: KFGNOGPMDKA
@@ -14969,19 +14969,19 @@ message MJOGPJFFFML {
 // ref: MKAEOBCNBMI
 message MegaEvolutionAttributes {
 	HoloTemporaryEvolutionId temporary_evolution_id = 1;
-	PokemonStatsAttributesProto field1 = 2;
-	float field2 = 3;
-	float field3 = 4;
-	HoloPokemonType field4 = 5;
-	HoloPokemonType field5 = 6;
-	float field6 = 7;
-	PokemonCameraAttributesProto field7 = 8;
-	PokemonEncounterAttributesProto field8 = 9;
-	float field9 = 10;
-	float field10 = 11;
-	repeated float field11 = 12;
-	repeated float field12 = 13;
-	repeated float field13 = 14;
+	PokemonStatsAttributesProto stats = 2;
+	float pokedex_height_m = 3;
+	float pokedex_weight_k = 4;
+	HoloPokemonType type_1 = 5;
+	HoloPokemonType type_2 = 6;
+	float buddy_scale = 7;
+	PokemonCameraAttributesProto camera = 8;
+	PokemonEncounterAttributesProto encounter = 9;
+	float model_scale_v2 = 10;
+	float model_heigh = 11;
+	repeated float buddy_offset_male = 12;
+	repeated float buddy_offset_female = 13;
+	repeated float buddy_portrait_offset = 14;
 }
 
 // ref: MKIDEAHMDDI
@@ -15085,10 +15085,10 @@ message MLLLPEELHLJ {
 
 // ref: MLPCOKMEPKO
 message MegaEvoSettings {
-	int64 ob_mega_evolve_duration_ms = 1;
-	float ob_mega_boost = 2;
-	float ob_mega_same_type_boost = 3;
-	int32 ob_mega_max_candy = 4;
+	int64 mega_evolve_duration_ms = 1;
+	float mega_boost = 2;
+	float mega_same_type_boost = 3;
+	int32 mega_max_candy = 4;
 }
 
 // ref: MMFGBGAMBNO
@@ -16686,7 +16686,7 @@ message GameMasterClientTemplateProto {
 	BuddyHungerSettings buddy_hunger_settings = 72;
 	ProjectVacationProto project_vacation = 73;
 	MegaEvoSettings mega_evo_settings = 74;
-	GameMasterField1 mega_evo = 75;
+	TemporaryEvolutionSettingsProto temporary_evolution_settings = 75;
 	AvatarGroupOrderSettingsProto avatar_group_order_settings = 76;
 	MonodepthSettingsProto monodepth_settings = 78;
 	RaidClientSettingsProto raid_settings_proto = 81;
@@ -17145,10 +17145,10 @@ message CrossGameSocialGlobalSettingsProto {
 }
 
 // ref: PPOELDLEAPI
-message MegaEvosField1 {
-	HoloTemporaryEvolutionId temporary_evolution_id = 1;
-	int32 field1 = 2;
-	string field2 = 3;
+message TemporaryEvolutionsProto {
+	HoloTemporaryEvolutionId temporary_evolution_id= 1;
+	int32 asset_bunble_value = 2;
+	string asset_bunble_name = 3;
 }
 
 // ref: RedeemPasscodeRequestProto
