@@ -203,6 +203,8 @@ def open_proto_file(main_file, package_name):
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "ITEM":
                             e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_IAP_ITEM_CATEGORY_IAP":
+                            e = e.replace(enum_name + "_", "")
                         elif enum_name == "PLAYER_AVATAR_TYPE":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "HOLO_BADGE_TYPE":
