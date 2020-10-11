@@ -9078,7 +9078,7 @@ message HoloInventoryItemProto {
 		QuestProto quest = 11;
 		AvatarItemProto avatar_item = 12;
 		RaidTicketsProto raid_tickets = 13;
-		PokemonField1 quests = 14;
+		QuestsProto quests = 14;
 		GiftBoxesProto gift_boxes = 15;
 		BelugaIncenseBoxProto beluga_incense = 16;
 		LimitedPurchaseSkuRecordProto limited_purchase_sku_record = 19;
@@ -15011,7 +15011,7 @@ message AvatarGlobalSettingsProto {
 	bool enable_pose = 1;
 }
 
-message PokemonField1 {
+message QuestTempEvolutionProto {
 	QuestProto quest = 1;
 	PokemonField1Sub field1 = 2;
 	HoloPokemonId pokemon_id = 3;
