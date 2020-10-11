@@ -187,6 +187,39 @@ def open_proto_file(main_file, package_name):
                     if not proto_line.startswith("}"):
                         e = proto_line.replace(re.split(r'(\W+)', proto_line)[2],
                                                enum_name + "_" + re.split(r'(\W+)', proto_line)[2])
+                        if enum_name == "HOLO_POKEMON_ID":
+                            e = e.replace(enum_name + "_", "")
+                            if operator.contains(e, "_POKEMON_"):
+                                e = e.replace(e.split("_POKEMON_")[0].strip(), "").replace("_POKEMON_", "")
+                                if operator.contains(e, "NIDORAN") and operator.contains(e, "= 29;"):
+                                    e = e.replace("NIDORAN", "NIDORAN_FEMALE")
+                                elif operator.contains(e, "NIDORAN") and operator.contains(e, "= 32;"):
+                                    e = e.replace("NIDORAN", "NIDORAN_MALE")
+                        elif enum_name == "HOLO_POKEMON_MOVE":
+                            e = e.replace(enum_name + "_", "")
+                            if operator.contains(e, "_MOVE_"):
+                                e = e.replace(e.split("_MOVE_")[0].strip(), "").replace("_MOVE_", "")
+                        elif enum_name == "HOLO_TEMPORARY_EVOLUTION_ID":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "ITEM":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "PLAYER_AVATAR_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_BADGE_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_POKEMON_FAMILY_ID":
+                            e = e.replace(enum_name + "_", "")
+                            if not operator.contains(e, "= 0;"):
+                                e = e.replace(e.split("_FAMILY_")[0].strip(), "").replace("_FAMILY_", "FAMILY_")
+                                if operator.contains(e, "NIDORAN") and operator.contains(e, "= 29;"):
+                                    e = e.replace("NIDORAN", "NIDORAN_FEMALE")
+                                elif operator.contains(e, "NIDORAN") and operator.contains(e, "= 32;"):
+                                    e = e.replace("NIDORAN", "NIDORAN_MALE")
+                        elif enum_name == "HOLO_POKEMON_MOVEMENT_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_POKEMON_TYPE":
+                            e = e.replace(enum_name + "_", "")
+
                         proto_line = e
 
             if not is_one_off and gen_one_off and operator.contains(proto_line, "=") and refs:
