@@ -468,7 +468,7 @@ if gen_only:
             os.makedirs(dir_rpc)
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
-    shutil.copy(generated_file, protos_path + '/v0.187.1_obf.proto')
+    shutil.copy(generated_file, protos_path + '/v0.189.0_obf.proto')
     shutil.move(generated_file, out_path)
 
 if keep_file:
