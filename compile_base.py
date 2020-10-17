@@ -201,7 +201,7 @@ def open_proto_file(main_file, package_name):
                                 e = e.replace(e.split("_MOVE_")[0].strip(), "").replace("_MOVE_", "")
                         elif enum_name == "HOLO_TEMPORARY_EVOLUTION_ID":
                             e = e.replace(enum_name + "_", "")
-                        elif enum_name == "ITEM":
+                        elif enum_name == "HOLO_ITEM_TYPE":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "HOLO_IAP_ITEM_CATEGORY_IAP":
                             e = e.replace(enum_name + "_", "")
