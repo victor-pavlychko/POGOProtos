@@ -187,7 +187,7 @@ enum PlatformMapLayer {
 
 message ClientGameMasterTemplateProto {
 	string template_id = 1;
-	bytes data = 2;
+	KKAFIKLMGIL data = 2;
 }
 
 message DownloadGmTemplatesRequestProto {
