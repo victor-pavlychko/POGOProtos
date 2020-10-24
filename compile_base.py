@@ -116,7 +116,8 @@ def open_proto_file(main_file, package_name):
     enum_name = ''
     is_one_off = False
     refs = []
-    enum_dic = {}
+    enums_dic = {}
+    messages_dic = {}
     is_ignored = False
     fixed_messages = ''
 
@@ -193,35 +194,35 @@ def open_proto_file(main_file, package_name):
                                                enum_name + "_" + re.split(r'(\W+)', proto_line)[2])
 
                         if operator.contains(e, "V0001_POKEMON_BULBASAUR = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloPokemonId")
+                            enums_dic.setdefault(enum_name, "HoloPokemonId")
                         elif operator.contains(e, "V0001_FAMILY_BULBASAUR = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloPokemonFamilyId")
+                            enums_dic.setdefault(enum_name, "HoloPokemonFamilyId")
                         elif operator.contains(e, "V0001_MOVE_THUNDER_SHOCK = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloPokemonMove")
+                            enums_dic.setdefault(enum_name, "HoloPokemonMove")
                         elif operator.contains(e, "ACTIVITY_CATCH_POKEMON = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloActivityType")
+                            enums_dic.setdefault(enum_name, "HoloActivityType")
                         elif operator.contains(e, "ITEM_CATEGORY_POKEBALL = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloItemCategory")
+                            enums_dic.setdefault(enum_name, "HoloItemCategory")
                         elif operator.contains(e, "ITEM_EFFECT_CAP_NO_FLEE = 1000;"):
-                            enum_dic.setdefault(enum_name, "HoloItemEffect")
+                            enums_dic.setdefault(enum_name, "HoloItemEffect")
                         elif operator.contains(e, "ITEM_TYPE_POKEBALL = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloItemType")
+                            enums_dic.setdefault(enum_name, "HoloItemType")
                         elif operator.contains(e, "POKEMON_CLASS_LEGENDARY = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloPokemonClass")
+                            enums_dic.setdefault(enum_name, "HoloPokemonClass")
                         elif operator.contains(e, "POKEMON_ENC_MOVEMENT_JUMP = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloPokemonMovementType")
+                            enums_dic.setdefault(enum_name, "HoloPokemonMovementType")
                         elif operator.contains(e, "POKEMON_TYPE_NORMAL = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloPokemonType")
+                            enums_dic.setdefault(enum_name, "HoloPokemonType")
                         elif operator.contains(e, "ITEM_POKE_BALL = 1;"):
-                            enum_dic.setdefault(enum_name, "Item")
+                            enums_dic.setdefault(enum_name, "Item")
                         elif operator.contains(e, "QUEST_TYPE_QUEST_FIRST_CATCH_OF_THE_DAY = 1;"):
-                            enum_dic.setdefault(enum_name, "QuestType")
+                            enums_dic.setdefault(enum_name, "QuestType")
                         elif operator.contains(e, "RAID_LEVEL_1 = 1;"):
-                            enum_dic.setdefault(enum_name, "RaidLevel")
+                            enums_dic.setdefault(enum_name, "RaidLevel")
                         elif operator.contains(e, "TEAM_BLUE = 1;"):
-                            enum_dic.setdefault(enum_name, "Team")
+                            enums_dic.setdefault(enum_name, "Team")
                         elif operator.contains(e, "TEMP_EVOLUTION_MEGA = 1;"):
-                            enum_dic.setdefault(enum_name, "HoloTemporaryEvolutionId")
+                            enums_dic.setdefault(enum_name, "HoloTemporaryEvolutionId")
 
                         # e = proto_line.replace(re.split(r'(\W+)', proto_line)[2],
                         #                        enum_name + "_" + re.split(r'(\W+)', proto_line)[2])
@@ -287,9 +288,16 @@ def open_proto_file(main_file, package_name):
                 is_one_off = False
 
     ## fix enums names
-    for _enum in enum_dic:
-        print("key " + _enum + " val " + enum_dic[_enum])
-        messages = messages.replace(_enum, enum_dic[_enum])
+    print("Cleaning process on enums...")
+    for _enum in enums_dic:
+        print("Obfuscated enum name " + _enum + " clean enum name " + enums_dic[_enum])
+        messages = messages.replace(_enum, enums_dic[_enum])
+
+    ## fix messages names
+    print("Cleaning process on messages...")
+    for _message in messages_dic:
+        print("Obfuscated message name " + _message + " clean message name " + messages_dic[_message])
+        messages = messages.replace(_message, messages_dic[_message])
 
     if gen_one_off:
         messagesNew = ""
