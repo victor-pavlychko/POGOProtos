@@ -148,15 +148,18 @@ def open_proto_file(main_file, package_name):
             if proto_line.startswith("enum"):
                 is_enum = True
                 match = re.split(r'\s', proto_line)
-                i = 0
-                enum_name = ''
-                for x in match[1]:
-                    if x.isupper() and i > 0:
-                        enum_name += '_' + x
-                    else:
-                        enum_name += x
-                    i = i + 1
-                enum_name = enum_name.upper().replace('P_O_I_', 'POI_')
+                if match[1].isupper() and len(match[1]) == 11:
+                    enum_name = match[1].upper()
+                else:
+                    i = 0
+                    enum_name = ''
+                    for x in match[1]:
+                        if x.isupper() and i > 0:
+                            enum_name += '_' + x
+                        else:
+                            enum_name += x
+                        i = i + 1
+                    enum_name = enum_name.upper().replace('P_O_I_', 'POI_')
 
             # refs
             if operator.contains(proto_line, "// ref:"):
