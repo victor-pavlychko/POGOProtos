@@ -193,11 +193,35 @@ def open_proto_file(main_file, package_name):
                                                enum_name + "_" + re.split(r'(\W+)', proto_line)[2])
 
                         if operator.contains(e, "V0001_POKEMON_BULBASAUR = 1;"):
-                            enum_dic.setdefault(enum_name, "HOLO_POKEMON_ID")
+                            enum_dic.setdefault(enum_name, "HoloPokemonId")
                         elif operator.contains(e, "V0001_FAMILY_BULBASAUR = 1;"):
-                            enum_dic.setdefault(enum_name, "HOLO_POKEMON_FAMILY_ID")
+                            enum_dic.setdefault(enum_name, "HoloPokemonFamilyId")
                         elif operator.contains(e, "V0001_MOVE_THUNDER_SHOCK = 1;"):
-                            enum_dic.setdefault(enum_name, "HOLO_POKEMON_MOVE")
+                            enum_dic.setdefault(enum_name, "HoloPokemonMove")
+                        elif operator.contains(e, "ACTIVITY_CATCH_POKEMON = 1;"):
+                            enum_dic.setdefault(enum_name, "HoloActivityType")
+                        elif operator.contains(e, "ITEM_CATEGORY_POKEBALL = 1;"):
+                            enum_dic.setdefault(enum_name, "HoloItemCategory")
+                        elif operator.contains(e, "ITEM_EFFECT_CAP_NO_FLEE = 1000;"):
+                            enum_dic.setdefault(enum_name, "HoloItemEffect")
+                        elif operator.contains(e, "ITEM_TYPE_POKEBALL = 1;"):
+                            enum_dic.setdefault(enum_name, "HoloItemType")
+                        elif operator.contains(e, "POKEMON_CLASS_LEGENDARY = 1;"):
+                            enum_dic.setdefault(enum_name, "HoloPokemonClass")
+                        elif operator.contains(e, "POKEMON_ENC_MOVEMENT_JUMP = 1;"):
+                            enum_dic.setdefault(enum_name, "HoloPokemonMovementType")
+                        elif operator.contains(e, "POKEMON_TYPE_NORMAL = 1;"):
+                            enum_dic.setdefault(enum_name, "HoloPokemonType")
+                        elif operator.contains(e, "ITEM_POKE_BALL = 1;"):
+                            enum_dic.setdefault(enum_name, "Item")
+                        elif operator.contains(e, "QUEST_TYPE_QUEST_FIRST_CATCH_OF_THE_DAY = 1;"):
+                            enum_dic.setdefault(enum_name, "QuestType")
+                        elif operator.contains(e, "RAID_LEVEL_1 = 1;"):
+                            enum_dic.setdefault(enum_name, "RaidLevel")
+                        elif operator.contains(e, "TEAM_BLUE = 1;"):
+                            enum_dic.setdefault(enum_name, "Team")
+                        elif operator.contains(e, "TEMP_EVOLUTION_MEGA = 1;"):
+                            enum_dic.setdefault(enum_name, "HoloTemporaryEvolutionId")
 
                         # e = proto_line.replace(re.split(r'(\W+)', proto_line)[2],
                         #                        enum_name + "_" + re.split(r'(\W+)', proto_line)[2])
