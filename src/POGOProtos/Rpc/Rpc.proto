@@ -1681,7 +1681,7 @@ enum PlayerAvatarType {
 }
 
 enum NotificationCategory {
-	NOTIFICATION_CATEGORY_unset__notification_category = 0;
+	NOTIFICATION_CATEGORY_UNSET = 0;
 	NOTIFICATION_CATEGORY_GYM_REMOVAL = 1;
 	NOTIFICATION_CATEGORY_POKEMON_HUNGRY = 2;
 	NOTIFICATION_CATEGORY_POKEMON_WON = 3;
@@ -1973,7 +1973,7 @@ enum HoloholoClientTelemetryIds {
 }
 
 enum VariableName {
-	VARIABLE_NAME_unset__variable_name = 0;
+	VARIABLE_NAME_UNSET = 0;
 	VARIABLE_NAME_CODE_NAME = 1;
 	VARIABLE_NAME_TEAM = 2;
 	VARIABLE_NAME_LEVEL = 3;
