@@ -258,6 +258,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "RAID_LEVEL_IDS"
                         elif operator.contains(e, "TEAM_BLUE = 1;"):
                             enums_dic.setdefault(enum_name, "Team")
+                            messages = messages.replace(enum_name + "_", "TEAM_IDS_")
+                            e = e.replace(enum_name + "_", "TEAM_IDS_")
+                            enum_name = "TEAM_IDS"
                         elif operator.contains(e, "TEMP_EVOLUTION_MEGA = 1;"):
                             enums_dic.setdefault(enum_name, "HoloTemporaryEvolutionId")
                             messages = messages.replace(enum_name + "_", "")

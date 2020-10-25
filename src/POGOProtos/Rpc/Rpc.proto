@@ -2943,10 +2943,10 @@ enum MPKPJELJLPI {
 }
 
 enum Team {
-	Team_UNSET = 0;
-	Team_TEAM_BLUE = 1;
-	Team_TEAM_RED = 2;
-	Team_TEAM_YELLOW = 3;
+	TEAM_IDS_UNSET = 0;
+	TEAM_IDS_TEAM_BLUE = 1;
+	TEAM_IDS_TEAM_RED = 2;
+	TEAM_IDS_TEAM_YELLOW = 3;
 }
 
 enum NDJOLBBMGBO {
