@@ -423,6 +423,151 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "METHOD_")
                             e = e.replace(enum_name + "_", "METHOD_")
                             enum_name = "METHOD"
+                        elif operator.contains(e, "SECTION_VS_SEEKER = 1;"):
+                            enums_dic.setdefault(enum_name, "BattleHubSection")
+                            messages = messages.replace(enum_name + "_", "BATTLE_HUB_SECTION_")
+                            e = e.replace(enum_name + "_", "BATTLE_HUB_SECTION_")
+                            enum_name = "BATTLE_HUB_SECTION"
+                        elif operator.contains(e, "UNDEFINED_PERMISSION_CONTEXT = 0;"):
+                            enums_dic.setdefault(enum_name, "PermissionContextTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "PERMISSION_CONTEXT_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "PERMISSION_CONTEXT_TELEMETRY_IDS_")
+                            enum_name = "PERMISSION_CONTEXT_TELEMETRY_IDS"
+                        elif operator.contains(e, "FAILURE = 1;"):
+                            enums_dic.setdefault(enum_name, "IncubationResult")
+                            messages = messages.replace(enum_name + "_", "INCUBATION_RESULT_")
+                            e = e.replace(enum_name + "_", "INCUBATION_RESULT_")
+                            enum_name = "INCUBATION_RESULT"
+                        elif operator.contains(e, "UNAUTHORIZED_DEVICE = 1;"):
+                            enums_dic.setdefault(enum_name, "BannedPlayerReason")
+                            messages = messages.replace(enum_name + "_", "BANNED_PLAYER_REASON_")
+                            e = e.replace(enum_name + "_", "BANNED_PLAYER_REASON_")
+                            enum_name = "BANNED_PLAYER_REASON"
+                        elif operator.contains(e, "ARSTANDARD = 1;"):
+                            enums_dic.setdefault(enum_name, "ArMode")
+                            messages = messages.replace(enum_name + "_", "AR_MODE_")
+                            e = e.replace(enum_name + "_", "AR_MODE_")
+                            enum_name = "AR_MODE"
+                        elif operator.contains(e, "UNDEFINED_RAID_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "RaidTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "RAID_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "RAID_TELEMETRY_IDS_")
+                            enum_name = "RAID_TELEMETRY_IDS"
+                        elif operator.contains(e, "LEGAL_SCREEN = 0;"):
+                            enums_dic.setdefault(enum_name, "TutorialCompletion")
+                            messages = messages.replace(enum_name + "_", "TUTORIAL_COMPLETION_")
+                            e = e.replace(enum_name + "_", "TUTORIAL_COMPLETION_")
+                            enum_name = "TUTORIAL_COMPLETION"
+                        elif operator.contains(e, "UNDEFINED_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "CombatHubEntranceTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "COMBAT_HUB_ENTRANCE_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "COMBAT_HUB_ENTRANCE_TELEMETRY_IDS_")
+                            enum_name = "COMBAT_HUB_ENTRANCE_TELEMETRY_IDS"
+                        elif operator.contains(e, "INVASION_GRUNT = 1;"):
+                            enums_dic.setdefault(enum_name, "IncidentDisplayType")
+                            messages = messages.replace(enum_name + "_", "INCIDENT_DISPLAY_TYPE_")
+                            e = e.replace(enum_name + "_", "INCIDENT_DISPLAY_TYPE_")
+                            enum_name = "INCIDENT_DISPLAY_TYPE"
+                        elif operator.contains(e, "unset__notification_category = 0;"):
+                            enums_dic.setdefault(enum_name, "NotificationCategory")
+                            messages = messages.replace(enum_name + "_", "NOTIFICATION_CATEGORY_")
+                            e = e.replace(enum_name + "_", "NOTIFICATION_CATEGORY_")
+                            enum_name = "NOTIFICATION_CATEGORY"
+                        elif operator.contains(e, "AR_STANDARD = 2;"):
+                            enums_dic.setdefault(enum_name, "OnboardingArStatus")
+                            messages = messages.replace(enum_name + "_", "ONBOARDING_AR_STATUS_")
+                            e = e.replace(enum_name + "_", "ONBOARDING_AR_STATUS_")
+                            enum_name = "ONBOARDING_AR_STATUS"
+                        elif operator.contains(e, "CREATE_CONTEXT_WILD = 0;"):
+                            enums_dic.setdefault(enum_name, "PokemonCreateContext")
+                            messages = messages.replace(enum_name + "_", "POKEMON_CREATE_CONTEXT_")
+                            e = e.replace(enum_name + "_", "POKEMON_CREATE_CONTEXT_")
+                            enum_name = "POKEMON_CREATE_CONTEXT"
+                        elif operator.contains(e, "GEN8 = 7;"):
+                            enums_dic.setdefault(enum_name, "PokedexGenerationId")
+                            messages = messages.replace(enum_name + "_", "POKEDEX_GENERATION_ID_")
+                            e = e.replace(enum_name + "_", "POKEDEX_GENERATION_ID_")
+                            enum_name = "POKEDEX_GENERATION_ID"
+                        elif operator.contains(e, "GREETING = 0;"):
+                            enums_dic.setdefault(enum_name, "IncidentDynamicStringTypes")
+                            messages = messages.replace(enum_name + "_", "INCIDENT_DYNAMIC_STRING_TYPES_")
+                            e = e.replace(enum_name + "_", "INCIDENT_DYNAMIC_STRING_TYPES_")
+                            enum_name = "INCIDENT_DYNAMIC_STRING_TYPES"
+                        elif operator.contains(e, "ADD = 0;"):
+                            enums_dic.setdefault(enum_name, "UpdateType")
+                            messages = messages.replace(enum_name + "_", "UPDATE_TYPE_")
+                            e = e.replace(enum_name + "_", "UPDATE_TYPE_")
+                            enum_name = "UPDATE_TYPE"
+                        elif operator.contains(e, "BUDDY_ANIMATION_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "BuddyAnimation")
+                            messages = messages.replace(enum_name + "_", "BUDDY_ANIMATION_")
+                            e = e.replace(enum_name + "_", "BUDDY_ANIMATION_")
+                            enum_name = "BUDDY_ANIMATION"
+                        elif operator.contains(e, "UNDEFINED_SHOPPING_PAGE_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "ShoppingPageTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "SHOPPING_PAGE_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "SHOPPING_PAGE_TELEMETRY_IDS_")
+                            enum_name = "SHOPPING_PAGE_TELEMETRY_IDS"
+                        elif operator.contains(e, "BUDDY_ACTIVITY_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "BuddyActivity")
+                            messages = messages.replace(enum_name + "_", "BUDDY_ACTIVITY_")
+                            e = e.replace(enum_name + "_", "BUDDY_ACTIVITY_")
+                            enum_name = "BUDDY_ACTIVITY"
+                        elif operator.contains(e, "GYM_BADGE_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "GymBadgeType")
+                            messages = messages.replace(enum_name + "_", "GYM_BADGE_TYPE_")
+                            e = e.replace(enum_name + "_", "GYM_BADGE_TYPE_")
+                            enum_name = "GYM_BADGE_TYPE"
+                        elif operator.contains(e, "UNDEFINED_PROFILE_PAGE = 0;"):
+                            enums_dic.setdefault(enum_name, "ProfilePageTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "PROFILE_PAGE_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "PROFILE_PAGE_TELEMETRY_IDS_")
+                            enum_name = "PROFILE_PAGE_TELEMETRY_IDS"
+                        elif operator.contains(e, "COMBAT_TYPE_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "CombatType")
+                            messages = messages.replace(enum_name + "_", "COMBAT_TYPE_")
+                            e = e.replace(enum_name + "_", "COMBAT_TYPE_")
+                            enum_name = "COMBAT_TYPE"
+                        elif operator.contains(e, "WINNER = 0;"):
+                            enums_dic.setdefault(enum_name, "CombatPlayerFinishState")
+                            messages = messages.replace(enum_name + "_", "COMBAT_PLAYER_FINISH_STATE_")
+                            e = e.replace(enum_name + "_", "COMBAT_PLAYER_FINISH_STATE_")
+                            enum_name = "COMBAT_PLAYER_FINISH_STATE"
+                        elif operator.contains(e, "UNDEFINED_MAP_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "MapEventsTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "MAP_EVENTS_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "MAP_EVENTS_TELEMETRY_IDS_")
+                            enum_name = "MAP_EVENTS_TELEMETRY_IDS"
+                        elif operator.contains(e, "CAM_INTERP_CUT = 0;"):
+                            enums_dic.setdefault(enum_name, "CameraInterpolation")
+                            messages = messages.replace(enum_name + "_", "CAMERA_INTERPOLATION_")
+                            e = e.replace(enum_name + "_", "CAMERA_INTERPOLATION_")
+                            enum_name = "CAMERA_INTERPOLATION"
+                        elif operator.contains(e, "WHAT_IS_POKESTOP = 0;"):
+                            enums_dic.setdefault(enum_name, "PoiSubmissionTutorialPage")
+                            messages = messages.replace(enum_name + "_", "POI_SUBMISSION_TUTORIAL_PAGE_")
+                            e = e.replace(enum_name + "_", "POI_SUBMISSION_TUTORIAL_PAGE_")
+                            enum_name = "POI_SUBMISSION_TUTORIAL_PAGE"
+                        elif operator.contains(e, "ENCOUNTER = 0;"):
+                            enums_dic.setdefault(enum_name, "ArToggleContext")
+                            messages = messages.replace(enum_name + "_", "AR_TOGGLE_CONTEXT_")
+                            e = e.replace(enum_name + "_", "AR_TOGGLE_CONTEXT_")
+                            enum_name = "AR_TOGGLE_CONTEXT"
+                        elif operator.contains(e, "UNDEFINED_DEVICE_SERVICE = 0;"):
+                            enums_dic.setdefault(enum_name, "DeviceServiceTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "DEVICE_SERVICE_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "DEVICE_SERVICE_TELEMETRY_IDS_")
+                            enum_name = "DEVICE_SERVICE_TELEMETRY_IDS"
+                        elif operator.contains(e, "_BOOT_TIME = 1;"):
+                            enums_dic.setdefault(enum_name, "HoloholoClientTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "HOLOHOLO_CLIENT_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "HOLOHOLO_CLIENT_TELEMETRY_IDS_")
+                            enum_name = "HOLOHOLO_CLIENT_TELEMETRY_IDS"
+                        elif operator.contains(e, "unset__variable_name = 0;"):
+                            enums_dic.setdefault(enum_name, "VariableName")
+                            messages = messages.replace(enum_name + "_", "VARIABLE_NAME_")
+                            e = e.replace(enum_name + "_", "VARIABLE_NAME_")
+                            enum_name = "VARIABLE_NAME"
 
                         ## second check ...
                         if enum_name == "HOLO_POKEMON_ID":
