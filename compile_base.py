@@ -343,14 +343,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "ASSET_BUNDLE_STATUS"
                         elif operator.contains(e, "STORE_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "Store")
-                            messages = messages.replace(enum_name + "_", "STORE_")
-                            e = e.replace(enum_name + "_", "STORE_")
-                            enum_name = "STORE"
-                        elif operator.contains(e, "STORE_UNSET = 0;"):
-                            enums_dic.setdefault(enum_name, "Store")
-                            messages = messages.replace(enum_name + "_", "STORE_")
-                            e = e.replace(enum_name + "_", "STORE_")
-                            enum_name = "STORE"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "STORE_IDS"
                         elif operator.contains(e, "EGG_TYPE_SHADOW = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonEggType")
                             messages = messages.replace(enum_name + "_", "HOLO_POKEMON_EGG_TYPEE_")
@@ -504,9 +499,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "UPDATE_TYPE"
                         elif operator.contains(e, "BUDDY_ANIMATION_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "BuddyAnimation")
-                            messages = messages.replace(enum_name + "_", "BUDDY_ANIMATION_")
-                            e = e.replace(enum_name + "_", "BUDDY_ANIMATION_")
-                            enum_name = "BUDDY_ANIMATION"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "BUDDY_ANIMATION_IDS"
                         elif operator.contains(e, "UNDEFINED_SHOPPING_PAGE_EVENT = 0;"):
                             enums_dic.setdefault(enum_name, "ShoppingPageTelemetryIds")
                             messages = messages.replace(enum_name + "_", "SHOPPING_PAGE_TELEMETRY_IDS_")
@@ -618,6 +613,10 @@ def open_proto_file(main_file, package_name):
                         elif enum_name == "QUEST_TYPE":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "RAID_LEVEL_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "BUDDY_ANIMATION_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "STORE_IDS":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
