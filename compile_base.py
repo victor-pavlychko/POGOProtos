@@ -343,6 +343,86 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "STORE_")
                             e = e.replace(enum_name + "_", "STORE_")
                             enum_name = "STORE"
+                        elif operator.contains(e, "STORE_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "Store")
+                            messages = messages.replace(enum_name + "_", "STORE_")
+                            e = e.replace(enum_name + "_", "STORE_")
+                            enum_name = "STORE"
+                        elif operator.contains(e, "EGG_TYPE_SHADOW = 1;"):
+                            enums_dic.setdefault(enum_name, "HoloPokemonEggType")
+                            messages = messages.replace(enum_name + "_", "HOLO_POKEMON_EGG_TYPEE_")
+                            e = e.replace(enum_name + "_", "HOLO_POKEMON_EGG_TYPE_")
+                            enum_name = "HOLO_POKEMON_EGG_TYPE"
+                        elif operator.contains(e, "PREMIUM = 1;"):
+                            enums_dic.setdefault(enum_name, "VsSeekerRewardTrack")
+                            messages = messages.replace(enum_name + "_", "VS_SEEKER_REWARD_TRACK_")
+                            e = e.replace(enum_name + "_", "VS_SEEKER_REWARD_TRACK_")
+                            enum_name = "VS_SEEKER_REWARD_TRACK"
+                        elif operator.contains(e, "_POKECOIN = 1;"):
+                            enums_dic.setdefault(enum_name, "CurrencyType")
+                            messages = messages.replace(enum_name + "_", "CURRENCY_TYPE_")
+                            e = e.replace(enum_name + "_", "CURRENCY_TYPE_")
+                            enum_name = "CURRENCY_TYPE"
+                        elif operator.contains(e, "CHECKPOINT = 1;"):
+                            enums_dic.setdefault(enum_name, "FortType")
+                            messages = messages.replace(enum_name + "_", "FORT_TYPE_")
+                            e = e.replace(enum_name + "_", "FORT_TYPE_")
+                            enum_name = "FORT_TYPE"
+                        elif operator.contains(e, "EXCELLENT = 4;"):
+                            enums_dic.setdefault(enum_name, "VfxLevel")
+                            messages = messages.replace(enum_name + "_", "VFX_LEVEL_")
+                            e = e.replace(enum_name + "_", "VFX_LEVEL_")
+                            enum_name = "VFX_LEVEL"
+                        elif operator.contains(e, "SELECTED = 0;"):
+                            enums_dic.setdefault(enum_name, "IncubatorSelectionResult")
+                            messages = messages.replace(enum_name + "_", "INCUBATOR_SELECTION_RESULT_")
+                            e = e.replace(enum_name + "_", "INCUBATOR_SELECTION_RESULT_")
+                            enum_name = "INCUBATOR_SELECTION_RESULT"
+                        elif operator.contains(e, "AD_FEEDBACK_NOT_INTERESTED_REASON_INVALID = 0;"):
+                            enums_dic.setdefault(enum_name, "AdFeedbackNotInterestedReason")
+                            messages = messages.replace(enum_name + "_", "AD_FEEDBACK_NOT_INTERESTED_REASON_")
+                            e = e.replace(enum_name + "_", "AD_FEEDBACK_NOT_INTERESTED_REASON_")
+                            enum_name = "AD_FEEDBACK_NOT_INTERESTED_REASON"
+                        elif operator.contains(e, "UNDEFINED_INVASION_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "InvasionTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "INVASION_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "INVASION_TELEMETRY_IDS_")
+                            enum_name = "INVASION_TELEMETRY_IDS"
+                        elif operator.contains(e, "SPAWN_POINT = 0;"):
+                            enums_dic.setdefault(enum_name, "EncounterType")
+                            messages = messages.replace(enum_name + "_", "ENCOUNTER_TYPE_")
+                            e = e.replace(enum_name + "_", "ENCOUNTER_TYPE_")
+                            enum_name = "ENCOUNTER_TYPE"
+                        elif operator.contains(e, "PLATFORM_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "Platform")
+                            messages = messages.replace(enum_name + "_", "PLATFORM_")
+                            e = e.replace(enum_name + "_", "PLATFORM_")
+                            enum_name = "PLATFORM"
+                        elif operator.contains(e, "UNDEFINED_SOCIAL = 0;"):
+                            enums_dic.setdefault(enum_name, "SocialTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "SOCIAL_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "SOCIAL_TELEMETRY_IDS_")
+                            enum_name = "SOCIAL_TELEMETRY_IDS"
+                        elif operator.contains(e, "NPC = 0;"):
+                            enums_dic.setdefault(enum_name, "IncidentStartContext")
+                            messages = messages.replace(enum_name + "_", "INCIDENT_START_CONTEXT_")
+                            e = e.replace(enum_name + "_", "INCIDENT_START_CONTEXT_")
+                            enum_name = "INCIDENT_START_CONTEXT"
+                        elif operator.contains(e, "SLEEP_01 = 9;"):
+                            enums_dic.setdefault(enum_name, "PokemonAnim")
+                            messages = messages.replace(enum_name + "_", "POKEMON_ANIM_")
+                            e = e.replace(enum_name + "_", "POKEMON_ANIM_")
+                            enum_name = "POKEMON_ANIM"
+                        elif operator.contains(e, "UNDEFINED_REMOTE_RAID_INVITE_ACCEPT_SOURCE = 0;"):
+                            enums_dic.setdefault(enum_name, "RemoteRaidInviteAcceptSource")
+                            messages = messages.replace(enum_name + "_", "REMOTE_RAID_INVITE_ACCEPT_SOURCE_")
+                            e = e.replace(enum_name + "_", "REMOTE_RAID_INVITE_ACCEPT_SOURCE_")
+                            enum_name = "REMOTE_RAID_INVITE_ACCEPT_SOURCE"
+                        elif operator.contains(e, "METHOD_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "Method")
+                            messages = messages.replace(enum_name + "_", "METHOD_")
+                            e = e.replace(enum_name + "_", "METHOD_")
+                            enum_name = "METHOD"
 
                         ## second check ...
                         if enum_name == "HOLO_POKEMON_ID":
