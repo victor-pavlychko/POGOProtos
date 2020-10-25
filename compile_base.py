@@ -217,6 +217,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "HOLO_ITEM_CATEGORY"
                         elif operator.contains(e, "ITEM_EFFECT_CAP_NO_FLEE = 1000;"):
                             enums_dic.setdefault(enum_name, "HoloItemEffect")
+                            messages = messages.replace(enum_name + "_ITEM_EFFECT_", "HOLO_ITEM_EFFECT_")
+                            e = e.replace(enum_name + "_ITEM_EFFECT_", "HOLO_ITEM_EFFECT_")
+                            enum_name = "HOLO_ITEM_EFFECT"
                         elif operator.contains(e, "ITEM_TYPE_POKEBALL = 1;"):
                             enums_dic.setdefault(enum_name, "HoloItemType")
                         elif operator.contains(e, "POKEMON_CLASS_LEGENDARY = 1;"):
@@ -235,6 +238,9 @@ def open_proto_file(main_file, package_name):
                             enums_dic.setdefault(enum_name, "Team")
                         elif operator.contains(e, "TEMP_EVOLUTION_MEGA = 1;"):
                             enums_dic.setdefault(enum_name, "HoloTemporaryEvolutionId")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_TEMPORARY_EVOLUTION_ID"
 
                         if enum_name == "HOLO_POKEMON_ID":
                             e = e.replace(enum_name + "_", "")
@@ -248,8 +254,8 @@ def open_proto_file(main_file, package_name):
                             e = e.replace(enum_name + "_", "")
                             if operator.contains(e, "_MOVE_"):
                                 e = e.replace(e.split("_MOVE_")[0].strip(), "").replace("_MOVE_", "")
-                        # elif enum_name == "HOLO_TEMPORARY_EVOLUTION_ID":
-                        #     e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_TEMPORARY_EVOLUTION_ID":
+                            e = e.replace(enum_name + "_", "")
                         # elif enum_name == "HOLO_ITEM_TYPE":
                         #     e = e.replace(enum_name + "_", "")
                         # elif enum_name == "ITEM":
