@@ -244,8 +244,8 @@ def open_proto_file(main_file, package_name):
                         elif operator.contains(e, "ITEM_POKE_BALL = 1;"):
                             enums_dic.setdefault(enum_name, "Item")
                             messages = messages.replace(enum_name + "_", "")
-                            e = e.replace(enum_name, "ITEM")
-                            enum_name = "ITEM"
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "ITEM_IDS"
                         elif operator.contains(e, "QUEST_FIRST_CATCH_OF_THE_DAY = 1;"):
                             enums_dic.setdefault(enum_name, "QuestType")
                             messages = messages.replace(enum_name + "_", "")
@@ -318,9 +318,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "REMOTE_RAID_JOIN_SOURCE"
                         elif operator.contains(e, "AD_FEEDBACK_LIKE_REASON_INVALID = 0;"):
                             enums_dic.setdefault(enum_name, "AdFeedbackLikeReason")
-                            messages = messages.replace(enum_name + "_", "AD_FEEDBACK_LIKE_REASON_")
-                            e = e.replace(enum_name + "_", "AD_FEEDBACK_LIKE_REASON_")
-                            enum_name = "AD_FEEDBACK_LIKE_REASON"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "AD_FEEDBACK_LIKE_REASON_IDS"
                         elif operator.contains(e, "UNSET_REWARD_STATUS = 0;"):
                             enums_dic.setdefault(enum_name, "CombatRewardStatus")
                             messages = messages.replace(enum_name + "_", "COMBAT_REWARD_STATUS_")
@@ -378,9 +378,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "INCUBATOR_SELECTION_RESULT"
                         elif operator.contains(e, "AD_FEEDBACK_NOT_INTERESTED_REASON_INVALID = 0;"):
                             enums_dic.setdefault(enum_name, "AdFeedbackNotInterestedReason")
-                            messages = messages.replace(enum_name + "_", "AD_FEEDBACK_NOT_INTERESTED_REASON_")
-                            e = e.replace(enum_name + "_", "AD_FEEDBACK_NOT_INTERESTED_REASON_")
-                            enum_name = "AD_FEEDBACK_NOT_INTERESTED_REASON"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "AD_FEEDBACK_NOT_INTERESTED_REASON_IDS"
                         elif operator.contains(e, "UNDEFINED_INVASION_EVENT = 0;"):
                             enums_dic.setdefault(enum_name, "InvasionTelemetryIds")
                             messages = messages.replace(enum_name + "_", "INVASION_TELEMETRY_IDS_")
@@ -588,10 +588,8 @@ def open_proto_file(main_file, package_name):
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "HOLO_POKEMON_CLASS":
                             e = e.replace(enum_name + "_", "")
-                        elif enum_name == "ITEM":
-                            e = e.replace(e.split("_")[0].strip(), "")
-                            e = e.replace("__", "ITEM_")
-                            e = e.replace("__", "_ITEM_")
+                        elif enum_name == "ITEM_IDS":
+                            e = e.replace(enum_name + "_", "")
                         elif enum_name == "HOLO_IAP_ITEM_CATEGORY_IAP":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "PLAYER_AVATAR_TYPE":
@@ -617,6 +615,10 @@ def open_proto_file(main_file, package_name):
                         elif enum_name == "BUDDY_ANIMATION_IDS":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "STORE_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "AD_FEEDBACK_NOT_INTERESTED_REASON_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "AD_FEEDBACK_LIKE_REASON_IDS":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
