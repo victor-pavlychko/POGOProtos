@@ -222,18 +222,39 @@ def open_proto_file(main_file, package_name):
                             enum_name = "HOLO_ITEM_EFFECT"
                         elif operator.contains(e, "ITEM_TYPE_POKEBALL = 1;"):
                             enums_dic.setdefault(enum_name, "HoloItemType")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_ITEM_TYPE"
                         elif operator.contains(e, "POKEMON_CLASS_LEGENDARY = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonClass")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_POKEMON_CLASS"
                         elif operator.contains(e, "POKEMON_ENC_MOVEMENT_JUMP = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonMovementType")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_POKEMON_MOVEMENT_TYPE"
                         elif operator.contains(e, "POKEMON_TYPE_NORMAL = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonType")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_POKEMON_TYPE"
                         elif operator.contains(e, "ITEM_POKE_BALL = 1;"):
                             enums_dic.setdefault(enum_name, "Item")
-                        elif operator.contains(e, "QUEST_TYPE_QUEST_FIRST_CATCH_OF_THE_DAY = 1;"):
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name, "ITEM")
+                            enum_name = "ITEM"
+                        elif operator.contains(e, "QUEST_FIRST_CATCH_OF_THE_DAY = 1;"):
                             enums_dic.setdefault(enum_name, "QuestType")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "QUEST_TYPE"
                         elif operator.contains(e, "RAID_LEVEL_1 = 1;"):
                             enums_dic.setdefault(enum_name, "RaidLevel")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "RAID_LEVEL_IDS"
                         elif operator.contains(e, "TEAM_BLUE = 1;"):
                             enums_dic.setdefault(enum_name, "Team")
                         elif operator.contains(e, "TEMP_EVOLUTION_MEGA = 1;"):
@@ -241,6 +262,21 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "")
                             e = e.replace(enum_name + "_", "")
                             enum_name = "HOLO_TEMPORARY_EVOLUTION_ID"
+                        elif operator.contains(e, "PLAYER_AVATAR_FEMALE = 1;"):
+                            enums_dic.setdefault(enum_name, "PlayerAvatarType")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "PLAYER_AVATAR_TYPE"
+                        elif operator.contains(e, "BADGE_TRAVEL_KM = 1;"):
+                            enums_dic.setdefault(enum_name, "HoloBadgeType")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_BADGE_TYPE"
+                        elif operator.contains(e, "IAP_CATEGORY_BUNDLE = 1;"):
+                            enums_dic.setdefault(enum_name, "HoloIapItemCategory")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_IAP_ITEM_CATEGORY_IAP"
 
                         if enum_name == "HOLO_POKEMON_ID":
                             e = e.replace(enum_name + "_", "")
@@ -256,17 +292,20 @@ def open_proto_file(main_file, package_name):
                                 e = e.replace(e.split("_MOVE_")[0].strip(), "").replace("_MOVE_", "")
                         elif enum_name == "HOLO_TEMPORARY_EVOLUTION_ID":
                             e = e.replace(enum_name + "_", "")
-                        # elif enum_name == "HOLO_ITEM_TYPE":
-                        #     e = e.replace(enum_name + "_", "")
-                        # elif enum_name == "ITEM":
-                        #     e = e.replace(e.split("_")[0].strip(), "")
-                        #     e = e.replace("__", "ITEM_")
-                        # elif enum_name == "HOLO_IAP_ITEM_CATEGORY_IAP":
-                        #     e = e.replace(enum_name + "_", "")
-                        # elif enum_name == "PLAYER_AVATAR_TYPE":
-                        #     e = e.replace(enum_name + "_", "")
-                        # elif enum_name == "HOLO_BADGE_TYPE":
-                        #     e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_ITEM_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_POKEMON_CLASS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "ITEM":
+                            e = e.replace(e.split("_")[0].strip(), "")
+                            e = e.replace("__", "ITEM_")
+                            e = e.replace("__", "_ITEM_")
+                        elif enum_name == "HOLO_IAP_ITEM_CATEGORY_IAP":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "PLAYER_AVATAR_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_BADGE_TYPE":
+                            e = e.replace(enum_name + "_", "")
                         elif enum_name == "HOLO_POKEMON_FAMILY_ID":
                             e = e.replace(enum_name + "_", "")
                             if not operator.contains(e, "= 0;"):
@@ -275,10 +314,14 @@ def open_proto_file(main_file, package_name):
                                     e = e.replace("NIDORAN", "NIDORAN_FEMALE")
                                 elif operator.contains(e, "NIDORAN") and operator.contains(e, "= 32;"):
                                     e = e.replace("NIDORAN", "NIDORAN_MALE")
-                        # elif enum_name == "HOLO_POKEMON_MOVEMENT_TYPE":
-                        #     e = e.replace(enum_name + "_", "")
-                        # elif enum_name == "HOLO_POKEMON_TYPE":
-                        #     e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_POKEMON_MOVEMENT_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_POKEMON_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "QUEST_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "RAID_LEVEL_IDS":
+                            e = e.replace(enum_name + "_", "")
 
                         proto_line = e
 
