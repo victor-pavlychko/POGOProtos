@@ -193,6 +193,7 @@ def open_proto_file(main_file, package_name):
                         e = proto_line.replace(re.split(r'(\W+)', proto_line)[2],
                                                enum_name + "_" + re.split(r'(\W+)', proto_line)[2])
 
+                        ## first check ...
                         if operator.contains(e, "V0001_POKEMON_BULBASAUR = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonId")
                             messages = messages.replace(enum_name + "_POKEMON_UNSET = 0;", "POKEMON_UNSET = 0;")
@@ -277,7 +278,73 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "")
                             e = e.replace(enum_name + "_", "")
                             enum_name = "HOLO_IAP_ITEM_CATEGORY_IAP"
+                        elif operator.contains(e, "INCREASE_POKEMON_STORAGE = 2;"):
+                            enums_dic.setdefault(enum_name, "InventoryUpgradeType")
+                            messages = messages.replace(enum_name + "_", "INVENTOTY_UPGRADE_TYPE_")
+                            e = e.replace(enum_name + "_", "INVENTOTY_UPGRADE_TYPE_")
+                            enum_name = "INVENTOTY_UPGRADE_TYPE"
+                        elif operator.contains(e, "QUIT = 1;"):
+                            enums_dic.setdefault(enum_name, "AvatarCompletion")
+                            messages = messages.replace(enum_name + "_", "AVATAR_COMPLETION_")
+                            e = e.replace(enum_name + "_", "AVATAR_COMPLETION_")
+                            enum_name = "AVATAR_COMPLETION"
+                        elif operator.contains(e, "SUBSECTION_VS_CHARGING = 1;"):
+                            enums_dic.setdefault(enum_name, "BattleHubSubsection")
+                            messages = messages.replace(enum_name + "_", "BATTLE_HUB_SUBSECTION_")
+                            e = e.replace(enum_name + "_", "BATTLE_HUB_SUBSECTION_")
+                            enum_name = "BATTLE_HUB_SUBSECTION"
+                        elif operator.contains(e, "UNDEFINED_POKEMON_GO_PLUS_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "PokemonGoPlusIds")
+                            messages = messages.replace(enum_name + "_", "POKEMON_GO_PLUS_IDS_")
+                            e = e.replace(enum_name + "_", "POKEMON_GO_PLUS_IDS_")
+                            enum_name = "POKEMON_GO_PLUS_IDS"
+                        elif operator.contains(e, "DIALOG = 2;"):
+                            enums_dic.setdefault(enum_name, "PhoneBoothPresentationMode")
+                            messages = messages.replace(enum_name + "_", "PHONE_BOOTH_PRESENTATION_MODE_")
+                            e = e.replace(enum_name + "_", "PHONE_BOOTH_PRESENTATION_MODE_")
+                            enum_name = "PHONE_BOOTH_PRESENTATION_MODE"
+                        elif operator.contains(e, "UNDEFINED_ASSET_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "AssetTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "ASSET_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "ASSET_TELEMETRY_IDS_")
+                            enum_name = "ASSET_TELEMETRY_IDS"
+                        elif operator.contains(e, "UNDEFINED_REMOTE_RAID_JOIN_SOURCE = 0;"):
+                            enums_dic.setdefault(enum_name, "RemoteRaidJoinSource")
+                            messages = messages.replace(enum_name + "_", "REMOTE_RAID_JOIN_SOURCE_")
+                            e = e.replace(enum_name + "_", "REMOTE_RAID_JOIN_SOURCE_")
+                            enum_name = "REMOTE_RAID_JOIN_SOURCE"
+                        elif operator.contains(e, "AD_FEEDBACK_LIKE_REASON_INVALID = 0;"):
+                            enums_dic.setdefault(enum_name, "AdFeedbackLikeReason")
+                            messages = messages.replace(enum_name + "_", "AD_FEEDBACK_LIKE_REASON_")
+                            e = e.replace(enum_name + "_", "AD_FEEDBACK_LIKE_REASON_")
+                            enum_name = "AD_FEEDBACK_LIKE_REASON"
+                        elif operator.contains(e, "UNSET_REWARD_STATUS = 0;"):
+                            enums_dic.setdefault(enum_name, "CombatRewardStatus")
+                            messages = messages.replace(enum_name + "_", "COMBAT_REWARD_STATUS_")
+                            e = e.replace(enum_name + "_", "COMBAT_REWARD_STATUS_")
+                            enum_name = "COMBAT_REWARD_STATUS"
+                        elif operator.contains(e, "UNDEFINED_PERMISSION_FLOW_STEP = 0;"):
+                            enums_dic.setdefault(enum_name, "PermissionFlowStepTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "PERMISSION_FLOW_STEP_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "PERMISSION_FLOW_STEP_TELEMETRY_IDS_")
+                            enum_name = "PERMISSION_FLOW_STEP_TELEMETRY_IDS"
+                        elif operator.contains(e, "V0001_POKEMON_NATURE_STOIC = 1;"):
+                            enums_dic.setdefault(enum_name, "HoloPokemonNature")
+                            messages = messages.replace(enum_name + "_", "HOLO_POKEMON_NATURE_")
+                            e = e.replace(enum_name + "_", "HOLO_POKEMON_NATURE_")
+                            enum_name = "HOLO_POKEMON_NATURE"
+                        elif operator.contains(e, "LOADING = 1;"):
+                            enums_dic.setdefault(enum_name, "AssetBundleStatus")
+                            messages = messages.replace(enum_name + "_", "ASSET_BUNDLE_STATUS_")
+                            e = e.replace(enum_name + "_", "ASSET_BUNDLE_STATUS_")
+                            enum_name = "ASSET_BUNDLE_STATUS"
+                        elif operator.contains(e, "STORE_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "Store")
+                            messages = messages.replace(enum_name + "_", "STORE_")
+                            e = e.replace(enum_name + "_", "STORE_")
+                            enum_name = "STORE"
 
+                        ## second check ...
                         if enum_name == "HOLO_POKEMON_ID":
                             e = e.replace(enum_name + "_", "")
                             if operator.contains(e, "_POKEMON_"):
