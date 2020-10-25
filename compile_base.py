@@ -472,6 +472,7 @@ def open_proto_file(main_file, package_name):
                             e = e.replace(enum_name + "_", "INCIDENT_DISPLAY_TYPE_")
                             enum_name = "INCIDENT_DISPLAY_TYPE"
                         elif operator.contains(e, "unset__notification_category = 0;"):
+                            e = e.replace("unset__notification_category = 0;", "UNSET = 0;")
                             enums_dic.setdefault(enum_name, "NotificationCategory")
                             messages = messages.replace(enum_name + "_", "NOTIFICATION_CATEGORY_")
                             e = e.replace(enum_name + "_", "NOTIFICATION_CATEGORY_")
@@ -567,6 +568,7 @@ def open_proto_file(main_file, package_name):
                             e = e.replace(enum_name + "_", "HOLOHOLO_CLIENT_TELEMETRY_IDS_")
                             enum_name = "HOLOHOLO_CLIENT_TELEMETRY_IDS"
                         elif operator.contains(e, "unset__variable_name = 0;"):
+                            e = e.replace("unset__variable_name = 0;", "UNSET = 0;")
                             enums_dic.setdefault(enum_name, "VariableName")
                             messages = messages.replace(enum_name + "_", "VARIABLE_NAME_")
                             e = e.replace(enum_name + "_", "VARIABLE_NAME_")
