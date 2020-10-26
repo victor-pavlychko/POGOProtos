@@ -233,8 +233,8 @@ def open_proto_file(main_file, package_name):
                             enum_name = "HOLO_POKEMON_CLASS"
                         elif operator.contains(e, "POKEMON_ENC_MOVEMENT_JUMP = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonMovementType")
-                            messages = messages.replace(enum_name + "_", "")
-                            e = e.replace(enum_name + "_", "")
+                            messages = messages.replace(enum_name + "_POKEMON_ENC_", "")
+                            e = e.replace(enum_name + "_POKEMON_ENC_", "")
                             enum_name = "HOLO_POKEMON_MOVEMENT_TYPE"
                         elif operator.contains(e, "POKEMON_TYPE_NORMAL = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonType")
@@ -293,8 +293,8 @@ def open_proto_file(main_file, package_name):
                             enum_name = "AVATAR_COMPLETION"
                         elif operator.contains(e, "SUBSECTION_VS_CHARGING = 1;"):
                             enums_dic.setdefault(enum_name, "BattleHubSubsection")
-                            messages = messages.replace(enum_name + "_", "BATTLE_HUB_SUBSECTION_")
-                            e = e.replace(enum_name + "_", "BATTLE_HUB_SUBSECTION_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "BATTLE_HUB_SUBSECTION"
                         elif operator.contains(e, "UNDEFINED_POKEMON_GO_PLUS_EVENT = 0;"):
                             enums_dic.setdefault(enum_name, "PokemonGoPlusIds")
@@ -331,10 +331,10 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "PERMISSION_FLOW_STEP_TELEMETRY_IDS_")
                             e = e.replace(enum_name + "_", "PERMISSION_FLOW_STEP_TELEMETRY_IDS_")
                             enum_name = "PERMISSION_FLOW_STEP_TELEMETRY_IDS"
-                        elif operator.contains(e, "V0001_POKEMON_NATURE_STOIC = 1;"):
+                        elif operator.contains(e, "NATURE_UNKNOWN = 0;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonNature")
-                            messages = messages.replace(enum_name + "_", "HOLO_POKEMON_NATURE_")
-                            e = e.replace(enum_name + "_", "HOLO_POKEMON_NATURE_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "").replace("NATURE_", "POKEMON_NATURE_")
                             enum_name = "HOLO_POKEMON_NATURE"
                         elif operator.contains(e, "LOADING = 1;"):
                             enums_dic.setdefault(enum_name, "AssetBundleStatus")
@@ -393,9 +393,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "ENCOUNTER_TYPE"
                         elif operator.contains(e, "PLATFORM_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "Platform")
-                            messages = messages.replace(enum_name + "_", "PLATFORM_")
-                            e = e.replace(enum_name + "_", "PLATFORM_")
-                            enum_name = "PLATFORM"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "PLATFORM_IDS"
                         elif operator.contains(e, "UNDEFINED_SOCIAL = 0;"):
                             enums_dic.setdefault(enum_name, "SocialTelemetryIds")
                             messages = messages.replace(enum_name + "_", "SOCIAL_TELEMETRY_IDS_")
@@ -423,8 +423,8 @@ def open_proto_file(main_file, package_name):
                             enum_name = "METHOD"
                         elif operator.contains(e, "SECTION_VS_SEEKER = 1;"):
                             enums_dic.setdefault(enum_name, "BattleHubSection")
-                            messages = messages.replace(enum_name + "_", "BATTLE_HUB_SECTION_")
-                            e = e.replace(enum_name + "_", "BATTLE_HUB_SECTION_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "BATTLE_HUB_SECTION"
                         elif operator.contains(e, "UNDEFINED_PERMISSION_CONTEXT = 0;"):
                             enums_dic.setdefault(enum_name, "PermissionContextTelemetryIds")
@@ -525,7 +525,7 @@ def open_proto_file(main_file, package_name):
                         elif operator.contains(e, "COMBAT_TYPE_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "CombatType")
                             messages = messages.replace(enum_name + "_", "COMBAT_TYPE_")
-                            e = e.replace(enum_name + "_", "COMBAT_TYPE_")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "COMBAT_TYPE"
                         elif operator.contains(e, "WINNER = 0;"):
                             enums_dic.setdefault(enum_name, "CombatPlayerFinishState")
@@ -570,7 +570,7 @@ def open_proto_file(main_file, package_name):
                             enum_name = "VARIABLE_NAME"
                         elif operator.contains(e, "FOLLOW_X = 1;"):
                             enums_dic.setdefault(enum_name, "POIDecorationFollowFlags")
-                            messages = messages.replace(enum_name + "_", "POI_DECORATION_FOLLOW_FLAGS_")
+                            messages = messages.replace(enum_name + "_" + enum_name + "_", "POI_DECORATION_FOLLOW_FLAGS_")
                             e = e.replace(enum_name + "_", "POI_DECORATION_FOLLOW_FLAGS_")
                             enum_name = "POI_DECORATION_FOLLOW_FLAGS"
                         elif operator.contains(e, "UNDEFINED_GENERIC_EVENT = 0;"):
@@ -590,9 +590,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "CALENDAR_ADD_RESULT"
                         elif operator.contains(e, "POKEMON_BADGE_BEST_BUDDY = 1;"):
                             enums_dic.setdefault(enum_name, "PokemonBadge")
-                            messages = messages.replace(enum_name + "_", "POKEMON_BADGE_")
-                            e = e.replace(enum_name + "_", "POKEMON_BADGE_")
-                            enum_name = "POKEMON_BADGE"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "POKEMON_BADGE_IDS"
                         elif operator.contains(e, "METRIC_STEP = 1;"):
                             enums_dic.setdefault(enum_name, "MetricType")
                             messages = messages.replace(enum_name + "_", "METRIC_TYPE_")
@@ -799,8 +799,12 @@ def open_proto_file(main_file, package_name):
                                     e = e.replace("NIDORAN", "NIDORAN_FEMALE")
                                 elif operator.contains(e, "NIDORAN") and operator.contains(e, "= 32;"):
                                     e = e.replace("NIDORAN", "NIDORAN_MALE")
-                        elif enum_name == "HOLO_POKEMON_MOVEMENT_TYPE":
+                        elif enum_name == "HOLO_POKEMON_NATURE":
                             e = e.replace(enum_name + "_", "")
+                            if not operator.contains(e, "= 0;"):
+                                e = e.replace(e.split("_POKEMON_")[0].strip(), "").replace("_POKEMON_", "POKEMON_")
+                        elif enum_name == "HOLO_POKEMON_MOVEMENT_TYPE":
+                            e = e.replace(enum_name + "_POKEMON_ENC_", "")
                         elif enum_name == "HOLO_POKEMON_TYPE":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "QUEST_TYPE":
@@ -832,6 +836,14 @@ def open_proto_file(main_file, package_name):
                         elif enum_name == "GYM_BADGE_TYPE_IDS":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "FRIENDSHIP_LEVEL_MILESTONE_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "BATTLE_HUB_SECTION":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "BATTLE_HUB_SUBSECTION":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "PLATFORM_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "POKEMON_BADGE_IDS":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
