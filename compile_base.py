@@ -618,6 +618,146 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "POKEMON_INVENTORY_TELEMETRY_IDS_")
                             e = e.replace(enum_name + "_", "POKEMON_INVENTORY_TELEMETRY_IDS_")
                             enum_name = "POKEMON_INVENTORY_TELEMETRY_IDS"
+                        elif operator.contains(e, "SALE = 3;"):
+                            enums_dic.setdefault(enum_name, "PresentationType")
+                            messages = messages.replace(enum_name + "_", "PRESENTATION_TYPE_")
+                            e = e.replace(enum_name + "_", "PRESENTATION_TYPE_")
+                            enum_name = "PRESENTATION_TYPE"
+                        elif operator.contains(e, "ENEMY_POKEMON_FOCUS = 2;"):
+                            enums_dic.setdefault(enum_name, "CameraType")
+                            messages = messages.replace(enum_name + "_", "CAMERA_TYPE_")
+                            e = e.replace(enum_name + "_", "CAMERA_TYPE_")
+                            enum_name = "CAMERA_TYPE"
+                        elif operator.contains(e, "TOS_ACCEPTED = 0;"):
+                            enums_dic.setdefault(enum_name, "OnboardingEventIds")
+                            messages = messages.replace(enum_name + "_", "ONBOARDING_EVENT_IDS_")
+                            e = e.replace(enum_name + "_", "ONBOARDING_EVENT_IDS_")
+                            enum_name = "ONBOARDING_EVENT_IDS"
+                        elif operator.contains(e, "PROF = 0;"):
+                            enums_dic.setdefault(enum_name, "Speaker")
+                            messages = messages.replace(enum_name + "_", "SPEAKER_")
+                            e = e.replace(enum_name + "_", "SPEAKER_")
+                            enum_name = "SPEAKER"
+                        elif operator.contains(e, "UNDEFINED_WEB_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "WebTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "WEB_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "WEB_TELEMETRY_IDS_")
+                            enum_name = "WEB_TELEMETRY_IDS"
+                        elif operator.contains(e, "UNDEFINED_BATTLE_PARTY_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "BattlePartyTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "BATTLE_PARTY_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "BATTLE_PARTY_TELEMETRY_IDS_")
+                            enum_name = "BATTLE_PARTY_TELEMETRY_IDS"
+                        elif operator.contains(e, "COLOR = 0;"):
+                            enums_dic.setdefault(enum_name, "POIDecorationProperties")
+                            messages = messages.replace(enum_name + "_", "POI_DECORATION_PROPERTIES_")
+                            e = e.replace(enum_name + "_", "POI_DECORATION_PROPERTIES_")
+                            enum_name = "POI_DECORATION_PROPERTIES"
+                        elif operator.contains(e, "UNDEFINED_LOGIN_ACTION = 0;"):
+                            enums_dic.setdefault(enum_name, "LoginActionTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "LOGIN_ACTION_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "LOGIN_ACTION_TELEMETRY_IDS_")
+                            enum_name = "LOGIN_ACTION_TELEMETRY_IDS"
+                        elif operator.contains(e, "BUDDY_LEVEL_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "BuddyLevel")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "BUDDY_LEVEL_IDS"
+                        elif operator.contains(e, "AD_FEEDBACK_COMPLAINT_REASON_INVALID = 0;"):
+                            enums_dic.setdefault(enum_name, "AdFeedbackComplaintReason")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "AD_FEEDBACK_COMPLAINT_REASON_IDS"
+                        elif operator.contains(e, "COMBAT_VS_SEEKER_CHARGED = 30;"):
+                            enums_dic.setdefault(enum_name, "ClientInboxServiceNotificationCategory")
+                            messages = messages.replace(enum_name + "_", "CLIENT_INBOX_SERVICE_NOTIFICATION_CATEGORY_")
+                            e = e.replace(enum_name + "_", "CLIENT_INBOX_SERVICE_NOTIFICATION_CATEGORY_")
+                            enum_name = "CLIENT_INBOX_SERVICE_NOTIFICATION_CATEGORY"
+                        elif operator.contains(e, "BUDDY_CATEGORY_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "BuddyActivityCategory")
+                            messages = messages.replace(enum_name + "_", "BUDDY_ACTIVITY_CATEGORY_")
+                            e = e.replace(enum_name + "_", "BUDDY_ACTIVITY_CATEGORY_")
+                            enum_name = "BUDDY_ACTIVITY_CATEGORY"
+                        elif operator.contains(e, "CHEAT_WARNING = 0;"):
+                            enums_dic.setdefault(enum_name, "WarnedPlayerReason")
+                            messages = messages.replace(enum_name + "_", "WARNED_PLAYER_REASON_")
+                            e = e.replace(enum_name + "_", "WARNED_PLAYER_REASON_")
+                            enum_name = "WARNED_PLAYER_REASON"
+                        elif operator.contains(e, "LEAVE_GYM = 0;"):
+                            enums_dic.setdefault(enum_name, "BattleResultsExit")
+                            messages = messages.replace(enum_name + "_", "BATTLE_RESULTS_EXIT_")
+                            e = e.replace(enum_name + "_", "BATTLE_RESULTS_EXIT_")
+                            enum_name = "BATTLE_RESULTS_EXIT"
+                        elif operator.contains(e, "BUDDY_EMOTION_LEVEL_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "BuddyEmotionLevel")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "BUDDY_EMOTION_LEVEL_IDS"
+                        elif operator.contains(e, "V1 = 0;"):
+                            enums_dic.setdefault(enum_name, "OnboardingPathIds")
+                            messages = messages.replace(enum_name + "_", "ONBOARDING_PATH_IDS_")
+                            e = e.replace(enum_name + "_", "ONBOARDING_PATH_IDS_")
+                            enum_name = "ONBOARDING_PATH_IDS"
+                        elif operator.contains(e, "SHARE_EX_RAID_PASS_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "ShareExRaidPassResult")
+                            messages = messages.replace(enum_name + "_", "SHARE_EX_RAID_PASS_RESULT_")
+                            e = e.replace(enum_name + "_", "SHARE_EX_RAID_PASS_RESULT_")
+                            enum_name = "SHARE_EX_RAID_PASS_RESULT"
+                        elif operator.contains(e, "INCUBATOR_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "EggIncubatorType")
+                            messages = messages.replace(enum_name + "_", "EGG_INCUBATOR_TYPE_")
+                            e = e.replace(enum_name + "_", "EGG_INCUBATOR_TYPE_")
+                            enum_name = "EGG_INCUBATOR_TYPE"
+                        elif operator.contains(e, "UNDEFINED_SHOPPING_PAGE_SCROLL_TYPE = 0;"):
+                            enums_dic.setdefault(enum_name, "ShoppingPageScrollIds")
+                            messages = messages.replace(enum_name + "_", "SHOPPING_PAGE_SCROLL_IDS_")
+                            e = e.replace(enum_name + "_", "SHOPPING_PAGE_SCROLL_IDS_")
+                            enum_name = "SHOPPING_PAGE_SCROLL_IDS"
+                        elif operator.contains(e, "UNDEFINED_AVATAR_CUSTOMIZATION = 0;"):
+                            enums_dic.setdefault(enum_name, "AvatarCustomizationTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "AVATAR_CUSTOMIZATION_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "AVATAR_CUSTOMIZATION_TELEMETRY_IDS_")
+                            enum_name = "AVATAR_CUSTOMIZATION_TELEMETRY_IDS"
+                        elif operator.contains(e, "V1 = 1;"):
+                            enums_dic.setdefault(enum_name, "PlayerOnboardingPath")
+                            messages = messages.replace(enum_name + "_", "PLAYER_ONBOARDING_PATH_")
+                            e = e.replace(enum_name + "_", "PLAYER_ONBOARDING_PATH_")
+                            enum_name = "PLAYER_ONBOARDING_PATH"
+                        elif operator.contains(e, "UNDEFINED_PUSH_NOTIFICATION_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "PushNotificationTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "PUSH_NOTIFICATION_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "PUSH_NOTIFICATION_TELEMETRY_IDS_")
+                            enum_name = "PUSH_NOTIFICATION_TELEMETRY_IDS"
+                        elif operator.contains(e, "SOUVENIR_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "SouvenirTypeId")
+                            messages = messages.replace(enum_name + "_", "SOUVENIR_TYPE_ID_")
+                            e = e.replace(enum_name + "_", "SOUVENIR_TYPE_ID_")
+                            enum_name = "SOUVENIR_TYPE_ID"
+                        elif operator.contains(e, "UNDEFINED_SHOPPING_PAGE_SOURCE = 0;"):
+                            enums_dic.setdefault(enum_name, "ShoppingPageTelemetrySource")
+                            messages = messages.replace(enum_name + "_", "SHOPPING_PAGE_TELEMETRY_SOURCE_")
+                            e = e.replace(enum_name + "_", "SHOPPING_PAGE_TELEMETRY_SOURCE_")
+                            enum_name = "SHOPPING_PAGE_TELEMETRY_SOURCE"
+                        elif operator.contains(e, "EXCELLENT = 3;"):
+                            enums_dic.setdefault(enum_name, "CameraZoomInLevel")
+                            messages = messages.replace(enum_name + "_", "CAMERA_ZOOM_IN_LEVEL_")
+                            e = e.replace(enum_name + "_", "CAMERA_ZOOM_IN_LEVEL_")
+                            enum_name = "CAMERA_ZOOM_IN_LEVEL"
+                        elif operator.contains(e, "SINGLE = 0;"):
+                            enums_dic.setdefault(enum_name, "AnimationTake")
+                            messages = messages.replace(enum_name + "_", "ANIMATION_TAKE_")
+                            e = e.replace(enum_name + "_", "ANIMATION_TAKE_")
+                            enum_name = "ANIMATION_TAKE"
+                        elif operator.contains(e, "ONBOARDING_INTRODUCTION = 0;"):
+                            enums_dic.setdefault(enum_name, "IncidentLeaderStringTypes")
+                            messages = messages.replace(enum_name + "_", "INCIDENT_LEADER_STRING_TYPES_")
+                            e = e.replace(enum_name + "_", "INCIDENT_LEADER_STRING_TYPES_")
+                            enum_name = "INCIDENT_LEADER_STRING_TYPES"
+                        elif operator.contains(e, "UNDEFINED_NEWS_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "NewsPageTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "NEWS_PAGE_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "NEWS_PAGE_TELEMETRY_IDS_")
+                            enum_name = "NEWS_PAGE_TELEMETRY_IDS"
 
                         ## second check ...
                         if enum_name == "HOLO_POKEMON_ID":
@@ -673,6 +813,12 @@ def open_proto_file(main_file, package_name):
                         elif enum_name == "CAMERA_TARGET":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "CAMERA_INTERPOLATION":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "BUDDY_LEVEL_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "AD_FEEDBACK_COMPLAINT_REASON_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "BUDDY_EMOTION_LEVEL_IDS":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
