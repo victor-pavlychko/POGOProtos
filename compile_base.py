@@ -539,8 +539,8 @@ def open_proto_file(main_file, package_name):
                             enum_name = "MAP_EVENTS_TELEMETRY_IDS"
                         elif operator.contains(e, "CAM_INTERP_CUT = 0;"):
                             enums_dic.setdefault(enum_name, "CameraInterpolation")
-                            messages = messages.replace(enum_name + "_", "CAMERA_INTERPOLATION_")
-                            e = e.replace(enum_name + "_", "CAMERA_INTERPOLATION_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "CAMERA_INTERPOLATION"
                         elif operator.contains(e, "WHAT_IS_POKESTOP = 0;"):
                             enums_dic.setdefault(enum_name, "PoiSubmissionTutorialPage")
@@ -568,6 +568,56 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "VARIABLE_NAME_")
                             e = e.replace(enum_name + "_", "VARIABLE_NAME_")
                             enum_name = "VARIABLE_NAME"
+                        elif operator.contains(e, "FOLLOW_X = 1;"):
+                            enums_dic.setdefault(enum_name, "POIDecorationFollowFlags")
+                            messages = messages.replace(enum_name + "_", "POI_DECORATION_FOLLOW_FLAGS_")
+                            e = e.replace(enum_name + "_", "POI_DECORATION_FOLLOW_FLAGS_")
+                            enum_name = "POI_DECORATION_FOLLOW_FLAGS"
+                        elif operator.contains(e, "UNDEFINED_GENERIC_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "GenericClickTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "GENERIC_CLICK_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "GENERIC_CLICK_TELEMETRY_IDS_")
+                            enum_name = "GENERIC_CLICK_TELEMETRY_IDS"
+                        elif operator.contains(e, "FRIENDSHIP_LEVEL_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "FriendshipLevelMilestone")
+                            messages = messages.replace(enum_name + "_", "FRIENDSHIP_LEVEL_MILESTONE_")
+                            e = e.replace(enum_name + "_", "FRIENDSHIP_LEVEL_MILESTONE_")
+                            enum_name = "FRIENDSHIP_LEVEL_MILESTONE"
+                        elif operator.contains(e, "PERMISSION_DENIED = -2;"):
+                            enums_dic.setdefault(enum_name, "CalendarAddResult")
+                            messages = messages.replace(enum_name + "_", "CALENDAR_ADD_RESULT_")
+                            e = e.replace(enum_name + "_", "CALENDAR_ADD_RESULT_")
+                            enum_name = "CALENDAR_ADD_RESULT"
+                        elif operator.contains(e, "POKEMON_BADGE_BEST_BUDDY = 1;"):
+                            enums_dic.setdefault(enum_name, "PokemonBadge")
+                            messages = messages.replace(enum_name + "_", "POKEMON_BADGE_")
+                            e = e.replace(enum_name + "_", "POKEMON_BADGE_")
+                            enum_name = "POKEMON_BADGE"
+                        elif operator.contains(e, "METRIC_STEP = 1;"):
+                            enums_dic.setdefault(enum_name, "MetricType")
+                            messages = messages.replace(enum_name + "_", "METRIC_TYPE_")
+                            e = e.replace(enum_name + "_", "METRIC_TYPE_")
+                            enum_name = "METRIC_TYPE"
+                        elif operator.contains(e, "UNDEFINED_ITEM_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "ItemUseTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "ITEM_USE_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "ITEM_USE_TELEMETRY_IDS_")
+                            enum_name = "ITEM_USE_TELEMETRY_IDS"
+                        elif operator.contains(e, "UNDEFINED_REMOTE_RAID_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "RemoteRaidTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "REMOTE_RAID_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "REMOTE_RAID_TELEMETRY_IDS_")
+                            enum_name = "REMOTE_RAID_TELEMETRY_IDS"
+                        elif operator.contains(e, "CAM_TARGET_ATTACKER = 0;"):
+                            enums_dic.setdefault(enum_name, "CameraTarget")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "CAMERA_TARGET"
+                        elif operator.contains(e, "UNDEFINED_POKEMON_INVENTORY_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "PokemonInventoryTelemetryIds")
+                            messages = messages.replace(enum_name + "_", "POKEMON_INVENTORY_TELEMETRY_IDS_")
+                            e = e.replace(enum_name + "_", "POKEMON_INVENTORY_TELEMETRY_IDS_")
+                            enum_name = "POKEMON_INVENTORY_TELEMETRY_IDS"
 
                         ## second check ...
                         if enum_name == "HOLO_POKEMON_ID":
@@ -619,6 +669,10 @@ def open_proto_file(main_file, package_name):
                         elif enum_name == "AD_FEEDBACK_NOT_INTERESTED_REASON_IDS":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "AD_FEEDBACK_LIKE_REASON_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "CAMERA_TARGET":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "CAMERA_INTERPOLATION":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e

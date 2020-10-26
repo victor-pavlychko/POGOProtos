@@ -1883,11 +1883,11 @@ enum MapEventsTelemetryIds {
 }
 
 enum CameraInterpolation {
-	CAMERA_INTERPOLATION_CAM_INTERP_CUT = 0;
-	CAMERA_INTERPOLATION_CAM_INTERP_LINEAR = 1;
-	CAMERA_INTERPOLATION_CAM_INTERP_SMOOTH = 2;
-	CAMERA_INTERPOLATION_CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE = 3;
-	CAMERA_INTERPOLATION_CAM_INTERP_DEPENDS = 4;
+	CAM_INTERP_CUT = 0;
+	CAM_INTERP_LINEAR = 1;
+	CAM_INTERP_SMOOTH = 2;
+	CAM_INTERP_SMOOTH_ROT_LINEAR_MOVE = 3;
+	CAM_INTERP_DEPENDS = 4;
 }
 
 enum PoiSubmissionTutorialPage {
@@ -2034,11 +2034,11 @@ enum VariableName {
 	VARIABLE_NAME_DL_ID = 1105;
 }
 
-enum JIPFCCGGBEH {
-	JIPFCCGGBEH_JIPFCCGGBEH_AUTO_INVALID = 0;
-	JIPFCCGGBEH_FOLLOW_X = 1;
-	JIPFCCGGBEH_FOLLOW_Y = 2;
-	JIPFCCGGBEH_FOLLOW_Z = 4;
+enum POIDecorationFollowFlags {
+	POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID = 0;
+	POI_DECORATION_FOLLOW_FLAGS_FOLLOW_X = 1;
+	POI_DECORATION_FOLLOW_FLAGS_FOLLOW_Y = 2;
+	POI_DECORATION_FOLLOW_FLAGS_FOLLOW_Z = 4;
 }
 
 enum HoloItemType {
@@ -2088,11 +2088,11 @@ enum HoloItemEffect {
 	HOLO_ITEM_EFFECT_ITEM_EFFECT_FULL_MOTIVATION = 1016;
 }
 
-enum JPMFIOBHIMD {
-	JPMFIOBHIMD_UNDEFINED_GENERIC_EVENT = 0;
-	JPMFIOBHIMD_SPEED_WARNING_SHOW = 1;
-	JPMFIOBHIMD_SPEED_WARNING_PASSENGER = 2;
-	JPMFIOBHIMD_CACHE_RESET_CLICKED = 3;
+enum GenericClickTelemetryIds {
+	GENERIC_CLICK_TELEMETRY_IDS_UNDEFINED_GENERIC_EVENT = 0;
+	GENERIC_CLICK_TELEMETRY_IDS_SPEED_WARNING_SHOW = 1;
+	GENERIC_CLICK_TELEMETRY_IDS_SPEED_WARNING_PASSENGER = 2;
+	GENERIC_CLICK_TELEMETRY_IDS_CACHE_RESET_CLICKED = 3;
 }
 
 enum HoloBadgeType {
@@ -2363,20 +2363,20 @@ enum HoloBadgeType {
 	BADGE_EVENT_0030 = 5230;
 }
 
-enum KHHACGAIIGG {
-	KHHACGAIIGG_FRIENDSHIP_LEVEL_UNSET = 0;
-	KHHACGAIIGG_FRIENDSHIP_LEVEL_0 = 1;
-	KHHACGAIIGG_FRIENDSHIP_LEVEL_1 = 2;
-	KHHACGAIIGG_FRIENDSHIP_LEVEL_2 = 3;
-	KHHACGAIIGG_FRIENDSHIP_LEVEL_3 = 4;
-	KHHACGAIIGG_FRIENDSHIP_LEVEL_4 = 5;
+enum FriendshipLevelMilestone {
+	FRIENDSHIP_LEVEL_MILESTONE_FRIENDSHIP_LEVEL_UNSET = 0;
+	FRIENDSHIP_LEVEL_MILESTONE_FRIENDSHIP_LEVEL_0 = 1;
+	FRIENDSHIP_LEVEL_MILESTONE_FRIENDSHIP_LEVEL_1 = 2;
+	FRIENDSHIP_LEVEL_MILESTONE_FRIENDSHIP_LEVEL_2 = 3;
+	FRIENDSHIP_LEVEL_MILESTONE_FRIENDSHIP_LEVEL_3 = 4;
+	FRIENDSHIP_LEVEL_MILESTONE_FRIENDSHIP_LEVEL_4 = 5;
 }
 
-enum KJBPAJPBPLP {
-	KJBPAJPBPLP_UNKNOWN = 0;
-	KJBPAJPBPLP_PERMISSION_DENIED = -2;
-	KJBPAJPBPLP_NOT_ADDED = -1;
-	KJBPAJPBPLP_ADDED = 1;
+enum CalendarAddResult {
+	CALENDAR_ADD_RESULT_UNKNOWN = 0;
+	CALENDAR_ADD_RESULT_PERMISSION_DENIED = -2;
+	CALENDAR_ADD_RESULT_NOT_ADDED = -1;
+	CALENDAR_ADD_RESULT_ADDED = 1;
 }
 
 enum HoloPokemonFamilyId {
@@ -2715,9 +2715,9 @@ enum HoloPokemonFamilyId {
 	FAMILY_MELTAN = 808;
 }
 
-enum KLJICGABCJH {
-	KLJICGABCJH_POKEMON_BADGE_UNSET = 0;
-	KLJICGABCJH_POKEMON_BADGE_BEST_BUDDY = 1;
+enum PokemonBadge {
+	POKEMON_BADGE_POKEMON_BADGE_UNSET = 0;
+	POKEMON_BADGE_POKEMON_BADGE_BEST_BUDDY = 1;
 }
 
 enum Item {
@@ -2788,16 +2788,16 @@ enum Item {
 	ITEM_EVENT_TICKET_PINK = 1601;
 }
 
-enum LAIEFEJOJNJ {
-	LAIEFEJOJNJ_METRIC_KM = 0;
-	LAIEFEJOJNJ_METRIC_STEP = 1;
+enum MetricType {
+	METRIC_TYPE_METRIC_KM = 0;
+	METRIC_TYPE_METRIC_STEP = 1;
 }
 
-enum LEFDDCOIMLB {
-	LEFDDCOIMLB_UNDEFINED_ITEM_EVENT = 0;
-	LEFDDCOIMLB_USE_ITEM = 1;
-	LEFDDCOIMLB_RECYCLE_ITEM = 2;
-	LEFDDCOIMLB_UPDATE_ITEM_EQUIPPED = 3;
+enum ItemUseTelemetryIds {
+	ITEM_USE_TELEMETRY_IDS_UNDEFINED_ITEM_EVENT = 0;
+	ITEM_USE_TELEMETRY_IDS_USE_ITEM = 1;
+	ITEM_USE_TELEMETRY_IDS_RECYCLE_ITEM = 2;
+	ITEM_USE_TELEMETRY_IDS_UPDATE_ITEM_EQUIPPED = 3;
 }
 
 enum HoloItemCategory {
@@ -2827,29 +2827,29 @@ enum HoloItemCategory {
 	HOLO_ITEM_CATEGORY_ITEM_CATEGORY_STICKER = 24;
 }
 
-enum LPAKEAEIGDN {
-	LPAKEAEIGDN_UNDEFINED_REMOTE_RAID_EVENT = 0;
-	LPAKEAEIGDN_REMOTE_RAID_LOBBY_ENTER = 1;
-	LPAKEAEIGDN_REMOTE_RAID_INVITE_SENT = 2;
-	LPAKEAEIGDN_REMOTE_RAID_INVITE_ACCEPTED = 3;
-	LPAKEAEIGDN_REMOTE_RAID_INVITE_REJECTED = 4;
+enum RemoteRaidTelemetryIds {
+	REMOTE_RAID_TELEMETRY_IDS_UNDEFINED_REMOTE_RAID_EVENT = 0;
+	REMOTE_RAID_TELEMETRY_IDS_REMOTE_RAID_LOBBY_ENTER = 1;
+	REMOTE_RAID_TELEMETRY_IDS_REMOTE_RAID_INVITE_SENT = 2;
+	REMOTE_RAID_TELEMETRY_IDS_REMOTE_RAID_INVITE_ACCEPTED = 3;
+	REMOTE_RAID_TELEMETRY_IDS_REMOTE_RAID_INVITE_REJECTED = 4;
 }
 
-enum MAMGDNMEIOP {
-	MAMGDNMEIOP_CAM_TARGET_ATTACKER = 0;
-	MAMGDNMEIOP_CAM_TARGET_ATTACKER_EDGE = 1;
-	MAMGDNMEIOP_CAM_TARGET_ATTACKER_GROUND = 2;
-	MAMGDNMEIOP_CAM_TARGET_DEFENDER = 3;
-	MAMGDNMEIOP_CAM_TARGET_DEFENDER_EDGE = 4;
-	MAMGDNMEIOP_CAM_TARGET_DEFENDER_GROUND = 5;
-	MAMGDNMEIOP_CAM_TARGET_ATTACKER_DEFENDER = 6;
-	MAMGDNMEIOP_CAM_TARGET_ATTACKER_DEFENDER_EDGE = 7;
-	MAMGDNMEIOP_CAM_TARGET_DEFENDER_ATTACKER = 8;
-	MAMGDNMEIOP_CAM_TARGET_DEFENDER_ATTACKER_EDGE = 9;
-	MAMGDNMEIOP_CAM_TARGET_ATTACKER_DEFENDER_MIRROR = 11;
-	MAMGDNMEIOP_CAM_TARGET_SHOULDER_ATTACKER_DEFENDER = 12;
-	MAMGDNMEIOP_CAM_TARGET_SHOULDER_ATTACKER_DEFENDER_MIRROR = 13;
-	MAMGDNMEIOP_CAM_TARGET_ATTACKER_DEFENDER_WORLD = 14;
+enum CameraTarget {
+	CAM_TARGET_ATTACKER = 0;
+	CAM_TARGET_ATTACKER_EDGE = 1;
+	CAM_TARGET_ATTACKER_GROUND = 2;
+	CAM_TARGET_DEFENDER = 3;
+	CAM_TARGET_DEFENDER_EDGE = 4;
+	CAM_TARGET_DEFENDER_GROUND = 5;
+	CAM_TARGET_ATTACKER_DEFENDER = 6;
+	CAM_TARGET_ATTACKER_DEFENDER_EDGE = 7;
+	CAM_TARGET_DEFENDER_ATTACKER = 8;
+	CAM_TARGET_DEFENDER_ATTACKER_EDGE = 9;
+	CAM_TARGET_ATTACKER_DEFENDER_MIRROR = 11;
+	CAM_TARGET_SHOULDER_ATTACKER_DEFENDER = 12;
+	CAM_TARGET_SHOULDER_ATTACKER_DEFENDER_MIRROR = 13;
+	CAM_TARGET_ATTACKER_DEFENDER_WORLD = 14;
 }
 
 enum HoloIapItemCategory {
@@ -6031,7 +6031,7 @@ message AGGOOMAFBOB {
 	MFMNHPKEEBI kojhlaekhgl = 4;
 	GameplayWeatherProto.WeatherCondition jnamdmdblik = 5;
 	LLBNHFOFAKI oehipldoaff = 6;
-	KLJICGABCJH kpnijfkcfkc = 7;
+	PokemonBadge kpnijfkcfkc = 7;
 	HoloTemporaryEvolutionId opkcejcpdmf = 8;
 	int64 becdpckgigi = 9;
 	bool lmljbknamph = 10;
@@ -6043,8 +6043,8 @@ message AGGOOMAFBOB {
 message AGHLGJCDNPH {
 	int64 bbhjlephcop = 1;
 	int32 ccdbogbmidc = 2;
-	KHHACGAIIGG bghhjfjgilp = 3;
-	KHHACGAIIGG nepdffhpjfh = 4;
+	FriendshipLevelMilestone bghhjfjgilp = 3;
+	FriendshipLevelMilestone nepdffhpjfh = 4;
 	double ppnchgnghme = 5;
 	int32 ejehnmicakd = 6;
 }
@@ -6450,7 +6450,7 @@ message BADBKNMBMHB {
 }
 
 message BADBOMFMINN {
-	LPAKEAEIGDN odbmfgogien = 1;
+	RemoteRaidTelemetryIds odbmfgogien = 1;
 	RemoteRaidJoinSource hmhcgbjiijj = 2;
 	RemoteRaidInviteAcceptSource jhginjacejj = 3;
 }
@@ -6942,7 +6942,7 @@ message BPAGDJGOAKN {
 
 message BPLNIKOBNBB {
 	float jpabgiopneg = 1;
-	LAIEFEJOJNJ fpjdpemjcji = 2;
+	MetricType fpjdpemjcji = 2;
 }
 
 message CAFDMLGOIPO {
@@ -8237,7 +8237,7 @@ message ECHCFCPLEPL {
 		//step_count = 3;
 	//}
 
-	LAIEFEJOJNJ fpjdpemjcji = 1;
+	MetricType fpjdpemjcji = 1;
 	float nlnfkpkppkc = 2;
 	int32 bbkpnohejno = 3;
 }
@@ -8688,7 +8688,7 @@ message EOFAKIAEDIL {
 	FIHFNLPJKLA eakcaeknpie = 5;
 	IHDMJAMFOPN hlaahheoakg = 6;
 	GameplayWeatherProto.WeatherCondition olcabbpadop = 7;
-	KHHACGAIIGG dlhdafpdkoi = 8;
+	FriendshipLevelMilestone dlhdafpdkoi = 8;
 }
 
 message EPBGJBNMAMO {
@@ -9714,7 +9714,7 @@ message GHEBOJIAADA {
 	string gfjhchijigk = 2;
 	EJBMCBJMGAL gdancnobnmp = 3;
 	EJBMCBJMGAL gbnakbcifkd = 4;
-	KHHACGAIIGG dlhdafpdkoi = 5;
+	FriendshipLevelMilestone dlhdafpdkoi = 5;
 }
 
 message GHLPEDNHPBG {
@@ -10754,7 +10754,7 @@ message HOLGPOBKJIF {
 }
 
 message HPAOMBDAPGF {
-	KHHACGAIIGG gdnbkknaedi = 1;
+	FriendshipLevelMilestone gdnbkknaedi = 1;
 }
 
 message IABMGNGHOHN {
@@ -11019,7 +11019,7 @@ message IHDMJAMFOPN {
 	int32 oapjeclcgoe = 6;
 	bool hhgpccjbioo = 7;
 	bool flgbacnjjfj = 8;
-	KHHACGAIIGG dlhdafpdkoi = 9;
+	FriendshipLevelMilestone dlhdafpdkoi = 9;
 	repeated string libkoljgohm = 10;
 	bool pbmmfeaehjk = 11;
 	bool kpcnfaahioi = 12;
@@ -11374,7 +11374,7 @@ message IOKDFNOCNNE {
 message IOKEFHJIAJE {
 	string gleeakclamo = 1;
 	repeated CameraInterpolation mhkigdghaon = 2;
-	repeated MAMGDNMEIOP jdlekldfbjo = 3;
+	repeated CameraTarget jdlekldfbjo = 3;
 	repeated float gombgdgcjpi = 4;
 	repeated float olfmgboifkg = 5;
 	repeated float eiolbodaoid = 6;
@@ -11428,7 +11428,7 @@ message IPEANNKFCLO {
 		//step_in_progress = 3;
 	//}
 
-	LAIEFEJOJNJ fpjdpemjcji = 1;
+	MetricType fpjdpemjcji = 1;
 	float ekmnolmafgd = 2;
 	int32 kpifgeicbia = 3;
 	float ndbapmmogha = 4;
@@ -11952,7 +11952,7 @@ message KAEFJDEEDJN {
 }
 
 message KAKNKOMJLAN {
-	LEFDDCOIMLB hfjbbjkdkcf = 1;
+	ItemUseTelemetryIds hfjbbjkdkcf = 1;
 	int32 ilhlfndchdo = 2;
 	bool njmjipnfepm = 3;
 	bool nlnmdonemap = 4;
@@ -12200,7 +12200,7 @@ message KHDEMMANIDE {
 
 message KHDHIOFBKLL {
 	string eofpnndnbfc = 1;
-	KHHACGAIIGG diabkehdlgk = 2;
+	FriendshipLevelMilestone diabkehdlgk = 2;
 }
 
 message KHDMKOBDBAL {
@@ -12467,7 +12467,7 @@ message KLMLIILHMEA {
 	double fjbglhokiil = 6;
 	double ginfjhghiho = 7;
 	float edaankiilfk = 8;
-	KHHACGAIIGG dlhdafpdkoi = 9;
+	FriendshipLevelMilestone dlhdafpdkoi = 9;
 	int32 onpjdpmafbi = 10;
 	int32 kfpecloeegm = 11;
 	int32 einbpofmflp = 12;
@@ -12890,7 +12890,7 @@ message LHOLKANAIFP {
 }
 
 message LHPLFLCEBJF {
-	KHHACGAIIGG lnepgfbobnf = 1;
+	FriendshipLevelMilestone lnepgfbobnf = 1;
 	int32 loangekpboh = 2;
 	bool foidnmeajkl = 3;
 	bool hpddenikdjl = 4;
@@ -15743,7 +15743,7 @@ message PNAKAKDMDLL {
 }
 
 message PNBOENHEDLE {
-	JPMFIOBHIMD neojpknbnhf = 1;
+	GenericClickTelemetryIds neojpknbnhf = 1;
 }
 
 message PNHNGKLIEKC {
