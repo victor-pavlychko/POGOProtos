@@ -509,14 +509,14 @@ def open_proto_file(main_file, package_name):
                             enum_name = "SHOPPING_PAGE_TELEMETRY_IDS"
                         elif operator.contains(e, "BUDDY_ACTIVITY_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "BuddyActivity")
-                            messages = messages.replace(enum_name + "_", "BUDDY_ACTIVITY_")
-                            e = e.replace(enum_name + "_", "BUDDY_ACTIVITY_")
-                            enum_name = "BUDDY_ACTIVITY"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "BUDDY_ACTIVITY_IDS"
                         elif operator.contains(e, "GYM_BADGE_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "GymBadgeType")
-                            messages = messages.replace(enum_name + "_", "GYM_BADGE_TYPE_")
-                            e = e.replace(enum_name + "_", "GYM_BADGE_TYPE_")
-                            enum_name = "GYM_BADGE_TYPE"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "GYM_BADGE_TYPE_IDS"
                         elif operator.contains(e, "UNDEFINED_PROFILE_PAGE = 0;"):
                             enums_dic.setdefault(enum_name, "ProfilePageTelemetryIds")
                             messages = messages.replace(enum_name + "_", "PROFILE_PAGE_TELEMETRY_IDS_")
@@ -580,9 +580,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "GENERIC_CLICK_TELEMETRY_IDS"
                         elif operator.contains(e, "FRIENDSHIP_LEVEL_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "FriendshipLevelMilestone")
-                            messages = messages.replace(enum_name + "_", "FRIENDSHIP_LEVEL_MILESTONE_")
-                            e = e.replace(enum_name + "_", "FRIENDSHIP_LEVEL_MILESTONE_")
-                            enum_name = "FRIENDSHIP_LEVEL_MILESTONE"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "FRIENDSHIP_LEVEL_MILESTONE_IDS"
                         elif operator.contains(e, "PERMISSION_DENIED = -2;"):
                             enums_dic.setdefault(enum_name, "CalendarAddResult")
                             messages = messages.replace(enum_name + "_", "CALENDAR_ADD_RESULT_")
@@ -675,9 +675,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "CLIENT_INBOX_SERVICE_NOTIFICATION_CATEGORY"
                         elif operator.contains(e, "BUDDY_CATEGORY_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "BuddyActivityCategory")
-                            messages = messages.replace(enum_name + "_", "BUDDY_ACTIVITY_CATEGORY_")
-                            e = e.replace(enum_name + "_", "BUDDY_ACTIVITY_CATEGORY_")
-                            enum_name = "BUDDY_ACTIVITY_CATEGORY"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "BUDDY_ACTIVITY_CATEGORY_IDS"
                         elif operator.contains(e, "CHEAT_WARNING = 0;"):
                             enums_dic.setdefault(enum_name, "WarnedPlayerReason")
                             messages = messages.replace(enum_name + "_", "WARNED_PLAYER_REASON_")
@@ -824,6 +824,14 @@ def open_proto_file(main_file, package_name):
                         elif enum_name == "AD_FEEDBACK_COMPLAINT_REASON_IDS":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "BUDDY_EMOTION_LEVEL_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "BUDDY_ACTIVITY_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "BUDDY_ACTIVITY_CATEGORY_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "GYM_BADGE_TYPE_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "FRIENDSHIP_LEVEL_MILESTONE_IDS":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
