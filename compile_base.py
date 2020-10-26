@@ -758,6 +758,11 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "NEWS_PAGE_TELEMETRY_IDS_")
                             e = e.replace(enum_name + "_", "NEWS_PAGE_TELEMETRY_IDS_")
                             enum_name = "NEWS_PAGE_TELEMETRY_IDS"
+                        elif operator.contains(e, "SURROUNDING = 2;") and len(enum_name) == 11 and enum_name.isupper():
+                            enums_dic.setdefault(enum_name, "TitanPoiImageType")
+                            messages = messages.replace(enum_name + "_", "TITAN_POI_IMAGE_TYPE_")
+                            e = e.replace(enum_name + "_", "TITAN_POI_IMAGE_TYPE_")
+                            enum_name = "TITAN_POI_IMAGE_TYPE"
 
                         ## second check ...
                         if enum_name == "HOLO_POKEMON_ID":
