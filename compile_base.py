@@ -348,7 +348,7 @@ def open_proto_file(main_file, package_name):
                             enum_name = "STORE_IDS"
                         elif operator.contains(e, "EGG_TYPE_SHADOW = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonEggType")
-                            messages = messages.replace(enum_name + "_", "HOLO_POKEMON_EGG_TYPEE_")
+                            messages = messages.replace(enum_name + "_", "HOLO_POKEMON_EGG_TYPE_")
                             e = e.replace(enum_name + "_", "HOLO_POKEMON_EGG_TYPE_")
                             enum_name = "HOLO_POKEMON_EGG_TYPE"
                         elif operator.contains(e, "PREMIUM = 1;"):
