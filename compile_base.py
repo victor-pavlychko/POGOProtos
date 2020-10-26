@@ -208,14 +208,14 @@ def open_proto_file(main_file, package_name):
                             enum_name = "HOLO_POKEMON_MOVE"
                         elif operator.contains(e, "ACTIVITY_CATCH_LEGEND_POKEMON = 2"):
                             enums_dic.setdefault(enum_name, "HoloActivityType")
-                            messages = messages.replace(enum_name + "_ACTIVITY_", "HOLO_ACTIVITY_TYPE_")
-                            e = e.replace(enum_name + "_ACTIVITY_", "HOLO_ACTIVITY_TYPE_")
-                            enum_name = "HOLO_ACTIVITY_TYPE"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_ACTIVITY_TYPE_IDS"
                         elif operator.contains(e, "ITEM_CATEGORY_POKEBALL = 1;"):
                             enums_dic.setdefault(enum_name, "HoloItemCategory")
-                            messages = messages.replace(enum_name + "_ITEM_CATEGORY_", "HOLO_ITEM_CATEGORY_")
-                            e = e.replace(enum_name + "_ITEM_CATEGORY_", "HOLO_ITEM_CATEGORY_")
-                            enum_name = "HOLO_ITEM_CATEGORY"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_ITEM_CATEGORY_IDS"
                         elif operator.contains(e, "ITEM_EFFECT_CAP_NO_FLEE = 1000;"):
                             enums_dic.setdefault(enum_name, "HoloItemEffect")
                             messages = messages.replace(enum_name + "_ITEM_EFFECT_", "HOLO_ITEM_EFFECT_")
@@ -730,8 +730,8 @@ def open_proto_file(main_file, package_name):
                             enum_name = "PUSH_NOTIFICATION_TELEMETRY_IDS"
                         elif operator.contains(e, "SOUVENIR_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "SouvenirTypeId")
-                            messages = messages.replace(enum_name + "_", "SOUVENIR_TYPE_ID_")
-                            e = e.replace(enum_name + "_", "SOUVENIR_TYPE_ID_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "SOUVENIR_TYPE_ID"
                         elif operator.contains(e, "UNDEFINED_SHOPPING_PAGE_SOURCE = 0;"):
                             enums_dic.setdefault(enum_name, "ShoppingPageTelemetrySource")
@@ -844,6 +844,12 @@ def open_proto_file(main_file, package_name):
                         elif enum_name == "PLATFORM_IDS":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "POKEMON_BADGE_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_ITEM_CATEGORY_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "SOUVENIR_TYPE_ID":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_ACTIVITY_TYPE_IDS":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
