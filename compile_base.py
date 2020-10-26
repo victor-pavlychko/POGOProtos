@@ -123,7 +123,7 @@ def open_proto_file(main_file, package_name):
 
     with open(main_file, 'r') as proto_file:
         for proto_line in proto_file.readlines():
-            if is_ignored and operator.contains(proto_line, "}"):
+            if is_ignored and operator.contains(proto_line, "//}"):
                 is_ignored = False
             if operator.contains(proto_line, "//ignored_"):
                 messages += proto_line
@@ -196,7 +196,7 @@ def open_proto_file(main_file, package_name):
                         ## first check ...
                         if operator.contains(e, "V0001_POKEMON_BULBASAUR = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonId")
-                            messages = messages.replace(enum_name + "_POKEMON_UNSET = 0;", "POKEMON_UNSET = 0;")
+                            messages = messages.replace(enum_name + "_POKEMON_UNSET = 0;", "MISSINGNO = 0;")
                             enum_name = "HOLO_POKEMON_ID"
                         elif operator.contains(e, "V0001_FAMILY_BULBASAUR = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonFamilyId")

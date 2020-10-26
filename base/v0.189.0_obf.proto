@@ -588,7 +588,7 @@ enum EncounterType {
 }
 
 enum HoloPokemonId {
-	POKEMON_UNSET = 0;
+	MISSINGNO = 0;
 	BULBASAUR = 1;
 	IVYSAUR = 2;
 	VENUSAUR = 3;
