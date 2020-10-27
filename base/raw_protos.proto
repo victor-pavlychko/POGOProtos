@@ -9228,10 +9228,10 @@ message ENCOFIJOKIG {
 	string aaomdciejlf = 2;
 	string eocnmalhhkn = 3;
 	bytes jkinpdllici = 4;
-	string cjakdpkgbao = 8;
-	NHIGPLIPPOC hflccmdcgnb = 9;
-	CGMBOHAGJNF bffebbbacmp = 10;
-	AIAGOLOBDFB cincoileljp = 11;
+	string cjakdpkgbao = 5;
+	NHIGPLIPPOC hflccmdcgnb = 6;
+	CGMBOHAGJNF bffebbbacmp = 7;
+	AIAGOLOBDFB cincoileljp = 8;
 }
 
 // ref: ENHPCKMLCOJ
@@ -10317,7 +10317,7 @@ message GEMONAEMHAL {
 	string hjoaecimlme = 8;
 	string gobcbpdgikm = 9;
 	DDBNJHAFMDK lbfhpfimpdm = 10;
-	int32 hifgmblifhp = 11;
+	int32 hifgmblifhp = 5;
 }
 
 // ref: GEPLGAHONGB

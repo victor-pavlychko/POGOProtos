@@ -32,6 +32,26 @@ parser.add_argument("-r", "--rpc", action='store_true', help='Generates Rpc prot
 parser.add_argument("-1", "--generate_one_off", action='store_true', help='Include on off')
 args = parser.parse_args()
 
+# Add licenses
+head = '/*\n'
+head += '* Copyright 2016-2020 --=FurtiF=--.\n'
+head += '*\n'
+head += '* Licensed under the\n'
+head += '*	Educational Community License, Version 2.0 (the "License"); you may\n'
+head += '*	not use this file except in compliance with the License. You may\n'
+head += '*	obtain a copy of the License at\n'
+head += '*\n'
+head += '*	http://www.osedu.org/licenses/ECL-2.0\n'
+head += '*\n'
+head += '*	Unless required by applicable law or agreed to in writing,\n'
+head += '*	software distributed under the License is distributed on an "AS IS"\n'
+head += '*	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express\n'
+head += '*	or implied. See the License for the specific language governing\n'
+head += '*	permissions and limitations under the License.\n'
+head += '*/\n\n'
+head += 'syntax = "proto3";\n'
+head += 'package %s;\n\n' % package_name
+
 # Set defaults
 lang = args.lang or "proto"
 out_path = args.out_path or "out/single_file/" + lang
@@ -43,6 +63,7 @@ rpc = args.rpc
 
 # Determine where path's
 raw_proto_file = os.path.abspath("base/raw_protos.proto")
+base_file = os.path.abspath("base/base.proto")
 protos_path = os.path.abspath("base")
 out_path = os.path.abspath(out_path)
 
@@ -75,27 +96,8 @@ def finish_compile(out_path, lang):
                         "'Generated'; import os; import sys; sys.path.append(os.path.dirname(os.path.realpath(__file__)))")
 
 
-def open_proto_file(main_file, package_name):
+def open_proto_file(main_file, head):
     new_proto_single_file = main_file.replace("raw_protos.proto", "POGOProtos.Rpc.proto")
-    # Add licenses
-    head = '/*\n'
-    head += '* Copyright 2016-2020 --=FurtiF=--.\n'
-    head += '*\n'
-    head += '* Licensed under the\n'
-    head += '*	Educational Community License, Version 2.0 (the "License"); you may\n'
-    head += '*	not use this file except in compliance with the License. You may\n'
-    head += '*	obtain a copy of the License at\n'
-    head += '*\n'
-    head += '*	http://www.osedu.org/licenses/ECL-2.0\n'
-    head += '*\n'
-    head += '*	Unless required by applicable law or agreed to in writing,\n'
-    head += '*	software distributed under the License is distributed on an "AS IS"\n'
-    head += '*	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express\n'
-    head += '*	or implied. See the License for the specific language governing\n'
-    head += '*	permissions and limitations under the License.\n'
-    head += '*/\n\n'
-    head += 'syntax = "proto3";\n'
-    head += 'package %s;\n\n' % package_name
 
     if os.path.exists(new_proto_single_file):
         os.unlink(new_proto_single_file)
@@ -118,7 +120,9 @@ def open_proto_file(main_file, package_name):
     refs = []
     enums_dic = {}
     messages_dic = {}
+    ignored_one_of = {}
     is_ignored = False
+    check_sub_message_end = True
     fixed_messages = ''
 
     with open(main_file, 'r') as proto_file:
@@ -126,12 +130,10 @@ def open_proto_file(main_file, package_name):
             if is_ignored and operator.contains(proto_line, "//}"):
                 is_ignored = False
             if operator.contains(proto_line, "//ignored_"):
-                messages += proto_line
+                proto_line = proto_line.replace("//ignored_", "//")
                 is_ignored = True
-                continue
-            if is_ignored:
-                messages += proto_line
-                continue
+            if is_ignored and operator.contains(proto_line, "=") and not operator.contains(proto_line, "//none = 0;"):
+                ignored_one_of.setdefault(proto_line.strip().split("=")[1], proto_line.strip().split("=")[0].strip())
             if proto_line.startswith("syntax"):
                 continue
             if proto_line.startswith("package"):
@@ -162,6 +164,20 @@ def open_proto_file(main_file, package_name):
                             enum_name += x
                         i = i + 1
                     enum_name = enum_name.upper().replace('P_O_I_', 'POI_')
+
+            if not proto_line.startswith("enum") and not proto_line.startswith("message") and operator.contains(
+                    proto_line, "enum") or operator.contains(proto_line, "message"):
+                check_sub_message_end = False
+            if len(ignored_one_of) > 0 and operator.contains(proto_line,
+                                                             "=") and not is_ignored and not operator.contains(
+                proto_line, "//") and not is_one_off and not is_enum and check_sub_message_end:
+                if proto_line.strip().split("=")[1] in ignored_one_of:
+                    proto_line = proto_line.replace(proto_line.strip().split("=")[0].split(" ")[1],
+                                                    ignored_one_of[proto_line.strip().split("=")[1]]).replace("//", "")
+                    try:
+                        ignored_one_of.pop(proto_line.strip().split("=")[1], None)
+                    except KeyError:
+                        pass
 
             # refs
             if operator.contains(proto_line, "// ref:"):
@@ -218,9 +234,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "HOLO_ITEM_CATEGORY_IDS"
                         elif operator.contains(e, "ITEM_EFFECT_CAP_NO_FLEE = 1000;"):
                             enums_dic.setdefault(enum_name, "HoloItemEffect")
-                            messages = messages.replace(enum_name + "_ITEM_EFFECT_", "HOLO_ITEM_EFFECT_")
-                            e = e.replace(enum_name + "_ITEM_EFFECT_", "HOLO_ITEM_EFFECT_")
-                            enum_name = "HOLO_ITEM_EFFECT"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "HOLO_ITEM_EFFECT_IDS"
                         elif operator.contains(e, "ITEM_TYPE_POKEBALL = 1;"):
                             enums_dic.setdefault(enum_name, "HoloItemType")
                             messages = messages.replace(enum_name + "_", "")
@@ -479,8 +495,8 @@ def open_proto_file(main_file, package_name):
                             enum_name = "ONBOARDING_AR_STATUS"
                         elif operator.contains(e, "CREATE_CONTEXT_WILD = 0;"):
                             enums_dic.setdefault(enum_name, "PokemonCreateContext")
-                            messages = messages.replace(enum_name + "_", "POKEMON_CREATE_CONTEXT_")
-                            e = e.replace(enum_name + "_", "POKEMON_CREATE_CONTEXT_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "POKEMON_CREATE_CONTEXT"
                         elif operator.contains(e, "GEN8 = 7;"):
                             enums_dic.setdefault(enum_name, "PokedexGenerationId")
@@ -570,7 +586,8 @@ def open_proto_file(main_file, package_name):
                             enum_name = "VARIABLE_NAME"
                         elif operator.contains(e, "FOLLOW_X = 1;"):
                             enums_dic.setdefault(enum_name, "POIDecorationFollowFlags")
-                            messages = messages.replace(enum_name + "_" + enum_name + "_", "POI_DECORATION_FOLLOW_FLAGS_")
+                            messages = messages.replace(enum_name + "_" + enum_name + "_",
+                                                        "POI_DECORATION_FOLLOW_FLAGS_")
                             e = e.replace(enum_name + "_", "POI_DECORATION_FOLLOW_FLAGS_")
                             enum_name = "POI_DECORATION_FOLLOW_FLAGS"
                         elif operator.contains(e, "UNDEFINED_GENERIC_EVENT = 0;"):
@@ -705,9 +722,9 @@ def open_proto_file(main_file, package_name):
                             enum_name = "SHARE_EX_RAID_PASS_RESULT"
                         elif operator.contains(e, "INCUBATOR_UNSET = 0;"):
                             enums_dic.setdefault(enum_name, "EggIncubatorType")
-                            messages = messages.replace(enum_name + "_", "EGG_INCUBATOR_TYPE_")
-                            e = e.replace(enum_name + "_", "EGG_INCUBATOR_TYPE_")
-                            enum_name = "EGG_INCUBATOR_TYPE"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "EGG_INCUBATOR_TYPE_IDS"
                         elif operator.contains(e, "UNDEFINED_SHOPPING_PAGE_SCROLL_TYPE = 0;"):
                             enums_dic.setdefault(enum_name, "ShoppingPageScrollIds")
                             messages = messages.replace(enum_name + "_", "SHOPPING_PAGE_SCROLL_IDS_")
@@ -763,6 +780,16 @@ def open_proto_file(main_file, package_name):
                             messages = messages.replace(enum_name + "_", "TITAN_POI_IMAGE_TYPE_")
                             e = e.replace(enum_name + "_", "TITAN_POI_IMAGE_TYPE_")
                             enum_name = "TITAN_POI_IMAGE_TYPE"
+                        elif operator.contains(e, "_VICTORY = 1;") and messages[:-1].endswith("_NONE = 0;"):
+                            enums_dic.setdefault(enum_name, "IncidentFinishSequence")
+                            messages = messages.replace(enum_name + "_", "INCIDENT_FINISH_SEQUENCE_")
+                            e = e.replace(enum_name + "_", "INCIDENT_FINISH_SEQUENCE_")
+                            enum_name = "INCIDENT_FINISH_SEQUENCE"
+                        elif operator.contains(e, "_VICTORY = 1;") and messages[:-1].endswith("_NORMAL = 0;"):
+                            enums_dic.setdefault(enum_name, "ExitVfxContext")
+                            messages = messages.replace(enum_name + "_", "EXIT_VFX_CONTEXT_")
+                            e = e.replace(enum_name + "_", "EXIT_VFX_CONTEXT_")
+                            enum_name = "EXIT_VFX_CONTEXT"
 
                         ## second check ...
                         if enum_name == "HOLO_POKEMON_ID":
@@ -851,6 +878,12 @@ def open_proto_file(main_file, package_name):
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "HOLO_ACTIVITY_TYPE_IDS":
                             e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_ITEM_EFFECT_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "EGG_INCUBATOR_TYPE_IDS":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "POKEMON_CREATE_CONTEXT":
+                            e = e.replace(enum_name + "_", "")
 
                         proto_line = e
 
@@ -865,6 +898,7 @@ def open_proto_file(main_file, package_name):
             messages += proto_line
 
             if not proto_line.startswith("}") and operator.contains(proto_line, "}"):
+                check_sub_message_end = True
                 messages += "\n"
                 is_one_off = False
                 is_enum = False
@@ -874,6 +908,7 @@ def open_proto_file(main_file, package_name):
                 is_enum = False
                 enum_name = ''
                 is_one_off = False
+                ignored_one_of.clear()
 
     ## fix enums names
     print("Cleaning process on enums...")
@@ -1078,7 +1113,7 @@ def add_command_for_new_proto_file(file):
 # print("Protocol Buffers version:")
 # call(""""{0}" --version""".format(protoc_executable), shell=True)
 
-open_proto_file(raw_proto_file, package_name)
+open_proto_file(raw_proto_file, head)
 generated_file = raw_proto_file.replace("raw_protos.proto", input_file)
 descriptor_file = generated_file.replace(".proto", ".desc")
 descriptor_file_arguments = ['--include_source_info', '--include_imports']
