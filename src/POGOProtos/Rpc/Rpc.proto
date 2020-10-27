@@ -235,8 +235,8 @@ message InventoryDeltaProto {
 
 message InventoryItemProto {
 	oneof InventoryItem {
-		bytes deleted_item_key = 2;
-		bytes item = 3;
+		HoloInventoryKeyProto deleted_item_key = 2;
+		HoloInventoryItemProto item = 3;
 	}
 
 	int64 modified_timestamp = 1;
@@ -3672,7 +3672,7 @@ message AAKEADEEDKJ {
 	IEBHLFFCKHD ghlhdfkccgc = 8;
 }
 
-message AALBLJJNJIP {
+message SendGiftOutProto {
 	enum LGNNBFILHAM {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -7631,7 +7631,7 @@ message DEEHGMNDHOA {
 }
 
 message DEJNONFPJJG {
-	repeated GEMONAEMHAL lomlhakdonj = 1;
+	repeated LootItemProto lomlhakdonj = 1;
 }
 
 message DEKHAEAOAHH {
@@ -9285,7 +9285,7 @@ message FOKPGDKKHHL {
 message FOLOLEANDHD {
 	message BGIDHJJHNHP {
 		oneof EGFAGMMJLDN {
-			GEMONAEMHAL item = 1;
+			LootItemProto item = 1;
 			bool pokemon_reward = 2;
 			bool item_loot_table = 3;
 			int32 item_loot_table_count = 4;
@@ -9381,7 +9381,7 @@ message GBMEDFHNCOJ {
 	repeated FOJOGDFJGMH jejmkgogmfh = 3;
 	repeated FOJOGDFJGMH odljjkooikc = 4;
 	int32 lnodcenhgla = 5;
-	repeated GEMONAEMHAL idafbiimdff = 6;
+	repeated LootItemProto idafbiimdff = 6;
 	bool gbockkepknm = 7;
 	BPAGDJGOAKN ogodcknknpl = 8;
 }
@@ -9505,7 +9505,7 @@ message GEEFKNFBKBK {
 	EBMBHLHJELM gbfhkdjcpff = 1;
 }
 
-message GEMONAEMHAL {
+message LootItemProto {
 	oneof CDMLAPBGBEJ {
 		Item item = 1;
 		bool stardust = 2;
@@ -10492,7 +10492,7 @@ message HLIJPACEJFG {
 	MAIBOOIBNEO effmephmkkg = 2;
 }
 
-message HLILGCCFIKO {
+message HoloholoClientTelemetryOmniProto {
 	oneof NFKHOBCMIHH {
 		EFLFABFOHFL boot_time = 1;
 		GBDLGALHINE frame_rate = 2;
@@ -10718,7 +10718,7 @@ message ICGAMGOBBKG {
 	repeated FOJOGDFJGMH gkeonaenacf = 8;
 	repeated FOJOGDFJGMH ejekanbiome = 9;
 	repeated POCCEPDIIJA hedcmghjihh = 10;
-	repeated GEMONAEMHAL idafbiimdff = 11;
+	repeated LootItemProto idafbiimdff = 11;
 }
 
 message ICLMFGPCGPE {
@@ -11318,7 +11318,7 @@ message JBHAJGNNKGN {
 	HOJJPGKHOPH mdcggeipdlk = 14;
 }
 
-message JBINBDCBEHN {
+message HoloInventoryItemProto {
 	oneof CKDLBOMMINH {
 		HHCGIPBIECH pokemon = 1;
 		FOJOGDFJGMH item = 2;
@@ -12280,7 +12280,7 @@ message KMJOBKCLCOB {
 	double akonpcgoeoi = 5;
 	double dheaolhkecd = 6;
 	string jpbblhmgabh = 7;
-	repeated GEMONAEMHAL kapjgfkpkbd = 8;
+	repeated LootItemProto kapjgfkpkbd = 8;
 }
 
 message KMKIMBFIKCP {
@@ -12611,7 +12611,7 @@ message LFFDFEGIHKK {
 	string glpghimgnkf = 2;
 }
 
-message LGCKNOFAHGA {
+message HoloInventoryKeyProto {
 	oneof CBBDEHJGPFA {
 		uint64 pokemon_id = 1;
 		Item item = 2;
@@ -13273,7 +13273,7 @@ message MFHOODNCJCC {
 	string fbbnnkbcdpn = 5;
 }
 
-message MFNEPIOJNMD {
+message JoinLobbyOutProto {
 	enum AIFONIKPFCP {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -13304,7 +13304,7 @@ message MGJCNKKAFNC {
 	repeated NFEBBHHONJD pnfoahcmdgn = 1;
 }
 
-message MGLPBOPEBDC {
+message UnlockPokemonMoveOutProto {
 	enum FOCBGDPKJOI {
 		UNSET = 0;
 		SUCCESS = 1;

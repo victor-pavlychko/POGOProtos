@@ -916,12 +916,6 @@ def open_proto_file(main_file, head):
         print("Obfuscated enum name " + _enum + " clean enum name " + enums_dic[_enum])
         messages = messages.replace(_enum, enums_dic[_enum])
 
-    ## fix messages names
-    print("Cleaning process on messages...")
-    for _message in messages_dic:
-        print("Obfuscated message name " + _message + " clean message name " + messages_dic[_message])
-        messages = messages.replace(_message, messages_dic[_message])
-
     if gen_one_off:
         messagesNew = ""
         lastLine = ""
@@ -968,6 +962,36 @@ def open_proto_file(main_file, head):
                 setSkipFalse = False
 
         messages = messagesNew
+
+    ## check messages first
+    proto_name = ''
+    for proto_line in messages.split("\n"):
+        if is_blank(proto_line):
+            continue
+        if proto_line.startswith("message"):
+            proto_name = proto_line.split(" ")[1]
+        if proto_line == '':
+            continue
+        if operator.contains(proto_line, "generic_click_telemetry = 3;"):
+            messages_dic.setdefault(proto_name, "HoloholoClientTelemetryOmniProto")
+        elif operator.contains(proto_line, "ERROR_PLAYER_HAS_NO_STICKERS = 8;"):
+            messages_dic.setdefault(proto_name, "SendGiftOutProto")
+        elif operator.contains(proto_line, "ERROR_LOBBY_EXPIRED = 14;"):
+            messages_dic.setdefault(proto_name, "JoinLobbyOutProto")
+        elif operator.contains(proto_line, "ERROR_INSUFFICIENT_RESOURCES = 5;"):
+            messages_dic.setdefault(proto_name, "UnlockPokemonMoveOutProto")
+        elif operator.contains(proto_line, "pokemon_candy = 4;"):
+            messages_dic.setdefault(proto_name, "LootItemProto")
+        elif operator.contains(proto_line, "pokedex_entry = 3;"):
+            messages_dic.setdefault(proto_name, "HoloInventoryItemProto")
+        elif operator.contains(proto_line, "pokedex_entry_id = 3;"):
+            messages_dic.setdefault(proto_name, "HoloInventoryKeyProto")
+
+    ## fix messages names
+    print("Cleaning process on messages...")
+    for _message in messages_dic:
+        print("Obfuscated message name " + _message + " clean message name " + messages_dic[_message])
+        messages = messages.replace(_message, messages_dic[_message])
 
     message_for_fix = None
 
