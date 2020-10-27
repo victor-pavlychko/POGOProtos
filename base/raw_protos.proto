@@ -302,8 +302,8 @@ message InventoryItemProto {
 	//}
 
 	int64 modified_timestamp = 1;
-	bytes deleted_item_key = 2;
-	bytes item = 3;
+	LGCKNOFAHGA deleted_item_key = 2;
+	JBINBDCBEHN item = 3;
 }
 
 //----- End inventory -----
