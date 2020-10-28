@@ -23,7 +23,7 @@ def is_blank(my_string):
 # args
 parser = argparse.ArgumentParser()
 parser.add_argument("-l", "--lang", help="Language to produce proto single file.")
-parser.add_argument("-v", "--version", help="Set version out ex:. (189.0)")
+parser.add_argument("-v", "--version", help="Set version out ex:. (189.0_obf)")
 parser.add_argument("-o", "--out_path", help="Output path for roto single file.")
 parser.add_argument("-m", "--java_multiple_files", action='store_true',
                     help='Write each message to a separate .java file.')
@@ -433,8 +433,8 @@ def open_proto_file(main_file, head):
                             enum_name = "CURRENCY_TYPE"
                         elif operator.contains(e, "CHECKPOINT = 1;"):
                             enums_dic.setdefault(enum_name, "FortType")
-                            messages = messages.replace(enum_name + "_", "FORT_TYPE_")
-                            e = e.replace(enum_name + "_", "FORT_TYPE_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "FORT_TYPE"
                         elif operator.contains(e, "EXCELLENT = 4;"):
                             enums_dic.setdefault(enum_name, "VfxLevel")
@@ -523,8 +523,8 @@ def open_proto_file(main_file, head):
                             enum_name = "RAID_TELEMETRY_IDS"
                         elif operator.contains(e, "LEGAL_SCREEN = 0;"):
                             enums_dic.setdefault(enum_name, "TutorialCompletion")
-                            messages = messages.replace(enum_name + "_", "TUTORIAL_COMPLETION_")
-                            e = e.replace(enum_name + "_", "TUTORIAL_COMPLETION_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "TUTORIAL_COMPLETION"
                         elif operator.contains(e, "UNDEFINED_EVENT = 0;"):
                             enums_dic.setdefault(enum_name, "CombatHubEntranceTelemetryIds")
@@ -944,6 +944,10 @@ def open_proto_file(main_file, head):
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "TEAM_IDS":
                             e = e.replace(enum_name + "_", "")
+                        elif enum_name == "FORT_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "TUTORIAL_COMPLETION":
+                            e = e.replace(enum_name + "_", "")
 
                         proto_line = e
 
@@ -1263,7 +1267,7 @@ if gen_only:
             os.makedirs(dir_rpc)
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
-    shutil.copy(generated_file, protos_path + '/v0.' + version + '_obf.proto')
+    shutil.copy(generated_file, protos_path + '/v0.' + version + '.proto')
     # New base for next references names
     if gen_base:
         try:
