@@ -2943,10 +2943,10 @@ enum BattlePartyTelemetryIds {
 }
 
 enum Team {
-	TEAM_IDS_UNSET = 0;
-	TEAM_IDS_TEAM_BLUE = 1;
-	TEAM_IDS_TEAM_RED = 2;
-	TEAM_IDS_TEAM_YELLOW = 3;
+	TEAM_UNSET = 0;
+	TEAM_BLUE = 1;
+	TEAM_RED = 2;
+	TEAM_YELLOW = 3;
 }
 
 enum POIDecorationProperties {

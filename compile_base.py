@@ -274,8 +274,8 @@ def open_proto_file(main_file, head):
                             enum_name = "RAID_LEVEL_IDS"
                         elif operator.contains(e, "TEAM_BLUE = 1;"):
                             enums_dic.setdefault(enum_name, "Team")
-                            messages = messages.replace(enum_name + "_", "TEAM_IDS_")
-                            e = e.replace(enum_name + "_", "TEAM_IDS_")
+                            messages = messages.replace(enum_name + "_", "TEAM_")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "TEAM_IDS"
                         elif operator.contains(e, "TEMP_EVOLUTION_MEGA = 1;"):
                             enums_dic.setdefault(enum_name, "HoloTemporaryEvolutionId")
@@ -887,6 +887,8 @@ def open_proto_file(main_file, head):
                         elif enum_name == "INVENTORY_UPGRADE_TYPE":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "HOLO_POKEMON_EGG_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "TEAM_IDS":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
