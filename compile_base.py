@@ -27,6 +27,7 @@ parser.add_argument("-o", "--out_path", help="Output path for roto single file."
 parser.add_argument("-m", "--java_multiple_files", action='store_true',
                     help='Write each message to a separate .java file.')
 parser.add_argument("-g", "--generate_only", action='store_true', help='Generates only proto compilable.')
+parser.add_argument("-b", "--generate_new_base", action='store_true', help='Generates new proto base refs.')
 parser.add_argument("-k", "--keep_proto_file", action='store_true', help='Do not remove .proto file after compiling.')
 parser.add_argument("-r", "--rpc", action='store_true', help='Generates Rpc proto.')
 parser.add_argument("-1", "--generate_one_off", action='store_true', help='Include on off')
@@ -57,6 +58,7 @@ lang = args.lang or "proto"
 out_path = args.out_path or "out/single_file/" + lang
 java_multiple_files = args.java_multiple_files
 gen_only = args.generate_only
+gen_base = args.generate_new_base
 gen_one_off = args.generate_one_off
 keep_file = args.keep_proto_file
 rpc = args.rpc
@@ -1260,10 +1262,11 @@ if gen_only:
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
     shutil.copy(generated_file, protos_path + '/v0.189.0_obf.proto')
-    ## New base for next references names
-    # if os.path.exists(base_file):
-    #    shutil.rmtree(base_file)
-    # shutil.copy(generated_file, base_file)
+    # New base for next references names
+    if gen_base:
+         if os.path.exists(base_file):
+            shutil.rmtree(base_file)
+         shutil.copy(generated_file, base_file)
     shutil.move(generated_file, out_path)
 
 if keep_file:
