@@ -299,9 +299,9 @@ def open_proto_file(main_file, head):
                             enum_name = "HOLO_IAP_ITEM_CATEGORY_IAP"
                         elif operator.contains(e, "INCREASE_POKEMON_STORAGE = 2;"):
                             enums_dic.setdefault(enum_name, "InventoryUpgradeType")
-                            messages = messages.replace(enum_name + "_", "INVENTOTY_UPGRADE_TYPE_")
-                            e = e.replace(enum_name + "_", "INVENTOTY_UPGRADE_TYPE_")
-                            enum_name = "INVENTOTY_UPGRADE_TYPE"
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "INVENTORY_UPGRADE_TYPE"
                         elif operator.contains(e, "QUIT = 1;"):
                             enums_dic.setdefault(enum_name, "AvatarCompletion")
                             messages = messages.replace(enum_name + "_", "AVATAR_COMPLETION_")
@@ -883,6 +883,8 @@ def open_proto_file(main_file, head):
                         elif enum_name == "EGG_INCUBATOR_TYPE_IDS":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "POKEMON_CREATE_CONTEXT":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "INVENTORY_UPGRADE_TYPE":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
