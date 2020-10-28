@@ -1155,6 +1155,43 @@ def open_proto_file(main_file, head):
 
     messages = fixed_messages[:-1]
 
+    ## Reorder all this
+    base_enums = {}
+    base_messages = {}
+    base_as_data = False
+    base_is_enum = False
+    base_proto_name = ''
+    base_data = ''
+
+    for proto_line in messages.split("\n"):
+        if proto_line.startswith("enum") or proto_line.startswith("message"):
+            base_as_data = True
+            base_proto_name = proto_line.split(" ")[1]
+        if proto_line.startswith("enum"):
+            base_is_enum = True
+        if proto_line.startswith("message"):
+            base_is_enum = False
+        if proto_line.startswith("}"):
+            base_data += proto_line + "\n"
+            if base_is_enum:
+                base_enums.setdefault(base_proto_name, base_data)
+            else:
+                base_messages.setdefault(base_proto_name, base_data)
+            base_as_data = False
+            base_is_enum = False
+            base_proto_name = ''
+            base_data = ''
+        if base_as_data:
+            base_data += proto_line + "\n"
+
+    new_base_file = ''
+
+    for p in sorted(base_enums):
+        new_base_file += base_enums[p] + "\n"
+    for p in sorted(base_messages):
+        new_base_file += base_messages[p] + "\n"
+
+    messages = new_base_file
     open_for_new.writelines(messages[:-1])
     open_for_new.close()
     add_command_for_new_proto_file(new_proto_single_file)
@@ -1223,6 +1260,10 @@ if gen_only:
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
     shutil.copy(generated_file, protos_path + '/v0.189.0_obf.proto')
+    ## New base for next references names
+    # if os.path.exists(base_file):
+    #    shutil.rmtree(base_file)
+    # shutil.copy(generated_file, base_file)
     shutil.move(generated_file, out_path)
 
 if keep_file:
