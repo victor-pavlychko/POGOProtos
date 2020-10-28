@@ -364,8 +364,8 @@ def open_proto_file(main_file, head):
                             enum_name = "STORE_IDS"
                         elif operator.contains(e, "EGG_TYPE_SHADOW = 1;"):
                             enums_dic.setdefault(enum_name, "HoloPokemonEggType")
-                            messages = messages.replace(enum_name + "_", "HOLO_POKEMON_EGG_TYPE_")
-                            e = e.replace(enum_name + "_", "HOLO_POKEMON_EGG_TYPE_")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
                             enum_name = "HOLO_POKEMON_EGG_TYPE"
                         elif operator.contains(e, "PREMIUM = 1;"):
                             enums_dic.setdefault(enum_name, "VsSeekerRewardTrack")
@@ -885,6 +885,8 @@ def open_proto_file(main_file, head):
                         elif enum_name == "POKEMON_CREATE_CONTEXT":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "INVENTORY_UPGRADE_TYPE":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "HOLO_POKEMON_EGG_TYPE":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
