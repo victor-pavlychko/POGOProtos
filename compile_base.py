@@ -1164,40 +1164,40 @@ def open_proto_file(main_file, head):
     messages = fixed_messages[:-1]
 
     ## Reorder all this
-    base_enums = {}
-    base_messages = {}
-    base_as_data = False
-    base_is_enum = False
-    base_proto_name = ''
-    base_data = ''
+    new_base_enums = {}
+    new_base_messages = {}
+    new_base_as_data = False
+    new_base_is_enum = False
+    new_base_proto_name = ''
+    new_base_data = ''
 
     for proto_line in messages.split("\n"):
         if proto_line.startswith("enum") or proto_line.startswith("message"):
-            base_as_data = True
-            base_proto_name = proto_line.split(" ")[1]
+            new_base_as_data = True
+            new_base_proto_name = proto_line.split(" ")[1]
         if proto_line.startswith("enum"):
-            base_is_enum = True
+            new_base_is_enum = True
         if proto_line.startswith("message"):
-            base_is_enum = False
+            new_base_is_enum = False
         if proto_line.startswith("}"):
-            base_data += proto_line + "\n"
-            if base_is_enum:
-                base_enums.setdefault(base_proto_name, base_data)
+            new_base_data += proto_line + "\n"
+            if new_base_is_enum:
+                new_base_enums.setdefault(new_base_proto_name, new_base_data)
             else:
-                base_messages.setdefault(base_proto_name, base_data)
-            base_as_data = False
-            base_is_enum = False
-            base_proto_name = ''
-            base_data = ''
-        if base_as_data:
-            base_data += proto_line + "\n"
+                new_base_messages.setdefault(new_base_proto_name, new_base_data)
+            new_base_as_data = False
+            new_base_is_enum = False
+            new_base_proto_name = ''
+            new_base_data = ''
+        if new_base_as_data:
+            new_base_data += proto_line + "\n"
 
     new_base_file = ''
 
-    for p in sorted(base_enums):
-        new_base_file += base_enums[p] + "\n"
-    for p in sorted(base_messages):
-        new_base_file += base_messages[p] + "\n"
+    for p in sorted(new_base_enums):
+        new_base_file += new_base_enums[p] + "\n"
+    for p in sorted(new_base_messages):
+        new_base_file += new_base_messages[p] + "\n"
 
     messages = new_base_file
     open_for_new.writelines(messages[:-1])
