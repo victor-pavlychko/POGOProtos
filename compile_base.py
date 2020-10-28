@@ -23,6 +23,7 @@ def is_blank(my_string):
 # args
 parser = argparse.ArgumentParser()
 parser.add_argument("-l", "--lang", help="Language to produce proto single file.")
+parser.add_argument("-v", "--version", help="Set version out ex:. (189.0)")
 parser.add_argument("-o", "--out_path", help="Output path for roto single file.")
 parser.add_argument("-m", "--java_multiple_files", action='store_true',
                     help='Write each message to a separate .java file.')
@@ -58,6 +59,7 @@ lang = args.lang or "proto"
 out_path = args.out_path or "out/single_file/" + lang
 java_multiple_files = args.java_multiple_files
 gen_only = args.generate_only
+version = args.version or "189.0"
 gen_base = args.generate_new_base
 gen_one_off = args.generate_one_off
 keep_file = args.keep_proto_file
@@ -1261,12 +1263,15 @@ if gen_only:
             os.makedirs(dir_rpc)
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
-    shutil.copy(generated_file, protos_path + '/v0.189.0_obf.proto')
+    shutil.copy(generated_file, protos_path + '/v0.' + version + '_obf.proto')
     # New base for next references names
     if gen_base:
-         if os.path.exists(base_file):
-            shutil.rmtree(base_file)
-         shutil.copy(generated_file, base_file)
+        try:
+            os.unlink(base_file)
+        except OSError:
+            pass
+
+        shutil.copy(generated_file, base_file)
     shutil.move(generated_file, out_path)
 
 if keep_file:
