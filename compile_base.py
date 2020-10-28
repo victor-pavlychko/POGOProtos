@@ -67,7 +67,57 @@ base_file = os.path.abspath("base/base.proto")
 protos_path = os.path.abspath("base")
 out_path = os.path.abspath(out_path)
 
-# Clean up previous
+## Load Base
+base_enums = {}
+base_messages = {}
+base_as_data = False
+base_is_enum = False
+base_proto_name = ''
+base_data = ''
+
+with open(base_file, 'r') as proto_file:
+    for proto_line in proto_file.readlines():
+        if proto_line.startswith("enum") or proto_line.startswith("message"):
+            base_as_data = True
+            base_proto_name = proto_line.split(" ")[1]
+        if proto_line.startswith("enum"):
+            base_is_enum = True
+        if proto_line.startswith("message"):
+            base_is_enum = False
+        if proto_line.startswith("}"):
+            base_data += proto_line
+            if base_is_enum:
+                base_enums.setdefault(base_proto_name, base_data)
+            else:
+                base_messages.setdefault(base_proto_name, base_data)
+            base_as_data = False
+            base_is_enum = False
+            base_proto_name = ''
+            base_data = ''
+        if base_as_data:
+            base_data += proto_line
+
+# Re-order base
+# Clean up previous base
+try:
+    os.remove(base_file)
+except OSError:
+    pass
+
+open_for_new = open(base_file, 'a')
+new_base_file = head
+
+for p in sorted(base_enums):
+    # print("Key: " + p + "\n" + base_enums[p])
+    new_base_file += base_enums[p] + "\n"
+for p in sorted(base_messages):
+    # print("Key: " + p + "\n" + base_messages[p])
+    new_base_file += base_messages[p] + "\n"
+
+open_for_new.writelines(new_base_file[:-1])
+open_for_new.close()
+
+# Clean up previous out
 try:
     os.remove(out_path)
 except OSError:
