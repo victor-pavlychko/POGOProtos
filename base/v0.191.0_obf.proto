@@ -5903,7 +5903,7 @@ message CPPJCCMLGOE {
 
 message ClientGameMasterTemplateProto {
 	string template_id = 1;
-	bytes data = 2;
+	FPGLIDELBED data = 2;
 }
 
 message ClientInbox {
@@ -13123,8 +13123,8 @@ message InventoryDeltaProto {
 
 message InventoryItemProto {
 	oneof InventoryItem {
-		bytes deleted_item_key = 2;
-		bytes item = 3;
+		HoloInventoryKeyProto deleted_item_key = 2;
+		HoloInventoryItemProto item = 3;
 	}
 
 	int64 modified_timestamp = 1;
