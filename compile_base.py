@@ -664,11 +664,6 @@ def open_proto_file(main_file, head):
                             messages = messages.replace(enum_name + "_", "")
                             e = e.replace(enum_name + "_", "")
                             enum_name = "POKEMON_BADGE_IDS"
-                        elif operator.contains(e, "METRIC_STEP = 1;"):
-                            enums_dic.setdefault(enum_name, "MetricType")
-                            messages = messages.replace(enum_name + "_", "METRIC_TYPE_")
-                            e = e.replace(enum_name + "_", "METRIC_TYPE_")
-                            enum_name = "METRIC_TYPE"
                         elif operator.contains(e, "UNDEFINED_ITEM_EVENT = 0;"):
                             enums_dic.setdefault(enum_name, "ItemUseTelemetryIds")
                             messages = messages.replace(enum_name + "_", "ITEM_USE_TELEMETRY_IDS_")
@@ -844,6 +839,28 @@ def open_proto_file(main_file, head):
                             messages = messages.replace(enum_name + "_", "EXIT_VFX_CONTEXT_")
                             e = e.replace(enum_name + "_", "EXIT_VFX_CONTEXT_")
                             enum_name = "EXIT_VFX_CONTEXT"
+                        elif operator.contains(e, "UNDEFINED_POKEMON_HOME_EVENT = 0;"):
+                            enums_dic.setdefault(enum_name, "PokemonHomeIds")
+                            messages = messages.replace(enum_name + "_", "POKEMON_HOME_IDS_")
+                            e = e.replace(enum_name + "_", "POKEMON_HOME_IDS_")
+                            enum_name = "POKEMON_HOME_IDS"
+                        elif operator.contains(e, "POKEMON_TAG_COLOR_UNSET = 0;"):
+                            enums_dic.setdefault(enum_name, "PokemonTagColorIds")
+                            messages = messages.replace(enum_name + "_", "")
+                            e = e.replace(enum_name + "_", "")
+                            enum_name = "POKEMON_TAG_COLOR_IDS"
+                        elif operator.contains(e, "ONLINE_ELSEWHERE = 1;"):
+                            enums_dic.setdefault(enum_name, "OnlineStatus")
+                            messages = messages.replace(enum_name + "_", "ONLINE_STATUS_")
+                            e = e.replace(enum_name + "_", "ONLINE_STATUS_")
+                            enum_name = "ONLINE_STATUS"
+                        ## TODO: needs good name here
+                        elif operator.contains(e, "_PLATINUM = 4;"):
+                            enums_dic.setdefault(enum_name, "ObEnumField")
+                            messages = messages.replace(enum_name + "_", "OB_ENUM_FIELD_")
+                            e = e.replace(enum_name + "_", "OB_ENUM_FIELD_")
+                            enum_name = "OB_ENUM_FIELD;"
+                        ##
 
                         ## second check ...
                         if enum_name == "HOLO_POKEMON_ID":
@@ -947,6 +964,8 @@ def open_proto_file(main_file, head):
                         elif enum_name == "FORT_TYPE":
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "TUTORIAL_COMPLETION":
+                            e = e.replace(enum_name + "_", "")
+                        elif enum_name == "POKEMON_TAG_COLOR_IDS":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
