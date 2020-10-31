@@ -1088,12 +1088,12 @@ def open_proto_file(main_file, head):
             message_for_fix = match[1]
 
         ## Check for all bytes refs
-        if operator.contains(fix_line, "\tbytes"):
-            byte = fix_line.split("=")
-            byte_fix = byte[0].replace("\t", "")[:-1]
-            print(
-                'elif message_for_fix == "' + message_for_fix + '" and operator.contains(fix_line, "' + byte_fix + '"):')
-            print('\tfix_line = fix_line.replace("bytes", "Good_Proto_Here")')
+        # if operator.contains(fix_line, "\tbytes"):
+        #     byte = fix_line.split("=")
+        #     byte_fix = byte[0].replace("\t", "")[:-1]
+        #     print(
+        #         'elif message_for_fix == "' + message_for_fix + '" and operator.contains(fix_line, "' + byte_fix + '"):')
+        #     print('\tfix_line = fix_line.replace("bytes", "Good_Proto_Here")')
 
         # Replace bytes for good proto here by condition
         # if message_for_fix == "BackgroundToken" and operator.contains(fix_line, "bytes token"):
