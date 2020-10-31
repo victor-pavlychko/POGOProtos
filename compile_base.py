@@ -1069,6 +1069,22 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "HoloInventoryItemProto")
         elif operator.contains(proto_line, "pokedex_entry_id = 3;"):
             messages_dic.setdefault(proto_name, "HoloInventoryKeyProto")
+        elif operator.contains(proto_line, "ERROR_PLAYER_BELOW_MIN_LEVEL = 5;"):
+            messages_dic.setdefault(proto_name, "StartIncidentOutProto")
+        elif operator.contains(proto_line, "IncidentDisplayType") and operator.contains(proto_line, " = 6;"):
+            messages_dic.setdefault(proto_name, "PokestopIncidentDisplayProto")
+        elif operator.contains(proto_line, "\t\tQuestType ") and operator.contains(proto_line, " = 1;"):
+            messages_dic.setdefault(proto_name, "DailyStreaksProto")
+        elif operator.contains(proto_line, "exponential_buckets = 2;"):
+            messages_dic.setdefault(proto_name, "Distribution")
+        elif operator.contains(proto_line, "\t\tERROR_BUDDY_HAS_NOT_PICKED_UP_ANY_SOUVENIRS = 4;"):
+            messages_dic.setdefault(proto_name, "OpenBuddyGiftOutProto")
+        elif operator.contains(proto_line, "\t\tERROR_INVALD_NUMBER_ATTACKING_POKEMON_IDS = 2;"):
+            messages_dic.setdefault(proto_name, "GetNpcCombatRewardsOutProto")
+        elif operator.contains(proto_line, "\t\tPOI_INACCESSIBLE = 6;"):
+            messages_dic.setdefault(proto_name, "FortSearchOutProto")
+        elif operator.contains(proto_line, "TGC_TRACKING_QUEST = 7;"):
+            messages_dic.setdefault(proto_name, "QuestProto")
 
     ## fix messages names
     # print("Cleaning process on messages...")
