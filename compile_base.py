@@ -994,9 +994,9 @@ def open_proto_file(main_file, head):
                 ignored_one_of.clear()
 
     ## fix enums names
-    print("Cleaning process on enums...")
+    # print("Cleaning process on enums...")
     for _enum in enums_dic:
-        print("Obfuscated enum name " + _enum + " clean enum name " + enums_dic[_enum])
+        # print("Obfuscated enum name " + _enum + " clean enum name " + enums_dic[_enum])
         messages = messages.replace(_enum, enums_dic[_enum])
 
     if gen_one_off:
@@ -1071,9 +1071,9 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "HoloInventoryKeyProto")
 
     ## fix messages names
-    print("Cleaning process on messages...")
+    # print("Cleaning process on messages...")
     for _message in messages_dic:
-        print("Obfuscated message name " + _message + " clean message name " + messages_dic[_message])
+        # print("Obfuscated message name " + _message + " clean message name " + messages_dic[_message])
         messages = messages.replace(_message, messages_dic[_message])
 
     message_for_fix = None
