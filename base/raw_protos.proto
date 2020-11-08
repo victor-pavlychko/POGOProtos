@@ -20322,22 +20322,22 @@ message VasaClientAction {
 //----- Begin Optimize Dump File's -----
 
 
-message AuthInfo {
+message PlatformAuthInfo {
 	string provider = 1;
-	JWT token = 2;
-	AuthOptions options = 3;
+	PlatformJWT token = 2;
+	PlatformAuthOptions options = 3;
 
-	message JWT {
+	message PlatformJWT {
 		string contents = 1;
 		int32 unknown2 = 2;
 	}
 
-	message AuthOptions {
+	message PlatformAuthOptions {
 		bool prevent_account_creation = 1;
 	}
 }
 
-message AuthTicket {
+message PlatformAuthTicket {
 	bytes start = 1;
 	uint64 expire_timestamp_ms = 2;
 	bytes end = 3;

@@ -1207,9 +1207,9 @@ def open_proto_file(main_file, head):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "PlatformMapTileDataProto" and operator.contains(fix_line, "bytes label_data"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "AuthTicket" and operator.contains(fix_line, "bytes start"):
+        # elif message_for_fix == "PlatformAuthTicket" and operator.contains(fix_line, "bytes start"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "AuthTicket" and operator.contains(fix_line, "bytes end"):
+        # elif message_for_fix == "PlatformAuthTicket" and operator.contains(fix_line, "bytes end"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
 
         fixed_messages += fix_line + "\n"

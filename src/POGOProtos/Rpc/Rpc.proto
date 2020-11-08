@@ -4351,27 +4351,6 @@ message AttackRaidBattleProto {
 	int64 timestamp_ms = 5;
 }
 
-message AuthInfo {
-	string provider = 1;
-	JWT token = 2;
-	AuthOptions options = 3;
-	message JWT {
-		string contents = 1;
-		int32 unknown2 = 2;
-	}
-
-	message AuthOptions {
-		bool prevent_account_creation = 1;
-	}
-
-}
-
-message AuthTicket {
-	bytes start = 1;
-	uint64 expire_timestamp_ms = 2;
-	bytes end = 3;
-}
-
 message AvatarCustomizationProto {
 	enum AvatarCustomizationUnlockType {
 		UNSET_UNLOCK_TYPE = 0;
@@ -10558,6 +10537,27 @@ message PlatformApprovedCommonTelemetryProto {
 
 	PlatformServerRecordMetadata server_data = 7;
 	PlatformClientTelemetryCommonFilterProto common_filters = 8;
+}
+
+message PlatformAuthInfo {
+	string provider = 1;
+	PlatformJWT token = 2;
+	PlatformAuthOptions options = 3;
+	message PlatformJWT {
+		string contents = 1;
+		int32 unknown2 = 2;
+	}
+
+	message PlatformAuthOptions {
+		bool prevent_account_creation = 1;
+	}
+
+}
+
+message PlatformAuthTicket {
+	bytes start = 1;
+	uint64 expire_timestamp_ms = 2;
+	bytes end = 3;
 }
 
 message PlatformAvailableSkuProto {
