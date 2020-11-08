@@ -857,10 +857,10 @@ def open_proto_file(main_file, head):
                             enum_name = "ONLINE_STATUS"
                         ## TODO: needs good name here
                         elif operator.contains(e, "_PLATINUM = 4;"):
-                            enums_dic.setdefault(enum_name, "ObEnumField")
-                            messages = messages.replace(enum_name + "_", "OB_ENUM_FIELD_")
-                            e = e.replace(enum_name + "_", "OB_ENUM_FIELD_")
-                            enum_name = "OB_ENUM_FIELD;"
+                            enums_dic.setdefault(enum_name, "ZZ_ObEnumField1")
+                            messages = messages.replace(enum_name + "_", "ZZ_OB_ENUM_FIELD_1")
+                            e = e.replace(enum_name + "_", "ZZ_OB_ENUM_FIELD_1")
+                            enum_name = "ZZ_OB_ENUM_FIELD_1;"
                         ##
 
                         ## second check ...

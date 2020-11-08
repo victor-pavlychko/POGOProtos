@@ -2974,14 +2974,6 @@ enum NotificationType {
 	NOTIFICATION_TYPE_ALL_NOTIFICATIONS = 3;
 }
 
-enum ObEnumField {
-	OB_ENUM_FIELD_NONE = 0;
-	OB_ENUM_FIELD_BRONZE = 1;
-	OB_ENUM_FIELD_SILVER = 2;
-	OB_ENUM_FIELD_GOLD = 3;
-	OB_ENUM_FIELD_PLATINUM = 4;
-}
-
 enum OmniNotificationSubscriptionType {
 	PLATFORM_OMNI_NOTIFICATION_SUBSCRIPTION_TYPE_OPTED_IN = 0;
 	PLATFORM_OMNI_NOTIFICATION_SUBSCRIPTION_TYPE_SUBSCRIBED = 1;
@@ -3830,24 +3822,12 @@ enum WebTelemetryIds {
 	WEB_TELEMETRY_IDS_POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK = 1;
 }
 
-message AAFAMHFEBGP {
-	enum PBANGPBNFEN {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_PLAYER_NOT_FOUND = 3;
-	}
-
-	PBANGPBNFEN aakoogeglgh = 1;
-}
-
-message AGLANPAMNKH {
-	enum OKGJJJPOFOA {
-		SUCCESS = 0;
-		ERROR = 1;
-	}
-
-	OKGJJJPOFOA aakoogeglgh = 1;
+enum ZZ_ObEnumField1 {
+	ZZ_OB_ENUM_FIELD1_NONE = 0;
+	ZZ_OB_ENUM_FIELD1_BRONZE = 1;
+	ZZ_OB_ENUM_FIELD1_SILVER = 2;
+	ZZ_OB_ENUM_FIELD1_GOLD = 3;
+	ZZ_OB_ENUM_FIELD1_PLATINUM = 4;
 }
 
 message ARBuddyMultiplayerSessionTelemetry {
@@ -4514,12 +4494,6 @@ message AwardedGymBadge {
 	float progress = 13;
 	bool level_up = 14;
 	PlayerRaidInfoProto raids = 15;
-}
-
-message BBEHFJEAKNG {
-	int64 nmciacipohm = 1;
-	double lopeglmjchg = 2;
-	double pkpndimbhpb = 3;
 }
 
 message BackgroundModeGlobalSettingsProto {
@@ -6898,18 +6872,6 @@ message DownloadUrlRequestProto {
 }
 
 message DumbBeaconProto {
-}
-
-message EHIFBMFCDDK {
-	enum LAPOMKCMIIH {
-		PLATFORM_UNKNOWN = 0;
-		PLATFORM_ANDROID = 1;
-		PLATFORM_IOS = 2;
-	}
-
-	LAPOMKCMIIH dlmabiggfkc = 1;
-	string hindejigmbl = 2;
-	string dgbnapedldg = 3;
 }
 
 message EchoOutProto {
@@ -10420,7 +10382,7 @@ message OpenTradingProto {
 
 message PJIDLEGBGME {
 	string lfpgdialino = 1;
-	repeated BBEHFJEAKNG mmagniljkbi = 2;
+	repeated ZZ_UndefinedProto2 mmagniljkbi = 2;
 }
 
 message ParticipationProto {
@@ -18007,4 +17969,42 @@ message WithWinGymBattleStatusProto {
 }
 
 message WithWinRaidStatusProto {
+}
+
+message ZZ_UndefinedProto0 {
+	enum ZZ_0_Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_PLAYER_NOT_FOUND = 3;
+	}
+
+	ZZ_0_Result result = 1;
+}
+
+message ZZ_UndefinedProto1 {
+	enum ZZ_1_Result {
+		SUCCESS = 0;
+		ERROR = 1;
+	}
+
+	ZZ_1_Result result = 1;
+}
+
+message ZZ_UndefinedProto2 {
+	int64 zz_2_ob_int64_value = 1;
+	double zz_2_ob_double_value_0 = 2;
+	double zz_2_ob_double_value_1 = 3;
+}
+
+message ZZ_UndefinedProto3 {
+	enum ZZ_3_Result {
+		PLATFORM_UNKNOWN = 0;
+		PLATFORM_ANDROID = 1;
+		PLATFORM_IOS = 2;
+	}
+
+	ZZ_3_Result result = 1;
+	string zz_3_ob_string_value_0 = 2;
+	string zz_3_ob_string_value_1 = 3;
 }
