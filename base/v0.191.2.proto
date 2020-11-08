@@ -4793,8 +4793,8 @@ message BelugaPokemonProto {
 	PokemonCostume costume = 21;
 	PokemonForm form = 22;
 	bool shiny = 23;
-	int32 move1 = 24;
-	int32 move2 = 25;
+	HoloPokemonMove move1 = 24;
+	HoloPokemonMove move2 = 25;
 }
 
 message BelugaPokemonWhitelist {
@@ -5759,7 +5759,7 @@ message CombatActionProto {
 	fixed64 active_pokemon_id = 8;
 	fixed64 target_pokemon_id = 14;
 	float minigame_score = 15;
-	int32 move = 16;
+	HoloPokemonMove move = 16;
 }
 
 message CombatBaseStatsProto {
@@ -6097,9 +6097,9 @@ message CombatProto {
 		float cp_multiplier = 4;
 		int32 stamina = 5;
 		int32 max_stamina = 6;
-		int32 move1 = 7;
-		int32 move2 = 8;
-		int32 move3 = 9;
+		HoloPokemonMove move1 = 7;
+		HoloPokemonMove move2 = 8;
+		HoloPokemonMove move3 = 9;
 		int32 energy = 10;
 		PokemonDisplayProto pokemon_display = 11;
 		int32 individual_attack = 12;
@@ -14551,8 +14551,8 @@ message PokemonProto {
 	int32 cp = 3;
 	int32 stamina = 4;
 	int32 max_stamina = 5;
-	int32 move1 = 6;
-	int32 move2 = 7;
+	HoloPokemonMove move1 = 6;
+	HoloPokemonMove move2 = 7;
 	string deployed_fort_id = 8;
 	string owner_name = 9;
 	bool is_egg = 10;
@@ -14591,7 +14591,7 @@ message PokemonProto {
 	string original_owner_nickname = 44;
 	int64 traded_time_ms = 45;
 	bool is_lucky = 46;
-	int32 move3 = 47;
+	HoloPokemonMove move3 = 47;
 	PokemonCombatStatsProto pvp_combat_stats = 48;
 	PokemonCombatStatsProto npc_combat_stats = 49;
 	bool move2_is_purified_exclusive = 50;
@@ -17016,8 +17016,8 @@ message TradingProto {
 		int32 adjusted_stamina_min = 7;
 		int32 adjusted_stamina_max = 8;
 		bool friend_level_cap = 9;
-		int32 move1 = 10;
-		int32 move2 = 11;
+		HoloPokemonMove move1 = 10;
+		HoloPokemonMove move2 = 11;
 		PokemonDisplayProto pokemon_display = 12;
 		int64 captured_s2_cell_id = 13;
 		PokemonProto traded_pokemon = 14;
@@ -17027,7 +17027,7 @@ message TradingProto {
 		int32 individual_stamina = 18;
 		string nickname = 19;
 		bool favorite = 20;
-		int32 move3 = 21;
+		HoloPokemonMove move3 = 21;
 		int64 creation_time_ms = 22;
 	}
 
