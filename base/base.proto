@@ -3503,7 +3503,7 @@ enum PokemonInventoryTelemetryIds {
 	POKEMON_INVENTORY_TELEMETRY_IDS_FILTER = 3;
 }
 
-enum PokemonTagColorIds {
+enum PokemonTagColor {
 	POKEMON_TAG_COLOR_UNSET = 0;
 	POKEMON_TAG_COLOR_BLUE = 1;
 	POKEMON_TAG_COLOR_GREEN = 2;
