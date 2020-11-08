@@ -64,9 +64,10 @@ python compile_base.py -l cpp -1 -k:
 ### Libraries
 If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
 
-| Additional resources  | Source                                                                               | Status 
-|-----------------------|--------------------------------------------------------------------------------------|--------
-| Gamemaster Json       | https://github.com/pokemongo-dev-contrib/pokemongo-game-master                       |  OK    
+| Additional resources   | Source                                                                               | Status 
+|------------------------|--------------------------------------------------------------------------------------|--------
+| Root GameMaster (json) | https://github.com/Furtif/POGOProtos/tree/master/GM                                  |  OK    
+| Gamemaster Json        | https://github.com/pokemongo-dev-contrib/pokemongo-game-master                       |  OK    
 
 ### Code sources initial
 - https://github.com/AeonLucid/POGOProtos
