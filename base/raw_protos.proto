@@ -672,7 +672,7 @@ enum AdFeedbackComplaintReason {
 }
 
 // ref: IBMOAEBMGCI
-enum ZZ_ObEnumField1 {
+enum AA_ObEnumField1 {
 	NONE = 0;
 	BRONZE = 1;
 	SILVER = 2;
