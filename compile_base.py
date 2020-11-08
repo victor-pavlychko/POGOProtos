@@ -260,7 +260,7 @@ def open_proto_file(main_file, head):
 
             if is_enum:
                 if not proto_line.startswith("enum"):
-                    if not proto_line.startswith("}") and len(enum_name) == 11: # remove and... if full obfuscated
+                    if not proto_line.startswith("}") and len(enum_name) == 11:  # remove and... if full obfuscated
                         e = proto_line.replace(re.split(r'(\W+)', proto_line)[2],
                                                enum_name + "_" + re.split(r'(\W+)', proto_line)[2])
 
@@ -846,10 +846,10 @@ def open_proto_file(main_file, head):
                             e = e.replace(enum_name + "_", "POKEMON_HOME_IDS_")
                             enum_name = "POKEMON_HOME_IDS"
                         elif operator.contains(e, "POKEMON_TAG_COLOR_UNSET = 0;"):
-                            enums_dic.setdefault(enum_name, "PokemonTagColorIds")
+                            enums_dic.setdefault(enum_name, "PokemonTagColor")
                             messages = messages.replace(enum_name + "_", "")
                             e = e.replace(enum_name + "_", "")
-                            enum_name = "POKEMON_TAG_COLOR_IDS"
+                            enum_name = "POKEMON_TAG_COLOR"
                         elif operator.contains(e, "ONLINE_ELSEWHERE = 1;"):
                             enums_dic.setdefault(enum_name, "OnlineStatus")
                             messages = messages.replace(enum_name + "_", "ONLINE_STATUS_")
@@ -966,7 +966,7 @@ def open_proto_file(main_file, head):
                             e = e.replace(enum_name + "_", "")
                         elif enum_name == "TUTORIAL_COMPLETION":
                             e = e.replace(enum_name + "_", "")
-                        elif enum_name == "POKEMON_TAG_COLOR_IDS":
+                        elif enum_name == "POKEMON_TAG_COLOR":
                             e = e.replace(enum_name + "_", "")
 
                         proto_line = e
