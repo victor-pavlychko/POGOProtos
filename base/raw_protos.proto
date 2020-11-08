@@ -1449,9 +1449,9 @@ message HashedKeyProto {
 }
 
 // ref: PJIDLEGBGME
-message PJIDLEGBGME {
-	string lfpgdialino = 1;
-	repeated ZZ_UndefinedProto2 mmagniljkbi = 2;
+message ZZ_UndefinedProto4 {
+	string zz_4_ob_string_value_0 = 1;
+	repeated ZZ_UndefinedProto2 zz_4_ob_list_value_0 = 2;
 }
 
 // ref: PlatformClientApiSettingsProto

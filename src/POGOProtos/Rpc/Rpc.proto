@@ -10380,11 +10380,6 @@ message OpenTradingProto {
 	string player_id = 1;
 }
 
-message PJIDLEGBGME {
-	string lfpgdialino = 1;
-	repeated ZZ_UndefinedProto2 mmagniljkbi = 2;
-}
-
 message ParticipationProto {
 	int32 individual_damage_pokeballs = 1;
 	int32 team_damage_pokeballs = 2;
@@ -18007,4 +18002,9 @@ message ZZ_UndefinedProto3 {
 	ZZ_3_Result result = 1;
 	string zz_3_ob_string_value_0 = 2;
 	string zz_3_ob_string_value_1 = 3;
+}
+
+message ZZ_UndefinedProto4 {
+	string zz_4_ob_string_value_0 = 1;
+	repeated ZZ_UndefinedProto2 zz_4_ob_list_value_0 = 2;
 }
