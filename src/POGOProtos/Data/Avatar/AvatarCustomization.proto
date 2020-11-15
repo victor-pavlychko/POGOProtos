@@ -54,5 +54,6 @@ message AvatarCustomization {
 		NECKLACE = 12;
 		SKIN = 13;
 		POSE = 14;
+		FACE = 15;
 	}
 }

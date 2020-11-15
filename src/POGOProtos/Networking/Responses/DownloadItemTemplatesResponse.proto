@@ -74,6 +74,23 @@ import "POGOProtos/Settings/Master/CrossGameSocialSettings.proto";
 import "POGOProtos/Data/Sticker/StickerMetadata.proto";
 import "POGOProtos/Settings/Master/MapDisplaySettings.proto";
 import "POGOProtos/Settings/Master/ArTelemetrySettings.proto";
+import "POGOProtos/Settings/Master/MegaEvoSettings.proto";
+import "POGOProtos/Settings/Master/TemporaryEvolutionSettings.proto";
+import "POGOProtos/Settings/Master/PokemonFamilySettings.proto";
+import "POGOProtos/Settings/Master/LevelUpRewardsSettings.proto";
+import "POGOProtos/Settings/Master/PokemonHomeEnergyCosts.proto";
+import "POGOProtos/Settings/Master/PokemonHomeSettings.proto";
+import "POGOProtos/Settings/Master/BattlePartySettings.proto";
+import "POGOProtos/Settings/Master/QuestEvolutionSettings.proto";
+import "POGOProtos/Settings/Master/PokemonHomeFormReversion.proto";
+import "POGOProtos/Settings/Master/DeepLinkingSettings.proto";
+import "POGOProtos/Settings/Master/GuiSearchSettings.proto";
+import "POGOProtos/Settings/Master/ClientEvolutionQuestTemplate.proto";
+import "POGOProtos/Settings/Master/AdFeedbackSettings.proto";
+import "POGOProtos/Settings/Master/FriendProfileSettings.proto";
+import "POGOProtos/Settings/Master/GeotargetedQuestSettings.proto";
+import "POGOProtos/Settings/Master/PokemonTagSettings.proto";
+import "POGOProtos/Settings/Master/RecommendedSearch.proto";
 
 message DownloadItemTemplatesResponse {
 	Result result = 1;
@@ -149,14 +166,31 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Settings.Master.PlatypusRolloutSettings platypus_rollout_settings = 70;
 		.POGOProtos.Settings.Master.BuddyHungerSettings buddy_hunger_settings = 72;
 		ProjectVacation project_vacation = 73;
+		.POGOProtos.Settings.Master.MegaEvoSettings mega_evo_settings = 74;
+		.POGOProtos.Settings.Master.TemporaryEvolutionSettings temporary_evolution_settings = 75;
 		.POGOProtos.Settings.Master.AvatarGroupOrderSettings avatar_group_order_settings = 76;
+		.POGOProtos.Settings.Master.PokemonFamilySettings pokemon_family = 77;
 		.POGOProtos.Settings.Master.MonodepthSettings monodepth_settings = 78;
+		.POGOProtos.Settings.Master.LevelUpRewardsSettings level_up_rewards = 79;
 		.POGOProtos.Settings.Master.RaidClientSettings raid_settings_proto = 81;
 		.POGOProtos.Settings.Master.SponsoredGeofenceGiftSettings sponsored_geofence_gift_settings = 84;
 		.POGOProtos.Data.Sticker.StickerMetadata sticker_metadata = 85;
 		.POGOProtos.Settings.Master.CrossGameSocialSettings cross_game_social_settings = 86;
 		.POGOProtos.Settings.Master.MapDisplaySettings map_display_settings = 87;
+		.POGOProtos.Settings.Master.PokemonHomeEnergyCosts pokemon_home_energy_costs = 88;
+		.POGOProtos.Settings.Master.PokemonHomeSettings pokemon_home_settings = 89;
 		.POGOProtos.Settings.Master.ArTelemetrySettings ar_telemetry_settings = 90;
+		.POGOProtos.Settings.Master.BattlePartySettings battle_party_settings = 91;
+		.POGOProtos.Settings.Master.QuestEvolutionSettings quest_evolution_settings = 93;
+		.POGOProtos.Settings.Master.PokemonHomeFormReversion pokemon_home_form_reversion = 94;
+		.POGOProtos.Settings.Master.DeepLinkingSettings deep_linking_settings = 95;
+		.POGOProtos.Settings.Master.GuiSearchSettings gui_search_settings = 96;
+		.POGOProtos.Settings.Master.ClientEvolutionQuestTemplate evolution_quest_template = 97;
+		.POGOProtos.Settings.Master.AdFeedbackSettings ad_feedback_settings = 98;
+		.POGOProtos.Settings.Master.FriendProfileSettings friend_profile_settings = 99;
+		.POGOProtos.Settings.Master.GeotargetedQuestSettings geotargeted_quest_settings = 100;
+		.POGOProtos.Settings.Master.PokemonTagSettings pokemon_tag_settings = 101;
+		.POGOProtos.Settings.Master.RecommendedSearch recommended_search_proto = 102;
 
 		message ProjectVacation {
 			bool enable2020 = 1;

@@ -50,6 +50,14 @@ message PlayerStats {
 	int32 num_pokemon_purified = 43;
 	int32 num_grunts_defeated = 44;
 	int32 num_best_buddies = 47;
+	int32 level_cap = 48;
+	int32 seven_day_streaks = 49;
+	int32 unique_raid_bosses_defeated = 50;
+	int32 unique_pokestops_visited = 51;
+	int32 raids_won_with_friends = 52;
+	int32 pokemon_caught_at_your_lures = 53;
 	int32 num_wayfarer_agreement = 54;
 	int64 wayfarer_agreement_update_ms = 55;
+	int32 num_total_mega_evolutions = 56;
+	int32 num_unique_mega_evolutions = 57;
 }

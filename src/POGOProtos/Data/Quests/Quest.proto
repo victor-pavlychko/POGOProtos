@@ -21,8 +21,12 @@ message Quest {
 		DailyBuddyAffectionQuest daily_buddy_affection = 7;
 		QuestWalk quest_walk = 8;
 		EvolveIntoPokemonQuest evolve_into_pokemon = 9;
+		GetStardustQuest get_stardust = 10;
+		GeotargetedQuest geotargeted_quest = 12;
+		BuddyEvolutionWalkQuest buddy_evolution_walk = 13;
 	}
 
+	WithSingleDay with_single_day = 98;
 	DaysWithARowQuest days_in_arow = 99;
 	string quest_id = 100;
 	int64 quest_seed = 101;
@@ -34,7 +38,7 @@ message Quest {
 	repeated .POGOProtos.Data.Quests.QuestReward quest_rewards = 107;
 	int64 creation_timestamp_ms = 108;
 	int64 last_update_timestamp_ms = 109;
-	int64 compeletion_timestamp_ms = 110;
+	int64 completion_timestamp_ms = 110;
 	string fort_id = 111;
 	bool admin_generated = 112;
 	bool stamp_count_override_enabled = 113;
@@ -44,6 +48,28 @@ message Quest {
 	DailyCounter daily_counter = 117;
 	string reward_pokemon_icon_url = 118;
 	int64 end_timestamp_ms = 119;
+	bool is_bonus_challenge = 120;
+
+	message BuddyEvolutionWalkQuest {
+		float last_km_recorded = 1;
+	}
+
+	message GeotargetedQuest {
+		string name = 1;
+		string call_to_action_link = 2;
+		string image_url = 3;
+		double latitude = 4;
+		double longitude = 5;
+		string fort_id = 6;
+	}
+
+	message GetStardustQuest {
+		int32 stardust = 1;
+	}
+
+	message WithSingleDay {
+		int64 last_window = 1;
+	}
 
 	message QuestWalk {
 		float quest_start_km_walked = 1;
@@ -83,6 +109,7 @@ message Quest {
 		DAILY_COIN_QUEST = 3;
 		TIMED_STORY_QUEST = 4;
 		TGC_TRACKING_QUEST = 7;
+		EVOLUTION_QUEST = 8;
 	}
 
 	enum Status {

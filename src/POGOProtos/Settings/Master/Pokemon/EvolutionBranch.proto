@@ -4,7 +4,9 @@ package POGOProtos.Settings.Master.Pokemon;
 import "POGOProtos/Enums/Form.proto";
 import "POGOProtos/Enums/Gender.proto";
 import "POGOProtos/Enums/PokemonId.proto";
+import "POGOProtos/Enums/TemporaryEvolutionId.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
+import "POGOProtos/Data/PokemonData.proto";
 
 message EvolutionBranch {
 	.POGOProtos.Enums.PokemonId evolution = 1;
@@ -19,5 +21,8 @@ message EvolutionBranch {
 	bool only_nighttime = 11;
 	int32 priority = 12;
 	bool no_candy_cost_via_trade = 13;
-	repeated string quest_requirement_template_id = 17;
+	.POGOProtos.Enums.TemporaryEvolutionId temporary_evolution = 14;
+	int32 temporary_evolution_energy_cost = 15;
+	int32 temporary_evolution_energy_cost_subsequent = 16;
+	repeated .POGOProtos.Data.PokemonData.PokemonEvolutionQuest.EvolutionQuestInfo quest_display = 17;
 }

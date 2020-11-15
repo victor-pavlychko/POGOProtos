@@ -1,0 +1,9 @@
+syntax = "proto3";
+package POGOProtos.Enums;
+
+enum FeatureType {
+	FEATURE_TYPE_UNSET = 0;
+	FEATURE_TYPE_ONLINE_STATUS = 1;
+	FEATURE_TYPE_NIANTIC_PROFILE = 2;
+	FEATURE_TYPE_FRIENDS_LIST = 3;
+}

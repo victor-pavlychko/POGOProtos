@@ -21,4 +21,5 @@ message BattleResults {
 	repeated .POGOProtos.Data.Raid.RaidEncounter post_raid_encounter = 9;
 	repeated .POGOProtos.Data.Badge.AwardedGymBadge gym_badge = 10;
 	repeated .POGOProtos.Inventory.Loot default_raid_item_rewards = 11;
+	int64 battle_duration_ms = 12;
 }

@@ -32,7 +32,7 @@ message GetFriendDetailsResponse {
 			ERROR_STALE_DATA = 4;
 		}
 
-		double distance_to_player_km = 1;
+		Result result = 1;
 		PlatformPlayerLocale locale = 2;
 		SocialV2Enum.OnlineStatus online_status = 3;
 		string last_played_app_key = 4;

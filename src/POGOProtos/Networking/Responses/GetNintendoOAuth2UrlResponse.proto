@@ -1,0 +1,14 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses;
+
+message GetNintendoOAuth2UrlResponse {
+	Status status = 1;
+	string url = 2;
+
+	enum Status {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
+		ERROR_PLAYER_SIGNED_IN = 3;
+	}
+}

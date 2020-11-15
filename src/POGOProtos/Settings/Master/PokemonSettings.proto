@@ -8,6 +8,7 @@ import "POGOProtos/Enums/PokemonClass.proto";
 import "POGOProtos/Enums/PokemonType.proto";
 import "POGOProtos/Enums/PokemonMove.proto";
 import "POGOProtos/Enums/PokemonFamilyId.proto";
+import "POGOProtos/Enums/TemporaryEvolutionId.proto";
 import "POGOProtos/Settings/Master/Pokemon/StatsAttributes.proto";
 import "POGOProtos/Settings/Master/Pokemon/CameraAttributes.proto";
 import "POGOProtos/Settings/Master/Pokemon/EncounterAttributes.proto";
@@ -64,6 +65,28 @@ message PokemonSettings {
 	int32 additional_cp_boost_level = 48;
 	repeated .POGOProtos.Enums.PokemonMove elite_quick_move = 49;
 	repeated .POGOProtos.Enums.PokemonMove elite_cinematic_move = 50;
+	repeated TempEvoOverride temp_evo_overrides = 51;
+	int32 buddy_walked_mega_energy_award = 52;
+	bool disable_transfer_to_pokemon_home = 61;
+	float raid_boss_distance_offset = 62;
+
+	message TempEvoOverride {
+		.POGOProtos.Enums.TemporaryEvolutionId temp_evo_id = 1;
+		.POGOProtos.Settings.Master.Pokemon.StatsAttributes stats = 2;
+		float average_height_m = 3;
+		float average_weight_kg = 4;
+		.POGOProtos.Enums.PokemonType type_override1 = 5;
+		.POGOProtos.Enums.PokemonType type_override2 = 6;
+		float cp_multiplier_override = 7;
+		.POGOProtos.Settings.Master.Pokemon.CameraAttributes camera = 8;
+		.POGOProtos.Settings.Master.Pokemon.EncounterAttributes encounter = 9;
+		float model_scale_v2 = 10;
+		float model_height = 11;
+		repeated float buddy_offset_male = 12;
+		repeated float buddy_offset_female = 13;
+		repeated float buddy_portrait_offset = 14;
+		float raid_boss_distance_offset = 15;
+	}
 
 	message PokemonThirdMoveAttributes {
 		int32 stardust_to_unlock = 1;

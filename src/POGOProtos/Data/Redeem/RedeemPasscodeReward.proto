@@ -18,4 +18,5 @@ message RedeemPasscodeReward {
 	int32 pokecoins = 7;
 	repeated .POGOProtos.Enums.BadgeType badges = 8;
 	repeated .POGOProtos.Data.Sticker.RedeemedSticker redeemed_stickers = 9;
+	repeated string quest_ids = 10;
 }

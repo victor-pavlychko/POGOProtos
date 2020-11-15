@@ -5,6 +5,7 @@ import "POGOProtos/Enums/RaidLevel.proto";
 import "POGOProtos/Enums/PokemonId.proto";
 import "POGOProtos/Enums/Form.proto";
 import "POGOProtos/Enums/TeamColor.proto";
+import "POGOProtos/Enums/TemporaryEvolutionId.proto";
 import "POGOProtos/Data/Player/PlayerAvatar.proto";
 
 message RaidInvitationDetails {
@@ -23,4 +24,5 @@ message RaidInvitationDetails {
 	string inviter_nickname = 13;
 	.POGOProtos.Data.Player.PlayerAvatar inviter_avatar = 14;
 	.POGOProtos.Enums.TeamColor inviter_team = 15;
+	.POGOProtos.Enums.TemporaryEvolutionId raid_pokemon_temp_evo_id = 16;
 }

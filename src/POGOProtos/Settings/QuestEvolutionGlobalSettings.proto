@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Settings;
+
+message QuestEvolutionGlobalSettings {
+	bool enable_quest_evolutions = 1;
+}

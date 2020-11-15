@@ -1,0 +1,14 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses;
+
+message SetPokemonTagsForPokemonResponse {
+	Status status = 2;
+
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
+		ERROR_POKEMON_NOT_FOUND = 3;
+		ERROR_TAG_INVALID = 4;
+	}
+}

@@ -17,6 +17,8 @@ message QuestReward {
 		string quest_template_id = 7;
 		PokemonEncounterReward pokemon_encounter = 8;
 		int32 pokecoin = 9;
+		PokemonCandyReward xl_candy = 10;
+		int32 level_cap = 11;
 		StickerReward sticker = 12;
 		PokemonCandyReward mega_resource = 13;
 	}
@@ -31,6 +33,8 @@ message QuestReward {
 		QUEST = 6;
 		POKEMON_ENCOUNTER = 7;
 		POKECOIN = 8;
+		XL_CANDY = 9;
+		LEVEL_CAP = 10;
 		STICKER = 11;
 		MEGA_RESOURCE = 12;
 	}

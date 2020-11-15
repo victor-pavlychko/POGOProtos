@@ -7,4 +7,5 @@ message InvasionOpenCombatSessionMessage {
 	.POGOProtos.Map.Fort.IncidentLookup incident_lookup = 1;
 	int32 step = 2;
 	repeated fixed64 attacking_pokemon_id = 3;
+	int64 lobby_join_time_ms = 4;
 }

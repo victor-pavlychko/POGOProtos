@@ -2,6 +2,7 @@ syntax = "proto3";
 package POGOProtos.Networking.Requests.Messages;
 
 import "POGOProtos/Map/Fort/IncidentLookup.proto";
+import "POGOProtos/Data/Combat/CombatQuestUpdate.proto";
 
 message InvasionBattleUpdateMessage {
 	.POGOProtos.Map.Fort.IncidentLookup incident_lookup = 1;
@@ -9,6 +10,8 @@ message InvasionBattleUpdateMessage {
 	repeated PokemonStaminaUpdate health_update = 3;
 	bool complete_battle = 4;
 	UpdateType update_type = 5;
+	int64 lobby_join_time_ms = 6;
+	.POGOProtos.Data.Combat.CombatQuestUpdate combat_quest_update = 7;
 
 	message PokemonStaminaUpdate {
 		fixed64 pokemon_id = 1;

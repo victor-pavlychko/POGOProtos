@@ -7,4 +7,5 @@ message EventBadgeSettings {
 	int64 valid_from_ms = 1;
 	int64 valid_to_ms = 2;
 	repeated .POGOProtos.Enums.BadgeType mutually_exclusive_badges = 3;
+	bool automatically_award_badge = 4;
 }

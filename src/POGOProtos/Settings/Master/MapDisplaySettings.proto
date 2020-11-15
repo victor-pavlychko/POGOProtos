@@ -4,6 +4,14 @@ package POGOProtos.Settings.Master;
 message MapDisplaySettings {
 	MapEffect map_effect = 1;
 	string research_icon_url = 2;
+	BGM bgm = 3;
+
+	enum BGM {
+		UNSET = 0;
+		EVENT = 101;
+		HALLOWEEN = 200;
+		TEAM_ROCKET_DEFAULT = 300;
+	}
 
 	enum MapEffect {
 		EFFECT_NONE = 0;
@@ -15,5 +23,6 @@ message MapDisplaySettings {
 		EFFECT_CONFETTI_FRIENDSHIP = 6;
 		EFFECT_CONFETTI_ROCKET = 7;
 		EFFECT_FIREWORKS_PLAIN = 8;
+		EFFECT_CONFETTI_FLOWER = 9;
 	}
 }

@@ -67,6 +67,12 @@ import "POGOProtos/Data/Telemetry/MonodepthDownloadTelemetry.proto";
 import "POGOProtos/Data/Telemetry/ArMappingTelemetry.proto";
 import "POGOProtos/Data/Telemetry/RemoteRaidTelemetry.proto";
 import "POGOProtos/Data/Telemetry/DeviceOSTelemetry.proto";
+import "POGOProtos/Data/Telemetry/NianticProfileTelemetry.proto";
+import "POGOProtos/Data/Telemetry/ChangeOnlineStatusTelemetry.proto";
+import "POGOProtos/Data/Telemetry/DeepLinkingTelemetry.proto";
+import "POGOProtos/Data/Telemetry/ArMappingSessionTelemetry.proto";
+import "POGOProtos/Data/Telemetry/PokemonHomeTelemetry.proto";
+import "POGOProtos/Data/Telemetry/PokemonSearchTelemetry.proto";
 
 message ClientTelemetryOmni {
 	oneof TelemetryData {
@@ -134,6 +140,12 @@ message ClientTelemetryOmni {
 		.POGOProtos.Data.Telemetry.ArMappingTelemetry ar_mapping_telemetry = 62;
 		.POGOProtos.Data.Telemetry.RemoteRaidTelemetry remote_raid_telemetry = 63;
 		.POGOProtos.Data.Telemetry.DeviceOSTelemetry device_os_telemetry = 64;
+		.POGOProtos.Data.Telemetry.NianticProfileTelemetry niantic_profile_telemetry = 65;
+		.POGOProtos.Data.Telemetry.ChangeOnlineStatusTelemetry change_online_status_telemetry = 66;
+		.POGOProtos.Data.Telemetry.DeepLinkingTelemetry deep_linking_telemetry = 67;
+		.POGOProtos.Data.Telemetry.ArMappingSessionTelemetry ar_mapping_session_telemetry = 68;
+		.POGOProtos.Data.Telemetry.PokemonHomeTelemetry pokemon_home_telemetry = 69;
+		.POGOProtos.Data.Telemetry.PokemonSearchTelemetry pokemon_search_telemetry = 70;
 	}
 
 	.POGOProtos.Data.Telemetry.PlatformServerData server_data = 1001;

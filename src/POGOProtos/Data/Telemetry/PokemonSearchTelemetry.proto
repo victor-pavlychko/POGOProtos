@@ -1,0 +1,16 @@
+syntax = "proto3";
+package POGOProtos.Data.Telemetry;
+
+message PokemonSearchTelemetry {
+	PokemonSearchSourceId pokemon_search_source_id = 1;
+	string prepended_search_string = 2;
+	string search_term_string = 3;
+	string appended_search_string = 4;
+	repeated int32 experiment_id = 5;
+
+	enum PokemonSearchSourceId {
+		UNDEFINED = 0;
+		FROM_SEARCH_PILL_CLICK = 1;
+		LATEST_SEARCH_ENTRY_CLICK = 2;
+	}
+}

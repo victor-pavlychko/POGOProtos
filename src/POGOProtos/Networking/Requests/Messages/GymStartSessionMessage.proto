@@ -7,4 +7,5 @@ message GymStartSessionMessage {
 	fixed64 defending_pokemon_id = 3;
 	double player_lat_degrees = 4;
 	double player_lng_degrees = 5;
+	int64 lobby_join_time_ms = 6;
 }

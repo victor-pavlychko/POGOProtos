@@ -17,4 +17,15 @@ message ArMappingSettings {
 	int32 max_pending_upload_kilobytes = 13;
 	bool enable_sponsor_poi_scan = 14;
 	int32 min_disk_space_needed_mb = 15;
+	bool scan_validation_enabled = 16;
+	float scan_validation_start_delay_s = 17;
+	float scan_validation_lumens_min_threshold = 18;
+	float scan_validation_lumens_smoothing_factor = 19;
+	float scan_validation_average_pixel_threshold = 20;
+	float scan_validation_average_pixel_smoothing_factor = 21;
+	float scan_validation_speed_min_threshold_mper_s = 22;
+	float scan_validation_speed_max_threshold_mper_s = 23;
+	float scan_validation_speed_smoothing_factor = 24;
+	float scan_validation_max_warning_time_s = 25;
+	bool ar_recorder_v2_enabled = 26;
 }

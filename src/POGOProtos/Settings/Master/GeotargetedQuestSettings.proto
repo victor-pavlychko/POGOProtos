@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Settings.Master;
+
+message GeotargetedQuestSettings {
+	bool enable_geotargeted_quests = 1;
+}

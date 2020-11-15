@@ -8,6 +8,14 @@ message ArMappingTelemetry {
 	float time_elapsed_seconds = 4;
 	float percent_encoded = 5;
 	int64 data_size_bytes = 6;
+	ValidationFailureReason validation_failure_reason = 7;
+
+	enum ValidationFailureReason {
+		UNKNOWN_REASON = 0;
+		TOO_FAST = 1;
+		TOO_SLOW = 2;
+		TOO_DARK = 3;
+	}
 
 	enum ArMappingEntryPoint {
 		UNKNOWN_ENTRY = 0;

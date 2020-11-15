@@ -19,4 +19,8 @@ enum GamePoiAction {
 	SUBMIT_POI_AR_VIDEO_METADATA = 620400;               // ???
 	GET_GRAPESHOT_FILE_UPLOAD_URL = 620401;              // Implemented
 	ASYNC_FILE_UPLOAD_COMPLETE = 620402;                 // Implemented
+	GET_AR_MAPPING_SETTINGS = 620403;                    // Implemented
+	GET_IMAGES_FOR_POI = 620500;                         // Implemented
+	SUBMIT_PLAYER_IMAGE_VOTE_FOR_POI = 620501;           // Implemented
+	IS_IMAGE_GALLERY_ENABLED = 620502;                   // Implemented
 }

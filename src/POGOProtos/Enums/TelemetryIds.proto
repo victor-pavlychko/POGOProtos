@@ -105,6 +105,7 @@ enum ClientTelemetryIds {
 	DEVICE_SPECIFICATIONS_TELEMETRY = 46;
 	SCREEN_RESOLUTION_TELEMETRY = 47;
 	DEVICE_OS_TELEMETRY = 48;
+	POKEMON_HOME_TELEMETRY = 49;
 }
 
 enum AvatarCustomizationTelemetryIds {
@@ -133,6 +134,7 @@ enum GenericClickTelemetryIds {
 	UNDEFINED_GENERIC_EVENT = 0;
 	SPEED_WARNING_SHOW = 1;
 	SPEED_WARNING_PASSENGER = 2;
+	CACHE_RESET_CLICKED = 3;
 }
 
 enum ItemUseTelemetryIds {

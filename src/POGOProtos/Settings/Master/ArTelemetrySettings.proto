@@ -8,4 +8,5 @@ message ArTelemetrySettings {
 	int32 processor_sampling_interval_ms = 4;
 	bool measure_framerate = 5;
 	int32 framerate_sampling_interval_ms = 6;
+	float percentage_sessions_to_sample = 7;
 }

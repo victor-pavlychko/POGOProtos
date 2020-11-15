@@ -10,5 +10,6 @@ message FestivalSettings {
 		NONE = 0;
 		HALLOWEEN = 1;
 		HOLIDAY = 2;
+		ROCKET = 3;
 	}
 }

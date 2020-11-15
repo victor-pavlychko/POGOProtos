@@ -3,6 +3,7 @@ package POGOProtos.Data.Logs;
 
 import "POGOProtos/Inventory/Item/ItemData.proto";
 import "POGOProtos/Inventory/LootItem.proto";
+import "POGOProtos/Data/Quests/QuestReward.proto";
 
 message RaidRewardsLogEntry {
 	Result result = 1;
@@ -11,6 +12,8 @@ message RaidRewardsLogEntry {
 	repeated .POGOProtos.Inventory.Item.ItemData default_rewards = 4;
 	int32 stardust = 5;
 	repeated .POGOProtos.Inventory.LootItem stickers = 6;
+	bool is_mega = 7;
+	.POGOProtos.Data.Quests.QuestReward.PokemonCandyReward mega_resource = 8;
 
 	enum Result {
 		UNSET = 0;

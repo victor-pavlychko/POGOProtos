@@ -1,0 +1,10 @@
+syntax = "proto3";
+package POGOProtos.Data.UnClassed;
+
+enum AA_ObEnumField1 {
+	AA_OB_ENUM_FIELD1_NONE = 0;
+	AA_OB_ENUM_FIELD1_BRONZE = 1;
+	AA_OB_ENUM_FIELD1_SILVER = 2;
+	AA_OB_ENUM_FIELD1_GOLD = 3;
+	AA_OB_ENUM_FIELD1_PLATINUM = 4;
+}

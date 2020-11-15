@@ -1,6 +1,8 @@
 syntax = "proto3";
 package POGOProtos.Data.Combat;
 
+import "POGOProtos/Enums/PokemonMove.proto";
+
 message CombatAction {
 	ActionType type = 1;
 	int32 action_start_turn = 3;
@@ -10,7 +12,7 @@ message CombatAction {
 	fixed64 active_pokemon_id = 8;
 	fixed64 target_pokemon_id = 14;
 	float minigame_score = 15;
-	int32 move = 16;
+	.POGOProtos.Enums.PokemonMove move = 16;
 
 	enum ActionType {
 		UNSET = 0;

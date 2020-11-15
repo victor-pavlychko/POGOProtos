@@ -1,0 +1,16 @@
+syntax = "proto3";
+package POGOProtos.Settings.Master;
+
+import "POGOProtos/Enums/PokemonId.proto";
+import "POGOProtos/Enums/Form.proto";
+
+message PokemonHomeFormReversion {
+	.POGOProtos.Enums.PokemonId pokemon_id = 1;
+	repeated FormMapping form_mapping = 2;
+
+	message FormMapping {
+		.POGOProtos.Enums.Form reverted_form = 1;
+		repeated .POGOProtos.Enums.Form unauthorized_forms = 2;
+		string reverted_form_string = 3;
+	}
+}

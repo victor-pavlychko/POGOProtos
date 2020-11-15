@@ -10,7 +10,9 @@ import "POGOProtos/Enums/BuddyLevel.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
 import "POGOProtos/Data/PokemonDisplay.proto";
 import "POGOProtos/Enums/EnumWrapper.proto";
-import "POGOProtos/Enums/PokemonEvolution.proto";
+import "POGOProtos/Enums/TemporaryEvolutionId.proto";
+import "POGOProtos/Enums/EncounterType.proto";
+import "POGOProtos/Enums/CombatType.proto";
 
 message QuestCondition {
 	ConditionType type = 1;
@@ -41,7 +43,12 @@ message QuestCondition {
 		WithPokemonAlignment with_pokemon_alignment = 24;
 		WithBuddy with_buddy = 25;
 		WithDailyBuddyAffection with_daily_buddy_affection = 26;
-		WithMegaEvoPokemon with_mega_evo_pokemon = 29;
+		WithPokemonLevel with_pokemon_level = 27;
+		WithMaxCp with_max_cp = 28;
+		WithTempEvoId with_temp_evo_id = 29;
+		WithGblRank with_gbl_rank = 30;
+		WithEncounterType with_encounter_type = 31;
+		WithCombatType with_combat_type = 32;
 	}
 
 	enum ConditionType {
@@ -76,7 +83,41 @@ message QuestCondition {
 		WITH_BUDDY = 28;
 		WITH_BUDDY_INTERESTING_POI = 29;
 		WITH_DAILY_BUDDY_AFFECTION = 30;
-		WITH_MEGA_EVO_POKEMON = 37;
+		WITH_POKEMON_LEVEL = 31;
+		WITH_SINGLE_DAY = 32;
+		WITH_UNIQUE_POKEMON_TEAM = 33;
+		WITH_MAX_CP = 34;
+		WITH_LUCKY_POKEMON = 35;
+		WITH_LEGENDARY_POKEMON = 36;
+		WITH_TEMP_EVO_POKEMON = 37;
+		WITH_GBL_RANK = 38;
+		WITH_CATCHES_IN_A_ROW = 39;
+		WITH_ENCOUNTER_TYPE = 40;
+		WITH_COMBAT_TYPE = 41;
+	}
+
+	message WithCombatType {
+		repeated .POGOProtos.Enums.CombatType combat_type = 1;
+	}
+
+	message WithEncounterType {
+		repeated .POGOProtos.Enums.EncounterType encounter_type = 1;
+	}
+
+	message WithGblRank {
+		int32 rank = 1;
+	}
+
+	message WithTempEvoId {
+		repeated .POGOProtos.Enums.TemporaryEvolutionId mega_form = 1;
+	}
+
+	message WithMaxCp {
+		int32 max_cp = 1;
+	}
+
+	message WithPokemonLevel {
+		bool max_level = 1;
 	}
 
 	message WithDailyBuddyAffection {
@@ -102,6 +143,7 @@ message QuestCondition {
 	message WithPvpCombat {
 		bool requires_win = 1;
 		repeated string combat_league_template_id = 2;
+		.POGOProtos.Enums.BadgeType combat_league_badge = 3;
 	}
 
 	message WithNpcCombat {
@@ -186,9 +228,5 @@ message QuestCondition {
 	}
 
 	message WithWinBattleStatus {
-	}
-
-	message WithMegaEvoPokemon {
-		repeated .POGOProtos.Enums.PokemonEvolution pokemon_evolution = 1;
 	}
 }

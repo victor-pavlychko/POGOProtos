@@ -1,0 +1,17 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses;
+
+import "POGOProtos/Data/Quests/ClientQuest.proto";
+
+message ProgressQuestResponse {
+	Status status = 1;
+	.POGOProtos.Data.Quests.ClientQuest quest = 2;
+
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_QUEST_NOT_FOUND = 2;
+		ERROR_EXCEEDED_GEOTARGETED_SUBMISSION_LIMIT = 3;
+		ERROR_VALIDATION_FAILED = 4;
+	}
+}

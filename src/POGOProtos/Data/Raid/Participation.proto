@@ -14,4 +14,7 @@ message Participation {
 	float bonus_item_multiplier = 8;
 	.POGOProtos.Enums.FriendshipLevelMilestone highest_friendship_milestone = 9;
 	int32 highest_friendship_pokeballs = 10;
+	int32 speed_completion_pokeballs = 11;
+	int32 speed_completion_mega_resource = 12;
+	bool mega_resource_capped = 13;
 }

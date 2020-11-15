@@ -1,0 +1,24 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses.Game.GamePoi.Responses;
+
+message GetImagesForPoiResponse {
+	Status status = 1;
+	repeated TitanGameClientPhotoGalleryPoiImage photo_gallery_poi_images = 2;
+
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		POI_NOT_FOUND = 2;
+		INVALID_REQUEST = 3;
+	}
+
+	message TitanGameClientPhotoGalleryPoiImage {
+		string image_id = 1;
+		string poi_id = 2;
+		string submitter_codename = 3;
+		string image_url = 4;
+		int64 creation_timestamp_ms = 5;
+		bool has_player_voted = 6;
+		int32 num_votes_from_game = 7;
+	}
+}

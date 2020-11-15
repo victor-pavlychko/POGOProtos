@@ -18,6 +18,12 @@ message PokemonCondition {
 		PokemonWhitelist pokemon_whitelist = 5;
 		PokemonBanlist pokemon_banlist = 6;
 		PokemonCaughtTimestamp pokemon_caught_timestamp = 7;
+		PokemonLevelRange pokemon_level_range = 8;
+	}
+
+	message PokemonLevelRange {
+		int32 min_level = 1;
+		int32 max_level = 2;
 	}
 
 	message PokemonCaughtTimestamp {

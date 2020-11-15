@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Networking.Requests.Messages;
+
+message GetNintendoOAuth2UrlMessage {
+	string deep_link_app_scheme = 1;
+}

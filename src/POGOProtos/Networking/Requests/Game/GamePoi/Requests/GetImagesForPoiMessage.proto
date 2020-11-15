@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Networking.Requests.Game.GamePoi.Requests;
+
+message GetImagesForPoiMessage {
+	string poi_id = 1;
+}

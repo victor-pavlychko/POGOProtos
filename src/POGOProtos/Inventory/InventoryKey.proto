@@ -27,5 +27,8 @@ message InventoryKey {
 		bool limited_purchase_sku_record = 19;
 		int32 mega_evo_pokemon_species_id = 21;
 		string sticker_id = 22;
+		bool pokemon_home = 23;
+		bool player_stats_snapshot = 25;
+		int64 unknown_key = 26;
 	}
 }

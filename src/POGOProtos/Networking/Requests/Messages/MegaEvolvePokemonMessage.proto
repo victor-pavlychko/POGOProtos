@@ -1,0 +1,9 @@
+syntax = "proto3";
+package POGOProtos.Networking.Requests.Messages;
+
+import "POGOProtos/Enums/TemporaryEvolutionId.proto";
+
+message MegaEvolvePokemonMessage {
+	fixed64 pokemon_id = 1;
+	.POGOProtos.Enums.TemporaryEvolutionId temp_evo_id = 2;
+}

@@ -19,6 +19,7 @@ message CombatLeague {
 	string battle_party_combat_league_template_id = 10;
 	LeagueType league_type = 11;
 	string border_color_hex = 12;
+	bool allow_temp_evos = 13;
 
 	enum LeagueType {
 		NONE = 0;

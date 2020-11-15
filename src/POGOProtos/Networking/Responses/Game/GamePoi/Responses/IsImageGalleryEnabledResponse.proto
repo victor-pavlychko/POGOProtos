@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses.Game.GamePoi.Responses;
+
+message IsImageGalleryEnabledResponse {
+	bool is_image_gallery_enabled = 1;
+}

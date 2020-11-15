@@ -1,0 +1,6 @@
+syntax = "proto3";
+package POGOProtos.Data.Telemetry;
+
+message ArMappingSessionTelemetry {
+	bool fulfilled_geotargeted_quest = 1;
+}

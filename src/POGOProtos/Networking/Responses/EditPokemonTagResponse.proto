@@ -1,0 +1,16 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses;
+
+message EditPokemonTagResponse {
+	repeated Result edit_result = 2;
+
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
+		TAG_DOES_NOT_EXIST = 3;
+		INVALID_TAG_NAME = 4;
+		INVALID_TAG_SORT_INDEX = 5;
+		TAG_NAME_CONTAINS_PROFANITY = 6;
+	}
+}

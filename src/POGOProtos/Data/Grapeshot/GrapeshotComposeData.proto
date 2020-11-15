@@ -6,4 +6,5 @@ import "POGOProtos/Data/Grapeshot/GrapeshotAuthenticationData.proto";
 message GrapeshotComposeData {
 	string target_file_path = 1;
 	.POGOProtos.Data.Grapeshot.GrapeshotAuthenticationData authentication = 2;
+	string hash = 3;
 }

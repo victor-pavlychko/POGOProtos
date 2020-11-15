@@ -4,4 +4,5 @@ package POGOProtos.Networking.Requests.Messages;
 message OpenNpcCombatSessionMessage {
 	repeated fixed64 attacking_pokemon_id = 1;
 	string combat_npc_template_id = 2;
+	int64 lobby_join_time_ms = 3;
 }

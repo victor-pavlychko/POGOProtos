@@ -5,6 +5,7 @@ message CombatRankingSettings {
 	repeated RankLevel rank_level = 1;
 	RankLevel required_for_rewards = 2;
 	int32 min_rank_to_display_rating = 3;
+	int32 season_number = 4;
 
 	message RankLevel {
 		int32 rank_level = 1;

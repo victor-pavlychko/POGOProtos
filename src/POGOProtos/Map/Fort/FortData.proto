@@ -46,6 +46,9 @@ message FortData {
 	bool is_ex_raid_eligible = 31;
 	PokestopIncidentDisplay pokestop_display = 32;
 	repeated PokestopIncidentDisplay pokestop_displays = 33;
+	bool is_ar_scan_eligible = 34;
+	string geostore_tombstone_message_key = 35;
+	string geostore_suspension_message_key = 36;
 
 	message PokestopIncidentDisplay {
 		string incident_id = 1;

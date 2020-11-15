@@ -7,7 +7,11 @@ import "POGOProtos/Enums/PokemonMove.proto";
 import "POGOProtos/Enums/HoloPokemonEggType.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
 import "POGOProtos/Data/Combat/PokemonCombatStats.proto";
-import "POGOProtos/Data/Quests/ClientQuest.proto";
+import "POGOProtos/Data/Quests/Quest.proto";
+import "POGOProtos/Enums/TemporaryEvolutionId.proto";
+import "POGOProtos/Enums/Form.proto";
+import "POGOProtos/Enums/EncounterType.proto";
+import "POGOProtos/Enums/EnumWrapper.proto";
 
 message PokemonData {
 	fixed64 id = 1;
@@ -64,6 +68,77 @@ message PokemonData {
 	float pre_boosted_additional_cp_multiplier = 53;
 	double deployed_gym_lat_degree = 55;
 	double deployed_gym_lng_degree = 56;
+	bool has_mega_evolved = 57;
 	.POGOProtos.Enums.HoloPokemonEggType egg_type = 58;
-	repeated .POGOProtos.Data.Quests.ClientQuest quest_buddy_evolution_requirement = 62;
+	int32 temp_evo_cp = 59;
+	float temp_evo_stamina_modifier = 60;
+	float temp_evo_cp_multiplier = 61;
+	repeated .POGOProtos.Enums.TemporaryEvolutionId mega_evolved_forms = 63;
+	repeated PokemonEvolutionQuest evolution_quest_info = 64;
+	PokemonCreateDetail origin_detail = 66;
+	repeated uint64 pokemon_tag_ids = 67;
+	repeated string origin_events = 68;
+
+	message PokemonEvolutionQuest {
+		.POGOProtos.Data.Quests.Quest quest_requirement = 1;
+		EvolutionQuestInfo quest_info = 2;
+		.POGOProtos.Enums.PokemonId evolution = 3;
+		.POGOProtos.Enums.Form form = 4;
+
+		message EvolutionQuestInfo {
+			string quest_requirement_template_id = 1;
+			string description = 2;
+			int32 target = 3;
+		}
+	}
+
+	message PokemonCreateDetail {
+		oneof Detail {
+			WildCreateDetail wild_detail = 1;
+			EggCreateDetail egg_detail = 2;
+			RaidCreateDetail raid_detail = 3;
+			QuestCreateDetail quest_detail = 4;
+			VsSeekerCreateDetail vs_seeker_detail = 5;
+			InvasionCreateDetail invasion_detail = 6;
+			PhotobombCreateDetail photobomb_detail = 7;
+			TutorialCreateDetail tutorial_detail = 8;
+		}
+
+		message WildCreateDetail {
+			bool caught_in_wild = 1;
+		}
+
+		message EggCreateDetail {
+			int64 hatched_time_ms = 1;
+			int64 player_hatched_s2_cell_id = 2;
+			int64 received_time_ms = 3;
+		}
+
+		message RaidCreateDetail {
+			bool is_exclusive = 1;
+			bool is_mega = 2;
+			int64 player_captured_s2_cell_id = 3;
+		}
+
+		message QuestCreateDetail {
+			.POGOProtos.Enums.EncounterType origin = 1;
+		}
+
+		message VsSeekerCreateDetail {
+			int32 season = 1;
+			string league = 2;
+		}
+
+		message InvasionCreateDetail {
+			.POGOProtos.Enums.EnumWrapper.InvasionCharacter origin = 1;
+		}
+
+		message PhotobombCreateDetail {
+			bool caught_in_photobomb = 1;
+		}
+
+		message TutorialCreateDetail {
+			bool caught_in_wild = 1;
+		}
+	}
 }

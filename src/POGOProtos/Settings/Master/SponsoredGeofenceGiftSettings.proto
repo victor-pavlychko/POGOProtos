@@ -10,4 +10,5 @@ message SponsoredGeofenceGiftSettings {
 	bool enable_poi_gift = 6;
 	bool enable_raid_gift = 7;
 	bool enable_incident_gift = 8;
+	int32 fullscreen_disable_exit_button_time_ms = 9;
 }

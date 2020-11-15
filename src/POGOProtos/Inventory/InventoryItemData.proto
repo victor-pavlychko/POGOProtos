@@ -38,7 +38,10 @@ message InventoryItemData {
 		.POGOProtos.Data.Gift.GiftBoxes gift_boxes = 15;
 		.POGOProtos.Data.Beluga.BelugaIncenseBox beluga_incense = 16;
 		LimitedPurchaseSkuRecord limited_purchase_sku_record = 19;
+		MegaEvolvePokemonSpecies mega_evolve_species = 21;
 		.POGOProtos.Data.Sticker.Sticker sticker = 22;
+		PokemonHome pokemon_home = 23;
+		PlayerStatsSnapshots player_stats_snapshots = 25;
 	}
 
 	message LimitedPurchaseSkuRecord {
@@ -50,5 +53,30 @@ message InventoryItemData {
 			int64 last_purchase_ms = 4;
 			int32 total_num_purchases = 5;
 		}
+	}
+
+	message PlayerStatsSnapshots {
+		repeated SnapshotData snap_shot = 1;
+
+		message SnapshotData {
+			enum Reason {
+				UNSET = 0;
+				LEVEL_UP = 1;
+			}
+
+			Reason reason = 1;
+			.POGOProtos.Data.Player.PlayerStats stats = 2;
+		}
+	}
+
+	message MegaEvolvePokemonSpecies {
+		int32 energy_count = 1;
+		int32 pokemon_species_id = 2;
+	}
+
+	message PokemonHome {
+		int32 transporter_energy = 1;
+		int64 transporter_fully_charged_ms = 2;
+		int64 last_passive_transporter_energy_gain_hour = 3;
 	}
 }

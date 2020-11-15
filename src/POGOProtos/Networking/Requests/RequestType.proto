@@ -69,6 +69,8 @@ enum RequestType {
 	USE_ITEM_STARDUST_BOOST = 168;                     // Implemented
 	REASSIGN_PLAYER = 169;                             // Implemented
 	REDEEM_POI_PASSCODE = 170;                         // Implemented
+	CONVERT_CANDY_TO_XL_CANDY = 171;                   // Implemented
+	IS_SKU_AVAILABLE = 172;                            // Implemented
 	GET_ASSET_DIGEST = 300;                            // Implemented
 	GET_DOWNLOAD_URLS = 301;                           // Implemented
 	GET_ASSET_VERSION = 302;                           // Implemented
@@ -106,6 +108,7 @@ enum RequestType {
 	REMOVE_QUEST = 903;                                // Implemented
 	QUEST_ENCOUNTER = 904;                             // Implemented
 	COMPLETE_QUEST_STAMP_CARD = 905;                   // Implemented
+	PROGRESS_QUEST = 906;                              // Implemented
 	SEND_GIFT = 950;                                   // Implemented
 	OPEN_GIFT = 951;                                   // Implemented
 	GIFT_DETAILS = 952;                                // Implemented
@@ -184,6 +187,7 @@ enum RequestType {
 	JOIN_BUDDY_MULTIPLAYER_SESSION = 1457;             // Implemented
 	LEAVE_BUDDY_MULTIPLAYER_SESSION = 1458;            // Implemented
 	GET_TODAY_VIEW = 1501;                             // Implemented
+	MEGA_EVOLVE_POKEMON = 1502;                        // Implemented
 	REMOTE_GIFT_PING = 1503;                           // Implemented
 	SEND_RAID_INVITATION = 1504;                       // Implemented
 	GET_DAILY_ENCOUNTER = 1601;                        // Implemented
@@ -191,5 +195,16 @@ enum RequestType {
 	OPEN_SPONSORED_GIFT = 1650;                        // Implemented
 	SPONSORED_GIFT_REPORT_INTERACTION = 1651;          // ???
 	SAVE_PLAYER_PREFERENCES = 1652;                    // Implemented
+	PROFANITY_CHECK = 1653;                            // ???
 	GET_TIMED_GROUP_CHALLENGE = 1700;                  // Implemented
+	GET_NINTENDO_ACCOUNT = 1710;                       // Implemented
+	UNLINK_NINTENDO_ACCOUNT = 1711;                    // Implemented
+	GET_NINTENDO_OAUTH2_URL = 1712;                    // Implemented
+	TRANSFER_TO_POKEMON_HOME = 1713;                   // Implemented
+	REPORT_AD_FEEDBACK = 1716;                         // Implemented
+	CREATE_POKEMON_TAG = 1717;                         // Implemented
+	DELETE_POKEMON_TAG = 1718;                         // Implemented
+	EDIT_POKEMON_TAG = 1719;                           // Implemented
+	SET_POKEMON_TAGS_FOR_POKEMON = 1720;               // Implemented
+	GET_POKEMON_TAGS = 1721;                           // Implemented
 }

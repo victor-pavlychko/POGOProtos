@@ -8,4 +8,6 @@ message CaptureScore {
 	repeated int32 exp = 2;
 	repeated int32 candy = 3;
 	repeated int32 stardust = 4;
+	repeated int32 xl_candy = 5;
+	int32 candy_from_active_mega = 6;
 }

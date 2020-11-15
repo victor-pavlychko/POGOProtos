@@ -1,0 +1,20 @@
+syntax = "proto3";
+package POGOProtos.Networking.Requests.Messages;
+
+import "POGOProtos/Enums/AdFeedbackComplaintReason.proto";
+import "POGOProtos/Enums/AdFeedbackNotInterestedReason.proto";
+import "POGOProtos/Enums/AdFeedbackLikeReason.proto";
+
+message ReportAdFeedbackMessage {
+	string game_id = 1;
+	string user_id = 2;
+	string guid = 3;
+	bytes encrypted_ad_token = 4;
+	string free_text_response = 8;
+
+	oneof Feedback {
+		.POGOProtos.Enums.AdFeedbackComplaintReason complaint_reason = 5;
+		.POGOProtos.Enums.AdFeedbackNotInterestedReason not_interested_reason = 6;
+		.POGOProtos.Enums.AdFeedbackLikeReason like_reason = 7;
+	}
+}

@@ -52,6 +52,12 @@ import "POGOProtos/Settings/RaidTicketSettings.proto";
 import "POGOProtos/Settings/RocketBalloonGlobalSettings.proto";
 import "POGOProtos/Settings/LobbyClientSettings.proto";
 import "POGOProtos/Settings/TimedGroupChallengeSettings.proto";
+import "POGOProtos/Settings/MegaEvoGlobalSettings.proto";
+import "POGOProtos/Settings/QuestEvolutionGlobalSettings.proto";
+import "POGOProtos/Settings/SponsoredPoiFeedbackSettings.proto";
+import "POGOProtos/Settings/CrashlyticsSettings.proto";
+import "POGOProtos/Settings/CatchPokemonGlobalSettings.proto";
+import "POGOProtos/Settings/IdfaSettings.proto";
 
 message GlobalSettings {
 	.POGOProtos.Settings.FortSettings fort_settings = 2;
@@ -108,5 +114,11 @@ message GlobalSettings {
 	.POGOProtos.Settings.RaidTicketSettings raid_ticket_settings = 55;
 	.POGOProtos.Settings.RocketBalloonGlobalSettings rocket_balloon_settings = 56;
 	.POGOProtos.Settings.TimedGroupChallengeSettings timed_group_challenge_settings = 57;
+	.POGOProtos.Settings.MegaEvoGlobalSettings mega_evo_settings = 58;
 	.POGOProtos.Settings.LobbyClientSettings lobby_client_settings = 59;
+	.POGOProtos.Settings.QuestEvolutionGlobalSettings quest_evolution_settings = 61;
+	.POGOProtos.Settings.SponsoredPoiFeedbackSettings sponsored_poi_feedback_settings = 62;
+	.POGOProtos.Settings.CrashlyticsSettings crashlytics_settings = 65;
+	.POGOProtos.Settings.CatchPokemonGlobalSettings catch_pokemon_settings = 66;
+	.POGOProtos.Settings.IdfaSettings idfa_settings = 67;
 }

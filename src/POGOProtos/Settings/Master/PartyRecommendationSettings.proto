@@ -5,6 +5,7 @@ message PartyRecommendationSettings {
 	PartyRcommendationMode mode = 1;
 	float variance = 2;
 	float third_move_weight = 3;
+	float mega_evo_combat_rating_scale = 4;
 
 	enum PartyRcommendationMode {
 		UNSET = 0;

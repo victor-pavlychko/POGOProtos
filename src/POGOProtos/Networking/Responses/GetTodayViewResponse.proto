@@ -27,6 +27,11 @@ message GetTodayViewResponse {
 				TimedQuestSection timed_quest = 6;
 				EventBannerSection event_banner = 7;
 				TimedGroupChallengeSection timed_group_challenge = 8;
+				MiniCollectionSection mini_collection = 9;
+			}
+
+			message MiniCollectionSection {
+				string quest_id = 1;
 			}
 
 			message TimedGroupChallengeSection {
@@ -98,6 +103,10 @@ message GetTodayViewResponse {
 						BATTLE = 24;
 						XP = 25;
 						SHOP = 26;
+						LOCATION = 27;
+						EVENT = 28;
+						MYSTERY_BOX = 29;
+						TRADE_BALL = 30;
 					}
 				}
 			}

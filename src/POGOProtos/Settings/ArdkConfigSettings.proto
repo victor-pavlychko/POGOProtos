@@ -8,6 +8,7 @@ message ArdkConfigSettings {
 	repeated ArContext monodepth_contexts = 4;
 	string ios_monodepth_model_url = 5;
 	string android_monodepth_model_url = 6;
+	string monodepth_model_url = 7;
 
 	enum ArContext {
 		UNSET = 0;

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package POGOProtos.Settings.Master;
+
+import "POGOProtos/Settings/Master/RecommendedSearch.proto";
+
+message GuiSearchSettings {
+	bool gui_search_enabled = 1;
+	repeated .POGOProtos.Settings.Master.RecommendedSearch recommended_search = 2;
+	int32 max_number_recent_searches = 3;
+	int32 max_number_favorite_searches = 4;
+	int32 max_query_length = 5;
+}

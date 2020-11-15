@@ -1,0 +1,18 @@
+syntax = "proto3";
+package POGOProtos.Networking.Responses;
+
+message GetNintendoAccountResponse {
+	Status status = 1;
+	string linked_naid = 2;
+	string pokemon_home_trainer_name = 3;
+	string support_id = 4;
+
+	enum Status {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
+		ERROR_PLAYER_NOT_USING_PH_APP = 3;
+		ERROR_PHAPI_UNKNOWN = 4;
+		ERROR_RELOGIN_TO_PH_APP_NEEDED = 5;
+	}
+}

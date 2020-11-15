@@ -1,0 +1,8 @@
+syntax = "proto3";
+package POGOProtos.Networking.Requests.Game.GamePoi.Requests;
+
+message SubmitPlayerImageVoteForPoiMessage {
+	repeated string image_ids_to_vote_for = 1;
+	repeated string image_ids_to_unvote = 2;
+	string poi_id = 3;
+}
