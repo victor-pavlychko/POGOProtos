@@ -10291,13 +10291,13 @@ message NewsSettingProto {
 }
 
 message NianticProfileTelemetry {
-	enum ProfileId {
+	enum NianticProfileTelemetryId {
 		UNDEFINED = 0;
 		OPEN_MY_PROFILE = 1;
 		OPEN_FRIEND_PROFILE = 2;
 	}
 
-	ProfileId niantic_profile_telemetry_id = 1;
+	NianticProfileTelemetryId niantic_profile_telemetry_id = 1;
 }
 
 message NicknamePokemonOutProto {
@@ -11487,8 +11487,8 @@ message PlatformMapTileBundle {
 
 message PlatformMapTileDataProto {
 	PlatformMapTileProto map_tile = 1;
-	bytes tile_data = 2;
-	bytes label_data = 3;
+	PlatformLabelTile tile_data = 2;
+	PlatformMapCompositionRoot label_data = 3;
 }
 
 message PlatformMapTileProto {

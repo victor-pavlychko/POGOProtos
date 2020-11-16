@@ -13252,13 +13252,13 @@ message NewsSettingProto {
 // ref: Holoholo.Rpc.NianticProfileTelemetry
 message NianticProfileTelemetry {
 	// ref: Holoholo.Rpc.NianticProfileTelemetry/PKDPJMJPPLF/NLOLADKKOIG
-	enum ProfileId {
+	enum NianticProfileTelemetryId {
 		UNDEFINED = 0;
 		OPEN_MY_PROFILE = 1;
 		OPEN_FRIEND_PROFILE = 2;
 	}
 
-	ProfileId niantic_profile_telemetry_id = 1;
+	NianticProfileTelemetryId niantic_profile_telemetry_id = 1;
 }
 
 // ref: Holoholo.Rpc.NicknamePokemonOutProto

@@ -3,7 +3,7 @@ package POGOProtos.Networking.Responses.Game.GamePoi.Responses;
 
 message GetImagesForPoiResponse {
 	Status status = 1;
-	repeated TitanGameClientPhotoGalleryPoiImage photo_gallery_poi_images = 2;
+	repeated GameClientPhotoGalleryPoiImage photo_gallery_poi_images = 2;
 
 	enum Status {
 		UNSET = 0;
@@ -12,7 +12,7 @@ message GetImagesForPoiResponse {
 		INVALID_REQUEST = 3;
 	}
 
-	message TitanGameClientPhotoGalleryPoiImage {
+	message GameClientPhotoGalleryPoiImage {
 		string image_id = 1;
 		string poi_id = 2;
 		string submitter_codename = 3;

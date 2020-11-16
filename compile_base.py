@@ -1123,6 +1123,10 @@ def open_proto_file(main_file, head):
         #     fix_line = fix_line.replace("bytes item", "HoloInventoryItemProto inventory_item_data")
         # elif message_for_fix == "PlatformInventoryItemProto" and operator.contains(fix_line, "bytes deleted_item_key"):
         #     fix_line = fix_line.replace("bytes", "HoloInventoryKeyProto")
+        # elif message_for_fix == "PlatformMapTileDataProto" and operator.contains(fix_line, "bytes tile_data"):
+        #     fix_line = fix_line.replace("bytes", "PlatformLabelTile")
+        # elif message_for_fix == "PlatformMapTileDataProto" and operator.contains(fix_line, "bytes label_data"):
+        #     fix_line = fix_line.replace("bytes", "PlatformMapCompositionRoot")
         # ###########
         # ## Others #
         # ###########
@@ -1202,10 +1206,6 @@ def open_proto_file(main_file, head):
         # elif message_for_fix == "RegisterSfidaResponse" and operator.contains(fix_line, "bytes access_token"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "PlatformClientTelemetryRecordProto" and operator.contains(fix_line, "bytes encoded_message"):
-        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "PlatformMapTileDataProto" and operator.contains(fix_line, "bytes tile_data"):
-        #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
-        # elif message_for_fix == "PlatformMapTileDataProto" and operator.contains(fix_line, "bytes label_data"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")
         # elif message_for_fix == "PlatformAuthTicket" and operator.contains(fix_line, "bytes start"):
         #     fix_line = fix_line.replace("bytes", "Good_Proto_Here")

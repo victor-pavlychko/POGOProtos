@@ -8,10 +8,12 @@ POGOProtos [![Build Status](https://travis-ci.org/Furtif/POGOProtos.svg?branch=m
 
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
+<!--
 ### ![alt text][1.1] NOTE: All content of folder ```./src/*``` except the ```./src/Rpc``` ``(obfuscated)`` folder is deprecated ![alt text][1.1]
 
  * **Recommend using the base [Rpc](https://github.com/Furtif/POGOProtos/blob/master/src/POGOProtos/Rpc/Rpc.proto)**
  * **NOTE:** (__*old ```compile.py``` has a new name: ```compile_src.py```*__) works but uses ```POGOProtos.Rpc.*```
+-->
 
 ### Versioning
 We are following [semantic versioning](http://semver.org/) for POGOProtos.  Every version will be mapped to their current PokémonGo version.
@@ -52,24 +54,23 @@ This is an example of how the generated code will be organized:
 
 ```
 python compile_base.py -l cpp -1 -k:
- - raw_protos.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
- -                  -> out/single_file/cpp/POGOProtos.Rpc.pb.cc
- -                  -> out/single_file/cpp/POGOProtos.Rpc.pb.h
- -                  -> out/single_file/cpp/POGOProtos.Rpc.proto
+ - v0.191.2.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
+ -                -> out/single_file/cpp/POGOProtos.Rpc.pb.cc
+ -                -> out/single_file/cpp/POGOProtos.Rpc.pb.h
+ -                -> out/single_file/cpp/POGOProtos.Rpc.proto
 ```
 ### Compile src with rpc
 
  * ``` python compile_base.py -g -r -1 ``` *(Generate new Rpc.proto)*
  * ``` python compile_src.py cpp``` __*[Optional*__ *--include_imports --include_source_info --generate_desc*__*]*__
 
-### Libraries
-If you don't want to compile POGOProtos but instead use it directly, check out the following repository.
+### Addons as json
 
 | Additional resources   | Source                                                                               | Status 
 |------------------------|--------------------------------------------------------------------------------------|--------
-| Root GameMaster (json) | https://github.com/Furtif/POGOProtos/tree/master/GM                                  |  OK    
-| Gamemaster Json        | https://github.com/pokemongo-dev-contrib/pokemongo-game-master                       |  OK    
+| [V2_GAME_MASTER](https://github.com/Furtif/POGOProtos/tree/master/GM/V2_GAME_MASTER.json) | Root                                   |  OK    
+| [GAME_MASTER](https://github.com/Furtif/POGOProtos/tree/master/GM/GAME_MASTER.json) | Root                                   |  OK    
+| [ASSET_DIGEST](https://github.com/Furtif/POGOProtos/tree/master/GM/ASSET_DIGEST.json) | Root                                   |  OK    
 
-### Code sources initial
-- https://github.com/AeonLucid/POGOProtos
-- https://github.com/pogosandbox/pogo-protos
+### Code sources initial and credits
+- [AeonLucid](https://github.com/AeonLucid/POGOProtos)
