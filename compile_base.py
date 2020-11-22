@@ -67,6 +67,7 @@ rpc = args.rpc
 
 # Determine where path's
 raw_name = "v0.191.2.proto"
+# raw_name = "raw_protos.proto"
 raw_proto_file = os.path.abspath("base/" + raw_name)
 base_file = os.path.abspath("base/base.proto")
 protos_path = os.path.abspath("base")
@@ -1124,9 +1125,9 @@ def open_proto_file(main_file, head):
         # elif message_for_fix == "PlatformInventoryItemProto" and operator.contains(fix_line, "bytes deleted_item_key"):
         #     fix_line = fix_line.replace("bytes", "HoloInventoryKeyProto")
         # elif message_for_fix == "PlatformMapTileDataProto" and operator.contains(fix_line, "bytes tile_data"):
-        #     fix_line = fix_line.replace("bytes", "PlatformLabelTile")
-        # elif message_for_fix == "PlatformMapTileDataProto" and operator.contains(fix_line, "bytes label_data"):
         #     fix_line = fix_line.replace("bytes", "PlatformMapCompositionRoot")
+        # elif message_for_fix == "PlatformMapTileDataProto" and operator.contains(fix_line, "bytes label_data"):
+        #     fix_line = fix_line.replace("bytes", "PlatformLabelTile")
         # ###########
         # ## Others #
         # ###########
@@ -1320,7 +1321,7 @@ if gen_only:
             os.makedirs(dir_rpc)
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
-    shutil.copy(generated_file, protos_path + '/v0.' + version + '.proto')
+    # shutil.copy(generated_file, protos_path + '/v0.' + version + '.proto')
     # New base for next references names
     if gen_base:
         try:
