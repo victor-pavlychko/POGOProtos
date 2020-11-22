@@ -1049,16 +1049,16 @@ message EGPFFJKFPJG {
 // ref: EJILFHMOKJF
 message EJILFHMOKJF {
 	// ref: EJILFHMOKJF/GGPHOGLCAFM
-	//ignored_oneof GGPHOGLCAFM {
+	//oneof GGPHOGLCAFM {
 		//none = 0;
 		//poi_submission_telemetry = 1;
 		//poi_submission_photo_upload_error_telemetry = 2;
 		//player_metadata_telemetry = 3;
 	//}
 
-	EGPFFJKFPJG jmfppmhnbdk = 1;
-	LNKELDHCNFI gcldleheapj = 2;
-	HGMDIKPIOKM mlabogfgipc = 3;
+	EGPFFJKFPJG poi_submission_telemetry = 1;
+	LNKELDHCNFI poi_submission_photo_upload_error_telemetry = 2;
+	HGMDIKPIOKM player_metadata_telemetry = 3;
 	PlatformServerData hiifijmhhem = 1001;
 }
 
@@ -1094,16 +1094,16 @@ message FECEBCDNJBI {
 // ref: FGMHHMNHGNH
 message FGMHHMNHGNH {
 	// ref: FGMHHMNHGNH/LOABBCJINGJ
-	//ignored_oneof LOABBCJINGJ {
+	//oneof LOABBCJINGJ {
 		//none = 0;
 		//add_entry = 1;
 		//read_entry = 2;
 		//remove_entry = 3;
 	//}
 
-	OCKFKCAJEAB idlkikboifp = 1;
-	ADGOJFGGBCG jocmkohjhhl = 2;
-	JBMAMABOMDF dmcnjkomdlp = 3;
+	OCKFKCAJEAB add_entry = 1;
+	ADGOJFGGBCG read_entry = 2;
+	JBMAMABOMDF remove_entry = 3;
 }
 
 // ref: FitnessMetricsProto
@@ -1196,7 +1196,7 @@ message GHLAAKNIFME {
 // ref: HDODCJNIFJI
 message HDODCJNIFJI {
 	// ref: HDODCJNIFJI/PDOBEHMFFPO
-	//ignored_oneof PDOBEHMFFPO {
+	//oneof PDOBEHMFFPO {
 		//none = 0;
 		//complaint_reason = 5;
 		//not_interested_reason = 6;
@@ -1207,10 +1207,10 @@ message HDODCJNIFJI {
 	string ikkeghammmh = 2;
 	string hkclgngflpl = 3;
 	bytes dggkoahaein = 4;
-	string kkgamkfjhia = 8;
-	HIAPAEFEJHP kgllmgcijii = 9;
-	GJMCOEDLGAA eglkoplohff = 10;
-	JJKNLOHCNNB lgjheidghff = 11;
+	string complaint_reason = 5;
+	HIAPAEFEJHP not_interested_reason = 6;
+	GJMCOEDLGAA like_reason = 7;
+	JJKNLOHCNNB lgjheidghff = 8;
 }
 
 // ref: HGGNOPIEPOH
@@ -1300,7 +1300,7 @@ message JHCPMAAJJDM {
 // ref: KIKONEBECEK
 message KIKONEBECEK {
 	// ref: KIKONEBECEK/PMEIDNFBGAA
-	//ignored_oneof PMEIDNFBGAA {
+	//oneof PMEIDNFBGAA {
 		//none = 0;
 		//view_impression = 5;
 		//view_fullscreen = 6;
@@ -1336,10 +1336,10 @@ message KIKONEBECEK {
 	string ikkeghammmh = 2;
 	string hkclgngflpl = 3;
 	bytes dggkoahaein = 4;
-	IOOPBLBCFLL hkdpgjmhilc = 5;
-	DNKOBODIEKD eponlgeaall = 6;
-	CONGDNEJLIK ejkjkonblch = 7;
-	IFOCFJACPLJ ahgaokkeedk = 8;
+	IOOPBLBCFLL view_impression = 5;
+	DNKOBODIEKD view_fullscreen = 6;
+	CONGDNEJLIK fullscreen_interaction = 7;
+	IFOCFJACPLJ cta_clicked = 8;
 }
 
 // ref: KKJDJGPPNLB
@@ -6307,7 +6307,7 @@ message AcknowledgePunishmentProto {
 // ref: Holoholo.Rpc.ActionLogEntry
 message ActionLogEntry {
 	// ref: Holoholo.Rpc.ActionLogEntry/ONLEGDPNEAF
-	//ignored_oneof ONLEGDPNEAF {
+	//oneof ONLEGDPNEAF {
 		//none = 0;
 		//catch_pokemon = 3;
 		//fort_search = 4;
@@ -8210,7 +8210,7 @@ message ClientIncidentProto {
 // ref: Holoholo.Rpc.ClientIncidentStepProto
 message ClientIncidentStepProto {
 	// ref: Holoholo.Rpc.ClientIncidentStepProto/OGOEGLDAKFK
-	//ignored_oneof OGOEGLDAKFK {
+	//oneof OGOEGLDAKFK {
 		//none = 0;
 		//invasion_battle = 1;
 		//invasion_encounter = 2;
@@ -8531,7 +8531,7 @@ message CombatLeagueProto {
 	// ref: Holoholo.Rpc.CombatLeagueProto/GJPNGJAGFDE/BMMKOGPGMGD
 	message BMMKOGPGMGD {
 		// ref: Holoholo.Rpc.CombatLeagueProto/GJPNGJAGFDE/BMMKOGPGMGD/OMJOIGIMLPE
-		//ignored_oneof OMJOIGIMLPE {
+		//oneof OMJOIGIMLPE {
 			//none = 0;
 			//with_player_level = 3;
 			//with_pokemon_cp_limit = 4;
@@ -8558,7 +8558,7 @@ message CombatLeagueProto {
 	// ref: Holoholo.Rpc.CombatLeagueProto/GJPNGJAGFDE/ENGOAMDCCLD
 	message ENGOAMDCCLD {
 		// ref: Holoholo.Rpc.CombatLeagueProto/GJPNGJAGFDE/ENGOAMDCCLD/DKIPMMABGPC
-		//ignored_oneof DKIPMMABGPC {
+		//oneof DKIPMMABGPC {
 			//none = 0;
 			//with_pokemon_cp_limit = 2;
 			//with_pokemon_type = 3;
@@ -9595,7 +9595,7 @@ message Distribution {
 	// ref: Holoholo.Rpc.Distribution/OBDGIFFCLDP/GGDPEGNFMNI
 	message GGDPEGNFMNI {
 		// ref: Holoholo.Rpc.Distribution/OBDGIFFCLDP/GGDPEGNFMNI/ODBDJMCJDKJ
-		//ignored_oneof ODBDJMCJDKJ {
+		//oneof ODBDJMCJDKJ {
 			//none = 0;
 			//linear_buckets = 1;
 			//exponential_buckets = 2;
@@ -12058,7 +12058,7 @@ message HoloFitnessReportProto {
 // ref: Holoholo.Rpc.HoloholoClientTelemetryOmniProto
 message HoloholoClientTelemetryOmniProto {
 	// ref: Holoholo.Rpc.HoloholoClientTelemetryOmniProto/AHJPBCGKJNB
-	//ignored_oneof AHJPBCGKJNB {
+	//oneof AHJPBCGKJNB {
 		//none = 0;
 		//boot_time = 1;
 		//frame_rate = 2;
@@ -12209,7 +12209,7 @@ message HoloholoClientTelemetryOmniProto {
 // ref: Holoholo.Rpc.HoloInventoryItemProto
 message HoloInventoryItemProto {
 	// ref: Holoholo.Rpc.HoloInventoryItemProto/DOAEAOFPNBD
-	//ignored_oneof DOAEAOFPNBD {
+	//oneof DOAEAOFPNBD {
 		//none = 0;
 		//pokemon = 1;
 		//item = 2;
@@ -12260,7 +12260,7 @@ message HoloInventoryItemProto {
 // ref: Holoholo.Rpc.HoloInventoryKeyProto
 message HoloInventoryKeyProto {
 	// ref: Holoholo.Rpc.HoloInventoryKeyProto/GGOFHJCKELL
-	//ignored_oneof GGOFHJCKELL {
+	//oneof GGOFHJCKELL {
 		//none = 0;
 		//pokemon_id = 1;
 		//item = 2;
@@ -12809,7 +12809,7 @@ message LevelUpRewardsSettingsProto {
 // ref: Holoholo.Rpc.LimitedEditionPokemonEncounterRewardProto
 message LimitedEditionPokemonEncounterRewardProto {
 	// ref: Holoholo.Rpc.LimitedEditionPokemonEncounterRewardProto/GEHAHMDBCCC
-	//ignored_oneof GEHAHMDBCCC {
+	//oneof GEHAHMDBCCC {
 		//none = 0;
 		//lifetime_max_count = 3;
 		//per_competitive_combat_season_max_count = 4;
@@ -12979,7 +12979,7 @@ message LoginSettingsProto {
 // ref: Holoholo.Rpc.LootItemProto
 message LootItemProto {
 	// ref: Holoholo.Rpc.LootItemProto/KGCBEAJMGCG
-	//ignored_oneof KGCBEAJMGCG {
+	//oneof KGCBEAJMGCG {
 		//none = 0;
 		//item = 1;
 		//stardust = 2;
@@ -13657,7 +13657,7 @@ message PlannedDowntimeSettingsProto {
 // ref: Holoholo.Rpc.PlatformMetricData
 message PlatformMetricData {
 	// ref: Holoholo.Rpc.PlatformMetricData/CEOBIDLOKLD
-	//ignored_oneof CEOBIDLOKLD {
+	//oneof CEOBIDLOKLD {
 		//none = 0;
 		//long_value = 2;
 		//double_value = 3;
@@ -14015,7 +14015,7 @@ message PokemonCombatStatsProto {
 // ref: Holoholo.Rpc.PokemonCreateDetail
 message PokemonCreateDetail {
 	// ref: Holoholo.Rpc.PokemonCreateDetail/AMJIKFLJMFG
-	//ignored_oneof AMJIKFLJMFG {
+	//oneof AMJIKFLJMFG {
 		//none = 0;
 		//wild_detail = 1;
 		//egg_detail = 2;
@@ -16316,7 +16316,7 @@ message PokemonEncounterAttributesProto {
 // ref: Holoholo.Rpc.PokemonEncounterRewardProto
 message PokemonEncounterRewardProto {
 	// ref: Holoholo.Rpc.PokemonEncounterRewardProto/LMPLKFFKFOK
-	//ignored_oneof LMPLKFFKFOK {
+	//oneof LMPLKFFKFOK {
 		//none = 0;
 		//pokemon_id = 1;
 		//use_quest_pokemon_encounter_distribuition = 2;
@@ -16705,7 +16705,7 @@ message PokemonUpgradeSettingsProto {
 // ref: Holoholo.Rpc.PokestopIncidentDisplayProto
 message PokestopIncidentDisplayProto {
 	// ref: Holoholo.Rpc.PokestopIncidentDisplayProto/BEFDDIHOOGM
-	//ignored_oneof BEFDDIHOOGM {
+	//oneof BEFDDIHOOGM {
 		//none = 0;
 		//character_display = 10;
 		//invasion_finished = 11;
@@ -16790,7 +16790,7 @@ message ProgressQuestOutProto {
 // ref: Holoholo.Rpc.ProgressQuestProto
 message ProgressQuestProto {
 	// ref: Holoholo.Rpc.ProgressQuestProto/KGBJOOFADMA
-	//ignored_oneof KGBJOOFADMA {
+	//oneof KGBJOOFADMA {
 		//none = 0;
 		//geotargeted_quest_validation = 3;
 	//}
@@ -16895,7 +16895,7 @@ message QuestConditionProto {
 	}
 
 	// ref: Holoholo.Rpc.QuestConditionProto/PLLCANHKAEK
-	//ignored_oneof PLLCANHKAEK {
+	//oneof PLLCANHKAEK {
 		//none = 0;
 		//with_pokemon_type = 2;
 		//with_pokemon_category = 3;
@@ -17101,7 +17101,7 @@ message QuestPreconditionProto {
 	}
 
 	// ref: Holoholo.Rpc.QuestPreconditionProto/BKHJAIHPIGC
-	//ignored_oneof BKHJAIHPIGC {
+	//oneof BKHJAIHPIGC {
 		//none = 0;
 		//quest_template_id = 2;
 		//level = 3;
@@ -17203,7 +17203,7 @@ message QuestProto {
 	}
 
 	// ref: Holoholo.Rpc.QuestProto/IHEGLNDCCCM
-	//ignored_oneof IHEGLNDCCCM {
+	//oneof IHEGLNDCCCM {
 		//none = 0;
 		//daily_quest = 2;
 		//multi_part = 3;
@@ -17275,7 +17275,7 @@ message QuestRewardProto {
 	}
 
 	// ref: Holoholo.Rpc.QuestRewardProto/OMIHHGJLFLO
-	//ignored_oneof OMIHHGJLFLO {
+	//oneof OMIHHGJLFLO {
 		//none = 0;
 		//exp = 2;
 		//item = 3;
@@ -18605,7 +18605,7 @@ message TodayViewProto {
 // ref: Holoholo.Rpc.TodayViewSectionProto
 message TodayViewSectionProto {
 	// ref: Holoholo.Rpc.TodayViewSectionProto/BELKDNHABGK
-	//ignored_oneof BELKDNHABGK {
+	//oneof BELKDNHABGK {
 		//none = 0;
 		//pokecoin = 1;
 		//gym_pokemon = 2;
@@ -19370,7 +19370,7 @@ message VsSeekerLootProto {
 	// ref: Holoholo.Rpc.VsSeekerLootProto/MJIIDFAFGCJ/MNHPICHEPOJ
 	message MNHPICHEPOJ {
 		// ref: Holoholo.Rpc.VsSeekerLootProto/MJIIDFAFGCJ/MNHPICHEPOJ/IKKKGBBPAMJ
-		//ignored_oneof IKKKGBBPAMJ {
+		//oneof IKKKGBBPAMJ {
 			//none = 0;
 			//item = 1;
 			//pokemon_reward = 2;
@@ -19396,7 +19396,7 @@ message VsSeekerPokemonRewardsProto {
 	// ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto/PIMNGIPGDHI/NPFHIOFCFDL
 	message NPFHIOFCFDL {
 		// ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto/PIMNGIPGDHI/NPFHIOFCFDL/IJHFOJHEFBF
-		//ignored_oneof IJHFOJHEFBF {
+		//oneof IJHFOJHEFBF {
 			//none = 0;
 			//pokemon = 1;
 			//limited_pokemon_reward = 2;
@@ -19416,7 +19416,7 @@ message VsSeekerPokemonRewardsProto {
 	// ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto/PIMNGIPGDHI/PKOMCDBFKDN
 	message PKOMCDBFKDN {
 		// ref: Holoholo.Rpc.VsSeekerPokemonRewardsProto/PIMNGIPGDHI/PKOMCDBFKDN/PLGPOGIOEBO
-		//ignored_oneof PLGPOGIOEBO {
+		//oneof PLGPOGIOEBO {
 			//none = 0;
 			//range = 1;
 			//zero = 2;
@@ -19717,7 +19717,7 @@ message WithTempEvoIdProto {
 // ref: Holoholo.Rpc.WithThrowTypeProto
 message WithThrowTypeProto {
 	// ref: Holoholo.Rpc.WithThrowTypeProto/JDHJOIAHOCF
-	//ignored_oneof JDHJOIAHOCF {
+	//oneof JDHJOIAHOCF {
 		//none = 0;
 		//throw_type = 1;
 		//hit = 2;
