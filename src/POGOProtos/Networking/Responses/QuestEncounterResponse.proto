@@ -3,11 +3,11 @@ package POGOProtos.Networking.Responses;
 
 import "POGOProtos/Data/Capture/CaptureProbability.proto";
 import "POGOProtos/Inventory/Item/ItemId.proto";
-import "POGOProtos/Map/Pokemon/WildPokemon.proto";
+import "POGOProtos/Data/PokemonData.proto";
 
 message QuestEncounterResponse {
 	Result result = 1;
-	.POGOProtos.Map.Pokemon.WildPokemon pokemon = 2;
+	.POGOProtos.Data.PokemonData pokemon = 2;
 	.POGOProtos.Data.Capture.CaptureProbability capture_probability = 3;
 	.POGOProtos.Inventory.Item.ItemId active_item = 4;
 
