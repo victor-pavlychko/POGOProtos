@@ -204,22 +204,6 @@ def open_proto_file(main_file, head):
             if is_blank(proto_line):
                 continue
 
-            # if proto_line.startswith("enum"):
-            #     is_enum = True
-            #     match = re.split(r'\s', proto_line)
-            #     if match[1].isupper() and len(match[1]) == 11:
-            #         enum_name = match[1].upper()
-            #     else:
-            #         i = 0
-            #         enum_name = ''
-            #         for x in match[1]:
-            #             if x.isupper() and i > 0:
-            #                 enum_name += '_' + x
-            #             else:
-            #                 enum_name += x
-            #             i = i + 1
-            #         enum_name = enum_name.upper().replace('P_O_I_', 'POI_')
-
             if not proto_line.startswith("enum") and not proto_line.startswith("message") and operator.contains(
                     proto_line, "enum") or operator.contains(proto_line, "message"):
                 check_sub_message_end = False
