@@ -18,16 +18,16 @@ script:
   # Build all test...
   - chmod +x ./compile_base.py
   # Generates new Rcp.proto from raw and all test...
-  - ./compile_base.py -g -r -1
-  - ./compile_base.py -l cpp -1 -k
-  #  - ./compile_base.py -l csharp -1 -k
-  #  - ./compile_base.py -l java -1 -k
-  #  - ./compile_base.py -l js -1 -k
-  #  - ./compile_base.py -l python -1 -k
-  #  - ./compile_base.py -l php -1 -k
-  #  - ./compile_base.py -l objc -1 -k
-  #  - ./compile_base.py -l ruby -1 -k
-  #  - ./compile_base.py -l swift -1 -k
+  - ./compile_base.py -g -r
+  - ./compile_base.py -l cpp -k
+  #  - ./compile_base.py -l csharp -k
+  #  - ./compile_base.py -l java -k
+  #  - ./compile_base.py -l js -k
+  #  - ./compile_base.py -l python -k
+  #  - ./compile_base.py -l php -k
+  #  - ./compile_base.py -l objc -k
+  #  - ./compile_base.py -l ruby -k
+  #  - ./compile_base.py -l swif -k
   - chmod +x ./compile_src.py
   - ./compile_src.py cpp
   #  - ./compile_src.py csharp
