@@ -31,7 +31,6 @@ parser.add_argument("-g", "--generate_only", action='store_true', help='Generate
 parser.add_argument("-b", "--generate_new_base", action='store_true', help='Generates new proto base refs.')
 parser.add_argument("-k", "--keep_proto_file", action='store_true', help='Do not remove .proto file after compiling.')
 parser.add_argument("-r", "--rpc", action='store_true', help='Generates Rpc proto.')
-parser.add_argument("-1", "--generate_one_off", action='store_true', help='Include on off')
 args = parser.parse_args()
 
 # Add licenses
@@ -61,7 +60,6 @@ java_multiple_files = args.java_multiple_files
 gen_only = args.generate_only
 version = args.version or "193.1"
 gen_base = args.generate_new_base
-gen_one_off = args.generate_one_off
 keep_file = args.keep_proto_file
 rpc = args.rpc
 
@@ -237,53 +235,6 @@ def open_proto_file(main_file, head):
     for _enum in enums_dic:
         # print("Obfuscated enum name " + _enum + " clean enum name " + enums_dic[_enum])
         messages = messages.replace(_enum, enums_dic[_enum])
-
-    if gen_one_off:
-        messagesNew = ""
-        lastLine = ""
-
-        refs = []
-        is_one_off = False
-        skip = False
-        setSkipFalse = False
-        removeLast = False
-
-        refsCount = {}
-        for proto_line in messages.split("\n"):
-            if operator.contains(proto_line, "// ref:"):
-                refs.append(proto_line.replace("// ref:", "").strip())
-
-            if operator.contains(proto_line, "}") and refs:
-                refs.pop()
-
-            if operator.contains(proto_line, "oneof") and refs:
-                is_one_off = True
-                count = len(messages.split("// ref: " + refs[-1] + "\n")) - 1
-                if not refs[-1] in refsCount:
-                    refsCount[refs[-1]] = 0
-                refsCount[refs[-1]] += 1
-                if not count == refsCount[refs[-1]]:
-                    skip = True
-                    removeLast = True
-
-            if is_one_off and operator.contains(proto_line, "}"):
-                is_one_off = False
-                setSkipFalse = True
-
-            if not skip and not (
-                    (operator.contains(proto_line, "// ref:") or operator.contains(proto_line, "//----")) and gen_only):
-                if not removeLast:
-                    messagesNew += lastLine
-                removeLast = False
-                lastLine = proto_line + "\n"
-            elif skip:
-                removeLast = False
-
-            if setSkipFalse:
-                skip = False
-                setSkipFalse = False
-
-        messages = messagesNew
 
     ## check messages first
     proto_name = ''
