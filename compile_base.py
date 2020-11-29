@@ -132,6 +132,7 @@ if not os.path.exists(out_path):
 
 commands = []
 
+
 def finish_compile(out_path, lang):
     if lang == 'python':
         pogo_protos_path = os.path.join(out_path, "POGOProtos")
@@ -221,6 +222,39 @@ def open_proto_file(main_file, head):
                 is_one_off = False
                 ignored_one_of.clear()
 
+    ## check messages first
+    proto_name = ''
+    messages_dic = {}
+    for proto_line in messages.split("\n"):
+        if is_blank(proto_line):
+            continue
+        if operator.contains(proto_line, "message ") or operator.contains(proto_line, "enum ") or operator.contains(
+                proto_line, "oneof ") and operator.contains(
+            proto_line, "{"):
+            proto_name = proto_line.split(" ")[1].strip()
+        if proto_line == '':
+            continue
+        if operator.contains(proto_line, " result =") and len(
+                proto_line.split(" ")[0].strip()) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Result")
+        elif operator.contains(proto_line, " status =") and len(
+                proto_line.split(" ")[0].strip()) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Status")
+
+        if operator.contains(proto_line, "{") and len(proto_name) == 11 and proto_name.isupper():
+            if operator.contains(proto_line, "oneof "):
+                print("OneOf: " + proto_name)
+            elif operator.contains(proto_line, "message "):
+                print("Message: " + proto_name)
+            else:
+                print("Enum: " + proto_name)
+
+    ## fix messages names
+    # print("Cleaning process on messages...")
+    for _message in messages_dic:
+        # print("Obfuscated message name " + _message + " clean message name " + messages_dic[_message])
+        messages = messages.replace(_message, messages_dic[_message])
+
     ## Reorder all this
     new_base_enums = {}
     new_base_messages = {}
@@ -256,28 +290,6 @@ def open_proto_file(main_file, head):
         new_base_file += new_base_enums[p] + "\n"
     for p in sorted(new_base_messages):
         new_base_file += new_base_messages[p] + "\n"
-
-    ## check messages first
-    proto_name = ''
-    messages_dic = {}
-    for proto_line in new_base_file.split("\n"):
-        if is_blank(proto_line):
-            continue
-        if proto_line.startswith("message"):
-            proto_name = proto_line.split(" ")[1]
-        if proto_line == '':
-            continue
-        if operator.contains(proto_line, " result =") and len(proto_line.split(" ")[0].strip()) == 11:
-            messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Result")
-        elif operator.contains(proto_line, " status =") and len(proto_line.split(" ")[0].strip()) == 11:
-            messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Status")
-
-
-    ## fix messages names
-    # print("Cleaning process on messages...")
-    for _message in messages_dic:
-        # print("Obfuscated message name " + _message + " clean message name " + messages_dic[_message])
-        new_base_file = new_base_file.replace(_message, messages_dic[_message])
 
     messages = new_base_file
     open_for_new.writelines(messages[:-1])
@@ -347,7 +359,7 @@ if gen_only:
             os.makedirs(dir_rpc)
 
         shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
-    # shutil.copy(generated_file, protos_path + '/v0.' + version + '.proto')
+    shutil.copy(generated_file, protos_path + '/v0.' + version + '.proto')
     # New base for next references names
     if gen_base:
         try:
