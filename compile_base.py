@@ -282,6 +282,8 @@ def open_proto_file(main_file, head):
         elif operator.contains(proto_line, " status =") and len(
                 proto_line.split(" ")[0].strip()) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Status")
+        elif operator.contains(proto_line, "CHARACTER_BLANCHE = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "InvasionCharacter")
 
         if operator.contains(proto_line, "{") and len(proto_name) == 11 and proto_name.isupper():
             if operator.contains(proto_line, "oneof "):

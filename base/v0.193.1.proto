@@ -5507,7 +5507,7 @@ message ChangeTeamProto {
 
 message CharacterDisplayProto {
 	EnumWrapper.OJFMPICHGMG style = 1;
-	EnumWrapper.FKDMPDKENLF character = 2;
+	EnumWrapper.InvasionCharacter character = 2;
 }
 
 message CheckAwardedBadgesOutProto {
@@ -5607,7 +5607,7 @@ message ClaimVsSeekerRewardsProto {
 
 message ClientDialogueLineProto {
 	string text = 1;
-	EnumWrapper.FKDMPDKENLF character = 2;
+	EnumWrapper.InvasionCharacter character = 2;
 	EnumWrapper.KFPMFHFBEBG expression = 3;
 }
 
@@ -5657,7 +5657,7 @@ message ClientIncidentStepProto {
 }
 
 message ClientInvasionBattleStepProto {
-	EnumWrapper.FKDMPDKENLF character = 1;
+	EnumWrapper.InvasionCharacter character = 1;
 }
 
 message ClientInvasionEncounterStepProto {
@@ -7172,7 +7172,7 @@ message EncounterTutorialCompleteProto {
 }
 
 message EnumWrapper {
-	enum FKDMPDKENLF {
+	enum InvasionCharacter {
 		CHARACTER_UNSET = 0;
 		CHARACTER_BLANCHE = 1;
 		CHARACTER_CANDELA = 2;
@@ -9556,7 +9556,7 @@ message InvasionAvailabilitySettingsProto {
 }
 
 message InvasionCreateDetail {
-	EnumWrapper.FKDMPDKENLF origin = 1;
+	EnumWrapper.InvasionCharacter origin = 1;
 }
 
 message InvasionEncounterOutProto {
@@ -9620,7 +9620,7 @@ message InvasionStatus {
 
 message InvasionTelemetry {
 	InvasionTelemetryIds invasion_telemetry_id = 1;
-	EnumWrapper.FKDMPDKENLF npc_id = 2;
+	EnumWrapper.InvasionCharacter npc_id = 2;
 	bool battle_success = 3;
 	int32 post_battle_friendly_remaining = 4;
 	int32 post_battle_enemy_remaining = 5;
@@ -9638,7 +9638,7 @@ message InvasionTelemetry {
 
 message InvasionVictoryLogEntry {
 	LootProto rewards = 1;
-	EnumWrapper.FKDMPDKENLF invasion_npc = 2;
+	EnumWrapper.InvasionCharacter invasion_npc = 2;
 }
 
 message InventorySettingsProto {
