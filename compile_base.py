@@ -277,10 +277,10 @@ def open_proto_file(main_file, head):
         if proto_line == '':
             continue
         if operator.contains(proto_line, " result =") and len(
-                proto_line.split(" ")[0].strip()) == 11 and proto_name.isupper():
+                proto_line.split(" ")[0].strip()) == 11 and proto_line.split(" ")[0].strip().isupper():
             messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Result")
         elif operator.contains(proto_line, " status =") and len(
-                proto_line.split(" ")[0].strip()) == 11 and proto_name.isupper():
+                proto_line.split(" ")[0].strip()) == 11 and proto_line.split(" ")[0].strip().isupper():
             messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Status")
         elif operator.contains(proto_line, "CHARACTER_BLANCHE = 1;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "InvasionCharacter")
