@@ -3925,7 +3925,7 @@ message ARPlusEncounterValuesProto {
 }
 
 message AcceptCombatChallengeOutProto {
-	enum ONHNHKHGKEE {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_CHALLENGE_STATE = 2;
@@ -3939,7 +3939,7 @@ message AcceptCombatChallengeOutProto {
 		ERROR_ACCESS_DENIED = 10;
 	}
 
-	ONHNHKHGKEE result = 1;
+	Result result = 1;
 	CombatChallengeProto challenge = 2;
 }
 
@@ -3949,13 +3949,13 @@ message AcceptCombatChallengeProto {
 }
 
 message AcknowledgePunishmentOutProto {
-	enum LPFMHMGJKLF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 	}
 
-	LPFMHMGJKLF result = 1;
+	Result result = 1;
 }
 
 message AcknowledgePunishmentProto {
@@ -3994,7 +3994,7 @@ message ActionLogEntry {
 }
 
 message ActivateVsSeekerOutProto {
-	enum KIOLFJOBEII {
+	enum Result {
 		UNSET = 0;
 		SUCCESS_ACTIVATED = 1;
 		ERROR_NO_PREMIUM_BATTLE_PASS = 2;
@@ -4004,7 +4004,7 @@ message ActivateVsSeekerOutProto {
 		ERROR_TEMPORARILY_UNAVAILABLE = 6;
 	}
 
-	KIOLFJOBEII result = 1;
+	Result result = 1;
 	VsSeekerAttributesProto vs_seeker = 2;
 }
 
@@ -4020,7 +4020,7 @@ message AdFeedbackSettingsProto {
 }
 
 message AddFortModifierOutProto {
-	enum LGEGHJBPMFL {
+	enum Result {
 		NO_RESULT_SET = 0;
 		SUCCESS = 1;
 		FORT_ALREADY_HAS_MODIFIER = 2;
@@ -4029,7 +4029,7 @@ message AddFortModifierOutProto {
 		POI_INACCESSIBLE = 5;
 	}
 
-	LGEGHJBPMFL result = 1;
+	Result result = 1;
 	FortDetailsOutProto fort_details_out_proto = 2;
 }
 
@@ -4198,7 +4198,7 @@ message ArPhotoSessionProto {
 		MULTIPLAYER_BUDDY = 4;
 	}
 
-	enum IKCNDGJABNH {
+	enum Status {
 		UNDETERMINED = 0;
 		CHARGING = 1;
 		DISCHARGING = 2;
@@ -4220,7 +4220,7 @@ message ArPhotoSessionProto {
 	message GBPBDHIHGMG {
 		PEHFFIPJKKE conditions = 1;
 		float battery_level = 2;
-		IKCNDGJABNH status = 3;
+		Status status = 3;
 	}
 
 	message PEHFFIPJKKE {
@@ -4297,7 +4297,7 @@ message AssetDigestEntryProto {
 }
 
 message AssetDigestOutProto {
-	enum NNPGIHOEBHF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		PAGE = 2;
@@ -4306,7 +4306,7 @@ message AssetDigestOutProto {
 
 	repeated AssetDigestEntryProto digest = 1;
 	uint64 timestamp = 2;
-	NNPGIHOEBHF result = 3;
+	Result result = 3;
 	int32 page_offset = 4;
 }
 
@@ -4339,7 +4339,7 @@ message AssetStreamDownloadTelemetry {
 }
 
 message AssetVersionOutProto {
-	enum KEMOGICCMPH {
+	enum Result {
 		UNSET = 0;
 		ERROR = 1;
 		VALID = 2;
@@ -4347,7 +4347,7 @@ message AssetVersionOutProto {
 	}
 
 	message EAPCBHCDIKH {
-		KEMOGICCMPH result = 1;
+		Result result = 1;
 		AssetDigestEntryProto digest = 2;
 		string url = 3;
 	}
@@ -4366,14 +4366,14 @@ message AssetVersionProto {
 }
 
 message AttackGymOutProto {
-	enum APLMMNHKFCB {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_ATTACK_ACTIONS = 2;
 		ERROR_NOT_IN_RANGE = 3;
 	}
 
-	APLMMNHKFCB result = 1;
+	Result result = 1;
 	BattleLogProto battle_log = 2;
 	string battle_id = 3;
 	PokemonInfo active_defender = 4;
@@ -4391,7 +4391,7 @@ message AttackGymProto {
 }
 
 message AttackRaidBattleOutProto {
-	enum DHHPLBJDEEC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_GYM_NOT_FOUND = 2;
@@ -4401,7 +4401,7 @@ message AttackRaidBattleOutProto {
 		ERROR_BATTLE_ID_NOT_RAID = 6;
 	}
 
-	DHHPLBJDEEC result = 1;
+	Result result = 1;
 	BattleUpdateProto battle_update = 2;
 	OFNPNDMJIND sponsored_gift = 3;
 }
@@ -4498,7 +4498,7 @@ message AvatarItemProto {
 }
 
 message AwardFreeRaidTicketOutProto {
-	enum JJIHMBGCPCA {
+	enum Result {
 		NO_RESULT_SET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_DOES_NOT_MEET_MIN_LEVEL = 2;
@@ -4506,7 +4506,7 @@ message AwardFreeRaidTicketOutProto {
 		ERROR_PLAYER_OUT_OF_RANGE = 4;
 	}
 
-	JJIHMBGCPCA result = 1;
+	Result result = 1;
 }
 
 message AwardFreeRaidTicketProto {
@@ -4783,12 +4783,12 @@ message BelugaBleTransferProto {
 }
 
 message BelugaDailyTransferLogEntry {
-	enum BIEEJJGOJPN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	BIEEJJGOJPN result = 1;
+	Result result = 1;
 	bool includes_weekly_bonus = 2;
 	LootProto items_awarded = 3;
 }
@@ -4871,7 +4871,7 @@ message BelugaPokemonWhitelist {
 }
 
 message BelugaTransactionCompleteOutProto {
-	enum OFNELHNDCDJ {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILED = 2;
@@ -4883,7 +4883,7 @@ message BelugaTransactionCompleteOutProto {
 		ERROR_MISSING_TRANSACTION_ID = 8;
 	}
 
-	OFNELHNDCDJ status = 1;
+	Status status = 1;
 	int32 candy_awarded = 2;
 	LootProto loot_awarded = 3;
 	BelugaBleFinalizeTransfer beluga_finalize_response = 4;
@@ -4897,7 +4897,7 @@ message BelugaTransactionCompleteProto {
 }
 
 message BelugaTransactionStartOutProto {
-	enum IAMNMBIKDIK {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILED = 2;
@@ -4911,7 +4911,7 @@ message BelugaTransactionStartOutProto {
 		ERROR_NO_POKEMON_SPECIFIED = 10;
 	}
 
-	IAMNMBIKDIK status = 1;
+	Status status = 1;
 	BelugaBleTransferPrepProto beluga_transfer_prep = 2;
 	bytes server_signature = 3;
 }
@@ -5054,7 +5054,7 @@ message BuddyEvolutionWalkQuestProto {
 }
 
 message BuddyFeedingOutProto {
-	enum NNODLOHKIEH {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_BUDDY_NOT_VALID = 2;
@@ -5063,7 +5063,7 @@ message BuddyFeedingOutProto {
 		FAILED_BUDDY_STILL_FULL_FROM_POFFIN = 5;
 	}
 
-	NNODLOHKIEH result = 1;
+	Result result = 1;
 	BuddyObservedData observed_data = 3;
 	BuddyStatsShownHearts.DPCCPNCLMFC shown_hearts = 4;
 }
@@ -5156,13 +5156,13 @@ message BuddyMapEmotionCheckTelemetry {
 }
 
 message BuddyMapOutProto {
-	enum OECEIGNJBBE {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_BUDDY_NOT_VALID = 2;
 	}
 
-	OECEIGNJBBE result = 1;
+	Result result = 1;
 	int64 expiration_ms = 2;
 	int64 applied_ms = 3;
 	BuddyObservedData observed_data = 4;
@@ -5222,13 +5222,13 @@ message BuddyObservedData {
 }
 
 message BuddyPettingOutProto {
-	enum JOCDOPHLHLK {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_BUDDY_NOT_VALID = 2;
 	}
 
-	JOCDOPHLHLK result = 1;
+	Result result = 1;
 	BuddyObservedData observed_data = 2;
 	BuddyStatsShownHearts.DPCCPNCLMFC shown_hearts = 3;
 }
@@ -5237,12 +5237,12 @@ message BuddyPettingProto {
 }
 
 message BuddyPokemonLogEntry {
-	enum IGCBBFBNNOH {
+	enum Result {
 		UNSET = 0;
 		CANDY_FOUND = 1;
 	}
 
-	IGCBBFBNNOH result = 1;
+	Result result = 1;
 	HoloPokemonId pokemon_type = 2;
 	int32 amount = 3;
 	PokemonDisplayProto pokemon_display = 4;
@@ -5268,13 +5268,13 @@ message BuddyStats {
 }
 
 message BuddyStatsOutProto {
-	enum PNLNOOJNEHN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_BUDDY_NOT_VALID = 2;
 	}
 
-	PNLNOOJNEHN result = 1;
+	Result result = 1;
 	BuddyObservedData observed_data = 2;
 }
 
@@ -5338,7 +5338,7 @@ message CameraSettingsProto {
 }
 
 message CancelCombatChallengeOutProto {
-	enum OBMFBILBEIJ {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_CHALLENGE_STATE = 2;
@@ -5349,7 +5349,7 @@ message CancelCombatChallengeOutProto {
 		ERROR_ACCESS_DENIED = 7;
 	}
 
-	OBMFBILBEIJ result = 1;
+	Result result = 1;
 }
 
 message CancelCombatChallengeProto {
@@ -5357,7 +5357,7 @@ message CancelCombatChallengeProto {
 }
 
 message CancelMatchmakingOutProto {
-	enum GMGGAJCNDMB {
+	enum Result {
 		UNSET = 0;
 		SUCCESSFULLY_CANCELLED = 1;
 		ERROR_ALREADY_MATCHED = 2;
@@ -5365,7 +5365,7 @@ message CancelMatchmakingOutProto {
 		ERROR_QUEUE_NOT_FOUND = 4;
 	}
 
-	GMGGAJCNDMB result = 1;
+	Result result = 1;
 }
 
 message CancelMatchmakingProto {
@@ -5373,7 +5373,7 @@ message CancelMatchmakingProto {
 }
 
 message CancelTradingOutProto {
-	enum HGMOIHABNGJ {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -5383,7 +5383,7 @@ message CancelTradingOutProto {
 		ERROR_STATE_HANDLER = 6;
 	}
 
-	HGMOIHABNGJ result = 1;
+	Result result = 1;
 	TradingProto trading = 2;
 }
 
@@ -5412,14 +5412,14 @@ message CatchPokemonGlobalSettingsProto {
 }
 
 message CatchPokemonLogEntry {
-	enum PDMHKBJNENP {
+	enum Result {
 		UNSET = 0;
 		POKEMON_CAPTURED = 1;
 		POKEMON_FLED = 2;
 		POKEMON_HATCHED = 3;
 	}
 
-	PDMHKBJNENP result = 1;
+	Result result = 1;
 	int32 pokedex_number = 2;
 	int32 combat_points = 3;
 	fixed64 pokemon_id = 4;
@@ -5427,7 +5427,7 @@ message CatchPokemonLogEntry {
 }
 
 message CatchPokemonOutProto {
-	enum BIEEINENJIK {
+	enum Status {
 		CATCH_ERROR = 0;
 		CATCH_SUCCESS = 1;
 		CATCH_ESCAPE = 2;
@@ -5442,7 +5442,7 @@ message CatchPokemonOutProto {
 		CRITICAL_CATCH = 3;
 	}
 
-	BIEEINENJIK status = 1;
+	Status status = 1;
 	double miss_percent = 2;
 	fixed64 captured_pokemon_id = 3;
 	CaptureScoreProto scores = 4;
@@ -5487,7 +5487,7 @@ message ChangeOnlineStatusTelemetry {
 }
 
 message ChangeTeamOutProto {
-	enum CEEKEJJJKDE {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_SAME_TEAM = 2;
@@ -5496,7 +5496,7 @@ message ChangeTeamOutProto {
 		ERROR_UNKNOWN = 5;
 	}
 
-	CEEKEJJJKDE status = 1;
+	Status status = 1;
 	ClientPlayerProto updated_player = 2;
 }
 
@@ -5535,14 +5535,14 @@ message CheckEncounterTrayInfoTelemetry {
 }
 
 message CheckPhotobombOutProto {
-	enum LFJNMMLAPCC {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PHOTO_POKEMON_INVALID = 2;
 		ERROR_UNKNOWN = 3;
 	}
 
-	LFJNMMLAPCC status = 1;
+	Status status = 1;
 	HoloPokemonId photobomb_pokemon_id = 2;
 	PokemonDisplayProto photobomb_pokemon_display = 3;
 	fixed64 encounter_id = 4;
@@ -5554,7 +5554,7 @@ message CheckPhotobombProto {
 }
 
 message CheckSendGiftOutProto {
-	enum LBOCHBOKIGF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -5564,7 +5564,7 @@ message CheckSendGiftOutProto {
 		ERROR_PLAYER_HAS_UNOPENED_GIFT = 6;
 	}
 
-	LBOCHBOKIGF result = 1;
+	Result result = 1;
 }
 
 message CheckSendGiftProto {
@@ -5588,7 +5588,7 @@ message ClaimCodenameRequestProto {
 }
 
 message ClaimVsSeekerRewardsOutProto {
-	enum DOAHOJEIJOH {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_REDEEM_POKEMON = 2;
@@ -5597,7 +5597,7 @@ message ClaimVsSeekerRewardsOutProto {
 		ERROR_INVENTORY_FULL = 5;
 	}
 
-	DOAHOJEIJOH result = 1;
+	Result result = 1;
 	LootProto rewards = 2;
 }
 
@@ -5740,7 +5740,7 @@ message ClientWeatherProto {
 }
 
 message CodenameResultProto {
-	enum MKHIAAFPKJH {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		CODENAME_NOT_AVAILABLE = 2;
@@ -5752,7 +5752,7 @@ message CodenameResultProto {
 	string codename = 1;
 	string user_message = 2;
 	bool is_assignable = 3;
-	MKHIAAFPKJH status = 4;
+	Status status = 4;
 	ClientPlayerProto updated_player = 5;
 	repeated string suggested_codenames = 6;
 }
@@ -5787,21 +5787,21 @@ message CollectAdIdResponseProto {
 }
 
 message CollectDailyBonusOutProto {
-	enum IKOKACIFOLM {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
 		TOO_SOON = 3;
 	}
 
-	IKOKACIFOLM result = 1;
+	Result result = 1;
 }
 
 message CollectDailyBonusProto {
 }
 
 message CollectDailyDefenderBonusOutProto {
-	enum DJJIPAFODJM {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
@@ -5809,7 +5809,7 @@ message CollectDailyDefenderBonusOutProto {
 		NO_DEFENDERS = 4;
 	}
 
-	DJJIPAFODJM result = 1;
+	Result result = 1;
 	repeated string currency_type = 2;
 	repeated int32 currency_awarded = 3;
 	int32 num_defenders = 4;
@@ -5898,7 +5898,7 @@ message CombatDefensiveInputChallengeSettings {
 }
 
 message CombatFriendRequestOutProto {
-	enum KACFDKGIPOK {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_COMBAT_NOT_FOUND = 2;
@@ -5907,7 +5907,7 @@ message CombatFriendRequestOutProto {
 		ERROR_SOCIAL_RPC = 5;
 	}
 
-	KACFDKGIPOK result = 1;
+	Result result = 1;
 }
 
 message CombatFriendRequestProto {
@@ -6040,12 +6040,12 @@ message CombatLeagueSettingsProto {
 }
 
 message CombatLogEntry {
-	enum DBMEEPFBLOP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	DBMEEPFBLOP result = 1;
+	Result result = 1;
 	CombatPlayerFinishState finish_state = 2;
 	LootProto rewards = 3;
 	string opponent = 4;
@@ -6289,14 +6289,14 @@ message CombatTypeProto {
 }
 
 message CompleteCompetitiveSeasonOutProto {
-	enum ECKKNOKPDPP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_HAS_NO_VS_SEEKER = 2;
 		ERROR_REWARDS_ALREADY_COLLECTED = 3;
 	}
 
-	ECKKNOKPDPP result = 1;
+	Result result = 1;
 	LootProto loot_proto = 2;
 	int32 new_rank = 3;
 	float new_rating = 4;
@@ -6317,18 +6317,18 @@ message CompleteInvasionDialogueProto {
 }
 
 message CompleteQuestLogEntry {
-	enum FMDABCLFGCH {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	FMDABCLFGCH result = 1;
+	Result result = 1;
 	ClientQuestProto quest = 2;
 	repeated QuestStampProto stamp = 3;
 }
 
 message CompleteQuestOutProto {
-	enum MEHNKJHIDFF {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_QUEST_NOT_FOUND = 2;
@@ -6343,19 +6343,19 @@ message CompleteQuestOutProto {
 		ERROR_INVENTORY_FULL = 11;
 	}
 
-	MEHNKJHIDFF status = 1;
+	Status status = 1;
 	ClientQuestProto quest = 2;
 	repeated QuestStampProto stamp = 3;
 }
 
 message CompleteQuestPokemonEncounterLogEntry {
-	enum FFFEFMPJLEL {
+	enum Result {
 		UNSET = 0;
 		POKEMON_CAPTURED = 1;
 		POKEMON_FLED = 2;
 	}
 
-	FFFEFMPJLEL result = 1;
+	Result result = 1;
 	int32 pokedex_number = 2;
 	int32 combat_points = 3;
 	fixed64 pokemon_id = 4;
@@ -6369,23 +6369,23 @@ message CompleteQuestProto {
 }
 
 message CompleteQuestStampCardLogEntry {
-	enum PHJADFGHCIG {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	PHJADFGHCIG result = 1;
+	Result result = 1;
 	repeated QuestRewardProto reward = 2;
 }
 
 message CompleteQuestStampCardOutProto {
-	enum FMFLNOKNGGF {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_STILL_IN_PROGRESS = 2;
 	}
 
-	FMFLNOKNGGF status = 1;
+	Status status = 1;
 	repeated QuestRewardProto reward = 2;
 }
 
@@ -6393,14 +6393,14 @@ message CompleteQuestStampCardProto {
 }
 
 message CompleteSnapshotSessionOutProto {
-	enum FGJAFKCICDK {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PHOTO_POKEMON_INVALID = 2;
 		ERROR_UNKNOWN = 3;
 	}
 
-	FGJAFKCICDK status = 1;
+	Status status = 1;
 }
 
 message CompleteSnapshotSessionProto {
@@ -6410,7 +6410,7 @@ message CompleteSnapshotSessionProto {
 }
 
 message CompleteVsSeekerAndRestartChargingOutProto {
-	enum PIPNHCMFJCP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_VS_SEEKER_NOT_FOUND = 2;
@@ -6421,7 +6421,7 @@ message CompleteVsSeekerAndRestartChargingOutProto {
 		ERROR_PLAYER_HAS_UNCLAIMED_REWARDS = 7;
 	}
 
-	PIPNHCMFJCP result = 1;
+	Result result = 1;
 	VsSeekerAttributesProto vs_seeker = 2;
 	LootProto loot_proto = 3;
 	CombatSeasonResult current_season_result = 4;
@@ -6435,7 +6435,7 @@ message CompleteVsSeekerAndRestartChargingProto {
 }
 
 message ConfirmPhotobombOutProto {
-	enum NKCJCHGFKFF {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PHOTOBOMB_NOT_FOUND = 2;
@@ -6443,7 +6443,7 @@ message ConfirmPhotobombOutProto {
 		ERROR_UNKNOWN = 4;
 	}
 
-	NKCJCHGFKFF status = 1;
+	Status status = 1;
 }
 
 message ConfirmPhotobombProto {
@@ -6451,7 +6451,7 @@ message ConfirmPhotobombProto {
 }
 
 message ConfirmTradingOutProto {
-	enum HNCMOHNHHFJ {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -6470,7 +6470,7 @@ message ConfirmTradingOutProto {
 		ERROR_DAILY_LIMIT_REACHED = 15;
 	}
 
-	HNCMOHNHHFJ result = 1;
+	Result result = 1;
 	TradingProto trading = 2;
 }
 
@@ -6485,14 +6485,14 @@ message ContactSettingsProto {
 }
 
 message ConvertCandyToXlCandyOutProto {
-	enum FLAKFNPDDHE {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_ENOUGH_CANDY = 2;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 3;
 	}
 
-	FLAKFNPDDHE status = 1;
+	Status status = 1;
 }
 
 message ConvertCandyToXlCandyProto {
@@ -6506,7 +6506,7 @@ message CrashlyticsSettingsProto {
 }
 
 message CreateBuddyMultiplayerSessionOutProto {
-	enum OCCNNOHNDPF {
+	enum Result {
 		CREATE_SUCCESS = 0;
 		CREATE_BUDDY_NOT_SET = 1;
 		CREATE_BUDDY_NOT_FOUND = 2;
@@ -6521,14 +6521,14 @@ message CreateBuddyMultiplayerSessionOutProto {
 	bytes arbe_join_token = 2;
 	int64 generation_timestamp = 3;
 	int32 max_players = 4;
-	OCCNNOHNDPF result = 5;
+	Result result = 5;
 }
 
 message CreateBuddyMultiplayerSessionProto {
 }
 
 message CreateCombatChallengeOutProto {
-	enum LDPHLOPBLPC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_CHALLENGE_STATE = 2;
@@ -6536,7 +6536,7 @@ message CreateCombatChallengeOutProto {
 		ERROR_ACCESS_DENIED = 4;
 	}
 
-	LDPHLOPBLPC result = 1;
+	Result result = 1;
 	CombatChallengeProto challenge = 2;
 }
 
@@ -6545,7 +6545,7 @@ message CreateCombatChallengeProto {
 }
 
 message CreatePokemonTagOutProto {
-	enum FFLOACGOPPF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
@@ -6554,7 +6554,7 @@ message CreatePokemonTagOutProto {
 		TAG_NAME_CONTAINS_PROFANITY = 5;
 	}
 
-	FFLOACGOPPF result = 1;
+	Result result = 1;
 	PokemonTagProto created_tag = 2;
 }
 
@@ -6622,14 +6622,14 @@ message DailyEncounterGlobalSettingsProto {
 }
 
 message DailyEncounterOutProto {
-	enum IKMKFJOFELF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ENCOUNTER_NOT_AVAILABLE = 2;
 		POKEMON_INVENTORY_FULL = 3;
 	}
 
-	IKMKFJOFELF result = 1;
+	Result result = 1;
 	PokemonProto pokemon = 2;
 	CaptureProbabilityProto capture_probability = 3;
 	Item active_item = 4;
@@ -6675,7 +6675,7 @@ message DaysWithARowQuestProto {
 }
 
 message DeclineCombatChallengeOutProto {
-	enum DKKFINOLHMP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_CHALLENGE_STATE = 2;
@@ -6684,7 +6684,7 @@ message DeclineCombatChallengeOutProto {
 		ERROR_ALREADY_CANCELLED = 5;
 	}
 
-	DKKFINOLHMP result = 1;
+	Result result = 1;
 }
 
 message DeclineCombatChallengeProto {
@@ -6692,24 +6692,24 @@ message DeclineCombatChallengeProto {
 }
 
 message DeclineExRaidPassLogEntry {
-	enum KECJCMAHGAO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	KECJCMAHGAO result = 1;
+	Result result = 1;
 	string friend_codename = 2;
 }
 
 message DeclineExRaidPassOutProto {
-	enum FOBEGGDICHA {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_EX_RAID_PASS_NOT_FOUND = 2;
 		ERROR_UNKNOWN = 3;
 	}
 
-	FOBEGGDICHA result = 1;
+	Result result = 1;
 }
 
 message DeclineExRaidPassProto {
@@ -6778,14 +6778,14 @@ message DeepLinkingTelemetry {
 }
 
 message DeleteGiftFromInventoryOutProto {
-	enum FCGDJGBKMHO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 		ERROR_GIFT_DOES_NOT_EXIST = 3;
 	}
 
-	FCGDJGBKMHO result = 1;
+	Result result = 1;
 }
 
 message DeleteGiftFromInventoryProto {
@@ -6793,7 +6793,7 @@ message DeleteGiftFromInventoryProto {
 }
 
 message DeleteGiftOutProto {
-	enum PJFIKIMANFO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -6803,7 +6803,7 @@ message DeleteGiftOutProto {
 		ERROR_FRIEND_UPDATE = 6;
 	}
 
-	PJFIKIMANFO result = 1;
+	Result result = 1;
 }
 
 message DeleteGiftProto {
@@ -6812,14 +6812,14 @@ message DeleteGiftProto {
 }
 
 message DeletePokemonTagOutProto {
-	enum IMEBPKHKOAB {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
 		TAG_DOES_NOT_EXIST = 3;
 	}
 
-	IMEBPKHKOAB result = 1;
+	Result result = 1;
 }
 
 message DeletePokemonTagProto {
@@ -6868,7 +6868,7 @@ message DeviceSpecificationsTelemetry {
 }
 
 message DiskEncounterOutProto {
-	enum GFABBKCBKBB {
+	enum Result {
 		UNKNOWN = 0;
 		SUCCESS = 1;
 		NOT_AVAILABLE = 2;
@@ -6877,7 +6877,7 @@ message DiskEncounterOutProto {
 		POKEMON_INVENTORY_FULL = 5;
 	}
 
-	GFABBKCBKBB result = 1;
+	Result result = 1;
 	PokemonProto pokemon = 2;
 	CaptureProbabilityProto capture_probability = 3;
 	Item active_item = 4;
@@ -7075,7 +7075,7 @@ message EnabledPokemonSettingsProto {
 }
 
 message EncounterOutProto {
-	enum LKGEIOGCILK {
+	enum Status {
 		ENCOUNTER_ERROR = 0;
 		ENCOUNTER_SUCCESS = 1;
 		ENCOUNTER_NOT_FOUND = 2;
@@ -7093,14 +7093,14 @@ message EncounterOutProto {
 
 	WildPokemonProto pokemon = 1;
 	NGFAINEFOAE background = 2;
-	LKGEIOGCILK status = 3;
+	Status status = 3;
 	CaptureProbabilityProto capture_probability = 4;
 	Item active_item = 5;
 	int32 arplus_attempts_until_flee = 6;
 }
 
 message EncounterPhotobombOutProto {
-	enum OOLAADLFPDM {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		NO_ENCOUNTER_AVAILABLE = 2;
@@ -7108,7 +7108,7 @@ message EncounterPhotobombOutProto {
 		ERROR_UNKNOWN = 4;
 	}
 
-	OOLAADLFPDM result = 1;
+	Result result = 1;
 	PokemonProto pokemon = 2;
 	CaptureProbabilityProto capture_probability = 3;
 	Item active_item = 4;
@@ -7156,13 +7156,13 @@ message EncounterSettingsProto {
 }
 
 message EncounterTutorialCompleteOutProto {
-	enum NNAMNPOJHGP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_POKEMON = 2;
 	}
 
-	NNAMNPOJHGP result = 1;
+	Result result = 1;
 	PokemonProto pokemon = 2;
 	CaptureScoreProto scores = 3;
 }
@@ -7304,14 +7304,14 @@ message EnumWrapper {
 }
 
 message EquipBadgeOutProto {
-	enum LKAEPOCHECP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		COOLDOWN_ACTIVE = 2;
 		NOT_QUALIFIED = 3;
 	}
 
-	LKAEPOCHECP result = 1;
+	Result result = 1;
 	EquippedBadgeProto equipped = 2;
 }
 
@@ -7450,7 +7450,7 @@ message EvolveIntoPokemonQuestProto {
 }
 
 message EvolvePokemonOutProto {
-	enum IHINLNKAEKI {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILED_POKEMON_MISSING = 2;
@@ -7460,7 +7460,7 @@ message EvolvePokemonOutProto {
 		FAILED_INVALID_ITEM_REQUIREMENT = 6;
 	}
 
-	IHINLNKAEKI result = 1;
+	Result result = 1;
 	PokemonProto evolved_pokemon = 2;
 	int32 exp_awarded = 3;
 	int32 candy_awarded = 4;
@@ -7554,13 +7554,13 @@ message FestivalSettingsProto {
 }
 
 message FetchAllNewsOutProto {
-	enum EBJPMIGDOFM {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		NO_NEWS_FOUND = 2;
 	}
 
-	EBJPMIGDOFM result = 1;
+	Result result = 1;
 	CurrentNewsProto current_news = 2;
 }
 
@@ -7587,12 +7587,12 @@ message FitnessReportProto {
 }
 
 message FitnessRewardsLogEntry {
-	enum NIJKOPJIDBP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	NIJKOPJIDBP result = 1;
+	Result result = 1;
 	LootProto rewards = 2;
 	double distance_walked_km = 3;
 }
@@ -7627,7 +7627,7 @@ message FormSettingsProto {
 }
 
 message FortDeployOutProto {
-	enum CCHABBOGALP {
+	enum Result {
 		NO_RESULT_SET = 0;
 		SUCCESS = 1;
 		ERROR_ALREADY_HAS_POKEMON_ON_FORT = 2;
@@ -7645,7 +7645,7 @@ message FortDeployOutProto {
 		ERROR_INVALID_POKEMON = 14;
 	}
 
-	CCHABBOGALP result = 1;
+	Result result = 1;
 	FortDetailsOutProto fort_details_out_proto = 2;
 	PokemonProto egg_pokemon = 3;
 	GymStateProto gym_state_proto = 4;
@@ -7695,7 +7695,7 @@ message FortModifierAttributesProto {
 }
 
 message FortRecallOutProto {
-	enum NMBDIBGPPJG {
+	enum Result {
 		NO_RESULT_SET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_IN_RANGE = 2;
@@ -7703,7 +7703,7 @@ message FortRecallOutProto {
 		ERROR_NO_PLAYER = 4;
 	}
 
-	NMBDIBGPPJG result = 1;
+	Result result = 1;
 	FortDetailsOutProto fort_details_out_proto = 2;
 }
 
@@ -7723,12 +7723,12 @@ message FortRenderingType {
 }
 
 message FortSearchLogEntry {
-	enum JAKLKJAHHDE {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	JAKLKJAHHDE result = 1;
+	Result result = 1;
 	string fort_id = 2;
 	repeated ItemProto items = 3;
 	int32 eggs = 4;
@@ -7742,7 +7742,7 @@ message FortSearchLogEntry {
 }
 
 message FortSearchOutProto {
-	enum AKHBINCEKEO {
+	enum Result {
 		NO_RESULT_SET = 0;
 		SUCCESS = 1;
 		OUT_OF_RANGE = 2;
@@ -7752,7 +7752,7 @@ message FortSearchOutProto {
 		POI_INACCESSIBLE = 6;
 	}
 
-	AKHBINCEKEO result = 1;
+	Result result = 1;
 	repeated AwardItemProto items = 2;
 	int32 gems_awarded = 3;
 	PokemonProto egg_pokemon = 4;
@@ -8004,14 +8004,14 @@ message GameplayWeatherProto {
 }
 
 message GenerateCombatChallengeIdOutProto {
-	enum JHKDOMEKJKN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_BELOW_MINIMUM_LEVEL = 2;
 		ERROR_ACCESS_DENIED = 3;
 	}
 
-	JHKDOMEKJKN result = 1;
+	Result result = 1;
 	string challenge_id = 2;
 }
 
@@ -8043,12 +8043,12 @@ message GetActionLogRequest {
 }
 
 message GetActionLogResponse {
-	enum DHMOHLGMNDE {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	DHMOHLGMNDE result = 1;
+	Result result = 1;
 	repeated ActionLogEntry log = 2;
 }
 
@@ -8068,13 +8068,13 @@ message GetAdventureSyncSettingsResponseProto {
 }
 
 message GetBuddyHistoryOutProto {
-	enum FHHKLMECIDA {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR = 2;
 	}
 
-	FHHKLMECIDA result = 1;
+	Result result = 1;
 	repeated BuddyHistoryData buddy_history = 2;
 }
 
@@ -8095,13 +8095,13 @@ message GetBuddyWalkedProto {
 }
 
 message GetCombatChallengeOutProto {
-	enum LDIEANMMDHN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_CHALLENGE_NOT_FOUND = 2;
 	}
 
-	LDIEANMMDHN result = 1;
+	Result result = 1;
 	CombatChallengeProto challenge = 2;
 }
 
@@ -8110,14 +8110,14 @@ message GetCombatChallengeProto {
 }
 
 message GetCombatPlayerProfileOutProto {
-	enum PIHGFEBBPHK {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_NOT_FOUND = 2;
 		ERROR_ACCESS_DENIED = 3;
 	}
 
-	PIHGFEBBPHK result = 1;
+	Result result = 1;
 	CombatPlayerProfileProto profile = 2;
 }
 
@@ -8126,7 +8126,7 @@ message GetCombatPlayerProfileProto {
 }
 
 message GetCombatResultsOutProto {
-	enum OCAPFFPDAJA {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_COMBAT_STATE = 2;
@@ -8139,7 +8139,7 @@ message GetCombatResultsOutProto {
 		string combat_league_template_id = 2;
 	}
 
-	OCAPFFPDAJA result = 1;
+	Result result = 1;
 	CombatRewardStatus reward_status = 2;
 	LootProto rewards = 3;
 	LeveledUpFriendsProto friend_level_up = 4;
@@ -8153,7 +8153,7 @@ message GetCombatResultsProto {
 }
 
 message GetDailyEncounterOutProto {
-	enum HJIODMMKJAO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ALREADY_FINISHED_FOR_TODAY = 2;
@@ -8162,7 +8162,7 @@ message GetDailyEncounterOutProto {
 		DISABLED = 5;
 	}
 
-	HJIODMMKJAO result = 1;
+	Result result = 1;
 	HoloPokemonId pokedex_id = 2;
 	double lat = 3;
 	double lng = 4;
@@ -8197,14 +8197,14 @@ message GetFitnessReportProto {
 }
 
 message GetFitnessRewardsOutProto {
-	enum FIINDMCCJAN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		REWARDS_ALREADY_COLLECTED = 2;
 		ERROR_UNKNOWN = 3;
 	}
 
-	FIINDMCCJAN result = 1;
+	Result result = 1;
 	LootProto rewards = 2;
 }
 
@@ -8212,7 +8212,7 @@ message GetFitnessRewardsProto {
 }
 
 message GetFriendshipRewardsOutProto {
-	enum MCCCKPMMADL {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -8221,7 +8221,7 @@ message GetFriendshipRewardsOutProto {
 		ERROR_FAILED_TO_UPDATE = 5;
 	}
 
-	MCCCKPMMADL result = 1;
+	Result result = 1;
 	int64 xp_reward = 2;
 	string friend_id = 3;
 }
@@ -8231,14 +8231,14 @@ message GetFriendshipRewardsProto {
 }
 
 message GetGameMasterClientTemplatesOutProto {
-	enum DJJLOCKOBDC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		PAGE = 2;
 		RETRY = 3;
 	}
 
-	DJJLOCKOBDC result = 1;
+	Result result = 1;
 	repeated GameMasterClientTemplateProto items = 2;
 	uint64 timestamp = 3;
 	int32 page_offset = 4;
@@ -8251,7 +8251,7 @@ message GetGameMasterClientTemplatesProto {
 }
 
 message GetGiftBoxDetailsOutProto {
-	enum PCPNPDHPJDC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -8261,7 +8261,7 @@ message GetGiftBoxDetailsOutProto {
 		ERROR_FORT_SEARCH = 6;
 	}
 
-	PCPNPDHPJDC result = 1;
+	Result result = 1;
 	repeated GiftBoxDetailsProto gift_boxes = 2;
 }
 
@@ -8283,7 +8283,7 @@ message GetGymBadgeDetailsProto {
 }
 
 message GetGymDetailsOutProto {
-	enum MLEKNBGMDLB {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_IN_RANGE = 2;
@@ -8292,7 +8292,7 @@ message GetGymDetailsOutProto {
 	GymStateProto gym_state = 1;
 	string name = 2;
 	repeated string url = 3;
-	MLEKNBGMDLB result = 4;
+	Result result = 4;
 	string description = 5;
 	repeated string secondary_url = 6;
 	string checkin_image_url = 7;
@@ -8333,14 +8333,14 @@ message GetHoloholoInventoryProto {
 }
 
 message GetInboxOutProto {
-	enum JNLMHJLCOKP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
 		TIMED_OUT = 3;
 	}
 
-	JNLMHJLCOKP result = 1;
+	Result result = 1;
 	PlatformClientInbox inbox = 2;
 }
 
@@ -8351,13 +8351,13 @@ message GetInboxProto {
 }
 
 message GetIncensePokemonOutProto {
-	enum LAHBKCOACHO {
+	enum Result {
 		INCENSE_ENCOUNTER_UNKNOWN = 0;
 		INCENSE_ENCOUNTER_AVAILABLE = 1;
 		INCENSE_ENCOUNTER_NOT_AVAILABLE = 2;
 	}
 
-	LAHBKCOACHO result = 1;
+	Result result = 1;
 	int32 pokemon_type_id = 2;
 	double lat = 3;
 	double lng = 4;
@@ -8373,7 +8373,7 @@ message GetIncensePokemonProto {
 }
 
 message GetLocalTimeOutProto {
-	enum ELGBELBBKGB {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -8392,7 +8392,7 @@ message GetLocalTimeOutProto {
 		string timezone_id = 10;
 	}
 
-	ELGBELBBKGB status = 1;
+	Status status = 1;
 	repeated IHGOELPFLCK local_times = 2;
 }
 
@@ -8407,7 +8407,7 @@ message GetMapObjectsOutProto {
 		NIGHT = 2;
 	}
 
-	enum NCGOJODJDEP {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		LOCATION_UNSET = 2;
@@ -8415,7 +8415,7 @@ message GetMapObjectsOutProto {
 	}
 
 	repeated ClientMapCellProto map_cell = 1;
-	NCGOJODJDEP status = 2;
+	Status status = 2;
 	MPICAPHDNJF time_of_day = 3;
 	repeated ClientWeatherProto client_weather = 4;
 }
@@ -8428,7 +8428,7 @@ message GetMapObjectsProto {
 }
 
 message GetMatchmakingStatusOutProto {
-	enum DIGMKIJGAPN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS_OPPONENT_FOUND = 1;
 		SUCCESS_QUEUED = 2;
@@ -8438,7 +8438,7 @@ message GetMatchmakingStatusOutProto {
 		ERROR_RETRY_UNSUCCESSFUL = 6;
 	}
 
-	DIGMKIJGAPN result = 1;
+	Result result = 1;
 	CombatChallengeProto challenge = 2;
 	string queue_id = 3;
 }
@@ -8448,13 +8448,13 @@ message GetMatchmakingStatusProto {
 }
 
 message GetNewQuestsOutProto {
-	enum APIDJCADGPE {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_DISPLAY = 2;
 	}
 
-	APIDJCADGPE status = 1;
+	Status status = 1;
 	repeated ClientQuestProto quests = 2;
 	repeated ClientQuestProto version_changed_quests = 3;
 }
@@ -8463,7 +8463,7 @@ message GetNewQuestsProto {
 }
 
 message GetNintendoAccountOutProto {
-	enum GNNCPPDICOL {
+	enum Status {
 		UNKNOWN = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
@@ -8472,7 +8472,7 @@ message GetNintendoAccountOutProto {
 		ERROR_RELOGIN_TO_PH_APP_NEEDED = 5;
 	}
 
-	GNNCPPDICOL status = 1;
+	Status status = 1;
 	string linked_naid = 2;
 	string pokemon_home_trainer_name = 3;
 	string support_id = 4;
@@ -8482,14 +8482,14 @@ message GetNintendoAccountProto {
 }
 
 message GetNintendoOAuth2UrlOutProto {
-	enum LBNPELJAMLG {
+	enum Status {
 		UNKNOWN = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
 		ERROR_PLAYER_SIGNED_IN = 3;
 	}
 
-	LBNPELJAMLG status = 1;
+	Status status = 1;
 	string url = 2;
 }
 
@@ -8498,13 +8498,13 @@ message GetNintendoOAuth2UrlProto {
 }
 
 message GetNpcCombatRewardsOutProto {
-	enum PMHJMDFMDNF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALD_NUMBER_ATTACKING_POKEMON_IDS = 2;
 	}
 
-	PMHJMDFMDNF result = 1;
+	Result result = 1;
 	CombatRewardStatus reward_status = 2;
 	LootProto rewards = 3;
 	int32 number_rewarded_npc_battles_today = 4;
@@ -8519,7 +8519,7 @@ message GetNpcCombatRewardsProto {
 }
 
 message GetPhotobombOutProto {
-	enum MHJEILKPNGD {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		PHOTOBOMB_NOT_AVAILABLE = 2;
@@ -8527,7 +8527,7 @@ message GetPhotobombOutProto {
 		ERROR_UNKNOWN = 4;
 	}
 
-	MHJEILKPNGD status = 1;
+	Status status = 1;
 	HoloPokemonId pokemon_id = 2;
 	double lat = 3;
 	double lng = 4;
@@ -8541,13 +8541,13 @@ message GetPhotobombProto {
 }
 
 message GetPlayerDayOutProto {
-	enum OMFDEMHDKDK {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 	}
 
-	OMFDEMHDKDK result = 1;
+	Result result = 1;
 	int64 day = 2;
 }
 
@@ -8573,13 +8573,13 @@ message GetPlayerProto {
 }
 
 message GetPokemonTagsOutProto {
-	enum AFAELLDIOAJ {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
 	}
 
-	AFAELLDIOAJ result = 1;
+	Result result = 1;
 	repeated PokemonTagProto tag = 2;
 }
 
@@ -8587,14 +8587,14 @@ message GetPokemonTagsProto {
 }
 
 message GetQuestDetailsOutProto {
-	enum PGNILCNHCJO {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_QUEST_NOT_FOUND = 2;
 		ERROR_INVALID_DISPLAY = 3;
 	}
 
-	PGNILCNHCJO status = 1;
+	Status status = 1;
 	repeated ClientQuestProto quests = 2;
 }
 
@@ -8603,7 +8603,7 @@ message GetQuestDetailsProto {
 }
 
 message GetRaidDetailsOutProto {
-	enum HJEPLGNJAOA {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_IN_RANGE = 2;
@@ -8616,7 +8616,7 @@ message GetRaidDetailsOutProto {
 	LobbyProto lobby = 1;
 	BattleProto raid_battle = 2;
 	bool player_can_join_lobby = 3;
-	HJEPLGNJAOA result = 4;
+	Result result = 4;
 	RaidInfoProto raid_info = 5;
 	bool ticket_used = 6;
 	bool free_ticket_available = 7;
@@ -8643,12 +8643,12 @@ message GetRaidDetailsProto {
 }
 
 message GetRemoteConfigVersionsOutProto {
-	enum GDCOBNFMNOA {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	GDCOBNFMNOA result = 1;
+	Result result = 1;
 	uint64 game_master_timestamp = 2;
 	uint64 asset_digest_timestamp = 3;
 	repeated uint32 experiment_id = 4;
@@ -8665,7 +8665,7 @@ message GetRemoteConfigVersionsProto {
 }
 
 message GetRocketBalloonOutProto {
-	enum JECNLCGKGIP {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		IN_COOL_DOWN = 2;
@@ -8675,7 +8675,7 @@ message GetRocketBalloonOutProto {
 		SUCCESS_BALLOON_ALREADY_EXISTS = 6;
 	}
 
-	JECNLCGKGIP status = 1;
+	Status status = 1;
 	RocketBalloonDisplayProto display = 2;
 }
 
@@ -8684,12 +8684,12 @@ message GetRocketBalloonProto {
 }
 
 message GetServerTimeOutProto {
-	enum CKEHBCGHMLA {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	CKEHBCGHMLA status = 1;
+	Status status = 1;
 	int64 server_time_ms = 2;
 }
 
@@ -8701,14 +8701,14 @@ message GetStardustQuestProto {
 }
 
 message GetTimedGroupChallengeOutProto {
-	enum IOKHPCGNHDG {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 		ERROR_CHALLENGE_NOT_FOUND = 3;
 	}
 
-	IOKHPCGNHDG status = 1;
+	Status status = 1;
 	TimedGroupChallengeDefinitionProto challenge_definition = 2;
 	int32 current_score = 3;
 	int32 player_score = 4;
@@ -8722,13 +8722,13 @@ message GetTimedGroupChallengeProto {
 }
 
 message GetTodayViewOutProto {
-	enum PEFIJKAFAHJ {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR = 2;
 	}
 
-	PEFIJKAFAHJ status = 1;
+	Status status = 1;
 	TodayViewProto today_view = 2;
 }
 
@@ -8736,7 +8736,7 @@ message GetTodayViewProto {
 }
 
 message GetTradingOutProto {
-	enum EKMPMHLEHBP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -8746,7 +8746,7 @@ message GetTradingOutProto {
 		ERROR_STATE_HANDLER = 6;
 	}
 
-	EKMPMHLEHBP result = 1;
+	Result result = 1;
 	TradingProto trading = 2;
 }
 
@@ -8755,7 +8755,7 @@ message GetTradingProto {
 }
 
 message GetTutorialEggOutProto {
-	enum PFJMFLMECIB {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_ALREADY_HAS_TUTORIAL_EGG = 2;
@@ -8763,14 +8763,14 @@ message GetTutorialEggOutProto {
 		ERROR_NOT_V2_FLOW = 4;
 	}
 
-	PFJMFLMECIB result = 1;
+	Result result = 1;
 }
 
 message GetTutorialEggProto {
 }
 
 message GetVsSeekerStatusOutProto {
-	enum ECFKIJHNMCB {
+	enum Result {
 		UNSET = 0;
 		SUCCESS_FULLY_CHARGED = 1;
 		SUCCESS_NOT_FULLY_CHARGED_YET = 2;
@@ -8778,7 +8778,7 @@ message GetVsSeekerStatusOutProto {
 		ERROR_VS_SEEKER_NEVER_STARTED_CHARGING = 4;
 	}
 
-	ECFKIJHNMCB result = 1;
+	Result result = 1;
 	VsSeekerAttributesProto vs_seeker = 2;
 	bool season_ended = 3;
 	CombatLogProto combat_log = 4;
@@ -8788,13 +8788,13 @@ message GetVsSeekerStatusProto {
 }
 
 message GetWebTokenOutProto {
-	enum DIPNJIJLLPM {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 	}
 
-	DIPNJIJLLPM status = 1;
+	Status status = 1;
 	string access_token = 2;
 }
 
@@ -8965,7 +8965,7 @@ message GymBadgeStats {
 }
 
 message GymBattleAttackOutProto {
-	enum JBHIJBDIAFP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_ATTACK_ACTIONS = 2;
@@ -8974,7 +8974,7 @@ message GymBattleAttackOutProto {
 		ERROR_RAID_ACTIVE = 5;
 	}
 
-	JBHIJBDIAFP result = 1;
+	Result result = 1;
 	BattleUpdateProto battle_update = 2;
 	AwardedGymBadge gym_badge = 3;
 }
@@ -9024,7 +9024,7 @@ message GymDefenderProto {
 }
 
 message GymDeployOutProto {
-	enum AKLCAFDFFEJ {
+	enum Result {
 		NO_RESULT_SET = 0;
 		SUCCESS = 1;
 		ERROR_ALREADY_HAS_POKEMON_ON_FORT = 2;
@@ -9047,7 +9047,7 @@ message GymDeployOutProto {
 		ERROR_RAID_ACTIVE = 19;
 	}
 
-	AKLCAFDFFEJ result = 1;
+	Result result = 1;
 	GymStatusAndDefendersProto gym_status_and_defenders = 2;
 	AwardedGymBadge awarded_gym_badge = 3;
 	int64 cooldown_duration_millis = 4;
@@ -9089,7 +9089,7 @@ message GymEventProto {
 }
 
 message GymFeedPokemonOutProto {
-	enum PNDIHDCGOHD {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_CANNOT_USE = 2;
@@ -9106,7 +9106,7 @@ message GymFeedPokemonOutProto {
 		ERROR_GYM_CLOSED = 13;
 	}
 
-	PNDIHDCGOHD result = 1;
+	Result result = 1;
 	GymStatusAndDefendersProto gym_status_and_defenders = 2;
 	AwardedGymBadge gym_badge = 3;
 	int32 stardust_awarded = 4;
@@ -9127,7 +9127,7 @@ message GymFeedPokemonProto {
 }
 
 message GymGetInfoOutProto {
-	enum FCHAIMEEAIO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_IN_RANGE = 2;
@@ -9137,7 +9137,7 @@ message GymGetInfoOutProto {
 	GymStatusAndDefendersProto gym_status_and_defenders = 1;
 	string name = 2;
 	string url = 3;
-	FCHAIMEEAIO result = 4;
+	Result result = 4;
 	string description = 5;
 	string secondary_url = 6;
 	AwardedGymBadge awarded_gym_badge = 7;
@@ -9189,7 +9189,7 @@ message GymPokemonSectionProto {
 }
 
 message GymStartSessionOutProto {
-	enum NCACEJOINLP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_GYM_NOT_FOUND = 2;
@@ -9208,7 +9208,7 @@ message GymStartSessionOutProto {
 		ERROR_RAID_ACTIVE = 15;
 	}
 
-	NCACEJOINLP result = 1;
+	Result result = 1;
 	BattleProto battle = 2;
 }
 
@@ -9495,14 +9495,14 @@ message IncenseAttributesProto {
 }
 
 message IncenseEncounterOutProto {
-	enum GPKFJNEALOD {
+	enum Result {
 		INCENSE_ENCOUNTER_UNKNOWN = 0;
 		INCENSE_ENCOUNTER_SUCCESS = 1;
 		INCENSE_ENCOUNTER_NOT_AVAILABLE = 2;
 		POKEMON_INVENTORY_FULL = 3;
 	}
 
-	GPKFJNEALOD result = 1;
+	Result result = 1;
 	PokemonProto pokemon = 2;
 	CaptureProbabilityProto capture_probability = 3;
 	Item active_item = 4;
@@ -9768,7 +9768,7 @@ message JPLLLLMLEIJ {
 }
 
 message JoinBuddyMultiplayerSessionOutProto {
-	enum HEBBMIPDFNI {
+	enum Result {
 		JOIN_SUCCESS = 0;
 		JOIN_LOBBY_FULL = 1;
 		JOIN_HOST_TOO_FAR = 2;
@@ -9782,7 +9782,7 @@ message JoinBuddyMultiplayerSessionOutProto {
 		JOIN_U13_NO_PERMISSION = 10;
 	}
 
-	HEBBMIPDFNI result = 1;
+	Result result = 1;
 	bytes arbe_join_token = 2;
 	int64 generation_timestamp = 3;
 	int32 max_players = 4;
@@ -9793,7 +9793,7 @@ message JoinBuddyMultiplayerSessionProto {
 }
 
 message JoinLobbyOutProto {
-	enum NAKGDHLMGLD {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_IN_RANGE = 2;
@@ -9811,7 +9811,7 @@ message JoinLobbyOutProto {
 		ERROR_LOBBY_EXPIRED = 14;
 	}
 
-	NAKGDHLMGLD result = 1;
+	Result result = 1;
 	LobbyProto lobby = 2;
 }
 
@@ -9902,14 +9902,14 @@ message LMDIICPCPMI {
 }
 
 message LeaveBuddyMultiplayerSessionOutProto {
-	enum GFKMNHEGMAH {
+	enum Result {
 		LEAVE_SUCCESS = 0;
 		LEAVE_NOT_IN_LOBBY = 1;
 		LEAVE_LOBBY_NOT_FOUND = 2;
 		LEAVE_UNKNOWN_ERROR = 3;
 	}
 
-	GFKMNHEGMAH result = 1;
+	Result result = 1;
 }
 
 message LeaveBuddyMultiplayerSessionProto {
@@ -9927,14 +9927,14 @@ message LeaveInteractionRangeTelemetry {
 }
 
 message LeaveLobbyOutProto {
-	enum AMONPFPGNIE {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_RAID_UNAVAILABLE = 2;
 		ERROR_LOBBY_NOT_FOUND = 3;
 	}
 
-	AMONPFPGNIE result = 1;
+	Result result = 1;
 	LobbyProto lobby = 2;
 }
 
@@ -9960,13 +9960,13 @@ message LevelSettingsProto {
 }
 
 message LevelUpRewardsOutProto {
-	enum MIAJMCFOCAD {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		AWARDED_ALREADY = 2;
 	}
 
-	MIAJMCFOCAD result = 1;
+	Result result = 1;
 	repeated AwardItemProto items = 2;
 	repeated Item items_unlocked = 4;
 	repeated string avatar_template_ids = 5;
@@ -10049,7 +10049,7 @@ message ListAvatarCustomizationsOutProto {
 		LOCKED_PURCHASABLE = 9;
 	}
 
-	enum NGGHKLHIINO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
@@ -10060,7 +10060,7 @@ message ListAvatarCustomizationsOutProto {
 		repeated GHAMICIDDDM labels = 2;
 	}
 
-	NGGHKLHIINO result = 1;
+	Result result = 1;
 	repeated EMJBGMOEACF avatar_customizations = 2;
 }
 
@@ -10271,13 +10271,13 @@ message MapSettingsProto {
 }
 
 message MarkReadNewsArticleOutProto {
-	enum HAPGGPLMELH {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		NO_NEWS_FOUND = 2;
 	}
 
-	HAPGGPLMELH result = 1;
+	Result result = 1;
 }
 
 message MarkReadNewsArticleProto {
@@ -10316,7 +10316,7 @@ message MegaEvoSettingsProto {
 }
 
 message MegaEvolvePokemonOutProto {
-	enum DEOPALMCBJA {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILED_POKEMON_MISSING = 2;
@@ -10327,7 +10327,7 @@ message MegaEvolvePokemonOutProto {
 		FAILED_POKEMON_ALREADY_MEGA_EVOLVED = 7;
 	}
 
-	DEOPALMCBJA result = 1;
+	Result result = 1;
 	PokemonProto evolved_pokemon = 2;
 	int32 exp_awarded = 3;
 }
@@ -10503,7 +10503,7 @@ message NianticProfileTelemetry {
 }
 
 message NicknamePokemonOutProto {
-	enum ODBKMFABFIP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_NICKNAME = 2;
@@ -10513,7 +10513,7 @@ message NicknamePokemonOutProto {
 		ERROR_EXCEEDED_CHANGE_LIMIT = 6;
 	}
 
-	ODBKMFABFIP result = 1;
+	Result result = 1;
 }
 
 message NicknamePokemonProto {
@@ -10600,7 +10600,7 @@ message OneWaySharedFriendshipDataProto {
 }
 
 message OpenBuddyGiftOutProto {
-	enum DLFGKDLNJHJ {
+	enum Result {
 		UNSET = 0;
 		ERROR_BUDDY_NOT_VALID = 1;
 		SUCCESS_ADDED_LOOT_TO_INVENTORY = 2;
@@ -10610,7 +10610,7 @@ message OpenBuddyGiftOutProto {
 		ERROR_BUDDY_NOT_ON_MAP = 6;
 	}
 
-	DLFGKDLNJHJ result = 1;
+	Result result = 1;
 	BuddyGiftProto buddy_gift = 2;
 	BuddyObservedData observed_data = 4;
 	BuddyStatsShownHearts.DPCCPNCLMFC shown_hearts = 5;
@@ -10620,7 +10620,7 @@ message OpenBuddyGiftProto {
 }
 
 message OpenCombatChallengeOutProto {
-	enum KIHFINFKGMG {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_CHALLENGE_STATE = 2;
@@ -10636,7 +10636,7 @@ message OpenCombatChallengeOutProto {
 		ERROR_INELIGIBLE_OPPONENT = 13;
 	}
 
-	KIHFINFKGMG result = 1;
+	Result result = 1;
 	CombatChallengeProto challenge = 2;
 }
 
@@ -10649,7 +10649,7 @@ message OpenCombatChallengeProto {
 }
 
 message OpenCombatSessionOutProto {
-	enum APHLCMDOFDF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_COMBAT_STATE = 2;
@@ -10665,7 +10665,7 @@ message OpenCombatSessionOutProto {
 		ERROR_PLAYER_HAS_NO_BATTLE_PASSES = 12;
 	}
 
-	APHLCMDOFDF result = 1;
+	Result result = 1;
 	CombatProto combat = 2;
 	bool should_debug_log = 3;
 }
@@ -10678,19 +10678,19 @@ message OpenCombatSessionProto {
 }
 
 message OpenGiftLogEntry {
-	enum GBDFJMJJGDO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	GBDFJMJJGDO result = 1;
+	Result result = 1;
 	string friend_codename = 2;
 	LootProto items = 3;
 	repeated PokemonProto pokemon_eggs = 4;
 }
 
 message OpenGiftOutProto {
-	enum OCLIMIGDEGE {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -10702,7 +10702,7 @@ message OpenGiftOutProto {
 		ERROR_FRIEND_UPDATE = 8;
 	}
 
-	OCLIMIGDEGE result = 1;
+	Result result = 1;
 	LootProto items = 2;
 	PokemonProto egg_pokemon = 3;
 	FriendshipLevelDataProto updated_friendship_data = 4;
@@ -10727,7 +10727,7 @@ message OpenInvasionCombatSessionProto {
 }
 
 message OpenNpcCombatSessionOutProto {
-	enum NKGJIJNKAIF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_BELOW_MINIMUM_LEVEL = 2;
@@ -10735,7 +10735,7 @@ message OpenNpcCombatSessionOutProto {
 		ERROR_ACCESS_DENIED = 4;
 	}
 
-	NKGJIJNKAIF result = 1;
+	Result result = 1;
 	CombatProto combat = 2;
 }
 
@@ -10746,7 +10746,7 @@ message OpenNpcCombatSessionProto {
 }
 
 message OpenTradingOutProto {
-	enum HMDHJFNKCCB {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -10766,7 +10766,7 @@ message OpenTradingOutProto {
 		ERROR_FRIEND_BELOW_MINIMUM_LEVEL = 16;
 	}
 
-	HMDHJFNKCCB result = 1;
+	Result result = 1;
 	TradingProto trading = 2;
 }
 
@@ -10821,12 +10821,12 @@ message PasscodeRedeemTelemetry {
 }
 
 message PasscodeRewardsLogEntry {
-	enum JGLBEKIEAKD {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	JGLBEKIEAKD result = 1;
+	Result result = 1;
 	string passcode = 2;
 	RedeemPasscodeRewardProto rewards = 3;
 }
@@ -12328,7 +12328,7 @@ message PlayerPreferencesProto {
 }
 
 message PlayerProfileOutProto {
-	enum EMGFADOEPLC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
@@ -12338,7 +12338,7 @@ message PlayerProfileOutProto {
 		int32 total = 2;
 	}
 
-	EMGFADOEPLC result = 1;
+	Result result = 1;
 	int64 start_time = 2;
 	repeated PlayerBadgeProto badges = 3;
 	PIOBOKFFKGF gym_badges = 4;
@@ -15211,13 +15211,13 @@ message ProbeSettingsProto {
 }
 
 message ProfanityCheckOutProto {
-	enum MBJLPPFJFJD {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR = 2;
 	}
 
-	MBJLPPFJFJD result = 1;
+	Result result = 1;
 	repeated int32 invalid_contents_indexes = 2;
 }
 
@@ -15231,7 +15231,7 @@ message ProfilePageTelemetry {
 }
 
 message ProgressQuestOutProto {
-	enum APHMJGFEFJO {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_QUEST_NOT_FOUND = 2;
@@ -15239,7 +15239,7 @@ message ProgressQuestOutProto {
 		ERROR_VALIDATION_FAILED = 4;
 	}
 
-	APHMJGFEFJO status = 1;
+	Status status = 1;
 	ClientQuestProto quest = 2;
 }
 
@@ -15268,7 +15268,7 @@ message PurifyPokemonLogEntry {
 }
 
 message PurifyPokemonOutProto {
-	enum GFIOMACLMKC {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INSUFFICIENT_FUNDS = 3;
@@ -15277,7 +15277,7 @@ message PurifyPokemonOutProto {
 		ERROR_POKEMON_NOT_SHADOW = 6;
 	}
 
-	GFIOMACLMKC status = 1;
+	Status status = 1;
 	PokemonProto purified_pokemon = 2;
 }
 
@@ -15440,7 +15440,7 @@ message QuestDisplayProto {
 }
 
 message QuestEncounterOutProto {
-	enum DBMFHGFBGLL {
+	enum Result {
 		QUEST_ENCOUNTER_UNKNOWN = 0;
 		QUEST_ENCOUNTER_SUCCESS = 1;
 		QUEST_ENCOUNTER_NOT_AVAILABLE = 2;
@@ -15448,7 +15448,7 @@ message QuestEncounterOutProto {
 		POKEMON_INVENTORY_FULL = 4;
 	}
 
-	DBMFHGFBGLL result = 1;
+	Result result = 1;
 	PokemonProto pokemon = 2;
 	CaptureProbabilityProto capture_probability = 3;
 	Item active_item = 4;
@@ -15559,7 +15559,7 @@ message QuestPreconditionProto {
 }
 
 message QuestProto {
-	enum COFFKPFIJMD {
+	enum Status {
 		STATUS_UNDEFINED = 0;
 		STATUS_ACTIVE = 1;
 		STATUS_COMPLETED = 2;
@@ -15602,7 +15602,7 @@ message QuestProto {
 	string template_id = 103;
 	int32 progress = 104;
 	QuestGoalProto goal = 105;
-	COFFKPFIJMD status = 106;
+	Status status = 106;
 	repeated QuestRewardProto quest_rewards = 107;
 	int64 creation_timestamp_ms = 108;
 	int64 last_update_timestamp_ms = 109;
@@ -15684,7 +15684,7 @@ message QuestsProto {
 }
 
 message QuitCombatOutProto {
-	enum PNIPACOKAHO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_COMBAT_NOT_FOUND = 2;
@@ -15692,7 +15692,7 @@ message QuitCombatOutProto {
 		ERROR_PLAYER_NOT_IN_COMBAT = 4;
 	}
 
-	PNIPACOKAHO result = 1;
+	Result result = 1;
 	CombatProto combat = 2;
 }
 
@@ -15788,12 +15788,12 @@ message RaidProto {
 }
 
 message RaidRewardsLogEntry {
-	enum MHDIIOALKBK {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	MHDIIOALKBK result = 1;
+	Result result = 1;
 	bool is_exclusive = 2;
 	repeated ItemProto items = 3;
 	repeated ItemProto default_rewards = 4;
@@ -15843,12 +15843,12 @@ message ReadPointOfInterestDescriptionTelemetry {
 }
 
 message ReassignPlayerOutProto {
-	enum EFKFKEPKGOM {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	EFKFKEPKGOM result = 1;
+	Result result = 1;
 	int32 reassigned_instance = 2;
 }
 
@@ -15864,14 +15864,14 @@ message RecommendedSearchProto {
 }
 
 message RecycleItemOutProto {
-	enum GPHGKJJJNDL {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_ENOUGH_COPIES = 2;
 		ERROR_CANNOT_RECYCLE_INCUBATORS = 3;
 	}
 
-	GPHGKJJJNDL result = 1;
+	Result result = 1;
 	int32 new_count = 2;
 }
 
@@ -15939,13 +15939,13 @@ message RegisterBackgroundDeviceActionProto {
 }
 
 message RegisterBackgroundDeviceResponseProto {
-	enum LJIFBADIJEP {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR = 2;
 	}
 
-	LJIFBADIJEP status = 1;
+	Status status = 1;
 	PlatformBackgroundToken token = 2;
 }
 
@@ -15958,7 +15958,7 @@ message RegisterSfidaResponse {
 }
 
 message ReleasePokemonOutProto {
-	enum MMCHHMILJEO {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		POKEMON_DEPLOYED = 2;
@@ -15967,7 +15967,7 @@ message ReleasePokemonOutProto {
 		ERROR_POKEMON_IS_BUDDY = 5;
 	}
 
-	MMCHHMILJEO status = 1;
+	Status status = 1;
 	int32 candy_awarded = 2;
 	int32 xl_candy_awarded = 3;
 }
@@ -15985,7 +15985,7 @@ message RemoteGiftPingRequestProto {
 }
 
 message RemoteGiftPingResponseProto {
-	enum PIDOHFOPLBE {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		STILL_IN_COOL_DOWN = 2;
@@ -15994,7 +15994,7 @@ message RemoteGiftPingResponseProto {
 		ERROR_NO_REMOTE_GIFTS = 5;
 	}
 
-	PIDOHFOPLBE result = 1;
+	Result result = 1;
 }
 
 message RemoteRaidTelemetry {
@@ -16004,14 +16004,14 @@ message RemoteRaidTelemetry {
 }
 
 message RemoveQuestOutProto {
-	enum CPFOODCIFAI {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_QUEST_NOT_FOUND = 2;
 		ERROR_STORY_QUEST_NOT_REMOVABLE = 3;
 	}
 
-	CPFOODCIFAI status = 1;
+	Status status = 1;
 }
 
 message RemoveQuestProto {
@@ -16067,13 +16067,13 @@ message RpcSocketResponseTime {
 }
 
 message SaveCombatPlayerPreferencesOutProto {
-	enum MGIHDAHAGDH {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 	}
 
-	MGIHDAHAGDH result = 1;
+	Result result = 1;
 }
 
 message SaveCombatPlayerPreferencesProto {
@@ -16081,13 +16081,13 @@ message SaveCombatPlayerPreferencesProto {
 }
 
 message SavePlayerPreferencesOutProto {
-	enum OIDAKPIEHIP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR = 2;
 	}
 
-	OIDAKPIEHIP result = 1;
+	Result result = 1;
 }
 
 message SavePlayerPreferencesProto {
@@ -16095,7 +16095,7 @@ message SavePlayerPreferencesProto {
 }
 
 message SavePlayerSnapshotOutProto {
-	enum HPKMEOENEBA {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		TOO_SOON_TO_UPDATE = 2;
@@ -16103,20 +16103,20 @@ message SavePlayerSnapshotOutProto {
 		ERROR_REQUEST_TIMED_OUT = 4;
 	}
 
-	HPKMEOENEBA result = 1;
+	Result result = 1;
 }
 
 message SavePlayerSnapshotProto {
 }
 
 message SaveSocialPlayerSettingsOutProto {
-	enum LCLIOGLJGMN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 	}
 
-	LCLIOGLJGMN result = 1;
+	Result result = 1;
 }
 
 message SaveSocialPlayerSettingsProto {
@@ -16139,17 +16139,17 @@ message SearchFilterPreferenceProto {
 }
 
 message SendGiftLogEntry {
-	enum BJGEBBLHKCF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	BJGEBBLHKCF result = 1;
+	Result result = 1;
 	string friend_codename = 2;
 }
 
 message SendGiftOutProto {
-	enum PANJICJLMAC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -16161,7 +16161,7 @@ message SendGiftOutProto {
 		ERROR_PLAYER_HAS_NO_STICKERS = 8;
 	}
 
-	PANJICJLMAC result = 1;
+	Result result = 1;
 	int32 awarded_xp = 2;
 }
 
@@ -16172,12 +16172,12 @@ message SendGiftProto {
 }
 
 message SendProbeOutProto {
-	enum DDOPEGPDKDG {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	DDOPEGPDKDG result = 1;
+	Result result = 1;
 	string id = 2;
 	int64 server_timestamp_ms = 3;
 }
@@ -16186,7 +16186,7 @@ message SendProbeProto {
 }
 
 message SendRaidInvitationOutProto {
-	enum OLFCIACAAMF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NO_PERMISSION = 2;
@@ -16199,7 +16199,7 @@ message SendRaidInvitationOutProto {
 		ERROR_NO_REMOTE_SLOTS_REMAINING = 9;
 	}
 
-	OLFCIACAAMF result = 1;
+	Result result = 1;
 	int32 num_friend_invites_remaining = 2;
 }
 
@@ -16212,13 +16212,13 @@ message SendRaidInvitationProto {
 }
 
 message SetAvatarItemAsViewedOutProto {
-	enum MHEONNOIFKH {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
 	}
 
-	MHEONNOIFKH result = 1;
+	Result result = 1;
 }
 
 message SetAvatarItemAsViewedProto {
@@ -16226,7 +16226,7 @@ message SetAvatarItemAsViewedProto {
 }
 
 message SetAvatarOutProto {
-	enum KLODECPMLOB {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		AVATAR_ALREADY_SET = 2;
@@ -16237,7 +16237,7 @@ message SetAvatarOutProto {
 		AVATAR_RESET = 7;
 	}
 
-	KLODECPMLOB status = 1;
+	Status status = 1;
 	ClientPlayerProto player = 2;
 }
 
@@ -16246,7 +16246,7 @@ message SetAvatarProto {
 }
 
 message SetBuddyPokemonOutProto {
-	enum HCPBOILHDAO {
+	enum Result {
 		UNEST = 0;
 		SUCCESS = 1;
 		ERROR_POKEMON_DEPLOYED = 2;
@@ -16256,7 +16256,7 @@ message SetBuddyPokemonOutProto {
 		ERROR_BUDDY_SWAP_LIMIT_EXCEEDED = 6;
 	}
 
-	HCPBOILHDAO result = 1;
+	Result result = 1;
 	BuddyPokemonProto updated_buddy = 2;
 	BuddyObservedData observed_data = 3;
 	double km_remaining = 4;
@@ -16267,13 +16267,13 @@ message SetBuddyPokemonProto {
 }
 
 message SetContactSettingsOutProto {
-	enum POHHKFPLAGL {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		FAILURE = 2;
 	}
 
-	POHHKFPLAGL status = 1;
+	Status status = 1;
 	ClientPlayerProto player = 2;
 }
 
@@ -16282,14 +16282,14 @@ message SetContactSettingsProto {
 }
 
 message SetFavoritePokemonOutProto {
-	enum JFPBHAFHMNC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_POKEMON_NOT_FOUND = 2;
 		ERROR_POKEMON_IS_EGG = 3;
 	}
 
-	JFPBHAFHMNC result = 1;
+	Result result = 1;
 }
 
 message SetFavoritePokemonProto {
@@ -16298,7 +16298,7 @@ message SetFavoritePokemonProto {
 }
 
 message SetFriendNicknameOutProto {
-	enum DINHPJGNJLF {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -16309,7 +16309,7 @@ message SetFriendNicknameOutProto {
 		ERROR_EXCEEDED_CHANGE_LIMIT = 7;
 	}
 
-	DINHPJGNJLF result = 1;
+	Result result = 1;
 }
 
 message SetFriendNicknameProto {
@@ -16334,7 +16334,7 @@ message SetInGameCurrencyExchangeRateProto {
 }
 
 message SetLobbyPokemonOutProto {
-	enum FNKKALNABMG {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_LOBBY_NOT_FOUND = 2;
@@ -16342,7 +16342,7 @@ message SetLobbyPokemonOutProto {
 		ERROR_INVALID_POKEMON = 4;
 	}
 
-	FNKKALNABMG result = 1;
+	Result result = 1;
 	LobbyProto lobby = 2;
 }
 
@@ -16354,7 +16354,7 @@ message SetLobbyPokemonProto {
 }
 
 message SetLobbyVisibilityOutProto {
-	enum IJIAOHCHCGC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_LOBBY_CREATOR = 2;
@@ -16362,7 +16362,7 @@ message SetLobbyVisibilityOutProto {
 		ERROR_RAID_UNAVAILABLE = 4;
 	}
 
-	IJIAOHCHCGC result = 1;
+	Result result = 1;
 	LobbyProto lobby = 2;
 }
 
@@ -16373,14 +16373,14 @@ message SetLobbyVisibilityProto {
 }
 
 message SetPlayerTeamOutProto {
-	enum JPCDIHGIAKK {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		TEAM_ALREADY_SET = 2;
 		FAILURE = 3;
 	}
 
-	JPCDIHGIAKK status = 1;
+	Status status = 1;
 	ClientPlayerProto player = 2;
 }
 
@@ -16389,7 +16389,7 @@ message SetPlayerTeamProto {
 }
 
 message SetPokemonTagsForPokemonOutProto {
-	enum INDHHONOKAH {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
@@ -16397,7 +16397,7 @@ message SetPokemonTagsForPokemonOutProto {
 		ERROR_TAG_INVALID = 4;
 	}
 
-	INDHHONOKAH status = 2;
+	Status status = 2;
 }
 
 message SetPokemonTagsForPokemonProto {
@@ -16422,12 +16422,12 @@ message ShadowAttributesProto {
 }
 
 message ShareExRaidPassLogEntry {
-	enum CEJPNDHFMLI {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	CEJPNDHFMLI result = 1;
+	Result result = 1;
 	string friend_codename = 2;
 }
 
@@ -16566,7 +16566,7 @@ message StardustBoostAttributesProto {
 }
 
 message StartGymBattleOutProto {
-	enum MLFFABHKIHH {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_GYM_NOT_FOUND = 2;
@@ -16584,7 +16584,7 @@ message StartGymBattleOutProto {
 		ERROR_POI_INACCESSIBLE = 14;
 	}
 
-	MLFFABHKIHH result = 1;
+	Result result = 1;
 	int64 battle_start_ms = 2;
 	int64 battle_end_ms = 3;
 	string battle_id = 4;
@@ -16603,7 +16603,7 @@ message StartGymBattleProto {
 }
 
 message StartIncidentOutProto {
-	enum KIIECEAKAJK {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NOT_IN_RANGE = 2;
@@ -16613,7 +16613,7 @@ message StartIncidentOutProto {
 		ERROR = 6;
 	}
 
-	KIIECEAKAJK status = 1;
+	Status status = 1;
 	ClientIncidentProto incident = 2;
 }
 
@@ -16622,7 +16622,7 @@ message StartIncidentProto {
 }
 
 message StartRaidBattleOutProto {
-	enum HAFJECLGMNG {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_GYM_NOT_FOUND = 2;
@@ -16638,7 +16638,7 @@ message StartRaidBattleOutProto {
 		ERROR_NEVER_JOINED_BATTLE = 12;
 	}
 
-	HAFJECLGMNG result = 1;
+	Result result = 1;
 	BattleProto battle = 2;
 }
 
@@ -16658,14 +16658,14 @@ message StartRocketBalloonIncidentProto {
 }
 
 message StartTutorialOutProto {
-	enum GEMAJAHECEC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_ALREADY_STARTED_TUTORIAL = 2;
 		ERROR_FAILED_TO_START = 3;
 	}
 
-	GEMAJAHECEC result = 1;
+	Result result = 1;
 }
 
 message StartTutorialProto {
@@ -16700,7 +16700,7 @@ message StoreIapSettingsProto {
 }
 
 message SubmitCombatChallengePokemonsOutProto {
-	enum MIOIOKJEIOO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_CHALLENGE_STATE = 2;
@@ -16713,7 +16713,7 @@ message SubmitCombatChallengePokemonsOutProto {
 		ERROR_ALREADY_DECLINED = 9;
 	}
 
-	MIOIOKJEIOO result = 1;
+	Result result = 1;
 	CombatChallengeProto challenge = 2;
 }
 
@@ -17187,12 +17187,12 @@ message TradingGlobalSettingsProto {
 }
 
 message TradingLogEntry {
-	enum BHENPKJGPMA {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	BHENPKJGPMA result = 1;
+	Result result = 1;
 	string friend_codename = 2;
 	PokemonProto trade_out_pokemon = 3;
 	PokemonProto trade_in_pokemon = 4;
@@ -17281,7 +17281,7 @@ message TradingProto {
 }
 
 message TransferPokemonToPokemonHomeOutProto {
-	enum EHLGLGHAJMH {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
@@ -17314,7 +17314,7 @@ message TransferPokemonToPokemonHomeOutProto {
 		ERROR_PHAPI_PLAYER_NOT_USING_PH_APP = 40;
 	}
 
-	EHLGLGHAJMH status = 1;
+	Status status = 1;
 	int32 candy_awarded = 2;
 	int32 xl_candy_awarded = 3;
 }
@@ -17353,7 +17353,7 @@ message UncommentAnnotationTestProto {
 }
 
 message UnlinkNintendoAccountOutProto {
-	enum PHLMLPCFBFG {
+	enum Status {
 		UNKNOWN = 0;
 		SUCCESS = 1;
 		ERROR_PLAYER_LEVEL_TOO_LOW = 2;
@@ -17361,14 +17361,14 @@ message UnlinkNintendoAccountOutProto {
 		ERROR_TRANSFER_IN_PROGRESS = 4;
 	}
 
-	PHLMLPCFBFG status = 1;
+	Status status = 1;
 }
 
 message UnlinkNintendoAccountProto {
 }
 
 message UnlockPokemonMoveOutProto {
-	enum BAMFDAEGDCO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_POKEMON_NOT_FOUND = 2;
@@ -17378,7 +17378,7 @@ message UnlockPokemonMoveOutProto {
 		ERROR_DISABLED = 6;
 	}
 
-	BAMFDAEGDCO result = 1;
+	Result result = 1;
 	PokemonProto unlocked_pokemon = 2;
 }
 
@@ -17405,7 +17405,7 @@ message UpdateAdventureSyncSettingsRequestProto {
 }
 
 message UpdateCombatOutProto {
-	enum CNJMLFOCDJG {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_COMBAT_STATE = 2;
@@ -17424,7 +17424,7 @@ message UpdateCombatOutProto {
 		ERROR_QUICK_SWAP_NOT_AVAILABLE = 15;
 	}
 
-	CNJMLFOCDJG result = 1;
+	Result result = 1;
 	CombatProto combat = 2;
 }
 
@@ -17457,7 +17457,7 @@ message UpdateInvasionBattleProto {
 }
 
 message UpdateTradingOutProto {
-	enum OLGPHCHBDCO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -17471,7 +17471,7 @@ message UpdateTradingOutProto {
 		ERROR_TRADING_FINISHED = 10;
 	}
 
-	OLGPHCHBDCO result = 1;
+	Result result = 1;
 	TradingProto trading = 2;
 }
 
@@ -17481,7 +17481,7 @@ message UpdateTradingProto {
 }
 
 message UpgradePokemonOutProto {
-	enum MJMCANGDGCN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_POKEMON_NOT_FOUND = 2;
@@ -17501,7 +17501,7 @@ message UpgradePokemonOutProto {
 		int32 total_xl_candy_cost = 7;
 	}
 
-	MJMCANGDGCN result = 1;
+	Result result = 1;
 	PokemonProto upgraded_pokemon = 2;
 	PokemonProto next_upgraded_pokemon = 3;
 	repeated GOHKGDFLKKO bulk_upgrades_cost_table = 4;
@@ -17521,7 +17521,7 @@ message UpsightLoggingSettingsProto {
 }
 
 message UseIncenseActionOutProto {
-	enum OKFCJFOCMBK {
+	enum Result {
 		UNKNOWN = 0;
 		SUCCESS = 1;
 		INCENSE_ALREADY_ACTIVE = 2;
@@ -17529,7 +17529,7 @@ message UseIncenseActionOutProto {
 		LOCATION_UNSET = 4;
 	}
 
-	OKFCJFOCMBK result = 1;
+	Result result = 1;
 	AppliedItemProto applied_incense = 2;
 }
 
@@ -17554,7 +17554,7 @@ message UseItemCaptureProto {
 }
 
 message UseItemEggIncubatorOutProto {
-	enum PDPAAOKAKEO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INCUBATOR_NOT_FOUND = 2;
@@ -17565,7 +17565,7 @@ message UseItemEggIncubatorOutProto {
 		ERROR_INCUBATOR_NO_USES_REMAINING = 7;
 	}
 
-	PDPAAOKAKEO result = 1;
+	Result result = 1;
 	EggIncubatorProto egg_incubator = 2;
 }
 
@@ -17575,7 +17575,7 @@ message UseItemEggIncubatorProto {
 }
 
 message UseItemEncounterOutProto {
-	enum IALPBIJMEME {
+	enum Status {
 		SUCCESS = 0;
 		ALREADY_COMPLETED = 1;
 		ACTIVE_ITEM_EXISTS = 2;
@@ -17583,7 +17583,7 @@ message UseItemEncounterOutProto {
 		INVALID_ITEM_CATEGORY = 4;
 	}
 
-	IALPBIJMEME status = 1;
+	Status status = 1;
 	CaptureProbabilityProto capture_probability = 2;
 	Item active_item = 3;
 }
@@ -17595,7 +17595,7 @@ message UseItemEncounterProto {
 }
 
 message UseItemMoveRerollOutProto {
-	enum ALBBJFNANNN {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		NO_POKEMON = 2;
@@ -17609,7 +17609,7 @@ message UseItemMoveRerollOutProto {
 		INVALID_ELITE_MOVE = 10;
 	}
 
-	ALBBJFNANNN result = 1;
+	Result result = 1;
 	PokemonProto updated_pokemon = 2;
 }
 
@@ -17621,7 +17621,7 @@ message UseItemMoveRerollProto {
 }
 
 message UseItemPotionOutProto {
-	enum BHFCNCFHAGO {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NO_POKEMON = 2;
@@ -17629,7 +17629,7 @@ message UseItemPotionOutProto {
 		ERROR_DEPLOYED_TO_FORT = 4;
 	}
 
-	BHFCNCFHAGO result = 1;
+	Result result = 1;
 	int32 stamina = 2;
 }
 
@@ -17639,7 +17639,7 @@ message UseItemPotionProto {
 }
 
 message UseItemRareCandyOutProto {
-	enum IMGPHNMALPC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		INVALID_POKEMON_ID = 2;
@@ -17649,7 +17649,7 @@ message UseItemRareCandyOutProto {
 		NOT_ENOUGH_ITEMS = 6;
 	}
 
-	IMGPHNMALPC result = 1;
+	Result result = 1;
 	HoloPokemonId pokemon_id = 2;
 }
 
@@ -17660,7 +17660,7 @@ message UseItemRareCandyProto {
 }
 
 message UseItemReviveOutProto {
-	enum KIPLEOFIKGI {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_NO_POKEMON = 2;
@@ -17668,7 +17668,7 @@ message UseItemReviveOutProto {
 		ERROR_DEPLOYED_TO_FORT = 4;
 	}
 
-	KIPLEOFIKGI result = 1;
+	Result result = 1;
 	int32 stamina = 2;
 }
 
@@ -17678,7 +17678,7 @@ message UseItemReviveProto {
 }
 
 message UseItemStardustBoostOutProto {
-	enum JMDBPAAMPIG {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_ITEM_TYPE = 2;
@@ -17687,7 +17687,7 @@ message UseItemStardustBoostOutProto {
 		ERROR_LOCATION_UNSET = 5;
 	}
 
-	JMDBPAAMPIG result = 1;
+	Result result = 1;
 	AppliedItemsProto applied_items = 2;
 }
 
@@ -17696,7 +17696,7 @@ message UseItemStardustBoostProto {
 }
 
 message UseItemXpBoostOutProto {
-	enum JIGMBEPDDAH {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_INVALID_ITEM_TYPE = 2;
@@ -17705,7 +17705,7 @@ message UseItemXpBoostOutProto {
 		ERROR_LOCATION_UNSET = 5;
 	}
 
-	JIGMBEPDDAH result = 1;
+	Result result = 1;
 	AppliedItemsProto applied_items = 2;
 }
 
@@ -17838,12 +17838,12 @@ message VsSeekerClientSettingsProto {
 }
 
 message VsSeekerCompleteSeasonLogEntry {
-	enum PLMINLJCEEB {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	PLMINLJCEEB result = 1;
+	Result result = 1;
 	LootProto rewards = 2;
 	int32 rank = 3;
 	float rating = 4;
@@ -17899,7 +17899,7 @@ message VsSeekerPokemonRewardsProto {
 }
 
 message VsSeekerRewardEncounterOutProto {
-	enum GFDLOIEICCH {
+	enum Result {
 		VS_SEEKER_ENCOUNTER_UNKNOWN = 0;
 		VS_SEEKER_ENCOUNTER_SUCCESS = 1;
 		VS_SEEKER_ENCOUNTER_ALREADY_FINISHED = 2;
@@ -17908,7 +17908,7 @@ message VsSeekerRewardEncounterOutProto {
 		ERROR_REDEEM_ITEM = 5;
 	}
 
-	GFDLOIEICCH result = 1;
+	Result result = 1;
 	PokemonProto pokemon = 2;
 	CaptureProbabilityProto capture_probability = 3;
 	Item active_item = 4;
@@ -17920,12 +17920,12 @@ message VsSeekerRewardEncounterProto {
 }
 
 message VsSeekerSetLogEntry {
-	enum IFFOECOFAON {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	IFFOECOFAON result = 1;
+	Result result = 1;
 	LootProto rewards = 2;
 	int32 new_rank = 3;
 	float new_rating = 4;
@@ -17936,7 +17936,7 @@ message VsSeekerSetLogEntry {
 }
 
 message VsSeekerStartMatchmakingOutProto {
-	enum FGOACPINBGC {
+	enum Result {
 		UNSET = 0;
 		SUCCESS_OPPONENT_FOUND = 1;
 		SUCCESS_QUEUED = 2;
@@ -17952,7 +17952,7 @@ message VsSeekerStartMatchmakingOutProto {
 		ERROR_QUEUE_TOO_FULL = 12;
 	}
 
-	FGOACPINBGC result = 1;
+	Result result = 1;
 	CombatChallengeProto challenge = 2;
 	string queue_id = 3;
 }
@@ -17963,12 +17963,12 @@ message VsSeekerStartMatchmakingProto {
 }
 
 message VsSeekerWinRewardsLogEntry {
-	enum NLEDCGDAALB {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	NLEDCGDAALB result = 1;
+	Result result = 1;
 	LootProto rewards = 2;
 	int32 rank = 3;
 	int32 win_number = 4;
