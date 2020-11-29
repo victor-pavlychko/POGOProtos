@@ -179,6 +179,7 @@ def open_proto_file(main_file, head):
     is_ignored = False
     check_sub_message_end = True
     fixed_messages = ''
+    refs = []
 
     with open(main_file, 'r') as proto_file:
         for proto_line in proto_file.readlines():
