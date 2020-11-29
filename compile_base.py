@@ -221,15 +221,15 @@ def open_proto_file(main_file, head):
                     proto_line = proto_line.replace("NIDORAN", "NIDORAN_MALE")
 
             if proto_name == "HoloBadgeType" and not operator.contains(proto_line, "{") and not operator.contains(
-                proto_line, "}") and operator.contains(proto_line, "HOLO_BADGE_TYPE_"):
+                    proto_line, "}") and operator.contains(proto_line, "HOLO_BADGE_TYPE_"):
                 proto_line = proto_line.replace("HOLO_BADGE_TYPE_", "")
 
             if proto_name == "HoloPokemonMove" and not operator.contains(proto_line, "{") and not operator.contains(
                     proto_line, "}") and operator.contains(proto_line, "HOLO_POKEMON_MOVE_"):
                 proto_line = proto_line.replace("HOLO_POKEMON_MOVE_", "").replace("MOVE_UNSET",
-                                                                                       "V0000_MOVE_NOMOVE")
+                                                                                  "V0000_MOVE_NOMOVE")
                 proto_line = proto_line.replace(proto_line.split("_MOVE_")[0].strip(), "").replace("_MOVE_",
-                                                                                                     "")
+                                                                                                   "")
 
             if not proto_line.startswith("enum") and not proto_line.startswith("message") and operator.contains(
                     proto_line, "enum") or operator.contains(proto_line, "message"):
