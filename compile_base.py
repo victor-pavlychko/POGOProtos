@@ -224,6 +224,10 @@ def open_proto_file(main_file, head):
                     proto_line, "}") and operator.contains(proto_line, "HOLO_BADGE_TYPE_"):
                 proto_line = proto_line.replace("HOLO_BADGE_TYPE_", "")
 
+            if proto_name == "BattleHubSection" and not operator.contains(proto_line, "{") and not operator.contains(
+                    proto_line, "}") and operator.contains(proto_line, "BATTLE_HUB_SECTION_"):
+                proto_line = proto_line.replace("BATTLE_HUB_SECTION_", "")
+
             if proto_name == "HoloPokemonMove" and not operator.contains(proto_line, "{") and not operator.contains(
                     proto_line, "}") and operator.contains(proto_line, "HOLO_POKEMON_MOVE_"):
                 proto_line = proto_line.replace("HOLO_POKEMON_MOVE_", "").replace("MOVE_UNSET",
