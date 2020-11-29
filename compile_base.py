@@ -169,6 +169,7 @@ def open_proto_file(main_file, head):
     ignored_one_of = {}
     is_ignored = False
     check_sub_message_end = True
+    proto_name = ''
 
     with open(main_file, 'r') as proto_file:
         for proto_line in proto_file.readlines():
@@ -193,6 +194,42 @@ def open_proto_file(main_file, head):
             # ---
             if is_blank(proto_line):
                 continue
+            if operator.contains(proto_line, "message ") or operator.contains(proto_line, "enum ") or operator.contains(
+                    proto_line, "oneof ") and operator.contains(
+                proto_line, "{"):
+                proto_name = proto_line.split(" ")[1].strip()
+
+            if proto_name == "HoloPokemonId" and not operator.contains(proto_line, "{") and not operator.contains(
+                    proto_line, "}") and operator.contains(proto_line, "HOLO_POKEMON_ID_"):
+                proto_line = proto_line.replace("HOLO_POKEMON_ID_", "").replace("POKEMON_UNSET",
+                                                                                "V0000_POKEMON_MISSINGNO")
+                proto_line = proto_line.replace(proto_line.split("_POKEMON_")[0].strip(), "").replace("_POKEMON_", "")
+                if operator.contains(proto_line, "NIDORAN") and operator.contains(proto_line, "= 29;"):
+                    proto_line = proto_line.replace("NIDORAN", "NIDORAN_FEMALE")
+                elif operator.contains(proto_line, "NIDORAN") and operator.contains(proto_line, "= 32;"):
+                    proto_line = proto_line.replace("NIDORAN", "NIDORAN_MALE")
+
+            if proto_name == "HoloPokemonFamilyId" and not operator.contains(proto_line, "{") and not operator.contains(
+                    proto_line, "}") and operator.contains(proto_line, "HOLO_POKEMON_FAMILY_ID_"):
+                proto_line = proto_line.replace("HOLO_POKEMON_FAMILY_ID_", "").replace("FAMILY_UNSET",
+                                                                                       "V0000_FAMILY_UNSET")
+                proto_line = proto_line.replace(proto_line.split("_FAMILY_")[0].strip(), "").replace("_FAMILY_",
+                                                                                                     "FAMILY_")
+                if operator.contains(proto_line, "NIDORAN") and operator.contains(proto_line, "= 29;"):
+                    proto_line = proto_line.replace("NIDORAN", "NIDORAN_FEMALE")
+                elif operator.contains(proto_line, "NIDORAN") and operator.contains(proto_line, "= 32;"):
+                    proto_line = proto_line.replace("NIDORAN", "NIDORAN_MALE")
+
+            if proto_name == "HoloBadgeType" and not operator.contains(proto_line, "{") and not operator.contains(
+                proto_line, "}") and operator.contains(proto_line, "HOLO_BADGE_TYPE_"):
+                proto_line = proto_line.replace("HOLO_BADGE_TYPE_", "")
+
+            if proto_name == "HoloPokemonMove" and not operator.contains(proto_line, "{") and not operator.contains(
+                    proto_line, "}") and operator.contains(proto_line, "HOLO_POKEMON_MOVE_"):
+                proto_line = proto_line.replace("HOLO_POKEMON_MOVE_", "").replace("MOVE_UNSET",
+                                                                                       "V0000_MOVE_NOMOVE")
+                proto_line = proto_line.replace(proto_line.split("_MOVE_")[0].strip(), "").replace("_MOVE_",
+                                                                                                     "")
 
             if not proto_line.startswith("enum") and not proto_line.startswith("message") and operator.contains(
                     proto_line, "enum") or operator.contains(proto_line, "message"):
@@ -221,6 +258,7 @@ def open_proto_file(main_file, head):
                 is_enum = False
                 is_one_off = False
                 ignored_one_of.clear()
+                # proto_name = ''
 
     ## check messages first
     proto_name = ''
