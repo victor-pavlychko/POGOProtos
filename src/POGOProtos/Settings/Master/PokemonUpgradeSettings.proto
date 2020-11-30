@@ -12,4 +12,6 @@ message PokemonUpgradeSettings {
 	float purified_candy_multiplier = 8;
 	int32 max_normal_upgrade_level = 9;
 	int32 default_cp_boost_additional_level = 10;
+	int32 unknown11 = 11;
+	repeated int32 unknown12 = 12;
 }
