@@ -2263,11 +2263,11 @@
       "size": 5206
     },
     {
-      "assetId": "1bb14249-cfa4-44d4-a0d6-1c58e8261650/1606335570715179",
+      "assetId": "1bb14249-cfa4-44d4-a0d6-1c58e8261650/1606857907852623",
       "bundleName": "json_patch_i18n_italian",
-      "version": "1606335570715179",
-      "checksum": 2375288218,
-      "size": 20386
+      "version": "1606857907852623",
+      "checksum": 2271649697,
+      "size": 20501
     },
     {
       "assetId": "1bdc4adc-4bcb-4aac-b5bb-6dfef458409b/1584926521002640",
@@ -3245,11 +3245,11 @@
       "size": 34519
     },
     {
-      "assetId": "26e59266-4304-4296-958e-43ce547a0e2e/1605722420994749",
+      "assetId": "26e59266-4304-4296-958e-43ce547a0e2e/1606844781587935",
       "bundleName": "m_shirt_lvl50_01_bundle_icon",
-      "version": "1605722420994749",
-      "checksum": 2000762582,
-      "size": 15685
+      "version": "1606844781587935",
+      "checksum": 1923889376,
+      "size": 15683
     },
     {
       "assetId": "26f9c352-ea0f-4d17-89d2-a2f33788df9e/1584915456977169",
@@ -3620,11 +3620,11 @@
       "key": "/FEF7hUM85mDw2hD67WdSQ=="
     },
     {
-      "assetId": "2b58a4ea-6704-4b59-baa3-93d3322eb74d/1606335567048692",
+      "assetId": "2b58a4ea-6704-4b59-baa3-93d3322eb74d/1606857905007013",
       "bundleName": "json_patch_i18n_german",
-      "version": "1606335567048692",
-      "checksum": 845064029,
-      "size": 23684
+      "version": "1606857905007013",
+      "checksum": 635454935,
+      "size": 23759
     },
     {
       "assetId": "2b62593e-546c-4844-ab6d-d5b8c0f5fbea/1606497658049797",
@@ -4966,11 +4966,11 @@
       "size": 10141
     },
     {
-      "assetId": "3d93143b-a6da-43a5-95c4-153d6045925e/1606335583447506",
+      "assetId": "3d93143b-a6da-43a5-95c4-153d6045925e/1606857917557609",
       "bundleName": "json_patch_i18n_brazilianportuguese",
-      "version": "1606335583447506",
-      "checksum": 3156487902,
-      "size": 20550
+      "version": "1606857917557609",
+      "checksum": 3192978597,
+      "size": 20619
     },
     {
       "assetId": "3da83d1a-267a-4f63-9854-420c6f75b881/1605722763517762",
@@ -5738,11 +5738,11 @@
       "size": 10112
     },
     {
-      "assetId": "4894c86c-9a45-4814-9215-0a92968690f7/1606335555801504",
+      "assetId": "4894c86c-9a45-4814-9215-0a92968690f7/1606857895868795",
       "bundleName": "json_patch_i18n_japanese",
-      "version": "1606335555801504",
-      "checksum": 4109074700,
-      "size": 23181
+      "version": "1606857895868795",
+      "checksum": 3943354256,
+      "size": 23292
     },
     {
       "assetId": "489e8bc1-e751-473f-8ff8-7729dd807d8c/1584917767023332",
@@ -7898,11 +7898,11 @@
       "size": 19525
     },
     {
-      "assetId": "636575d6-7213-4ffc-88e8-5f125e7112d6/1606335579567377",
+      "assetId": "636575d6-7213-4ffc-88e8-5f125e7112d6/1606857914649051",
       "bundleName": "json_patch_i18n_chinesetraditional",
-      "version": "1606335579567377",
-      "checksum": 850958465,
-      "size": 21557
+      "version": "1606857914649051",
+      "checksum": 2800321630,
+      "size": 21630
     },
     {
       "assetId": "63747ce3-3770-4b98-bdfb-999dc27bc558/1605722790130702",
@@ -8656,11 +8656,11 @@
       "size": 830650
     },
     {
-      "assetId": "6b8f3fef-4233-45f7-9395-39f56e0912e1/1606335587328354",
+      "assetId": "6b8f3fef-4233-45f7-9395-39f56e0912e1/1606857921007471",
       "bundleName": "json_patch_i18n_thai",
-      "version": "1606335587328354",
-      "checksum": 265794258,
-      "size": 29064
+      "version": "1606857921007471",
+      "checksum": 16289350,
+      "size": 29097
     },
     {
       "assetId": "6bab0511-7fd0-4e48-851c-1ba9a8c0e2f9/1602526094676398",
@@ -10315,11 +10315,11 @@
       "size": 12443
     },
     {
-      "assetId": "7f37218b-5250-4129-9fba-6d205e07b5b1/1603414757508085",
+      "assetId": "7f37218b-5250-4129-9fba-6d205e07b5b1/1606844714612121",
       "bundleName": "m_gloves_swshdlc2costume_bundle",
-      "version": "1603414757508085",
-      "checksum": 2084589764,
-      "size": 160596
+      "version": "1606844714612121",
+      "checksum": 1938241443,
+      "size": 161709
     },
     {
       "assetId": "7f4cb4be-93ed-4bcc-964d-9dc46e3040e3/1583464963690278",
@@ -13292,11 +13292,11 @@
       "size": 4715
     },
     {
-      "assetId": "a2799054-c99b-4e96-9bb3-48626e95d238/1605722348608127",
+      "assetId": "a2799054-c99b-4e96-9bb3-48626e95d238/1606844723391504",
       "bundleName": "f_shoes_coolboots_00_bundle_icon",
-      "version": "1605722348608127",
-      "checksum": 3732958695,
-      "size": 11919
+      "version": "1606844723391504",
+      "checksum": 465996297,
+      "size": 11924
     },
     {
       "assetId": "a27d4f90-5bd4-4999-bc78-8bde1b103cf1/1584899403893211",
@@ -13383,11 +13383,11 @@
       "size": 8667
     },
     {
-      "assetId": "a381995c-f9ca-4de5-93db-38159a7d032c/1606335563365024",
+      "assetId": "a381995c-f9ca-4de5-93db-38159a7d032c/1606857902027629",
       "bundleName": "json_patch_i18n_spanish",
-      "version": "1606335563365024",
-      "checksum": 1406982181,
-      "size": 21434
+      "version": "1606857902027629",
+      "checksum": 3632568581,
+      "size": 21570
     },
     {
       "assetId": "a3a69cd2-60da-43f3-9756-9021d92c3400/1584914949243872",
@@ -15314,11 +15314,11 @@
       "size": 166403
     },
     {
-      "assetId": "bba9ad41-68c7-435d-b9f3-a8f20c01961c/1605722399568637",
+      "assetId": "bba9ad41-68c7-435d-b9f3-a8f20c01961c/1606844756761329",
       "bundleName": "f_shirt_lvl50_01_bundle_icon",
-      "version": "1605722399568637",
-      "checksum": 2186333615,
-      "size": 14710
+      "version": "1606844756761329",
+      "checksum": 2408424766,
+      "size": 14709
     },
     {
       "assetId": "bbaccacf-ba85-4a44-a6aa-920e311fb6ab/1584900624616680",
@@ -15809,11 +15809,11 @@
       "size": 172206
     },
     {
-      "assetId": "c21b5044-d4fa-4ed8-8a70-5aa6db2556a6/1605722404677142",
+      "assetId": "c21b5044-d4fa-4ed8-8a70-5aa6db2556a6/1606844763588814",
       "bundleName": "f_shirt_lvl50_bundle",
-      "version": "1605722404677142",
-      "checksum": 1840604213,
-      "size": 431266
+      "version": "1606844763588814",
+      "checksum": 1915785,
+      "size": 433572
     },
     {
       "assetId": "c23cc3f5-3297-4f00-8a21-e64ac516d9de/1584900410991486",
@@ -16396,11 +16396,11 @@
       "key": "ZbdIVMJXbHtBG7TDtXfyWw=="
     },
     {
-      "assetId": "c90b25fc-ad8a-4cef-84a2-fad6e549b7e2/1605722395118468",
+      "assetId": "c90b25fc-ad8a-4cef-84a2-fad6e549b7e2/1606844751893683",
       "bundleName": "f_shirt_lvl50_00_bundle_icon",
-      "version": "1605722395118468",
-      "checksum": 1543864134,
-      "size": 14107
+      "version": "1606844751893683",
+      "checksum": 2883929887,
+      "size": 14105
     },
     {
       "assetId": "c9143085-c02d-4a2a-83fd-71589bdf5ec7/1589390221470723",
@@ -16792,11 +16792,11 @@
       "size": 509961
     },
     {
-      "assetId": "cd53a84f-5c55-4563-84b3-edda474e01f1/1606335551727355",
+      "assetId": "cd53a84f-5c55-4563-84b3-edda474e01f1/1606857892448474",
       "bundleName": "json_patch_i18n_english",
-      "version": "1606335551727355",
-      "checksum": 2697823421,
-      "size": 19335
+      "version": "1606857892448474",
+      "checksum": 1041971182,
+      "size": 19411
     },
     {
       "assetId": "cd6505ba-8c14-49d2-9bb8-2b8840b60f6a/1584900513103046",
@@ -18070,11 +18070,11 @@
       "size": 7554
     },
     {
-      "assetId": "dccbb419-951a-4bf9-8448-8a32e5bae6d1/1606335575633833",
+      "assetId": "dccbb419-951a-4bf9-8448-8a32e5bae6d1/1606857911251687",
       "bundleName": "json_patch_i18n_korean",
-      "version": "1606335575633833",
-      "checksum": 4049620418,
-      "size": 20740
+      "version": "1606857911251687",
+      "checksum": 592549689,
+      "size": 20812
     },
     {
       "assetId": "dcd89218-66fa-4ea3-a549-7d49df98b5d1/1512759924956220",
@@ -18288,11 +18288,11 @@
       "size": 9339
     },
     {
-      "assetId": "defdc39b-bac1-4f40-9108-65a05dbd8ab3/1605722365290431",
+      "assetId": "defdc39b-bac1-4f40-9108-65a05dbd8ab3/1606844744349428",
       "bundleName": "m_shoes_coolboots_bundle",
-      "version": "1605722365290431",
-      "checksum": 2119848970,
-      "size": 208916
+      "version": "1606844744349428",
+      "checksum": 3303957690,
+      "size": 202842
     },
     {
       "assetId": "df0e60cc-ec0a-43b4-ae48-ac50167126b6/1584903896443803",
@@ -18576,11 +18576,11 @@
       "size": 10467
     },
     {
-      "assetId": "e2a64609-c544-40c2-b99a-cc66d495377f/1605722360563534",
+      "assetId": "e2a64609-c544-40c2-b99a-cc66d495377f/1606844739516127",
       "bundleName": "m_shoes_coolboots_00_bundle_icon",
-      "version": "1605722360563534",
-      "checksum": 3089448901,
-      "size": 12410
+      "version": "1606844739516127",
+      "checksum": 2191077036,
+      "size": 12406
     },
     {
       "assetId": "e2af8917-4674-43f9-b96f-bf3f861a59d5/1509480227818338",
@@ -19057,11 +19057,11 @@
       "size": 8561
     },
     {
-      "assetId": "e7e51446-4d04-40cc-a7a6-0036c05de98b/1605722416244206",
+      "assetId": "e7e51446-4d04-40cc-a7a6-0036c05de98b/1606844777018998",
       "bundleName": "m_shirt_lvl50_00_bundle_icon",
-      "version": "1605722416244206",
-      "checksum": 1935570128,
-      "size": 15157
+      "version": "1606844777018998",
+      "checksum": 2067991794,
+      "size": 15150
     },
     {
       "assetId": "e7e9270a-6369-4037-b891-3b1461b625ac/1606497748985620",
@@ -19767,11 +19767,11 @@
       "size": 9495
     },
     {
-      "assetId": "f0eaeed5-5c79-44ef-a414-8a51ff4442c7/1605722426736702",
+      "assetId": "f0eaeed5-5c79-44ef-a414-8a51ff4442c7/1606844787139886",
       "bundleName": "m_shirt_lvl50_bundle",
-      "version": "1605722426736702",
-      "checksum": 1149611159,
-      "size": 427800
+      "version": "1606844787139886",
+      "checksum": 3299446973,
+      "size": 427995
     },
     {
       "assetId": "f0fefe18-d76b-4437-9bd7-3ac0c3ff7253/1597432375307857",
@@ -19802,11 +19802,11 @@
       "size": 167971
     },
     {
-      "assetId": "f1a7427b-51aa-4a52-a438-9c79c1f110e4/1605722353662121",
+      "assetId": "f1a7427b-51aa-4a52-a438-9c79c1f110e4/1606844729438245",
       "bundleName": "f_shoes_coolboots_bundle",
-      "version": "1605722353662121",
-      "checksum": 3956359115,
-      "size": 207184
+      "version": "1606844729438245",
+      "checksum": 2921360557,
+      "size": 205544
     },
     {
       "assetId": "f1c31696-5427-4db1-b18f-7311f270cd0c/1584922827428336",
@@ -20346,11 +20346,11 @@
       "size": 9420
     },
     {
-      "assetId": "f81c317b-b38c-454e-ac41-b716acec654f/1606335559607957",
+      "assetId": "f81c317b-b38c-454e-ac41-b716acec654f/1606857899127010",
       "bundleName": "json_patch_i18n_french",
-      "version": "1606335559607957",
-      "checksum": 3979027255,
-      "size": 20574
+      "version": "1606857899127010",
+      "checksum": 542854963,
+      "size": 22057
     },
     {
       "assetId": "f826a71a-90f8-46c9-a731-f05a07d215ef/1584914399966786",
@@ -21023,6 +21023,6 @@
       "size": 290457
     }
   ],
-  "timestamp": "1606782453973444",
+  "timestamp": "1606857921007471",
   "result": "SUCCESS"
 }
