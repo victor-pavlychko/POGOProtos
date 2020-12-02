@@ -65,6 +65,7 @@ enum ArMappingEntrySource {
 	AR_MAPPING_ENTRY_SOURCE_POI_SUBMISSION = 5;
 	AR_MAPPING_ENTRY_SOURCE_POI_FULLSCREEN_INSPECTION = 6;
 	AR_MAPPING_ENTRY_SOURCE_GEOTARGETED_QUESTS = 7;
+	AR_MAPPING_ENTRY_SOURCE_OTHER = 8;
 }
 
 enum ArMappingTutorialPage {
@@ -2045,6 +2046,7 @@ enum HoloPokemonId {
 	OBSTAGOON = 862;
 	PERRSERKER = 863;
 	SIRFETCHD = 865;
+	MR_RIME = 866;
 	RUNERIGUS = 867;
 }
 
@@ -2612,6 +2614,7 @@ enum Item {
 	ITEM_GIOVANNI_MAP = 1503;
 	ITEM_GLOBAL_EVENT_TICKET = 1600;
 	ITEM_EVENT_TICKET_PINK = 1601;
+	ITEM_EVENT_TICKET_GRAY = 1602;
 }
 
 enum ItemUseTelemetryIds {
@@ -3398,6 +3401,7 @@ enum PluginState {
 enum PoiEditImageEntrySource {
 	POI_EDIT_IMAGE_ENTRY_SOURCE_EDIT_MENU = 0;
 	POI_EDIT_IMAGE_ENTRY_SOURCE_IMAGE_GALLERY = 1;
+	POI_EDIT_IMAGE_ENTRY_SOURCE_OTHER = 2;
 }
 
 enum PoiImageType {
@@ -4946,7 +4950,7 @@ message BelugaPokemonProto {
 	TrainerGender trainer_gender = 2;
 	Team trainer_team = 3;
 	int32 trainer_level = 4;
-	int32 pokedex_id = 5;
+	HoloPokemonId pokedex_id = 5;
 	int32 cp = 6;
 	float pokemon_level = 7;
 	int32 max_hp = 8;
@@ -5147,7 +5151,7 @@ message BuddyEncounterCameoSettings {
 }
 
 message BuddyEncounterHelpTelemetry {
-	int32 pokemon_id = 1;
+	HoloPokemonId pokemon_id = 1;
 	int32 cp = 2;
 	string encounter_type = 3;
 	bool ar_classic_enabled = 4;
@@ -5256,7 +5260,7 @@ message BuddyLevelSettings {
 }
 
 message BuddyMapEmotionCheckTelemetry {
-	int32 pokemon_id = 1;
+	HoloPokemonId pokemon_id = 1;
 	int32 current_emotion_points = 2;
 	int32 current_affection_points = 3;
 }
@@ -5539,7 +5543,7 @@ message CatchPokemonOutProto {
 	fixed64 captured_pokemon_id = 3;
 	CaptureScoreProto scores = 4;
 	CaptureReason capture_reason = 5;
-	int32 display_pokedex_id = 6;
+	HoloPokemonId display_pokedex_id = 6;
 	int32 throws_remaining = 7;
 	PokemonDisplayProto pokemon_display = 8;
 }
@@ -5779,7 +5783,7 @@ message ClientPerformanceSettingsProto {
 message ClientPlayerProto {
 	int64 creation_time_ms = 1;
 	string name = 2;
-	int32 team = 5;
+	Team team = 5;
 	repeated TutorialCompletion tutorial_complete = 7;
 	PlayerAvatarProto player_avatar_proto = 8;
 	int32 max_pokemon_storage = 9;
@@ -6264,7 +6268,7 @@ message CombatProto {
 
 	message CombatPokemonProto {
 		fixed64 pokemon_id = 1;
-		int32 pokedex_id = 2;
+		HoloPokemonId pokedex_id = 2;
 		int32 cp = 3;
 		float cp_multiplier = 4;
 		int32 stamina = 5;
@@ -6909,7 +6913,7 @@ message DeployPokemonTelemetry {
 	int32 status = 1;
 	PokemonTelemetry pokemon = 2;
 	string gym_id = 3;
-	int32 team = 4;
+	Team team = 4;
 	int32 defender_count = 5;
 }
 
@@ -7200,7 +7204,7 @@ message EncounterTutorialCompleteOutProto {
 }
 
 message EncounterTutorialCompleteProto {
-	int32 pokedex_id = 1;
+	HoloPokemonId pokedex_id = 1;
 }
 
 message EnumWrapper {
@@ -7550,7 +7554,7 @@ message FeedPokemonTelemetry {
 	int32 status = 1;
 	PokemonTelemetry pokemon = 2;
 	string gym_id = 3;
-	int32 team = 4;
+	Team team = 4;
 	int32 defender_count = 5;
 	int32 motivation = 6;
 	int32 cp_now = 7;
@@ -7676,7 +7680,7 @@ message FortDeployProto {
 
 message FortDetailsOutProto {
 	string id = 1;
-	int32 team = 2;
+	Team team = 2;
 	repeated PokemonProto pokemon = 3;
 	string name = 4;
 	repeated string image_url = 5;
@@ -7992,6 +7996,7 @@ message GameMasterClientTemplateProto {
 	GeotargetedQuestSettingsProto geotargeted_quest_settings = 100;
 	PokemonTagSettingsProto pokemon_tag_settings = 101;
 	RecommendedSearchProto recommended_search_proto = 102;
+	InventorySettingsProto inventory_settings = 103;
 }
 
 message GameMasterLocalProto {
@@ -8009,7 +8014,6 @@ message GameplayWeatherProto {
 		SNOW = 6;
 		FOG = 7;
 	}
-
 }
 
 message GenerateCombatChallengeIdOutProto {
@@ -8367,7 +8371,7 @@ message GetIncensePokemonOutProto {
 	}
 
 	Result result = 1;
-	int32 pokemon_type_id = 2;
+	HoloPokemonId pokemon_type_id = 2;
 	double lat = 3;
 	double lng = 4;
 	string encounter_location = 5;
@@ -9092,7 +9096,7 @@ message GymEventProto {
 	string trainer = 1;
 	int64 timestamp_ms = 2;
 	Event event = 3;
-	int32 pokedex_id = 4;
+	HoloPokemonId pokedex_id = 4;
 	fixed64 pokemon_id = 5;
 }
 
@@ -9284,14 +9288,14 @@ message HoloInventoryKeyProto {
 	oneof Type {
 		fixed64 pokemon_id = 1;
 		Item item = 2;
-		int32 pokedex_entry_id = 3;
+		HoloPokemonId pokedex_entry_id = 3;
 		bool player_stats = 4;
 		bool player_currency = 5;
 		bool player_camera = 6;
 		bool inventory_upgrades = 7;
 		bool applied_items = 8;
 		bool egg_incubators = 9;
-		int32 pokemon_family_id = 10;
+		HoloPokemonFamilyId pokemon_family_id = 10;
 		QuestType quest_type = 11;
 		string avatar_template_id = 12;
 		bool raid_tickets = 13;
@@ -9609,6 +9613,9 @@ message InventorySettingsProto {
 	int64 team_change_item_reset_period_in_days = 7;
 	int64 max_item_boost_duration_ms = 8;
 	int32 default_sticker_max_count = 9;
+	bool enable_eggs_not_inventory = 10;
+	int32 special_egg_overflow_spots = 11;
+	bool enable_overflow_spot_sliding = 12;
 }
 
 message InventoryUpgradeAttributesProto {
@@ -10089,7 +10096,7 @@ message MapEventsTelemetry {
 	MapEventsTelemetryIds map_event_click_id = 1;
 	string fort_id = 2;
 	repeated int32 guard_pokemon_level = 3;
-	int32 team = 4;
+	Team team = 4;
 	bool is_player_in_range = 5;
 }
 
@@ -12292,7 +12299,7 @@ message PokedexEntryProto {
 		repeated PokemonDisplayProto.Gender genders_obtained = 5;
 	}
 
-	int32 pokedex_entry_number = 1;
+	HoloPokemonId pokedex_entry_number = 1;
 	int32 times_encountered = 2;
 	int32 times_captured = 3;
 	int32 evolution_stone_pieces = 4;
@@ -14572,6 +14579,12 @@ message PokemonDisplayProto {
 		HOOPA_UNBOUND = 2652;
 		SABLEYE_COSTUME_2020_DEPRECATED = 2666;
 		SABLEYE_COSTUME_2020 = 2668;
+		PIKACHU_ADVENTURE_HAT_2020 = 2669;
+		PIKACHU_WINTER_2020 = 2670;
+		DELIBIRD_WINTER_2020 = 2671;
+		CUBCHOO_WINTER_2020 = 2672;
+		SLOWPOKE_2020 = 2673;
+		SLOWBRO_2021 = 2674;
 	}
 
 	Costume costume = 1;
@@ -14646,8 +14659,8 @@ message PokemonFortProto {
 	int64 last_modified_ms = 2;
 	double latitude = 3;
 	double longitude = 4;
-	int32 team = 5;
-	int32 guard_pokemon_id = 6;
+	Team team = 5;
+	HoloPokemonId guard_pokemon_id = 6;
 	int32 guard_pokemon_level = 7;
 	bool enabled = 8;
 	FortType fort_type = 9;
@@ -14740,7 +14753,7 @@ message PokemonInventoryTelemetry {
 
 message PokemonProto {
 	fixed64 id = 1;
-	int32 pokemon_id = 2;
+	HoloPokemonId pokemon_id = 2;
 	int32 cp = 3;
 	int32 stamina = 4;
 	int32 max_stamina = 5;
@@ -14937,7 +14950,7 @@ message PokemonTagSettingsProto {
 }
 
 message PokemonTelemetry {
-	int32 pokemon_id = 1;
+	HoloPokemonId pokemon_id = 1;
 	int32 cp = 2;
 	float weight_kg = 3;
 	float height_m = 4;
@@ -17201,7 +17214,7 @@ message TradingProto {
 
 	message TradingPokemonProto {
 		fixed64 pokemon_id = 1;
-		int32 pokedex_entry_number = 2;
+		HoloPokemonId pokedex_entry_number = 2;
 		int32 original_cp = 3;
 		int32 adjusted_cp_min = 4;
 		int32 adjusted_cp_max = 5;
@@ -17706,7 +17719,7 @@ message UserAttributesProto {
 	int32 level = 1;
 	int64 xp_percentage = 2;
 	int64 pokecoin_count = 3;
-	int32 team = 4;
+	Team team = 4;
 	int32 catch_streak = 5;
 	int32 spin_streak = 6;
 	string buddy_name = 7;
