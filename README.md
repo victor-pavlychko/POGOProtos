@@ -68,7 +68,7 @@ python compile_base.py -l cpp -1 -k:
 
 | Additional resources   | Source                                                                               | Status 
 |------------------------|--------------------------------------------------------------------------------------|--------
-| [V2_GAME_MASTER](https://github.com/Furtif/POGOProtos/tree/master/GM/V2_GAME_MASTER.json) | Root                                   |  OK    
+| [V2_GAME_MASTER](https://github.com/Furtif/POGOProtos/tree/master/GM/v2_GAME_MASTER.json) | Root                                   |  OK    
 | [GAME_MASTER](https://github.com/Furtif/POGOProtos/tree/master/GM/GAME_MASTER.json) | Root                                   |  OK    
 | [ASSET_DIGEST](https://github.com/Furtif/POGOProtos/tree/master/GM/ASSET_DIGEST.json) | Root                                   |  OK    
 
