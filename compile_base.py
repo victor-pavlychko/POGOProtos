@@ -58,13 +58,13 @@ lang = args.lang or "proto"
 out_path = args.out_path or "out/single_file/" + lang
 java_multiple_files = args.java_multiple_files
 gen_only = args.generate_only
-version = args.version or "193.2"
+version = args.version or "193.3"
 gen_base = args.generate_new_base
 keep_file = args.keep_proto_file
 rpc = args.rpc
 
 # Determine where path's
-raw_name = "v0.193.2.proto"
+raw_name = "v0.193.3.proto"
 raw_proto_file = os.path.abspath("base/" + raw_name)
 base_file = os.path.abspath("base/base.proto")
 protos_path = os.path.abspath("base")
