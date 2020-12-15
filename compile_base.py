@@ -464,6 +464,12 @@ def open_proto_file(main_file, head):
             elif proto_name == "VariableName" and not operator.contains(proto_line, "{") and not operator.contains(
                     proto_line, "}") and operator.contains(proto_line, "unset__variable_name"):
                 proto_line = proto_line.replace("unset__variable_name", "UNSET")
+            elif proto_name == "InvitationType" and not operator.contains(proto_line, "{") and not operator.contains(
+                    proto_line, "}") and operator.contains(proto_line, "INVITATION_TYPE_INVITATION_TYPE_"):
+                proto_line = proto_line.replace("INVITATION_TYPE_INVITATION_TYPE_", "INVITATION_TYPE_")
+            elif proto_name == "HoloholoClientTelemetryIds" and not operator.contains(proto_line, "{") and not operator.contains(
+                    proto_line, "}") and operator.contains(proto_line, "HOLOHOLO_"):
+                proto_line = proto_line.replace("HOLOHOLO_", "")
 
             ## Others conditions...
             if not proto_line.startswith("enum") and not proto_line.startswith("message") and operator.contains(
