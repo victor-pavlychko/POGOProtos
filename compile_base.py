@@ -377,6 +377,9 @@ def open_proto_file(main_file, head):
             elif proto_name == "MapLayer" and not operator.contains(proto_line, "{") and not operator.contains(
                     proto_line, "}") and operator.contains(proto_line, "PLATFORM_"):
                 proto_line = proto_line.replace("PLATFORM_", "")
+            elif proto_name == "Method" and not operator.contains(proto_line, "{") and not operator.contains(
+                    proto_line, "}") and operator.contains(proto_line, "METHOD_METHOD_"):
+                proto_line = proto_line.replace("METHOD_METHOD_", "METHOD_")
             elif proto_name == "NotificationCategory" and not operator.contains(proto_line,
                                                                                 "{") and not operator.contains(
                 proto_line, "}") and operator.contains(proto_line, "_unset__notification_category"):
