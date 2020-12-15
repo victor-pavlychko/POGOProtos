@@ -366,8 +366,8 @@ def open_proto_file(main_file, head):
                 proto_line, "}") and operator.contains(proto_line, "INVENTORY_UPGRADE_TYPE_"):
                 proto_line = proto_line.replace("INVENTORY_UPGRADE_TYPE_", "")
             elif proto_name == "InvitationType" and not operator.contains(proto_line, "{") and not operator.contains(
-                    proto_line, "}") and operator.contains(proto_line, "PLATFORM_"):
-                proto_line = proto_line.replace("PLATFORM_", "")
+                    proto_line, "}") and operator.contains(proto_line, "PLATFORM_INVITATION_TYPE_INVITATION_TYPE_"):
+                proto_line = proto_line.replace("PLATFORM_INVITATION_TYPE_INVITATION_TYPE_", "INVITATION_TYPE_")
             elif proto_name == "Item" and not operator.contains(proto_line, "{") and not operator.contains(
                     proto_line, "}") and operator.contains(proto_line, "ITEM_ITEM_"):
                 if operator.contains(proto_line, "ITEM_ITEM_ITEM_STORAGE_UPGRADE"):
@@ -464,9 +464,6 @@ def open_proto_file(main_file, head):
             elif proto_name == "VariableName" and not operator.contains(proto_line, "{") and not operator.contains(
                     proto_line, "}") and operator.contains(proto_line, "unset__variable_name"):
                 proto_line = proto_line.replace("unset__variable_name", "UNSET")
-            elif proto_name == "InvitationType" and not operator.contains(proto_line, "{") and not operator.contains(
-                    proto_line, "}") and operator.contains(proto_line, "INVITATION_TYPE_INVITATION_TYPE_"):
-                proto_line = proto_line.replace("INVITATION_TYPE_INVITATION_TYPE_", "INVITATION_TYPE_")
             elif proto_name == "HoloholoClientTelemetryIds" and not operator.contains(proto_line, "{") and not operator.contains(
                     proto_line, "}") and operator.contains(proto_line, "HOLOHOLO_"):
                 proto_line = proto_line.replace("HOLOHOLO_", "")
