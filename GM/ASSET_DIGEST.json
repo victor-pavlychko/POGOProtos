@@ -846,11 +846,11 @@
       "size": 20402
     },
     {
-      "assetId": "098beef3-6e27-45f5-9f27-80c43e60a388/1607550720959230",
+      "assetId": "098beef3-6e27-45f5-9f27-80c43e60a388/1608144730305695",
       "bundleName": "global_pokemon",
-      "version": "1607550720959230",
-      "checksum": 1814141270,
-      "size": 531826
+      "version": "1608144730305695",
+      "checksum": 2361242540,
+      "size": 529730
     },
     {
       "assetId": "0996a5eb-a5f0-4923-9d40-7e07cad80d9c/1584929864881673",
@@ -2284,11 +2284,11 @@
       "size": 5206
     },
     {
-      "assetId": "1bb14249-cfa4-44d4-a0d6-1c58e8261650/1607640209877366",
+      "assetId": "1bb14249-cfa4-44d4-a0d6-1c58e8261650/1608146597556402",
       "bundleName": "json_patch_i18n_italian",
-      "version": "1607640209877366",
-      "checksum": 2847718986,
-      "size": 29356
+      "version": "1608146597556402",
+      "checksum": 1909607952,
+      "size": 31785
     },
     {
       "assetId": "1bdc4adc-4bcb-4aac-b5bb-6dfef458409b/1584926521002640",
@@ -3662,11 +3662,11 @@
       "key": "/FEF7hUM85mDw2hD67WdSQ=="
     },
     {
-      "assetId": "2b58a4ea-6704-4b59-baa3-93d3322eb74d/1607640205796290",
+      "assetId": "2b58a4ea-6704-4b59-baa3-93d3322eb74d/1608146593237736",
       "bundleName": "json_patch_i18n_german",
-      "version": "1607640205796290",
-      "checksum": 1284744618,
-      "size": 27858
+      "version": "1608146593237736",
+      "checksum": 3260205641,
+      "size": 30419
     },
     {
       "assetId": "2b62593e-546c-4844-ab6d-d5b8c0f5fbea/1606497658049797",
@@ -5015,11 +5015,11 @@
       "size": 10141
     },
     {
-      "assetId": "3d93143b-a6da-43a5-95c4-153d6045925e/1607640221884898",
+      "assetId": "3d93143b-a6da-43a5-95c4-153d6045925e/1608146611401823",
       "bundleName": "json_patch_i18n_brazilianportuguese",
-      "version": "1607640221884898",
-      "checksum": 628270131,
-      "size": 24444
+      "version": "1608146611401823",
+      "checksum": 4261294946,
+      "size": 26790
     },
     {
       "assetId": "3da83d1a-267a-4f63-9854-420c6f75b881/1605722763517762",
@@ -5153,6 +5153,13 @@
       "version": "1584919713935039",
       "checksum": 2351139941,
       "size": 349012
+    },
+    {
+      "assetId": "3fa99dfa-ef02-4190-9b33-4958375c3971/1608144733619177",
+      "bundleName": "pokemon_icon_866",
+      "version": "1608144733619177",
+      "checksum": 1608473928,
+      "size": 22922
     },
     {
       "assetId": "3fd17d1e-e2d6-4a47-b001-7e37909ff692/1605722679839876",
@@ -5794,11 +5801,11 @@
       "size": 10112
     },
     {
-      "assetId": "4894c86c-9a45-4814-9215-0a92968690f7/1607640192673284",
+      "assetId": "4894c86c-9a45-4814-9215-0a92968690f7/1608146579214192",
       "bundleName": "json_patch_i18n_japanese",
-      "version": "1607640192673284",
-      "checksum": 1186822653,
-      "size": 24414
+      "version": "1608146579214192",
+      "checksum": 289775662,
+      "size": 27054
     },
     {
       "assetId": "489e8bc1-e751-473f-8ff8-7729dd807d8c/1584917767023332",
@@ -7197,11 +7204,11 @@
       "size": 440697
     },
     {
-      "assetId": "59f51972-693e-4c16-869f-85519962a2a5/1584899483529179",
+      "assetId": "59f51972-693e-4c16-869f-85519962a2a5/1608144732742546",
       "bundleName": "pokemon_icon_122",
-      "version": "1584899483529179",
-      "checksum": 1701465417,
-      "size": 17837
+      "version": "1608144732742546",
+      "checksum": 1870583595,
+      "size": 32934
     },
     {
       "assetId": "5a00f274-b324-437d-a365-4e018c7667d0/1584905021914332",
@@ -7975,11 +7982,11 @@
       "size": 19525
     },
     {
-      "assetId": "636575d6-7213-4ffc-88e8-5f125e7112d6/1607640217973776",
+      "assetId": "636575d6-7213-4ffc-88e8-5f125e7112d6/1608146606898632",
       "bundleName": "json_patch_i18n_chinesetraditional",
-      "version": "1607640217973776",
-      "checksum": 623223534,
-      "size": 25928
+      "version": "1608146606898632",
+      "checksum": 1621746633,
+      "size": 27614
     },
     {
       "assetId": "63747ce3-3770-4b98-bdfb-999dc27bc558/1605722790130702",
@@ -8740,11 +8747,11 @@
       "size": 830650
     },
     {
-      "assetId": "6b8f3fef-4233-45f7-9395-39f56e0912e1/1607640226084955",
+      "assetId": "6b8f3fef-4233-45f7-9395-39f56e0912e1/1608146616064648",
       "bundleName": "json_patch_i18n_thai",
-      "version": "1607640226084955",
-      "checksum": 1398723788,
-      "size": 33735
+      "version": "1608146616064648",
+      "checksum": 1558580419,
+      "size": 37072
     },
     {
       "assetId": "6bab0511-7fd0-4e48-851c-1ba9a8c0e2f9/1602526094676398",
@@ -13516,11 +13523,11 @@
       "size": 8667
     },
     {
-      "assetId": "a381995c-f9ca-4de5-93db-38159a7d032c/1607640201666923",
+      "assetId": "a381995c-f9ca-4de5-93db-38159a7d032c/1608146588781033",
       "bundleName": "json_patch_i18n_spanish",
-      "version": "1607640201666923",
-      "checksum": 3706244968,
-      "size": 25517
+      "version": "1608146588781033",
+      "checksum": 3854712239,
+      "size": 28015
     },
     {
       "assetId": "a3880a65-ed02-4d13-a333-cb71a7226cb0/1608077065827435",
@@ -15828,6 +15835,13 @@
       "size": 7046
     },
     {
+      "assetId": "c050c13d-47b9-406e-a7fd-58e06f66b9f0/1608144724602540",
+      "bundleName": "pm0866_31",
+      "version": "1608144724602540",
+      "checksum": 2407081158,
+      "size": 1246244
+    },
+    {
       "assetId": "c072672a-fde1-4022-98ef-45fd17b106aa/1584922219660608",
       "bundleName": "pm0221_00",
       "version": "1584922219660608",
@@ -16967,11 +16981,11 @@
       "size": 509961
     },
     {
-      "assetId": "cd53a84f-5c55-4563-84b3-edda474e01f1/1607640188005526",
+      "assetId": "cd53a84f-5c55-4563-84b3-edda474e01f1/1608146574189922",
       "bundleName": "json_patch_i18n_english",
-      "version": "1607640188005526",
-      "checksum": 2549594709,
-      "size": 22907
+      "version": "1608146574189922",
+      "checksum": 4256352983,
+      "size": 25223
     },
     {
       "assetId": "cd6505ba-8c14-49d2-9bb8-2b8840b60f6a/1584900513103046",
@@ -17961,6 +17975,13 @@
       "size": 12913
     },
     {
+      "assetId": "d8d5468a-4dfa-4daa-9579-f363c7ffe8eb/1608144731728858",
+      "bundleName": "pm0122_31",
+      "version": "1608144731728858",
+      "checksum": 4191884307,
+      "size": 689422
+    },
+    {
       "assetId": "d8d7abe5-9d0c-47fc-9eb2-9623456f8c2d/1584927936979464",
       "bundleName": "pm0526_00",
       "version": "1584927936979464",
@@ -18245,11 +18266,11 @@
       "size": 7554
     },
     {
-      "assetId": "dccbb419-951a-4bf9-8448-8a32e5bae6d1/1607640213765499",
+      "assetId": "dccbb419-951a-4bf9-8448-8a32e5bae6d1/1608146602008194",
       "bundleName": "json_patch_i18n_korean",
-      "version": "1607640213765499",
-      "checksum": 3206546619,
-      "size": 24106
+      "version": "1608146602008194",
+      "checksum": 1778555050,
+      "size": 26238
     },
     {
       "assetId": "dcd89218-66fa-4ea3-a549-7d49df98b5d1/1512759924956220",
@@ -20535,11 +20556,11 @@
       "size": 9420
     },
     {
-      "assetId": "f81c317b-b38c-454e-ac41-b716acec654f/1607640197076399",
+      "assetId": "f81c317b-b38c-454e-ac41-b716acec654f/1608146583815060",
       "bundleName": "json_patch_i18n_french",
-      "version": "1607640197076399",
-      "checksum": 2895964071,
-      "size": 25846
+      "version": "1608146583815060",
+      "checksum": 2347122301,
+      "size": 28329
     },
     {
       "assetId": "f826a71a-90f8-46c9-a731-f05a07d215ef/1584914399966786",
@@ -21212,6 +21233,6 @@
       "size": 290457
     }
   ],
-  "timestamp": "1608077263772857",
+  "timestamp": "1608146616064648",
   "result": "SUCCESS"
 }
