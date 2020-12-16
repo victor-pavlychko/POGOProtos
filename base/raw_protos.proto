@@ -7648,7 +7648,7 @@ message BuddyStatsShownHearts {
 	}
 
 	float buddy_affection_km_in_progress = 1;
-	map<int32, BuddyStatsShownHearts.Types.BuddyShownHeartsList> buddy_shown_hearts_per_category = 2;
+	map<int32, BuddyShownHeartsList> buddy_shown_hearts_per_category = 2;
 }
 
 // ref: Holoholo.Rpc.BuddySwapSettings
@@ -12711,7 +12711,7 @@ message LimitedPurchaseSkuRecordProto {
 		int32 total_num_purchases = 5;
 	}
 
-	map<string, LimitedPurchaseSkuRecordProto.Types.PurchaseProto> purchases = 1;
+	map<string, PurchaseProto> purchases = 1;
 }
 
 // ref: Holoholo.Rpc.LimitedPurchaseSkuSettingsProto
