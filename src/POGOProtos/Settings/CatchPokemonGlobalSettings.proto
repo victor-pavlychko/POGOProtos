@@ -1,7 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings;
-
-message CatchPokemonGlobalSettings {
-	bool enable_capture_origin_details_display = 1;
-	bool enable_capture_origin_events_display = 2;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings.Master;
-
-message PokemonHomeSettings {
-	int32 player_min_level = 1;
-	int32 transporter_max_energy = 2;
-	string energy_sku_id = 3;
-	int32 transporter_energy_gain_per_hour = 4;
-}

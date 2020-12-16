@@ -1,8 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Networking.Responses.Game.GamePoi.Responses;
-
-message GetARMappingSettingsResponse {
-	bool is_client_scan_validation_enabled = 1;
-	repeated string client_scan_validation_blocked_os = 2;
-	repeated string client_scan_validation_blocked_device_id = 3;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings.Master;
-
-message AdFeedbackSettings {
-	bool enabled = 1;
-	bool enable_report_ad = 2;
-	bool enable_not_interested = 3;
-	bool enable_see_more = 4;
-}

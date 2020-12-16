@@ -1,7 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Enums;
-
-enum GuiTransitionType {
-	GUI_TRANSITION_TYPE_IN = 0;
-	GUI_TRANSITION_TYPE_OUT = 1;
-}

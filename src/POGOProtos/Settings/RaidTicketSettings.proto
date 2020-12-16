@@ -1,6 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings;
-
-message RaidTicketSettings {
-	bool consume_raid_ticket_upon_battle_start = 1;
-}

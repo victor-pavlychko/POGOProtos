@@ -1,6 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings.Master;
-
-message FriendProfileSettings {
-	bool enable_swiping = 1;
-}

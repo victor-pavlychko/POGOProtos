@@ -1,8 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings.Master;
-
-message BattlePartySettings {
-	bool enable_battle_party_saving = 1;
-	int32 max_battle_parties = 2;
-	int32 overall_parties_cap = 3;
-}

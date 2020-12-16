@@ -1,7 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings.Master;
-
-message QuestEvolutionSettings {
-	bool enable_quest_evolutions = 1;
-	bool enable_walking_quest_evolutions = 2;
-}
