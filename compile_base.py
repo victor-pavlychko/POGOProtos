@@ -164,11 +164,8 @@ def open_proto_file(main_file, head):
     open_for_new.writelines(head)
 
     messages = ''
-    is_enum = False
-    is_one_off = False
     # ignored_one_of = {}
     # is_ignored = False
-    check_sub_message_end = True
     proto_name = ''
 
     with open(main_file, 'r') as proto_file:
@@ -524,15 +521,10 @@ def open_proto_file(main_file, head):
             messages += proto_line
 
             if not proto_line.startswith("}") and operator.contains(proto_line, "}"):
-                check_sub_message_end = True
                 messages += "\n"
-                is_one_off = False
-                is_enum = False
 
             if proto_line.startswith("}"):
                 messages += "\n"
-                is_enum = False
-                is_one_off = False
                 # ignored_one_of.clear()
                 # proto_name = ''
 
