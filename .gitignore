@@ -12,4 +12,4 @@ out/
 # Backup files
 *~
 /base/last/
-*.proto
+raw_protos.proto
