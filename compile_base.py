@@ -30,7 +30,7 @@ parser.add_argument("-m", "--java_multiple_files", action='store_true',
 parser.add_argument("-g", "--generate_only", action='store_true', help='Generates only proto compilable.')
 parser.add_argument("-b", "--generate_new_base", action='store_true', help='Generates new proto base refs.')
 parser.add_argument("-k", "--keep_proto_file", action='store_true', help='Do not remove .proto file after compiling.')
-parser.add_argument("-r", "--rpc", action='store_true', help='Generates Rpc proto.')
+# parser.add_argument("-r", "--rpc", action='store_true', help='Generates Rpc proto.')
 args = parser.parse_args()
 
 # Add licenses
@@ -61,7 +61,7 @@ gen_only = args.generate_only
 version = args.version or "195.0"
 gen_base = args.generate_new_base
 keep_file = args.keep_proto_file
-rpc = args.rpc
+# rpc = args.rpc
 
 # Determine where path's
 raw_name = "v0.195.0.proto"
@@ -135,7 +135,7 @@ commands = []
 
 def finish_compile(out_path, lang):
     if lang == 'python':
-        pogo_protos_path = os.path.join(out_path, "POGOProtos")
+        pogo_protos_path = os.path.join(out_path, "pogoprotos")
 
         for root, dirnames, filenames in os.walk(pogo_protos_path):
             init_path = os.path.join(root, '__init__.py')
@@ -674,15 +674,15 @@ if not gen_only:
 
 # Add new proto version
 if gen_only:
-    if rpc:
-        dir_rpc = 'src/' + input_file.replace('.proto', '').replace('.', '/')
-        if os.path.exists(dir_rpc):
-            shutil.rmtree(dir_rpc)
-
-        if not os.path.exists(dir_rpc):
-            os.makedirs(dir_rpc)
-
-        shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
+    # if rpc:
+    #     dir_rpc = 'src/' + input_file.replace('.proto', '').replace('.', '/')
+    #     if os.path.exists(dir_rpc):
+    #         shutil.rmtree(dir_rpc)
+    #
+    #     if not os.path.exists(dir_rpc):
+    #         os.makedirs(dir_rpc)
+    #
+    #     shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
     shutil.copy(generated_file, protos_path + '/v0.' + version + '.proto')
     # New base for next references names
     if gen_base:
