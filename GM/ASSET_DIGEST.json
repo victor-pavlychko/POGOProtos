@@ -465,6 +465,13 @@
       "size": 342599
     },
     {
+      "assetId": "05696048-ff77-41c3-b637-0b17c595a024/1608077078864103",
+      "bundleName": "m_shoes_winterboots_02_bundle_icon",
+      "version": "1608077078864103",
+      "checksum": 1601044269,
+      "size": 12839
+    },
+    {
       "assetId": "057aafcd-1310-4b76-b506-7bdf27a36096/1592395825002809",
       "bundleName": "f_shoes_swshdlccostume_00_bundle_icon",
       "version": "1592395825002809",
@@ -691,11 +698,11 @@
       "size": 27970
     },
     {
-      "assetId": "0861fd39-eb65-4b98-828b-0f54f5d443c3/1606782453973444",
+      "assetId": "0861fd39-eb65-4b98-828b-0f54f5d443c3/1608077263772857",
       "bundleName": "m_avatar_poses_bundle",
-      "version": "1606782453973444",
-      "checksum": 2510848826,
-      "size": 215378
+      "version": "1608077263772857",
+      "checksum": 546627790,
+      "size": 223334
     },
     {
       "assetId": "086ac75b-11be-449a-9f87-0193c30f2d72/1584914569254248",
@@ -2526,6 +2533,13 @@
       "size": 418624
     },
     {
+      "assetId": "1e491f28-fbf6-4a16-b3e4-12708cf0f96d/1608077054240945",
+      "bundleName": "f_shoes_winterboots_02_bundle_icon",
+      "version": "1608077054240945",
+      "checksum": 4260280878,
+      "size": 11989
+    },
+    {
       "assetId": "1e494cd4-62e6-43bc-9b3b-b71d249ec9fb/1584913272744538",
       "bundleName": "m_hat_eeveecap_bundle",
       "version": "1584913272744538",
@@ -2821,6 +2835,13 @@
       "version": "1605722852499868",
       "checksum": 2555303727,
       "size": 33744
+    },
+    {
+      "assetId": "20c838af-0662-43a8-adc2-8a94eaaabc9c/1608077048903870",
+      "bundleName": "f_hat_whimsicottearmuff_bundle",
+      "version": "1608077048903870",
+      "checksum": 1986020774,
+      "size": 285225
     },
     {
       "assetId": "20cc0653-1d24-4a72-858a-ad06f8dc2522/1584898681757793",
@@ -3716,6 +3737,13 @@
       "version": "1584915282376075",
       "checksum": 3261737226,
       "size": 14140
+    },
+    {
+      "assetId": "2cc04411-4c89-4b1d-bbd7-d917c7513c16/1608077073389602",
+      "bundleName": "f_shirt_whitecoat_bundle",
+      "version": "1608077073389602",
+      "checksum": 2754579377,
+      "size": 343299
     },
     {
       "assetId": "2cd246ac-66ca-4e87-92ef-054c7172b52d/1584926932089495",
@@ -5570,6 +5598,13 @@
       "size": 389590
     },
     {
+      "assetId": "45621025-b444-4208-943b-7456e4eeea41/1608077066939780",
+      "bundleName": "m_shoes_winterboots_03_bundle_icon",
+      "version": "1608077066939780",
+      "checksum": 152937131,
+      "size": 13035
+    },
+    {
       "assetId": "4569f272-8edb-4b8b-8e91-0faa8bb168b2/1584928925979542",
       "bundleName": "pm0567_00",
       "version": "1584928925979542",
@@ -7014,6 +7049,13 @@
       "size": 9900
     },
     {
+      "assetId": "574ae5d3-e33a-488d-b366-df657d9001a0/1608077057407446",
+      "bundleName": "f_hat_whimsicottearmuff_00_bundle_icon",
+      "version": "1608077057407446",
+      "checksum": 105932675,
+      "size": 9331
+    },
+    {
       "assetId": "575d2b68-e03a-4554-a9cd-21e0eb263f6b/1584904712869377",
       "bundleName": "pokemon_icon_603",
       "version": "1584904712869377",
@@ -7174,6 +7216,13 @@
       "version": "1606497500078910",
       "checksum": 1776534707,
       "size": 482345
+    },
+    {
+      "assetId": "5a083345-1777-495f-9cd3-e408451efb48/1608077064767927",
+      "bundleName": "f_shoes_winterboots_03_bundle_icon",
+      "version": "1608077064767927",
+      "checksum": 625661133,
+      "size": 12220
     },
     {
       "assetId": "5a1ad400-947b-468f-aff5-4ee74b488da1/1512759871769224",
@@ -9132,6 +9181,13 @@
       "size": 18741
     },
     {
+      "assetId": "70e6e94e-f758-4c0d-a2d8-5e929e800b52/1608077086516018",
+      "bundleName": "m_shirt_whitecoat_bundle",
+      "version": "1608077086516018",
+      "checksum": 3236255821,
+      "size": 340986
+    },
+    {
       "assetId": "70f787c1-c31c-4831-8bc2-2f4a339acde7/1598559153238271",
       "bundleName": "m_gloves_megabangleblack_bundle",
       "version": "1598559153238271",
@@ -9602,6 +9658,13 @@
       "version": "1584913975212264",
       "checksum": 1854212723,
       "size": 12117
+    },
+    {
+      "assetId": "771ebdbe-666f-442d-9bac-0427c1fadcbd/1608077081793586",
+      "bundleName": "m_shirt_greedentsweater_00_bundle_icon",
+      "version": "1608077081793586",
+      "checksum": 2714408644,
+      "size": 15604
     },
     {
       "assetId": "772fd66e-99f9-432a-872e-3050aa8bc3a8/1584901377484579",
@@ -10547,6 +10610,13 @@
       "size": 12435
     },
     {
+      "assetId": "8261b80f-9804-4ded-ba58-ae1c99f845b7/1608077063705605",
+      "bundleName": "m_shoes_winterboots_00_bundle_icon",
+      "version": "1608077063705605",
+      "checksum": 960124506,
+      "size": 13263
+    },
+    {
       "assetId": "82749335-10dc-4c1f-8fae-c49f4bfb852a/1512759841729374",
       "bundleName": "pm0099",
       "version": "1512759841729374",
@@ -10879,6 +10949,13 @@
       "version": "1606497553069109",
       "checksum": 1889266990,
       "size": 1881898
+    },
+    {
+      "assetId": "8607e1be-5059-4444-8d62-2241f83b6cec/1608077083495064",
+      "bundleName": "m_shirt_greedentsweater_bundle",
+      "version": "1608077083495064",
+      "checksum": 2714362593,
+      "size": 357272
     },
     {
       "assetId": "8612e9ed-bb67-4ff5-9070-d0f27585612b/1584900297849379",
@@ -11913,6 +11990,13 @@
       "size": 5349
     },
     {
+      "assetId": "918c32d8-4595-429b-9464-1481bd1954cd/1608077036781767",
+      "bundleName": "f_shirt_whitecoat_00_bundle_icon",
+      "version": "1608077036781767",
+      "checksum": 867364023,
+      "size": 16437
+    },
+    {
       "assetId": "918ddc67-fe1f-4235-ae51-0517cfc0bf76/1584929720199849",
       "bundleName": "pm0615_00",
       "version": "1584929720199849",
@@ -12530,6 +12614,13 @@
       "size": 16282
     },
     {
+      "assetId": "992d5321-5f2b-4680-97eb-f002736a8e83/1608077043591952",
+      "bundleName": "m_shoes_winterboots_bundle",
+      "version": "1608077043591952",
+      "checksum": 1967180562,
+      "size": 214075
+    },
+    {
       "assetId": "992edffd-1423-448e-b1df-4d9f6ff88e4e/1584899909040278",
       "bundleName": "pokemon_icon_176",
       "version": "1584899909040278",
@@ -13100,6 +13191,13 @@
       "key": "HM7hPArW+EGh+8OF0qM/HA=="
     },
     {
+      "assetId": "9f887020-7de0-44bd-8b29-20026dcb30bd/1608077067928799",
+      "bundleName": "f_shoes_winterboots_00_bundle_icon",
+      "version": "1608077067928799",
+      "checksum": 3353377303,
+      "size": 12274
+    },
+    {
       "assetId": "9f892751-b642-40ac-a42f-f67f9f05264e/1606244433213769",
       "bundleName": "go_fest_2020",
       "version": "1606244433213769",
@@ -13423,6 +13521,13 @@
       "version": "1607640201666923",
       "checksum": 3706244968,
       "size": 25517
+    },
+    {
+      "assetId": "a3880a65-ed02-4d13-a333-cb71a7226cb0/1608077065827435",
+      "bundleName": "m_shirt_whitecoat_00_bundle_icon",
+      "version": "1608077065827435",
+      "checksum": 696413654,
+      "size": 17456
     },
     {
       "assetId": "a3a69cd2-60da-43f3-9756-9021d92c3400/1584914949243872",
@@ -13915,6 +14020,13 @@
       "size": 233898
     },
     {
+      "assetId": "a93fb446-036c-4af9-9424-55776323ce0a/1608077076796690",
+      "bundleName": "f_shoes_winterboots_01_bundle_icon",
+      "version": "1608077076796690",
+      "checksum": 1804852703,
+      "size": 11858
+    },
+    {
       "assetId": "a94fad5f-f267-4145-9da5-fd14a24fffe1/1584914308103142",
       "bundleName": "m_gloves_teamaqua_bundle",
       "version": "1584914308103142",
@@ -14026,6 +14138,13 @@
       "version": "1584901722168112",
       "checksum": 4011436953,
       "size": 18163
+    },
+    {
+      "assetId": "aac3df19-587b-40d9-a454-94084b7ead70/1608077075645241",
+      "bundleName": "m_hat_whimsicottearmuff_00_bundle_icon",
+      "version": "1608077075645241",
+      "checksum": 2343661221,
+      "size": 9085
     },
     {
       "assetId": "aad36511-50ee-4259-808b-db37d7f6c4a4/1584916545019350",
@@ -14788,6 +14907,13 @@
       "version": "1584909800766943",
       "checksum": 1875405948,
       "size": 4422
+    },
+    {
+      "assetId": "b4adac6f-e32d-4c7d-b1e6-e69fa1bc83f7/1608077056431213",
+      "bundleName": "m_shoes_winterboots_01_bundle_icon",
+      "version": "1608077056431213",
+      "checksum": 460087336,
+      "size": 12647
     },
     {
       "assetId": "b4b949c4-3924-44b0-90d6-4607186a469b/1584930987733419",
@@ -15632,6 +15758,13 @@
       "size": 1180540
     },
     {
+      "assetId": "bf442bb3-411d-4388-bf11-3d9b5537df4c/1608077080460685",
+      "bundleName": "f_shoes_winterboots_bundle",
+      "version": "1608077080460685",
+      "checksum": 194441331,
+      "size": 217287
+    },
+    {
       "assetId": "bf6248c9-74a0-4c78-b3b4-56bd265494f1/1584899690803386",
       "bundleName": "pokemon_icon_151",
       "version": "1584899690803386",
@@ -16188,6 +16321,13 @@
       "version": "1605546088344780",
       "checksum": 4062221609,
       "size": 12496
+    },
+    {
+      "assetId": "c694daa6-2c44-4983-bb2c-1c0d9a751a10/1608077055334860",
+      "bundleName": "f_shirt_greedentsweater_00_bundle_icon",
+      "version": "1608077055334860",
+      "checksum": 2911786973,
+      "size": 14603
     },
     {
       "assetId": "c6c9ab65-b439-4d08-8056-99d8ebc0c8cb/1591203804794964",
@@ -17525,11 +17665,11 @@
       "size": 26689
     },
     {
-      "assetId": "d5722a9b-a9a3-4ca5-9f56-f825642bf311/1606782442321166",
+      "assetId": "d5722a9b-a9a3-4ca5-9f56-f825642bf311/1608077259248727",
       "bundleName": "f_avatar_poses_bundle",
-      "version": "1606782442321166",
-      "checksum": 1528759215,
-      "size": 205148
+      "version": "1608077259248727",
+      "checksum": 3173119325,
+      "size": 211928
     },
     {
       "assetId": "d574e934-a789-4912-9ad2-d5cd2cf8df6c/1584912661588161",
@@ -19915,6 +20055,13 @@
       "size": 16157
     },
     {
+      "assetId": "f271a008-e647-4168-9b7b-2b80d6906133/1608077060960921",
+      "bundleName": "f_shirt_greedentsweater_bundle",
+      "version": "1608077060960921",
+      "checksum": 4005546871,
+      "size": 354871
+    },
+    {
       "assetId": "f29b2088-c5a8-4ff3-bcb5-26c5d19446d5/1584928660441683",
       "bundleName": "pm0551_00",
       "version": "1584928660441683",
@@ -20288,6 +20435,13 @@
       "version": "1584914492165074",
       "checksum": 3603997532,
       "size": 214368
+    },
+    {
+      "assetId": "f76852d1-7121-49ef-9838-0450ad436b10/1608077070465990",
+      "bundleName": "m_hat_whimsicottearmuff_bundle",
+      "version": "1608077070465990",
+      "checksum": 290311125,
+      "size": 298381
     },
     {
       "assetId": "f76c91dc-e50a-4828-821a-b3795851d901/1584924552273404",
@@ -21058,6 +21212,6 @@
       "size": 290457
     }
   ],
-  "timestamp": "1607734110440231",
+  "timestamp": "1608077263772857",
   "result": "SUCCESS"
 }
