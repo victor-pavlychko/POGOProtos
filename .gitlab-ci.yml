@@ -1,7 +1,7 @@
 default:
   image: ubuntu:14.04
   before_script:
-    - apt-get update && apt-get install -y python2.7 python-pip tar bash bash-doc bash-completion wget zip clang-format-3.8
+    - apt-get update && apt-get install -y python2.7 python-pip tar bash bash-doc bash-completion wget zip # clang-format-3.8
   
 job:
   script:
@@ -14,5 +14,5 @@ job:
     # Generates new Rcp.proto from raw and all test...
     - ./compile_base.py -g -r
     - ./compile_base.py -l cpp
-    - clang-format-3.8 -i -style file $(find src -name "*.proto")
+    # - clang-format-3.8 -i -style file $(find src -name "*.proto")
     # - git diff --exit-code
