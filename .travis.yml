@@ -4,8 +4,8 @@ addons:
     sources:
       - llvm-toolchain-precise-3.8
       - ubuntu-toolchain-r-test
-    packages:
-      - clang-format-3.8
+#    packages:
+#      - clang-format-3.8
 python:
   - "3.8"
 install:
@@ -28,5 +28,5 @@ script:
   #  - ./compile_base.py -l objc -k
   #  - ./compile_base.py -l ruby -k
   #  - ./compile_base.py -l swif -k
-  - clang-format-3.8 -i -style file $(find src -name "*.proto")
+  # - clang-format-3.8 -i -style file $(find src -name "*.proto")
   # - git diff --exit-code
