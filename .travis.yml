@@ -18,7 +18,7 @@ script:
   # Build all test...
   - chmod +x ./compile_base.py
   # Generates new Rcp.proto from raw and all test...
-  - ./compile_base.py -g -r
+  - ./compile_base.py -g
   - ./compile_base.py -l cpp -k
   #  - ./compile_base.py -l csharp -k
   #  - ./compile_base.py -l java -k

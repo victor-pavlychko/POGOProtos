@@ -12,7 +12,7 @@ job:
     # Build all test...
     - chmod +x ./compile_base.py
     # Generates new Rcp.proto from raw and all test...
-    - ./compile_base.py -g -r
+    - ./compile_base.py -g
     - ./compile_base.py -l cpp
     # - clang-format-3.8 -i -style file $(find src -name "*.proto")
     # - git diff --exit-code
