@@ -1,9 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Networking.Requests.Messages;
-
-import "POGOProtos/Enums/PokemonFamilyId.proto";
-
-message ConvertCandyToXlCandyMessage {
-	.POGOProtos.Enums.PokemonFamilyId family = 1;
-	int32 num_xl_candy = 2;
-}

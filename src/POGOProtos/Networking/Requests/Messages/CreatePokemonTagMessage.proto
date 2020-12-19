@@ -1,9 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Networking.Requests.Messages;
-
-import "POGOProtos/Enums/PokemonTagColor.proto";
-
-message CreatePokemonTagMessage {
-	string name = 1;
-	.POGOProtos.Enums.PokemonTagColor color = 2;
-}

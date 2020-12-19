@@ -1,7 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings;
-
-message MegaEvoGlobalSettings {
-	bool enabled = 1;
-	bool enable_friends_list_mega_info = 2;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Enums;
-
-enum TemporaryEvolutionId {
-	EVOLUTION_UNSET = 0;
-	EVOLUTION_MEGA = 1;
-	EVOLUTION_MEGA_X = 2;
-	EVOLUTION_MEGA_Y = 3;
-}

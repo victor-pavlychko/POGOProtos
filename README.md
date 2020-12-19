@@ -20,8 +20,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | Base                                                                                                      | Notes                  | Extra                           |
 |--------------|-----------------------------------------------------------------------------------------------------------|------------------------|---------------------------------|
-| 2.53.2       |  [v0.195.0 __* ( or ``base.proto``) *__ ](https://github.com/Furtif/POGOProtos/blob/master/base/v0.195.0.proto)                         | **Rpc only**   |  Protocol Buffers v3.14.0     |
-| 2.53.1       |  [v0.191.2](https://github.com/Furtif/POGOProtos/blob/master/base/v0.191.2.proto)                         | Compatible   |  Protocol Buffers v3.14.0     |
+| 2.53.2       |  [v0.195.1 __* ( or ``base.proto``) *__ ](https://github.com/Furtif/POGOProtos/blob/master/base/v0.195.1.proto)                         | **Updated**   |  Protocol Buffers v3.14.0     |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
@@ -51,15 +50,11 @@ This is an example of how the generated code will be organized:
 
 ```
 python compile_base.py -l cpp -1 -k:
- - v0.195.0.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
+ - v0.195.1.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
  -                -> out/single_file/cpp/POGOProtos.Rpc.pb.cc
  -                -> out/single_file/cpp/POGOProtos.Rpc.pb.h
  -                -> out/single_file/cpp/POGOProtos.Rpc.proto
 ```
-### Compile src with rpc
-
- * ``` python compile_base.py -g -r -1 ``` *(Generate new Rpc.proto)*
- * ``` python compile_src.py cpp``` __*[Optional*__ *--include_imports --include_source_info --generate_desc*__*]*__
 
 ### Addons as json
 

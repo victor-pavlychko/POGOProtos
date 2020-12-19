@@ -30,7 +30,7 @@ parser.add_argument("-m", "--java_multiple_files", action='store_true',
 parser.add_argument("-g", "--generate_only", action='store_true', help='Generates only proto compilable.')
 parser.add_argument("-b", "--generate_new_base", action='store_true', help='Generates new proto base refs.')
 parser.add_argument("-k", "--keep_proto_file", action='store_true', help='Do not remove .proto file after compiling.')
-parser.add_argument("-r", "--rpc", action='store_true', help='Generates Rpc proto.')
+# parser.add_argument("-r", "--rpc", action='store_true', help='Generates Rpc proto.')
 args = parser.parse_args()
 
 # Add licenses
@@ -58,13 +58,13 @@ lang = args.lang or "proto"
 out_path = args.out_path or "out/single_file/" + lang
 java_multiple_files = args.java_multiple_files
 gen_only = args.generate_only
-version = args.version or "195.0"
+version = args.version or "195.1"
 gen_base = args.generate_new_base
 keep_file = args.keep_proto_file
-rpc = args.rpc
+# rpc = args.rpc
 
 # Determine where path's
-raw_name = "v0.195.0.proto"
+raw_name = "v0.195.1.proto"
 raw_proto_file = os.path.abspath("base/" + raw_name)
 base_file = os.path.abspath("base/base.proto")
 protos_path = os.path.abspath("base")
@@ -135,7 +135,7 @@ commands = []
 
 def finish_compile(out_path, lang):
     if lang == 'python':
-        pogo_protos_path = os.path.join(out_path, "POGOProtos")
+        pogo_protos_path = os.path.join(out_path, "pogoprotos")
 
         for root, dirnames, filenames in os.walk(pogo_protos_path):
             init_path = os.path.join(root, '__init__.py')
@@ -164,11 +164,8 @@ def open_proto_file(main_file, head):
     open_for_new.writelines(head)
 
     messages = ''
-    is_enum = False
-    is_one_off = False
     # ignored_one_of = {}
     # is_ignored = False
-    check_sub_message_end = True
     proto_name = ''
 
     with open(main_file, 'r') as proto_file:
@@ -475,6 +472,9 @@ def open_proto_file(main_file, head):
             if not proto_line.startswith("enum") and not proto_line.startswith("message") and operator.contains(
                     proto_line, "enum") or operator.contains(proto_line, "message"):
                 check_sub_message_end = False
+            if operator.contains(proto_line, "enum Platform"):
+                proto_line = proto_line.replace("Platorm", "REF_PY_1")
+            ##
 
             # ## find ingored oneof's...
             # if len(ignored_one_of) > 0 and operator.contains(proto_line,
@@ -515,33 +515,35 @@ def open_proto_file(main_file, head):
                 proto_line = proto_line.replace("int32", "HoloPokemonId")
             elif operator.contains(proto_line, "int32 pokemon_family_id "):
                 proto_line = proto_line.replace("int32", "HoloPokemonFamilyId")
-            elif operator.contains(proto_line, "int32 pokedex_entry_number "):
-                proto_line = proto_line.replace("int32", "HoloPokemonId")
+            # elif operator.contains(proto_line, "int32 pokedex_entry_number "):
+            #     proto_line = proto_line.replace("int32", "HoloPokemonId")
             elif operator.contains(proto_line, "int32 guard_pokemon_id "):
                 proto_line = proto_line.replace("int32", "HoloPokemonId")
+            ## others conditions
+            elif operator.contains(proto_line, "Platform "):
+                 proto_line = proto_line.replace("Platform", "REF_PY_1")
             ##
 
             messages += proto_line
 
             if not proto_line.startswith("}") and operator.contains(proto_line, "}"):
-                check_sub_message_end = True
                 messages += "\n"
-                is_one_off = False
-                is_enum = False
 
             if proto_line.startswith("}"):
                 messages += "\n"
-                is_enum = False
-                is_one_off = False
                 # ignored_one_of.clear()
                 # proto_name = ''
 
     ## clean bad spaces...
     messages = messages.replace("}\n\n}", "}\n}")
+    messages = messages.replace("\t\t}\n\n\t}", "\t\t}\n\t}")
     ##
 
     ## fixes other names...
-    messages = messages.replace("TitanTitanGameClientTelemetryOmniProto", "TitanGameClientTelemetryOmniProto")
+    messages = messages.replace("Titan", "")
+    messages = messages.replace("Platform", "")
+    # revert ref_1
+    messages = messages.replace("REF_PY_1", "Platform")
     ##
 
     ## check in messages basic obfuscated names...
@@ -674,15 +676,15 @@ if not gen_only:
 
 # Add new proto version
 if gen_only:
-    if rpc:
-        dir_rpc = 'src/' + input_file.replace('.proto', '').replace('.', '/')
-        if os.path.exists(dir_rpc):
-            shutil.rmtree(dir_rpc)
-
-        if not os.path.exists(dir_rpc):
-            os.makedirs(dir_rpc)
-
-        shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
+    # if rpc:
+    #     dir_rpc = 'src/' + input_file.replace('.proto', '').replace('.', '/')
+    #     if os.path.exists(dir_rpc):
+    #         shutil.rmtree(dir_rpc)
+    #
+    #     if not os.path.exists(dir_rpc):
+    #         os.makedirs(dir_rpc)
+    #
+    #     shutil.copy(generated_file, dir_rpc + '/Rpc.proto')
     shutil.copy(generated_file, protos_path + '/v0.' + version + '.proto')
     # New base for next references names
     if gen_base:

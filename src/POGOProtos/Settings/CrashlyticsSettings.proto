@@ -1,7 +1,0 @@
-syntax = "proto3";
-package POGOProtos.Settings;
-
-message CrashlyticsSettings {
-	bool enabled = 1;
-	float session_sampling_fraction = 2;
-}
