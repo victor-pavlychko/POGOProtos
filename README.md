@@ -20,7 +20,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | Base                                                                                                      | Notes                  | Extra                           |
 |--------------|-----------------------------------------------------------------------------------------------------------|------------------------|---------------------------------|
-| 2.53.2       |  [v0.195.1 __* ( or ``base.proto``) *__ ](https://github.com/Furtif/POGOProtos/blob/master/base/v0.195.1.proto)                         | **Updated**   |  Protocol Buffers v3.14.0     |
+| 2.53.3       |  [v0.195.1 __* ( or ``base.proto``) *__ ](https://github.com/Furtif/POGOProtos/blob/master/base/v0.195.1.proto)                         | **Updated**   |  Protocol Buffers v3.14.0     |
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
