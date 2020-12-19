@@ -6879,7 +6879,6 @@ message Distribution {
 			int64 width = 2;
 			int64 offset = 3;
 		}
-
 	}
 
 	message Range {
@@ -17843,7 +17842,6 @@ message VsSeekerLootProto {
 			int32 item_loot_table_count = 4;
 			int32 item_ranking_loot_table_count = 5;
 		}
-
 	}
 
 	int32 rank_level = 1;
@@ -17857,7 +17855,6 @@ message VsSeekerPokemonRewardsProto {
 			RangeProto range = 1;
 			bool zero = 2;
 		}
-
 	}
 
 	message PokemonUnlockProto {
