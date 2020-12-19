@@ -269,6 +269,57 @@ enum CentralState {
 	CENTRAL_STATE_POWERED_ON = 5;
 }
 
+enum ClientAction {
+	CLIENT_ACTION_UNKNOWN_PLATFORM_CLIENT_ACTION = 0;
+	CLIENT_ACTION_REGISTER_PUSH_NOTIFICATION = 5000;
+	CLIENT_ACTION_UNREGISTER_PUSH_NOTIFICATION = 5001;
+	CLIENT_ACTION_UPDATE_NOTIFICATION_STATUS = 5002;
+	CLIENT_ACTION_OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003;
+	CLIENT_ACTION_DOWNLOAD_GAME_MASTER_TEMPLATES = 5004;
+	CLIENT_ACTION_GET_INVENTORY = 5005;
+	CLIENT_ACTION_REDEEM_PASSCODE = 5006;
+	CLIENT_ACTION_PING = 5007;
+	CLIENT_ACTION_ADD_LOGIN_ACTION = 5008;
+	CLIENT_ACTION_REMOVE_LOGIN_ACTION = 5009;
+	CLIENT_ACTION_LIST_LOGIN_ACTION = 5010;
+	CLIENT_ACTION_ADD_NEW_POI = 5011;
+	CLIENT_ACTION_PROXY_SOCIAL_ACTION = 5012;
+	CLIENT_ACTION_DEPRECATED_CLIENT_TELEMETRY = 5013;
+	CLIENT_ACTION_GET_AVAILABLE_SUBMISSIONS = 5014;
+	CLIENT_ACTION_GET_SIGNED_URL_FOR_PHOTO_UPLOAD = 5015;
+	CLIENT_ACTION_REPLACE_LOGIN_ACTION = 5016;
+	CLIENT_ACTION_PROXY_SOCIAL_SIDE_CHANNEL_ACTION = 5017;
+	CLIENT_ACTION_COLLECT_CLIENT_TELEMETRY = 5018;
+	CLIENT_ACTION_PURCHASE_SKU = 5019;
+	CLIENT_ACTION_GET_AVAILABLE_SKUS_AND_BALANCES = 5020;
+	CLIENT_ACTION_REDEEM_GOOGLE_RECEIPT = 5021;
+	CLIENT_ACTION_REDEEM_APPLE_RECEIPT = 5022;
+	CLIENT_ACTION_REDEEM_DESKTOP_RECEIPT = 5023;
+	CLIENT_ACTION_UPDATE_FITNESS_METRICS = 5024;
+	CLIENT_ACTION_GET_FITNESS_REPORT = 5025;
+	CLIENT_ACTION_GET_CLIENT_TELEMETRY_SETTINGS = 5026;
+	CLIENT_ACTION_PING_ASYNC = 5027;
+	CLIENT_ACTION_REGISTER_BACKGROUND_SERVICE = 5028;
+	CLIENT_ACTION_GET_CLIENT_BGMODE_SETTINGS = 5029;
+	CLIENT_ACTION_PING_DOWNSTREAM = 5030;
+	CLIENT_ACTION_SET_IN_GAME_CURRENCY_EXCHANGE_RATE = 5032;
+	CLIENT_ACTION_REQUEST_GEOFENCE_UPDATES = 5033;
+	CLIENT_ACTION_UPDATE_PLAYER_LOCATION = 5034;
+	CLIENT_ACTION_GENERATE_GMAP_SIGNED_URL = 5035;
+	CLIENT_ACTION_GET_GMAP_SETTINGS = 5036;
+	CLIENT_ACTION_REDEEM_SAMSUNG_RECEIPT = 5037;
+	CLIENT_ACTION_ADD_NEW_ROUTE = 5038;
+	CLIENT_ACTION_GET_OUTSTANDING_WARNINGS = 5039;
+	CLIENT_ACTION_ACKNOWLEDGE_WARNINGS = 5040;
+	CLIENT_ACTION_SUBMIT_POI_IMAGE = 5041;
+	CLIENT_ACTION_SUBMIT_POI_TEXT_METADATA_UPDATE = 5042;
+	CLIENT_ACTION_SUBMIT_POI_LOCATION_UPDATE = 5043;
+	CLIENT_ACTION_SUBMIT_POI_TAKEDOWN_REQUEST = 5044;
+	CLIENT_ACTION_GET_WEB_TOKEN_ACTION = 5045;
+	CLIENT_ACTION_GET_ADVENTURE_SYNC_SETTINGS = 5046;
+	CLIENT_ACTION_UPDATE_ADVENTURE_SYNC_SETTINGS = 5047;
+}
+
 enum ClientInboxServiceNotificationCategory {
 	CLIENT_INBOX_SERVICE_NOTIFICATION_CATEGORY_NONE = 0;
 	CLIENT_INBOX_SERVICE_NOTIFICATION_CATEGORY_GYM_REMOVAL = 1;
@@ -3120,57 +3171,6 @@ enum Platform {
 	PLATFORM_APPLE_WATCH = 5;
 }
 
-enum PlatformClientAction {
-	CLIENT_ACTION_UNKNOWN_PLATFORM_CLIENT_ACTION = 0;
-	CLIENT_ACTION_REGISTER_PUSH_NOTIFICATION = 5000;
-	CLIENT_ACTION_UNREGISTER_PUSH_NOTIFICATION = 5001;
-	CLIENT_ACTION_UPDATE_NOTIFICATION_STATUS = 5002;
-	CLIENT_ACTION_OPT_OUT_PUSH_NOTIFICATION_CATEGORY = 5003;
-	CLIENT_ACTION_DOWNLOAD_GAME_MASTER_TEMPLATES = 5004;
-	CLIENT_ACTION_GET_INVENTORY = 5005;
-	CLIENT_ACTION_REDEEM_PASSCODE = 5006;
-	CLIENT_ACTION_PING = 5007;
-	CLIENT_ACTION_ADD_LOGIN_ACTION = 5008;
-	CLIENT_ACTION_REMOVE_LOGIN_ACTION = 5009;
-	CLIENT_ACTION_LIST_LOGIN_ACTION = 5010;
-	CLIENT_ACTION_ADD_NEW_POI = 5011;
-	CLIENT_ACTION_PROXY_SOCIAL_ACTION = 5012;
-	CLIENT_ACTION_DEPRECATED_CLIENT_TELEMETRY = 5013;
-	CLIENT_ACTION_GET_AVAILABLE_SUBMISSIONS = 5014;
-	CLIENT_ACTION_GET_SIGNED_URL_FOR_PHOTO_UPLOAD = 5015;
-	CLIENT_ACTION_REPLACE_LOGIN_ACTION = 5016;
-	CLIENT_ACTION_PROXY_SOCIAL_SIDE_CHANNEL_ACTION = 5017;
-	CLIENT_ACTION_COLLECT_CLIENT_TELEMETRY = 5018;
-	CLIENT_ACTION_PURCHASE_SKU = 5019;
-	CLIENT_ACTION_GET_AVAILABLE_SKUS_AND_BALANCES = 5020;
-	CLIENT_ACTION_REDEEM_GOOGLE_RECEIPT = 5021;
-	CLIENT_ACTION_REDEEM_APPLE_RECEIPT = 5022;
-	CLIENT_ACTION_REDEEM_DESKTOP_RECEIPT = 5023;
-	CLIENT_ACTION_UPDATE_FITNESS_METRICS = 5024;
-	CLIENT_ACTION_GET_FITNESS_REPORT = 5025;
-	CLIENT_ACTION_GET_CLIENT_TELEMETRY_SETTINGS = 5026;
-	CLIENT_ACTION_PING_ASYNC = 5027;
-	CLIENT_ACTION_REGISTER_BACKGROUND_SERVICE = 5028;
-	CLIENT_ACTION_GET_CLIENT_BGMODE_SETTINGS = 5029;
-	CLIENT_ACTION_PING_DOWNSTREAM = 5030;
-	CLIENT_ACTION_SET_IN_GAME_CURRENCY_EXCHANGE_RATE = 5032;
-	CLIENT_ACTION_REQUEST_GEOFENCE_UPDATES = 5033;
-	CLIENT_ACTION_UPDATE_PLAYER_LOCATION = 5034;
-	CLIENT_ACTION_GENERATE_GMAP_SIGNED_URL = 5035;
-	CLIENT_ACTION_GET_GMAP_SETTINGS = 5036;
-	CLIENT_ACTION_REDEEM_SAMSUNG_RECEIPT = 5037;
-	CLIENT_ACTION_ADD_NEW_ROUTE = 5038;
-	CLIENT_ACTION_GET_OUTSTANDING_WARNINGS = 5039;
-	CLIENT_ACTION_ACKNOWLEDGE_WARNINGS = 5040;
-	CLIENT_ACTION_SUBMIT_POI_IMAGE = 5041;
-	CLIENT_ACTION_SUBMIT_POI_TEXT_METADATA_UPDATE = 5042;
-	CLIENT_ACTION_SUBMIT_POI_LOCATION_UPDATE = 5043;
-	CLIENT_ACTION_SUBMIT_POI_TAKEDOWN_REQUEST = 5044;
-	CLIENT_ACTION_GET_WEB_TOKEN_ACTION = 5045;
-	CLIENT_ACTION_GET_ADVENTURE_SYNC_SETTINGS = 5046;
-	CLIENT_ACTION_UPDATE_ADVENTURE_SYNC_SETTINGS = 5047;
-}
-
 enum PlayerAvatarType {
 	PLAYER_AVATAR_MALE = 0;
 	PLAYER_AVATAR_FEMALE = 1;
@@ -3660,12 +3660,6 @@ enum Team {
 	TEAM_YELLOW = 3;
 }
 
-enum TitanPoiImageType {
-	TITAN_POI_IMAGE_TYPE_UNSET = 0;
-	TITAN_POI_IMAGE_TYPE_MAIN = 1;
-	TITAN_POI_IMAGE_TYPE_SURROUNDING = 2;
-}
-
 enum TutorialCompletion {
 	LEGAL_SCREEN = 0;
 	AVATAR_SELECTION = 1;
@@ -3879,6 +3873,16 @@ message ARBuddyMultiplayerSessionTelemetry {
 	bool is_host = 17;
 }
 
+message ARMappingValidationStatusProto {
+	enum Status {
+		UNKNOWN = 0;
+		VALID = 1;
+		TOO_DARK = 2;
+		TOO_BLUR = 3;
+		TOO_LITTLE_MOTION = 4;
+	}
+}
+
 message ARPlusEncounterValuesProto {
 	float proximity = 1;
 	float awareness = 2;
@@ -3907,6 +3911,33 @@ message AcceptCombatChallengeOutProto {
 message AcceptCombatChallengeProto {
 	string challenge_id = 1;
 	repeated fixed64 attacking_pokemon_id = 6;
+}
+
+message AcceptFriendInviteOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_INVITE_DOES_NOT_EXIST = 3;
+		ERROR_MAX_FRIENDS_LIMIT_REACHED_DELETED = 4;
+		ERROR_INVITE_HAS_BEEN_CANCELLED = 5;
+		ERROR_SENDER_HAS_MAX_FRIENDS = 6;
+		ERROR_RECEIVER_HAS_MAX_FRIENDS = 7;
+	}
+
+	Result result = 1;
+	PlayerSummaryProto friend = 2;
+}
+
+message AcceptFriendInviteProto {
+	string player_id = 1;
+}
+
+message AccountSettingsProto {
+	bool opt_out_social_graph_import = 1;
+	SocialSettings.ConsentStatus online_status_consent = 2;
+	SocialSettings.ConsentStatus last_played_date_consent = 3;
+	SocialSettings.ConsentStatus codename_consent = 4;
 }
 
 message AcknowledgePunishmentOutProto {
@@ -4026,6 +4057,24 @@ message AddFriendQuestProto {
 	repeated string added_friend_ids = 1;
 }
 
+message AddLoginActionOutProto {
+	enum Status {
+		UNSET = 0;
+		AUTH_FAILURE = 1;
+		LOGIN_TAKEN = 2;
+	}
+
+	bool success = 1;
+	repeated LoginDetail login_detail = 2;
+	Status status = 3;
+}
+
+message AddLoginActionProto {
+	IdentityProvider identity_provider = 1;
+	bytes inner_message = 2;
+	string auth_provider_id = 3;
+}
+
 message AdventureSyncSettingsProto {
 	bool fitness_service_enabled = 1;
 	bool awareness_service_enabled = 2;
@@ -4054,6 +4103,16 @@ message AnimationOverrideProto {
 	float anim_max = 4;
 }
 
+message ApnToken {
+	string registration_id = 1;
+	string bundle_identifier = 2;
+	int32 payload_byte_size = 3;
+}
+
+message AppleToken {
+	string id_token = 1;
+}
+
 message AppliedItemProto {
 	Item item = 1;
 	HoloItemType item_type = 2;
@@ -4063,6 +4122,20 @@ message AppliedItemProto {
 
 message AppliedItemsProto {
 	repeated AppliedItemProto item = 4;
+}
+
+message ApprovedCommonTelemetryProto {
+	oneof TelemetryData {
+		CommonTelemetryBootTime boot_time = 1;
+		CommonTelemetryShopClick shop_click = 2;
+		CommonTelemetryShopView shop_view = 3;
+		PoiSubmissionTelemetry poi_submission_telemetry = 4;
+		PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 5;
+		CommonTelemetryLogIn log_in = 6;
+	}
+
+	ServerRecordMetadata server_data = 7;
+	ClientTelemetryCommonFilterProto common_filters = 8;
 }
 
 message ArMappingSessionTelemetryProto {
@@ -4347,6 +4420,31 @@ message AssetVersionProto {
 	repeated AssetVersionRequestProto request = 2;
 }
 
+message AsyncFileUploadCompleteOutProto {
+	enum ErrorStatus {
+		UNSET = 0;
+		SERVER_UPDATE_FAILED = 1;
+		MISSING_SUBMISSION_ID = 2;
+		MISSING_SUBMISSION_TYPE = 3;
+		MISSING_UPLOAD_STATUS = 4;
+	}
+
+	ErrorStatus error = 1;
+	PlayerSubmissionTypeProto submission_type = 2;
+	string poi_id = 3;
+}
+
+message AsyncFileUploadCompleteProto {
+	enum Status {
+		UNSET = 0;
+		UPLOAD_DONE = 1;
+		UPLOAD_FAILED = 2;
+	}
+
+	string submission_id = 1;
+	Status upload_status = 3;
+}
+
 message AttackGymOutProto {
 	enum Result {
 		UNSET = 0;
@@ -4395,6 +4493,48 @@ message AttackRaidBattleProto {
 	BattleActionProto last_retrieved_action = 4;
 	int64 timestamp_ms = 5;
 	AdTargetingInfoProto ad_targeting_info = 6;
+}
+
+message AuthInfo {
+	string provider = 1;
+	JWT token = 2;
+	AuthOptions options = 3;
+	message JWT {
+		string contents = 1;
+		int32 unknown2 = 2;
+	}
+
+	message AuthOptions {
+		bool prevent_account_creation = 1;
+	}
+}
+
+message AuthTicket {
+	bytes start = 1;
+	uint64 expire_timestamp_ms = 2;
+	bytes end = 3;
+}
+
+message AvailableSkuProto {
+	string id = 1;
+	bool is_third_party_vendor_item = 2;
+	repeated CurrencyQuantityProto price = 3;
+	repeated CurrencyQuantityProto currency_granted = 4;
+	repeated GameItemContentProto game_item_content = 5;
+	repeated SkuPresentationProto presentation_data = 6;
+	bool can_be_purchased = 7;
+}
+
+message AvailableSubmissionsPerSubmissionType {
+	PlayerSubmissionTypeProto player_submission_type = 1;
+	int32 submissions_left = 2;
+	int32 min_player_level = 3;
+	bool is_feature_enabled = 4;
+	int64 time_window_for_submissions_limit_ms = 5;
+	int32 max_poi_distance_in_meters = 6;
+	repeated string blacklisted_os = 7;
+	repeated string blacklisted_device_id = 8;
+	bool is_whitelisted_user = 9;
 }
 
 message AvatarCustomizationProto {
@@ -4920,8 +5060,15 @@ message BootTime {
 		INITIALIZE_BRAZE = 22;
 	}
 
-	PlatformMetricData duration = 1;
+	MetricData duration = 1;
 	BootPhase boot_phase = 2;
+}
+
+message BoundingRect {
+	double north = 1;
+	double south = 2;
+	double east = 3;
+	double west = 4;
 }
 
 message BreadcrumbRecordProto {
@@ -5565,6 +5712,15 @@ message ClaimVsSeekerRewardsProto {
 	int32 win_index = 1;
 }
 
+message ClientApiSettingsProto {
+	enum SettingsType {
+		UNDEFINED = 0;
+		MAP = 1;
+	}
+
+	bytes payload = 1;
+}
+
 message ClientDialogueLineProto {
 	string text = 1;
 	EnumWrapper.InvasionCharacter character = 2;
@@ -5585,6 +5741,11 @@ message ClientFortModifierProto {
 	string deploying_player_codename = 3;
 }
 
+message ClientGameMasterTemplateProto {
+	string template_id = 1;
+	GameMasterClientTemplateProto data = 2;
+}
+
 message ClientGenderProto {
 	float male_percent = 1;
 	float female_percent = 2;
@@ -5594,6 +5755,27 @@ message ClientGenderProto {
 message ClientGenderSettingsProto {
 	HoloPokemonId pokemon = 1;
 	ClientGenderProto gender = 2;
+}
+
+message ClientInbox {
+	enum Label {
+		UNSET_LABEL = 0;
+		UNREAD = 1;
+		NEW = 2;
+		IMMEDIATE = 3;
+	}
+
+	message Notification {
+		string notification_id = 1;
+		string title_key = 2;
+		string category = 3;
+		int64 create_timestamp_ms = 4;
+		repeated TemplateVariable variables = 5;
+		repeated Label labels = 6;
+		int64 expire_time_ms = 7;
+	}
+
+	repeated Notification notifications = 1;
 }
 
 message ClientIncidentProto {
@@ -5654,7 +5836,7 @@ message ClientPlayerProto {
 	DailyBonusProto daily_bonus_proto = 11;
 	EquippedBadgeProto equipped_badge_proto = 12;
 	ContactSettingsProto contact_settings_proto = 13;
-	repeated PlatformCurrencyQuantityProto currency_balance = 14;
+	repeated CurrencyQuantityProto currency_balance = 14;
 	int32 remaining_codename_claims = 15;
 	BuddyPokemonProto buddy_pokemon_proto = 16;
 	int64 battle_lockout_end_ms = 17;
@@ -5685,6 +5867,57 @@ message ClientQuestProto {
 message ClientSpawnPointProto {
 	double latitude = 2;
 	double longitude = 3;
+}
+
+message ClientTelemetryBatchProto {
+	enum TelemetryScopeId {
+		UNSET = 0;
+		DITTO = 1;
+		GAME = 2;
+		TITAN = 3;
+		COMMON = 4;
+	}
+
+	TelemetryScopeId telemetry_scope_id = 1;
+	repeated ClientTelemetryRecordProto events = 2;
+	repeated ClientTelemetryRecordProto metrics = 3;
+	string api_version = 4;
+	string message_version = 5;
+}
+
+message ClientTelemetryClientSettingsProto {
+	bool is_upload_enabled = 1;
+	int64 max_upload_size_in_bytes = 2;
+	int64 update_interval_in_sec = 3;
+	int64 settings_update_interval_in_sec = 4;
+	int64 max_envelope_queue_size = 5;
+	double sampling_probability = 6;
+	bool use_player_based_sampling = 7;
+	double player_hash = 8;
+	string player_external_omni_id = 9;
+	bool disable_omni_sending = 10;
+	map<string, double> special_sampling_probability_map = 11;
+	string player_external_ua_id = 12;
+}
+
+message ClientTelemetryCommonFilterProto {
+	string application_identifier = 1;
+	string operating_system_name = 2;
+	string device_model = 3;
+	string locale_country_code = 4;
+	string locale_language_code = 5;
+	double sampling_probability = 6;
+}
+
+message ClientTelemetryRecordProto {
+	string record_id = 1;
+	bytes encoded_message = 2;
+	int64 client_timestamp_ms = 3;
+	int64 metric_id = 4;
+	ClientTelemetryCommonFilterProto common_filters = 5;
+}
+
+message ClientTelemetrySettingsRequestProto {
 }
 
 message ClientVersionProto {
@@ -6247,6 +6480,57 @@ message CombatTypeProto {
 	float excellent_level_threshold = 4;
 }
 
+message CommonFilterProto {
+	string application_identifier = 1;
+	string operating_system_name = 2;
+	string device_model = 3;
+	string locale_country_code = 4;
+	string locale_language_code = 5;
+	double sampling_probability = 6;
+}
+
+message CommonTelemetryBootTime {
+	string boot_phase = 1;
+	int64 duration_ms = 2;
+}
+
+message CommonTelemetryLogIn {
+	int64 timestamp_ms = 1;
+}
+
+message CommonTelemetryShopClick {
+	enum AccessType {
+		UNSPECIFIED = 0;
+		PASSIVE = 1;
+		ACTIVE = 2;
+	}
+
+	string shopping_page_click_id = 1;
+	string sku_id = 2;
+	string item_id = 3;
+	string consolidated_item_id = 4;
+	string currency = 5;
+	int64 fiat_price = 6;
+	repeated InGamePurchaseDetails in_game_purchase_details = 7;
+	bool is_item_free_fiat = 8;
+	bool is_item_free_ingame = 9;
+	int64 time_elapsed_since_enter_page = 10;
+	string root_store_page_session_id = 11;
+	int64 pair_id = 12;
+	string store_page_name = 13;
+	string root_store_page_name = 14;
+	AccessType access_type = 15;
+	string fiat_formatted_price = 16;
+}
+
+message CommonTelemetryShopView {
+	string shopping_page_view_type_id = 1;
+	int64 view_start_timestamp_ms = 2;
+	int64 view_end_timestamp_ms = 3;
+	repeated string consolidated_item_id = 4;
+	string root_store_page_session_id = 5;
+}
+
 message CompleteCompetitiveSeasonOutProto {
 	enum Result {
 		UNSET = 0;
@@ -6543,6 +6827,13 @@ message CurrencyQuantityProto {
 	int64 fiat_currency_cost_e6 = 5;
 }
 
+message CurrencyUpdateProto {
+	string currency_name = 1;
+	int32 currency_delta = 2;
+	int32 currency_balance = 3;
+	int32 fiat_purchased_balance = 4;
+}
+
 message CurrentNewsProto {
 	repeated NewsArticleProto news_articles = 1;
 	string news_strings_url = 2;
@@ -6662,6 +6953,22 @@ message DeclineExRaidPassOutProto {
 message DeclineExRaidPassProto {
 	string fort_id = 1;
 	int64 raid_seed = 2;
+}
+
+message DeclineFriendInviteOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_INVITE_DOES_NOT_EXIST = 3;
+		ERROR_INVITE_ALREADY_DECLINED = 4;
+	}
+
+	Result result = 1;
+}
+
+message DeclineFriendInviteProto {
+	string player_id = 1;
 }
 
 message DeepLinkingEnumWrapperProto {
@@ -6787,6 +7094,11 @@ message DeploymentTotalsProto {
 	int64 deployment_duration_ms = 4;
 }
 
+message DeveloperToken {
+	string id_token = 1;
+	string owner_email = 2;
+}
+
 message DeviceOSTelemetry {
 	enum OSArchitecture {
 		UNSET = 0;
@@ -6892,6 +7204,43 @@ message Distribution {
 	Range range = 4;
 	BucketOptions bucket_options = 5;
 	repeated int64 bucket_counts = 6;
+}
+
+message DownloadGmTemplatesRequestProto {
+	int64 basis_batch_id = 1;
+	int64 batch_id = 2;
+	int32 page_offset = 3;
+	bool apply_experiments = 4;
+	repeated int32 basis_experiment_id = 5;
+	repeated int32 experiment_id = 6;
+}
+
+message DownloadGmTemplatesResponseProto {
+	enum Result {
+		UNSET = 0;
+		COMPLETE = 1;
+		MORE_RESULTS = 2;
+		BATCH_ID_NOT_LIVE = 3;
+		INVALID_BASIS_BATCH_ID = 4;
+		WRONG_EXPERIMENTS = 5;
+	}
+
+	Result result = 1;
+	repeated ClientGameMasterTemplateProto template = 2;
+	repeated string deleted_template = 3;
+	uint64 batch_id = 4;
+	int32 page_offset = 5;
+	repeated int32 experiment_id = 6;
+}
+
+message DownloadSettingsActionProto {
+	string sha1 = 1;
+}
+
+message DownloadSettingsResponseProto {
+	string error = 1;
+	string sha1 = 2;
+	GlobalSettingsProto values = 3;
 }
 
 message DownloadUrlEntryProto {
@@ -7432,6 +7781,10 @@ message FavoritePokemonTelemetry {
 	bool favored = 2;
 }
 
+message FbTokenProto {
+	string token = 1;
+}
+
 message FeedPokemonTelemetry {
 	int32 status = 1;
 	PokemonTelemetry pokemon = 2;
@@ -7727,7 +8080,22 @@ message FortSponsor {
 }
 
 message FrameRate {
-	PlatformMetricData sampled_frame_rate = 1;
+	MetricData sampled_frame_rate = 1;
+}
+
+message FriendDetailsProto {
+	enum OnlineStatus {
+		UNSET = 0;
+		STATUS_UNKNOWN = 1;
+		STATUS_ONLINE = 2;
+		STATUS_OFFLINE = 3;
+	}
+
+	PlayerSummaryProto player = 1;
+	bytes friend_visible_data = 2;
+	int32 score = 3;
+	bytes data_with_me = 4;
+	OnlineStatus online_status = 5;
 }
 
 message FriendProfileSettingsProto {
@@ -7783,6 +8151,31 @@ message FriendshipMilestoneRewardNotificationProto {
 message FriendshipMilestoneRewardProto {
 	string friend_id = 1;
 	FriendshipLevelMilestone friendship_milestone = 2;
+}
+
+message GameClientPhotoGalleryPoiImageProto {
+	string image_id = 1;
+	string poi_id = 2;
+	string submitter_codename = 3;
+	string image_url = 4;
+	int64 creation_timestamp_ms = 5;
+	bool has_player_voted = 6;
+	int32 num_votes_from_game = 7;
+}
+
+message GameClientTelemetryOmniProto {
+	oneof TelemetryData {
+		PoiSubmissionTelemetry poi_submission_telemetry = 1;
+		PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
+		PoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
+	}
+
+	ServerData server_data = 1001;
+}
+
+message GameItemContentProto {
+	string type = 1;
+	int32 quantity = 2;
 }
 
 message GameMasterClientTemplateProto {
@@ -7898,6 +8291,10 @@ message GameplayWeatherProto {
 	}
 }
 
+message GcmToken {
+	string registration_id = 1;
+}
+
 message GenerateCombatChallengeIdOutProto {
 	enum Result {
 		UNSET = 0;
@@ -7911,6 +8308,33 @@ message GenerateCombatChallengeIdOutProto {
 }
 
 message GenerateCombatChallengeIdProto {
+}
+
+message GenerateGmapSignedUrlOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_NOT_VALID = 2;
+		ERROR_RATE_LIMITED = 3;
+		ERROR_MISSING_INPUT = 4;
+		ERROR_UNKNOWN = 5;
+	}
+
+	Result result = 1;
+	string signed_url = 2;
+}
+
+message GenerateGmapSignedUrlProto {
+	double latitude = 1;
+	double longitude = 2;
+	int32 width = 3;
+	int32 height = 4;
+	int32 zoom = 5;
+	string language_code = 6;
+	string country_code = 7;
+	string map_style = 8;
+	string map_type = 9;
+	string icon_params = 10;
 }
 
 message GenericClickTelemetry {
@@ -7932,6 +8356,29 @@ message GeotargetedQuestSettingsProto {
 
 message GeotargetedQuestValidation {
 	string fort_id = 1;
+}
+
+message GetARMappingSettingsOutProto {
+	bool is_client_scan_validation_enabled = 1;
+	repeated string client_scan_validation_blocked_os = 2;
+	repeated string client_scan_validation_blocked_device_id = 3;
+}
+
+message GetARMappingSettingsProto {
+}
+
+message GetAccountSettingsOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
+	AccountSettingsProto settings = 2;
+}
+
+message GetAccountSettingsProto {
 }
 
 message GetActionLogRequest {
@@ -7962,6 +8409,40 @@ message GetAdventureSyncSettingsResponseProto {
 	AdventureSyncSettingsProto adventure_sync_settings = 2;
 }
 
+message GetAvailableSkusAndBalancesOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+
+	Status status = 1;
+	repeated AvailableSkuProto available_sku = 2;
+	repeated CurrencyQuantityProto balance = 3;
+	string player_token = 4;
+}
+
+message GetAvailableSkusAndBalancesProto {
+}
+
+message GetAvailableSubmissionsOutProto {
+	int32 submissions_left = 1;
+	int32 min_player_level = 2;
+	bool has_valid_email = 3;
+	bool is_feature_enabled = 4;
+	int64 time_window_for_submissions_limit_ms = 5;
+	int32 max_poi_distance_in_meters = 6;
+	repeated string blacklisted_os = 7;
+	repeated AvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
+	repeated string blacklisted_device_id = 9;
+	int32 max_poi_location_edit_move_distance_meters = 10;
+}
+
+message GetAvailableSubmissionsProto {
+	PlayerSubmissionTypeProto submission_type = 1;
+	repeated PlayerSubmissionTypeProto submission_types = 2;
+}
+
 message GetBuddyHistoryOutProto {
 	enum Result {
 		UNSET = 0;
@@ -7987,6 +8468,14 @@ message GetBuddyWalkedOutProto {
 }
 
 message GetBuddyWalkedProto {
+}
+
+message GetClientFeatureFlagsRequest {
+}
+
+message GetClientFeatureFlagsResponse {
+	SocialClientFeatures feature_flags = 1;
+	SocialClientGlobalSettings global_settings = 2;
 }
 
 message GetCombatChallengeOutProto {
@@ -8070,6 +8559,33 @@ message GetDailyEncounterOutProto {
 message GetDailyEncounterProto {
 }
 
+message GetFacebookFriendListOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_FACEBOOK_API = 3;
+		ERROR_FACEBOOK_PERMISSIONS = 4;
+		ERROR_NO_FACEBOOK_ID = 5;
+		ERROR_PLAYER_NOT_FOUND = 6;
+	}
+
+	message FacebookFriendProto {
+		PlayerSummaryProto player = 1;
+		string full_name = 2;
+	}
+
+	Result result = 1;
+	repeated FacebookFriendProto friend = 2;
+	string next_cursor = 3;
+}
+
+message GetFacebookFriendListProto {
+	string fb_access_token = 1;
+	int32 limit = 2;
+	string cursor = 3;
+}
+
 message GetFitnessReportOutProto {
 	enum Status {
 		UNSET = 0;
@@ -8104,6 +8620,127 @@ message GetFitnessRewardsOutProto {
 }
 
 message GetFitnessRewardsProto {
+}
+
+message GetFriendCodeOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+
+	Result result = 1;
+	string friend_code = 2;
+}
+
+message GetFriendCodeProto {
+	bool force_generate_code = 1;
+}
+
+message GetFriendDetailsOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
+	}
+
+	message DebugProto {
+		message Callee {
+			string player_id = 2;
+		}
+
+		int32 fetched_from_db = 1;
+		int32 fetched_from_fanout = 2;
+		int32 fetched_from_player_mapper = 3;
+		int32 fetched_from_status_cache = 4;
+		int32 failed_to_fetch = 5;
+		int32 fetched_from_same_server_as_player = 7;
+	}
+
+	Result result = 1;
+	repeated FriendDetailsProto friend = 2;
+	DebugProto friend_details_debug_info = 3;
+}
+
+message GetFriendDetailsProto {
+	repeated string player_id = 1;
+}
+
+message GetFriendDetailsResponse {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;
+	}
+
+	message FriendDetailsEntryProto {
+		string player_id = 1;
+		ProfileDetailsProto profile = 2;
+		PlayerStatusDetailsProto player_status = 3;
+		FriendDetailsProto calling_game_data = 4;
+		SocialV2Enum.InvitationStatus invitation_status = 5;
+	}
+
+	message PlayerStatusDetailsProto {
+		enum Result {
+			UNSET = 0;
+			SUCCESS = 1;
+			ERROR_UNKNOWN = 2;
+			ERROR_STATUS_UNKNOWN = 3;
+			ERROR_STALE_DATA = 4;
+		}
+
+		Result result = 1;
+		PlayerLocaleProto locale = 2;
+		SocialV2Enum.OnlineStatus online_status = 3;
+		string last_played_app_key = 4;
+	}
+
+	Result result = 1;
+	repeated FriendDetailsEntryProto friend_details = 2;
+}
+
+message GetFriendsListOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	message FriendProto {
+		enum OnlineStatus {
+			UNSET = 0;
+			STATUS_UNKNOWN = 1;
+			STATUS_ONLINE = 2;
+			STATUS_OFFLINE = 3;
+		}
+
+		string player_id = 1;
+		string codename = 2;
+		string team = 3;
+		int32 score = 4;
+		bytes data_with_me = 5;
+		int64 version = 6;
+		int64 created_ms = 7;
+		string fb_user_id = 8;
+		bool is_facebook_friendship = 9;
+		SharedFriendshipProto shared_data = 10;
+		OnlineStatus online_status = 11;
+	}
+
+	message SharedFriendshipProto {
+		bytes shared_data = 1;
+		int64 version = 2;
+		bytes data_from_me = 3;
+		bytes data_to_me = 4;
+	}
+
+	Result result = 1;
+	repeated FriendProto friend = 2;
+}
+
+message GetFriendsListProto {
 }
 
 message GetFriendshipRewardsOutProto {
@@ -8165,6 +8802,44 @@ message GetGiftBoxDetailsProto {
 	string player_id = 2;
 }
 
+message GetGmapSettingsOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_MISSING_CONFIG = 3;
+		ERROR_NO_UNIQUE_ID = 4;
+	}
+
+	Result result = 1;
+	string gmap_template_url = 2;
+	int32 max_poi_distance_in_meters = 3;
+}
+
+message GetGmapSettingsProto {
+}
+
+message GetGrapeshotUploadUrlOutProto {
+	enum Status {
+		UNSET = 0;
+		FAILURE = 1;
+		SUCCESS = 2;
+		MISSING_FILE_CONTEXTS = 3;
+		DUPLICATE_FILE_CONTEXT = 4;
+		MISSING_SUBMISSION_TYPE = 5;
+		MISSING_SUBMISSION_ID = 6;
+	}
+
+	Status status = 1;
+	map<string, GrapeshotUploadingDataProto> file_context_to_grapeshot_data = 4;
+}
+
+message GetGrapeshotUploadUrlProto {
+	PlayerSubmissionTypeProto submission_type = 1;
+	string submission_id = 2;
+	repeated string file_upload_context = 3;
+}
+
 message GetGymBadgeDetailsOutProto {
 	AwardedGymBadge gym_badge = 1;
 	GymDefenderProto gym_defender = 2;
@@ -8219,12 +8894,36 @@ message GetHatchedEggsProto {
 
 message GetHoloholoInventoryOutProto {
 	bool success = 1;
-	PlatformInventoryDeltaProto inventory_delta = 2;
+	InventoryDeltaProto inventory_delta = 2;
 }
 
 message GetHoloholoInventoryProto {
 	int64 timestamp_millis = 1;
 	repeated Item item_been_seen = 2;
+}
+
+message GetImageGallerySettingsOutProto {
+	bool is_image_gallery_enabled = 1;
+	int32 max_periodic_image_loaded_count = 2;
+}
+
+message GetImageGallerySettingsProto {
+}
+
+message GetImagesForPoiOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		POI_NOT_FOUND = 2;
+		INVALID_REQUEST = 3;
+	}
+
+	Status status = 1;
+	repeated GameClientPhotoGalleryPoiImageProto photo_gallery_poi_images = 2;
+}
+
+message GetImagesForPoiProto {
+	string poi_id = 1;
 }
 
 message GetInboxOutProto {
@@ -8236,10 +8935,16 @@ message GetInboxOutProto {
 	}
 
 	Result result = 1;
-	PlatformClientInbox inbox = 2;
+	ClientInbox inbox = 2;
 }
 
 message GetInboxProto {
+	bool is_history = 1;
+	bool is_reverse = 2;
+	int64 not_before_ms = 3;
+}
+
+message GetInboxV2Proto {
 	bool is_history = 1;
 	bool is_reverse = 2;
 	int64 not_before_ms = 3;
@@ -8265,6 +8970,20 @@ message GetIncensePokemonOutProto {
 message GetIncensePokemonProto {
 	double player_lat_degrees = 1;
 	double player_lng_degrees = 2;
+}
+
+message GetIncomingFriendInvitesOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
+	repeated IncomingFriendInviteDisplayProto invites = 2;
+}
+
+message GetIncomingFriendInvitesProto {
 }
 
 message GetLocalTimeOutProto {
@@ -8392,6 +9111,17 @@ message GetNintendoOAuth2UrlProto {
 	string deep_link_app_scheme = 1;
 }
 
+message GetNotificationInboxOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+
+	Result result = 1;
+	ClientInbox inbox = 2;
+}
+
 message GetNpcCombatRewardsOutProto {
 	enum Result {
 		UNSET = 0;
@@ -8467,6 +9197,28 @@ message GetPlayerProto {
 	bool prevent_creation = 2;
 }
 
+message GetPlayerSettingsOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_PLAYER_NOT_FOUND = 3;
+	}
+
+	Result result = 1;
+	PlayerSettingsProto settings = 2;
+}
+
+message GetPlayerSettingsProto {
+}
+
+message GetPlayerSubmissionValidationSettingsOutProto {
+	repeated string banned_metadata_text = 1;
+}
+
+message GetPlayerSubmissionValidationSettingsProto {
+}
+
 message GetPokemonTagsOutProto {
 	enum Result {
 		UNSET = 0;
@@ -8479,6 +9231,34 @@ message GetPokemonTagsOutProto {
 }
 
 message GetPokemonTagsProto {
+}
+
+message GetProfileRequest {
+	string player_id = 1;
+}
+
+message GetProfileResponse {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_NOT_FRIEND = 3;
+	}
+
+	message PlayerProfileDetailsProto {
+		string app_key = 1;
+		string codename = 2;
+		string faction = 3;
+		int32 level = 4;
+		int64 experience = 5;
+		int64 signed_up_timestamp_ms = 6;
+		int64 last_played_timestamp_ms = 7;
+		double player_total_walk_km = 8;
+	}
+
+	Result result = 1;
+	ProfileDetailsProto profile_details = 2;
+	repeated PlayerProfileDetailsProto player_profile_details = 3;
 }
 
 message GetQuestDetailsOutProto {
@@ -8664,6 +9444,29 @@ message GetTutorialEggOutProto {
 message GetTutorialEggProto {
 }
 
+message GetUploadUrlOutProto {
+	enum Status {
+		UNSET = 0;
+		FAILURES = 1;
+		SUCCESS = 2;
+		MISSING_IMAGE_CONTEXTS = 3;
+		DUPLICATE_IMAGE_CONTEXTS = 4;
+	}
+
+	Status status = 1;
+	string signed_url = 2;
+	string supporting_image_signed_url = 3;
+	map<string, string> context_signed_urls = 4;
+}
+
+message GetUploadUrlProto {
+	string user_id = 1;
+	string game_unique_id = 2;
+	PlayerSubmissionTypeProto submission_type = 3;
+	string submission_id = 4;
+	repeated string image_contexts = 5;
+}
+
 message GetVsSeekerStatusOutProto {
 	enum Result {
 		UNSET = 0;
@@ -8806,9 +9609,17 @@ message GlobalSettingsProto {
 	repeated StoreIapSettingsProto iap_settings = 69;
 }
 
+message GmmSettings {
+	repeated LayerRule layer_rules = 1;
+}
+
 message GmtSettingsProto {
 	bool enable_gmtdownload_v2 = 1;
 	int32 download_poll_period_ms = 2;
+}
+
+message GoogleToken {
+	string id_token = 1;
 }
 
 message GpsSettingsProto {
@@ -8820,6 +9631,31 @@ message GpsSettingsProto {
 	int32 idle_threshold_duration_seconds = 6;
 	float idle_sample_interval_seconds = 7;
 	int32 idle_speed_sample_count = 8;
+}
+
+message GrapeshotAuthenticationDataProto {
+	string authorization = 1;
+	string date = 2;
+}
+
+message GrapeshotChunkDataProto {
+	string chunk_file_path = 1;
+	uint32 chunk_number = 2;
+	GrapeshotAuthenticationDataProto upload_authentication = 3;
+	GrapeshotAuthenticationDataProto delete_authentication = 4;
+}
+
+message GrapeshotComposeDataProto {
+	string target_file_path = 1;
+	GrapeshotAuthenticationDataProto authentication = 2;
+	string hash = 3;
+}
+
+message GrapeshotUploadingDataProto {
+	repeated GrapeshotChunkDataProto chunk_data = 1;
+	GrapeshotComposeDataProto compose_data = 2;
+	string gcs_bucket = 3;
+	int32 number_of_chunks = 4;
 }
 
 message GroupChallengeCriteriaProto {
@@ -9273,8 +10109,8 @@ message HoloholoClientTelemetryOmniProto {
 		PokemonSearchTelemetry pokemon_search_telemetry = 70;
 	}
 
-	PlatformPlatformServerData server_data = 1001;
-	PlatformPlatformCommonFilterProto common_filters = 1002;
+	ServerData server_data = 1001;
+	CommonFilterProto common_filters = 1002;
 }
 
 message IapItemCategoryDisplayProto {
@@ -9330,6 +10166,12 @@ message ImageTextCreativeProto {
 	string cta_link = 6;
 }
 
+message InGamePurchaseDetails {
+	string ingame_type = 1;
+	int64 ingame_price = 2;
+	int64 remaining_ingame_balance = 3;
+}
+
 message IncenseAttributesProto {
 	int32 incense_lifetime_seconds = 1;
 	repeated HoloPokemonType pokemon_type = 2;
@@ -9381,10 +10223,36 @@ message IncidentTicketAttributesProto {
 	Item upgraded_item = 3;
 }
 
+message IncomingFriendInviteDisplayProto {
+	IncomingFriendInviteProto invite = 1;
+	PlayerSummaryProto player = 2;
+}
+
+message IncomingFriendInviteProto {
+	enum Status {
+		UNSET = 0;
+		PENDING = 1;
+		DECLINED = 2;
+		CANCELLED = 3;
+	}
+
+	Status status = 1;
+	string player_id = 2;
+	int64 created_ms = 3;
+	string full_name = 5;
+}
+
 message InputSettingsProto {
 	bool enable_frame_independent_spin = 1;
 	int32 milliseconds_processed_spin_force = 2;
 	float spin_speed_multiplier = 3;
+}
+
+message InternalAuthProto {
+	string email = 1;
+	string player_id = 2;
+	string app_id = 3;
+	string key = 4;
 }
 
 message InvasionAvailabilitySettingsProto {
@@ -9488,6 +10356,21 @@ message InvasionVictoryLogEntry {
 	EnumWrapper.InvasionCharacter invasion_npc = 2;
 }
 
+message InventoryDeltaProto {
+	int64 original_timestamp = 1;
+	int64 new_timestamp = 2;
+	repeated InventoryItemProto inventory_item = 3;
+}
+
+message InventoryItemProto {
+	oneof InventoryItem {
+		HoloInventoryKeyProto deleted_item_key = 2;
+		HoloInventoryItemProto inventory_item_data = 3;
+	}
+
+	int64 modified_timestamp = 1;
+}
+
 message InventorySettingsProto {
 	int32 max_pokemon = 1;
 	int32 max_bag_items = 2;
@@ -9516,6 +10399,33 @@ message InventoryUpgradeProto {
 
 message InventoryUpgradesProto {
 	repeated InventoryUpgradeProto inventory_upgrade = 1;
+}
+
+message InviteFacebookFriendOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_PLAYER_NOT_FOUND = 3;
+		ERROR_PLAYER_OUTBOX_FULL = 4;
+		ERROR_PLAYER_INBOX_FULL = 5;
+		ERROR_SENDER_HAS_MAX_FRIENDS = 6;
+		ERROR_RECEIVER_HAS_MAX_FRIENDS = 7;
+		ERROR_ALREADY_A_FRIEND = 8;
+		ERROR_INVITE_ALREADY_SENT = 9;
+		ERROR_INVITE_ALREADY_RECEIVED = 10;
+		ERROR_CANNOT_SEND_INVITES_TO_YOURSELF = 11;
+		ERROR_FRIEND_CACHE_EXPIRED = 12;
+		ERROR_FRIEND_NOT_CACHED = 13;
+		ERROR_INVALID_SENDER_FACEBOOK_ID = 14;
+	}
+
+	Result result = 1;
+}
+
+message InviteFacebookFriendProto {
+	string fb_access_token = 1;
+	string friend_fb_user_id = 2;
 }
 
 message IsSkuAvailableOutProto {
@@ -9663,6 +10573,57 @@ message KoalaSettingsProto {
 	string app_id = 1;
 	bool use_sandbox = 2;
 	bool use_koala = 3;
+}
+
+message Label {
+	int32 priority = 1;
+	LabelGeometry geometry = 2;
+	LabelContent content = 3;
+}
+
+message LabelContent {
+	repeated LabelContentLocalization localizations = 1;
+}
+
+message LabelContentLocalization {
+	string language = 1;
+	string name = 2;
+}
+
+message LabelGeometry {
+	PixelPointProto point = 1;
+	int32 min_zoom = 2;
+	int32 max_zoom = 3;
+}
+
+message LabelTile {
+	repeated Label labels = 1;
+}
+
+message LayerRule {
+	enum GmmLayerType {
+		AREA = 0;
+		ROAD = 1;
+		BUILDING = 2;
+		LINE_MESH = 3;
+	}
+
+	enum GmmRoadPriority {
+		PRIORITY_NONE = 0;
+		PRIORITY_TERMINAL = 1;
+		PRIORITY_LOCAL = 2;
+		PRIORITY_MINOR_ARTERIAL = 3;
+		PRIORITY_MAJOR_ARTERIAL = 4;
+		PRIORITY_SECONDARY_ROAD = 5;
+		PRIORITY_PRIMARY_HIGHWAY = 6;
+		PRIORITY_LIMITED_ACCESS = 7;
+		PRIORITY_CONTROLLED_ACCESS = 8;
+		PRIORITY_NON_TRAFFIC = 9;
+	}
+
+	repeated MaskedColor fill_colors = 1;
+	repeated GmmRoadPriority road_priority = 2;
+	uint32 road_attribute_bitfield = 3;
 }
 
 message LeaveBuddyMultiplayerSessionOutProto {
@@ -9853,6 +10814,11 @@ message ListGymBadgesOutProto {
 message ListGymBadgesProto {
 }
 
+message ListLoginActionOutProto {
+	bool success = 1;
+	repeated LoginDetail login_detail = 2;
+}
+
 message LoadingScreenProto {
 	string url = 1;
 	int64 display_after_timestamp_ms = 2;
@@ -9886,6 +10852,11 @@ message LobbyProto {
 	repeated string invited_player_ids = 14;
 }
 
+message LocationE6Proto {
+	int32 latitude_e6 = 1;
+	int32 longitude_e6 = 2;
+}
+
 message LocationPingProto {
 	enum PingReason {
 		UNSET = 0;
@@ -9907,6 +10878,12 @@ message LoginActionTelemetry {
 	bool intent_existing = 4;
 	string error = 5;
 	string auth_status = 6;
+}
+
+message LoginDetail {
+	IdentityProvider identity_provider = 1;
+	string email = 2;
+	string auth_provider_id = 3;
 }
 
 message LoginSettingsProto {
@@ -9938,6 +10915,13 @@ message LuckyPokemonSettingsProto {
 	float power_up_stardust_discount_percent = 1;
 }
 
+message MapArea {
+	string description = 1;
+	int32 epoch = 2;
+	string map_provider = 3;
+	repeated BoundingRect bounding_rect = 4;
+}
+
 message MapBuddySettingsProto {
 	int32 for_buddy_group_number = 1;
 	float target_offset_min = 2;
@@ -9950,6 +10934,12 @@ message MapBuddySettingsProto {
 	bool should_glide = 9;
 	float glide_smooth_time = 10;
 	float glide_max_speed = 11;
+}
+
+message MapCompositionRoot {
+	repeated MapArea map_area = 1;
+	repeated MapProvider map_provider = 2;
+	repeated NamedMapSettings named_map_settings = 3;
 }
 
 message MapDisplaySettingsProto {
@@ -9996,6 +10986,36 @@ message MapPokemonProto {
 	PokemonDisplayProto pokemon_display = 7;
 }
 
+message MapProvider {
+	enum MapType {
+		UNSET = 0;
+		GMM = 1;
+		OSM = 2;
+		BLANK = 3;
+		GMM_BUNDLE = 4;
+	}
+
+	oneof Settings {
+		GmmSettings gmm_settings = 4;
+		string settings_name = 5;
+	}
+
+	message BundleZoomRange {
+		int32 min_zoom = 1;
+		int32 max_zoom = 2;
+		int32 request_zoom_offset = 3;
+	}
+
+	string name = 1;
+	string base_url = 2;
+	string query_format = 3;
+	MapType map_type = 6;
+	bool hide_attribution = 7;
+	int32 min_tile_level = 8;
+	int32 max_tile_level = 9;
+	repeated BundleZoomRange bundle_zoom_range = 10;
+}
+
 message MapSettingsProto {
 	double pokemon_visible_range = 1;
 	double poke_nav_range_meters = 2;
@@ -10009,6 +11029,51 @@ message MapSettingsProto {
 	float special_weather_probability = 10;
 	string google_maps_client_id = 11;
 	bool enable_encounter_v2 = 12;
+}
+
+message MapTileBundle {
+	repeated MapTileDataProto map_tile = 1;
+}
+
+message MapTileDataProto {
+	MapTileProto map_tile = 1;
+	MapCompositionRoot tile_data = 2;
+	LabelTile label_data = 3;
+}
+
+message MapTileProto {
+	enum TextSizeEnum {
+		TEXT_SIZE_ENUM_UNSET = 0;
+		SMALL = 1;
+		MEDIUM = 2;
+		LARGE = 3;
+	}
+
+	enum TileTypeEnum {
+		TILE_TYPE_ENUM_UNSET = 0;
+		MAP_ATLAS = 2;
+		SATELLITE = 3;
+		TRAFFIC = 4;
+		GIF_ATLAS = 5;
+		HYBRID = 6;
+		TERRAIN = 7;
+		CLICKABLE_LAYER = 8;
+		STREET_VIEW = 9;
+		VECTOR_ATLAS = 10;
+		ROAD_GRAPH = 11;
+		TERRAIN_NO_LABELS = 12;
+		VECTOR_TRANSIT = 13;
+		INDOOR = 14;
+		LABELS_ONLY = 15;
+		PERSONALIZED_SMARTMAPS = 16;
+	}
+
+	uint32 tile_variant = 1;
+	int32 tile_index_x = 2;
+	int32 tile_index_y = 3;
+	int32 zoom_level = 4;
+	string indoor_level_id = 5;
+	int32 pertile_epoch = 6;
 }
 
 message MarkReadNewsArticleOutProto {
@@ -10034,6 +11099,11 @@ message MarkTutorialCompleteProto {
 	repeated TutorialCompletion tutorial_complete = 1;
 	bool send_marketing_emails = 2;
 	bool send_push_notifications = 3;
+}
+
+message MaskedColor {
+	uint32 color_argb = 1;
+	uint32 color_mask_argb = 2;
 }
 
 message MegaEvoGlobalSettingsProto {
@@ -10081,6 +11151,25 @@ message MegaEvolvePokemonProto {
 message MegaEvolvePokemonSpeciesProto {
 	int32 energy_count = 1;
 	int32 pokemon_species_id = 2;
+}
+
+message MetricData {
+	oneof DatapointValue {
+		int64 long_value = 2;
+		double double_value = 3;
+		bool boolean_value = 4;
+		Distribution distribution = 5;
+	}
+
+	enum Kind {
+		UNSPECIFIED = 0;
+		GAUGE = 1;
+		DELTA = 2;
+		CUMULATIVE = 3;
+	}
+
+	TelemetryCommon common_telemetry = 1;
+	Kind metric_kind = 6;
 }
 
 message MiniCollectionBadgeData {
@@ -10165,6 +11254,11 @@ message MoveSettingsProto {
 
 message MultiPartQuestProto {
 	repeated QuestProto sub_quests = 1;
+}
+
+message NamedMapSettings {
+	string name = 1;
+	GmmSettings gmm_settings = 2;
 }
 
 message NearbyPokemonProto {
@@ -10472,6 +11566,10 @@ message OpenTradingProto {
 	string player_id = 1;
 }
 
+message OptOutProto {
+	repeated string categories = 1;
+}
+
 message ParticipationProto {
 	int32 individual_damage_pokeballs = 1;
 	int32 team_damage_pokeballs = 2;
@@ -10578,1389 +11676,15 @@ message PhotobombCreateDetail {
 	bool caught_in_photobomb = 1;
 }
 
-message PlannedDowntimeSettingsProto {
-	int64 downtime_timestamp_ms = 1;
-	int64 no_actions_window_sec_from_downtime = 2;
-}
-
-message PlatformARMappingValidationStatusProto {
-	enum Status {
-		UNKNOWN = 0;
-		VALID = 1;
-		TOO_DARK = 2;
-		TOO_BLUR = 3;
-		TOO_LITTLE_MOTION = 4;
-	}
-}
-
-message PlatformAcceptFriendInviteOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_INVITE_DOES_NOT_EXIST = 3;
-		ERROR_MAX_FRIENDS_LIMIT_REACHED_DELETED = 4;
-		ERROR_INVITE_HAS_BEEN_CANCELLED = 5;
-		ERROR_SENDER_HAS_MAX_FRIENDS = 6;
-		ERROR_RECEIVER_HAS_MAX_FRIENDS = 7;
-	}
-
-	Result result = 1;
-	PlatformPlayerSummaryProto friend = 2;
-}
-
-message PlatformAcceptFriendInviteProto {
-	string player_id = 1;
-}
-
-message PlatformAccountSettingsProto {
-	bool opt_out_social_graph_import = 1;
-	PlatformSocialSettings.ConsentStatus online_status_consent = 2;
-	PlatformSocialSettings.ConsentStatus last_played_date_consent = 3;
-	PlatformSocialSettings.ConsentStatus codename_consent = 4;
-}
-
-message PlatformAddLoginActionOutProto {
-	enum Status {
-		UNSET = 0;
-		AUTH_FAILURE = 1;
-		LOGIN_TAKEN = 2;
-	}
-
-	bool success = 1;
-	repeated PlatformLoginDetail login_detail = 2;
-	Status status = 3;
-}
-
-message PlatformAddLoginActionProto {
-	IdentityProvider identity_provider = 1;
-	bytes inner_message = 2;
-	string auth_provider_id = 3;
-}
-
-message PlatformApnToken {
-	string registration_id = 1;
-	string bundle_identifier = 2;
-	int32 payload_byte_size = 3;
-}
-
-message PlatformAppleToken {
-	string id_token = 1;
-}
-
-message PlatformApprovedCommonTelemetryProto {
-	oneof TelemetryData {
-		PlatformCommonTelemetryBootTime boot_time = 1;
-		PlatformCommonTelemetryShopClick shop_click = 2;
-		PlatformCommonTelemetryShopView shop_view = 3;
-		PlatformPoiSubmissionTelemetry poi_submission_telemetry = 4;
-		PlatformPoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 5;
-		PlatformCommonTelemetryLogIn log_in = 6;
-	}
-
-	PlatformServerRecordMetadata server_data = 7;
-	PlatformClientTelemetryCommonFilterProto common_filters = 8;
-}
-
-message PlatformAuthInfo {
-	string provider = 1;
-	PlatformJWT token = 2;
-	PlatformAuthOptions options = 3;
-	message PlatformJWT {
-		string contents = 1;
-		int32 unknown2 = 2;
-	}
-
-	message PlatformAuthOptions {
-		bool prevent_account_creation = 1;
-	}
-}
-
-message PlatformAuthTicket {
-	bytes start = 1;
-	uint64 expire_timestamp_ms = 2;
-	bytes end = 3;
-}
-
-message PlatformAvailableSkuProto {
-	string id = 1;
-	bool is_third_party_vendor_item = 2;
-	repeated PlatformCurrencyQuantityProto price = 3;
-	repeated PlatformCurrencyQuantityProto currency_granted = 4;
-	repeated PlatformGameItemContentProto game_item_content = 5;
-	repeated PlatformSkuPresentationProto presentation_data = 6;
-	bool can_be_purchased = 7;
-}
-
-message PlatformBackgroundToken {
-	bytes token = 1;
-	int64 expiration_time = 2;
-	bytes iv = 3;
-}
-
-message PlatformBoundingRect {
-	double north = 1;
-	double south = 2;
-	double east = 3;
-	double west = 4;
-}
-
-message PlatformClientApiSettingsProto {
-	enum SettingsType {
-		UNDEFINED = 0;
-		MAP = 1;
-	}
-
-	bytes payload = 1;
-}
-
-message PlatformClientGameMasterTemplateProto {
-	string template_id = 1;
-	GameMasterClientTemplateProto data = 2;
-}
-
-message PlatformClientInbox {
-	enum Label {
-		UNSET_LABEL = 0;
-		UNREAD = 1;
-		NEW = 2;
-		IMMEDIATE = 3;
-	}
-
-	message Notification {
-		string notification_id = 1;
-		string title_key = 2;
-		string category = 3;
-		int64 create_timestamp_ms = 4;
-		repeated PlatformTemplateVariable variables = 5;
-		repeated Label labels = 6;
-		int64 expire_time_ms = 7;
-	}
-
-	repeated Notification notifications = 1;
-}
-
-message PlatformClientTelemetryBatchProto {
-	enum TelemetryScopeId {
-		UNSET = 0;
-		DITTO = 1;
-		GAME = 2;
-		TITAN = 3;
-		COMMON = 4;
-	}
-
-	TelemetryScopeId telemetry_scope_id = 1;
-	repeated PlatformClientTelemetryRecordProto events = 2;
-	repeated PlatformClientTelemetryRecordProto metrics = 3;
-	string api_version = 4;
-	string message_version = 5;
-}
-
-message PlatformClientTelemetryClientSettingsProto {
-	bool is_upload_enabled = 1;
-	int64 max_upload_size_in_bytes = 2;
-	int64 update_interval_in_sec = 3;
-	int64 settings_update_interval_in_sec = 4;
-	int64 max_envelope_queue_size = 5;
-	double sampling_probability = 6;
-	bool use_player_based_sampling = 7;
-	double player_hash = 8;
-	string player_external_omni_id = 9;
-	bool disable_omni_sending = 10;
-	map<string, double> special_sampling_probability_map = 11;
-	string player_external_ua_id = 12;
-}
-
-message PlatformClientTelemetryCommonFilterProto {
-	string application_identifier = 1;
-	string operating_system_name = 2;
-	string device_model = 3;
-	string locale_country_code = 4;
-	string locale_language_code = 5;
-	double sampling_probability = 6;
-}
-
-message PlatformClientTelemetryRecordProto {
-	string record_id = 1;
-	bytes encoded_message = 2;
-	int64 client_timestamp_ms = 3;
-	int64 metric_id = 4;
-	PlatformClientTelemetryCommonFilterProto common_filters = 5;
-}
-
-message PlatformClientTelemetrySettingsRequestProto {
-}
-
-message PlatformCommonTelemetryBootTime {
-	string boot_phase = 1;
-	int64 duration_ms = 2;
-}
-
-message PlatformCommonTelemetryLogIn {
-	int64 timestamp_ms = 1;
-}
-
-message PlatformCommonTelemetryShopClick {
-	enum AccessType {
-		UNSPECIFIED = 0;
-		PASSIVE = 1;
-		ACTIVE = 2;
-	}
-
-	string shopping_page_click_id = 1;
-	string sku_id = 2;
-	string item_id = 3;
-	string consolidated_item_id = 4;
-	string currency = 5;
-	int64 fiat_price = 6;
-	repeated PlatformInGamePurchaseDetails in_game_purchase_details = 7;
-	bool is_item_free_fiat = 8;
-	bool is_item_free_ingame = 9;
-	int64 time_elapsed_since_enter_page = 10;
-	string root_store_page_session_id = 11;
-	int64 pair_id = 12;
-	string store_page_name = 13;
-	string root_store_page_name = 14;
-	AccessType access_type = 15;
-	string fiat_formatted_price = 16;
-}
-
-message PlatformCommonTelemetryShopView {
-	string shopping_page_view_type_id = 1;
-	int64 view_start_timestamp_ms = 2;
-	int64 view_end_timestamp_ms = 3;
-	repeated string consolidated_item_id = 4;
-	string root_store_page_session_id = 5;
-}
-
-message PlatformCurrencyQuantityProto {
-	string currency_type = 1;
-	int32 quantity = 2;
-}
-
-message PlatformCurrencyUpdateProto {
-	string currency_name = 1;
-	int32 currency_delta = 2;
-	int32 currency_balance = 3;
-	int32 fiat_purchased_balance = 4;
-}
-
-message PlatformDeclineFriendInviteOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_INVITE_DOES_NOT_EXIST = 3;
-		ERROR_INVITE_ALREADY_DECLINED = 4;
-	}
-
-	Result result = 1;
-}
-
-message PlatformDeclineFriendInviteProto {
-	string player_id = 1;
-}
-
-message PlatformDeveloperToken {
-	string id_token = 1;
-	string owner_email = 2;
-}
-
-message PlatformDownloadGmTemplatesRequestProto {
-	int64 basis_batch_id = 1;
-	int64 batch_id = 2;
-	int32 page_offset = 3;
-	bool apply_experiments = 4;
-	repeated int32 basis_experiment_id = 5;
-	repeated int32 experiment_id = 6;
-}
-
-message PlatformDownloadGmTemplatesResponseProto {
-	enum Result {
-		UNSET = 0;
-		COMPLETE = 1;
-		MORE_RESULTS = 2;
-		BATCH_ID_NOT_LIVE = 3;
-		INVALID_BASIS_BATCH_ID = 4;
-		WRONG_EXPERIMENTS = 5;
-	}
-
-	Result result = 1;
-	repeated PlatformClientGameMasterTemplateProto template = 2;
-	repeated string deleted_template = 3;
-	uint64 batch_id = 4;
-	int32 page_offset = 5;
-	repeated int32 experiment_id = 6;
-}
-
-message PlatformDownloadSettingsActionProto {
-	string sha1 = 1;
-}
-
-message PlatformDownloadSettingsResponseProto {
-	string error = 1;
-	string sha1 = 2;
-	GlobalSettingsProto values = 3;
-}
-
-message PlatformFbTokenProto {
-	string token = 1;
-}
-
-message PlatformFriendDetailsProto {
-	enum OnlineStatus {
-		UNSET = 0;
-		STATUS_UNKNOWN = 1;
-		STATUS_ONLINE = 2;
-		STATUS_OFFLINE = 3;
-	}
-
-	PlatformPlayerSummaryProto player = 1;
-	bytes friend_visible_data = 2;
-	int32 score = 3;
-	bytes data_with_me = 4;
-	OnlineStatus online_status = 5;
-}
-
-message PlatformGameItemContentProto {
-	string type = 1;
-	int32 quantity = 2;
-}
-
-message PlatformGcmToken {
-	string registration_id = 1;
-}
-
-message PlatformGenerateGmapSignedUrlOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_PLAYER_NOT_VALID = 2;
-		ERROR_RATE_LIMITED = 3;
-		ERROR_MISSING_INPUT = 4;
-		ERROR_UNKNOWN = 5;
-	}
-
-	Result result = 1;
-	string signed_url = 2;
-}
-
-message PlatformGenerateGmapSignedUrlProto {
-	double latitude = 1;
-	double longitude = 2;
-	int32 width = 3;
-	int32 height = 4;
-	int32 zoom = 5;
-	string language_code = 6;
-	string country_code = 7;
-	string map_style = 8;
-	string map_type = 9;
-	string icon_params = 10;
-}
-
-message PlatformGetAccountSettingsOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-	}
-
-	Result result = 1;
-	PlatformAccountSettingsProto settings = 2;
-}
-
-message PlatformGetAccountSettingsProto {
-}
-
-message PlatformGetAvailableSkusAndBalancesOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-	}
-
-	Status status = 1;
-	repeated PlatformAvailableSkuProto available_sku = 2;
-	repeated PlatformCurrencyQuantityProto balance = 3;
-	string player_token = 4;
-}
-
-message PlatformGetAvailableSkusAndBalancesProto {
-}
-
-message PlatformGetClientFeatureFlagsRequest {
-}
-
-message PlatformGetClientFeatureFlagsResponse {
-	PlatformSocialClientFeatures feature_flags = 1;
-	PlatformSocialClientGlobalSettings global_settings = 2;
-}
-
-message PlatformGetFacebookFriendListOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_FACEBOOK_API = 3;
-		ERROR_FACEBOOK_PERMISSIONS = 4;
-		ERROR_NO_FACEBOOK_ID = 5;
-		ERROR_PLAYER_NOT_FOUND = 6;
-	}
-
-	message FacebookFriendProto {
-		PlatformPlayerSummaryProto player = 1;
-		string full_name = 2;
-	}
-
-	Result result = 1;
-	repeated FacebookFriendProto friend = 2;
-	string next_cursor = 3;
-}
-
-message PlatformGetFacebookFriendListProto {
-	string fb_access_token = 1;
-	int32 limit = 2;
-	string cursor = 3;
-}
-
-message PlatformGetFriendCodeOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-	}
-
-	Result result = 1;
-	string friend_code = 2;
-}
-
-message PlatformGetFriendCodeProto {
-	bool force_generate_code = 1;
-}
-
-message PlatformGetFriendDetailsOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		EXCEEDS_MAX_PLAYERS_PER_QUERY = 3;
-	}
-
-	message DebugProto {
-		message Callee {
-			string player_id = 2;
-		}
-
-		int32 fetched_from_db = 1;
-		int32 fetched_from_fanout = 2;
-		int32 fetched_from_player_mapper = 3;
-		int32 fetched_from_status_cache = 4;
-		int32 failed_to_fetch = 5;
-		int32 fetched_from_same_server_as_player = 7;
-	}
-
-	Result result = 1;
-	repeated PlatformFriendDetailsProto friend = 2;
-	DebugProto friend_details_debug_info = 3;
-}
-
-message PlatformGetFriendDetailsProto {
-	repeated string player_id = 1;
-}
-
-message PlatformGetFriendDetailsResponse {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_EXCEEDS_MAX_FRIENDS_PER_QUERY = 3;
-	}
-
-	message FriendDetailsEntryProto {
-		string player_id = 1;
-		PlatformProfileDetailsProto profile = 2;
-		PlayerStatusDetailsProto player_status = 3;
-		PlatformFriendDetailsProto calling_game_data = 4;
-		PlatformSocialV2Enum.InvitationStatus invitation_status = 5;
-	}
-
-	message PlayerStatusDetailsProto {
-		enum Result {
-			UNSET = 0;
-			SUCCESS = 1;
-			ERROR_UNKNOWN = 2;
-			ERROR_STATUS_UNKNOWN = 3;
-			ERROR_STALE_DATA = 4;
-		}
-
-		Result result = 1;
-		PlatformPlayerLocaleProto locale = 2;
-		PlatformSocialV2Enum.OnlineStatus online_status = 3;
-		string last_played_app_key = 4;
-	}
-
-	Result result = 1;
-	repeated FriendDetailsEntryProto friend_details = 2;
-}
-
-message PlatformGetFriendsListOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-	}
-
-	message FriendProto {
-		enum OnlineStatus {
-			UNSET = 0;
-			STATUS_UNKNOWN = 1;
-			STATUS_ONLINE = 2;
-			STATUS_OFFLINE = 3;
-		}
-
-		string player_id = 1;
-		string codename = 2;
-		string team = 3;
-		int32 score = 4;
-		bytes data_with_me = 5;
-		int64 version = 6;
-		int64 created_ms = 7;
-		string fb_user_id = 8;
-		bool is_facebook_friendship = 9;
-		SharedFriendshipProto shared_data = 10;
-		OnlineStatus online_status = 11;
-	}
-
-	message SharedFriendshipProto {
-		bytes shared_data = 1;
-		int64 version = 2;
-		bytes data_from_me = 3;
-		bytes data_to_me = 4;
-	}
-
-	Result result = 1;
-	repeated FriendProto friend = 2;
-}
-
-message PlatformGetFriendsListProto {
-}
-
-message PlatformGetInboxV2Proto {
-	bool is_history = 1;
-	bool is_reverse = 2;
-	int64 not_before_ms = 3;
-}
-
-message PlatformGetIncomingFriendInvitesOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-	}
-
-	Result result = 1;
-	repeated PlatformIncomingFriendInviteDisplayProto invites = 2;
-}
-
-message PlatformGetIncomingFriendInvitesProto {
-}
-
-message PlatformGetNotificationInboxOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-	}
-
-	Result result = 1;
-	PlatformClientInbox inbox = 2;
-}
-
-message PlatformGetPlayerSettingsOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_PLAYER_NOT_FOUND = 3;
-	}
-
-	Result result = 1;
-	PlatformPlayerSettingsProto settings = 2;
-}
-
-message PlatformGetPlayerSettingsProto {
-}
-
-message PlatformGetProfileRequest {
-	string player_id = 1;
-}
-
-message PlatformGetProfileResponse {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_NOT_FRIEND = 3;
-	}
-
-	message PlayerProfileDetailsProto {
-		string app_key = 1;
-		string codename = 2;
-		string faction = 3;
-		int32 level = 4;
-		int64 experience = 5;
-		int64 signed_up_timestamp_ms = 6;
-		int64 last_played_timestamp_ms = 7;
-		double player_total_walk_km = 8;
-	}
-
-	Result result = 1;
-	PlatformProfileDetailsProto profile_details = 2;
-	repeated PlayerProfileDetailsProto player_profile_details = 3;
-}
-
-message PlatformGmmSettings {
-	repeated PlatformLayerRule layer_rules = 1;
-}
-
-message PlatformGoogleToken {
-	string id_token = 1;
-}
-
-message PlatformInGamePurchaseDetails {
-	string ingame_type = 1;
-	int64 ingame_price = 2;
-	int64 remaining_ingame_balance = 3;
-}
-
-message PlatformIncomingFriendInviteDisplayProto {
-	PlatformIncomingFriendInviteProto invite = 1;
-	PlatformPlayerSummaryProto player = 2;
-}
-
-message PlatformIncomingFriendInviteProto {
-	enum Status {
-		UNSET = 0;
-		PENDING = 1;
-		DECLINED = 2;
-		CANCELLED = 3;
-	}
-
-	Status status = 1;
-	string player_id = 2;
-	int64 created_ms = 3;
-	string full_name = 5;
-}
-
-message PlatformInternalAuthProto {
-	string email = 1;
-	string player_id = 2;
-	string app_id = 3;
-	string key = 4;
-}
-
-message PlatformInventoryDeltaProto {
-	int64 original_timestamp = 1;
-	int64 new_timestamp = 2;
-	repeated PlatformInventoryItemProto inventory_item = 3;
-}
-
-message PlatformInventoryItemProto {
-	oneof InventoryItem {
-		HoloInventoryKeyProto deleted_item_key = 2;
-		HoloInventoryItemProto inventory_item_data = 3;
-	}
-
-	int64 modified_timestamp = 1;
-}
-
-message PlatformInviteFacebookFriendOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_PLAYER_NOT_FOUND = 3;
-		ERROR_PLAYER_OUTBOX_FULL = 4;
-		ERROR_PLAYER_INBOX_FULL = 5;
-		ERROR_SENDER_HAS_MAX_FRIENDS = 6;
-		ERROR_RECEIVER_HAS_MAX_FRIENDS = 7;
-		ERROR_ALREADY_A_FRIEND = 8;
-		ERROR_INVITE_ALREADY_SENT = 9;
-		ERROR_INVITE_ALREADY_RECEIVED = 10;
-		ERROR_CANNOT_SEND_INVITES_TO_YOURSELF = 11;
-		ERROR_FRIEND_CACHE_EXPIRED = 12;
-		ERROR_FRIEND_NOT_CACHED = 13;
-		ERROR_INVALID_SENDER_FACEBOOK_ID = 14;
-	}
-
-	Result result = 1;
-}
-
-message PlatformInviteFacebookFriendProto {
-	string fb_access_token = 1;
-	string friend_fb_user_id = 2;
-}
-
-message PlatformLabel {
-	int32 priority = 1;
-	PlatformLabelGeometry geometry = 2;
-	PlatformLabelContent content = 3;
-}
-
-message PlatformLabelContent {
-	repeated PlatformLabelContentLocalization localizations = 1;
-}
-
-message PlatformLabelContentLocalization {
-	string language = 1;
-	string name = 2;
-}
-
-message PlatformLabelGeometry {
-	PlatformPixelPointProto point = 1;
-	int32 min_zoom = 2;
-	int32 max_zoom = 3;
-}
-
-message PlatformLabelTile {
-	repeated PlatformLabel labels = 1;
-}
-
-message PlatformLayerRule {
-	enum GmmLayerType {
-		AREA = 0;
-		ROAD = 1;
-		BUILDING = 2;
-		LINE_MESH = 3;
-	}
-
-	enum GmmRoadPriority {
-		PRIORITY_NONE = 0;
-		PRIORITY_TERMINAL = 1;
-		PRIORITY_LOCAL = 2;
-		PRIORITY_MINOR_ARTERIAL = 3;
-		PRIORITY_MAJOR_ARTERIAL = 4;
-		PRIORITY_SECONDARY_ROAD = 5;
-		PRIORITY_PRIMARY_HIGHWAY = 6;
-		PRIORITY_LIMITED_ACCESS = 7;
-		PRIORITY_CONTROLLED_ACCESS = 8;
-		PRIORITY_NON_TRAFFIC = 9;
-	}
-
-	repeated PlatformMaskedColor fill_colors = 1;
-	repeated GmmRoadPriority road_priority = 2;
-	uint32 road_attribute_bitfield = 3;
-}
-
-message PlatformListLoginActionOutProto {
-	bool success = 1;
-	repeated PlatformLoginDetail login_detail = 2;
-}
-
-message PlatformLocationE6Proto {
-	int32 latitude_e6 = 1;
-	int32 longitude_e6 = 2;
-}
-
-message PlatformLoginDetail {
-	IdentityProvider identity_provider = 1;
-	string email = 2;
-	string auth_provider_id = 3;
-}
-
-message PlatformMapArea {
-	string description = 1;
-	int32 epoch = 2;
-	string map_provider = 3;
-	repeated PlatformBoundingRect bounding_rect = 4;
-}
-
-message PlatformMapCompositionRoot {
-	repeated PlatformMapArea map_area = 1;
-	repeated PlatformMapProvider map_provider = 2;
-	repeated PlatformNamedMapSettings named_map_settings = 3;
-}
-
-message PlatformMapProvider {
-	enum MapType {
-		UNSET = 0;
-		GMM = 1;
-		OSM = 2;
-		BLANK = 3;
-		GMM_BUNDLE = 4;
-	}
-
-	oneof Settings {
-		PlatformGmmSettings gmm_settings = 4;
-		string settings_name = 5;
-	}
-
-	message BundleZoomRange {
-		int32 min_zoom = 1;
-		int32 max_zoom = 2;
-		int32 request_zoom_offset = 3;
-	}
-
-	string name = 1;
-	string base_url = 2;
-	string query_format = 3;
-	MapType map_type = 6;
-	bool hide_attribution = 7;
-	int32 min_tile_level = 8;
-	int32 max_tile_level = 9;
-	repeated BundleZoomRange bundle_zoom_range = 10;
-}
-
-message PlatformMapTileBundle {
-	repeated PlatformMapTileDataProto map_tile = 1;
-}
-
-message PlatformMapTileDataProto {
-	PlatformMapTileProto map_tile = 1;
-	PlatformMapCompositionRoot tile_data = 2;
-	PlatformLabelTile label_data = 3;
-}
-
-message PlatformMapTileProto {
-	enum TextSizeEnum {
-		TEXT_SIZE_ENUM_UNSET = 0;
-		SMALL = 1;
-		MEDIUM = 2;
-		LARGE = 3;
-	}
-
-	enum TileTypeEnum {
-		TILE_TYPE_ENUM_UNSET = 0;
-		MAP_ATLAS = 2;
-		SATELLITE = 3;
-		TRAFFIC = 4;
-		GIF_ATLAS = 5;
-		HYBRID = 6;
-		TERRAIN = 7;
-		CLICKABLE_LAYER = 8;
-		STREET_VIEW = 9;
-		VECTOR_ATLAS = 10;
-		ROAD_GRAPH = 11;
-		TERRAIN_NO_LABELS = 12;
-		VECTOR_TRANSIT = 13;
-		INDOOR = 14;
-		LABELS_ONLY = 15;
-		PERSONALIZED_SMARTMAPS = 16;
-	}
-
-	uint32 tile_variant = 1;
-	int32 tile_index_x = 2;
-	int32 tile_index_y = 3;
-	int32 zoom_level = 4;
-	string indoor_level_id = 5;
-	int32 pertile_epoch = 6;
-}
-
-message PlatformMaskedColor {
-	uint32 color_argb = 1;
-	uint32 color_mask_argb = 2;
-}
-
-message PlatformMetricData {
-	oneof DatapointValue {
-		int64 long_value = 2;
-		double double_value = 3;
-		bool boolean_value = 4;
-		Distribution distribution = 5;
-	}
-
-	enum Kind {
-		UNSPECIFIED = 0;
-		GAUGE = 1;
-		DELTA = 2;
-		CUMULATIVE = 3;
-	}
-
-	TelemetryCommon common_telemetry = 1;
-	Kind metric_kind = 6;
-}
-
-message PlatformNamedMapSettings {
-	string name = 1;
-	PlatformGmmSettings gmm_settings = 2;
-}
-
-message PlatformOptOutProto {
-	repeated string categories = 1;
-}
-
-message PlatformPixelPointProto {
+message PixelPointProto {
 	int32 pixel_x = 1;
 	int32 pixel_y = 2;
 	int32 zoom_level = 3;
 }
 
-message PlatformPlatformCommonFilterProto {
-	string application_identifier = 1;
-	string operating_system_name = 2;
-	string device_model = 3;
-	string locale_country_code = 4;
-	string locale_language_code = 5;
-	double sampling_probability = 6;
-}
-
-message PlatformPlatformServerData {
-	string user_id = 1;
-	string telemetry_id = 2;
-	string session_id = 3;
-	string event_request_id = 4;
-	int64 server_timestamp_ms = 5;
-}
-
-message PlatformPlayerLocaleProto {
-	string country = 1;
-	string language = 2;
-	string timezone = 3;
-}
-
-message PlatformPlayerSettingsProto {
-	bool opt_out_online_status = 1;
-	repeated PlatformSocialSettings.TutorialType completed_tutorials = 2;
-}
-
-message PlatformPlayerSummaryProto {
-	string player_id = 1;
-	string codename = 2;
-	bytes public_data = 3;
-	string team = 4;
-	string fb_user_id = 5;
-	int32 level = 6;
-	int64 experience = 7;
-}
-
-message PlatformPoiSubmissionPhotoUploadErrorTelemetry {
-	enum PoiSubmissionPhotoUploadErrorIds {
-		UNSET = 0;
-		POI_PHOTO_UPLOAD_ERROR = 1;
-		POI_PHOTO_UPLOAD_TIMEOUT = 2;
-	}
-
-	PoiSubmissionPhotoUploadErrorIds error_id = 1;
-	PoiImageType image_type = 2;
-	string error_message = 3;
-}
-
-message PlatformPoiSubmissionTelemetry {
-	enum PoiCameraStepIds {
-		UNSET = 0;
-		ENTER = 1;
-		RETAKE = 2;
-		CONFIRM = 3;
-		EXIT = 4;
-	}
-
-	enum PoiSubmissionGuiEventId {
-		UNKNOWN = 0;
-		POI_NOMINATION_ENTER = 1;
-		POI_TUTORIAL_COMPLETE = 2;
-		POI_MAP_CHANGEDVIEW_MAP = 3;
-		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
-		POI_MAP_CENTER_LOCATION = 5;
-		POI_LOCATION_SET = 6;
-		POI_PHOTO_CAMERA_ENTER = 7;
-		POI_PHOTO_CAMERA_EXIT = 8;
-		POI_TITLE_ENTERED = 9;
-		POI_DESCRIPTION_ENTER = 10;
-		POI_DETAILS_CONFIRM = 11;
-		POI_SUPPORTINGINFO_ENTER = 12;
-		POI_SUBMIT_BUTTON_HIT = 13;
-		POI_EXIT_BUTTON_HIT = 14;
-		POI_NOMINATION_GUIDELINES_HIT = 15;
-	}
-
-	PoiSubmissionGuiEventId gui_event_id = 1;
-	PoiImageType image_type = 2;
-	PoiCameraStepIds camera_step_id = 3;
-}
-
-message PlatformProfileDetailsProto {
-	string profile_name_app_key = 1;
-	string nickname = 2;
-	string profile_name = 3;
-}
-
-message PlatformProxyRequestProto {
-	uint32 action = 1;
-	string host = 2;
-	bytes payload = 3;
-}
-
-message PlatformProxyResponseProto {
-	enum Status {
-		UNSET = 0;
-		COMPLETED = 1;
-		COMPLETED_AND_REASSIGNED = 2;
-		ACTION_NOT_FOUND = 3;
-		ASSIGNMENT_ERROR = 4;
-		PROXY_UNAUTHORIZED_ERROR = 5;
-		INTERNAL_ERROR = 6;
-		BAD_REQUEST = 7;
-		ACCESS_DENIED = 8;
-		TIMEOUT_ERROR = 9;
-		RATE_LIMITED = 10;
-	}
-
-	Status status = 1;
-	string assigned_host = 2;
-	bytes payload = 3;
-}
-
-message PlatformPurchaseSkuOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-		BALANCE_TOO_LOW = 3;
-		SKU_NOT_AVAILABLE = 4;
-		OVER_INVENTORY_LIMIT = 5;
-	}
-
-	Status status = 1;
-}
-
-message PlatformPurchaseSkuProto {
-	string sku_id = 1;
-}
-
-message PlatformPushNotificationRegistryOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		NO_CHANGE = 2;
-	}
-
-	Result result = 1;
-}
-
-message PlatformPushNotificationRegistryProto {
-	PlatformApnToken apn_token = 1;
-	PlatformGcmToken gcm_token = 2;
-}
-
-message PlatformRedeemAppleReceiptOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-	}
-
-	Status status = 1;
-	repeated string provisioned_transaction_tokens = 2;
-}
-
-message PlatformRedeemAppleReceiptProto {
-	string receipt = 1;
-	string purchase_currency = 2;
-	int32 price_paid_e6 = 3;
-	int64 price_paid_e6_long = 4;
-}
-
-message PlatformRedeemGoogleReceiptOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-	}
-
-	Status status = 1;
-	string transaction_token = 2;
-}
-
-message PlatformRedeemGoogleReceiptProto {
-	string receipt = 1;
-	string receipt_signature = 2;
-	string purchase_currency = 3;
-	int32 price_paid_e6 = 4;
-	int64 price_paid_e6_long = 5;
-}
-
-message PlatformRedeemSamsungReceiptOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-	}
-
-	string purchase_id = 1;
-}
-
-message PlatformRedeemSamsungReceiptProto {
-	string purchase_data = 1;
-	string purchase_id = 2;
-	string purchase_currency = 3;
-	int64 price_paid_e6_long = 4;
-}
-
-message PlatformRegisterBackgroundDeviceActionProto {
-	string device_type = 1;
-	string device_id = 2;
-}
-
-message PlatformRegisterBackgroundDeviceResponseProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR = 2;
-	}
-
-	Status status = 1;
-	PlatformBackgroundToken token = 2;
-}
-
-message PlatformRemoveFriendOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_PLAYER_DOES_NOT_EXIST_DELETED = 2;
-		ERROR_PLAYER_NOT_A_FRIEND = 3;
-	}
-
-	Result result = 1;
-}
-
-message PlatformRemoveFriendProto {
-	string player_id = 1;
-}
-
-message PlatformRemoveLoginActionOutProto {
-	enum Status {
-		UNSET = 0;
-		LOGIN_NOT_REMOVABLE = 1;
-	}
-
-	bool success = 1;
-	repeated PlatformLoginDetail login_detail = 2;
-	Status status = 3;
-}
-
-message PlatformRemoveLoginActionProto {
-	IdentityProvider identity_provider = 1;
-	string auth_provider_id = 2;
-}
-
-message PlatformSavePlayerSettingsOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-	}
-
-	Result result = 1;
-}
-
-message PlatformSavePlayerSettingsProto {
-	PlatformPlayerSettingsProto settings = 1;
-}
-
-message PlatformSearchPlayerOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_PLAYER_NOT_FOUND = 3;
-	}
-
-	Result result = 1;
-	PlatformPlayerSummaryProto player = 2;
-}
-
-message PlatformSearchPlayerProto {
-	string friend_code = 1;
-}
-
-message PlatformSendFriendInviteOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_ALREADY_A_FRIEND = 3;
-		ERROR_PLAYER_DOES_NOT_EXIST_DELETED = 4;
-		ERROR_PLAYER_INBOX_FULL = 5;
-		ERROR_PLAYER_OUTBOX_FULL = 6;
-		ERROR_SENDER_HAS_MAX_FRIENDS = 7;
-		ERROR_INVITE_ALREADY_SENT = 8;
-		ERROR_CANNOT_SEND_INVITES_TO_YOURSELF = 9;
-		ERROR_INVITE_ALREADY_RECEIVED = 10;
-		ERROR_RECEIVER_HAS_MAX_FRIENDS = 11;
-	}
-
-	Result result = 1;
-}
-
-message PlatformSendFriendInviteProto {
-	string player_id = 1;
-	string friend_code = 2;
-}
-
-message PlatformServerRecordMetadata {
-	string user_id = 1;
-	string telemetry_name = 2;
-	string session_id = 3;
-	string request_id = 4;
-	int64 server_timestamp_ms = 5;
-}
-
-message PlatformSetAccountSettingsOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-	}
-
-	Result result = 1;
-}
-
-message PlatformSetAccountSettingsProto {
-	PlatformAccountSettingsProto settings = 1;
-}
-
-message PlatformSkuPresentationProto {
-	string key = 1;
-	string value = 2;
-}
-
-message PlatformSocialClientFeatures {
-	message CrossGameSocialClientSettingsProto {
-		enum AppLinkType {
-			NO_LINK = 0;
-			WEB_LINK = 1;
-			APP_STORE_LINK = 2;
-		}
-
-		enum FeatureType {
-			UNSET = 0;
-			NIANTIC_PROFILE = 1;
-			ONLINE_STATUS = 2;
-			FRIEND_LIST = 3;
-		}
-
-		repeated FeatureType disabled_features = 1;
-		AppLinkType app_link = 2;
-	}
-
-	CrossGameSocialClientSettingsProto cross_game_social_settings = 1;
-}
-
-message PlatformSocialClientGlobalSettings {
-	message CrossGameSocialSettingsProto {
-		bool niantic_profile_codename_opt_out_enabled = 1;
-	}
-
-	CrossGameSocialSettingsProto cross_game_social_settings = 1;
-}
-
-message PlatformSocialProto {
-	enum AppKey {
-		INVALID = 0;
-		INGRESS_DELETED = 1;
-		HOLOHOLO_DELETED = 2;
-		LEXICON_DELETED = 3;
-	}
-}
-
-message PlatformSocialSettings {
-	enum ConsentStatus {
-		UNKNOWN = 0;
-		OPT_IN = 1;
-		OPT_OUT = 2;
-	}
-
-	enum TutorialType {
-		UNSET = 0;
-		PROFILE = 1;
-		FRIEND_LIST_V2 = 2;
-		ONLINE_STATUS_OVERVIEW = 3;
-		ONLINE_STATUS_TOGGLE = 4;
-	}
-}
-
-message PlatformSocialV2Enum {
-	enum InvitationStatus {
-		INVITATION_STATUS_UNSET = 0;
-		INVITED = 1;
-	}
-
-	enum OnlineStatus {
-		STATUS_UNSET = 0;
-		STATUS_UNKNOWN = 1;
-		STATUS_ONLINE = 2;
-		STATUS_OFFLINE = 3;
-	}
-}
-
-message PlatformSuperAwesomeTokenProto {
-	string token = 1;
-}
-
-message PlatformTemplateVariable {
-	string name = 1;
-	string literal = 2;
-	string key = 3;
-	string lookup_table = 4;
-	bytes byte_value = 5;
-}
-
-message PlatformUpdateFacebookStatusOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_PLAYER_NOT_FOUND = 3;
-		ERROR_FACEBOOK_API = 4;
-		ERROR_ALREADY_EXISTS = 5;
-	}
-
-	Result result = 1;
-}
-
-message PlatformUpdateFacebookStatusProto {
-	string fb_access_token = 1;
-	bool force_update = 2;
-}
-
-message PlatformUpdateFriendshipResponse {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_NOT_FRIEND = 3;
-		ERROR_NICKNAME_WRONG_FORMAT = 4;
-		ERROR_FILTERED_NICKNAME = 5;
-		ERROR_EXCEEDED_CHANGE_LIMIT = 6;
-	}
-
-	Result result = 1;
-}
-
-message PlatformUpdateNotificationOutProto {
-}
-
-message PlatformUpdateNotificationProto {
-	repeated string notification_ids = 1;
-	repeated int64 create_timestamp_ms = 2;
-	NotificationState state = 3;
-}
-
-message PlatformUpdateProfileRequest {
-	message ProfileProto {
-		string profile_name_app_key = 1;
-	}
-
-	ProfileProto profile = 1;
-}
-
-message PlatformUpdateProfileResponse {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-	}
-
-	Result result = 1;
+message PlannedDowntimeSettingsProto {
+	int64 downtime_timestamp_ms = 1;
+	int64 no_actions_window_sec_from_downtime = 2;
 }
 
 message PlatypusRolloutSettingsProto {
@@ -12104,6 +11828,11 @@ message PlayerRaidInfoProto {
 	repeated RaidProto raids = 5;
 }
 
+message PlayerSettingsProto {
+	bool opt_out_online_status = 1;
+	repeated SocialSettings.TutorialType completed_tutorials = 2;
+}
+
 message PlayerStatsProto {
 	int32 level = 1;
 	int64 experience = 2;
@@ -12179,9 +11908,93 @@ message PlayerStatsSnapshotsProto {
 	repeated PlayerStatsSnapshotProto snap_shot = 1;
 }
 
+message PlayerSubmissionResponseProto {
+	enum Status {
+		STATUS_UNSPECIFIED = 0;
+		SUCCESS = 1;
+		INTERNAL_ERROR = 2;
+		TOO_MANY_RECENT_SUBMISSIONS = 3;
+		MINOR = 4;
+		NOT_AVAILABLE = 5;
+		INVALID_INPUT = 6;
+		MISSING_IMAGE = 7;
+		DISTANCE_VALIDATION_FAILED = 8;
+	}
+
+	Status status = 1;
+	string submission_id = 2;
+	repeated string messages = 3;
+}
+
+message PlayerSummaryProto {
+	string player_id = 1;
+	string codename = 2;
+	bytes public_data = 3;
+	string team = 4;
+	string fb_user_id = 5;
+	int32 level = 6;
+	int64 experience = 7;
+}
+
 message PoiGlobalSettingsProto {
 	bool is_enabled = 1;
 	repeated string player_submission_type_enabled = 2;
+}
+
+message PoiPlayerMetadataTelemetry {
+	string device_model = 1;
+	string device_os = 2;
+}
+
+message PoiSubmissionPhotoUploadErrorTelemetry {
+	enum PoiSubmissionPhotoUploadErrorIds {
+		UNSET = 0;
+		POI_PHOTO_UPLOAD_ERROR = 1;
+		POI_PHOTO_UPLOAD_TIMEOUT = 2;
+	}
+
+	PoiSubmissionPhotoUploadErrorIds error_id = 1;
+	PoiImageType image_type = 2;
+	string error_message = 3;
+}
+
+message PoiSubmissionTelemetry {
+	enum PoiCameraStepIds {
+		UNSET = 0;
+		ENTER = 1;
+		RETAKE = 2;
+		CONFIRM = 3;
+		EXIT = 4;
+	}
+
+	enum PoiSubmissionGuiEventId {
+		UNKNOWN = 0;
+		POI_NOMINATION_ENTER = 1;
+		POI_TUTORIAL_COMPLETE = 2;
+		POI_MAP_CHANGEDVIEW_MAP = 3;
+		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
+		POI_MAP_CENTER_LOCATION = 5;
+		POI_LOCATION_SET = 6;
+		POI_PHOTO_CAMERA_ENTER = 7;
+		POI_PHOTO_CAMERA_EXIT = 8;
+		POI_TITLE_ENTERED = 9;
+		POI_DESCRIPTION_ENTER = 10;
+		POI_DETAILS_CONFIRM = 11;
+		POI_SUPPORTINGINFO_ENTER = 12;
+		POI_SUBMIT_BUTTON_HIT = 13;
+		POI_EXIT_BUTTON_HIT = 14;
+		POI_NOMINATION_GUIDELINES_HIT = 15;
+	}
+
+	PoiSubmissionGuiEventId gui_event_id = 1;
+	PoiImageType image_type = 2;
+	PoiCameraStepIds camera_step_id = 3;
+}
+
+message PoiVideoSubmissionMetadataProto {
+	string poi_id = 1;
+	LocationE6Proto location = 2;
+	int32 player_level = 3;
 }
 
 message PokeBallAttributesProto {
@@ -14926,6 +14739,19 @@ message PokestopReward {
 	int32 item_count = 2;
 }
 
+message PortalCurationImageResult {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		FEATURE_DISABLED = 2;
+		ALREADY_UPLOADED = 3;
+		IMAGE_NOT_FOUND = 4;
+		IMAGE_TOO_BIG = 5;
+		IMAGE_NOT_SERVABLE = 6;
+		PORTAL_NOT_FOUND = 7;
+	}
+}
+
 message PotionAttributesProto {
 	float sta_percent = 1;
 	int32 sta_amount = 2;
@@ -14958,6 +14784,12 @@ message ProfanityCheckProto {
 	bool accept_author_only = 2;
 }
 
+message ProfileDetailsProto {
+	string profile_name_app_key = 1;
+	string nickname = 2;
+	string profile_name = 3;
+}
+
 message ProfilePageTelemetry {
 	ProfilePageTelemetryIds profile_page_click_id = 1;
 }
@@ -14988,9 +14820,52 @@ message ProjectVacationProto {
 	bool enable2020 = 1;
 }
 
+message ProxyRequestProto {
+	uint32 action = 1;
+	string host = 2;
+	bytes payload = 3;
+}
+
+message ProxyResponseProto {
+	enum Status {
+		UNSET = 0;
+		COMPLETED = 1;
+		COMPLETED_AND_REASSIGNED = 2;
+		ACTION_NOT_FOUND = 3;
+		ASSIGNMENT_ERROR = 4;
+		PROXY_UNAUTHORIZED_ERROR = 5;
+		INTERNAL_ERROR = 6;
+		BAD_REQUEST = 7;
+		ACCESS_DENIED = 8;
+		TIMEOUT_ERROR = 9;
+		RATE_LIMITED = 10;
+	}
+
+	Status status = 1;
+	string assigned_host = 2;
+	bytes payload = 3;
+}
+
 message PtcToken {
 	string token = 1;
 	int32 expiration = 2;
+}
+
+message PurchaseSkuOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		BALANCE_TOO_LOW = 3;
+		SKU_NOT_AVAILABLE = 4;
+		OVER_INVENTORY_LIMIT = 5;
+	}
+
+	Status status = 1;
+}
+
+message PurchaseSkuProto {
+	string sku_id = 1;
 }
 
 message PurifyPokemonLogEntry {
@@ -15015,6 +14890,21 @@ message PurifyPokemonOutProto {
 
 message PurifyPokemonProto {
 	fixed64 pokemon_id = 1;
+}
+
+message PushNotificationRegistryOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		NO_CHANGE = 2;
+	}
+
+	Result result = 1;
+}
+
+message PushNotificationRegistryProto {
+	ApnToken apn_token = 1;
+	GcmToken gcm_token = 2;
 }
 
 message PushNotificationTelemetry {
@@ -15612,6 +15502,43 @@ message RecycleItemProto {
 	int32 count = 2;
 }
 
+message RedeemAppleReceiptOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+
+	Status status = 1;
+	repeated string provisioned_transaction_tokens = 2;
+}
+
+message RedeemAppleReceiptProto {
+	string receipt = 1;
+	string purchase_currency = 2;
+	int32 price_paid_e6 = 3;
+	int64 price_paid_e6_long = 4;
+}
+
+message RedeemGoogleReceiptOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+
+	Status status = 1;
+	string transaction_token = 2;
+}
+
+message RedeemGoogleReceiptProto {
+	string receipt = 1;
+	string receipt_signature = 2;
+	string purchase_currency = 3;
+	int32 price_paid_e6 = 4;
+	int64 price_paid_e6_long = 5;
+}
+
 message RedeemPasscodeRequestProto {
 	string passcode = 1;
 }
@@ -15650,6 +15577,23 @@ message RedeemPasscodeRewardProto {
 	repeated string quest_ids = 10;
 }
 
+message RedeemSamsungReceiptOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+	}
+
+	string purchase_id = 1;
+}
+
+message RedeemSamsungReceiptProto {
+	string purchase_data = 1;
+	string purchase_id = 2;
+	string purchase_currency = 3;
+	int64 price_paid_e6_long = 4;
+}
+
 message RedeemedAvatarItemProto {
 	string avatar_template_id = 1;
 	int32 item_count = 2;
@@ -15678,7 +15622,7 @@ message RegisterBackgroundDeviceResponseProto {
 	}
 
 	Status status = 1;
-	PlatformBackgroundToken token = 2;
+	BackgroundToken token = 2;
 }
 
 message RegisterSfidaRequest {
@@ -15733,6 +15677,37 @@ message RemoteRaidTelemetry {
 	RemoteRaidTelemetryIds remote_raid_telemetry_id = 1;
 	RemoteRaidJoinSource remote_raid_join_source = 2;
 	RemoteRaidInviteAcceptSource remote_raid_invite_accept_source = 3;
+}
+
+message RemoveFriendOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_PLAYER_DOES_NOT_EXIST_DELETED = 2;
+		ERROR_PLAYER_NOT_A_FRIEND = 3;
+	}
+
+	Result result = 1;
+}
+
+message RemoveFriendProto {
+	string player_id = 1;
+}
+
+message RemoveLoginActionOutProto {
+	enum Status {
+		UNSET = 0;
+		LOGIN_NOT_REMOVABLE = 1;
+	}
+
+	bool success = 1;
+	repeated LoginDetail login_detail = 2;
+	Status status = 3;
+}
+
+message RemoveLoginActionProto {
+	IdentityProvider identity_provider = 1;
+	string auth_provider_id = 2;
 }
 
 message RemoveQuestOutProto {
@@ -15893,6 +15868,20 @@ message SavePlayerPreferencesProto {
 	PlayerPreferencesProto player_preferences_proto = 1;
 }
 
+message SavePlayerSettingsOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
+}
+
+message SavePlayerSettingsProto {
+	PlayerSettingsProto settings = 1;
+}
+
 message SavePlayerSnapshotOutProto {
 	enum Result {
 		UNSET = 0;
@@ -15935,6 +15924,46 @@ message SearchFilterPreferenceProto {
 
 	repeated SearchFilterQueryProto recent_searches = 1;
 	repeated SearchFilterQueryProto favorite_searches = 2;
+}
+
+message SearchPlayerOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_PLAYER_NOT_FOUND = 3;
+	}
+
+	Result result = 1;
+	PlayerSummaryProto player = 2;
+}
+
+message SearchPlayerProto {
+	string friend_code = 1;
+}
+
+message SendFriendInviteOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_ALREADY_A_FRIEND = 3;
+		ERROR_PLAYER_DOES_NOT_EXIST_DELETED = 4;
+		ERROR_PLAYER_INBOX_FULL = 5;
+		ERROR_PLAYER_OUTBOX_FULL = 6;
+		ERROR_SENDER_HAS_MAX_FRIENDS = 7;
+		ERROR_INVITE_ALREADY_SENT = 8;
+		ERROR_CANNOT_SEND_INVITES_TO_YOURSELF = 9;
+		ERROR_INVITE_ALREADY_RECEIVED = 10;
+		ERROR_RECEIVER_HAS_MAX_FRIENDS = 11;
+	}
+
+	Result result = 1;
+}
+
+message SendFriendInviteProto {
+	string player_id = 1;
+	string friend_code = 2;
 }
 
 message SendGiftLogEntry {
@@ -16008,6 +16037,36 @@ message SendRaidInvitationProto {
 	repeated int32 lobby_id = 3;
 	double gym_lat_degrees = 4;
 	double gym_lng_degrees = 5;
+}
+
+message ServerData {
+	string user_id = 1;
+	string telemetry_id = 2;
+	string session_id = 3;
+	string event_request_id = 4;
+	int64 server_timestamp_ms = 5;
+}
+
+message ServerRecordMetadata {
+	string user_id = 1;
+	string telemetry_name = 2;
+	string session_id = 3;
+	string request_id = 4;
+	int64 server_timestamp_ms = 5;
+}
+
+message SetAccountSettingsOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
+}
+
+message SetAccountSettingsProto {
+	AccountSettingsProto settings = 1;
 }
 
 message SetAvatarItemAsViewedOutProto {
@@ -16373,9 +16432,44 @@ message ShoppingPageTelemetry {
 	ShoppingPageTelemetryIds shopping_page_click_id = 1;
 }
 
+message SkuPresentationProto {
+	string key = 1;
+	string value = 2;
+}
+
 message SmeargleMovesSettingsProto {
 	repeated HoloPokemonMove quick_moves = 1;
 	repeated HoloPokemonMove cinematic_moves = 2;
+}
+
+message SocialClientFeatures {
+	message CrossGameSocialClientSettingsProto {
+		enum AppLinkType {
+			NO_LINK = 0;
+			WEB_LINK = 1;
+			APP_STORE_LINK = 2;
+		}
+
+		enum FeatureType {
+			UNSET = 0;
+			NIANTIC_PROFILE = 1;
+			ONLINE_STATUS = 2;
+			FRIEND_LIST = 3;
+		}
+
+		repeated FeatureType disabled_features = 1;
+		AppLinkType app_link = 2;
+	}
+
+	CrossGameSocialClientSettingsProto cross_game_social_settings = 1;
+}
+
+message SocialClientGlobalSettings {
+	message CrossGameSocialSettingsProto {
+		bool niantic_profile_codename_opt_out_enabled = 1;
+	}
+
+	CrossGameSocialSettingsProto cross_game_social_settings = 1;
 }
 
 message SocialClientSettingsProto {
@@ -16403,9 +16497,48 @@ message SocialPlayerSettingsProto {
 	bool disable_last_pokemon_caught = 1;
 }
 
+message SocialProto {
+	enum AppKey {
+		INVALID = 0;
+		INGRESS_DELETED = 1;
+		HOLOHOLO_DELETED = 2;
+		LEXICON_DELETED = 3;
+	}
+}
+
+message SocialSettings {
+	enum ConsentStatus {
+		UNKNOWN = 0;
+		OPT_IN = 1;
+		OPT_OUT = 2;
+	}
+
+	enum TutorialType {
+		UNSET = 0;
+		PROFILE = 1;
+		FRIEND_LIST_V2 = 2;
+		ONLINE_STATUS_OVERVIEW = 3;
+		ONLINE_STATUS_TOGGLE = 4;
+	}
+}
+
 message SocialTelemetry {
 	SocialTelemetryIds social_click_id = 1;
 	int32 pages_scrolled_in_friends_list = 2;
+}
+
+message SocialV2Enum {
+	enum InvitationStatus {
+		INVITATION_STATUS_UNSET = 0;
+		INVITED = 1;
+	}
+
+	enum OnlineStatus {
+		STATUS_UNSET = 0;
+		STATUS_UNKNOWN = 1;
+		STATUS_ONLINE = 2;
+		STATUS_OFFLINE = 3;
+	}
 }
 
 message SouvenirProto {
@@ -16630,6 +16763,86 @@ message SubmitCombatChallengePokemonsProto {
 	int64 lobby_join_time_ms = 3;
 }
 
+message SubmitNewPoiOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		INTERNAL_ERROR = 3;
+		TOO_MANY_RECENT_SUBMISSIONS = 4;
+		INVALID_INPUT = 5;
+		MINOR = 6;
+		NOT_AVAILABLE = 7;
+	}
+
+	Status status = 1;
+	string submission_id = 2;
+	repeated string messages = 3;
+}
+
+message SubmitNewPoiProto {
+	string title = 1;
+	string long_description = 2;
+	int32 lat_e6 = 4;
+	int32 lng_e6 = 5;
+	string supporting_statement = 14;
+	bool async_file_upload = 18;
+}
+
+message SubmitPlayerImageVoteForPoiOutProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		POI_NOT_FOUND = 2;
+		POI_IMAGE_NOT_FOUND = 3;
+		INVALID_REQUEST = 6;
+	}
+
+	Status status = 1;
+}
+
+message SubmitPlayerImageVoteForPoiProto {
+	repeated string image_ids_to_vote_for = 1;
+	repeated string image_ids_to_unvote = 2;
+	string poi_id = 3;
+}
+
+message SubmitPoiImageProto {
+	string poi_id = 1;
+	bool async_file_upload = 2;
+}
+
+message SubmitPoiLocationUpdateProto {
+	string poi_id = 1;
+	LocationE6Proto location = 2;
+}
+
+message SubmitPoiTakedownRequestProto {
+	string poi_id = 1;
+	PoiInvalidReason invalid_reason = 2;
+}
+
+message SubmitPoiTextMetadataUpdateProto {
+	string poi_id = 1;
+	string title = 2;
+	string description = 3;
+}
+
+message SubmitSponsorPoiLocationUpdateProto {
+	string poi_id = 1;
+	LocationE6Proto location = 2;
+}
+
+message SubmitSponsorPoiReportProto {
+	string poi_id = 1;
+	SponsorPoiInvalidReason invalid_reason = 2;
+	string additional_details = 3;
+}
+
+message SuperAwesomeTokenProto {
+	string token = 1;
+}
+
 message TeamChangeInfoProto {
 	int64 last_acquired_time = 1;
 	int32 num_items_acquired = 2;
@@ -16669,6 +16882,14 @@ message TempEvoOverrideProto {
 	repeated float buddy_offset_female = 13;
 	repeated float buddy_portrait_offset = 14;
 	float raid_boss_distance_offset = 15;
+}
+
+message TemplateVariable {
+	string name = 1;
+	string literal = 2;
+	string key = 3;
+	string lookup_table = 4;
+	bytes byte_value = 5;
 }
 
 message TemporaryEvolutionProto {
@@ -16722,405 +16943,6 @@ message TimedGroupChallengeSettingsProto {
 
 message TimedQuestSectionProto {
 	string quest_id = 1;
-}
-
-message TitanAsyncFileUploadCompleteOutProto {
-	enum ErrorStatus {
-		UNSET = 0;
-		SERVER_UPDATE_FAILED = 1;
-		MISSING_SUBMISSION_ID = 2;
-		MISSING_SUBMISSION_TYPE = 3;
-		MISSING_UPLOAD_STATUS = 4;
-	}
-
-	ErrorStatus error = 1;
-	PlayerSubmissionTypeProto submission_type = 2;
-	string poi_id = 3;
-}
-
-message TitanAsyncFileUploadCompleteProto {
-	enum Status {
-		UNSET = 0;
-		UPLOAD_DONE = 1;
-		UPLOAD_FAILED = 2;
-	}
-
-	string submission_id = 1;
-	Status upload_status = 3;
-}
-
-message TitanAvailableSubmissionsPerSubmissionType {
-	PlayerSubmissionTypeProto player_submission_type = 1;
-	int32 submissions_left = 2;
-	int32 min_player_level = 3;
-	bool is_feature_enabled = 4;
-	int64 time_window_for_submissions_limit_ms = 5;
-	int32 max_poi_distance_in_meters = 6;
-	repeated string blacklisted_os = 7;
-	repeated string blacklisted_device_id = 8;
-	bool is_whitelisted_user = 9;
-}
-
-message TitanGameClientPhotoGalleryPoiImageProto {
-	string image_id = 1;
-	string poi_id = 2;
-	string submitter_codename = 3;
-	string image_url = 4;
-	int64 creation_timestamp_ms = 5;
-	bool has_player_voted = 6;
-	int32 num_votes_from_game = 7;
-}
-
-message TitanGameClientTelemetryOmniProto {
-	oneof TelemetryData {
-		TitanPoiSubmissionTelemetry poi_submission_telemetry = 1;
-		TitanPoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
-		TitanPoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
-	}
-
-	PlatformPlatformServerData server_data = 1001;
-}
-
-message TitanGenerateGmapSignedUrlOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_PLAYER_NOT_VALID = 2;
-		ERROR_RATE_LIMITED = 3;
-		ERROR_MISSING_INPUT = 4;
-		ERROR_UNKNOWN = 5;
-	}
-
-	Result result = 1;
-	string signed_url = 2;
-}
-
-message TitanGenerateGmapSignedUrlProto {
-	double latitude = 1;
-	double longitude = 2;
-	int32 width = 3;
-	int32 height = 4;
-	int32 zoom = 5;
-	string language_code = 6;
-	string country_code = 7;
-	string map_style = 8;
-	string map_type = 9;
-	string icon_params = 10;
-}
-
-message TitanGetARMappingSettingsOutProto {
-	bool is_client_scan_validation_enabled = 1;
-	repeated string client_scan_validation_blocked_os = 2;
-	repeated string client_scan_validation_blocked_device_id = 3;
-}
-
-message TitanGetARMappingSettingsProto {
-}
-
-message TitanGetAvailableSubmissionsOutProto {
-	int32 submissions_left = 1;
-	int32 min_player_level = 2;
-	bool has_valid_email = 3;
-	bool is_feature_enabled = 4;
-	int64 time_window_for_submissions_limit_ms = 5;
-	int32 max_poi_distance_in_meters = 6;
-	repeated string blacklisted_os = 7;
-	repeated TitanAvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
-	repeated string blacklisted_device_id = 9;
-	int32 max_poi_location_edit_move_distance_meters = 10;
-}
-
-message TitanGetAvailableSubmissionsProto {
-	PlayerSubmissionTypeProto submission_type = 1;
-	repeated PlayerSubmissionTypeProto submission_types = 2;
-}
-
-message TitanGetGmapSettingsOutProto {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_MISSING_CONFIG = 3;
-		ERROR_NO_UNIQUE_ID = 4;
-	}
-
-	Result result = 1;
-	string gmap_template_url = 2;
-	int32 max_poi_distance_in_meters = 3;
-}
-
-message TitanGetGmapSettingsProto {
-}
-
-message TitanGetGrapeshotUploadUrlOutProto {
-	enum Status {
-		UNSET = 0;
-		FAILURE = 1;
-		SUCCESS = 2;
-		MISSING_FILE_CONTEXTS = 3;
-		DUPLICATE_FILE_CONTEXT = 4;
-		MISSING_SUBMISSION_TYPE = 5;
-		MISSING_SUBMISSION_ID = 6;
-	}
-
-	Status status = 1;
-	map<string, TitanGrapeshotUploadingDataProto> file_context_to_grapeshot_data = 4;
-}
-
-message TitanGetGrapeshotUploadUrlProto {
-	PlayerSubmissionTypeProto submission_type = 1;
-	string submission_id = 2;
-	repeated string file_upload_context = 3;
-}
-
-message TitanGetImageGallerySettingsOutProto {
-	bool is_image_gallery_enabled = 1;
-	int32 max_periodic_image_loaded_count = 2;
-}
-
-message TitanGetImageGallerySettingsProto {
-}
-
-message TitanGetImagesForPoiOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		POI_NOT_FOUND = 2;
-		INVALID_REQUEST = 3;
-	}
-
-	Status status = 1;
-	repeated TitanGameClientPhotoGalleryPoiImageProto photo_gallery_poi_images = 2;
-}
-
-message TitanGetImagesForPoiProto {
-	string poi_id = 1;
-}
-
-message TitanGetPlayerSubmissionValidationSettingsOutProto {
-	repeated string banned_metadata_text = 1;
-}
-
-message TitanGetPlayerSubmissionValidationSettingsProto {
-}
-
-message TitanGetUploadUrlOutProto {
-	enum Status {
-		UNSET = 0;
-		FAILURES = 1;
-		SUCCESS = 2;
-		MISSING_IMAGE_CONTEXTS = 3;
-		DUPLICATE_IMAGE_CONTEXTS = 4;
-	}
-
-	Status status = 1;
-	string signed_url = 2;
-	string supporting_image_signed_url = 3;
-	map<string, string> context_signed_urls = 4;
-}
-
-message TitanGetUploadUrlProto {
-	string user_id = 1;
-	string game_unique_id = 2;
-	PlayerSubmissionTypeProto submission_type = 3;
-	string submission_id = 4;
-	repeated string image_contexts = 5;
-}
-
-message TitanGrapeshotAuthenticationDataProto {
-	string authorization = 1;
-	string date = 2;
-}
-
-message TitanGrapeshotChunkDataProto {
-	string chunk_file_path = 1;
-	uint32 chunk_number = 2;
-	TitanGrapeshotAuthenticationDataProto upload_authentication = 3;
-	TitanGrapeshotAuthenticationDataProto delete_authentication = 4;
-}
-
-message TitanGrapeshotComposeDataProto {
-	string target_file_path = 1;
-	TitanGrapeshotAuthenticationDataProto authentication = 2;
-	string hash = 3;
-}
-
-message TitanGrapeshotUploadingDataProto {
-	repeated TitanGrapeshotChunkDataProto chunk_data = 1;
-	TitanGrapeshotComposeDataProto compose_data = 2;
-	string gcs_bucket = 3;
-	int32 number_of_chunks = 4;
-}
-
-message TitanPlayerSubmissionResponseProto {
-	enum Status {
-		STATUS_UNSPECIFIED = 0;
-		SUCCESS = 1;
-		INTERNAL_ERROR = 2;
-		TOO_MANY_RECENT_SUBMISSIONS = 3;
-		MINOR = 4;
-		NOT_AVAILABLE = 5;
-		INVALID_INPUT = 6;
-		MISSING_IMAGE = 7;
-		DISTANCE_VALIDATION_FAILED = 8;
-	}
-
-	Status status = 1;
-	string submission_id = 2;
-	repeated string messages = 3;
-}
-
-message TitanPoiPlayerMetadataTelemetry {
-	string device_model = 1;
-	string device_os = 2;
-}
-
-message TitanPoiSubmissionPhotoUploadErrorTelemetry {
-	enum PoiSubmissionPhotoUploadErrorIds {
-		UNSET = 0;
-		POI_PHOTO_UPLOAD_ERROR = 1;
-		POI_PHOTO_UPLOAD_TIMEOUT = 2;
-	}
-
-	PoiSubmissionPhotoUploadErrorIds error_id = 1;
-	TitanPoiImageType image_type = 2;
-	string error_message = 3;
-}
-
-message TitanPoiSubmissionTelemetry {
-	enum PoiCameraStepIds {
-		UNSET = 0;
-		ENTER = 1;
-		RETAKE = 2;
-		CONFIRM = 3;
-		EXIT = 4;
-	}
-
-	enum PoiSubmissionGuiEventId {
-		UNKNOWN = 0;
-		POI_NOMINATION_ENTER = 1;
-		POI_TUTORIAL_COMPLETE = 2;
-		POI_MAP_CHANGEDVIEW_MAP = 3;
-		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
-		POI_MAP_CENTER_LOCATION = 5;
-		POI_LOCATION_SET = 6;
-		POI_PHOTO_CAMERA_ENTER = 7;
-		POI_PHOTO_CAMERA_EXIT = 8;
-		POI_TITLE_ENTERED = 9;
-		POI_DESCRIPTION_ENTER = 10;
-		POI_DETAILS_CONFIRM = 11;
-		POI_SUPPORTINGINFO_ENTER = 12;
-		POI_SUBMIT_BUTTON_HIT = 13;
-		POI_EXIT_BUTTON_HIT = 14;
-	}
-
-	PoiSubmissionGuiEventId gui_event_id = 1;
-	TitanPoiImageType image_type = 2;
-	PoiCameraStepIds camera_step_id = 3;
-}
-
-message TitanPoiVideoSubmissionMetadataProto {
-	string poi_id = 1;
-	PlatformLocationE6Proto location = 2;
-	int32 player_level = 3;
-}
-
-message TitanPortalCurationImageResult {
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		FEATURE_DISABLED = 2;
-		ALREADY_UPLOADED = 3;
-		IMAGE_NOT_FOUND = 4;
-		IMAGE_TOO_BIG = 5;
-		IMAGE_NOT_SERVABLE = 6;
-		PORTAL_NOT_FOUND = 7;
-	}
-}
-
-message TitanSubmitNewPoiOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		FAILURE = 2;
-		INTERNAL_ERROR = 3;
-		TOO_MANY_RECENT_SUBMISSIONS = 4;
-		INVALID_INPUT = 5;
-		MINOR = 6;
-		NOT_AVAILABLE = 7;
-	}
-
-	Status status = 1;
-	string submission_id = 2;
-	repeated string messages = 3;
-}
-
-message TitanSubmitNewPoiProto {
-	string title = 1;
-	string long_description = 2;
-	int32 lat_e6 = 4;
-	int32 lng_e6 = 5;
-	string supporting_statement = 14;
-	bool async_file_upload = 18;
-}
-
-message TitanSubmitPlayerImageVoteForPoiOutProto {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		POI_NOT_FOUND = 2;
-		POI_IMAGE_NOT_FOUND = 3;
-		INVALID_REQUEST = 6;
-	}
-
-	Status status = 1;
-}
-
-message TitanSubmitPlayerImageVoteForPoiProto {
-	repeated string image_ids_to_vote_for = 1;
-	repeated string image_ids_to_unvote = 2;
-	string poi_id = 3;
-}
-
-message TitanSubmitPoiImageProto {
-	string poi_id = 1;
-	bool async_file_upload = 2;
-}
-
-message TitanSubmitPoiLocationUpdateProto {
-	string poi_id = 1;
-	PlatformLocationE6Proto location = 2;
-}
-
-message TitanSubmitPoiTakedownRequestProto {
-	string poi_id = 1;
-	PoiInvalidReason invalid_reason = 2;
-}
-
-message TitanSubmitPoiTextMetadataUpdateProto {
-	string poi_id = 1;
-	string title = 2;
-	string description = 3;
-}
-
-message TitanSubmitSponsorPoiLocationUpdateProto {
-	string poi_id = 1;
-	PlatformLocationE6Proto location = 2;
-}
-
-message TitanSubmitSponsorPoiReportProto {
-	string poi_id = 1;
-	SponsorPoiInvalidReason invalid_reason = 2;
-	string additional_details = 3;
-}
-
-message TitanUploadPoiPhotoByUrlOutProto {
-	TitanPortalCurationImageResult.Result status = 1;
-}
-
-message TitanUploadPoiPhotoByUrlProto {
-	string request_id = 1;
-	string image_url = 2;
 }
 
 message TodayViewProto {
@@ -17414,6 +17236,38 @@ message UpdateCombatProto {
 	string debug_log = 3;
 }
 
+message UpdateFacebookStatusOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_PLAYER_NOT_FOUND = 3;
+		ERROR_FACEBOOK_API = 4;
+		ERROR_ALREADY_EXISTS = 5;
+	}
+
+	Result result = 1;
+}
+
+message UpdateFacebookStatusProto {
+	string fb_access_token = 1;
+	bool force_update = 2;
+}
+
+message UpdateFriendshipResponse {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_NOT_FRIEND = 3;
+		ERROR_NICKNAME_WRONG_FORMAT = 4;
+		ERROR_FILTERED_NICKNAME = 5;
+		ERROR_EXCEEDED_CHANGE_LIMIT = 6;
+	}
+
+	Result result = 1;
+}
+
 message UpdateInvasionBattleOutProto {
 	InvasionStatus.Status status = 1;
 	LootProto rewards = 2;
@@ -17434,6 +17288,33 @@ message UpdateInvasionBattleProto {
 	UpdateType update_type = 5;
 	int64 lobby_join_time_ms = 6;
 	CombatQuestUpdateProto combat_quest_update = 7;
+}
+
+message UpdateNotificationOutProto {
+}
+
+message UpdateNotificationProto {
+	repeated string notification_ids = 1;
+	repeated int64 create_timestamp_ms = 2;
+	NotificationState state = 3;
+}
+
+message UpdateProfileRequest {
+	message ProfileProto {
+		string profile_name_app_key = 1;
+	}
+
+	ProfileProto profile = 1;
+}
+
+message UpdateProfileResponse {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+	}
+
+	Result result = 1;
 }
 
 message UpdateTradingOutProto {
@@ -17492,6 +17373,15 @@ message UpgradePokemonProto {
 	bool preview = 2;
 	uint32 number_of_upgrades = 3;
 	int32 pokemon_current_cp = 4;
+}
+
+message UploadPoiPhotoByUrlOutProto {
+	PortalCurationImageResult.Result status = 1;
+}
+
+message UploadPoiPhotoByUrlProto {
+	string request_id = 1;
+	string image_url = 2;
 }
 
 message UpsightLoggingSettingsProto {

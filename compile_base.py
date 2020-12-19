@@ -472,6 +472,9 @@ def open_proto_file(main_file, head):
             if not proto_line.startswith("enum") and not proto_line.startswith("message") and operator.contains(
                     proto_line, "enum") or operator.contains(proto_line, "message"):
                 check_sub_message_end = False
+            if operator.contains(proto_line, "enum Platform"):
+                proto_line = proto_line.replace("Platorm", "REF_PY_1")
+            ##
 
             # ## find ingored oneof's...
             # if len(ignored_one_of) > 0 and operator.contains(proto_line,
@@ -516,6 +519,9 @@ def open_proto_file(main_file, head):
             #     proto_line = proto_line.replace("int32", "HoloPokemonId")
             elif operator.contains(proto_line, "int32 guard_pokemon_id "):
                 proto_line = proto_line.replace("int32", "HoloPokemonId")
+            ## others conditions
+            elif operator.contains(proto_line, "Platform "):
+                 proto_line = proto_line.replace("Platform", "REF_PY_1")
             ##
 
             messages += proto_line
@@ -534,7 +540,10 @@ def open_proto_file(main_file, head):
     ##
 
     ## fixes other names...
-    messages = messages.replace("TitanTitanGameClientTelemetryOmniProto", "TitanGameClientTelemetryOmniProto")
+    messages = messages.replace("Titan", "")
+    messages = messages.replace("Platform", "")
+    # revert ref_1
+    messages = messages.replace("REF_PY_1", "Platform")
     ##
 
     ## check in messages basic obfuscated names...
